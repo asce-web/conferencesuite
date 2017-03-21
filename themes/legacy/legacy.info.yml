@@ -2,7 +2,7 @@ name: Legacy Theme
 type: theme
 description: 'ASCE Conference style 2015 &ndash; 2017.'
 core: 8.x
-libaries:
+libraries:
   - legacy/global-styling
 regions:
   header: Header
