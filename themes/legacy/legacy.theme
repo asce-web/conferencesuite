@@ -1,0 +1,14 @@
+<?php
+
+// Page Variables
+function legacy_preprocess_page(&$variables) {
+  $variables['conference_year_page'] = theme_get_setting('conference_year');
+}
+
+/**
+ * Block Variables
+ */
+ function legacy_preprocess_block(&$variables) {
+   $variables['block_conference_location'] = theme_get_setting('conference_location');
+   $variables['block_conference_year'] = theme_get_setting('conference_year');
+ }

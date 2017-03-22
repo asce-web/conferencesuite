@@ -1,11 +1,12 @@
-name: Legacy Theme
+name: Legacy
 type: theme
-description: 'ASCE Conference style 2015 &ndash; 2017.'
+description: 'Theme for the ASCE Conference style 2015 &ndash; 2017.'
 core: 8.x
 libraries:
   - legacy/global-styling
 regions:
   header: Header
+  site_branding: Site Branding
   content: Content
   sidebar: Sidebar
   footer: Footer

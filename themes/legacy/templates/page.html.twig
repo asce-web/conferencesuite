@@ -11,29 +11,8 @@
     <div class="container-fluid titles">
       <div class="container">
         <div class="col-container">
-          {% if logo %}
-            <div class="logo-col text-center">
-              <a href="{{ front_page }}" title="Home" rel="home">
-                <img src="{{ logo }}" alt="Home" class="conference-logo" />
-              </a>
-            </div>
-          {% endif %}
-          {% if second_logo %}
-            <div class="logo-col text-center">
-              <a href="{{ front_page }}" title="Home" rel="home">
-                <img src="{{ second_logo }}" alt="Home" class="conference-logo" />
-              </a>
-            </div>
-          {% endif %}
-          <div class="auto-col">
-            {% if site_name %}
-              <h2><a href="{{ front_page }}" title="Home" rel="home">{{ site_name }}</a></h2>
-            {% endif %}
-            <h5>{{ conf_location }} | {{ conf_dates }}, {{ conf_year }}</h5>
-            {% if site_slogan %}
-              <h4 class="hidden-xs">{{ site_slogan }}</h4>
-            {% endif %}
-          </div>
+          {{ page.site_branding }}
+          {{ page.banner_image}}
           <div class="side-nav-col hidden-xs">
             <span class="c-YearBadge">17</span>
             <div class="right-header hidden-xs">
@@ -65,21 +44,7 @@
     <div class="container content">
       <div class="col-container">
         <div class="auto-col">
-
-            <div class="introduction">
-              <img src="" />
-
-              <div class="img-fade"></div>
-              <div>
-
-                  <h1 class="c-Hero__Hn">fake title</h1>
-
-                <div class="c-Hero__Lede">
-                  lead text
-                </div>
-              </div>
-            </div>
-
+          conference year: {{ conference_year_page }}
           {{page.content}}
         </div><!--end-->
         <div class="side-nav-col">
@@ -147,7 +112,7 @@
             <div class="col-container">
               <div class="logo-col text-center">
                 <a href="{{front_page}}" title="Home" rel="home">
-                  <img src="{{logo}}" alt="Home"  class="conference-logo" />
+                  <img src="{{logo}}" alt="Home" class="conference-logo" />
                 </a>
               </div>
               {% if second_logo %}
@@ -218,7 +183,7 @@
     </div>
     <div class="row copyright text-center">
       <div class="container">
-        <div class="asce-logo"></div><span>Copyright © 1996&ndash;<?php print date('Y'); ?>, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
+        <div class="asce-logo"></div><span>Copyright © 1996&ndash;{{ post.published_at|date("Y") }}, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
       </div>
     </div>
   </div>
