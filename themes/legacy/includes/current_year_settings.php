@@ -10,7 +10,7 @@ function legacy_current_year_settings_form_alter(&$form) {
   );
   $form['current_year_settings']['conference_dates'] = array(
     '#type'          => 'textfield',
-    '#title'         => t('Conference Date'),
+    '#title'         => t('Conference Dates'),
     '#default_value' => theme_get_setting('conference_dates'),
     '#description'   => t("Enter date of conference. ex: <em>April 3-5</em>"),
   );
@@ -24,6 +24,6 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#type'          => 'textfield',
     '#title'         => t('Conference Year'),
     '#default_value' => theme_get_setting('conference_year'),
-    '#description'   => t("Enter year of conference. ex: <em>2016</em>"),
+    '#description'   => t("Enter year of conference. ex: <em>2017</em>"),
   );
 }
