@@ -2,10 +2,10 @@
 
 function legacy_current_year_settings_form_alter(&$form) {
   $form['current_year_settings'] = array(
-      '#type' => 'details',
-      '#title' => t('Current year'),
-      '#group' => 'legacy_theme_settings',
-      '#weight' => 1
+    '#type' => 'details',
+    '#title' => t('Current year'),
+    '#group' => 'legacy_theme_settings',
+    '#weight' => 1
   );
   $form['current_year_settings']['current_conference_info'] = array(
     '#type'         => 'fieldset',
@@ -53,23 +53,10 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#default_value' => theme_get_setting('current_advisory_location'),
     '#description'   => t("Enter conference location. ex: <em>Boston, MA</em>"),
   );
-
-  // image upload field
-  // $config = \Drupal::getContainer()->get('config.factory')->getEditable('advtour_ui.settings');
-  // $config->set('intermedia','thumbnail')->save();
-
-  $form['current_year_settings']['current_conference_location']['location_image'] = array(
-    '#title' => t('Location Image'),
-  	'#type' => 'managed_file',
-  	'#prefix'	=> 'Dummy prefix',
-  	'#suffix'	=> 'Dummy suffix',
-  	'#description' => t('Although the uploaded image will be displayed on this page fill in alternative text.'),
-  	'#default_value' => theme_get_setting('location_image'),
-  	'#upload_validators'  => array(
-  		'file_validate_extensions' => array('gif png jpg jpeg'),
-  		'file_validate_size' => array(25600000),
-  	),
-  	'#upload_location' => 'public://theme-settings/location-image/',
-  	'#required' => TRUE,
+  $form['current_year_settings']['current_conference_location']['current_location_blurb'] = array(
+    '#type'          => 'textarea',
+    '#title'         => t('Blurb'),
+    '#default_value' => theme_get_setting('current_location_blurb'),
+    '#description'   => t("Enter conference location. ex: <em>Boston, MA</em>"),
   );
 }
