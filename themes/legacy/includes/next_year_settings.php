@@ -5,7 +5,7 @@ function legacy_next_year_settings_form_alter(&$form) {
       '#type' => 'details',
       '#title' => t('Next Year Settings'),
       '#group' => 'legacy_theme_settings',
-      '#description' => t("Enter values for the current conference year."),
+      '#description' => t("Enter values for the next conference year."),
       '#weight' => 3
   );
   $form['next_year_settings']['next_conference_dates'] = array(
