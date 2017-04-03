@@ -38,32 +38,31 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#type'          => 'date',
     '#title'         => t('Start Date'),
     '#default_value' => theme_get_setting('current_conference_start_date'),
-    '#description'   => t("Select conference start date"),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_conference_dates']['current_conference_end_date'] = array(
     '#type'          => 'date',
     '#title'         => t('End Date'),
     '#default_value' => theme_get_setting('current_conference_end_date'),
-    '#description'   => t("Select conference end date"),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_conference_location'] = array(
     '#type'         => 'fieldset',
     '#title'        => t('Location'),
   );
-  $form['current_year_settings']['current_conference_location']['current_display_location'] = array(
+  $form['current_year_settings']['current_conference_location']['current_location_display'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Display Name'),
-    '#default_value' => theme_get_setting('current_display_location'),
-    '#description'   => t("Enter conference location. ex: <em>Boston, Massachusetts</em>"),
+    '#default_value' => theme_get_setting('current_location_display'),
+    '#description'   => t("Location displayed throughout site. ex: <em>Boston, MA</em>"),
     '#required' => TRUE,
   );
-  $form['current_year_settings']['current_conference_location']['current_advisory_location'] = array(
+  $form['current_year_settings']['current_conference_location']['current_location_advisory'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
-    '#default_value' => theme_get_setting('current_advisory_location'),
-    '#description'   => t("Enter conference location. ex: <em>Boston, MA</em>"),
+    '#default_value' => theme_get_setting('current_location_advisory'),
+    '#description'   => t("Expanded location. ex: <em>Boston, Massachusetts</em>"),
+    '#required' => TRUE,
   );
   $form['current_year_settings']['current_conference_location']['current_location_blurb'] = array(
     '#type'          => 'textarea',

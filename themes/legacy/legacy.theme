@@ -4,10 +4,6 @@
  * Page Variables
  */
 function legacy_preprocess_page(&$variables) {
-
-
-
-
   $variables['page_current_conference_start_date'] = theme_get_setting('current_conference_start_date');
   $variables['page_prev_conference_start_date'] = theme_get_setting('current_conference_start_date');
   $variables['page_next_conference_start_date'] = theme_get_setting('current_conference_start_date');
@@ -19,18 +15,13 @@ function legacy_preprocess_page(&$variables) {
 /**
  * Block Variables
  */
- function legacy_preprocess_block(&$variables) {
+function legacy_preprocess_block(&$variables) {
 
- // Site Logo
- if ($variables['base_plugin_id'] == 'system_branding_block') {
-   $variables['site_logo'] = '/newlogo.jpg';
- }
-
-   // Current Year Settings
-   $variables['block_current_conference_name'] = theme_get_setting('current_conference_name');
-   $variables['block_current_conference_start_date'] = theme_get_setting('current_conference_start_date');
-   $variables['block_current_conference_end_date'] = theme_get_setting('current_conference_end_date');
-   $variables['block_current_display_location'] = theme_get_setting('current_display_location');
-   $variables['block_current_advisory_location'] = theme_get_setting('current_advisory_location');
-   $variables['block_current_location_blurb'] = theme_get_setting('current_location_blurb');
- }
+ // Current Year Settings
+ $variables['block_current_conference_name'] = theme_get_setting('current_conference_name');
+ $variables['block_current_conference_start_date'] = theme_get_setting('current_conference_start_date');
+ $variables['block_current_conference_end_date'] = theme_get_setting('current_conference_end_date');
+ $variables['block_current_location_display'] = theme_get_setting('current_location_display');
+ $variables['block_current_location_advisory'] = theme_get_setting('current_location_advisory');
+ $variables['block_current_location_blurb'] = theme_get_setting('current_location_blurb');
+}
