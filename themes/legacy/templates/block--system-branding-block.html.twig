@@ -31,7 +31,20 @@
           <h4 class="hidden-xs">{{ site_slogan }}</h4>
         {% endif %}
         {% if block_current_location_advisory and block_current_conference_start_date %}
-          <h5>{{ block_current_location_advisory }} | {{ block_current_conference_start_date|date("M d") }}&ndash;{% if block_current_conference_start_date|date('M') == block_current_conference_end_date|date('M') %}{{ block_current_conference_end_date|date("d") }}{% else %}{{ block_current_conference_end_date|date("M d") }}{% endif %}, {{ block_current_conference_start_date|date('Y') }}</h5>
+          <h5>
+            {{ block_current_location_advisory }}
+            |
+            <time datetime="{{ block_current_conference_start_date|date("c") }}">{{ block_current_conference_start_date|date("M d") }}</time>
+            &ndash;
+            <time datetime="{{ block_current_conference_end_date|date("c") }}">
+              {% if block_current_conference_start_date|date('M') == block_current_conference_end_date|date('M') %}
+                {{ block_current_conference_end_date|date("d") }}
+              {% else %}
+                {{ block_current_conference_end_date|date("M d") }}
+              {% endif %}
+            </time>,
+            {{ block_current_conference_start_date|date('Y') }}
+          </h5>
         {% endif %}
       </div>
     {% endif %}
