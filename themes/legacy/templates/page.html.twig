@@ -8,19 +8,13 @@
       <a href="/" title="home"><span class="ic home"></span></a>
       <a href="" class="menu-toggle" title="open menu"><span class="ic menu"></span></a>
     </div>
-    <div class="container-fluid titles">
-      <div class="container">
-        <div class="col-container">
-          {{ page.site_branding }}
-          <div class="side-nav-col hidden-xs">
-            <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
-            <div class="right-header hidden-xs">
-              <div class="nav3">
-                {{ page.contributors_menu }}
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="o-Flex o-Constrain c-Mast">
+      {{ page.site_branding }}
+      <div class="o-Flex__Item o-SideCol c-TopImg">
+        <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+        <nav class="c-NavBar c-NavBar--contrib nav3">
+          {{ page.contributors_menu }}
+        </nav>
       </div>
     </div>
     <div class="container-fluid navigation hidden-xs">
