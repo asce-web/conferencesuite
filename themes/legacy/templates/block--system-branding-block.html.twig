@@ -26,12 +26,12 @@
     {% endif %}
     {% if block_current_conference_name %}
       <div class="auto-col">
-        <h2><a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ block_current_conference_name }}</a></h2>
+        <h1 class="c-ConferenceName"><a href="{{ path('<front>') }}" rel="home">{{ block_current_conference_name }}</a></h1>
         {% if site_slogan %}
-          <h4 class="hidden-xs">{{ site_slogan }}</h4>
+          <p class="c-ConferenceTagline hidden-xs">{{ site_slogan }}</p>
         {% endif %}
         {% if block_current_location_advisory and block_current_conference_start_date %}
-          <h5>
+          <p class="c-ConferenceLocation">
             {{ block_current_location_advisory }}
             |
             <time datetime="{{ block_current_conference_start_date|date("c") }}">{{ block_current_conference_start_date|date("M d") }}</time>
@@ -44,7 +44,7 @@
               {% endif %}
             </time>,
             {{ block_current_conference_start_date|date('Y') }}
-          </h5>
+          </p>
         {% endif %}
       </div>
     {% endif %}
