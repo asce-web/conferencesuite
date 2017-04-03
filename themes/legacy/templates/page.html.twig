@@ -12,9 +12,8 @@
       <div class="container">
         <div class="col-container">
           {{ page.site_branding }}
-          {{ page.banner_image}}
           <div class="side-nav-col hidden-xs">
-            <span class="c-YearBadge">17</span>
+            <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
             <div class="right-header hidden-xs">
               <div class="nav3">
                 {{ page.contributors_menu }}
@@ -67,7 +66,7 @@
         <div class="row title">
           <div class="container">
             <div class="hidden-xs pull-left">
-              <span class="c-YearBadge">17</span>
+              <span class="c-YearBadge">{{ (page_prev_conference_start_date|date('Y'))[2:] }}</span>
             </div>
               <h2>{{ site_name }}</h2>
           </div>
@@ -77,7 +76,7 @@
             <div class="col-container">
               <div class="logo-col text-center">
                 <a href="{{ front_page }}" title="Home" rel="home">
-                  <img src="{{ logo }}" alt="Home"  class="conference-logo" />
+                  <img src="{{ site_logo }}" alt="Home"  class="conference-logo" />
                 </a>
               </div>
               {% if second_logo %}
@@ -101,9 +100,9 @@
         <div class="row title">
           <div class="container">
             <div class="hidden-xs pull-left">
-              <span class="c-YearBadge">2014</span>
+              <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
             </div>
-            <h2>{{ site_name }}</h2>
+            <h2>{{ page_current_conference_name }}</h2>
           </div>
         </div>
         <div class="row details">
@@ -111,7 +110,7 @@
             <div class="col-container">
               <div class="logo-col text-center">
                 <a href="{{front_page}}" title="Home" rel="home">
-                  <img src="{{logo}}" alt="Home" class="conference-logo" />
+                  <img src="{{ site_logo }}" alt="Home" class="conference-logo" />
                 </a>
               </div>
               {% if second_logo %}
@@ -133,7 +132,7 @@
           <div class="row title">
             <div class="container">
               <div class="hidden-xs pull-left">
-                <span class="c-YearBadge"><?php print substr($next_conf_year, -2); ?></span>
+                <span class="c-YearBadge">{{ (page_next_conference_start_date|date('Y'))[2:] }}</span>
               </div>
               <?php if((isset($next_conf_name)) && ($next_conf_name !== "")): ?>
                 <h2><?php print $next_conf_name; ?></h2>
@@ -182,7 +181,7 @@
     </div>
     <div class="row copyright text-center">
       <div class="container">
-        <div class="asce-logo"></div><span>Copyright © 1996&ndash;{{ post.published_at|date("Y") }}, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
+        <div class="asce-logo"></div><span>Copyright © 1996&ndash;{{ now|date("Y") }}, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
       </div>
     </div>
   </div>

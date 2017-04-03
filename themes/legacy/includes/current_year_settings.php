@@ -5,18 +5,30 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#type' => 'details',
     '#title' => t('Current year'),
     '#group' => 'legacy_theme_settings',
-    '#weight' => 1
+    '#weight' => -4
   );
   $form['current_year_settings']['current_conference_info'] = array(
     '#type'         => 'fieldset',
     '#title'        => t('Basic Information'),
   );
   $form['current_year_settings']['current_conference_info']['current_conference_name'] = array(
-    '#type'         => 'textfield',
+    '#type'          => 'textfield',
     '#title'         => t('Conference Name'),
     '#default_value' => theme_get_setting('current_conference_name'),
     '#description'   => t("ex: <em>ASCE Convention 2017</em>"),
     '#required' => TRUE,
+  );
+  $form['current_year_settings']['current_conference_info']['current_conference_theme'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Conference Theme'),
+    '#default_value' => theme_get_setting('current_conference_theme'),
+    '#description'   => t("ex: <em>Where Engineering Dreams are Born</em>"),
+    '#required' => TRUE,
+  );
+  $form['current_year_settings']['current_conference_info']['current_theme_blurb'] = array(
+    '#type'          => 'textarea',
+    '#title'         => t('Conference Blurb'),
+    '#default_value' => theme_get_setting('current_theme_blurb'),
   );
   $form['current_year_settings']['current_conference_dates'] = array(
     '#type'         => 'fieldset',
@@ -55,8 +67,7 @@ function legacy_current_year_settings_form_alter(&$form) {
   );
   $form['current_year_settings']['current_conference_location']['current_location_blurb'] = array(
     '#type'          => 'textarea',
-    '#title'         => t('Blurb'),
+    '#title'         => t('Location Blurb'),
     '#default_value' => theme_get_setting('current_location_blurb'),
-    '#description'   => t("Enter conference location. ex: <em>Boston, MA</em>"),
   );
 }
