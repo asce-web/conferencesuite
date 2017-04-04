@@ -3,7 +3,7 @@
   <div class="toggleable-nav fade">
     {{ page.mobile_menu }}
   </div>
-  <div class="header">
+  <header class="header">
     <div class="visible-xs mobile-nav navigation">
       <a href="/" aria-label="home"><span class="ic home"></span></a>
       <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
@@ -39,19 +39,13 @@
         {{ page.main_menu2 }}
       </div>
     </nav>
-  </div>
-  <div class="container-fluid">
-    <div class="container content">
-      <div class="col-container">
-        <div class="auto-col">
-          {{page.content}}
-        </div><!--end-->
-        <div class="side-nav-col">
-          {{page.sidebar}}
-        </div>
-      </div>
+  </header>
+  <main class="container-fluid">
+    <div class="o-Flex o-Constrain">
+      <div class="o-Flex__Item o-MainCol">{{ page.content }}</div>
+      <div class="o-Flex__Item o-SideCol">{{ page.sidebar }}</div>
     </div>
-  </div>
+  </main>
   <div id="footer" class="footer container-fluid">
     <div class="row year-tabs">
       <div class="container">
