@@ -33,7 +33,7 @@ class ServerListBuilder extends ConfigEntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    $row = array();
+    $row = [];
     $row['label'] = $this->getLabel($entity);
     $row['type'] = $entity->get('type');
     $row['status'] = $entity->get('status') ? 'Yes' : 'No';
@@ -42,18 +42,27 @@ class ServerListBuilder extends ConfigEntityListBuilder {
     return $row + parent::buildRow($entity);
   }
 
+  /**
+   *
+   */
   private function checkStatus($server_id) {
     $server = Server::load($server_id);
     $connection_result = $server->connect();
     if ($server->get('status')) {
       if ($connection_result == Server::LDAP_SUCCESS) {
-        $bind_result = $server->bind();
-        if ($bind_result  == Server::LDAP_SUCCESS) {
-          return t('Server available');
+        if ($server->get('bind_method') == 'anon' || $server->get('bind_method') == 'anon_user') {
+          $bind_result = $server->bind(NULL, NULL, TRUE);
         } else {
+          $bind_result = $server->bind();
+        }
+        if ($bind_result == Server::LDAP_SUCCESS) {
+          return t('Server available');
+        }
+        else {
           return t('Connection successful, bind failed.');
         }
-      } else {
+      }
+      else {
         return t('Cannot connect');
       }
     }
@@ -65,25 +74,25 @@ class ServerListBuilder extends ConfigEntityListBuilder {
   public function getOperations(EntityInterface $entity) {
     $operations = parent::getDefaultOperations($entity);
     if (!isset($operations['test'])) {
-      $operations['test'] = array(
+      $operations['test'] = [
         'title' => $this->t('Test'),
         'weight' => 10,
         'url' => Url::fromRoute('entity.ldap_server.test_form', ['ldap_server' => $entity->id()]),
-      );
+      ];
     }
     if ($entity->get('status') == 1) {
-      $operations['disable'] = array(
+      $operations['disable'] = [
         'title' => $this->t('Disable'),
         'weight' => 15,
         'url' => Url::fromRoute('entity.ldap_server.enable_disable_form', ['ldap_server' => $entity->id()]),
-      );
+      ];
     }
     else {
-      $operations['enable'] = array(
+      $operations['enable'] = [
         'title' => $this->t('Enable'),
         'weight' => 15,
         'url' => Url::fromRoute('entity.ldap_server.enable_disable_form', ['ldap_server' => $entity->id()]),
-      );
+      ];
     }
     return $operations;
   }

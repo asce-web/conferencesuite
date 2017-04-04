@@ -11,7 +11,6 @@ use Drupal\Core\Url;
  */
 class ServerEnableDisableForm extends EntityConfirmFormBase {
 
-
   /**
    * {@inheritdoc}
    */
@@ -19,12 +18,11 @@ class ServerEnableDisableForm extends EntityConfirmFormBase {
     return 'ldap_servers_enable_disable_form';
   }
 
-
   /**
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return $this->t('Are you sure you want to disable/enable entity %name?', array('%name' => $this->entity->label()));
+    return $this->t('Are you sure you want to disable/enable entity %name?', ['%name' => $this->entity->label()]);
   }
 
   /**
@@ -42,7 +40,8 @@ class ServerEnableDisableForm extends EntityConfirmFormBase {
   public function getConfirmText() {
     if ($this->entity->get('status') == 1) {
       return $this->t('Disable');
-    } else {
+    }
+    else {
       return $this->t('Enable');
     }
   }
@@ -60,15 +59,16 @@ class ServerEnableDisableForm extends EntityConfirmFormBase {
     ];
     if ($this->entity->get('status') == 1) {
       drupal_set_message(t('LDAP server configuration %name (server id = %sid) has been enabled', $tokens));
-      \Drupal::logger('ldap')
+      \Drupal::logger('ldap_servers')
         ->notice('LDAP server enabled: %name (sid = %sid) ', $tokens);
     }
     else {
       drupal_set_message(t('LDAP server configuration %name (server id = %sid) has been disabled', $tokens));
-      \Drupal::logger('ldap')
+      \Drupal::logger('ldap_servers')
         ->notice('LDAP server disabled: %name (sid = %sid) ', $tokens);
     }
 
     $form_state->setRedirect('entity.ldap_server.collection');
   }
+
 }

@@ -2,11 +2,11 @@
 
 namespace Drupal\ldap_user\Helper;
 
-
-
-
 use Drupal\ldap_servers\Processor\TokenProcessor;
 
+/**
+ *
+ */
 class SyncMappingHelper {
 
 
@@ -20,7 +20,7 @@ class SyncMappingHelper {
    *     'user_attr'  => e.g. [field.field_user_lname] (when this value is set to 'user_tokens', 'user_tokens' value is used.)
    *     'user_tokens' => e.g. [field.field_user_lname], [field.field_user_fname]
    *     'convert' => 1|0 boolean indicating need to covert from binary
-   *     'direction' => LdapConfiguration::$provisioningDirectionToDrupalUser | LdapConfiguration::$provisioningDirectionToLDAPEntry (redundant)
+   *     'direction' => LdapConfiguration::PROVISION_TO_DRUPAL | LdapConfiguration::PROVISION_TO_LDAP (redundant)
    *     'config_module' => 'ldap_user'
    *     'prov_module' => 'ldap_user'
    *     'enabled' => 1|0 boolean
@@ -36,8 +36,11 @@ class SyncMappingHelper {
 
   private $config;
 
+  /**
+   *
+   */
   public function __construct() {
-    $this->config = \Drupal::config('ldap_user.settings')->get('ldap_user_conf');
+    $this->config = \Drupal::config('ldap_user.settings')->get();
     $this->setSyncMapping();
   }
 
@@ -49,7 +52,7 @@ class SyncMappingHelper {
    * @param array $prov_events
    *   e.g. array(LdapConfiguration::$eventCreateDrupalUser).  typically array with 1 element.
    * @param int $direction
-   *   LdapConfiguration::$provisioningDirectionToDrupalUser or LdapConfiguration::$provisioningDirectionToLDAPEntry.
+   *   LdapConfiguration::PROVISION_TO_DRUPAL or LdapConfiguration::PROVISION_TO_LDAP.
    *
    * @return bool
    */
@@ -64,8 +67,6 @@ class SyncMappingHelper {
   /**
    * Util to fetch mappings for a given direction.
    *
-   * @param string $sid
-   *   The server id.
    * @param string $direction
    * @param array $prov_events
    *
@@ -77,15 +78,15 @@ class SyncMappingHelper {
       $prov_events = LdapConfiguration::getAllEvents();
     }
     if ($direction == NULL) {
-      $direction = LdapConfiguration::$provisioningDirectionAll;
+      $direction = LdapConfiguration::PROVISION_TO_ALL;
     }
 
-    $mappings = array();
-    if ($direction == LdapConfiguration::$provisioningDirectionAll) {
-      $directions = array(LdapConfiguration::$provisioningDirectionToDrupalUser, LdapConfiguration::$provisioningDirectionToLDAPEntry);
+    $mappings = [];
+    if ($direction == LdapConfiguration::PROVISION_TO_ALL) {
+      $directions = [LdapConfiguration::PROVISION_TO_DRUPAL, LdapConfiguration::PROVISION_TO_LDAP];
     }
     else {
-      $directions = array($direction);
+      $directions = [$direction];
     }
     foreach ($directions as $direction) {
       if (!empty($this->config['ldapUserSyncMappings'][$direction])) {
@@ -93,10 +94,10 @@ class SyncMappingHelper {
           if (!empty($mapping['prov_events'])) {
             $result = count(array_intersect($prov_events, $mapping['prov_events']));
             if ($result) {
-              if ($direction == LdapConfiguration::$provisioningDirectionToDrupalUser && isset($mapping['user_attr'])) {
+              if ($direction == LdapConfiguration::PROVISION_TO_DRUPAL && isset($mapping['user_attr'])) {
                 $key = $mapping['user_attr'];
               }
-              elseif ($direction == LdapConfiguration::$provisioningDirectionToLDAPEntry && isset($mapping['ldap_attr'])) {
+              elseif ($direction == LdapConfiguration::PROVISION_TO_LDAP && isset($mapping['ldap_attr'])) {
                 $key = $mapping['ldap_attr'];
               }
               else {
@@ -112,48 +113,65 @@ class SyncMappingHelper {
   }
 
   /**
-   * Derive mapping array from ldap user configuration and other configurations.
-   * if this becomes a resource hungry function should be moved to ldap_user functions
-   * and stored with static variable. should be cached also.
-   * This should be cached and modules implementing ldap_user_sync_mapping_alter
-   * should know when to invalidate cache.
+   * Fetches the sync mappings from cache or loads them from configuration.
    */
   public function setSyncMapping() {
-    $sync_mapping_cache = \Drupal::cache()->get('ldap_user_sync_mapping');
-    if ($sync_mapping_cache) {
-      $this->syncMapping = $sync_mapping_cache->data;
+    $syncMappingsCache = \Drupal::cache()->get('ldap_user_sync_mapping');
+    if ($syncMappingsCache) {
+      $this->syncMapping = $syncMappingsCache->data;
     }
     else {
-      $available_user_attributes = [];
-      foreach (array(LdapConfiguration::$provisioningDirectionToDrupalUser, LdapConfiguration::$provisioningDirectionToLDAPEntry) as $direction) {
-        if ($direction == LdapConfiguration::$provisioningDirectionToDrupalUser) {
-          $sid = \Drupal::config('ldap_user.settings')->get('ldap_user_conf.drupalAcctProvisionServer');
-        } else {
-          $sid = \Drupal::config('ldap_user.settings')->get('ldap_user_conf.ldapEntryProvisionServer');
-        }
-        $available_user_attributes[$direction] =[];
-        $ldap_server = FALSE;
-        if ($sid) {
-          try {
-            $factory = \Drupal::service('ldap.servers');
-            $ldap_server = $factory->getServerById($sid);
-          }
-          catch (\Exception $e) {
-            \Drupal::logger('ldap_user')->error('Missing server');
-          }
-        }
-
-        $params = array(
-          'ldap_server' => $ldap_server,
-          'ldap_user_conf' => $this,
-          'direction' => $direction,
-        );
-
-        \Drupal::moduleHandler()->alter('ldap_user_attrs_list', $available_user_attributes[$direction], $params);
-      }
-      $this->syncMapping = $available_user_attributes;
+      $this->syncMapping = $this->processSyncMappings();
+      \Drupal::cache()->set('ldap_user_sync_mapping', $this->syncMapping);
     }
-    \Drupal::cache()->set('ldap_user_sync_mapping', $this->syncMapping);
+  }
+
+  /**
+   * Derive synchronization mappings from configuration.
+   *
+   * This function would be private if not for easier access for tests.
+   *
+   * return array
+   */
+  public function processSyncMappings() {
+    $available_user_attributes = [];
+    foreach ([
+      LdapConfiguration::PROVISION_TO_DRUPAL,
+      LdapConfiguration::PROVISION_TO_LDAP,
+    ] as $direction) {
+      if ($direction == LdapConfiguration::PROVISION_TO_DRUPAL) {
+        $sid = \Drupal::config('ldap_user.settings')
+          ->get('drupalAcctProvisionServer');
+      }
+      else {
+        $sid = \Drupal::config('ldap_user.settings')
+          ->get('ldapEntryProvisionServer');
+      }
+      $available_user_attributes[$direction] = [];
+      $ldap_server = FALSE;
+      if ($sid) {
+        try {
+          $factory = \Drupal::service('ldap.servers');
+          $ldap_server = $factory->getServerById($sid);
+        }
+        catch (\Exception $e) {
+          \Drupal::logger('ldap_user')->error('Missing server');
+        }
+      }
+
+      $params = [
+        'ldap_server' => $ldap_server,
+        'ldap_user_conf' => $this,
+        'direction' => $direction,
+      ];
+
+      \Drupal::moduleHandler()->alter(
+        'ldap_user_attrs_list',
+        $available_user_attributes[$direction],
+        $params
+      );
+    }
+    return $available_user_attributes;
   }
 
   /**
@@ -167,14 +185,14 @@ class SyncMappingHelper {
    */
   public function getLdapUserRequiredAttributes($direction = NULL, $ldap_context = NULL) {
     if ($direction == NULL) {
-      $direction = LdapConfiguration::$provisioningDirectionAll;
+      $direction = LdapConfiguration::PROVISION_TO_ALL;
     }
-    $attributes_map = array();
-    $required_attributes = array();
+    $attributes_map = [];
+    $required_attributes = [];
     if ($this->config['drupalAcctProvisionServer']) {
       $prov_events = LdapConfiguration::ldapContextToProvEvents($ldap_context);
       $attributes_map = $this->getSyncMappings($direction, $prov_events);
-      $required_attributes = array();
+      $required_attributes = [];
       foreach ($attributes_map as $detail) {
         if (count(array_intersect($prov_events, $detail['prov_events']))) {
           // Add the attribute to our array.
