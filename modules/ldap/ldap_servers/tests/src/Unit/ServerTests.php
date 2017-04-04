@@ -23,25 +23,24 @@ class ServerTests extends UnitTestCase {
 
     $baseDn[] = 'ou=people,dc=example,dc=org';
 
-
     $validResult = [
       'count' => 1,
-      0 => ['dn' => ['cn=hpotter,ou=people,dc=example,dc=org']]
+      0 => ['dn' => ['cn=hpotter,ou=people,dc=example,dc=org']],
     ];
     $valueMap = [
-      [$baseDn[0], '(|(cn=hpotter))', ['dn'], 0, 0, 0, NULL, Server::$scopeSubTree],
-      [$baseDn[0], '(cn=hpotter)', ['dn'], 0, 0, 0, NULL, Server::$scopeSubTree],
-      [$baseDn[0], 'cn=hpotter', ['dn'], 0, 0, 0, NULL, Server::$scopeSubTree]
+      [$baseDn[0], '(|(cn=hpotter))', ['dn'], 0, 0, 0, NULL, Server::SCOPE_SUBTREE],
+      [$baseDn[0], '(cn=hpotter)', ['dn'], 0, 0, 0, NULL, Server::SCOPE_SUBTREE],
+      [$baseDn[0], 'cn=hpotter', ['dn'], 0, 0, 0, NULL, Server::SCOPE_SUBTREE],
     ];
 
     $stub->method('getBasedn')
       ->willReturn($baseDn);
     $stub->method('search')
-      ->will($this->returnCallback( function () use ($valueMap, $validResult) {
+      ->will($this->returnCallback(function () use ($valueMap, $validResult) {
         $arguments = func_get_args();
 
-        foreach($valueMap as $map) {
-          if(!is_array($map) || count($arguments) != count($map)) {
+        foreach ($valueMap as $map) {
+          if (!is_array($map) || count($arguments) != count($map)) {
             continue;
           }
 
@@ -84,8 +83,8 @@ class ServerTests extends UnitTestCase {
       'memberOf' => [
         'Group1',
         // TODO: This is not correctly supported.
-        // 'cn=honors students,ou=groups,dc=hogwarts,dc=edu',
-        ]
+        // 'cn=honors students,ou=groups,dc=hogwarts,dc=edu',.
+      ],
     ];
 
     $result = Server::removeUnchangedAttributes($new_data, $existing_data);
@@ -94,13 +93,16 @@ class ServerTests extends UnitTestCase {
       'test_example_value' => 'Test1',
       'memberOf' => [
         'Group1',
-      ]
+      ],
     ];
 
     $this->assertEquals($result_expected, $result);
 
   }
 
+  /**
+   *
+   */
   public function testUserUsernameFromLdapEntry() {
     $stub = $this->getMockBuilder(Server::class)
       ->disableOriginalConstructor()
@@ -140,6 +142,9 @@ class ServerTests extends UnitTestCase {
 
   }
 
+  /**
+   *
+   */
   public function testUserUsernameActiveDirectory() {
     $stub = $this->getMockBuilder(Server::class)
       ->disableOriginalConstructor()
@@ -195,9 +200,12 @@ class ServerTests extends UnitTestCase {
 
   }
 
+  /**
+   *
+   */
   public function testGroupUserMembershipsFromEntry() {
-    // TODO: Unported
-    $this->assertTrue(true);
+    // TODO: Unported.
+    $this->assertTrue(TRUE);
     return;
 
     $user_dn = 'cn=hpotter,ou=people,dc=hogwarts,dc=edu';
@@ -239,16 +247,16 @@ class ServerTests extends UnitTestCase {
     ];
     $desired[1] = array_merge($desired[0], ['cn=users,ou=groups,dc=hogwarts,dc=edu']);
 
-    foreach (array(0, 1) as $nested) {
+    foreach ([0, 1] as $nested) {
 
       // TODO: Before porting this test, consider splitting nested and not-nested
       // functions up, since this is a mess.
       $nested_display = ($nested) ? 'nested' : 'not nested';
       $desired_count = ($nested) ? 4 : 3;
-      $ldap_module_user_entry = array('attr' => $user_ldap_entry, 'dn' => $user_dn);
+      $ldap_module_user_entry = ['attr' => $user_ldap_entry, 'dn' => $user_dn];
       $groups_desired = $desired[$nested];
 
-      /* @var Server $ldap_server */
+      /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
       // Test parent function groupMembershipsFromUser.
       $groups = $ldap_server->groupMembershipsFromUser($ldap_module_user_entry, 'group_dns', $nested);
       $count = count($groups);
@@ -256,7 +264,6 @@ class ServerTests extends UnitTestCase {
       $diff2 = array_diff($groups, $groups_desired);
       $pass = (count($diff1) == 0 && count($diff2) == 0 && $count == $desired_count);
       $this->assertTrue($pass);
-
 
       // Test parent groupUserMembershipsFromUserAttr, for openldap should be false, for ad should work.
       $groups = $ldap_server->groupUserMembershipsFromUserAttr($ldap_module_user_entry, $nested);
@@ -269,7 +276,6 @@ class ServerTests extends UnitTestCase {
         $pass = (count($diff1) == 0 && count($diff2) == 0 && $count == $desired_count);
       }
       $this->assertTrue($pass);
-
 
       $groups = $ldap_server->groupUserMembershipsFromEntry($ldap_module_user_entry, $nested);
       $count = count($groups);

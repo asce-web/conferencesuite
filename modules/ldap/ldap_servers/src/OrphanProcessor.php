@@ -18,7 +18,7 @@ class OrphanProcessor {
    *
    */
   public function __construct() {
-    $this->config = \Drupal::config('ldap_user.settings')->get('ldap_user_conf');
+    $this->config = \Drupal::config('ldap_user.settings')->get();
   }
 
   /**
@@ -26,7 +26,6 @@ class OrphanProcessor {
    * longer have a related LDAP entry.
    *
    * @return boolean FALSE on error or incompletion or TRUE otherwise
-   *
    */
   public function checkOrphans() {
 
@@ -53,7 +52,8 @@ class OrphanProcessor {
       }
 
       return TRUE;
-    } else {
+    }
+    else {
       return FALSE;
     }
   }
@@ -92,7 +92,7 @@ class OrphanProcessor {
     $to = \Drupal::config('system.site')->get('mail');
     $siteLanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $params = ['accounts' => $this->emailList];
-    $result = $mailManager->mail('ldap_user', 'orphaned_accounts', $to, $siteLanguage, $params, NULL, true);
+    $result = $mailManager->mail('ldap_user', 'orphaned_accounts', $to, $siteLanguage, $params, NULL, TRUE);
     if (!$result) {
       \Drupal::logger('ldap_user')->error('Could not send orphaned LDAP accounts notification.');
     }
@@ -111,7 +111,6 @@ class OrphanProcessor {
     $users = [];
 
     // Creates a list of users in the required format.
-
     $start = ($batch - 1) * $this->ldapQueryOrLimit;
     $end_plus_1 = min(($batch) * $this->ldapQueryOrLimit, count($uids));
     $batch_uids = array_slice($uids, $start, ($end_plus_1 - $start));
@@ -141,12 +140,11 @@ class OrphanProcessor {
     }
 
     // Query LDAP and update the prepared users with the actual state.
-
     foreach ($filters as $serverId => $persistentUidAttributes) {
       if (!isset($servers[$serverId])) {
         if (!isset($this->missingServerSemaphore[$serverId])) {
           \Drupal::logger('ldap_user')
-            ->error('Server %id not enabled, but needed to remove orphaned ldap users', array('%id' => $serverId));
+            ->error('Server %id not enabled, but needed to remove orphaned ldap users', ['%id' => $serverId]);
           $this->missingServerSemaphore[$serverId] = TRUE;
         }
         continue;
@@ -154,7 +152,7 @@ class OrphanProcessor {
       foreach ($persistentUidAttributes as $persistentUidProperty => $OrElement) {
         // Query should look like (|(guid=3243243)(guid=3243243)(guid=3243243))
         $ldapFilter = '(|' . join("", $OrElement) . ')';
-        $ldapEntries = $servers[$serverId]->searchAllBaseDns($ldapFilter, array($persistentUidProperty));
+        $ldapEntries = $servers[$serverId]->searchAllBaseDns($ldapFilter, [$persistentUidProperty]);
         if ($ldapEntries === FALSE) {
           // If the query returns an error, ignore the entire server.
           unset($users[$serverId]);
@@ -200,13 +198,16 @@ class OrphanProcessor {
       case 'always':
         $group->condition('ldap_user_last_checked', time(), '<');
         break;
+
       case 'daily':
         $group->condition('ldap_user_last_checked', strtotime('today'), '<');
         break;
+
       case 'weekly':
       default:
         $group->condition('ldap_user_last_checked', strtotime('today - 7 days'), '<');
         break;
+
       case 'monthly':
         $group->condition('ldap_user_last_checked', strtotime('today - 30 days'), '<');
         break;
@@ -241,11 +242,12 @@ class OrphanProcessor {
               case 'ldap_user_orphan_email';
                 $this->emailList[] = $account->getAccountName() . "," . $account->getEmail() . "," . $base_url . "/user/" . $user_data['uid'] . "/edit";
                 break;
+
               case 'user_cancel_block':
               case 'user_cancel_block_unpublish':
               case 'user_cancel_reassign':
               case 'user_cancel_delete':
-                _user_cancel(array(), $account, $this->config['orphanedDrupalAcctBehavior']);
+                _user_cancel([], $account, $this->config['orphanedDrupalAcctBehavior']);
                 break;
             }
           }

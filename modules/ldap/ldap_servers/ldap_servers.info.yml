@@ -7,8 +7,8 @@ dependencies: {  }
 
 configure: ldap_servers.settings
 
-# Information added by Drupal.org packaging script on 2017-01-12
-version: '8.x-3.0-alpha3'
+# Information added by Drupal.org packaging script on 2017-04-02
+version: '8.x-3.0-beta1'
 core: '8.x'
 project: 'ldap'
-datestamp: 1484236092
+datestamp: 1491117496
