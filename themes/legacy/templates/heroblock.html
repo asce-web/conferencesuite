@@ -1,0 +1,7 @@
+<header class="c-Hero">
+  {% if block_current_conference_hero_src and block_current_conference_hero_alt %}
+    <img class="c-Hero__Img" src="{{ block_current_conference_hero_src }}" alt="{{ block_current_conference_hero_alt }}"/>
+  {% endif %}
+  <h1 class="c-Hero__Hn">{{ block_current_theme }}</h1>
+  <p class="c-Hero__Blurb">{{ block_current_blurb }}</p>
+</header>
