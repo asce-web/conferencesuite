@@ -15,14 +15,14 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#type'          => 'textfield',
     '#title'         => t('Conference Name'),
     '#default_value' => theme_get_setting('current_info_name'),
-    '#description'   => t("ex: <em>ASCE Convention 2017</em>"),
+    '#description'   => t('Conference Title, e.g., <i>ASCE Convention 2017</i>'),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_info']['current_info_theme'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Conference Theme'),
     '#default_value' => theme_get_setting('current_info_theme'),
-    '#description'   => t("ex: <em>Where Engineering Dreams are Born</em>"),
+    '#description'   => t('Conference theme, e.g., <i>Where Engineering Dreams are Born</i>'),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_info']['current_info_blurb'] = array(
@@ -54,14 +54,14 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#type'          => 'textfield',
     '#title'         => t('Display Name'),
     '#default_value' => theme_get_setting('current_location_display'),
-    '#description'   => t("Location displayed throughout site. ex: <em>Boston, MA</em>"),
+    '#description'   => t('Location displayed in header, e.g., <i>Boston, MA</i>'),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_location']['current_location_advisory'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
     '#default_value' => theme_get_setting('current_location_advisory'),
-    '#description'   => t("Expanded location. ex: <em>Boston, Massachusetts</em>"),
+    '#description'   => t('Expanded location name, e.g., <i>Boston, Massachusetts</i>'),
     '#required' => TRUE,
   );
   $form['current_year_settings']['current_location']['current_location_blurb'] = array(
