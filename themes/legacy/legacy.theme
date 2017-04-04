@@ -16,8 +16,6 @@ function legacy_preprocess_page(&$variables) {
  * Block Variables
  */
 function legacy_preprocess_block(&$variables) {
-
- // Current Year Settings
  $variables['block_current_conference_name'] = theme_get_setting('current_conference_name');
  $variables['block_current_conference_start_date'] = theme_get_setting('current_conference_start_date');
  $variables['block_current_conference_end_date'] = theme_get_setting('current_conference_end_date');

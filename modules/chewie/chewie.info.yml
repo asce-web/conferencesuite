@@ -1,0 +1,5 @@
+name: Chewie
+type: module
+description: adds Content Types to site.
+package: ASCE
+core: 8.x
