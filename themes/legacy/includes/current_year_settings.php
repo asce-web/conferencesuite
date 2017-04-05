@@ -30,7 +30,7 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#title'         => t('Conference Blurb'),
     '#default_value' => theme_get_setting('current_info_blurb'),
   );
-  $form['current_year_settings']['current_conference_dates'] = array(
+  $form['current_year_settings']['current_dates'] = array(
     '#type'         => 'fieldset',
     '#title'        => t('Dates'),
   );
