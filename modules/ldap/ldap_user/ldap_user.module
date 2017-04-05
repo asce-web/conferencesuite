@@ -22,7 +22,7 @@ use Drupal\Core\Url;
  * Implements hook_cron().
  */
 function ldap_user_cron() {
-  $check_orphans = \Drupal::config('ldap_user.settings')->get('ldap_user_conf.orphanedDrupalAcctBehavior');
+  $check_orphans = \Drupal::config('ldap_user.settings')->get('orphanedDrupalAcctBehavior');
   if ($check_orphans != 'ldap_user_orphan_do_not_check') {
     $processor = new OrphanProcessor();
     $result = $processor->checkOrphans();
@@ -55,16 +55,13 @@ function ldap_user_ldap_attributes_needed_alter(&$attributes, $params) {
   $attributes = $processor->alterUserAttributes($attributes, $params);
 }
 
-
-
 /**
  * Implements hook_ldap_user_attrs_list_alter().
  */
 function ldap_user_ldap_user_attrs_list_alter(&$available_user_attrs, &$params) {
   $processor = new DrupalUserProcessor();
-  list($params, $available_user_attrs) = $processor->alterLdapUserAttributes($available_user_attrs, $params);
+  list($available_user_attrs, $params) = $processor->alterLdapUserAttributes($available_user_attrs, $params);
 }
-
 
 /**
  * Implements hook_help().
@@ -72,14 +69,10 @@ function ldap_user_ldap_user_attrs_list_alter(&$available_user_attrs, &$params) 
 function ldap_user_help($route_name, RouteMatchInterface $route_match) {
   $ldap_user_help = t('LDAP user configuration determines how and when
      Drupal accounts are created based on LDAP data and which user fields
-     are derived and synced to and from LDAP. See @helplink.',
-    array(
-      '@helplink' => \Drupal::l('the drupal.org handbook page', Url::fromUri('http://drupal.org/node/997082')),
-    ));
+     are derived and synced to and from LDAP.');
 
   switch ($route_name) {
     case 'help.page.ldap_user':
-    case 'ldap_user.admin_form':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . $ldap_user_help . '</p>';
@@ -167,10 +160,10 @@ function ldap_user_entity_base_field_info(EntityTypeInterface $entity_type) {
 }
 
 // Below are form hooks which cannot be easily moved.
-
 /**
  * Implements hook_form_FORM_ID_alter(). for user_login_block.
  */
+
 function ldap_user_form_user_login_block_alter(&$form, &$form_state) {
   array_unshift($form['#validate'], 'ldap_user_grab_password_validate');
 }
@@ -224,37 +217,37 @@ function ldap_user_form_user_register_form_alter(&$form, $form_state) {
     return;
   }
 
-  $ldap_fieldset = array();
-  $options = array(
-    LdapConfiguration::$manualAccountConflictLdapAssociate => t('Make this an LDAP Associated account.  If a related LDAP account can not be found, a validation error will appear and the account will not be created.'),
-    LdapConfiguration::$manualAccountConflictNoLdapAssociate => t('Do not make this an LDAP Associated account.'),
-  );
-  $ldap_fieldset['ldap_user_association'] = array(
+  $ldap_fieldset = [];
+  $ldap_fieldset['ldap_user_association'] = [
     '#type' => 'radios',
-    '#options' => $options,
-    '#required' => FALSE,
+    '#options' => [
+      LdapConfiguration::$manualAccountConflictLdapAssociate => t('Make this an LDAP associated account.'),
+      LdapConfiguration::$manualAccountConflictNoLdapAssociate => t('Do not make this an LDAP associated account.'),
+    ],
+    '#default_value' => LdapConfiguration::$manualAccountConflictNoLdapAssociate,
+    '#description' => t('If a related LDAP account can not be found, a validation error will appear and the account will not be created.'),
     '#title' => t('LDAP Entry Association.'),
-  );
+  ];
 
-  if (LdapConfiguration::provisionAvailableToLDAP(LdapConfiguration::$provisionDrupalUserOnUserUpdateCreate)) {
+  if (LdapConfiguration::provisionAvailableToLDAP(LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_UPDATE_CREATE)) {
     $ldap_fieldset['ldap_user_association']['#disabled'] = TRUE;
     $ldap_fieldset['ldap_user_association']['#description'] = t('Since "Create
       or Sync to Drupal user anytime a Drupal user account is created or updated"
       is selected at admin/config/people/ldap/user, this option will have no
       effect so its disabled.');
   }
-  elseif (\Drupal::config('ldap_user.settings')->get('ldap_user_conf.manualAccountConflict') != LdapConfiguration::$manualAccountConflictShowOptionOnForm) {
+  elseif (\Drupal::config('ldap_user.settings')->get('manualAccountConflict') != LdapConfiguration::$manualAccountConflictShowOptionOnForm) {
     $ldap_fieldset['ldap_user_association']['#disabled'] = TRUE;
     $ldap_fieldset['ldap_user_association']['#description'] = t('To enable
       this an LDAP server must be selected for provisioning to Drupal in
       admin/config/people/ldap/user and "Show option on user create form..." must be selected.');
   }
 
-  $ldap_fieldset['ldap_user_create_ldap_acct'] = array(
+  $ldap_fieldset['ldap_user_create_ldap_acct'] = [
     '#type' => 'checkbox',
     '#title' => t('Create corresponding LDAP entry.'),
-  );
-  if (!LdapConfiguration::provisionAvailableToLDAP(LdapConfiguration::$provisionDrupalUserOnAllowingManualCreation)) {
+  ];
+  if (!LdapConfiguration::provisionAvailableToLDAP(LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_ON_MANUAL_CREATION)) {
     $ldap_fieldset['ldap_user_create_ldap_acct']['#disabled'] = TRUE;
     $ldap_fieldset['ldap_user_create_ldap_acct']['#description'] = t('To enable
       this an LDAP server must be selected for provisioning to Drupal in
@@ -296,10 +289,12 @@ function ldap_user_form_register_form_validate($form, FormStateInterface &$form_
    */
   if (!$form_state->getValue('ldap_user_create_ldap_acct') &&
     $form_state->getValue('ldap_user_association') == LdapConfiguration::$manualAccountConflictLdapAssociate) {
-    if (!empty($config->get('ldap_user_conf.drupalAcctProvisionServer'))) {
-      $form_state->setErrorByName('ldap_user_missing_', t('The LDAP provisioning server is not set up correctly.'));
-    } else {
-      $ldap_user = $factory->getUserDataFromServerByIdentifier($form_state->getValue('name'), $config->get('ldap_user_conf.drupalAcctProvisionServer'), 'ldap_user_prov_to_drupal');
+    if (empty($config->get('drupalAcctProvisionServer'))) {
+      $form_state->setErrorByName('ldap_user_missing_', t('The provisioning server is not set up correctly.'));
+      \Drupal::logger('ldap_user')->error('No server available for provisioning to Drupal.');
+    }
+    else {
+      $ldap_user = $factory->getUserDataFromServerByIdentifier($form_state->getValue('name'), $config->get('drupalAcctProvisionServer'), 'ldap_user_prov_to_drupal');
       if (!$ldap_user) {
         $form_state->setErrorByName('ldap_user_association', t(
             'User %name does not have a corresponding LDAP Entry (dn). Under LDAP options, you may NOT select "Make this an LDAP Associated Account"',
@@ -311,10 +306,12 @@ function ldap_user_form_register_form_validate($form, FormStateInterface &$form_
 
   // If trying to provision an LDAP account and one already exists, throw error.
   if ($form_state->getValue('ldap_user_create_ldap_acct')) {
-    if (!empty($config->get('ldap_user_conf.ldapEntryProvisionServer'))) {
-      $form_state->setErrorByName('ldap_user_missing_', t('The LDAP provisioning server is not set up correctly.'));
-    } else {
-      $ldap_user = $factory->getUserDataFromServerByIdentifier($form_state->getValue('name'), $config->get('ldap_user_conf.ldapEntryProvisionServer'), 'ldap_user_prov_to_ldap');
+    if (empty($config->get('ldapEntryProvisionServer'))) {
+      $form_state->setErrorByName('ldap_user_missing_', t('The provisioning server is not set up correctly.'));
+      \Drupal::logger('ldap_user')->error('No server available for provisioning to LDAP.');
+    }
+    else {
+      $ldap_user = $factory->getUserDataFromServerByIdentifier($form_state->getValue('name'), $config->get('ldapEntryProvisionServer'), 'ldap_user_prov_to_ldap');
       if ($ldap_user) {
         $form_state->setErrorByName(
           'ldap_user_create_ldap_acct', t(
@@ -360,7 +357,7 @@ function ldap_user_form_register_form_submit2(&$form, FormState $form_state) {
   }
   elseif ($ldap_user_association_set ||
     @$values['ldap_user_association'] == LdapConfiguration::$manualAccountConflictLdapAssociate ||
-    \Drupal::config('ldap_user.settings')->get('ldap_user_conf.manualAccountConflict') == LdapConfiguration::$manualAccountConflictLdapAssociate) {
+    \Drupal::config('ldap_user.settings')->get('manualAccountConflict') == LdapConfiguration::$manualAccountConflictLdapAssociate) {
     // Either LDAP provision (above) has said "associate" or the person creating
     // the account has said "associate" or the LDAP user settings says
     // "Associate manually created Drupal accounts with related LDAP Account if one exists.".

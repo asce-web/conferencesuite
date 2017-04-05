@@ -5,10 +5,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Session\AccountProxy;
-
-
-
 /**
  * Implements hook_help().
  */
@@ -85,8 +81,6 @@ function ldap_servers_ldap_attributes_needed_alter(&$attributes, $params) {
   $attributes = $factory->alterLdapAttributes($attributes, $params);
 }
 
-
-
 /**
  * Implements hook_ldap_user_attrs_list_alter().
  */
@@ -95,12 +89,12 @@ function ldap_servers_ldap_user_attrs_list_alter(&$available_user_attrs, &$param
   list($params, $available_user_attrs) = $factory->alterLdapUserAttributesList($available_user_attrs, $params);
 }
 
-
-
 /**
  * Implements hook_user_logout().
+ *
+ * @param \Drupal\Core\Session\AccountInterface $account
  */
-function ldap_servers_user_logout(AccountProxy $account) {
+function ldap_servers_user_logout($account) {
   // When the user logs out clear the LDAP cached data.
   $cache_key = 'ldap_servers:user_data:' . $account->getUsername();
   if ($cache = \Drupal::cache()->get($cache_key)) {

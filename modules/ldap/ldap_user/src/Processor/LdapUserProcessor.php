@@ -3,34 +3,40 @@
 namespace Drupal\ldap_user\Processor;
 
 use Drupal\Component\Utility\Unicode;
-use Drupal\ldap_servers\Entity\Server;
 use Drupal\ldap_servers\Processor\TokenProcessor;
 use Drupal\ldap_user\Exception\LdapBadParamsException;
 use Drupal\ldap_user\Helper\LdapConfiguration;
 use Drupal\ldap_user\Helper\SyncMappingHelper;
 use Drupal\user\Entity\User;
 
+/**
+ *
+ */
 class LdapUserProcessor {
 
   private $config;
   private $detailedWatchdog = FALSE;
 
+  /**
+   *
+   */
   public function __construct() {
-    $this->config = \Drupal::config('ldap_user.settings')->get('ldap_user_conf');
+    $this->config = \Drupal::config('ldap_user.settings')->get();
     $this->detailedWatchdog = \Drupal::config('ldap_help.settings')->get('watchdog_detail');
   }
 
   /**
    * Given a drupal account, sync to related ldap entry.
    *
-   * @param User $account.
+   * @param \Drupal\user\Entity\User $account
    *   Drupal user object.
-   * @param array $ldap_user.
-   *   current ldap data of user. @see README.developers.txt for structure.
+   * @param array $ldap_user
+   *   Current LDAP data of user. See README.developers.txt for structure.
+   * @param bool $test_query
    *
    * @return TRUE on success or FALSE on fail.
    */
-  public function syncToLdapEntry($account, $ldap_user = array()) {
+  public function syncToLdapEntry($account, $ldap_user = [], $test_query = FALSE) {
 
     if (is_object($account) && $account->id() == 1) {
       // Do not provision or sync user 1.
@@ -42,30 +48,30 @@ class LdapUserProcessor {
     if ($this->config['ldapEntryProvisionServer']) {
 
       $factory = \Drupal::service('ldap.servers');
-      /* @var Server $ldap_server */
+      /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
       $ldap_server = $factory->getServerById($this->config['ldapEntryProvisionServer']);
 
-      $params = array(
-        'direction' => LdapConfiguration::$provisioningDirectionToLDAPEntry,
-        'prov_events' => array(LdapConfiguration::$eventSyncToLdapEntry),
+      $params = [
+        'direction' => LdapConfiguration::PROVISION_TO_LDAP,
+        'prov_events' => [LdapConfiguration::$eventSyncToLdapEntry],
         'module' => 'ldap_user',
         'function' => 'syncToLdapEntry',
         'include_count' => FALSE,
-      );
+      ];
 
       try {
         $processor = new LdapUserProcessor();
         $proposed_ldap_entry = $processor->drupalUserToLdapEntry($account, $ldap_server, $params, $ldap_user);
       }
       catch (\Exception $e) {
-        \Drupal::logger('ldap_user')->error('User or server is missing.');
+        \Drupal::logger('ldap_user')->error('User or server is missing, drupalUserToLdapEntry() failed.');
         return FALSE;
       }
 
       if (is_array($proposed_ldap_entry) && isset($proposed_ldap_entry['dn'])) {
         $existing_ldap_entry = $ldap_server->dnExists($proposed_ldap_entry['dn'], 'ldap_entry');
         // This array represents attributes to be modified; not comprehensive list of attributes.
-        $attributes = array();
+        $attributes = [];
         foreach ($proposed_ldap_entry as $attr_name => $attr_values) {
           if ($attr_name != 'dn') {
             if (isset($attr_values['count'])) {
@@ -80,22 +86,32 @@ class LdapUserProcessor {
           }
         }
 
-        // //debug('modifyLdapEntry,dn=' . $proposed_ldap_entry['dn']);  //debug($attributes);
-        // stick $proposed_ldap_entry in $ldap_entries array for drupal_alter call.
-        $proposed_dn_lcase = Unicode::strtolower($proposed_ldap_entry['dn']);
-        $ldap_entries = [$proposed_dn_lcase => $attributes];
-        $context = [
-          'action' => 'update',
-          'corresponding_drupal_data' => [$proposed_dn_lcase => $attributes],
-          'corresponding_drupal_data_type' => 'user',
-        ];
-        \Drupal::moduleHandler()->alter('ldap_entry_pre_provision', $ldap_entries, $ldap_server, $context);
-        // Remove altered $proposed_ldap_entry from $ldap_entries array.
-        $attributes = $ldap_entries[$proposed_dn_lcase];
-        $result = $ldap_server->modifyLdapEntry($proposed_ldap_entry['dn'], $attributes);
+        if ($test_query) {
+          $proposed_ldap_entry = $attributes;
+          $result = [
+            'proposed' => $proposed_ldap_entry,
+            'server' => $ldap_server,
+          ];
+        }
+        else {
+          // //debug('modifyLdapEntry,dn=' . $proposed_ldap_entry['dn']);  //debug($attributes);
+          // stick $proposed_ldap_entry in $ldap_entries array for drupal_alter call.
+          $proposed_dn_lcase = Unicode::strtolower($proposed_ldap_entry['dn']);
+          $ldap_entries = [$proposed_dn_lcase => $attributes];
+          $context = [
+            'action' => 'update',
+            'corresponding_drupal_data' => [$proposed_dn_lcase => $attributes],
+            'corresponding_drupal_data_type' => 'user',
+          ];
+          \Drupal::moduleHandler()->alter('ldap_entry_pre_provision', $ldap_entries, $ldap_server, $context);
+          // Remove altered $proposed_ldap_entry from $ldap_entries array.
+          $attributes = $ldap_entries[$proposed_dn_lcase];
+          $result = $ldap_server->modifyLdapEntry($proposed_ldap_entry['dn'], $attributes);
 
-        if ($result) {
-          \Drupal::moduleHandler()->invokeAll('ldap_entry_post_provision', [$ldap_entries, $ldap_server, $context]);
+          if ($result) {
+            \Drupal::moduleHandler()->invokeAll('ldap_entry_post_provision', [$ldap_entries, $ldap_server, $context]);
+          }
+
         }
 
       }
@@ -106,18 +122,14 @@ class LdapUserProcessor {
     }
 
     $tokens = [
-      '%dn' => isset($result['proposed']['dn']) ? $result['proposed']['dn'] : NULL,
+      '%dn' => isset($proposed_ldap_entry['dn']) ? $proposed_ldap_entry['dn'] : 'null',
       '%sid' => $this->config['ldapEntryProvisionServer'],
       '%username' => $account->getAccountName(),
-      '%uid' => (!method_exists($account,'id') || empty($account->id())) ? '' : $account->id(),
+      '%uid' => (!method_exists($account, 'id') || empty($account->id())) ? '' : $account->id(),
+      '%action' => $result ? t('synced') : t('not synced'),
     ];
 
-    if ($result) {
-      \Drupal::logger('ldap_user')->info('LDAP entry on server %sid synced dn=%dn. username=%username, uid=%uid', $tokens);
-    }
-    else {
-      \Drupal::logger('ldap_user')->error('LDAP entry on server %sid not synced because error. username=%username, uid=%uid', $tokens);
-    }
+    \Drupal::logger('ldap_user')->info('LDAP entry on server %sid %action dn=%dn for username=%username, uid=%uid', $tokens);
 
     return $result;
 
@@ -126,7 +138,7 @@ class LdapUserProcessor {
   /**
    * Populate ldap entry array for provisioning.
    *
-   * @param User $account
+   * @param \Drupal\user\Entity\User $account
    *   drupal account.
    * @param object $ldap_server
    * @param array $params
@@ -135,7 +147,7 @@ class LdapUserProcessor {
    *   'module' => module calling function, e.g. 'ldap_user'
    *   'function' => function calling function, e.g. 'provisionLdapEntry'
    *   'include_count' => should 'count' array key be included
-   *   'direction' => LdapConfiguration::$provisioningDirectionToLDAPEntry || LdapConfiguration::$provisioningDirectionToDrupalUser.
+   *   'direction' => LdapConfiguration::PROVISION_TO_LDAP || LdapConfiguration::PROVISION_TO_DRUPAL.
    * @param null $ldap_user_entry
    *
    * @return array (ldap entry, $result)
@@ -146,7 +158,7 @@ class LdapUserProcessor {
   public function drupalUserToLdapEntry(User $account, $ldap_server, $params, $ldap_user_entry = NULL) {
     $provision = (isset($params['function']) && $params['function'] == 'provisionLdapEntry');
     if (!$ldap_user_entry) {
-      $ldap_user_entry = array();
+      $ldap_user_entry = [];
     }
 
     if (!is_object($account) || !is_object($ldap_server)) {
@@ -155,7 +167,7 @@ class LdapUserProcessor {
 
     $include_count = (isset($params['include_count']) && $params['include_count']);
 
-    $direction = isset($params['direction']) ? $params['direction'] : LdapConfiguration::$provisioningDirectionAll;
+    $direction = isset($params['direction']) ? $params['direction'] : LdapConfiguration::PROVISION_TO_ALL;
     $prov_events = empty($params['prov_events']) ? LdapConfiguration::getAllEvents() : $params['prov_events'];
 
     $tokenHelper = new TokenProcessor();
@@ -170,7 +182,7 @@ class LdapUserProcessor {
         continue;
       }
 
-      $synced = $syncMapper->isSynced($field_key, $params['prov_events'], LdapConfiguration::$provisioningDirectionToLDAPEntry);
+      $synced = $syncMapper->isSynced($field_key, $params['prov_events'], LdapConfiguration::PROVISION_TO_LDAP);
       if ($synced) {
         $token = ($field_detail['user_attr'] == 'user_tokens') ? $field_detail['user_tokens'] : $field_detail['user_attr'];
         $value = $tokenHelper->tokenReplace($account, $token, 'user_account');
@@ -188,7 +200,7 @@ class LdapUserProcessor {
         }
         elseif ($value) {
           if (!isset($ldap_user_entry[$ldap_attr_name]) || !is_array($ldap_user_entry[$ldap_attr_name])) {
-            $ldap_user_entry[$ldap_attr_name] = array();
+            $ldap_user_entry[$ldap_attr_name] = [];
           }
           $ldap_user_entry[$ldap_attr_name][$ordinal] = $value;
           if ($include_count) {
@@ -208,10 +220,10 @@ class LdapUserProcessor {
   /**
    * Given a drupal account, provision an ldap entry if none exists.  if one exists do nothing.
    *
-   * @param object $account
+   * @param \Drupal\user\Entity\User $account
    *   drupal account object with minimum of name property.
    * @param array $ldap_user
-   *   as prepopulated ldap entry.  usually not provided.
+   *   as pre-populated ldap entry.  usually not provided.
    *
    * @return array
    *   Format:
@@ -223,13 +235,13 @@ class LdapUserProcessor {
    */
   public function provisionLdapEntry($account, $ldap_user = NULL, $test_query = FALSE) {
 
-    $result = array(
+    $result = [
       'status' => NULL,
       'ldap_server' => NULL,
       'proposed' => NULL,
       'existing' => NULL,
       'description' => NULL,
-    );
+    ];
 
     if (is_scalar($account)) {
       $account = user_load_by_name($account);
@@ -248,16 +260,16 @@ class LdapUserProcessor {
       return $result;
     }
 
-    if (!$this->config['ldapEntryProvisionServer'] || !$this->config['ldapEntryProvisionServer']) {
+    if (!$this->config['ldapEntryProvisionServer']) {
       $result['status'] = 'fail';
       $result['error_description'] = 'no provisioning server enabled';
       return $result;
     }
     $factory = \Drupal::service('ldap.servers');
-    /* @var Server $ldap_server */
+    /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
     $ldap_server = $factory->getServerById($this->config['ldapEntryProvisionServer']);
     $params = [
-      'direction' => LdapConfiguration::$provisioningDirectionToLDAPEntry,
+      'direction' => LdapConfiguration::PROVISION_TO_LDAP,
       'prov_events' => [LdapConfiguration::$eventCreateLdapEntry],
       'module' => 'ldap_user',
       'function' => 'provisionLdapEntry',
@@ -268,7 +280,7 @@ class LdapUserProcessor {
       $proposed_ldap_entry = $this->drupalUserToLdapEntry($account, $ldap_server, $params, $ldap_user);
     }
     catch (\Exception $e) {
-      \Drupal::logger('ldap_user')->error('User or server is missing.');
+      \Drupal::logger('ldap_user')->error('User or server is missing during LDAP provisioning.');
       return [
         'status' => 'fail',
         'ldap_server' => $ldap_server,
@@ -302,12 +314,12 @@ class LdapUserProcessor {
     }
     else {
       // Stick $proposed_ldap_entry in $ldap_entries array for drupal_alter call.
-      $ldap_entries = array($proposed_dn_lcase => $proposed_ldap_entry);
-      $context = array(
+      $ldap_entries = [$proposed_dn_lcase => $proposed_ldap_entry];
+      $context = [
         'action' => 'add',
-        'corresponding_drupal_data' => array($proposed_dn_lcase => $account),
+        'corresponding_drupal_data' => [$proposed_dn_lcase => $account],
         'corresponding_drupal_data_type' => 'user',
-      );
+      ];
       \Drupal::moduleHandler()->alter('ldap_entry_pre_provision', $ldap_entries, $ldap_server, $context);
       // Remove altered $proposed_ldap_entry from $ldap_entries array.
       $proposed_ldap_entry = $ldap_entries[$proposed_dn_lcase];
@@ -325,22 +337,24 @@ class LdapUserProcessor {
         // Need to store <sid>|<dn> in ldap_user_prov_entries field, which may contain more than one.
         $ldap_user_prov_entry = $ldap_server->id() . '|' . $proposed_ldap_entry['dn'];
         if (NULL !== $account->get('ldap_user_prov_entries')) {
-          $account->set('ldap_user_prov_entries', array());
+          $account->set('ldap_user_prov_entries', []);
         }
         $ldap_user_prov_entry_exists = FALSE;
-        foreach ($account->get('ldap_user_prov_entries')->value as $i => $field_value_instance) {
-          if ($field_value_instance == $ldap_user_prov_entry) {
-            $ldap_user_prov_entry_exists = TRUE;
+        if ($account->get('ldap_user_prov_entries')->value) {
+          foreach ($account->get('ldap_user_prov_entries')->value as $i => $field_value_instance) {
+            if ($field_value_instance == $ldap_user_prov_entry) {
+              $ldap_user_prov_entry_exists = TRUE;
+            }
           }
         }
         if (!$ldap_user_prov_entry_exists) {
           // @TODO Serialise?
           $prov_entries = $account->get('ldap_user_prov_entries')->value;
-          $prov_entries[] = array(
+          $prov_entries[] = [
             'value' => $ldap_user_prov_entry,
             'format' => NULL,
             'save_value' => $ldap_user_prov_entry,
-          );
+          ];
           $account->set('ldap_user_prov_entries', $prov_entries);
           $account->save();
         }
@@ -372,7 +386,7 @@ class LdapUserProcessor {
       }
       elseif ($result['status'] == 'conflict') {
         if ($this->detailedWatchdog) {
-          \Drupal::logger('ldap_user')->warning('LDAP entry on server %sid not created because of existing ldap entry. %description. username=%username, uid=%uid', $tokens);
+          \Drupal::logger('ldap_user')->warning('LDAP entry on server %sid not created because of existing LDAP entry. %description. username=%username, uid=%uid', $tokens);
         }
       }
       elseif ($result['status'] == 'fail') {
@@ -382,56 +396,56 @@ class LdapUserProcessor {
     return $result;
   }
 
-
   /**
-   * Given a drupal account, delete ldap entry that was provisioned based on it
-   *   normally this will be 0 or 1 entry, but the ldap_user_provisioned_ldap_entries
-   *   field attached to the user entity track each ldap entry provisioned.
+   * Delete a provisioned LDAP entry.
    *
-   * @param User $account
+   * Given a drupal account, delete LDAP entry that was provisioned based on it
+   * normally this will be 0 or 1 entry, but the ldap_user_prov_entries field
+   * attached to the user entity track each LDAP entry provisioned.
+   *
+   * @param \Drupal\user\Entity\User $account
    *   Drupal user account.
    *
-   * @return TRUE or FALSE.  FALSE indicates failed or action not enabled in ldap user configuration
+   * @return bool
+   *   FALSE indicates failed or action not enabled in LDAP user configuration.
    */
   public function deleteProvisionedLdapEntries($account) {
     // Determine server that is associated with user.
-    $boolean_result = FALSE;
-    $language = ($account->language) ? $account->language : 'und';
-    if (isset($account->ldap_user_prov_entries[$language][0])) {
-      foreach ($account->ldap_user_prov_entries[$language] as $i => $field_instance) {
-        $parts = explode('|', $field_instance['value']);
-        if (count($parts) == 2) {
-
-          list($sid, $dn) = $parts;
-          $factory = \Drupal::service('ldap.servers');
-          $ldap_server = $factory->getServerById($sid);
-          if (is_object($ldap_server) && $dn) {
-            /* @var Server $ldap_server */
-            $boolean_result = $ldap_server->delete($dn);
-            $tokens = array('%sid' => $sid, '%dn' => $dn, '%username' => $account->getUsername(), '%uid' => $account->id());
-            if ($boolean_result) {
-              \Drupal::logger('ldap_user')->info('LDAP entry on server %sid deleted dn=%dn. username=%username, uid=%uid', $tokens);
-            }
-            else {
-              \Drupal::logger('ldap_user')->error('LDAP entry on server %sid not deleted because error. username=%username, uid=%uid', $tokens);
-            }
+    $result = FALSE;
+    $entries = $account->get('ldap_user_prov_entries')->getValue();
+    foreach ($entries as $i => $entry) {
+      $parts = explode('|', $entry['value']);
+      if (count($parts) == 2) {
+        list($sid, $dn) = $parts;
+        $factory = \Drupal::service('ldap.servers');
+        $ldap_server = $factory->getServerById($sid);
+        if (is_object($ldap_server) && $dn) {
+          /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
+          $result = $ldap_server->deleteLdapEntry($dn);
+          $tokens = ['%sid' => $sid, '%dn' => $dn, '%username' => $account->getUsername(), '%uid' => $account->id()];
+          if ($result) {
+            \Drupal::logger('ldap_user')->info('LDAP entry on server %sid deleted dn=%dn. username=%username, uid=%uid', $tokens);
           }
           else {
-            $boolean_result = FALSE;
+            \Drupal::logger('ldap_user')->error('LDAP entry on server %sid not deleted because error. username=%username, uid=%uid', $tokens);
           }
+        }
+        else {
+          $result = FALSE;
         }
       }
     }
-    return $boolean_result;
-
+    return $result;
   }
 
   /**
-   * Given a drupal account, find the related ldap entry.
+   * Given a drupal account, find the related LDAP entry.
    *
-   * @param drupal user object $account
+   * @param \Drupal\user\Entity\User $account
+   * @param null $prov_events
    *
-   * @return FALSE or ldap entry
+   * @return bool|array
+   *   False or LDAP entry
    */
   public function getProvisionRelatedLdapEntry($account, $prov_events = NULL) {
     if (!$prov_events) {
@@ -443,10 +457,10 @@ class LdapUserProcessor {
     }
     // $user_entity->ldap_user_prov_entries,.
     $factory = \Drupal::service('ldap.servers');
-    /* @var Server $ldap_server */
+    /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
     $ldap_server = $factory->getServerById($sid);
     $params = [
-      'direction' => LdapConfiguration::$provisioningDirectionToLDAPEntry,
+      'direction' => LdapConfiguration::PROVISION_TO_LDAP,
       'prov_events' => $prov_events,
       'module' => 'ldap_user',
       'function' => 'getProvisionRelatedLdapEntry',
@@ -457,7 +471,7 @@ class LdapUserProcessor {
       $proposed_ldap_entry = $this->drupalUserToLdapEntry($account, $ldap_server, $params);
     }
     catch (\Exception $e) {
-      \Drupal::logger('ldap_user')->error('User or server is missing.');
+      \Drupal::logger('ldap_user')->error('User or server is missing locally for fetching ProvisionRelatedLdapEntry.');
       return FALSE;
     }
 
@@ -465,10 +479,9 @@ class LdapUserProcessor {
       return FALSE;
     }
 
-    $ldap_entry = $ldap_server->dnExists($proposed_ldap_entry['dn'], 'ldap_entry', array());
+    $ldap_entry = $ldap_server->dnExists($proposed_ldap_entry['dn'], 'ldap_entry', []);
     return $ldap_entry;
 
   }
-
 
 }

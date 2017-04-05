@@ -20,7 +20,7 @@
  *   'configurable_to_ldap' =>  0 | 1, is this configurable?
  *   'user_tokens' => <user_tokens>
  *   'convert' => 1 | 0 convert from binary to string for storage and comparison purposes
- *   'direction' => LdapConfiguration::$provisioningDirectionToDrupalUser or LdapConfiguration::$provisioningDirectionToLDAPEntry leave empty if configurable
+ *   'direction' => LdapConfiguration::PROVISION_TO_DRUPAL or LdapConfiguration::PROVISION_TO_LDAP leave empty if configurable
  *   'config_module' => module providing syncing configuration.
  *   'prov_module' => module providing actual syncing of attributes.
  *   'prov_events' => array( )
@@ -48,16 +48,15 @@ function hook_ldap_user_attrs_list_alter(&$available_user_attrs, &$params) {
  * Allow modules to alter the user object in the context of an ldap entry
  * during synchronization.
  *
- * @param array $edit
+ * @param User $account
  *   The edit array (see hook_user_insert). Make changes to this object as
  *   required.
  * @param array $ldap_user,
- *   for structure @see LdapServer::userUserNameToExistingLdapEntry()
+ *   For structure @see LdapServer::userUserNameToExistingLdapEntry()
  *   Array, the ldap user object relating to the drupal user.
- * @param object $ldap_server
- *   The LdapServer object from which the ldap entry was fetched.
- * @param int $prov_event
+ * @param array $context
+ *   Contains ldap_server and provisioning events.
  */
-function hook_ldap_user_edit_user_alter(&$edit, &$ldap_user, $ldap_server, $prov_event) {
-  $edit['myfield'] = $ldap_server->getAttributeValue($ldap_user, 'myfield');
+function hook_ldap_user_edit_user_alter(&$account, &$ldap_user, $context) {
+  $account->set('myfield', $context['ldap_server']->getAttributeValue($ldap_user, 'myfield'));
 }

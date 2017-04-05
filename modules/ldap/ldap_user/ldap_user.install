@@ -8,6 +8,7 @@
 use Drupal\Core\Url;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Utility\UpdateException;
+use Drupal\ldap_user\Helper\LdapConfiguration;
 
 /**
  * Implements hook_install().
@@ -17,7 +18,6 @@ function ldap_user_install() {
   // // make ldap user weight slightly less than other ldap modules so it can load
   // // user's associated ldap data first and save on ldap queries.
   // db_query("UPDATE {system} SET weight = -1 WHERE name = 'ldap_user'");.
-
   \Drupal::service('router.builder')->rebuild();
 
 }
@@ -29,7 +29,7 @@ function ldap_user_update_8301(&$sandbox) {
   // Check for externalauth module (which has been a dependency for ages).
   if (!\Drupal::moduleHandler()->moduleExists('externalauth')) {
     $external_link = Url::fromUri('https://drupal.org/project/externalauth');
-    $message = t('Please install the 8301 %external_link module.', array('%external_link' => \Drupal::l('External Auth', $external_link)));
+    $message = t('Please install the 8301 %external_link module.', ['%external_link' => \Drupal::l('External Auth', $external_link)]);
     drupal_set_message($message, "error");
     throw new UpdateException($message);
   }
@@ -42,7 +42,7 @@ function ldap_user_update_8301(&$sandbox) {
   $limit = 25;
 
   $result = db_select('ldap_user_identities')
-    ->fields('ldap_user_identities', array('aid', 'uid', 'identifier'))
+    ->fields('ldap_user_identities', ['aid', 'uid', 'identifier'])
     ->condition('aid', $sandbox['current_id'], '>')
     ->orderBy('aid')
     ->range(0, $limit)
@@ -56,7 +56,7 @@ function ldap_user_update_8301(&$sandbox) {
     $authmap->save($account, 'ldap_user', $identity->identifier);
 
     // Delete the row if successful.
-    db_query("DELETE FROM {ldap_user_identities} WHERE aid = :aid", array(':aid' => $identity->aid));
+    db_query("DELETE FROM {ldap_user_identities} WHERE aid = :aid", [':aid' => $identity->aid]);
 
     $sandbox['results'][] = $identity->aid . ' : ' . SafeMarkup::checkPlain($identity->identifier);
     $sandbox['progress']++;
@@ -75,7 +75,7 @@ function ldap_user_update_8302(&$sandbox) {
   // Check for externalauth module (which has been a dependency for ages).
   if (!\Drupal::moduleHandler()->moduleExists('externalauth')) {
     $external_link = Url::fromUri('https://drupal.org/project/externalauth');
-    $message = t('Please install the 8301 %external_link module.', array('%external_link' => \Drupal::l('External Auth', $external_link)));
+    $message = t('Please install the 8301 %external_link module.', ['%external_link' => \Drupal::l('External Auth', $external_link)]);
     drupal_set_message($message, "error");
     throw new UpdateException($message);
   }
@@ -100,4 +100,91 @@ function ldap_user_update_8303() {
     $config->clear('ldap_user_conf.ldapUserSynchMappings');
     $config->save(TRUE);
   }
+}
+
+/**
+ * Removes the ldap_user_conf prefix.
+ */
+function ldap_user_update_8304() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('ldap_user.settings');
+  $data = $config->get('ldap_user_conf');
+  $config->clear('ldap_user_conf');
+  $config->setData($data);
+  $config->save(TRUE);
+}
+
+/**
+ * Converts unreadable integers to strings for LDAP direction.
+ */
+function ldap_user_update_8305() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('ldap_user.settings');
+  $mappings = $config->get('ldapUserSyncMappings');
+  foreach ($mappings as $direction => $fields) {
+    foreach ($fields as $key => $field) {
+      if (isset($field['direction']))  {
+        if ($field['direction'] == 1 || $field['direction'] == '1') {
+          $mappings[$direction][$key]['direction'] = LdapConfiguration::PROVISION_TO_DRUPAL;
+        }
+        else {
+          $mappings[$direction][$key]['direction']  = LdapConfiguration::PROVISION_TO_LDAP;
+        }
+      }
+    }
+  }
+
+  $keyedMappings[LdapConfiguration::PROVISION_TO_DRUPAL] = $mappings[1];
+  $keyedMappings[LdapConfiguration::PROVISION_TO_LDAP] = $mappings[2];
+  $config->set('ldapUserSyncMappings', $keyedMappings);
+  $config->save();
+}
+
+/**
+ * Converts unreadable integers to strings for LDAP provision triggers.
+ */
+function ldap_user_update_8306() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('ldap_user.settings');
+  $existingDrupalTriggers = $config->get('drupalAcctProvisionTriggers');
+  $newDrupalTriggers = [];
+  foreach ($existingDrupalTriggers as $index => $trigger) {
+    switch ($index) {
+      case 1:
+        $newDrupalTriggers[LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_UPDATE_CREATE] = $trigger ?
+          LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_UPDATE_CREATE : '0';
+        break;
+      case 2:
+        $newDrupalTriggers[LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_AUTHENTICATION] = $trigger ?
+          LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_AUTHENTICATION : '0';
+        break;
+      case 3:
+        $newDrupalTriggers[LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_ON_MANUAL_CREATION] = $trigger ?
+          LdapConfiguration::PROVISION_DRUPAL_USER_ON_USER_ON_MANUAL_CREATION : '0';
+        break;
+    }
+  }
+  $config->set('drupalAcctProvisionTriggers', $newDrupalTriggers);
+
+  $existingLdapTriggers = $config->get('ldapEntryProvisionTriggers');
+  $newLdapTriggers = [];
+  foreach ($existingLdapTriggers as $index => $trigger) {
+    switch ($index) {
+      case 6:
+        $newLdapTriggers[LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_UPDATE_CREATE] = $trigger ?
+          LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_UPDATE_CREATE : '0';
+        break;
+      case 7:
+        $newLdapTriggers[LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_AUTHENTICATION] = $trigger ?
+          LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_AUTHENTICATION : '0';
+        break;
+      case 8:
+        $newLdapTriggers[LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_DELETE] = $trigger?
+          LdapConfiguration::PROVISION_LDAP_ENTRY_ON_USER_ON_USER_DELETE : '0';
+        break;
+    }
+  }
+  $config->set('ldapEntryProvisionTriggers', $newLdapTriggers);
+
+  $config->save();
 }

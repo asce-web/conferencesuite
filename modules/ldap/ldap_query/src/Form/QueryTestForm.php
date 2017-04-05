@@ -6,7 +6,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\ldap_query\Controller\QueryController;
 use Drupal\ldap_servers\Form\ServerTestForm;
-use Drupal\ldap_servers\MassageFunctions;
+use Drupal\ldap_servers\Helper\MassageAttributes;
 
 /**
  *
@@ -36,7 +36,7 @@ class QueryTestForm extends FormBase {
       $data = $controller->query($ldap_query_entity);
 
       $form['result_count'] = [
-        '#markup' => '<h2>' . t('@count results', array('@count' => $data['count'])) . '</h2>',
+        '#markup' => '<h2>' . t('@count results', ['@count' => $data['count']]) . '</h2>',
       ];
       unset($data['count']);
 
@@ -61,17 +61,17 @@ class QueryTestForm extends FormBase {
       foreach ($data as $i => $entry) {
         $row = [$entry['dn']];
         foreach ($attributes as $j => $attribute_data) {
-          $massager = new MassageFunctions();
-          $processed_attribute_name = $massager->massage_text($attribute_data, 'attr_name', $massager::$query_array);
-          if (!isset($entry[$processed_attribute_name])) {
+          $massager = new MassageAttributes();
+          $processedAttributeName = $massager->processAttributeName($attribute_data);
+          if (!isset($entry[$processedAttributeName])) {
             $row[] = 'No data';
           }
-          elseif (is_array($entry[$processed_attribute_name])) {
-            unset($entry[$processed_attribute_name]['count']);
-            $row[] = ServerTestForm::binaryCheck(join("\n", $entry[$processed_attribute_name]));
+          elseif (is_array($entry[$processedAttributeName])) {
+            unset($entry[$processedAttributeName]['count']);
+            $row[] = ServerTestForm::binaryCheck(join("\n", $entry[$processedAttributeName]));
           }
           else {
-            $row[] = ServerTestForm::binaryCheck($entry[$processed_attribute_name]);
+            $row[] = ServerTestForm::binaryCheck($entry[$processedAttributeName]);
           }
         }
         unset($entry['count']);
@@ -98,7 +98,6 @@ class QueryTestForm extends FormBase {
    *
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
 
   }
 
