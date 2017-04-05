@@ -7,6 +7,8 @@ libraries:
 regions:
   header: Header
   site_branding: Site Branding
+  hero: Hero Image
   content: Content
   sidebar: Sidebar
+  supporters: Supporters
   footer: Footer

@@ -15,7 +15,7 @@
         </a>
         <div class="o-Flex__Item o-SideCol c-TopImg">
           <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
-          <div class="c-NavBar c-NavBar--contrib">
+          <div class="o-Flex c-NavBar c-NavBar--contrib">
             <!-- change this div to a ul.o-List later -->
             {{ page.contributors_menu }}
           </div>
@@ -40,11 +40,14 @@
       </div>
     </nav>
   </header>
-  <main class="container-fluid">
-    <div class="o-Flex o-Constrain">
-      <div class="o-Flex__Item o-MainCol">{{ page.content }}</div>
-      <div class="o-Flex__Item o-SideCol">{{ page.sidebar }}</div>
+  <main class="o-Flex o-Constrain -xd-c-nM">
+    <div class="o-Flex__Item o-MainCol">
+      {{ page.hero }}
+      <section class="h-Spaced">
+        {{ page.content }}
+      </section>
     </div>
+    <div class="o-Flex__Item o-SideCol -ph-2">{{ page.sidebar }}</div>
   </main>
   <div id="footer" class="footer container-fluid">
     <div class="row year-tabs">
