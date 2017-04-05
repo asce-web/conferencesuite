@@ -63,18 +63,53 @@
       </div>
     </aside>
   </div>
-  <div id="footer" class="footer container-fluid">
-    <div class="row year-tabs">
-      <div class="container">
-        <ul class="tab-buttons pull-right list-unstyled">
-          <li><a data-toggle="tab" href="#yearprev" class="tab-button">2016</a></li>
-          <li class="active"><a data-toggle="tab" href="#yearpresent" class="tab-button">2017</a></li>
-          <li><a data-toggle="tab" href="#yearnext" class="tab-button">2018</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="tab-content">
-      <div id="yearprev" class="tab-pane">
+  <footer class="footer">
+    <dl class="o-Flex o-Tabs">
+      <!-- NOTE: 'current' displayed first for accessibility -->
+      <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
+        <label class="h-Block">
+          <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="0" checked=""/>
+          2017
+        </label>
+      </dt>
+      <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
+        <div class="row title">
+          <div class="container">
+            <div class="hidden-xs pull-left">
+              <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+            </div>
+            <h2>{{ page_current_conference_name }}</h2>
+          </div>
+        </div>
+        <div class="row details">
+          <div class="container">
+            <div class="col-container">
+              <div class="logo-col text-center">
+                <a href="{{front_page}}" title="Home" rel="home">
+                  <img src="{{ site_logo }}" alt="Home" class="conference-logo" />
+                </a>
+              </div>
+              {% if second_logo %}
+                <div class="logo-col text-center">
+                  <a href="" title="Home" rel="home">
+                    <img src="" alt="Home"  class="conference-logo" />
+                  </a>
+                </div>
+              {% endif %}
+              <div class="auto-col">
+                <?php print render($page['footer']); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dd>
+      <dt class="o-Flex__Item o-Tabs__Tab [ js-xo-_1 ]" id="tab-prev">
+        <label class="h-Block">
+          <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="1"/>
+          2016
+        </label>
+      </dt>
+      <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-prev">
         <div class="row title">
           <div class="container">
             <div class="hidden-xs pull-left">
@@ -107,40 +142,14 @@
             </div>
           </div>
         </div>
-      </div>
-      <div id="yearpresent" class="tab-pane active">
-        <div class="row title">
-          <div class="container">
-            <div class="hidden-xs pull-left">
-              <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
-            </div>
-            <h2>{{ page_current_conference_name }}</h2>
-          </div>
-        </div>
-        <div class="row details">
-          <div class="container">
-            <div class="col-container">
-              <div class="logo-col text-center">
-                <a href="{{front_page}}" title="Home" rel="home">
-                  <img src="{{ site_logo }}" alt="Home" class="conference-logo" />
-                </a>
-              </div>
-              {% if second_logo %}
-                <div class="logo-col text-center">
-                  <a href="" title="Home" rel="home">
-                    <img src="" alt="Home"  class="conference-logo" />
-                  </a>
-                </div>
-              {% endif %}
-              <div class="auto-col">
-                <?php print render($page['footer']); ?>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php if ($next_conf_toggle): ?>
-        <div id="yearnext" class="tab-pane">
+      </dd>
+      <dt class="o-Flex__Item o-Tabs__Tab" id="tab-next">
+        <label class="h-Block">
+          <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="2"/>
+          2018
+        </label>
+      </dt>
+      <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-next">
           <div class="row title">
             <div class="container">
               <div class="hidden-xs pull-left">
@@ -184,9 +193,10 @@
               </div>
             </div>
           </div>
-        </div>
-      <?php endif; ?>
-    </div>
+      </dd>
+    </dl>
+  </footer>
+  <div id="footer" class="footer container-fluid">
     <div class="visible-xs mobile-nav navigation">
       <a href="/" aria-label="home"><span class="ic home"></span></a>
       <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
