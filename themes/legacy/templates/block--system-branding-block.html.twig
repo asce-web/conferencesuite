@@ -18,7 +18,12 @@
 {% block content %}
   {% if site_logo %}
     <div class="o-Flex__Item c-HomeLink__Logo">
-      <img src="{{ site_logo }}" alt="Home" class="c-ConfLogo"/>
+      <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
+    </div>
+  {% endif %}
+  {% if site_second_logo %}
+    <div class="o-Flex__Item c-HomeLink__Logo">
+      <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
     </div>
   {% endif %}
   <div class="o-Flex__Item c-HomeLink__Titles">
