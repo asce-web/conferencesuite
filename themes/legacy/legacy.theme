@@ -7,9 +7,9 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_current_name']      = theme_get_setting('current_info_name');
   $variables['page_current_theme']     = theme_get_setting('current_info_theme');
   $variables['page_current_blurb']     = theme_get_setting('current_info_blurb');
-  $variables['page_current_startdate'] = theme_get_setting('current_conference_start_date');
-  $variables['page_prev_startdate']    = theme_get_setting('current_conference_start_date');
-  $variables['page_next_startdate']    = theme_get_setting('current_conference_start_date');
+  $variables['page_current_startdate'] = theme_get_setting('current_dates_start');
+  $variables['page_prev_startdate']    = theme_get_setting('prev_dates_start');
+  $variables['page_next_startdate']    = theme_get_setting('next_dates_start');
 }
 
 /**
