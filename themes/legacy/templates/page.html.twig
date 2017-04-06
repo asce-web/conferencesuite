@@ -14,7 +14,7 @@
           {{ page.site_branding }}
         </a>
         <div class="o-Flex__Item o-SideCol c-TopImg">
-          <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+          <span class="c-YearBadge" role="none">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
           <div class="o-Flex c-NavBar c-NavBar--contrib">
             <!-- change this div to a ul.o-List later -->
             {{ page.contributors_menu }}
@@ -69,18 +69,14 @@
       <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
         <label class="h-Block">
           <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_current_startdate|date('Y') }}" checked=""/>
-          {{ page_current_startdate|date('Y') }}
+          <time class="c-YearBadge c-YearBadge--tab"
+            datetime="{{ page_current_startdate|date('Y') }}"
+            aria-label="{{ page_current_startdate|date('Y') }}"
+          >{{ (page_current_startdate|date('Y'))[2:] }}</time>
         </label>
       </dt>
       <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
-        <div class="o-Flex">
-          <div class="o-Flex__Item">
-            <span class="c-YearBadge">{{ (page_current_startdate|date('Y'))[2:] }}</span>
-          </div>
-          <div class="o-Flex__Item">
-            <h1>{{ page_current_name }}</h1>
-          </div>
-        </div>
+        <h1 class="-mb-2 -ta-c">{{ page_current_name }}</h1>
         <div class="o-Flex">
           {% if site_logo %}
             <div class="o-Flex__Item o-Flex__Item--siteLogo">
@@ -100,18 +96,14 @@
       <dt class="o-Flex__Item o-Tabs__Tab [ js-xo-_1 ]" id="tab-prev">
         <label class="h-Block">
           <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_prev_startdate|date('Y') }}"/>
-          {{ page_prev_startdate|date('Y') }}
+          <time class="c-YearBadge c-YearBadge--tab"
+            datetime="{{ page_prev_startdate|date('Y') }}"
+            aria-label="{{ page_prev_startdate|date('Y') }}"
+          >{{ (page_prev_startdate|date('Y'))[2:] }}</time>
         </label>
       </dt>
       <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-prev">
-        <div class="o-Flex">
-          <div class="o-Flex__Item">
-            <span class="c-YearBadge">{{ (page_prev_startdate|date('Y'))[2:] }}</span>
-          </div>
-          <div class="o-Flex__Item">
-            <h1>{{ page_prev_name }}</h1>
-          </div>
-        </div>
+        <h1 class="-mb-2 -ta-c">{{ page_prev_name }}</h1>
         <div class="o-Flex">
           {% if site_logo %}
             <div class="o-Flex__Item o-Flex__Item--siteLogo">
@@ -150,18 +142,14 @@
       <dt class="o-Flex__Item o-Tabs__Tab" id="tab-next">
         <label class="h-Block">
           <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_next_startdate|date('Y') }}"/>
-          {{ page_next_startdate|date('Y') }}
+          <time class="c-YearBadge c-YearBadge--tab"
+            datetime="{{ page_next_startdate|date('Y') }}"
+            aria-label="{{ page_next_startdate|date('Y') }}"
+          >{{ (page_next_startdate|date('Y'))[2:] }}</time>
         </label>
       </dt>
       <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-next">
-        <div class="o-Flex">
-          <div class="o-Flex__Item">
-            <span class="c-YearBadge">{{ (page_next_startdate|date('Y'))[2:] }}</span>
-          </div>
-          <div class="o-Flex__Item">
-            <h1>{{ page_next_name }}</h1>
-          </div>
-        </div>
+        <h1 class="-mb-2 -ta-c">{{ page_next_name }}</h1>
         <div class="o-Flex">
           {% if site_second_logo %}
             <div class="o-Flex__Item o-Flex__Item--siteLogo">
