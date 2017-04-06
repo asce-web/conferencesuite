@@ -10,7 +10,7 @@
     </div>
     <div class="c-Mast">
       <div class="o-Flex o-Constrain">
-        <a class="o-Flex__Item o-Flex o-MainCol c-HomeLink" href="{{ path('<front>') }}" rel="home">
+        <a class="o-Flex__Item o-Flex o-MainCol o-HomeLink" href="{{ path('<front>') }}" rel="home">
           {{ page.site_branding }}
         </a>
         <div class="o-Flex__Item o-SideCol c-TopImg">
@@ -83,12 +83,12 @@
         </div>
         <div class="o-Flex">
           {% if site_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
             </div>
           {% endif %}
           {% if site_second_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
             </div>
           {% endif %}
@@ -114,12 +114,12 @@
         </div>
         <div class="o-Flex">
           {% if site_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
             </div>
           {% endif %}
           {% if site_second_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
             </div>
           {% endif %}
@@ -164,12 +164,12 @@
         </div>
         <div class="o-Flex">
           {% if site_second_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
             </div>
           {% endif %}
           {% if second_logo %}
-            <div class="o-Flex__Item c-HomeLink__Logo">
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
               <img class="c-ConfLogo" src="{{ second_logo }}" alt="Home"/>
             </div>
           {% endif %}
