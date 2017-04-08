@@ -16,6 +16,7 @@
  */
 #}
 {% block content %}
+<a class="o-Flex__Item o-Flex o-MainCol o-HomeLink" href="{{ path('<front>') }}" rel="home">
   {% if site_logo %}
     <div class="o-Flex__Item o-Flex__Item--siteLogo">
       <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
@@ -49,4 +50,5 @@
       </time>
     </p>
   </div>
+</a>
 {% endblock %}
