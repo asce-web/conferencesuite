@@ -1,23 +1,25 @@
-uuid: 44d29e8a-e06a-45a7-ba37-88480d2847ea
+uuid: c17e076a-6f0a-46f5-bee4-f0604079ff49
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: default
-label: Default
+  enforced:
+    module:
+      - chewie
+id: basic_page
+label: 'Basic page'
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  5fd6815f-9cf3-4165-9610-20c6fd396fce:
+  c7e8bc54-4368-47d7-a286-118b9165498f:
     id: node_type
     bundles:
-      article: article
-      page: page
+      basic_page: basic_page
     negate: false
     context_mapping:
       node: node
-    uuid: 5fd6815f-9cf3-4165-9610-20c6fd396fce
+    uuid: c7e8bc54-4368-47d7-a286-118b9165498f
 selection_logic: and
 weight: -5
 relationships: {  }
