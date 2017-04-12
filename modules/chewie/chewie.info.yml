@@ -3,3 +3,8 @@ type: module
 description: adds Content Types to site.
 package: ASCE
 core: 8.x
+dependencies:
+  - menu_ui
+  - pathauto
+  - node
+  - block
