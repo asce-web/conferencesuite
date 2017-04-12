@@ -1,7 +1,17 @@
-  <div class="toggleable-nav fade">
-    {{ page.mobile_menu }}
-  </div>
   <header class="header">
+    <nav class="o-Flex o-MobileBar">
+      <a class="o-Flex__Item o-MobileBar__Item" href="/">
+        <i class="ic home"><span class="h-Hidden">Home</span></i>
+      </a>
+      <label class="o-Flex__Item o-MobileBar__Item c-Toggle" aria-label="toggle main menu">
+        <input class="c-Toggle__Check h-Hidden" type="checkbox" value="main menu is open" role="switch"/>
+        <i class="c-Toggle__Viz ic menu" role="none"></i>
+      </label>
+      <div class="o-Drawer c-NavBar c-NavBar--mobile">
+        <!-- change this div to a ul.o-List later -->
+        {{ page.mobile_menu }}
+      </div>
+    </nav>
     <div class="visible-xs mobile-nav navigation">
       <a href="/" aria-label="home"><span class="ic home"></span></a>
       <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
@@ -24,7 +34,7 @@
       <div class="o-Flex o-Constrain">
         <div class="o-Flex__Item o-Flex o-MainCol c-NavBar c-NavBar--main">
           <!-- change this div to a ul.o-List later -->
-          {{ page.main_menu1 }}
+          {{ page.main_menu }}
         </div>
         <div class="o-Flex__Item o-Flex o-SideCol c-NavBar c-NavBar--register">
           <!-- change this div to a ul.o-List later -->
@@ -34,7 +44,7 @@
     </nav>
     <nav class="c-Mast c-Mast--nav c-Mast--nav--sub">
       <div class="o-Constrain">
-        {{ page.main_menu2 }}
+        {{ page.sub_menu }}
       </div>
     </nav>
   </header>
@@ -197,14 +207,13 @@
       </dd>
     </dl>
   </footer>
-  <div id="footer" class="footer container-fluid">
-    <div class="visible-xs mobile-nav navigation">
-      <a href="/" aria-label="home"><span class="ic home"></span></a>
-      <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
+  <footer>
+    <div class="c-Mast c-Mast--copyright">
+      <p class="-mb-z-sM -ta-c">
+        <i class="c-AsceLogo" role="none"></i>
+        <a href="http://www.asce.org/" rel="exetrnal" target="_blank">&copy; 1996&ndash;{{ now|date("Y") }},
+          American Society of Civil Engineers | ASCE.org</a>
+      </p>
+      <p class="h-Hidden-sM -mb-z -ta-r"><a href="#top">jump to top</a></p>
     </div>
-    <div class="row copyright text-center">
-      <div class="container">
-        <div class="asce-logo"></div><span>Copyright © 1996&ndash;{{ now|date("Y") }}, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
-      </div>
-    </div>
-  </div>
+  </footer>
