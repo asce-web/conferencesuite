@@ -16,17 +16,18 @@
  */
 #}
 {% block content %}
+<a class="o-Flex__Item o-Flex o-MainCol o-HomeLink" href="{{ path('<front>') }}" rel="home">
   {% if site_logo %}
-    <div class="o-Flex__Item c-HomeLink__Logo">
+    <div class="o-Flex__Item o-Flex__Item--siteLogo">
       <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
     </div>
   {% endif %}
   {% if site_second_logo %}
-    <div class="o-Flex__Item c-HomeLink__Logo">
+    <div class="o-Flex__Item o-Flex__Item--siteLogo">
       <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
     </div>
   {% endif %}
-  <div class="o-Flex__Item c-HomeLink__Titles">
+  <div class="o-Flex__Item o-HomeLink__Titles">
     <h1 class="c-ConferenceName">{{ block_current_name }}</h1>
     {% if site_slogan %}
       <p class="c-ConferenceTagline">{{ site_slogan }}</p>
@@ -49,4 +50,5 @@
       </time>
     </p>
   </div>
+</a>
 {% endblock %}
