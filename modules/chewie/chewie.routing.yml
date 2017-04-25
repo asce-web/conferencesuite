@@ -1,6 +1,0 @@
-chewie:
-  path: /chewie
-  defaults:
-    _controller:: Drupal\chewie\Controller\ChewieController::chewie
-  requirements:
-    _permissions: "access content"
