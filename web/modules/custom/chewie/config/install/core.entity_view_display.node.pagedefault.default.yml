@@ -1,0 +1,36 @@
+uuid: 1fff1feb-7a78-45ed-a8b8-5cc4bb0e4433
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pagedefault.field_pagedefault_body
+    - node.type.pagedefault
+  module:
+    - text
+    - user
+  enforced:
+    module:
+      - chewie
+_core:
+  default_config_hash: dUaAgynxLYO1EGpV2wQcSIj_YPe8DyX_cywB_WREyNM
+id: node.pagedefault.default
+targetEntityType: node
+bundle: pagedefault
+mode: default
+content:
+  field_page_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pagedefault_body:
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  links: true
