@@ -1,0 +1,5 @@
+name: Chewie
+type: module
+description: Adds Content Types, Taxonomy Terms, URL Aliases and other configurations to the site.
+core: 8.x
+package: ASCE
