@@ -16,7 +16,7 @@
  */
 #}
 {% block content %}
-<a class="o-Flex__Item o-Flex o-MainCol o-HomeLink" href="{{ path('<front>') }}" rel="home">
+<a class="o-Flex__Item o-Flex o-Flex--siteHead o-MainCol" href="{{ path('<front>') }}" rel="home">
   {% if site_logo %}
     <div class="o-Flex__Item o-Flex__Item--siteLogo">
       <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
@@ -27,12 +27,9 @@
       <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
     </div>
   {% endif %}
-  <div class="o-Flex__Item o-HomeLink__Titles">
-    <h1 class="c-ConferenceName">{{ block_current_name }}</h1>
-    {% if site_slogan %}
-      <p class="c-ConferenceTagline">{{ site_slogan }}</p>
-    {% endif %}
-    <p class="c-ConferenceLocation">
+  <div class="o-Flex__Item o-Flex__Item--siteTitles c-ConferenceTitles -ta-l-sM">
+    <h1 class="c-ConferenceTitles__Name">{{ block_current_name }}</h1>
+    <p class="c-ConferenceTitles__Detail">
       {{ block_current_location_advisory }}
       |
       <time datetime="{{ block_current_startdate|date('c') }}">
@@ -49,6 +46,9 @@
         {{ block_current_enddate|date('d, Y') }}
       </time>
     </p>
+    {% if site_slogan %}
+      <p class="c-ConferenceTitles__Tagline">{{ site_slogan }}</p>
+    {% endif %}
   </div>
 </a>
 {% endblock %}

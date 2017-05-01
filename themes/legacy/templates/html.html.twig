@@ -32,13 +32,22 @@
     <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+    <noscript>
+      <!-- NOTE: removes Toggle menu when JS is disabled-->
+      <style>
+        @media not all and (min-width: 45em) {
+          .c-Toggle,
+          .o-Drawer { display: none; }
+        }
+      </style>
+    </noscript>
   </head>
-  <body{{ attributes }}>
+  <body{{ attributes }} id="top">
     <a class="h-Hidden" href="#main">skip to main content</a>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    <!--a class="" href="#top">jump to top</a-->
+    <a href="#top">jump to top</a>
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>
