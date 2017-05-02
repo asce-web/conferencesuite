@@ -1,0 +1,201 @@
+<header>
+  <nav class="o-Flex o-MobileBar">
+    <a class="o-Flex__Item o-MobileBar__Item -lh-z" href="/">
+      <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
+    </a>
+    <label class="o-Flex__Item o-MobileBar__Item c-Toggle" aria-label="toggle main menu">
+      <input class="c-Toggle__Check h-Hidden" type="checkbox" value="main menu is open" role="switch"/>
+      <i class="c-Toggle__Viz glyphicons glyphicons-menu-hamburger" role="none"></i>
+    </label>
+    <noscript><a href="#sitemap">Site Map</a></noscript>
+    <div class="o-Drawer c-NavBar c-NavBar--mobile">
+      <!-- change this div to a ul.o-List later -->
+      {{ page.mobile_menu }}
+    </div>
+  </nav>
+  <div class="c-Mast c-Mast--head">
+    <div class="o-Flex o-Constrain">
+        {{ page.site_branding }}
+      <div class="o-Flex__Item o-SideCol c-TopImg">
+        <span class="c-YearBadge" role="none">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+        <div class="o-Flex c-NavBar c-NavBar--contrib">
+          <!-- change this div to a ul.o-List later -->
+          {{ page.contributors_menu }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="c-Mast c-Mast--nav">
+    <div class="o-Flex o-Constrain">
+      <div class="o-Flex__Item o-Flex o-MainCol c-NavBar c-NavBar--main">
+        <!-- change this div to a ul.o-List later -->
+        {{ page.main_menu }}
+      </div>
+      <div class="o-Flex__Item o-Flex o-SideCol c-NavBar c-NavBar--register">
+        <!-- change this div to a ul.o-List later -->
+        {{ page.registration_menu }}
+      </div>
+    </div>
+  </nav>
+  <nav class="c-Mast c-Mast--nav c-Mast--nav--sub">
+    <div class="o-Constrain">
+      {{ page.sub_menu }}
+    </div>
+  </nav>
+</header>
+<main class="o-Flex o-Constrain -xd-c-nM -mb-2" id="main">
+  <div class="o-Flex__Item o-MainCol">
+    {{ page.hero }}
+    <section class="t-Content">{{ page.content }}</section>
+  </div>
+  <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
+</main>
+<aside>
+  <div class="o-Constrain">
+    <h2 class="h-Hidden">Top Sponsors</h2>
+    {{ page.sponsors }}
+  </div>
+</aside>
+<aside class="c-Mast c-Mast--coop">
+  <div class="o-Constrain">
+    <h2 class="h-Hidden">Supporting Organizations</h2>
+    {{ page.nonsponsors }}
+  </div>
+</aside>
+<footer>
+  <dl class="o-Flex o-Tabs">
+    <!-- NOTE: 'current' displayed first for accessibility -->
+    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
+      <label class="h-Block">
+        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_current_startdate|date('Y') }}" checked=""/>
+        <time class="c-YearBadge c-YearBadge--tab"
+          datetime="{{ page_current_startdate|date('Y') }}"
+          aria-label="{{ page_current_startdate|date('Y') }}"
+        >{{ (page_current_startdate|date('Y'))[2:] }}</time>
+      </label>
+    </dt>
+    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
+      <div class="o-Constrain">
+        <div class="o-Flex o-Flex--siteHead -mv-2">
+          {% if site_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          {% if site_second_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          <div class="o-Flex__Item c-ConferenceTitles">
+            <h1 class="c-ConferenceTitles__Name">{{ page_current_name }}</h1>
+          </div>
+        </div>
+        <div class="o-Flex o-Flex--siteFoot">{{ page.footer_current }}</div>
+      </div>
+    </dd>
+    <dt class="o-Flex__Item o-Tabs__Tab [ js-xo-_1 ]" id="tab-prev">
+      <label class="h-Block">
+        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_prev_startdate|date('Y') }}"/>
+        <time class="c-YearBadge c-YearBadge--tab"
+          datetime="{{ page_prev_startdate|date('Y') }}"
+          aria-label="{{ page_prev_startdate|date('Y') }}"
+        >{{ (page_prev_startdate|date('Y'))[2:] }}</time>
+      </label>
+    </dt>
+    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-prev">
+      <div class="o-Constrain">
+        <div class="o-Flex o-Flex--siteHead -mv-2">
+          {% if site_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          {% if site_second_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          <div class="o-Flex__Item c-ConferenceTitles">
+            <h1 class="c-ConferenceTitles__Name">{{ page_prev_name }}</h1>
+            <p class="c-ConferenceTitles__Detail">
+              {{ block_prev_location_advisory }}
+              |
+              <time datetime="{{ block_prev_startdate|date('c') }}">
+                {{ block_prev_startdate|date('M d') }}
+                {% if block_prev_startdate|date('Y') != block_prev_enddate|date('Y') %}
+                  , {{ block_prev_startdate|date('Y') }}
+                {% endif %}
+              </time>
+              &ndash;
+              <time datetime="{{ block_prev_startdate|date('c') }}">
+                {% if block_prev_startdate|date('M') != block_prev_enddate|date('M') %}
+                  {{ block_prev_enddate|date('M') }}
+                {% endif %}
+                {{ block_prev_enddate|date('d, Y') }}
+              </time>
+            </p>
+            {% if page_prev_theme %}
+              <p class="c-ConferenceTitles__Tagline">{{ page_prev_theme }}</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="t-Content">{{ page.footer_prev }}</div>
+      </div>
+    </dd>
+    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-next">
+      <label class="h-Block">
+        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_next_startdate|date('Y') }}"/>
+        <time class="c-YearBadge c-YearBadge--tab"
+          datetime="{{ page_next_startdate|date('Y') }}"
+          aria-label="{{ page_next_startdate|date('Y') }}"
+        >{{ (page_next_startdate|date('Y'))[2:] }}</time>
+      </label>
+    </dt>
+    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-next">
+      <div class="o-Constrain">
+        <div class="o-Flex o-Flex--siteHead -mv-2">
+          {% if site_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          {% if site_second_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          <div class="o-Flex__Item c-ConferenceTitles">
+            <h1 class="c-ConferenceTitles__Name">{{ page_next_name }}</h1>
+            <p class="c-ConferenceTitles__Detail">
+              {{ block_next_location_advisory }}
+              |
+              <time datetime="{{ block_next_startdate|date('c') }}">
+                {{ block_next_startdate|date('M d') }}
+                {% if block_next_startdate|date('Y') != block_next_enddate|date('Y') %}
+                  , {{ block_next_startdate|date('Y') }}
+                {% endif %}
+              </time>
+              &ndash;
+              <time datetime="{{ block_next_startdate|date('c') }}">
+                {% if block_next_startdate|date('M') != block_next_enddate|date('M') %}
+                  {{ block_next_enddate|date('M') }}
+                {% endif %}
+                {{ block_next_enddate|date('d, Y') }}
+              </time>
+            </p>
+            {% if page_next_theme %}
+              <p class="c-ConferenceTitles__Tagline">{{ page_next_theme }}</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="t-Content">{{ page.footer_prev }}</div>
+      </div>
+    </dd>
+  </dl>
+  <p class="c-Mast c-Mast--copyright -mb-z -ta-c">
+    <i class="c-AsceLogo" role="none"></i>
+    <a href="http://www.asce.org/" rel="exetrnal" target="_blank">&copy; 1996&ndash;{{ now|date("Y") }},
+      American Society of Civil Engineers | ASCE.org</a>
+  </p>
+</footer>
