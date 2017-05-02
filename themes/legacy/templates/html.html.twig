@@ -28,22 +28,43 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-    <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
+    <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+    <noscript>
+      <!-- NOTE: removes Toggle menu when JS is disabled-->
+      <style>
+        @media not all and (min-width: 45em) {
+          .c-Toggle,
+          .o-Drawer { display: none; }
+        }
+      </style>
+    </noscript>
   </head>
-  <body{{ attributes }}>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
-    <a href="#main-content" class="visually-hidden focusable">
-      {{ 'Skip to main content'|t }}
-    </a>
+  <body{{ attributes }} id="top">
+    <a class="h-Hidden" href="#main">skip to main content</a>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
+    <a href="#top">jump to top</a>
     <js-bottom-placeholder token="{{ placeholder_token }}">
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+    <script src="o-Tabs.js"></script>
+    <script>
+      $('.js-xo-_1').addClass('-xo-_1');
+      $('.o-Drawer').find('a').attr('tabindex', -1);
+      $('.c-Toggle__Check').change(function () {
+        $(this).parents('.c-Toggle').siblings('.o-Drawer').toggleClass('o-Drawer--open');
+        $(this).parents('.c-Toggle').siblings('.o-Drawer').find('a').each(function () {
+          if ($(this).attr('tabindex') === '0') $(this).attr('tabindex', -1)
+          else $(this).attr('tabindex', 0)
+        })
+        $(this).siblings('.c-Toggle__Viz').toggleClass('glyphicons-menu-hamburger glyphicons-remove-circle -ps-f -r-1')
+      })
+    </script>
   </body>
 </html>

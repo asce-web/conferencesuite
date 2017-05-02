@@ -4,9 +4,9 @@ global-styling:
     theme:
       //cdn.asce.org/chewie/stage/css/futura.css: {type: external, minified: true}
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      //cdn.asce.org/chewie/stage/bower_components/bootstrap/dist/css/bootstrap.min.css: {type: external, minified: true}
-      //cdn.asce.org/chewie/stage/styles/chewie.css: {type: external, minified: false}
+      //cdn.rawgit.com/chharvey/xmeter/v5.6.0/xmeter.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/bangs/v0.11.0/bangs.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/asce-web/chewie/stage-v2.0.0/legacy.min.css: {type: external, minified: true}
   js:
-    //cdn.asce.org/chewie/stage/bower_components/bootstrap/dist/js/bootstrap.min.js: {type: external, minified: true}
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
     //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}

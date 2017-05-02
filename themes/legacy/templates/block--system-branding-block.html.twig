@@ -16,40 +16,39 @@
  */
 #}
 {% block content %}
-  <div class="col-container">
-    {% if site_logo %}
-    <div class="logo-col text-center">
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="conference-logo" />
-      </a>
+<a class="o-Flex__Item o-Flex o-Flex--siteHead o-MainCol" href="{{ path('<front>') }}" rel="home">
+  {% if site_logo %}
+    <div class="o-Flex__Item o-Flex__Item--siteLogo">
+      <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
     </div>
-    {% endif %}
-    {% if block_current_name %}
-      <div class="auto-col">
-        <h1 class="c-ConferenceName"><a href="{{ path('<front>') }}" rel="home">{{ block_current_name }}</a></h1>
-        {% if site_slogan %}
-          <p class="c-ConferenceTagline hidden-xs">{{ site_slogan }}</p>
+  {% endif %}
+  {% if site_second_logo %}
+    <div class="o-Flex__Item o-Flex__Item--siteLogo">
+      <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="Home"/>
+    </div>
+  {% endif %}
+  <div class="o-Flex__Item o-Flex__Item--siteTitles c-ConferenceTitles -ta-l-sM">
+    <h1 class="c-ConferenceTitles__Name">{{ block_current_name }}</h1>
+    <p class="c-ConferenceTitles__Detail">
+      {{ block_current_location_advisory }}
+      |
+      <time datetime="{{ block_current_startdate|date('c') }}">
+        {{ block_current_startdate|date('M d') }}
+        {% if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
+          , {{ block_current_startdate|date('Y') }}
         {% endif %}
-        {% if block_current_location_advisory and block_current_startdate %}
-          <p class="c-ConferenceLocation">
-            {{ block_current_location_advisory }}
-            |
-            <time datetime="{{ block_current_startdate|date('c') }}">
-              {{ block_current_startdate|date('M d') }}
-              {% if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
-                , {{ block_current_startdate|date('Y') }}
-              {% endif %}
-            </time>
-            &ndash;
-            <time datetime="{{ block_current_startdate|date('c') }}">
-              {% if block_current_startdate|date('M') != block_current_enddate|date('M') %}
-                {{ block_current_enddate|date('M') }}
-              {% endif %}
-              {{ block_current_enddate|date('d, Y') }}
-            </time>
-          </p>
+      </time>
+      &ndash;
+      <time datetime="{{ block_current_startdate|date('c') }}">
+        {% if block_current_startdate|date('M') != block_current_enddate|date('M') %}
+          {{ block_current_enddate|date('M') }}
         {% endif %}
-      </div>
+        {{ block_current_enddate|date('d, Y') }}
+      </time>
+    </p>
+    {% if site_slogan %}
+      <p class="c-ConferenceTitles__Tagline">{{ site_slogan }}</p>
     {% endif %}
   </div>
+</a>
 {% endblock %}
