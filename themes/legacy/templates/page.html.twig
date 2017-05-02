@@ -1,0 +1,188 @@
+<div class="">
+  <!--[if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+  <div class="toggleable-nav fade">
+    {{ page.mobile_menu }}
+  </div>
+  <div class="header">
+    <div class="visible-xs mobile-nav navigation">
+      <a href="/" aria-label="home"><span class="ic home"></span></a>
+      <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
+    </div>
+    <div class="container-fluid titles">
+      <div class="container">
+        <div class="col-container">
+          {{ page.site_branding }}
+          <div class="side-nav-col hidden-xs">
+            <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+            <div class="right-header hidden-xs">
+              <div class="nav3">
+                {{ page.contributors_menu }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid navigation hidden-xs">
+      <div class="container">
+        <div class="col-container">
+          <div class="auto-col">
+            {{ page.main_menu1 }}
+          </div>
+          <div class="side-nav-col">
+            {{ page.registration_menu }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid navigation-level2 show-current-page">
+      {{ page.main_menu2 }}
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container content">
+      <div class="col-container">
+        <div class="auto-col">
+          {{page.content}}
+        </div><!--end-->
+        <div class="side-nav-col">
+          {{page.sidebar}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="footer container-fluid">
+    <div class="row year-tabs">
+      <div class="container">
+        <ul class="tab-buttons pull-right list-unstyled">
+          <li><a data-toggle="tab" href="#yearprev" class="tab-button">2016</a></li>
+          <li class="active"><a data-toggle="tab" href="#yearpresent" class="tab-button">2017</a></li>
+          <li><a data-toggle="tab" href="#yearnext" class="tab-button">2018</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div id="yearprev" class="tab-pane">
+        <div class="row title">
+          <div class="container">
+            <div class="hidden-xs pull-left">
+              <span class="c-YearBadge">{{ (page_prev_conference_start_date|date('Y'))[2:] }}</span>
+            </div>
+              <h2>{{ site_name }}</h2>
+          </div>
+        </div>
+        <div class="row details year-prev-next">
+          <div class="container">
+            <div class="col-container">
+              <div class="logo-col text-center">
+                <a href="{{ front_page }}" title="Home" rel="home">
+                  <img src="{{ site_logo }}" alt="Home"  class="conference-logo" />
+                </a>
+              </div>
+              {% if second_logo %}
+                <div class="logo-col text-center">
+                  <a href="" title="Home" rel="home">
+                    <img src="" alt="Home"  class="conference-logo" />
+                  </a>
+                </div>
+              {% endif %}
+              <div class="auto-col">
+                <div class="col-sm-12 col-xs-10 col4">
+                  <h2>blah blah</h2>
+                  <h4>Conference Slogan</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="yearpresent" class="tab-pane active">
+        <div class="row title">
+          <div class="container">
+            <div class="hidden-xs pull-left">
+              <span class="c-YearBadge">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+            </div>
+            <h2>{{ page_current_conference_name }}</h2>
+          </div>
+        </div>
+        <div class="row details">
+          <div class="container">
+            <div class="col-container">
+              <div class="logo-col text-center">
+                <a href="{{front_page}}" title="Home" rel="home">
+                  <img src="{{ site_logo }}" alt="Home" class="conference-logo" />
+                </a>
+              </div>
+              {% if second_logo %}
+                <div class="logo-col text-center">
+                  <a href="" title="Home" rel="home">
+                    <img src="" alt="Home"  class="conference-logo" />
+                  </a>
+                </div>
+              {% endif %}
+              <div class="auto-col">
+                <?php print render($page['footer']); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php if ($next_conf_toggle): ?>
+        <div id="yearnext" class="tab-pane">
+          <div class="row title">
+            <div class="container">
+              <div class="hidden-xs pull-left">
+                <span class="c-YearBadge">{{ (page_next_conference_start_date|date('Y'))[2:] }}</span>
+              </div>
+              <?php if((isset($next_conf_name)) && ($next_conf_name !== "")): ?>
+                <h2><?php print $next_conf_name; ?></h2>
+              <?php else: ?>
+                <h2><?php print $site_name; ?></h2>
+              <?php endif; ?>
+            </div>
+          </div>
+          <div class="row details year-prev-next">
+            <div class="container">
+              <div class="col-container">
+                <?php if ($logo): ?>
+                  <div class="logo-col text-center">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+                      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"  class="conference-logo" />
+                    </a>
+                  </div>
+                <?php endif; ?>
+                <?php if (isset($second_logo)): ?>
+                  <div class="logo-col text-center">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+                      <img src="<?php print $second_logo; ?>" alt="<?php print t('Home'); ?>"  class="conference-logo" />
+                    </a>
+                  </div>
+                <?php endif; ?>
+                <div class="auto-col">
+                  <div class="col-sm-12 col-xs-10 col4">
+                    <?php if ($next_conf_location || $next_conf_dates): ?>
+                      <h2><?php print $next_conf_location; ?> | <?php print $next_conf_dates; ?>, <?php print $next_conf_year; ?></h2>
+                    <?php endif; ?>
+                    <?php if ($next_conf_slogan): ?>
+                      <h4><?php print $next_conf_slogan; ?></h4>
+                    <?php endif; ?>
+                    <?php print render($page['next_year']); ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div>
+    <div class="visible-xs mobile-nav navigation">
+      <a href="/" aria-label="home"><span class="ic home"></span></a>
+      <a href="" class="menu-toggle" aria-label="open menu"><span class="ic menu"></span></a>
+    </div>
+    <div class="row copyright text-center">
+      <div class="container">
+        <div class="asce-logo"></div><span>Copyright © 1996&ndash;{{ now|date("Y") }}, American Society of Civil Engineers | <a href="http://www.asce.org/" target="_blank" title="ASCE">ASCE.org</a></span>
+      </div>
+    </div>
+  </div>
+</div>
