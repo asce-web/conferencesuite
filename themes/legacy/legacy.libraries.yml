@@ -8,6 +8,5 @@ global-styling:
       //cdn.rawgit.com/chharvey/bangs/v0.11.0/bangs.min.css: {type: external, minified: true}
       //cdn.rawgit.com/asce-web/chewie/stage-v2.0.0/legacy.min.css: {type: external, minified: true}
   js:
-    //cdn.asce.org/chewie/stage/bower_components/bootstrap/dist/js/bootstrap.min.js: {type: external, minified: true}
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
     //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}
