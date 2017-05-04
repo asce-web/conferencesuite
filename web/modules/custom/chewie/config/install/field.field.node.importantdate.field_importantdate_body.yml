@@ -1,0 +1,24 @@
+uuid: d54a7555-74d5-4dc4-953b-6a61a0f9d45e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_importantdate_body
+    - node.type.importantdate
+  module:
+    - text
+  enforced:
+    module:
+      - chewie
+id: node.importantdate.field_importantdate_body
+field_name: field_importantdate_body
+entity_type: node
+bundle: importantdate
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

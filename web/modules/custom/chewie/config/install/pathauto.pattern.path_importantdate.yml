@@ -1,0 +1,25 @@
+uuid: b6da4aa5-c1e1-4c56-9cba-310b6bddadf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - chewie
+id: path_importantdate
+label: 'Important Date'
+type: 'canonical_entities:node'
+pattern: 'important-date/[node:title]'
+selection_criteria:
+  2e01a067-b396-4931-8dbb-143c713039b2:
+    id: node_type
+    bundles:
+      importantdate: importantdate
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2e01a067-b396-4931-8dbb-143c713039b2
+selection_logic: and
+weight: -5
+relationships: {  }

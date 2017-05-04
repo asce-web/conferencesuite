@@ -1,0 +1,24 @@
+uuid: 186a6432-ce36-4ca0-9a52-67642870538d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_importantdate_enddate
+    - node.type.importantdate
+  module:
+    - datetime
+  enforced:
+    module:
+      - chewie
+id: node.importantdate.field_importantdate_enddate
+field_name: field_importantdate_enddate
+entity_type: node
+bundle: importantdate
+label: 'End Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
