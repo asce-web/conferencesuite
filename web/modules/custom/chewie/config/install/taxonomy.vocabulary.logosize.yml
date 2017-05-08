@@ -1,0 +1,14 @@
+uuid: c7b469a9-3947-4ee4-83d2-0a64f5ead5c4
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+_core:
+  default_config_hash: 2SoVldLEJ0OhhRTB23V9xjBXKRim1q17hNyw1BSMvPw
+name: 'Logo Size'
+vid: logosize
+description: 'Size of the sponsor logos'
+hierarchy: 0
+weight: 0

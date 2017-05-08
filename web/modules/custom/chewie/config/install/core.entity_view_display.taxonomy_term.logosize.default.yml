@@ -1,0 +1,24 @@
+uuid: f64dae6e-5dc8-4c92-892a-d48c335bd77e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.logosize
+  module:
+    - text
+  enforced:
+    module:
+      - chewie
+id: taxonomy_term.logosize.default
+targetEntityType: taxonomy_term
+bundle: logosize
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
