@@ -1,0 +1,22 @@
+uuid: b8ecaa6b-8c1b-41a1-b518-30b02a99e84d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - chewie
+id: node.field_supporter_level
+field_name: field_supporter_level
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
