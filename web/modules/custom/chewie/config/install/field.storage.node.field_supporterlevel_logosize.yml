@@ -1,0 +1,23 @@
+uuid: 48f50ba7-c766-43ef-9787-d1f65b655e86
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+  enforced:
+    module:
+      - chewie
+id: node.field_supporterlevel_logosize
+field_name: field_supporterlevel_logosize
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: aa3bd217-084d-4443-a32d-fd9deb5701c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_supporterlevel_body
+    - node.type.supporterlevel
+  module:
+    - text
+  enforced:
+    module:
+      - chewie
+id: node.supporterlevel.field_supporterlevel_body
+field_name: field_supporterlevel_body
+entity_type: node
+bundle: supporterlevel
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
