@@ -1,4 +1,3 @@
-uuid: 1fff1feb-7a78-45ed-a8b8-5cc4bb0e4433
 langcode: en
 status: true
 dependencies:
@@ -11,8 +10,6 @@ dependencies:
   enforced:
     module:
       - chewie
-_core:
-  default_config_hash: dUaAgynxLYO1EGpV2wQcSIj_YPe8DyX_cywB_WREyNM
 id: node.pagedefault.default
 targetEntityType: node
 bundle: pagedefault

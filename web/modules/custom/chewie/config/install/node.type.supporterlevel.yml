@@ -1,12 +1,11 @@
-uuid: faf55297-1356-4d6f-93da-503b52be86d8
 langcode: en
 status: true
 dependencies:
-  module:
-    - menu_ui
   enforced:
     module:
       - chewie
+  module:
+    - menu_ui
 third_party_settings:
   menu_ui:
     available_menus: {  }

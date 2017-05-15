@@ -1,13 +1,11 @@
-uuid: 05453240-181d-43da-bff6-dc25eae1902c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_supporterlevel_logosize
     - node.type.supporterlevel
-    - taxonomy.vocabulary.logosize
-  content:
-    - 'taxonomy_term:logosize:6d96784c-4ac0-4415-83a7-cef26c9f4391'
+  module:
+    - options
   enforced:
     module:
       - chewie
@@ -16,20 +14,12 @@ field_name: field_supporterlevel_logosize
 entity_type: node
 bundle: supporterlevel
 label: 'Logo Size'
-description: 'Size of the supporter logo'
+description: ''
 required: true
 translatable: false
 default_value:
   -
-    target_uuid: 6d96784c-4ac0-4415-83a7-cef26c9f4391
+    value: large
 default_value_callback: ''
-settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      logosize: logosize
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: list_string
