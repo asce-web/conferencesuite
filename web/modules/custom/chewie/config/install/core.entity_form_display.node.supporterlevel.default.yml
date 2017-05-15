@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.supporterlevel.field_supporterlevel_body
+    - field.field.node.supporterlevel.field_supporterlevel_logosize
+    - node.type.supporterlevel
+  enforced:
+    module:
+      - chewie
+  module:
+    - text
+id: node.supporterlevel.default
+targetEntityType: node
+bundle: supporterlevel
+mode: default
+content:
+  field_supporterlevel_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_supporterlevel_logosize:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

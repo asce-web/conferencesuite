@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.supporterlevel.field_supporterlevel_body
+    - field.field.node.supporterlevel.field_supporterlevel_logosize
+    - node.type.supporterlevel
+  enforced:
+    module:
+      - chewie
+  module:
+    - options
+    - text
+    - user
+id: node.supporterlevel.default
+targetEntityType: node
+bundle: supporterlevel
+mode: default
+content:
+  field_supporterlevel_body:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_supporterlevel_logosize:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  links: true

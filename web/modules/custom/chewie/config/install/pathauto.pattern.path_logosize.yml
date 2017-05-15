@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+  enforced:
+    module:
+      - chewie
+id: path_logosize
+label: 'Logo Size'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'logo-size/[term:name]'
+selection_criteria:
+  c635d9ec-2138-4e5a-91e5-7f5927b25e87:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      logosize: logosize
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: c635d9ec-2138-4e5a-91e5-7f5927b25e87
+selection_logic: and
+weight: -5
+relationships: {  }
