@@ -6,7 +6,7 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#title'         => t('Current Year Settings'),
     '#group'         => 'legacy_theme_settings',
     '#description'   => t('Enter information about the current conference.'),
-    '#weight'        => -4
+    // '#weight'        => -4
   );
   $form['current_year_settings']['current_info'] = array(
     '#type'          => 'fieldset',

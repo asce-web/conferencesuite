@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/includes/next_year_settings.php';
 
 function legacy_form_system_theme_settings_alter(&$form, &$form_state){
   $form['legacy_theme_settings'] = [
-    '#type' => 'vertical_tabs',
+    // '#type' => 'vertical_tabs',
     '#parents' => ['legacy_theme_settings'],
   ];
 
