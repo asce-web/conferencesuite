@@ -48,23 +48,10 @@
     {{ page }}
     {{ page_bottom }}
     <a href="#top">jump to top</a>
-    <js-bottom-placeholder token="{{ placeholder_token }}">
     <script
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous"></script>
-    <script src="o-Tabs.js"></script>
-    <script>
-      $('.js-xo-_1').addClass('-xo-_1');
-      $('.o-Drawer').find('a').attr('tabindex', -1);
-      $('.c-Toggle__Check').change(function () {
-        $(this).parents('.c-Toggle').siblings('.o-Drawer').toggleClass('o-Drawer--open');
-        $(this).parents('.c-Toggle').siblings('.o-Drawer').find('a').each(function () {
-          if ($(this).attr('tabindex') === '0') $(this).attr('tabindex', -1)
-          else $(this).attr('tabindex', 0)
-        })
-        $(this).siblings('.c-Toggle__Viz').toggleClass('glyphicons-menu-hamburger glyphicons-remove-circle -ps-f -r-1')
-      })
-    </script>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>
