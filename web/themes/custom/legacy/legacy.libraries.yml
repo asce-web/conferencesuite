@@ -10,5 +10,5 @@ global-styling:
   js:
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
     //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}
-    scripts/o-Tabs.js: {type: internal, minified: false}
-    scripts/orphaned.js: {type: internal, minified: false}
+    scripts/o-Tabs.js: {minified: false}
+    scripts/orphaned.js: {minified: false}
