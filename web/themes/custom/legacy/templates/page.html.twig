@@ -122,17 +122,17 @@
               {{ block_prev_location_advisory }}
               |
               <time datetime="{{ block_prev_startdate|date('c') }}">
-                {{ block_prev_startdate|date('M d') }}
-                {% if block_prev_startdate|date('Y') != block_prev_enddate|date('Y') %}
-                  , {{ block_prev_startdate|date('Y') }}
-                {% endif %}
+                {{- block_prev_startdate|date('M d') -}}
+                {%- if block_prev_startdate|date('Y') != block_prev_enddate|date('Y') %}
+                  {{- block_prev_startdate|date(', Y') -}}
+                {% endif -%}
               </time>
-              &ndash;
+              {{- '&ndash;' -}}
               <time datetime="{{ block_prev_startdate|date('c') }}">
-                {% if block_prev_startdate|date('M') != block_prev_enddate|date('M') %}
-                  {{ block_prev_enddate|date('M') }}
-                {% endif %}
-                {{ block_prev_enddate|date('d, Y') }}
+                {%- if block_prev_startdate|date('M') != block_prev_enddate|date('M') %}
+                  {{- block_prev_enddate|date('M ') -}}
+                {% endif -%}
+                {{- block_prev_enddate|date('d, Y') -}}
               </time>
             </p>
             {% if page_prev_theme %}
@@ -171,17 +171,17 @@
               {{ block_next_location_advisory }}
               |
               <time datetime="{{ block_next_startdate|date('c') }}">
-                {{ block_next_startdate|date('M d') }}
-                {% if block_next_startdate|date('Y') != block_next_enddate|date('Y') %}
-                  , {{ block_next_startdate|date('Y') }}
-                {% endif %}
+                {{- block_next_startdate|date('M d') -}}
+                {%- if block_next_startdate|date('Y') != block_next_enddate|date('Y') %}
+                  {{- block_next_startdate|date(', Y') -}}
+                {% endif -%}
               </time>
-              &ndash;
+              {{- '&ndash;' -}}
               <time datetime="{{ block_next_startdate|date('c') }}">
-                {% if block_next_startdate|date('M') != block_next_enddate|date('M') %}
-                  {{ block_next_enddate|date('M') }}
-                {% endif %}
-                {{ block_next_enddate|date('d, Y') }}
+                {%- if block_next_startdate|date('M') != block_next_enddate|date('M') %}
+                  {{- block_next_enddate|date('M ') -}}
+                {% endif -%}
+                {{- block_next_enddate|date('d, Y') -}}
               </time>
             </p>
             {% if page_next_theme %}

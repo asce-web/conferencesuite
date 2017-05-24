@@ -33,17 +33,17 @@
       {{ block_current_location_advisory }}
       |
       <time datetime="{{ block_current_startdate|date('c') }}">
-        {{ block_current_startdate|date('M d') }}
-        {% if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
-          , {{ block_current_startdate|date('Y') }}
-        {% endif %}
+        {{- block_current_startdate|date('M d') -}}
+        {%- if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
+          {{- block_current_startdate|date(', Y') -}}
+        {% endif -%}
       </time>
-      &ndash;
+      {{- '&ndash;' -}}
       <time datetime="{{ block_current_startdate|date('c') }}">
-        {% if block_current_startdate|date('M') != block_current_enddate|date('M') %}
-          {{ block_current_enddate|date('M') }}
-        {% endif %}
-        {{ block_current_enddate|date('d, Y') }}
+        {%- if block_current_startdate|date('M') != block_current_enddate|date('M') %}
+          {{- block_current_enddate|date('M ') -}}
+        {% endif -%}
+        {{- block_current_enddate|date('d, Y') -}}
       </time>
     </p>
     {% if site_slogan %}
