@@ -10,8 +10,8 @@ function legacy_form_system_theme_settings_alter(&$form, &$form_state){
   ];
 
   $form['theme_settings']['#group'] = 'legacy_theme_settings';
-  $form['favicon']['#group'] = 'legacy_theme_settings';
   legacy_current_year_settings_form_alter($form);
-  legacy_prev_year_settings_form_alter($form);
-  legacy_next_year_settings_form_alter($form);
+  // legacy_prev_year_settings_form_alter($form);
+  // legacy_next_year_settings_form_alter($form);
+  // $form['favicon']['#group'] = 'legacy_theme_settings';
 }
