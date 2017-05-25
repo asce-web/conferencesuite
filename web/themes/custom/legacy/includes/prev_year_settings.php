@@ -16,21 +16,21 @@ function legacy_prev_year_settings_form_alter(&$form) {
     '#type'          => 'textfield',
     '#title'         => t('Conference Name'),
     '#default_value' => theme_get_setting('prev_info_name'),
-    '#description'   => t('Name displayed on conference site, e.g., <i>ASCE Convention 2017</i>'),
+    '#description'   => t('Name displayed in header.'),
     '#required'      => TRUE,
   );
   $form['prev_year_settings']['prev_info']['prev_info_theme'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Conference Theme'),
     '#default_value' => theme_get_setting('prev_info_theme'),
-    '#description'   => t('Conference theme or tagline, e.g., <i>Where Engineering Dreams are Born</i>'),
+    '#description'   => t('Conference theme or tagline.'),
     '#required'      => TRUE,
   );
   $form['prev_year_settings']['prev_info']['prev_info_blurb'] = array(
     '#type'          => 'textarea',
     '#title'         => t('Conference Blurb'),
     '#default_value' => theme_get_setting('prev_info_blurb'),
-    '#description'   => t('Elevator pitch for the conference'),
+    '#description'   => t('Elevator pitch for the conference.'),
   );
   $form['prev_year_settings']['prev_dates'] = array(
     '#type'          => 'fieldset',
@@ -56,19 +56,19 @@ function legacy_prev_year_settings_form_alter(&$form) {
     '#type'          => 'textfield',
     '#title'         => t('Display Name'),
     '#default_value' => theme_get_setting('prev_location_display'),
-    '#description'   => t('Location displayed in footer, e.g., <i>Boston, MA</i>'),
+    '#description'   => t('Location displayed in footer. e.g.: <i>Reston, VA</i>'),
   );
   $form['prev_year_settings']['prev_location']['prev_location_advisory'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
     '#default_value' => theme_get_setting('prev_location_advisory'),
-    '#description'   => t('Accessible location name, e.g., <i>Boston, Massachusetts</i>'),
+    '#description'   => t('Accessible location name. e.g.: <i>Reston, Virginia</i>'),
     '#required'      => TRUE,
   );
   $form['prev_year_settings']['prev_location']['prev_location_blurb'] = array(
     '#type'          => 'textarea',
     '#title'         => t('Location Blurb'),
     '#default_value' => theme_get_setting('prev_location_blurb'),
-    '#description'   => t('Short promotion for the conference location'),
+    '#description'   => t('Short promotion for the conference location.'),
   );
 }
