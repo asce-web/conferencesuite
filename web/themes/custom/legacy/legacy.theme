@@ -21,13 +21,13 @@ function legacy_preprocess_page(&$variables) {
  */
 function legacy_preprocess_block(&$variables) {
 
- // Current Year Settings
- $variables['block_current_name']              = theme_get_setting('current_info_name');
- $variables['block_current_theme']             = theme_get_setting('current_info_theme');
- $variables['block_current_blurb']             = theme_get_setting('current_info_blurb');
- $variables['block_current_startdate']         = theme_get_setting('current_dates_start');
- $variables['block_current_enddate']           = theme_get_setting('current_dates_end');
- $variables['block_current_location_advisory'] = theme_get_setting('current_location_advisory');
+  // Current Year Settings
+  $variables['block_current_name']              = theme_get_setting('current_info_name');
+  $variables['block_current_theme']             = theme_get_setting('current_info_theme');
+  $variables['block_current_blurb']             = theme_get_setting('current_info_blurb');
+  $variables['block_current_startdate']         = theme_get_setting('current_dates_start');
+  $variables['block_current_enddate']           = theme_get_setting('current_dates_end');
+  $variables['block_current_location_advisory'] = theme_get_setting('current_location_advisory');
 
   // Previous Year Settings
   $variables['block_prev_name']              = theme_get_setting('prev_info_name');
