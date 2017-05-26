@@ -6,8 +6,23 @@ function legacy_prev_year_settings_form_alter(&$form) {
     '#title'         => t('Previous Year Settings'),
     '#group'         => 'legacy_theme_settings',
     '#description'   => t('Enter information about the previous iteration of the conference.'),
-    '#weight'        => -3
+    '#weight'        => -4
   );
+  $form['prev_year_settings']['prev_enable'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Previous Year Section'),
+  );
+  $form['prev_year_settings']['prev_enable']['prev_toggle'] = array(
+      '#type' => 'select',
+      '#title' => t('Enabled'),
+      '#default_value' => theme_get_setting('prev_toggle'),
+      '#description'   => t('Would you like to have the Previous Year Information section enabled?'),
+      '#options' => array(
+  		  1=>t('Yes'),
+  		  0=>t('No')
+  	  ),
+      '#required'    => TRUE,
+	);
   $form['prev_year_settings']['prev_info'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Basic Information'),

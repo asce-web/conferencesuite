@@ -6,8 +6,23 @@ function legacy_next_year_settings_form_alter(&$form) {
     '#title'         => t('Next Year Settings'),
     '#group'         => 'legacy_theme_settings',
     '#description'   => t('Enter information about the upcoming iteration of the conference.'),
-    '#weight'        => -2
+    '#weight'        => -3
   );
+  $form['next_year_settings']['next_enable'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Next Year Section'),
+  );
+  $form['next_year_settings']['next_enable']['next_toggle'] = array(
+      '#type' => 'select',
+      '#title' => t('Enabled'),
+      '#default_value' => theme_get_setting('next_toggle'),
+      '#description'   => t('Would you like to have the Next Year Information section enabled?'),
+      '#options' => array(
+  		  1=>t('Yes'),
+  		  0=>t('No')
+  	  ),
+      '#required'    => TRUE,
+	);
   $form['next_year_settings']['next_info'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Basic Information'),

@@ -9,5 +9,23 @@ current_location_advisory: 'Boston, Massachusetts'
 current_location_blurb: ''
 
 # previous year default settings
+prev_toggle: 0
+prev_info_name: 'ConferenceSuite 2015'
+prev_info_theme: 'Something older...'
+prev_info_blurb: ''
+prev_dates_start: '2015-04-30'
+prev_dates_end: '2015-05-02'
+prev_location_display: 'Las Vegas, NV'
+prev_location_advisory: 'Las Vegas, Navada'
+prev_location_blurb: ''
 
 # next year default settings
+next_toggle: 0
+next_info_name: 'ConferenceSuite 2019'
+next_info_theme: 'Something newer...'
+next_info_blurb: ''
+next_dates_start: '2019-05-27'
+next_dates_end: '2019-05-30'
+next_location_display: 'Las Vegas, NV'
+next_location_advisory: 'Las Vegas, Navada'
+next_location_blurb: ''
