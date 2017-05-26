@@ -1,0 +1,13 @@
+name: Legacy
+type: theme
+description: 'Theme for the ASCE Conference style 2015 &ndash; 2017.'
+core: 8.x
+libraries:
+  - legacy/global-styling
+regions:
+  header: Header
+  hero: Hero
+  content: Content
+  sidebar: Sidebar
+  supporters: Supporters
+  footer: Footer
