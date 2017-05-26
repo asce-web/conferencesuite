@@ -6,8 +6,7 @@ libraries:
   - legacy/global-styling
 regions:
   header: Header
-  site_branding: Site Branding
-  hero: Hero Image
+  hero: Hero
   content: Content
   sidebar: Sidebar
   supporters: Supporters
