@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:heroblock_legacy:a345f93e-a354-4ee1-8bec-ec5e02650c83'
+  module:
+    - block_content
+    - system
+  theme:
+    - legacy
+  enforced:
+    module:
+      - chewie
+id: heroblocklegacy
+theme: legacy
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:a345f93e-a354-4ee1-8bec-ec5e02650c83'
+settings:
+  id: 'block_content:a345f93e-a354-4ee1-8bec-ec5e02650c83'
+  label: Hero
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

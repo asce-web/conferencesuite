@@ -25,8 +25,17 @@
  * @see template_preprocess_block()
  */
 #}
+
 <header class="c-Hero">
-  <img class="c-Hero__Img" src="{{ block_current_hero_src }}" alt="{{ block_current_hero_alt }}"/>
-  <h1 class="c-Hero__Hn">{{ block_current_theme }}</h1>
-  <p class="c-Hero__Blurb">{{ block_current_blurb }}</p>
+  <div{{ attributes }}>
+    <img src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}" alt="">
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 </header>
