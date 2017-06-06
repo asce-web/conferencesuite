@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  <dl class="o-Flex o-Tabs"{{ attributes }}>
+    <!-- NOTE: 'current' displayed first for accessibility. other year tabs are below it. -->
+    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
+      <label class="h-Block">
+        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_current_startdate|date('Y') }}" checked=""/>
+        <time class="c-YearBadge c-YearBadge--tab"
+          datetime="{{ page_current_startdate|date('Y') }}"
+          aria-label="{{ page_current_startdate|date('Y') }}"
+        >{{ (page_current_startdate|date('Y'))[2:] }}</time>
+      </label>
+    </dt>
+    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
+      <div class="o-Constrain"{{ attributes }}>
+        {{ title_prefix }}
+        <div class="o-Flex o-Flex--siteHead -mv-2">
+          {% if site_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          {% if site_second_logo %}
+            <div class="o-Flex__Item o-Flex__Item--siteLogo">
+              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+            </div>
+          {% endif %}
+          <div class="o-Flex__Item c-ConferenceTitles">
+            <h1 class="c-ConferenceTitles__Name"{{ title_attributes }}>{{ page_current_name }}</h1>
+          </div>
+        </div>
+        {{ title_suffix }}
+        <div class="o-Flex o-Flex--siteFoot">
+        </div>
+      </div>
+    </dd>
+    {{ content }}
+  </dl>
+{% endif %}
