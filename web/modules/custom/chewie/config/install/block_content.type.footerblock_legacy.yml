@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+id: footerblock_legacy
+label: 'Footer Block Legacy'
+revision: 1
+description: 'A panel in the footer. Can correspond to a previous, current, or next year panel.'
