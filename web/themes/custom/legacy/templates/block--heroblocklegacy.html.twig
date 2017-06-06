@@ -26,16 +26,12 @@
  */
 #}
 
-<header class="c-Hero">
-  <div{{ attributes }}>
-    <img src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}" alt="">
-    {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+<header{{ attributes.addClass('c-Hero') }}>
+  <img src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}" alt="{{ content.field_heroblock_legacy_image.0['#item'].alt }}">
+  {{ title_prefix }}
+  <h1 class="c-Hero__Hn">{{ block_current_theme }}</h1>
+  {{ title_suffix }}
+    <div class="c-Hero__Blurb">
+      {{ content.field_heroblock_legacy_body.0 }}
+    </div>
 </header>
