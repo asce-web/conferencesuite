@@ -1,3 +1,4 @@
+{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -25,8 +26,12 @@
  * @see template_preprocess_block()
  */
 #}
-<header class="c-Hero">
-  <img class="c-Hero__Img" src="{{ block_current_hero_src }}" alt="{{ block_current_hero_alt }}"/>
-  <h1 class="c-Hero__Hn">{{ block_current_theme }}</h1>
-  <p class="c-Hero__Blurb">{{ block_current_blurb }}</p>
-</header>
+{% block content %}
+  <header class="c-Hero">
+    <img class="c-Hero__Img"
+      src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}"
+      alt="{{ block_current_hero_alt }}"/>
+    <h1 class="c-Hero__Hn">{{ block_current_theme }}</h1>
+    <div class="c-Hero__Blurb">{{ content.field_heroblock_legacy_body.0 }}</div>
+  </header>
+{% endblock %}
