@@ -26,12 +26,6 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#description'   => t('Conference theme or tagline.'),
     '#required'      => TRUE,
   );
-  $form['current_year_settings']['current_info']['current_info_blurb'] = array(
-    '#type'          => 'textarea',
-    '#title'         => t('Conference Blurb'),
-    '#default_value' => theme_get_setting('current_info_blurb'),
-    '#description'   => t('Elevator pitch for the conference.'),
-  );
   $form['current_year_settings']['current_dates'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Dates'),
@@ -65,11 +59,5 @@ function legacy_current_year_settings_form_alter(&$form) {
     '#default_value' => theme_get_setting('current_location_advisory'),
     '#description'   => t('Accessible location name. e.g.: <i>Reston, Virginia</i>'),
     '#required'      => TRUE,
-  );
-  $form['current_year_settings']['current_location']['current_location_blurb'] = array(
-    '#type'          => 'textarea',
-    '#title'         => t('Location Blurb'),
-    '#default_value' => theme_get_setting('current_location_blurb'),
-    '#description'   => t('Short promotion for the conference location.'),
   );
 }
