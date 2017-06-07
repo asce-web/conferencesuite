@@ -54,5 +54,7 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
-$sites['stage.cisummit.org'] = 'cisummit.org';
-$sites['stage.surveyingconference.org'] = 'surveyingconference.org';
+$sites = array(
+  'stage.cisummit.org' => 'cisummit.org',
+  'stage.surveyingconference.org' => 'surveyingconference.org',
+);
