@@ -8,12 +8,6 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_current_theme']     = theme_get_setting('current_info_theme');
   $variables['page_current_blurb']     = theme_get_setting('current_info_blurb');
   $variables['page_current_startdate'] = theme_get_setting('current_dates_start');
-  $variables['page_prev_name']         = theme_get_setting('prev_info_name');
-  $variables['page_prev_theme']        = theme_get_setting('prev_info_theme');
-  $variables['page_prev_startdate']    = theme_get_setting('prev_dates_start');
-  $variables['page_next_name']         = theme_get_setting('next_info_name');
-  $variables['page_next_theme']        = theme_get_setting('next_info_theme');
-  $variables['page_next_startdate']    = theme_get_setting('next_dates_start');
 }
 
 /**
@@ -28,20 +22,4 @@ function legacy_preprocess_block(&$variables) {
   $variables['block_current_startdate']         = theme_get_setting('current_dates_start');
   $variables['block_current_enddate']           = theme_get_setting('current_dates_end');
   $variables['block_current_location_advisory'] = theme_get_setting('current_location_advisory');
-
-  // Previous Year Settings
-  $variables['block_prev_name']              = theme_get_setting('prev_info_name');
-  $variables['block_prev_theme']             = theme_get_setting('prev_info_theme');
-  $variables['block_prev_blurb']             = theme_get_setting('prev_info_blurb');
-  $variables['block_prev_startdate']         = theme_get_setting('prev_dates_start');
-  $variables['block_prev_enddate']           = theme_get_setting('prev_dates_end');
-  $variables['block_prev_location_advisory'] = theme_get_setting('prev_location_advisory');
-
-  // Next Year Settings
-  $variables['block_next_name']              = theme_get_setting('next_info_name');
-  $variables['block_next_theme']             = theme_get_setting('next_info_theme');
-  $variables['block_next_blurb']             = theme_get_setting('next_info_blurb');
-  $variables['block_next_startdate']         = theme_get_setting('next_dates_start');
-  $variables['block_next_enddate']           = theme_get_setting('next_dates_end');
-  $variables['block_next_location_advisory'] = theme_get_setting('next_location_advisory');
 }
