@@ -23,3 +23,15 @@ function legacy_preprocess_block(&$variables) {
   $variables['block_current_location_display']  = theme_get_setting('conference_location_display');
   $variables['block_current_location_advisory'] = theme_get_setting('conference_location_advisory');
 }
+
+/**
+ * Region Variables
+ */
+function legacy_preprocess_region(&$variables) {
+  $variables['region_current_name']              = theme_get_setting('conference_info_name');
+  $variables['region_current_theme']             = theme_get_setting('conference_info_theme');
+  $variables['region_current_startdate']         = theme_get_setting('conference_dates_start');
+  $variables['region_current_enddate']           = theme_get_setting('conference_dates_end');
+  $variables['region_current_location_display']  = theme_get_setting('conference_location_display');
+  $variables['region_current_location_advisory'] = theme_get_setting('conference_location_advisory');
+}

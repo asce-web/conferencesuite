@@ -54,7 +54,7 @@
           {{ content.field_footerblock_legacy_loc_ttl.0 }}
           |
           <time datetime="{{ block_prev_startdate|date('c') }}">
-            {{- block_prev_startdate|date('M d') -}}
+            {{- block_prev_startdate|date('M j') -}}
             {%- if block_prev_startdate|date('Y') != block_prev_enddate|date('Y') %}
               {{- block_prev_startdate|date(', Y') -}}
             {% endif -%}
@@ -64,7 +64,7 @@
             {%- if block_prev_startdate|date('M') != block_prev_enddate|date('M') %}
               {{- block_prev_enddate|date('M ') -}}
             {% endif -%}
-            {{- block_prev_enddate|date('d, Y') -}}
+            {{- block_prev_enddate|date('j, Y') -}}
           </time>
         </p>
         <p class="c-ConferenceTitles__Tagline">{{ content.field_footerblock_legacy_theme.0 }}</p>
