@@ -33,7 +33,7 @@
         {{ block_current_location_advisory }}
         |
         <time datetime="{{ block_current_startdate|date('c') }}">
-          {{- block_current_startdate|date('M d') -}}
+          {{- block_current_startdate|date('M j') -}}
           {%- if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
             {{- block_current_startdate|date(', Y') -}}
           {% endif -%}
@@ -43,7 +43,7 @@
           {%- if block_current_startdate|date('M') != block_current_enddate|date('M') %}
             {{- block_current_enddate|date('M ') -}}
           {% endif -%}
-          {{- block_current_enddate|date('d, Y') -}}
+          {{- block_current_enddate|date('j, Y') -}}
         </time>
       </p>
       {% if site_slogan %}
