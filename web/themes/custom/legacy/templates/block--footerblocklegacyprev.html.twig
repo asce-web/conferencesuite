@@ -35,7 +35,7 @@
   </label>
 </dt>
 <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-prev">
-  <div class="o-Constrain"{{ attributes }}>
+  <div{{ attributes.addClass('o-Constrain') }}>
     {{ title_prefix }}
     <div class="o-Flex o-Flex--siteHead -mv-2">
       {% if site_logo %}
@@ -49,7 +49,7 @@
         </div>
       {% endif %}
       <div class="o-Flex__Item c-ConferenceTitles">
-        <h1 class="c-ConferenceTitles__Name"{{ title_attributes }}>{{ content.field_footerblock_legacy_name.0 }}</h1>
+        <h1{{ title_attributes.addClass('c-ConferenceTitles__Name') }}>{{ content.field_footerblock_legacy_name.0 }}</h1>
         <p class="c-ConferenceTitles__Detail">
           {{ content.field_footerblock_legacy_loc_ttl.0 }}
           |
