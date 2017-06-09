@@ -13,40 +13,13 @@
  */
 #}
 {% if content %}
-  <dl class="o-Flex o-Tabs"{{ attributes }}>
-    <!-- NOTE: 'current' displayed first for accessibility. other year tabs are below it. -->
-    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
-      <label class="h-Block">
-        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ region_current_startdate|date('Y') }}" checked=""/>
-        <time class="c-YearBadge c-YearBadge--tab"
-          datetime="{{ region_current_startdate|date('Y') }}"
-          aria-label="{{ region_current_startdate|date('Y') }}"
-        >{{ (region_current_startdate|date('Y'))[2:] }}</time>
-      </label>
-    </dt>
-    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
-      <div class="o-Constrain"{{ attributes }}>
-        {{ title_prefix }}
-        <div class="o-Flex o-Flex--siteHead -mv-2">
-          {% if site_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          {% if site_second_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          <div class="o-Flex__Item c-ConferenceTitles">
-            <h1 class="c-ConferenceTitles__Name"{{ title_attributes }}>{{ region_current_name }}</h1>
-          </div>
-        </div>
-        {{ title_suffix }}
-        <div class="o-Flex o-Flex--siteFoot">
-        </div>
-      </div>
-    </dd>
-    {{ content }}
-  </dl>
+<dl class="o-Flex o-Tabs"{{ attributes }}>
+  <!--
+    NOTE: for accessibility, the order of blocks should be:
+    1. current year
+    2. previous year
+    3. next year
+  -->
+  {{ content }}
+</dl>
 {% endif %}

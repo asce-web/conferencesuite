@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+<dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
+  <label class="h-Block">
+    <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ block_current_startdate|date('Y') }}" checked=""/>
+    <time class="c-YearBadge c-YearBadge--tab"
+      datetime="{{ block_current_startdate|date('Y') }}"
+      aria-label="{{ block_current_startdate|date('Y') }}"
+    >{{ (block_current_startdate|date('Y'))[2:] }}</time>
+  </label>
+</dt>
+<dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
+  <div class="o-Constrain"{{ attributes }}>
+    {{ title_prefix }}
+    <div class="o-Flex o-Flex--siteHead -mv-2">
+      {% if site_logo %}
+        <div class="o-Flex__Item o-Flex__Item--siteLogo">
+          <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
+        </div>
+      {% endif %}
+      {% if site_second_logo %}
+        <div class="o-Flex__Item o-Flex__Item--siteLogo">
+          <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+        </div>
+      {% endif %}
+      <div class="o-Flex__Item c-ConferenceTitles">
+        <h1 class="c-ConferenceTitles__Name"{{ title_attributes }}>{{ block_current_name }}</h1>
+      </div>
+    </div>
+    {{ title_suffix }}
+    <div class="o-Flex o-Flex--siteFoot">
+      <!-- TODO: replace this block with automated menus -->
+      {{ content.body.0 }}
+      <div class="o-Flex__Item">
+        <nav>
+          <h3>Contact Us</h3>
+          <ul class="o-List -fz-el-kilo">
+            <li class="o-List__Item -mb-1"><a href="tel:800-548-2723"   ><i class="-mr-1 glyphicons glpyhicons-iphone"   role="none"></i> (800) 548-2723</a></li>
+            <li class="o-List__Item -mb-1"><a href="tel:+1-703-295-7300"><i class="-mr-1 glyphicons glpyhicons-earphone" role="none"></i> +1 (703) 295-7300</a></li>
+            <li class="o-List__Item -mb-1"><a href="/contact"           ><i class="-mr-1 glyphicons glpyhicons-envelope" role="none"></i> Other Contacts</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Connect With ASCE</h3>
+          <ul class="o-List o-Flex [ -xjc-xs ] [ -jc-xs ] -jc-s">
+            <li class="o-List__Item o-Flex__Item -x-z -mr-1"><a href="http://www.linkedin.com/groups?gid=143956&trk=hb_side_g"                   ><i class="glyphicons social social-linked-in"  ><span class="h-Hidden">LinkedIn</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item -x-z -mr-1"><a href="http://www.facebook.com/asce.org"                                          ><i class="glyphicons social social-facebook"   ><span class="h-Hidden">Facebook</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item -x-z -mr-1"><a href="http://www.twitter.com/ascetweets"                                         ><i class="glyphicons social social-twitter"    ><span class="h-Hidden">Twitter</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item -x-z -mr-1"><a href="https://www.youtube.com/user/AmerSocCivilEng"                              ><i class="glyphicons social social-youtube"    ><span class="h-Hidden">YouTube</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item -x-z -mr-1"><a href="https://plus.google.com/u/0/b/105603289001341360426/+AmerSocCivilEng/posts"><i class="glyphicons social social-google-plus"><span class="h-Hidden">Google Plus</span></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</dd>
