@@ -37,6 +37,7 @@
 <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
   <div{{ attributes.addClass('o-Constrain') }}>
     {{ title_prefix }}
+    {{ title_suffix }}
     <div class="o-Flex o-Flex--siteHead -mv-2">
       {% if site_logo %}
         <div class="o-Flex__Item o-Flex__Item--siteLogo">
@@ -49,10 +50,9 @@
         </div>
       {% endif %}
       <div class="o-Flex__Item c-ConferenceTitles">
-        <h1{{ title_attributes.addClass('c-ConferenceTitles__Name') }}>{{ block_current_name }}</h1>
+        <h1 class="c-ConferenceTitles__Name">{{ block_current_name }}</h1>
       </div>
     </div>
-    {{ title_suffix }}
     <div class="o-Flex o-Flex--siteFoot">
       <!-- TODO: replace this block with automated menus -->
       {{ content.body.0 }}
