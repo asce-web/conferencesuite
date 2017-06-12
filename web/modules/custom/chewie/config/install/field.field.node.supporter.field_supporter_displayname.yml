@@ -12,7 +12,7 @@ field_name: field_supporter_displayname
 entity_type: node
 bundle: supporter
 label: 'Display Name'
-description: 'Name visible on the site.'
+description: 'Name visible on the site. If left blank, Title will be used.'
 required: false
 translatable: false
 default_value: {  }
