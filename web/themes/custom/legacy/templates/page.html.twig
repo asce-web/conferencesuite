@@ -17,7 +17,7 @@
     <div class="o-Flex o-Constrain">
       {{ page.header }}
       <div class="o-Flex__Item o-SideCol c-TopImg">
-        <span class="c-YearBadge" role="none">{{ (page_current_conference_start_date|date('Y'))[2:] }}</span>
+        <span class="c-YearBadge" role="none">{{ (page_current_startdate|date('Y'))[2:] }}</span>
         <div class="o-Flex c-NavBar c-NavBar--contrib">
           <!-- change this div to a ul.o-List later -->
           {{ page.contributors_menu }}
