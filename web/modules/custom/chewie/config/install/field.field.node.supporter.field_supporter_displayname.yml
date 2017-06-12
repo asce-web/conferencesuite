@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_supporter_displayname
+    - node.type.supporter
+  enforced:
+    module:
+      - chewie
+id: node.supporter.field_supporter_displayname
+field_name: field_supporter_displayname
+entity_type: node
+bundle: supporter
+label: 'Display Name'
+description: 'Name visible on the site. If left blank, Title will be used.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Supporter Level'
+type: supporterlevel
+description: 'Level of supporting organizations (Gold, Silver, etc.)'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

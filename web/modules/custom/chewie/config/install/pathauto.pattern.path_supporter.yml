@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - chewie
+id: path_supporter
+label: Supporter
+type: 'canonical_entities:node'
+pattern: 'supporter/[node:title]'
+selection_criteria:
+  d12a6216-f5d0-4b56-90de-543c5d16eba9:
+    id: node_type
+    bundles:
+      supporter: supporter
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d12a6216-f5d0-4b56-90de-543c5d16eba9
+selection_logic: and
+weight: -5
+relationships: {  }
