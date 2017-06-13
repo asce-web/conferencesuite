@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{#
+FIXME this is a temporary bugfix!
+
+The Contributors Menu (<ul.c-NavBar--contrib>) should be absolutely positioned
+to the <body>, but Drupal generates a <div.contextual-region> wrapper around blocks,
+and this wrapper is relatively positioned. This affects the positioning of the
+contributors menu, so we need to override its region container.
+
+NOTE that we could have simply overridden the block container instead of the
+region container, however that would require targeting the machine name of a
+block instance---which could change from site to site.
+
+TODO: see if the <div.contextual-region> is generated on the public site
+(while not logged in). If it is only generated for authenticated users (logged into Drupal),
+then this file will be safe to remove.
+
+The following CSS classes set these styles:
+{
+  position:absolute;
+  top:0; bottom:0; left:0; right:0;
+}
+#}
+{% if content %}
+  <div{{ attributes.addClass('-ps-a -t-z -b-z -l-z -r-z') }}>
+    {{ content }}
+  </div>
+{% endif %}

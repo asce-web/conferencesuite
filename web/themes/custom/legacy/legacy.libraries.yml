@@ -9,6 +9,6 @@ global-styling:
       //cdn.rawgit.com/asce-web/chewie/stage-v2.0.0/legacy.min.css: {type: external, minified: true}
   js:
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
-    //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}
+    scripts/menu.js: {minified: false}
     scripts/o-Tabs.js: {minified: false}
     scripts/orphaned.js: {minified: false}
