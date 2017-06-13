@@ -1,5 +1,21 @@
 global-styling:
   version: 1.11.3
+  js:
+    //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
+    //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}
+    scripts/o-Tabs.js: {minified: false}
+    scripts/orphaned.js: {minified: false}
+
+dev-branch:
+  css:
+    theme:
+      //cdn.asce.org/chewie/dev/css/futura.css: {type: external, minified: true}
+      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
+      //cdn.rawgit.com/chharvey/xmeter/v5.6.1/xmeter.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/bangs/v0.12.0/bangs.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/asce-web/chewie/dev-v2.0.0/legacy.min.css: {type: external, minified: true}
+
+stage-branch:
   css:
     theme:
       //cdn.asce.org/chewie/stage/css/futura.css: {type: external, minified: true}
@@ -7,8 +23,12 @@ global-styling:
       //cdn.rawgit.com/chharvey/xmeter/v5.6.1/xmeter.min.css: {type: external, minified: true}
       //cdn.rawgit.com/chharvey/bangs/v0.12.0/bangs.min.css: {type: external, minified: true}
       //cdn.rawgit.com/asce-web/chewie/stage-v2.0.0/legacy.min.css: {type: external, minified: true}
-  js:
-    //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
-    //cdn.asce.org/chewie/stage/js/main.js: {type: external, minified: false}
-    scripts/o-Tabs.js: {minified: false}
-    scripts/orphaned.js: {minified: false}
+
+prod-branch:
+  css:
+    theme:
+      //cdn.asce.org/chewie/prod/css/futura.css: {type: external, minified: true}
+      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
+      //cdn.rawgit.com/chharvey/xmeter/v5.6.1/xmeter.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/bangs/v0.12.0/bangs.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/asce-web/chewie/prod-v2.0.0/legacy.min.css: {type: external, minified: true}

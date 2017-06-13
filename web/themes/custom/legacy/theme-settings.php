@@ -67,5 +67,27 @@ function legacy_form_system_theme_settings_alter(&$form, &$form_state){
     '#description'   => t('Accessible location name.'),
     '#required'      => TRUE,
   );
+  $form['conference_settings']['conference_developer'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Developer Settings'),
+  );
+  $form['conference_settings']['conference_developer']['conference_developer_class'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Site Class Name'),
+    '#default_value' => theme_get_setting('conference_developer_class'),
+    '#description'   => t('<em>Chewie</em> color scheme class.'),
+  );
+  $form['conference_settings']['conference_developer']['conference_developer_branch'] = array(
+    '#type' => 'select',
+    '#title' => t('Style Repository Channel'),
+    '#options' => array(
+      1 => t('production'),
+      2 => t('staging'),
+      3 => t('development'),
+    ),
+    '#default_value' => theme_get_setting('conference_developer_branch'),
+    '#description' => t('Choose the style repository branch to be applied. <em>Note</em>: You may need to flush all caches after a selection has been made.'),
+  );
+
   // $form['favicon']['#group'] = 'legacy_theme_settings';
 }

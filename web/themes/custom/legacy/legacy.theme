@@ -1,6 +1,35 @@
 <?php
 
 /**
+ * HTML Variables
+ */
+function legacy_preprocess_html(&$variables) {
+  $variables['html_developer_class']           = theme_get_setting('conference_developer_class');
+  $variables['html_developer_branch']          = theme_get_setting('conference_developer_branch');
+
+$repo_branch = theme_get_setting('conference_developer_branch');
+
+  if (!empty($repo_branch)) {
+    switch ($repo_branch) {
+      case '1':
+      $variables['#attached']['library'][] = 'legacy/prod-branch';
+      break;
+
+      case '2':
+      $variables['#attached']['library'][] = 'legacy/stage-branch';
+      break;
+
+      case '3':
+      $variables['#attached']['library'][] = 'legacy/dev-branch';
+      break;
+    }
+  }
+  else {
+    $variables['#attached']['library'][] = 'legacy/stage-branch';
+  }
+}
+
+/**
  * Page Variables
  */
 function legacy_preprocess_page(&$variables) {
