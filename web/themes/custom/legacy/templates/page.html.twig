@@ -15,7 +15,9 @@
   </nav>
   <div class="c-Mast c-Mast--head">
     <div class="o-Flex o-Constrain">
-      {{ page.header }}
+      <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}" rel="home">
+        {{ page.header }}
+      </a>
       <div class="o-Flex__Item o-SideCol c-TopImg">
         <span class="c-YearBadge" role="none">{{ (page_current_startdate|date('Y'))[2:] }}</span>
         <div class="o-Flex c-NavBar c-NavBar--contrib">
@@ -43,12 +45,14 @@
     </div>
   </nav>
 </header>
-<main class="o-Flex o-Constrain -xd-c-nM -mb-2" id="main">
-  <div class="o-Flex__Item o-MainCol">
-    {{ page.hero }}
-    <section class="t-Content">{{ page.content }}</section>
+<main id="main">
+  <div class="o-Constrain o-Flex -xd-c-nM -mb-2">
+    <div class="o-Flex__Item o-MainCol">
+      {{ page.hero }}
+      <section class="t-Content">{{ page.content }}</section>
+    </div>
+    <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
   </div>
-  <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
 </main>
 <aside>
   <div class="o-Constrain">
