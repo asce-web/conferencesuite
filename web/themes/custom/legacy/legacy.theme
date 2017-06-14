@@ -4,10 +4,10 @@
  * HTML Variables
  */
 function legacy_preprocess_html(&$variables) {
-  $variables['html_developer_class']  = theme_get_setting('conference_developer_class');
-  $variables['html_developer_branch'] = theme_get_setting('conference_developer_branch');
+  $variables['html_developer_class']  = theme_get_setting('developer_class');
+  $variables['html_developer_branch'] = theme_get_setting('developer_branch');
 
-  $repo_branch = theme_get_setting('conference_developer_branch');
+  $repo_branch = theme_get_setting('developer_branch');
 
   if (!empty($repo_branch)) {
     switch ($repo_branch) {
@@ -33,34 +33,34 @@ function legacy_preprocess_html(&$variables) {
  * Page Variables
  */
 function legacy_preprocess_page(&$variables) {
-  $variables['page_current_name']              = theme_get_setting('conference_info_name');
-  $variables['page_current_theme']             = theme_get_setting('conference_info_theme');
-  $variables['page_current_startdate']         = theme_get_setting('conference_dates_start');
-  $variables['page_current_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['page_current_location_display']  = theme_get_setting('conference_location_display');
-  $variables['page_current_location_advisory'] = theme_get_setting('conference_location_advisory');
+  $variables['page_name']              = theme_get_setting('conference_info_name');
+  $variables['page_theme']             = theme_get_setting('conference_info_theme');
+  $variables['page_startdate']         = theme_get_setting('conference_dates_start');
+  $variables['page_enddate']           = theme_get_setting('conference_dates_end');
+  $variables['page_location_display']  = theme_get_setting('conference_location_display');
+  $variables['page_location_advisory'] = theme_get_setting('conference_location_advisory');
 }
 
 /**
  * Block Variables
  */
 function legacy_preprocess_block(&$variables) {
-  $variables['block_current_name']              = theme_get_setting('conference_info_name');
-  $variables['block_current_theme']             = theme_get_setting('conference_info_theme');
-  $variables['block_current_startdate']         = theme_get_setting('conference_dates_start');
-  $variables['block_current_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['block_current_location_display']  = theme_get_setting('conference_location_display');
-  $variables['block_current_location_advisory'] = theme_get_setting('conference_location_advisory');
+  $variables['block_name']              = theme_get_setting('conference_info_name');
+  $variables['block_theme']             = theme_get_setting('conference_info_theme');
+  $variables['block_startdate']         = theme_get_setting('conference_dates_start');
+  $variables['block_enddate']           = theme_get_setting('conference_dates_end');
+  $variables['block_location_display']  = theme_get_setting('conference_location_display');
+  $variables['block_location_advisory'] = theme_get_setting('conference_location_advisory');
 }
 
 /**
  * Region Variables
  */
 function legacy_preprocess_region(&$variables) {
-  $variables['region_current_name']              = theme_get_setting('conference_info_name');
-  $variables['region_current_theme']             = theme_get_setting('conference_info_theme');
-  $variables['region_current_startdate']         = theme_get_setting('conference_dates_start');
-  $variables['region_current_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['region_current_location_display']  = theme_get_setting('conference_location_display');
-  $variables['region_current_location_advisory'] = theme_get_setting('conference_location_advisory');
+  $variables['region_name']              = theme_get_setting('conference_info_name');
+  $variables['region_theme']             = theme_get_setting('conference_info_theme');
+  $variables['region_startdate']         = theme_get_setting('conference_dates_start');
+  $variables['region_enddate']           = theme_get_setting('conference_dates_end');
+  $variables['region_location_display']  = theme_get_setting('conference_location_display');
+  $variables['region_location_advisory'] = theme_get_setting('conference_location_advisory');
 }
