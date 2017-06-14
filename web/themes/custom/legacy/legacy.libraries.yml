@@ -1,5 +1,5 @@
 global-styling:
-  version: 0.2.0
+  version: 0.3.0
   js:
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
     scripts/menu.js: {minified: false}
