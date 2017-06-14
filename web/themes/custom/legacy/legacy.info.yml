@@ -11,3 +11,8 @@ regions:
   sidebar: Sidebar
   supporters: Supporters
   footer: Footer
+  menu_main: Main Menu
+  menu_sub: Sub Menu
+  menu_register: Registration Menu
+  menu_contrib: Contributors Menu
+  menu_mobile: Mobile Menu

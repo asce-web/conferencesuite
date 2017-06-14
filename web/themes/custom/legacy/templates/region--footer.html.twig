@@ -13,13 +13,13 @@
  */
 #}
 {% if content %}
-<dl{{ attributes.addClass('o-Flex o-Tabs') }}>
-  <!--
-    NOTE: for accessibility, the order of blocks should be:
-    1. current year
-    2. previous year
-    3. next year
-  -->
-  {{ content }}
-</dl>
+  <dl{{ attributes.addClass('o-Flex o-Tabs') }}>
+    <!--
+      NOTE: for accessibility, the order of blocks should be:
+      1. current year
+      2. previous year
+      3. next year
+    -->
+    {{ content }}
+  </dl>
 {% endif %}

@@ -1,5 +1,6 @@
 <header>
   <nav class="o-Flex o-MobileBar">
+    <h1 class="h-Hidden">Mobile Menu</h1>
     <a class="o-Flex__Item o-MobileBar__Item -lh-z" href="/">
       <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
     </a>
@@ -8,47 +9,45 @@
       <i class="c-Toggle__Viz glyphicons glyphicons-menu-hamburger" role="none"></i>
     </label>
     <noscript><a href="#sitemap">Site Map</a></noscript>
-    <div class="o-Drawer c-NavBar c-NavBar--mobile">
-      <!-- change this div to a ul.o-List later -->
-      {{ page.mobile_menu }}
-    </div>
+    {{ page.menu_mobile }}
   </nav>
   <div class="c-Mast c-Mast--head">
     <div class="o-Flex o-Constrain">
-      {{ page.header }}
+      <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}" rel="home">
+        {{ page.header }}
+      </a>
       <div class="o-Flex__Item o-SideCol c-TopImg">
         <span class="c-YearBadge" role="none">{{ (page_current_startdate|date('Y'))[2:] }}</span>
-        <div class="o-Flex c-NavBar c-NavBar--contrib">
-          <!-- change this div to a ul.o-List later -->
-          {{ page.contributors_menu }}
-        </div>
+        {{ page.menu_contrib }}
       </div>
     </div>
   </div>
   <nav class="c-Mast c-Mast--nav">
-    <div class="o-Flex o-Constrain">
-      <div class="o-Flex__Item o-Flex o-MainCol c-NavBar c-NavBar--main">
-        <!-- change this div to a ul.o-List later -->
-        {{ page.main_menu }}
+    <h1 class="h-Hidden">Main Menus</h1>
+    <div class="o-Constrain o-Flex">
+      <div class="o-Flex__Item o-MainCol">
+        {{ page.menu_main }}
       </div>
-      <div class="o-Flex__Item o-Flex o-SideCol c-NavBar c-NavBar--register">
-        <!-- change this div to a ul.o-List later -->
-        {{ page.registration_menu }}
+      <div class="o-Flex__Item o-SideCol">
+        {{ page.menu_register }}
       </div>
     </div>
   </nav>
   <nav class="c-Mast c-Mast--nav c-Mast--nav--sub">
+    <h1 class="h-Hidden">Sub Menus</h1>
     <div class="o-Constrain">
-      {{ page.sub_menu }}
+      {{ page.menu_sub }}
     </div>
   </nav>
 </header>
-<main class="o-Flex o-Constrain -xd-c-nM -mb-2" id="main">
-  <div class="o-Flex__Item o-MainCol">
-    {{ page.hero }}
-    <section class="t-Content">{{ page.content }}</section>
+<main id="main">
+  <div class="o-Constrain o-Flex -xd-c-nM -mb-2">
+    <div class="o-Flex__Item o-MainCol">
+      {{ page.hero }}
+      <section class="t-Content">{{ page.content }}</section>
+    </div>
+    <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
   </div>
-  <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
 </main>
 <aside>
   <div class="o-Constrain">
