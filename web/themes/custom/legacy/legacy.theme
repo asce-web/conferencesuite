@@ -4,10 +4,10 @@
  * HTML Variables
  */
 function legacy_preprocess_html(&$variables) {
-  $variables['html_developer_class']           = theme_get_setting('conference_developer_class');
-  $variables['html_developer_branch']          = theme_get_setting('conference_developer_branch');
+  $variables['html_developer_class']  = theme_get_setting('conference_developer_class');
+  $variables['html_developer_branch'] = theme_get_setting('conference_developer_branch');
 
-$repo_branch = theme_get_setting('conference_developer_branch');
+  $repo_branch = theme_get_setting('conference_developer_branch');
 
   if (!empty($repo_branch)) {
     switch ($repo_branch) {

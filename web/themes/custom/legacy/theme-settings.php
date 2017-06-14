@@ -73,9 +73,9 @@ function legacy_form_system_theme_settings_alter(&$form, &$form_state){
   );
   $form['conference_settings']['conference_developer']['conference_developer_class'] = array(
     '#type'          => 'textfield',
-    '#title'         => t('Site Class Name'),
+    '#title'         => t('Body Class(es)'),
     '#default_value' => theme_get_setting('conference_developer_class'),
-    '#description'   => t('<em>Chewie</em> color scheme class.'),
+    '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
   );
   $form['conference_settings']['conference_developer']['conference_developer_branch'] = array(
     '#type' => 'select',
@@ -86,7 +86,7 @@ function legacy_form_system_theme_settings_alter(&$form, &$form_state){
       3 => t('development'),
     ),
     '#default_value' => theme_get_setting('conference_developer_branch'),
-    '#description' => t('Choose the style repository branch to be applied. <em>Note</em>: You may need to flush all caches after a selection has been made.'),
+    '#description' => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
   );
 
   // $form['favicon']['#group'] = 'legacy_theme_settings';
