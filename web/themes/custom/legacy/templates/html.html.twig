@@ -25,6 +25,8 @@
  * @ingroup themeable
  */
 #}
+{% set classes = [ html_developer_class ] %}
+
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
@@ -42,7 +44,7 @@
       </style>
     </noscript>
   </head>
-  <body{{ attributes }} id="top">
+  <body{{ attributes.addClass(classes) }} id="top">
     <a class="h-Hidden" href="#main">skip to main content</a>
     {{ page_top }}
     {{ page }}

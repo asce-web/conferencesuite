@@ -1,4 +1,3 @@
-{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -15,8 +14,9 @@
  * @ingroup themeable
  */
 #}
-{% block content %}
-  <a class="o-Flex__Item o-Flex o-Flex--siteHead o-MainCol" href="{{ path('<front>') }}" rel="home">
+<div{{ attributes.addClass('o-Flex o-Flex--siteHead') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
     {% if site_logo %}
       <div class="o-Flex__Item o-Flex__Item--siteLogo">
         <img class="c-ConfLogo" src="{{ site_logo }}" alt="Home"/>
@@ -28,27 +28,26 @@
       </div>
     {% endif %}
     <div class="o-Flex__Item o-Flex__Item--siteTitles c-ConferenceTitles -ta-l-sM">
-      <h1 class="c-ConferenceTitles__Name">{{ block_current_name }}</h1>
+      <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
       <p class="c-ConferenceTitles__Detail">
-        {{ block_current_location_advisory }}
+        {{ block_location_advisory }}
         |
-        <time datetime="{{ block_current_startdate|date('c') }}">
-          {{- block_current_startdate|date('M d') -}}
-          {%- if block_current_startdate|date('Y') != block_current_enddate|date('Y') %}
-            {{- block_current_startdate|date(', Y') -}}
+        <time datetime="{{ block_startdate|date('c') }}">
+          {{- block_startdate|date('F j') -}}
+          {%- if block_startdate|date('Y') != block_enddate|date('Y') %}
+            {{- block_startdate|date(', Y') -}}
           {% endif -%}
         </time>
         {{- '&ndash;' -}}
-        <time datetime="{{ block_current_startdate|date('c') }}">
-          {%- if block_current_startdate|date('M') != block_current_enddate|date('M') %}
-            {{- block_current_enddate|date('M ') -}}
+        <time datetime="{{ block_enddate|date('c') }}">
+          {%- if block_startdate|date('m') != block_enddate|date('m') %}
+            {{- block_enddate|date('F ') -}}
           {% endif -%}
-          {{- block_current_enddate|date('d, Y') -}}
+          {{- block_enddate|date('j, Y') -}}
         </time>
       </p>
       {% if site_slogan %}
         <p class="c-ConferenceTitles__Tagline">{{ site_slogan }}</p>
       {% endif %}
     </div>
-  </a>
-{% endblock %}
+</div>

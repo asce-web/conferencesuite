@@ -1,54 +1,53 @@
 <header>
   <nav class="o-Flex o-MobileBar">
-    <a class="o-Flex__Item o-MobileBar__Item -lh-z" href="/">
+    <h1 class="h-Hidden">Mobile Menu</h1>
+    <a class="o-Flex__Item o-MobileBar__Item h-Block" href="/">
       <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
     </a>
-    <label class="o-Flex__Item o-MobileBar__Item c-Toggle" aria-label="toggle main menu">
+    <label class="o-Flex__Item o-MobileBar__Item c-Toggle h-Block" aria-label="toggle main menu">
       <input class="c-Toggle__Check h-Hidden" type="checkbox" value="main menu is open" role="switch"/>
       <i class="c-Toggle__Viz glyphicons glyphicons-menu-hamburger" role="none"></i>
     </label>
     <noscript><a href="#sitemap">Site Map</a></noscript>
-    <div class="o-Drawer c-NavBar c-NavBar--mobile">
-      <!-- change this div to a ul.o-List later -->
-      {{ page.mobile_menu }}
-    </div>
+    {{ page.menu_mobile }}
   </nav>
-  <div class="c-Mast c-Mast--head">
+  <div class="c-Banner c-Banner--head">
     <div class="o-Flex o-Constrain">
-      {{ page.header }}
+      <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}" rel="home">
+        {{ page.header }}
+      </a>
       <div class="o-Flex__Item o-SideCol c-TopImg">
-        <span class="c-YearBadge" role="none">{{ (page_current_startdate|date('Y'))[2:] }}</span>
-        <div class="o-Flex c-NavBar c-NavBar--contrib">
-          <!-- change this div to a ul.o-List later -->
-          {{ page.contributors_menu }}
-        </div>
+        <span class="c-YearBadge" role="none">{{ (page_startdate|date('Y'))[2:] }}</span>
+        {{ page.menu_contrib }}
       </div>
     </div>
   </div>
-  <nav class="c-Mast c-Mast--nav">
-    <div class="o-Flex o-Constrain">
-      <div class="o-Flex__Item o-Flex o-MainCol c-NavBar c-NavBar--main">
-        <!-- change this div to a ul.o-List later -->
-        {{ page.main_menu }}
+  <nav class="c-Banner c-Banner--nav">
+    <h1 class="h-Hidden">Main Menus</h1>
+    <div class="o-Constrain o-Flex">
+      <div class="o-Flex__Item o-MainCol">
+        {{ page.menu_main }}
       </div>
-      <div class="o-Flex__Item o-Flex o-SideCol c-NavBar c-NavBar--register">
-        <!-- change this div to a ul.o-List later -->
-        {{ page.registration_menu }}
+      <div class="o-Flex__Item o-SideCol">
+        {{ page.menu_register }}
       </div>
     </div>
   </nav>
-  <nav class="c-Mast c-Mast--nav c-Mast--nav--sub">
+  <nav class="c-Banner c-Banner--nav c-Banner--nav--sub">
+    <h1 class="h-Hidden">Sub Menus</h1>
     <div class="o-Constrain">
-      {{ page.sub_menu }}
+      {{ page.menu_sub }}
     </div>
   </nav>
 </header>
-<main class="o-Flex o-Constrain -xd-c-nM -mb-2" id="main">
-  <div class="o-Flex__Item o-MainCol">
-    {{ page.hero }}
-    <section class="t-Content">{{ page.content }}</section>
+<main id="main">
+  <div class="o-Constrain o-Flex -xd-c-nM -mb-2">
+    <div class="o-Flex__Item o-MainCol">
+      {{ page.hero }}
+      <section class="t-Content">{{ page.content }}</section>
+    </div>
+    <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
   </div>
-  <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
 </main>
 <aside>
   <div class="o-Constrain">
@@ -56,146 +55,22 @@
     {{ page.sponsors }}
   </div>
 </aside>
-<aside class="c-Mast c-Mast--coop">
+<aside class="c-Banner c-Banner--coop">
   <div class="o-Constrain">
     <h2 class="h-Hidden">Supporting Organizations</h2>
     {{ page.nonsponsors }}
   </div>
 </aside>
 <footer>
-  <dl class="o-Flex o-Tabs">
-    <!-- NOTE: 'current' displayed first for accessibility -->
-    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-current">
-      <label class="h-Block">
-        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_current_startdate|date('Y') }}" checked=""/>
-        <time class="c-YearBadge c-YearBadge--tab"
-          datetime="{{ page_current_startdate|date('Y') }}"
-          aria-label="{{ page_current_startdate|date('Y') }}"
-        >{{ (page_current_startdate|date('Y'))[2:] }}</time>
-      </label>
-    </dt>
-    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-current">
-      <div class="o-Constrain">
-        <div class="o-Flex o-Flex--siteHead -mv-2">
-          {% if site_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          {% if site_second_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          <div class="o-Flex__Item c-ConferenceTitles">
-            <h1 class="c-ConferenceTitles__Name">{{ page_current_name }}</h1>
-          </div>
-        </div>
-        <div class="o-Flex o-Flex--siteFoot">{{ page.footer_current }}</div>
-      </div>
-    </dd>
-    <dt class="o-Flex__Item o-Tabs__Tab [ js-xo-_1 ]" id="tab-prev">
-      <label class="h-Block">
-        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_prev_startdate|date('Y') }}"/>
-        <time class="c-YearBadge c-YearBadge--tab"
-          datetime="{{ page_prev_startdate|date('Y') }}"
-          aria-label="{{ page_prev_startdate|date('Y') }}"
-        >{{ (page_prev_startdate|date('Y'))[2:] }}</time>
-      </label>
-    </dt>
-    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-prev">
-      <div class="o-Constrain">
-        <div class="o-Flex o-Flex--siteHead -mv-2">
-          {% if site_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          {% if site_second_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          <div class="o-Flex__Item c-ConferenceTitles">
-            <h1 class="c-ConferenceTitles__Name">{{ page_prev_name }}</h1>
-            <p class="c-ConferenceTitles__Detail">
-              {{ block_prev_location_advisory }}
-              |
-              <time datetime="{{ block_prev_startdate|date('c') }}">
-                {{- block_prev_startdate|date('M d') -}}
-                {%- if block_prev_startdate|date('Y') != block_prev_enddate|date('Y') %}
-                  {{- block_prev_startdate|date(', Y') -}}
-                {% endif -%}
-              </time>
-              {{- '&ndash;' -}}
-              <time datetime="{{ block_prev_startdate|date('c') }}">
-                {%- if block_prev_startdate|date('M') != block_prev_enddate|date('M') %}
-                  {{- block_prev_enddate|date('M ') -}}
-                {% endif -%}
-                {{- block_prev_enddate|date('d, Y') -}}
-              </time>
-            </p>
-            {% if page_prev_theme %}
-              <p class="c-ConferenceTitles__Tagline">{{ page_prev_theme }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="t-Content">{{ page.footer_prev }}</div>
-      </div>
-    </dd>
-    <dt class="o-Flex__Item o-Tabs__Tab" id="tab-next">
-      <label class="h-Block">
-        <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ page_next_startdate|date('Y') }}"/>
-        <time class="c-YearBadge c-YearBadge--tab"
-          datetime="{{ page_next_startdate|date('Y') }}"
-          aria-label="{{ page_next_startdate|date('Y') }}"
-        >{{ (page_next_startdate|date('Y'))[2:] }}</time>
-      </label>
-    </dt>
-    <dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-next">
-      <div class="o-Constrain">
-        <div class="o-Flex o-Flex--siteHead -mv-2">
-          {% if site_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          {% if site_second_logo %}
-            <div class="o-Flex__Item o-Flex__Item--siteLogo">
-              <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
-            </div>
-          {% endif %}
-          <div class="o-Flex__Item c-ConferenceTitles">
-            <h1 class="c-ConferenceTitles__Name">{{ page_next_name }}</h1>
-            <p class="c-ConferenceTitles__Detail">
-              {{ block_next_location_advisory }}
-              |
-              <time datetime="{{ block_next_startdate|date('c') }}">
-                {{- block_next_startdate|date('M d') -}}
-                {%- if block_next_startdate|date('Y') != block_next_enddate|date('Y') %}
-                  {{- block_next_startdate|date(', Y') -}}
-                {% endif -%}
-              </time>
-              {{- '&ndash;' -}}
-              <time datetime="{{ block_next_startdate|date('c') }}">
-                {%- if block_next_startdate|date('M') != block_next_enddate|date('M') %}
-                  {{- block_next_enddate|date('M ') -}}
-                {% endif -%}
-                {{- block_next_enddate|date('d, Y') -}}
-              </time>
-            </p>
-            {% if page_next_theme %}
-              <p class="c-ConferenceTitles__Tagline">{{ page_next_theme }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="t-Content">{{ page.footer_prev }}</div>
-      </div>
-    </dd>
-  </dl>
-  <p class="c-Mast c-Mast--copyright -mb-z -ta-c">
-    <i class="c-AsceLogo" role="none"></i>
-    <a href="http://www.asce.org/" rel="exetrnal" target="_blank">&copy; 1996&ndash;{{ now|date("Y") }},
+  {{ page.footer }}
+  <p class="c-Banner c-Banner--copyright -mb-z -ta-c">
+    <svg class="c-AsceLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254.89 81.06">
+      <path d="M110.19,110c-.78.1,22.24-.17,22.24-.17L102.21,33.17l-22.72-.08L61.94,76.19l21.83-.31,7-20.46L98,77.16l12.4,2.95.37,1.59s-37.81-5.44-64.59,1.8l.12.6s41.56-6,65.41,2.62l.25,1.18S78.63,81.8,47.48,90l.19.92s32.25-6.82,65.41,2l.06.28.23,1.1s-24.79-6.11-64.56,2.1l.19.9s2.37-.32,4.76-.4L48.39,110h22.2l5.55-13.37s16.56-2.35,29.16.46Z" transform="translate(-46.16 -30.97)"/>
+      <path d="M170.92,63l-5.34-1.53c-3.63-1.12-9.29-2.86-9.29-7.35,0-4.29,5.12-6.43,9-6.43a22.58,22.58,0,0,1,13.87,5.11l8.33-15.52A57,57,0,0,0,162.28,31c-16.12,0-27.75,10.21-27.75,25.83,0,14.91,8.65,18.17,21.77,21.75,4.48,1.22,12.7,3.16,12.7,8.78,0,5.41-5.23,7.76-10.14,7.76-7.15,0-13.34-3.57-18.57-8l-9,16.13A51.22,51.22,0,0,0,159.61,112c8.11,0,16.54-2.14,22.84-7.25s8.33-13.07,8.33-20.73C190.77,71.61,182.13,66.19,170.92,63Z" transform="translate(-46.16 -30.97)"/>
+      <path d="M203.15,43.43A39.38,39.38,0,0,0,191.3,71.61c0,11.43,4.05,21.44,12.92,29.1A46,46,0,0,0,234.42,112c6.51,0,11.53-1.53,18.46-3.57v-.89l-9.18-16.71a23.91,23.91,0,0,1-8.86,1.78c-13,0-21.78-8.78-21.78-20.93,0-11.94,8.65-21.34,21.46-21.34a25.11,25.11,0,0,1,9,1.69l9.33-17v-.22A51,51,0,0,0,233.78,31,44.6,44.6,0,0,0,203.15,43.43Z" transform="translate(-46.16 -30.97)"/>
+      <path d="M276.18,50V62.82h23.59V79.77H276.18V93H301V110H255.26V33H301V50Z" transform="translate(-46.16 -30.97)"/>
+    </svg>
+    <a class="-va-c" href="http://www.asce.org/" rel="exetrnal" target="_blank">&copy; 1996&ndash;{{ now|date("Y") }},
       American Society of Civil Engineers | ASCE.org</a>
   </p>
 </footer>

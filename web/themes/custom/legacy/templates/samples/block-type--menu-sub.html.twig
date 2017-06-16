@@ -27,11 +27,17 @@
  */
 #}
 {% block content %}
-  <header class="c-Hero">
-    <img class="c-Hero__Img"
-      src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}"
-      alt="{{ content.field_heroblock_legacy_image.0['#item'].alt }}"/>
-    <h1 class="c-Hero__Hn">{{ block_theme }}</h1>
-    <div class="c-Hero__Blurb">{{ content.field_heroblock_legacy_body.0 }}</div>
-  </header>
+  <ul class="o-List o-Flex c-NavBar c-NavBar--sub" id="programlevel2">
+    <li class="o-List__Item"><a href="#0">Speakers</a></li>
+    <li class="o-List__Item"><a href="#0">Exhibitor List</a></li>
+    <li class="o-List__Item"><a href="#0">ASCE Communities &amp; Pavilion</a></li>
+  </ul>
+  <ul class="o-List o-Flex c-NavBar c-NavBar--sub" id="locationlevel2">
+    <li class="o-List__Item"><a href="/location/hotel-travel">Hotel &amp; Travel</a></li>
+    <li class="o-List__Item"><a href="/location/international-travel">For International Travel</a></li>
+  </ul>
+  <ul class="o-List o-Flex c-NavBar c-NavBar--sub" id="aboutlevel2">
+    <li class="o-List__Item"><a href="#0">Cooperating Organizations</a></li>
+    <li class="o-List__Item"><a href="#0">Volunteer</a></li>
+  </ul>
 {% endblock %}

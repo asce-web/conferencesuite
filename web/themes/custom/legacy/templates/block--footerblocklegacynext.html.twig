@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+<dt class="o-Flex__Item o-Tabs__Tab" id="tab-next">
+  <label class="h-Block">
+    <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"/>
+    <time class="c-YearBadge c-YearBadge--tab"
+      datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"
+      aria-label="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"
+    >{{ (content.field_footerblock_legacy_start.0['#markup']|date('Y'))[2:] }}</time>
+  </label>
+</dt>
+<dd class="o-Flex__Item o-Tabs__Panel c-FooterPanel" id="panel-next">
+  <div{{ attributes.addClass('o-Constrain') }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="o-Flex o-Flex--siteHead -mv-2">
+      {% if block_sitelogo %}
+        <div class="o-Flex__Item o-Flex__Item--siteLogo">
+          <img class="c-ConfLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
+        </div>
+      {% endif %}
+      {% if site_second_logo %}
+        <div class="o-Flex__Item o-Flex__Item--siteLogo">
+          <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+        </div>
+      {% endif %}
+      <div class="o-Flex__Item c-ConferenceTitles">
+        <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
+        <p class="c-ConferenceTitles__Detail">
+          {{ content.field_footerblock_legacy_loc_ttl.0 }}
+          |
+          <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}">
+            {{- content.field_footerblock_legacy_start.0['#markup']|date('F j') -}}
+            {%- if content.field_footerblock_legacy_start.0['#markup']|date('Y') != content.field_footerblock_legacy_end.0['#markup']|date('Y') %}
+              {{- content.field_footerblock_legacy_start.0['#markup']|date(', Y') -}}
+            {% endif -%}
+          </time>
+          {{- '&ndash;' -}}
+          <time datetime="{{ content.field_footerblock_legacy_end.0['#markup']|date('c') }}">
+            {%- if content.field_footerblock_legacy_start.0['#markup']|date('m') != content.field_footerblock_legacy_end.0['#markup']|date('m') %}
+              {{- content.field_footerblock_legacy_end.0['#markup']|date('F ') -}}
+            {% endif -%}
+            {{- content.field_footerblock_legacy_end.0['#markup']|date('j, Y') -}}
+          </time>
+        </p>
+        <p class="c-ConferenceTitles__Tagline">{{ content.field_footerblock_legacy_theme.0 }}</p>
+      </div>
+    </div>
+    <div class="t-Content">{{ content.field_footerblock_legacy_body.0 }}</div>
+  </div>
+</dd>

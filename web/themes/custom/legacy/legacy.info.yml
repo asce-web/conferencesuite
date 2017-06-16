@@ -1,6 +1,6 @@
 name: Legacy
 type: theme
-description: 'Theme for the ASCE Conference style 2015 &ndash; 2017.'
+description: 'Theme for the ASCE Conference style 2015&ndash;2018.'
 core: 8.x
 libraries:
   - legacy/global-styling
@@ -11,3 +11,8 @@ regions:
   sidebar: Sidebar
   supporters: Supporters
   footer: Footer
+  menu_main: Main Menu
+  menu_sub: Sub Menu
+  menu_register: Registration Menu
+  menu_contrib: Contributors Menu
+  menu_mobile: Mobile Menu
