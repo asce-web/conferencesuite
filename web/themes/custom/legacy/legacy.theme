@@ -39,6 +39,17 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_enddate']           = theme_get_setting('conference_dates_end');
   $variables['page_location_display']  = theme_get_setting('conference_location_display');
   $variables['page_location_advisory'] = theme_get_setting('conference_location_advisory');
+  if (theme_get_setting('images_banner')) :
+    $images = theme_get_setting('images_banner');
+    foreach ($images as $image) {
+      if (file_load($image) == NULL) {
+        $variables['page_current_banner_image'] = 'themes/custom/legacy/images/default.png';
+      }
+      else {
+        $variables['page_current_banner_image'] = file_create_url(file_load($image)->getFileUri());
+      }
+    }
+  endif;
 }
 
 /**
@@ -67,4 +78,177 @@ function legacy_preprocess_region(&$variables) {
   $variables['region_enddate']           = theme_get_setting('conference_dates_end');
   $variables['region_location_display']  = theme_get_setting('conference_location_display');
   $variables['region_location_advisory'] = theme_get_setting('conference_location_advisory');
+}
+
+// function buildForm(array $form, FormStateInterface $form_state, $theme =
+//        // Process the theme and all its base themes.
+//        foreach ($theme_keys as $theme) {
+//          // Include the theme-settings.php file.
+//         $filename = DRUPAL_ROOT . '/' . $themes[$theme]->getPath() . '/theme-settings.php';
+//         if (file_exists($filename)) {
+//           require_once $filename;
+//         $theme_settings_file = drupal_get_path('theme', $theme) . '/theme-settings.php';
+//         $theme_file = drupal_get_path('theme', $theme) . '/' . $theme . '.theme';
+//         $filenames = array($theme_settings_file, $theme_file);
+//         foreach ($filenames as $filename) {
+//           if (file_exists($filename)) {
+//             require_once $filename;
+//             $form_state->addBuildInfo('files', array($filename));
+//           }
+//          }
+
+function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+  $theme_file = drupal_get_path('theme', 'legacy') . '/legacy.theme';
+  $build_info = $form_state->getBuildInfo();
+  if (!in_array($theme_file, $build_info['files'])) {
+    $build_info['files'][] = $theme_file;
+  }
+  $form_state->setBuildInfo($build_info);
+
+  $form['legacy_theme_settings'] = [
+    '#type' => 'vertical_tabs',
+    '#parents' => ['legacy_theme_settings'],
+  ];
+
+  $form['theme_settings']['#group'] = 'legacy_theme_settings';
+
+  $form['conference_settings'] = array(
+    '#type'          => 'details',
+    '#title'         => t('Conference Information'),
+    '#group'         => 'legacy_theme_settings',
+    '#description'   => t('Enter information about the current conference.'),
+    '#weight'        => -5
+  );
+  $form['conference_settings']['conference_info'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Basic Information'),
+  );
+  $form['conference_settings']['conference_info']['conference_info_name'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Conference Name'),
+    '#default_value' => theme_get_setting('conference_info_name'),
+    '#description'   => t('Name displayed in header.'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['conference_info']['conference_info_theme'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Conference Theme'),
+    '#default_value' => theme_get_setting('conference_info_theme'),
+    '#description'   => t('Conference theme or tagline.'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['conference_dates'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Dates'),
+  );
+  $form['conference_settings']['conference_dates']['conference_dates_start'] = array(
+    '#type'          => 'date',
+    '#title'         => t('Start Date'),
+    '#default_value' => theme_get_setting('conference_dates_start'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['conference_dates']['conference_dates_end'] = array(
+    '#type'          => 'date',
+    '#title'         => t('End Date'),
+    '#default_value' => theme_get_setting('conference_dates_end'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['conference_location'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Location'),
+  );
+  $form['conference_settings']['conference_location']['conference_location_display'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Display Name'),
+    '#default_value' => theme_get_setting('conference_location_display'),
+    '#description'   => t('Location displayed in header.'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['conference_location']['conference_location_advisory'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Advisory Title'),
+    '#default_value' => theme_get_setting('conference_location_advisory'),
+    '#description'   => t('Accessible location name.'),
+    '#required'      => TRUE,
+  );
+  $form['conference_settings']['images'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Images'),
+  );
+  $default_file_dir = 'public://site-images';
+  // $banner_folder = file_prepare_directory($default_file_dir, FILE_CREATE_DIRECTORY);
+  $form['conference_settings']['images']['images_banner'] = array(
+    '#title' => t('Banner Image'),
+    '#type' => 'managed_file',
+    '#description' => t('Background image in the top-right area of the banner.'),
+    '#default_value' => theme_get_setting('images_banner'),
+    '#progress_indicator' => 'bar',
+    '#progress_message'   => t('Please wait...'),
+    '#upload_location' => $default_file_dir,
+    '#upload_validators'  => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#media_options' => array(
+        'global' => array(
+            'types' => array(
+                'image' => 'image',
+            ),
+            'schemes' => array(
+                'public' => 'public',
+            ),
+            'file_extensions' => 'png gif jpg jpeg',
+            'max_filesize' => '4 MB',
+            'uri_scheme' => 'public',
+        ),
+    ),
+  );
+
+  $form['conference_settings']['conference_developer'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Developer Settings'),
+  );
+  $form['conference_settings']['conference_developer']['conference_developer_class'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Body Class(es)'),
+    '#default_value' => theme_get_setting('conference_developer_class'),
+    '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
+  );
+  $form['conference_settings']['conference_developer']['conference_developer_branch'] = array(
+    '#type' => 'select',
+    '#title' => t('Style Repository Channel'),
+    '#options' => array(
+      1 => t('production'),
+      2 => t('staging'),
+      3 => t('development'),
+    ),
+    '#default_value' => theme_get_setting('conference_developer_branch'),
+    '#description' => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
+  );
+
+  // $form['favicon']['#group'] = 'legacy_theme_settings';
+
+  $form['#submit'][] = 'legacy_form_system_theme_settings_submit';
+}
+
+// function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+//   $banner_image_id = $form_state['values']['conference_settings']['conference_info']['banner_image'];
+//   $banner_image = \Drupal\file\Entity\File::load($banner_image_id);
+//
+//   // set status to permanent so that its not deleted
+//   $banner_image->setPermanent();
+//   $banner_image->save();
+// }
+
+function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  if ($form_state->getValue('images_banner')) {
+    $element = $form_state->getValue('images_banner');
+    if (!empty($element[0])){
+      // Make submited files permanent.
+      $file = \Drupal\file\Entity\File::load($element[0]);
+      $file->setPermanent();
+      $file->save();
+      $file_usage = \Drupal::service('file.usage');
+      $file_usage->add($file, 'legacy', 'file', $element[0]);
+    }
+  }
 }

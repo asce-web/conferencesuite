@@ -16,7 +16,7 @@
       <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}" rel="home">
         {{ page.header }}
       </a>
-      <div class="o-Flex__Item o-SideCol c-TopImg">
+      <div class="o-Flex__Item o-SideCol c-TopImg" style="background-image: url('{{ page_current_banner_image }}')">
         <span class="c-YearBadge" role="none">{{ (page_startdate|date('Y'))[2:] }}</span>
         {{ page.menu_contrib }}
       </div>
