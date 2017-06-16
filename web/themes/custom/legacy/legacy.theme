@@ -51,6 +51,10 @@ function legacy_preprocess_block(&$variables) {
   $variables['block_enddate']           = theme_get_setting('conference_dates_end');
   $variables['block_location_display']  = theme_get_setting('conference_location_display');
   $variables['block_location_advisory'] = theme_get_setting('conference_location_advisory');
+
+  // for site logo (shield) in footer tabs
+  $variables['block_sitelogo'] = theme_get_setting('logo.url');
+  // IDEA use `'/' . drupal_get_path('theme','legacy') . '/logo.svg'` for Institute drop-down selector
 }
 
 /**
