@@ -62,7 +62,7 @@ content:
     region: content
   field_footerblock_legacy_start:
     weight: 2
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
     third_party_settings: {  }
