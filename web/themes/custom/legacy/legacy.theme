@@ -9,20 +9,13 @@ function legacy_preprocess_html(&$variables) {
 
   $repo_branch = theme_get_setting('developer_branch');
 
+  // Determine which library to use; see `legacy.libraries.yml`
   if (!empty($repo_branch)) {
-    switch ($repo_branch) {
-      case '1':
-      $variables['#attached']['library'][] = 'legacy/prod-branch';
-      break;
-
-      case '2':
-      $variables['#attached']['library'][] = 'legacy/stage-branch';
-      break;
-
-      case '3':
-      $variables['#attached']['library'][] = 'legacy/dev-branch';
-      break;
-    }
+    $variables['#attached']['library'][] = array(
+      1 => 'legacy/prod-branch',
+      2 => 'legacy/stage-branch',
+      3 => 'legacy/dev-branch',
+    )[$repo_branch];
   }
   else {
     $variables['#attached']['library'][] = 'legacy/stage-branch';
@@ -200,17 +193,17 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     ),
   );
 
-  $form['conference_settings']['conference_developer'] = array(
+  $form['conference_settings']['developer'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Developer Settings'),
   );
-  $form['conference_settings']['conference_developer']['conference_developer_class'] = array(
+  $form['conference_settings']['developer']['developer_class'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Body Class(es)'),
-    '#default_value' => theme_get_setting('conference_developer_class'),
+    '#default_value' => theme_get_setting('developer_class'),
     '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
   );
-  $form['conference_settings']['conference_developer']['conference_developer_branch'] = array(
+  $form['conference_settings']['developer']['developer_branch'] = array(
     '#type' => 'select',
     '#title' => t('Style Repository Channel'),
     '#options' => array(
@@ -218,7 +211,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
       2 => t('staging'),
       3 => t('development'),
     ),
-    '#default_value' => theme_get_setting('conference_developer_branch'),
+    '#default_value' => theme_get_setting('developer_branch'),
     '#description' => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
   );
 
