@@ -23,14 +23,14 @@ mode: default
 content:
   field_footerblock_legacy_body:
     weight: 6
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_footerblock_legacy_end:
     weight: 3
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
     third_party_settings: {  }
@@ -38,7 +38,7 @@ content:
     region: content
   field_footerblock_legacy_loc_dsp:
     weight: 4
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -46,7 +46,7 @@ content:
     region: content
   field_footerblock_legacy_loc_ttl:
     weight: 5
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -54,7 +54,7 @@ content:
     region: content
   field_footerblock_legacy_name:
     weight: 0
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -62,7 +62,7 @@ content:
     region: content
   field_footerblock_legacy_start:
     weight: 2
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
     third_party_settings: {  }
@@ -70,7 +70,7 @@ content:
     region: content
   field_footerblock_legacy_theme:
     weight: 1
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }

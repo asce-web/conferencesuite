@@ -1,4 +1,3 @@
-{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -26,12 +25,19 @@
  * @see template_preprocess_block()
  */
 #}
-{% block content %}
-  <header class="c-Hero">
-    <img class="c-Hero__Img"
-      src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}"
-      alt="{{ content.field_heroblock_legacy_image.0['#item'].alt }}"/>
-    <h1 class="c-Hero__Hn">{{ block_theme }}</h1>
-    <div class="c-Hero__Blurb">{{ content.field_heroblock_legacy_body.0 }}</div>
-  </header>
-{% endblock %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <header class="c-Hero">
+      <img class="c-Hero__Img"
+        src="{{ file_url(content.field_heroblock_legacy_image.0['#item'].entity.uri.value) }}"
+        alt="{{ content.field_heroblock_legacy_image.0['#item'].alt }}"/>
+      <h1 class="c-Hero__Hn">{{ block_theme }}</h1>
+      <div class="c-Hero__Blurb">{{ content.field_heroblock_legacy_body.0 }}</div>
+    </header>
+  {% endblock %}
+</div>
