@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+id: callout
+label: Callout
+revision: 1
+description: 'A highlighted content block, aside to the main content.'
