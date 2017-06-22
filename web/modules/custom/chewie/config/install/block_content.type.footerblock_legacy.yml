@@ -7,4 +7,4 @@ dependencies:
 id: footerblock_legacy
 label: 'Footer Block Legacy'
 revision: 1
-description: 'A panel in the footer. Can correspond to a previous, current, or next year panel.'
+description: 'A panel in the footer that contains information for the previous or next year’s conference.'
