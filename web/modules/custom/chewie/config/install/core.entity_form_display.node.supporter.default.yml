@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.supporter.field_supporter_displayname
     - field.field.node.supporter.field_supporter_level
     - field.field.node.supporter.field_supporter_url
-    - field.field.node.supporter.field_suppoter_logo
+    - field.field.node.supporter.field_supporter_logo
     - image.style.thumbnail
     - node.type.supporter
   module:
@@ -51,7 +51,7 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_suppoter_logo:
+  field_supporter_logo:
     weight: 2
     settings:
       progress_indicator: throbber
