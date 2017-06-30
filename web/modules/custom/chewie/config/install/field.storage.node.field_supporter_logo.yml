@@ -8,8 +8,8 @@ dependencies:
   enforced:
     module:
       - chewie
-id: node.field_suppoter_logo
-field_name: field_suppoter_logo
+id: node.field_supporter_logo
+field_name: field_supporter_logo
 entity_type: node
 type: image
 settings:

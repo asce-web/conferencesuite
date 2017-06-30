@@ -20,12 +20,12 @@ content:
     type: text_default
     weight: 1
     region: content
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
   field_heroblock_legacy_image:
     weight: 0
-    label: hidden
+    label: above
     settings:
       image_style: ''
       image_link: ''

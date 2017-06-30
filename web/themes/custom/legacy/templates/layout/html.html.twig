@@ -29,7 +29,7 @@
 {% set branch = [null, 'production', 'staging', 'development'][html_developer_branch] %}
 
 <!DOCTYPE html>
-<html{{ html_attributes.setAttribute('data-branch', branch) }}>
+<html{{ html_attributes.setAttribute('data-asset-branch', branch) }}>
   <head>
     <title>{{ head_title|safe_join(' | ') }}</title>
     <head-placeholder token="{{ placeholder_token }}">

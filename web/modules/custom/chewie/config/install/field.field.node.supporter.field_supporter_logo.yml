@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_suppoter_logo
+    - field.storage.node.field_supporter_logo
     - node.type.supporter
   module:
     - image
   enforced:
     module:
       - chewie
-id: node.supporter.field_suppoter_logo
-field_name: field_suppoter_logo
+id: node.supporter.field_supporter_logo
+field_name: field_supporter_logo
 entity_type: node
 bundle: supporter
 label: Logo
