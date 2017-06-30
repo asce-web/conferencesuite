@@ -57,4 +57,5 @@
 $sites = array(
   'stage.cisummit.org' => 'cisummit.org',
   'stage.surveyingconference.org' => 'surveyingconference.org',
+  'stage.pipelinesconference.org' => 'pipelinesconference.org',
 );
