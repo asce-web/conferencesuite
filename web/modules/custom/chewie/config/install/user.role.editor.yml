@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+id: editor
+label: Editor
+weight: -8
+is_admin: null
+permissions: {  }
