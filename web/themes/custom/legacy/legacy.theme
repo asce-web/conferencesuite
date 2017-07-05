@@ -34,7 +34,7 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_location_advisory'] = theme_get_setting('conference_location_advisory');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
-      $variables['page_images_banner'] = (file_load($image) == NULL) ? 'themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
+      $variables['page_images_banner'] = (file_load($image) == NULL) ? '/themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
       //        //        //        //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ if setting path exists but no file exists at that path
     }
   } else {
