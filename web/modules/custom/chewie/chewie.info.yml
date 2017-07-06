@@ -4,8 +4,14 @@ description: Adds Content Types, Taxonomy Terms, URL Aliases and other configura
 core: 8.x
 package: ASCE
 dependencies:
+  # Drupal interface functions
   - menu_ui
-  - pathauto
+  - admin_toolbar_tools
+  - coffee
+  - devel
+  # Content stuff
   - node
   - block
   - entityqueue
+  - pathauto
+  - linkit
