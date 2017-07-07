@@ -29,4 +29,4 @@ stage-branch:
 prod-branch:
   css:
     theme:
-      //cdn.rawgit.com/asce-web/chewie/v2.1.0/legacy.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/asce-web/chewie/v2.2.0/legacy.min.css: {type: external, minified: true}
