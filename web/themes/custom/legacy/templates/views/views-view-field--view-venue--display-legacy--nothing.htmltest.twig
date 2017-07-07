@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override for a single field in a view.
+ *
+ * Available variables:
+ * - view: The view that the field belongs to.
+ * - field: The field handler that can process the input.
+ * - row: The raw result of the database query that generated this field.
+ * - output: The processed output that will normally be used.
+ *
+ * When fetching output from the row this construct should be used:
+ * data = row[field.field_alias]
+ *
+ * The above will guarantee that you'll always get the correct data, regardless
+ * of any changes in the aliasing that might happen if the view is modified.
+ *
+ * @see template_preprocess_views_view_field()
+ */
+#}
+{% if field_venue_image %}
+  <img class="h-Block" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
+{% endif %}
+{% if field_venue_label %}
+  <h2 class="-fz-el-kilo -pt-1" itemprop="description">{{ title }}</h2>
+{% endif %}
+<p>
+  {% if field_venue_url %}<a href="{{ field_venue_url }}" itemprop="url">{% endif %}
+  <b itemprop="name">{{ field_venue_name }}</b>
+  {% if field_venue_url %}</a>{% endif %}
+  <br/>
+  <span itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
+    <span itemprop="streetAddress">{{ field_venue_streetaddress }}</span>
+    <br/>
+    <span itemprop="addressLocality">{{ field_venue_addresslocality }}</span>,
+    <span itemprop="addressRegion">{{ field_venue_addressregion }}</span>
+    <span itemprop="postalCode">{{ field_venue_postalcode }}</span>
+    {% if field_venue_addresscountry %}<br/><span itemprop="addressCountry">{{ field_venue_addresscountry }}</span>{% endif %}
+    {% if field_venue_telephone %}<br/><a href="tel:{{ field_venue_telephone }}" itemprop="telephone">{{ field_venue_telephone }}</a>{% endif %}
+  </span>
+</p>
+{% if field_venue_cta %}
+  <p><a class="c-Button" href="{{ field_venue_cta }}">{{ field_venue_cta_1 }}</a></p>
+{% endif %}
