@@ -18,4 +18,10 @@
  * @see template_preprocess_views_view_field()
  */
 #}
-<dd class="c-DateBlock__Desc">{{ output }}</dd>
+<dt class="c-DateBlock__Date">
+  <time class="h-Block" datetime="{{ field_importantdate_startdate }}">
+    <span class="c-DateBlock__MonthDay h-Block">{{ field_importantdate_startdate|date('M j') }}</span>
+    <span class="h-Block">{{ field_importantdate_startdate|date('Y') }}</span>
+  </time>
+</dt>
+<dd class="c-DateBlock__Desc">{{ title }}</dd>

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - chewie
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Venue
+type: venue
+description: 'A building location and address related to the conference.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false
