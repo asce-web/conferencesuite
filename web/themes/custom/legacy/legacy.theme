@@ -101,6 +101,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   ];
 
   $form['theme_settings']['#group'] = 'legacy_theme_settings';
+  $form['image_settings']['#group'] = 'legacy_theme_settings';
 
   $form['conference_settings'] = array(
     '#type'          => 'details',
@@ -112,6 +113,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_settings']['conference_info'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Basic Information'),
+    '#weight'        => -200,
   );
   $form['conference_settings']['conference_info']['conference_info_name'] = array(
     '#type'          => 'textfield',
@@ -130,6 +132,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_settings']['conference_dates'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Dates'),
+    '#weight'        => -190,
   );
   $form['conference_settings']['conference_dates']['conference_dates_start'] = array(
     '#type'          => 'date',
@@ -146,6 +149,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_settings']['conference_location'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Location'),
+    '#weight'        => -180,
   );
   $form['conference_settings']['conference_location']['conference_location_display'] = array(
     '#type'          => 'textfield',
@@ -161,13 +165,54 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#description'   => t('Accessible location name.'),
     '#required'      => TRUE,
   );
-  $form['conference_settings']['images'] = array(
+
+  $form['conference_settings']['developer'] = array(
     '#type'          => 'fieldset',
+    '#title'         => t('Developer Settings'),
+    '#weight'        => -140,
+  );
+  $form['conference_settings']['developer']['developer_class'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Body Class(es)'),
+    '#default_value' => theme_get_setting('developer_class'),
+    '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
+  );
+  $form['conference_settings']['developer']['developer_branch'] = array(
+    '#type' => 'select',
+    '#title' => t('Style Repository Channel'),
+    '#options' => array(
+      1 => t('production'),
+      2 => t('staging'),
+      3 => t('development'),
+    ),
+    '#default_value' => theme_get_setting('developer_branch'),
+    '#description' => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
+  );
+
+  /**
+   * Images Tab
+   */
+
+  $form['conference_images'] = array(
+    '#type'          => 'details',
     '#title'         => t('Images'),
+    '#group'         => 'legacy_theme_settings',
+    '#description'   => t('Upload conference images.'),
+    '#weight'        => -4
+  );
+
+  $form['favicon']['#group'] = 'conference_images';
+  $form['favicon']['#weight'] = -170;
+  $form['logo']['#group'] = 'conference_images';
+  $form['logo']['#weight'] = -160;
+  $form['conference_images']['images'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Additional Images'),
+    '#weight'        => -150,
   );
   $default_file_dir = 'public://site-images';
   // $banner_folder = file_prepare_directory($default_file_dir, FILE_CREATE_DIRECTORY);
-  $form['conference_settings']['images']['images_banner'] = array(
+  $form['conference_images']['images']['images_banner'] = array(
     '#title'              => t('Banner Image'),
     '#type'               => 'managed_file',
     '#description'        => t('Background image in the top-right area of the banner.'),
@@ -192,30 +237,6 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
       ),
     ),
   );
-
-  $form['conference_settings']['developer'] = array(
-    '#type'          => 'fieldset',
-    '#title'         => t('Developer Settings'),
-  );
-  $form['conference_settings']['developer']['developer_class'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Body Class(es)'),
-    '#default_value' => theme_get_setting('developer_class'),
-    '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
-  );
-  $form['conference_settings']['developer']['developer_branch'] = array(
-    '#type' => 'select',
-    '#title' => t('Style Repository Channel'),
-    '#options' => array(
-      1 => t('production'),
-      2 => t('staging'),
-      3 => t('development'),
-    ),
-    '#default_value' => theme_get_setting('developer_branch'),
-    '#description' => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
-  );
-
-  // $form['favicon']['#group'] = 'legacy_theme_settings';
 
   $form['#submit'][] = 'legacy_form_system_theme_settings_submit';
 }
