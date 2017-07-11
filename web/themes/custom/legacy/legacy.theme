@@ -172,8 +172,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
     '#default_value' => theme_get_setting('conference_location_advisory'),
-    '#description'   => t('Accessible location name.'),
-    '#required'      => TRUE,
+    '#description'   => t('Accessible location name. <strong>Use only if different from Display Name.</strong>'),
   );
 
   $form['conference_settings']['developer'] = array(
