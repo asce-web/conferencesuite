@@ -1,5 +1,5 @@
 global-styling:
-  version: 0.5.1
+  version: 0.5.2
   js:
     //cdn.asce.org/chewie/stage/js/vendor/jquery.hoverIntent.min.js: {type: external, minified: true}
     //rawgit.com/asce-web/chewie/master/scripts/o-Tabs.js: {minified: false}
@@ -29,4 +29,4 @@ stage-branch:
 prod-branch:
   css:
     theme:
-      //cdn.rawgit.com/asce-web/chewie/v2.1.0/legacy.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/asce-web/chewie/v2.2.0/legacy.min.css: {type: external, minified: true}
