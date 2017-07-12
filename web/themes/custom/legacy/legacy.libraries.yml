@@ -11,10 +11,10 @@ global-styling:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
       //cdn.rawgit.com/chharvey/xmeter/v5.7.0/xmeter.min.css: {type: external, minified: true}
       //cdn.rawgit.com/chharvey/bangs/v0.14.0/bangs.min.css: {type: external, minified: true}
-      styles/vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
-      styles/vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
-      styles/vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
-      styles/vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
+      vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
+      vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
+      vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
+      vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
 
 dev-branch:
   css:

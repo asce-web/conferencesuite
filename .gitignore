@@ -25,4 +25,4 @@ node_modules
 .DS_Store
 
 # Ignore third-party libraries
-/web/themes/custom/legacy/styles/vendor/
+/web/themes/custom/legacy/vendor/
