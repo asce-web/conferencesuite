@@ -40,13 +40,13 @@
     {{ title_suffix }}
     <div class="o-Flex o-Flex--siteHead -mv-2">
       {% if block_sitelogo %}
-        <div class="o-Flex__Item o-Flex__Item--siteLogo">
-          <img class="c-ConfLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
+        <div class="o-Flex__Item c-SiteLogo">
+          <img src="{{ block_sitelogo }}" alt="" role="none"/>
         </div>
       {% endif %}
-      {% if site_second_logo %}
-        <div class="o-Flex__Item o-Flex__Item--siteLogo">
-          <img class="c-ConfLogo" src="{{ site_second_logo }}" alt="" role="none"/>
+      {% if block_secondarylogo %}
+        <div class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary">
+          <img src="{{ block_secondarylogo }}" alt="" role="none"/>
         </div>
       {% endif %}
       <div class="o-Flex__Item c-ConferenceTitles">

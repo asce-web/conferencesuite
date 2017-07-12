@@ -18,9 +18,7 @@
  * @see template_preprocess_views_view_field()
  */
 #}
-<dt class="c-DateBlock__Date">
-  <time class="h-Block" datetime="{{ output }}">
-    <span class="c-DateBlock__MonthDay h-Block">{{ output|date('M j') }}</span>
-    <span class="h-Block">{{ output|date('Y') }}</span>
-  </time>
-</dt>
+<a href="{{ field_supporter_url }}" rel="external nofollow" itemprop="url">
+  <img class="c-SupporterBlock__Logo" src="{{ field_supporter_logo }}" alt="{{ title }}" itemprop="logo"/>
+  <meta content="{{ title }}" itemprop="name"/>
+</a>
