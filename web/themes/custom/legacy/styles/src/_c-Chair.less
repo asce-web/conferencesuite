@@ -1,0 +1,28 @@
+
+/*################################*\
+    legacy  |  _c-Chair.less
+\*################################*/
+
+
+// Conference Chair
+//
+// ^subcomponents
+// __Name        - person’s name
+// __Affiliation - organization person represents
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-04-18
+.c-Chair {
+  margin-bottom: 0.5 * @g-vru; // HACK fallback
+  margin-bottom: calc(~'0.5 * var(--vru)');
+}
+
+.c-Chair__Name {
+  .font-size-el(20/16); // REVIEW magic number
+}
+
+.c-Chair__Affiliation {
+  .font-size-el(12/16); // REVIEW magic number
+  font-style: italic;
+}

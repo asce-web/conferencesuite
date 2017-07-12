@@ -1,0 +1,45 @@
+
+/*################################*\
+    legacy  |  _c-Button.less
+\*################################*/
+
+
+// A button.
+//
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-06-14
+.c-Button {
+  .buttonText();
+  display: inline-block;
+  padding: (0.5 * @g-vru) 1rem; // HACK fallback
+  padding: calc(~'0.5 * var(--vru)') 1rem;
+  font-size: (1em * 14/16);
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: @g-color-btn-bg;
+  border-radius: 0.25rem;
+  box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw;
+  color: @g-color-btn-txt;
+  cursor: pointer;
+  &.c-Btn { // HACK specificity without using `!important`
+    text-decoration: none; // override `.t-Content >> a`
+  }
+  &:hover,
+  &:focus {
+    background-color: lighten(@g-color-btn-bg, 5%);
+    color: @g-color-btn-txt; // override a[href]:hover
+  }
+  &:active {
+    background-color: darken(@g-color-btn-bg, 5%);
+    box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw inset;
+  }
+  a&:not([href]),
+  button&:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+    // background-color: @g-color-btn-sw;
+  }
+}

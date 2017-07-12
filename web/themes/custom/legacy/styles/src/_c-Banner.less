@@ -1,0 +1,35 @@
+
+/*################################*\
+    legacy  |  _c-Banner.less
+\*################################*/
+
+
+// A site region with full-bleed background color or image.
+//
+// ^subclasses
+// --head     - masthead in header
+// --nav      - top-level navigation
+// --nav--sub - secondary-level navigation
+// --coop     - cooperating orgs bar
+// --copy     - copyright line footer
+// ^author
+// Chris Harvey
+// ^updated
+// : 2017-06-12
+.c-Banner {
+  color: @g-color-banner-txt;
+}
+.c-Banner--head {
+  .mx-bc-primary();
+}
+.c-Banner--nav {
+  .mx-bc-secondary();
+}
+.c-Banner--nav--sub {
+  .mx-bc-accent();
+}
+.c-Banner--copyright {
+  padding: @g-vru 1rem; // HACK fallback
+  padding: var(--vru) 1rem;
+  background-color: @g-color-asce-blue;
+}
