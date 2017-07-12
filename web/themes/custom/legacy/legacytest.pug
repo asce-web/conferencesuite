@@ -10,11 +10,11 @@ html(lang="en")
       theme    : 'New ideas. New practices. New science. New resources. New colleagues. New business procedures.',
       detail   : 'Boston, Massachusetts  |  April 3–5, 2015',
       image    : {
-        shield : './img/shield-logo-ewri.png',
-        hero   : './img/fpo-hero.jpg',
-        banner : './img/fpo-header.jpg',
-        sidebar: './img/FPO_sidebar_340x135.jpg',
-    },
+        shield : './logo.svg',
+        hero   : '../../../sites/default/files/2017-05/new-orleans-trolley.jpg',
+        banner : '../../../sites/default/files/site-images/CECAR%207%20Banner%20Image.jpg',
+        sidebar: '../../../sites/default/files/2017-07/slide_2.jpg',
+      },
     }
   head
     title Sample ASCE Conference
@@ -22,19 +22,15 @@ html(lang="en")
     meta(name="description" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
-    link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
-    //- link(rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css")
-    link(rel="stylesheet" href="css/futura.css")
-    //- link(rel="stylesheet" href="styles/chewie.css")
-    link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/xmeter/v5.7.0/xmeter.min.css")
-    link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.14.0/bangs.min.css")
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
+    link(rel="stylesheet" href="vendor/futura.css")
+    link(rel="stylesheet" href="//cdn.rawgit.com/chharvey/xmeter/v5.7.0/xmeter.min.css")
+    link(rel="stylesheet" href="//cdn.rawgit.com/chharvey/bangs/v0.14.0/bangs.min.css")
     link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
     link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
     link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
     link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
-    link(rel="stylesheet" href="legacy.css")
-    //- script(src="//use.typekit.net/imj1jdn.js")
-    //- script try{Typekit.load();}catch(e){}
+    link(rel="stylesheet" href="styles/legacy.css")
     noscript
       // remove Toggle menu when JS is disabled
       style.
@@ -154,7 +150,7 @@ html(lang="en")
                     span.h-Block Thursday
                     span.h-Block.c-DateBlock__MonthDay Apr 3
                   div.c-DateBlock__Desc Opening Plenary
-                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="./img/FPO_speaker_130x130.jpg" alt="Charles Johnson")
+                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../sites/default/files/sample-images/speaker-scott-zimmer.jpg" alt="Charles Johnson")
                 div.o-Flex__Item.c-KeynoteSpeaker__Details
                   p.c-Chair
                     span.h-Block.c-Chair__Name Charles Johnson, Ph.D., P.E., S.E., CVS, F.ASCE
@@ -166,7 +162,7 @@ html(lang="en")
                     span.h-Block Wednesday
                     span.h-Block.c-DateBlock__MonthDay Apr 12
                   div.c-DateBlock__Desc Special Session
-                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="http://www.aei-conference.org/sites/aei-conference.org/files/louise-comfort.jpg" alt="Louise Comfort")
+                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../sites/default/files/sample-images/louise-comfort.jpg" alt="Louise Comfort")
                 div.o-Flex__Item.c-KeynoteSpeaker__Details
                   p.c-Chair
                     span.h-Block.c-Chair__Name Dr. Louise K. Comfort, Ph.D.
@@ -270,48 +266,48 @@ html(lang="en")
                   img.c-SupporterBlock__Logo(src=item.img alt=item.name itemprop="logo")
                   meta(content=item.name itemprop="name")
       +supporterBlock('Platinum', 'lrg', [
-        { name: 'Espon'   , url: '#0', img: 'img/sponsor_logo_horizontal2.gif' }
-      , { name: 'Alliance', url: '#0', img: 'img/sponsor_logo_horizontal1.gif' }
+        { name: 'Espon'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
+      , { name: 'Alliance', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
       ])
       +supporterBlock('Gold', 'lrg', [
-        { name: 'Ria'     , url: '#0', img: 'img/Sponsorlogo_square1.gif'      }
-      , { name: 'Geico'   , url: '#0', img: 'img/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: 'img/sponsor_logo_horizontal4.gif' }
+        { name: 'Ria'     , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
+      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Corporate', 'med', [
-        { name: 'Geico'   , url: '#0', img: 'img/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: 'img/sponsor_logo_horizontal4.gif' }
+        { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Silver', 'med', [
-        { name: 'Exponent', url: '#0', img: 'img/sponsor_logo_horizontal4.gif' }
-      , { name: 'Espon'   , url: '#0', img: 'img/sponsor_logo_horizontal2.gif' }
+        { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
+      , { name: 'Espon'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
       ])
       +supporterBlock('Bronze', 'sml', [
-        { name: 'Ria'     , url: '#0', img: 'img/Sponsorlogo_square1.gif'      }
-      , { name: 'Geico'   , url: '#0', img: 'img/sponsor_logo_horizontal3.gif' }
+        { name: 'Ria'     , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
+      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
       ])
       +supporterBlock('Copper', 'sml', [
-        { name: 'Alliance', url: '#0', img: 'img/sponsor_logo_horizontal1.gif' }
-      , { name: 'Geico'   , url: '#0', img: 'img/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: 'img/sponsor_logo_horizontal4.gif' }
+        { name: 'Alliance', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
+      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Cooperating Organizations', 'sml', [
-        { name: 'AISC'    , url: '#0', img: 'img/cooplogo_square1.gif'     }
-      , { name: 'Correios', url: '#0', img: 'img/cooplogo_horizontalcolor1.gif' }
-      , { name: 'Jacobs'  , url: '#0', img: 'img/cooplogo_horizontalcolor2.gif' }
-      , { name: 'T&DI'    , url: '#0', img: 'img/cooplogo_horizontal2.gif' }
-      , { name: 'CI'      , url: '#0', img: 'img/cooplogo_square4.gif'     }
-      , { name: 'EWRI'    , url: '#0', img: 'img/cooplogo_horizontal4.gif' }
-      , { name: 'KU'      , url: '#0', img: 'img/Sponsorlogo_square2.gif' }
+        { name: 'AISC'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
+      , { name: 'Correios', url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
+      , { name: 'Jacobs'  , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
+      , { name: 'T&DI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
+      , { name: 'CI'      , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
+      , { name: 'EWRI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
+      , { name: 'KU'      , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
       +supporterBlock('Educational Grant', 'sml', [
-        { name: 'AISC'    , url: '#0', img: 'img/cooplogo_square1.gif'     }
-      , { name: 'Correios', url: '#0', img: 'img/cooplogo_horizontalcolor1.gif' }
-      , { name: 'Jacobs'  , url: '#0', img: 'img/cooplogo_horizontalcolor2.gif' }
-      , { name: 'T&DI'    , url: '#0', img: 'img/cooplogo_horizontal2.gif' }
-      , { name: 'CI'      , url: '#0', img: 'img/cooplogo_square4.gif'     }
-      , { name: 'EWRI'    , url: '#0', img: 'img/cooplogo_horizontal4.gif' }
-      , { name: 'KU'      , url: '#0', img: 'img/Sponsorlogo_square2.gif' }
+        { name: 'AISC'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
+      , { name: 'Correios', url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
+      , { name: 'Jacobs'  , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
+      , { name: 'T&DI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
+      , { name: 'CI'      , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
+      , { name: 'EWRI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
+      , { name: 'KU'      , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
     footer
       dl.o-Flex.o-Tabs
@@ -412,22 +408,11 @@ html(lang="en")
           path(d="M276.18,50V62.82h23.59V79.77H276.18V93H301V110H255.26V33H301V50Z" transform="translate(-46.16 -30.97)")
         a.-va-c(href="http://www.asce.org/" rel="external") &copy; 1996&ndash;2015, American Society of Civil Engineers | ASCE.org
     a(href="#top") jump to top
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
-    script.
-      window.jQuery || document.write('<script src="./js/vendor/jquery-1.11.0.min.js"><\/script>')
-    script(src="./bower_components/bootstrap/dist/js/bootstrap.min.js")
-    script(src="./js/vendor/jquery.hoverIntent.min.js")
-    script(src="./bower_components/jquery-cycle2/build/jquery.cycle2.min.js")
-    script(src="./js/main.js")
+    script(
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous")
+    script(src="vendor/jquery.hoverIntent.min.js")
+    script(src="scripts/menu.js")
     script(src="scripts/o-Tabs.js")
-    script.
-      $('.js-xo-_1').addClass('-xo-_1');
-      $('.o-Drawer').find('a').attr('tabindex', -1);
-      $('.c-Toggle__Check').change(function () {
-        $(this).parents('.c-Toggle').siblings('.o-Drawer').toggleClass('o-Drawer--open');
-        $(this).parents('.c-Toggle').siblings('.o-Drawer').find('a').each(function () {
-          if ($(this).attr('tabindex') === '0') $(this).attr('tabindex', -1)
-          else $(this).attr('tabindex', 0)
-        })
-        $(this).siblings('.c-Toggle__Viz').toggleClass('glyphicons-menu-hamburger glyphicons-remove-circle -ps-f -r-1')
-      })
+    script(src="scripts/orphaned.js")

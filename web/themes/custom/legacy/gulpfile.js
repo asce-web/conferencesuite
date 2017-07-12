@@ -5,7 +5,7 @@ var autoprefixer = require('gulp-autoprefixer')
 var clean_css = require('gulp-clean-css')
 var sourcemaps = require('gulp-sourcemaps')
 
-gulp.task('pug:index', function () {
+gulp.task('pug:test', function () {
   return gulp.src(__dirname + '/legacytest.pug')
     .pipe(pug({
       basedir: './',
@@ -29,4 +29,4 @@ gulp.task('lessc:legacy', function () {
     .pipe(gulp.dest('./styles/'))
 })
 
-gulp.task('build', ['pug:index', 'lessc:legacy'])
+gulp.task('build', ['pug:test', 'lessc:legacy'])

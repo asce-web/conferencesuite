@@ -14,19 +14,20 @@ global-styling:
       vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
-      vendor/futura.css: {type: external, minified: true}
+      vendor/futura.css: {minified: true}
+      styles/legacy.css: {minified: true}
 
 dev-branch:
   css:
     theme:
-      //rawgit.com/asce-web/chewie/dev/legacy.css: {type: external, minified: false}
+      {}
 
 stage-branch:
   css:
     theme:
-      //rawgit.com/asce-web/chewie/fix/legacy.css: {type: external, minified: false}
+      {}
 
 prod-branch:
   css:
     theme:
-      //cdn.rawgit.com/asce-web/chewie/v2.2.0/legacy.min.css: {type: external, minified: true}
+      {}
