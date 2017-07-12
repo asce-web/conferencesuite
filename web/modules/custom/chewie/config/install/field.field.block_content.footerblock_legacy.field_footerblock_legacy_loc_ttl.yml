@@ -12,8 +12,8 @@ field_name: field_footerblock_legacy_loc_ttl
 entity_type: block_content
 bundle: footerblock_legacy
 label: 'Location Advisory Title'
-description: 'Accessible location name.'
-required: true
+description: 'Accessible location name. <strong>Use only if different from Display Name.</strong>'
+required: false
 translatable: false
 default_value:
   -
