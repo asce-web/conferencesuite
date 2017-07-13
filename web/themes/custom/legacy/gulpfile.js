@@ -15,7 +15,7 @@ gulp.task('pug:test', function () {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('lessc:legacy', function () {
+gulp.task('lessc:core', function () {
   return gulp.src(__dirname + '/styles/src/legacy.less')
     .pipe(less())
     .pipe(autoprefixer({
@@ -29,4 +29,4 @@ gulp.task('lessc:legacy', function () {
     .pipe(gulp.dest('./styles/'))
 })
 
-gulp.task('build', ['pug:test', 'lessc:legacy'])
+gulp.task('build', ['pug:test', 'lessc:core'])
