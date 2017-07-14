@@ -1,0 +1,84 @@
+
+/*################################*\
+    legacy  |  _c-DateBlock.less
+\*################################*/
+
+
+// Container for Important Dates.
+// Usually a child of `.c-Callout__Body`
+//
+// ^subcomponents
+// __Item     - container for date-description pair
+// __Date     - date
+// __Desc     - description
+// __Expired  - part of an expired date. should only go on Year and Name (not MonthDay)
+// __MonthDay - part of the date consisting of "MMM DD"
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-06-19
+
+@datewidth: 90px; // REVIEW magic number
+
+// ALL supports (regardless of layout)
+.c-DateBlock {
+  .font-size-mod(14/16);
+  font-weight: 600;
+}
+
+.c-DateBlock__Date {
+  padding-right: 0.5rem;
+  border-right: 1px solid #ccc; // REVIEW magic color
+  text-align: right;
+}
+
+.c-DateBlock__Desc {
+  padding-left: 0.5rem;
+}
+
+.c-DateBlock__Expired {
+  opacity: 0.25; // fadeout(@g-color-body-txt, 75%) equivalent to #ccc (Date border)
+}
+
+.c-DateBlock__MonthDay {
+  .buttonText();
+  .mx-c-secondary();
+  font-family: inherit; // override `.buttonText()`
+}
+
+
+// flexbox support
+.c-DateBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c-DateBlock__Date,
+.c-DateBlock__Desc {
+  margin-bottom: 0.5 * @g-vru; // HACK fallback
+  margin-bottom: calc(~'0.5 * var(--vru)');
+}
+.c-DateBlock__Date {
+  flex: 0 0 @datewidth;
+}
+.c-DateBlock__Desc {
+  flex: 0 0 calc(~'100% - '@datewidth);
+}
+
+
+// feature query support & grid support
+@supports (display: grid) {
+  .c-DateBlock {
+    display: grid;
+    grid-template-columns: @datewidth auto;
+    grid-row-gap: 0.5 * @g-vru; // HACK fallback
+    grid-row-gap: calc(~'0.5 * var(--vru)');
+  }
+  .c-DateBlock__Date,
+  .c-DateBlock__Desc {
+    margin-bottom: 0; // unset
+  }
+  .c-DateBlock__Date {
+  }
+  .c-DateBlock__Desc {
+  }
+}

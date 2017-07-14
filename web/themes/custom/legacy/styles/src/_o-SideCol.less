@@ -1,0 +1,22 @@
+
+/*################################*\
+    legacy  |  _o-SideCol.less
+\*################################*/
+
+
+// Side column of the site.
+// Contains callouts and aside info.
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2017-06-21
+.o-SideCol {
+  // HACK fallbacks // FIXME magic numbers! see `_base.less`
+  @media screen and (min-width: 45em) { flex: 0 0 300px; }
+  @media screen and (min-width: 60em) { flex: 0 0 385px; }
+  @media screen and (min-width: 75em) { flex: 0 0 450px; }
+  @media screen and (min-width: 45em) {
+    flex: 0 0 var(--sidebar-width);
+  }
+}

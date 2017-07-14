@@ -1,0 +1,32 @@
+
+/*################################*\
+    legacy  |  _c-Callout.less
+\*################################*/
+
+
+// An aside/section in the sidebar.
+//
+// ^subcomponents
+// __Hn   - heading
+// __Body - body
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-04-18
+.c-Callout {
+  margin-bottom: @g-vru; // HACK fallback
+  margin-bottom: var(--vru);
+}
+
+.c-Callout__Hn {
+  font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
+  font-weight: inherit; // unset `h1`
+  .font-size-el(2); // REVIEW magic number
+}
+
+.c-Callout__Body {
+  background-image: url('../images/pattern-bg-fade.png');
+  background-repeat: repeat-x;
+  padding: @g-vru 1rem 0; // HACK fallback
+  padding: var(--vru) 1rem 0;
+}

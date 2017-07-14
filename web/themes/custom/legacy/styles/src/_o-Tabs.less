@@ -1,0 +1,88 @@
+
+/*################################*\
+    legacy  |  _o-Tabs.less
+\*################################*/
+
+
+// A block containing a list of tabs and corresponding panels.
+// The tabs and corresponding panels follow subsequently, as so:
+// > tab0, panel0, tab1, panel1, tab2, panel2, etc.
+//
+// ^subcomponents
+// __Tab   - tab for a panel
+//   --selected - style for tab that is selected via `__Check` subcomponent
+// __Check - a radio button in the Tab, used for selecting the desired panel
+// __Panel - panel containing content
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-06-11
+.o-Tabs {
+  position: relative;
+  margin-bottom: 0; // unset `ul`
+  flex-wrap: wrap;
+  justify-content: flex-end; // push items to right
+  align-content: flex-start; // push flex items to top
+  align-items: flex-start; // minimize height of flex items
+  // transition: height @p-transdura; // height changes as panel
+}
+
+.o-Tabs__Tab,
+.o-Tabs__Panel {
+  // transitions: transform @p-transdura;
+}
+
+// A tab. Contains a label or heading of the panel.
+//
+// ^subclasses
+// --selected - added via script; styles for selected tab
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-02-08
+.o-Tabs__Tab {
+  text-align: center;
+  flex: 0; // minimize "main size" for all tabs
+}
+// this class should be added via script, NOT manually!
+// .o-Tabs__Tab:has(.o-Tabs__Check:checked), // TODO `:has()` is unsupported
+.o-Tabs__Tab--selected {
+  // transform: scale(1.2);
+  // styles for active tab
+}
+
+.o-Tabs__Check {
+  position: absolute; // override `.h-Hidden:focus`
+}
+
+// A panel of content.
+//
+// ^subclasses
+// --js           - use when JS is enabled (for animation)
+// --hiddenBefore - the schedule before the one selected
+// --hiddenAfter  - the schedule after the one selected
+// --shown        - the selected schedule
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-02-09
+.o-Tabs__Panel {
+  flex: 100%; // full-width "main size" for all panels
+}
+// the following classes should be added via script, NOT manually!
+.o-Tabs__Panel--js {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 0;
+  order: 1;
+}
+.o-Tabs__Panel--shown {
+}
+.o-Tabs__Panel--hiddenBefore,
+.o-Tabs__Panel--hiddenAfter {
+  transform: translateX(-100%);
+}
+.o-Tabs__Panel--hiddenBefore {
+}
+.o-Tabs__Panel--hiddenAfter {
+}

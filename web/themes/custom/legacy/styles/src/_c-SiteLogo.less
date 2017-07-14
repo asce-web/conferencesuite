@@ -1,0 +1,49 @@
+
+/*################################*\
+    legacy  |  _c-SiteLogo.less
+\*################################*/
+
+
+// Site Logo
+//
+// Shield logo of the Institute (or orginaztion)
+// organizing the conference.
+// <header><dl>
+//   <dt>author</dt><dd>Chris Harvey</dd>
+//   <dt>updated</dt><dd><time>2017-06-11</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="o-Flex__Item c-SiteLogo {{ modifier_class }}">
+//   <img src="logo.svg" alt="Home"/>
+// </div>
+//
+// .c-SiteLogo--secondary - secondary logo, e.g. for a partnering organization hosting the conference
+//
+// Styleguide Components.SiteLogo
+.c-SiteLogo {
+  // [1] NOTE: equivalent to .flex(0 0 var(--site-logo-width));
+  //     but now works when flex-direction = column
+  //     (cannot use `flex` to set width if flex-direction=column)
+  // [2] for when <img> width is smaller than this width
+  flex: 0 0 auto; // [1]
+  width: 6rem;
+  text-align: center; // [2]
+  @media screen and (min-width: 45em) and (max-width: 74.999em) {
+    width: 4rem;
+  }
+  @media screen and (min-width: 45em) {
+    margin: 0 1rem;
+  }
+  @media screen and (min-width: 75em) {
+    margin: 0 2rem;
+  }
+}
+
+.c-SiteLogo--secondary {
+  margin-left: 0;
+  @media not all and (min-width: 45em) {
+    padding-top: @g-vru; // HACK fallback
+    padding-top: var(--vru);
+  }
+}

@@ -1,0 +1,124 @@
+
+/*################################*\
+    legacy  |  _c-SupporterBlock.less
+\*################################*/
+
+// (private) mixin for setting the dimensions of logos.
+.p-dimensions(@x; @y) {
+  .c-SupporterBlock__List__Item {
+    flex: 0 1 @x;
+  }
+  .c-SupporterBlock__Logo {
+    max-height: @y;
+  }
+}
+
+// sizing variables (copied from `html` custom props)
+@p-supporter-logo-lrg-s-width : 120px; @p-supporter-logo-lrg-s-height : 65px ;
+@p-supporter-logo-med-s-width : 90px ; @p-supporter-logo-med-s-height : 48px ;
+@p-supporter-logo-sml-s-width : 68px ; @p-supporter-logo-sml-s-height : 36px ;
+@p-supporter-logo-lrg-sK-width: 250px; @p-supporter-logo-lrg-sK-height: 110px;
+@p-supporter-logo-med-sK-width: 188px; @p-supporter-logo-med-sK-height: 82px ;
+@p-supporter-logo-sml-sK-width: 140px; @p-supporter-logo-sml-sK-height: 62px ;
+@p-supporter-logo-lrg-sG-width: 360px; @p-supporter-logo-lrg-sG-height: 160px;
+@p-supporter-logo-med-sG-width: 270px; @p-supporter-logo-med-sG-height: 120px;
+@p-supporter-logo-sml-sG-width: 202px; @p-supporter-logo-sml-sG-height: 90px ;
+
+
+// A section containing one level of sponsor.
+//
+// ^subclasses
+// --sml - contains small logos
+// --med - contains medium logos
+// --lrg - contains large logos
+// ^subcomponents
+// __Hn       - name of sponsor level ("Platinum", etc.)
+// __List     - structural styles of list of logos
+//   __Item     - structural styles of list item with link and logo
+// __Logo     - <img> element of logo. cosmetic styles
+// ^author
+// : Chris Harvey
+// ^updated
+// 2017-06-11
+.c-SupporterBlock {
+  text-align: center;
+  margin-bottom: 2 * @g-vru; // HACK fallback
+  margin-bottom: ~'calc(2 * var(--vru))';
+  &.c-SupporterBlock { // specificity HACK
+    .p-dimensions(var(--supporter-logo-width), var(--supporter-logo-height));
+  }
+}
+
+.c-SupporterBlock__Hn {
+  display: flex; // for viz line. see ::before, ::after
+  align-items: center;
+  .font-size-el(@g-font_size_kilo);
+  font-family: inherit; // keeping here if `ff` of `h1` is changed
+  font-weight: 900;
+  color: @g-color-body-txt;
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border: 1px solid @g-color-table-br;
+    margin: 0 1rem;
+  }
+}
+
+.c-SupporterBlock__List__Item {
+  margin: 0 1rem @g-vru; // HACK fallback
+  margin: 0 1rem var(--vru);
+}
+
+.c-SupporterBlock__Logo {
+  transition: filter 1000ms;
+  &:not(:hover):not(:focus) {
+    filter: grayscale(100%);
+  }
+}
+
+.c-SupporterBlock__List {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .c-Mast--coop & {
+    justify-content: space-around;
+  }
+}
+
+.c-SupporterBlock--lrg {
+  --supporter-logo-width : var(--supporter-logo-lrg-width );
+  --supporter-logo-height: var(--supporter-logo-lrg-height);
+  // HACK fallbacks below:
+  .p-dimensions(@p-supporter-logo-lrg-s-width; @p-supporter-logo-lrg-s-height);
+  @media screen and (min-width: 30em) {
+    .p-dimensions(@p-supporter-logo-lrg-sK-width; @p-supporter-logo-lrg-sK-height);
+  }
+  @media screen and (min-width: 60em) {
+    .p-dimensions(@p-supporter-logo-lrg-sG-width; @p-supporter-logo-lrg-sG-height);
+  }
+}
+.c-SupporterBlock--med {
+  --supporter-logo-width : var(--supporter-logo-med-width );
+  --supporter-logo-height: var(--supporter-logo-med-height);
+  // HACK fallbacks below:
+  .p-dimensions(@p-supporter-logo-med-s-width; @p-supporter-logo-med-s-height);
+  @media screen and (min-width: 30em) {
+    .p-dimensions(@p-supporter-logo-med-sK-width; @p-supporter-logo-med-sK-height);
+  }
+  @media screen and (min-width: 60em) {
+    .p-dimensions(@p-supporter-logo-med-sG-width; @p-supporter-logo-med-sG-height);
+  }
+}
+.c-SupporterBlock--sml {
+  --supporter-logo-width : var(--supporter-logo-sml-width );
+  --supporter-logo-height: var(--supporter-logo-sml-height);
+  // HACK fallbacks below:
+  .p-dimensions(@p-supporter-logo-sml-s-width; @p-supporter-logo-sml-s-height);
+  @media screen and (min-width: 30em) {
+    .p-dimensions(@p-supporter-logo-sml-sK-width; @p-supporter-logo-sml-sK-height);
+  }
+  @media screen and (min-width: 60em) {
+    .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
+  }
+}

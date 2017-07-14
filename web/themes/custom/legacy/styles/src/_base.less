@@ -1,0 +1,174 @@
+
+/*################################*\
+    legacy  |  _base.less
+\*################################*/
+
+
+// Table of Contents
+// # GENERIC........................`html` and far-reaching page-wide selectors
+// # SECTIONS.......................sections, articles, headers, footers, headings
+// # GROUPING.......................grouping content
+//   ## Paragraphs......................paragraphs, block-level textual elements
+//   ## Lists...........................ordered, unordered, dictionary
+//   ## Tables..........................tables
+// # TEXT...........................text-level, phrasing (inline) content and links
+//   ## Links...........................inline hyperlinks
+//   ## Stress..........................text outstanding from surrounding prose
+//   ## Doc.............................documentation elements
+//   ## Data............................machine- or human-readable data
+// # FORMS..........................form elements
+// # EMBEDDED.......................images, videos, other media
+// # INTERACTIVE....................user-interactive HTML elements
+
+
+//++++++++++++++++++++++++++++++++//
+//    # GENERIC
+//++++++++++++++++++++++++++++++++//
+html {
+  --year-badge-width: 10vw;
+  --copyright-logo-height: var(--vru);
+  --supporter-logo-lrg-width: 120px; --supporter-logo-lrg-height: 65px ;
+  --supporter-logo-med-width: 90px ; --supporter-logo-med-height: 48px ;
+  --supporter-logo-sml-width: 68px ; --supporter-logo-sml-height: 36px ;
+  @media screen and (min-width: 30em) {
+    --supporter-logo-lrg-width: 250px; --supporter-logo-lrg-height: 110px;
+    --supporter-logo-med-width: 188px; --supporter-logo-med-height: 82px ;
+    --supporter-logo-sml-width: 140px; --supporter-logo-sml-height: 62px ;
+  }
+  @media screen and (min-width: 45em) {
+    --sidebar-width: 300px; // REVIEW magic number!!!
+  }
+  @media screen and (min-width: 60em) {
+    --sidebar-width: 385px; // REVIEW magic number!!!
+    --copyright-logo-height: calc(~'2 * var(--vru)');
+    --supporter-logo-lrg-width: 360px; --supporter-logo-lrg-height: 160px;
+    --supporter-logo-med-width: 270px; --supporter-logo-med-height: 120px;
+    --supporter-logo-sml-width: 202px; --supporter-logo-sml-height: 90px ;
+  }
+  @media screen and (min-width: 75em) {
+    --sidebar-width: 450px; // REVIEW magic number!!!
+  }
+  @media screen and (min-width: 90em) {
+    // set a max-width of the year-badge
+    // (1/10 * 90em) ≈≈ (10vw)
+    // NOTE don’t use `em` because font-size is in terms of this variable
+    --year-badge-width: 9rem;
+  }
+}
+body {
+  font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+  color: @g-color-body-txt;
+}
+//++++ end # GENERIC ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # SECTIONS
+//++++++++++++++++++++++++++++++++//
+footer {
+  @media not all and (min-width: 45em) {
+    --site-logo-width: 0;
+  }
+}
+//++++ end # SECTIONS ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # GROUPING
+//++++++++++++++++++++++++++++++++//
+  //--------------------------------//
+  //    ## Paragraphs
+  //--------------------------------//
+  figcaption {
+    font-weight: 300;
+    font-style: italic;
+    .font-size-el(0.75);
+  }
+  //---- end ## Paragraphs ----//
+
+  //--------------------------------//
+  //    ## Lists
+  //--------------------------------//
+  //---- end ## Lists ----//
+
+  //--------------------------------//
+  //    ## Tables
+  //--------------------------------//
+  thead,
+  tfoot {
+    background-color: @g-color-table-bg;
+    font-weight: 600;
+    font-size: 0.75em; // REVIEW is this necessary?
+  }
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid @g-color-table-br;
+  }
+  // REVIEW striped & bordered tables
+  table.striped {
+    tbody > tr:nth-child(even) {
+      background-color: @g-color-table-bg;
+    }
+  }
+  tr.striped {
+    background-color: @g-color-table-bg;
+  }
+  table.bordered {
+    th,
+    td {
+      border: 1px solid @g-color-table-br;
+    }
+  }
+  //---- end ## Tables ----//
+//++++ end # GROUPING ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # TEXT
+//++++++++++++++++++++++++++++++++//
+  //--------------------------------//
+  //    ## Links
+  //--------------------------------//
+  a {
+    color: @g-color-link-txt;
+    &:hover,
+    &:focus {
+      color: @g-color-link-txt-hover;
+    }
+  }
+  //---- end ## Links ----//
+
+  //--------------------------------//
+  //    ## Stress
+  //--------------------------------//
+  //---- end ## Stress ----//
+
+  //--------------------------------//
+  //    ## Documentation
+  //--------------------------------//
+  //---- end ## Documentation ----//
+
+  //--------------------------------//
+  //    ## Data
+  //--------------------------------//
+  //---- end ## Data ----//
+//++++ end # TEXT ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # FORMS
+//++++++++++++++++++++++++++++++++//
+//++++ end # FORMS ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # EMBEDDED
+//++++++++++++++++++++++++++++++++//
+//++++ end # EMBEDDED ++++//
+
+
+//++++++++++++++++++++++++++++++++//
+//    # INTERACTIVE
+//++++++++++++++++++++++++++++++++//
+//++++ end # INTERACTIVE ++++//
