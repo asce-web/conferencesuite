@@ -16,9 +16,9 @@
 // ^author
 // Chris Harvey
 // ^updated
-// 2017-06-19
+// 2017-07-14
 
-@datewidth: 90px; // REVIEW magic number
+@datewidth: 6rem;
 
 // ALL supports (regardless of layout)
 .c-DateBlock {
@@ -61,6 +61,7 @@
   flex: 0 0 @datewidth;
 }
 .c-DateBlock__Desc {
+  width: calc(~'100% - '(@datewidth + 1rem)); // FIXME IE doesn’t support `calc()` values of `flex`
   flex: 0 0 calc(~'100% - '@datewidth);
 }
 
