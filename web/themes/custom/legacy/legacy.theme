@@ -39,7 +39,7 @@ function legacy_preprocess_page(&$variables) {
       $variables['page_images_banner'] = parse_url($fullpath, PHP_URL_PATH);
     }
   } else {
-    $variables['page_images_banner'] = 'themes/custom/legacy/images/banner-default.jpg';
+    $variables['page_images_banner'] = '/themes/custom/legacy/images/banner-default.jpg';
   }
 }
 
