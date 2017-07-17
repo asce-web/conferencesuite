@@ -287,7 +287,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"{{ title }}\" itemprop=\"logo\">\n  <meta content=\"{{ title }}\" itemprop=\"name\">\n</a>\n"
+            text: "<a href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title -}}\n    {% endif -%}\n  \" itemprop=\"logo\"/>\n  <meta content=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title -}}\n    {% endif -%}\n  \" itemprop=\"name\"/>\n</a>"
             make_link: false
             path: ''
             absolute: false
