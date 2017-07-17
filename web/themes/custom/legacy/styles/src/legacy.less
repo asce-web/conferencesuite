@@ -1,0 +1,123 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
+    conferencesuite  |  Legacy theme
+\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*================================*\
+    legacy.less
+\*================================*/
+
+/**
+ * ////////////////    CONTENTS    ////////////////
+ * SETTINGS & TOOLS--------------------PROJECT SETTINGS & MIXINS
+ * __settings.less.....................variables
+ * __tool.buttonText.less..............mixin for button text styles (used on many things)
+ *
+ * BASE--------------------------------BARE UNCLASSED ELEMENTS
+ * _dev.css............................fixes for imported 3rd party
+ * _base.css...........................unclassed html elements
+ *
+ * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Constrain...........................keeps content at max width
+ * MainCol.............................main column of a site page
+ * SideCol.............................side column of a site page
+ * MobileBar...........................top bar on mobile devices
+ * Tabs................................tabbed panel interface
+ * Drawer..............................pull-out container
+ *
+ * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
+ * Banner..............................full-bleed container with background color
+ * SiteLogo............................logo for conference site (usually an Institute shield)
+ * ConferenceTitles....................container for name, tagline, detail of conference
+ * TopImg..............................top banner image containing
+ * NavBar..............................any navigation bar
+ * YearBadge...........................badge at top indicating year
+ * AsceLogo............................company logo in copyright line
+ * Hero................................hero section on homepage
+ * Toggle..............................toggle button for Drawer Object
+ * FooterPanel.........................panel in tabbed footer
+ * Sitemap.............................footer navigation
+ * Callout.............................aside section, in sidebar
+ * DateBlock...........................container for important dates
+ * Chair...............................conference chair
+ * KeynoteSpeaker......................keynote speaker promoted on homepage
+ * SupporterBlock......................block of supporters in one level
+ * Button..............................standard link button
+ *
+ * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
+ * _theme.less.........................overrides for any Base, Object, or Component styles
+ * Content.............................main page content (CMS-editable)
+ * Spaced..............................add horizontal space, preventing full-bleed
+ *
+ * ATOMS-------------------------------FUNCTIONAL CSS
+ */
+
+
+@import (reference) url('../../node_modules/xmeter/src/__settings.less');
+@import (reference) url('../../node_modules/xmeter/src/__tool.transitions.less'); // for transitions() mixin
+@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/src/__tool.borders.less');
+
+@import (reference) url('__settings.less');
+@import (reference) url('__tool.buttonText.less');
+
+@import (less) url('_dev.less');
+@import (less) url('_base.less');
+
+
+@import (less) url('_o-Constrain.less');
+// Main column of the site.
+// Contains super relevant info.
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2017-04-03
+.o-MainCol {}
+@import (less) url('_o-SideCol.less');
+@import (less) url('_o-MobileBar.less');
+@import (less) url('_o-Tabs.less');
+@import (less) url('_o-Drawer.less');
+
+
+@import (less) url('_c-Banner.less');
+@import (less) url('_c-SiteLogo.less');
+@import (less) url('_c-ConferenceTitles.less');
+@import (less) url('_c-TopImg.less');
+@import (less) url('_c-NavBar.less');
+@import (less) url('_c-YearBadge.less');
+@import (less) url('_c-AsceLogo.less');
+@import (less) url('_c-Hero.less');
+@import (less) url('_c-Toggle.less');
+@import (less) url('_c-FooterPanel.less');
+@import (less) url('_c-Sitemap.less'); // TODO import from Neo
+@import (less) url('_c-Callout.less');
+@import (less) url('_c-DateBlock.less');
+@import (less) url('_c-Chair.less');
+@import (less) url('_c-KeynoteSpeaker.less');
+@import (less) url('_c-SupporterBlock.less');
+
+@import (less) url('_c-Button.less');
+
+
+@import (less) url('_themes.less');
+@import (less) url('_t-Content.less');
+@import (less) url('_h-Spaced.less');
+@import (less) url('_drupal.less');
+
+body > a:last-of-type {
+  position: fixed;
+  bottom: var(--vru);
+  right: 999999px;
+  &:focus {
+    right: 1rem;
+  }
+}
+
+// Link to site map, for when JS is disabled and no mobile menu is available
+header noscript a {
+  position: relative;
+  top: 1rem;
+  right: 0.5rem;
+}

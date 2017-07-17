@@ -34,11 +34,12 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_location_advisory'] = theme_get_setting('conference_location_advisory');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
-      $variables['page_images_banner'] = (file_load($image) == NULL) ? '/themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
-      //        //        //        //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ if setting path exists but no file exists at that path
+      $fullpath = (file_load($image) == NULL) ? '/themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
+      //     //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ if setting path exists but no file exists at that path
+      $variables['page_images_banner'] = parse_url($fullpath, PHP_URL_PATH);
     }
   } else {
-    $variables['page_images_banner'] = 'themes/custom/legacy/images/banner-default.jpg';
+    $variables['page_images_banner'] = '/themes/custom/legacy/images/banner-default.jpg';
   }
 }
 
@@ -59,7 +60,8 @@ function legacy_preprocess_block(&$variables) {
 
   if (theme_get_setting('secondary_logo')) {
     foreach (theme_get_setting('secondary_logo') as $image) {
-      $variables['block_secondarylogo'] = file_create_url(file_load($image)->getFileUri());
+      $fullpath = file_create_url(file_load($image)->getFileUri());
+      $variables['block_secondarylogo'] = parse_url($fullpath, PHP_URL_PATH);
     }
   }
 }
@@ -172,8 +174,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
     '#default_value' => theme_get_setting('conference_location_advisory'),
-    '#description'   => t('Accessible location name.'),
-    '#required'      => TRUE,
+    '#description'   => t('Accessible location name. <strong>Use only if different from Display Name.</strong>'),
   );
 
   $form['conference_settings']['developer'] = array(

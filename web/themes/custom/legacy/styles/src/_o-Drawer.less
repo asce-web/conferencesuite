@@ -1,0 +1,37 @@
+
+/*################################*\
+    legacy  |  _o-Drawer.less
+\*################################*/
+
+
+// Drawer object slides out from a side on mobile devices.
+// Most commonly used for a menu.
+//
+// ^subclasses
+// --open - for when drawer is activated/shown
+// ^subcomponents
+// __Item - each item in the list
+// __Link - each link inside an __Item in the menu
+// __Link--current - link to the current convention (home) page
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-06-11
+.o-Drawer {
+  .transitions(transform, opacity; 250ms);
+  transition-timing-function: ease-in; // animation for *closing* drawer
+    @width: 15rem;
+    position: fixed;
+    top: 0; bottom: 0;
+    right: -@width;
+    z-index: 2; // over footer tabs
+    width: @width;
+    border-left: 1px solid currentColor;
+    opacity: 0;
+  overflow: auto;
+}
+.o-Drawer--open {
+    transform: translateX(-100%);
+    opacity: 1;
+    transition-timing-function: ease-out; // animation for *opening* drawer
+}

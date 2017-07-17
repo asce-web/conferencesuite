@@ -46,14 +46,14 @@
   <div class="o-Constrain o-Flex -xd-c-nM -mb-2">
     <div class="o-Flex__Item o-MainCol">
       {{ page.hero }}
-      <section class="t-Content">{{ page.content }}</section>
+      <article class="t-Content">{{ page.content }}</article>
     </div>
     <div class="o-Flex__Item o-SideCol -pt-1 -ph-2">{{ page.sidebar }}</div>
   </div>
 </main>
 <aside>
   <div class="o-Constrain">
-    <h2 class="h-Hidden">Supporters</h2>
+    <h1 class="h-Hidden">Supporters</h1>
     {{ page.supporters }}
   </div>
 </aside>
@@ -66,7 +66,8 @@
       <path d="M203.15,43.43A39.38,39.38,0,0,0,191.3,71.61c0,11.43,4.05,21.44,12.92,29.1A46,46,0,0,0,234.42,112c6.51,0,11.53-1.53,18.46-3.57v-.89l-9.18-16.71a23.91,23.91,0,0,1-8.86,1.78c-13,0-21.78-8.78-21.78-20.93,0-11.94,8.65-21.34,21.46-21.34a25.11,25.11,0,0,1,9,1.69l9.33-17v-.22A51,51,0,0,0,233.78,31,44.6,44.6,0,0,0,203.15,43.43Z" transform="translate(-46.16 -30.97)"/>
       <path d="M276.18,50V62.82h23.59V79.77H276.18V93H301V110H255.26V33H301V50Z" transform="translate(-46.16 -30.97)"/>
     </svg>
-    <a class="-va-c" href="http://www.asce.org/" rel="external" target="_blank">&copy; 1996&ndash;{{ now|date("Y") }},
+    <a class="-va-c" href="http://www.asce.org/" rel="external" target="_blank">&copy;
+      <time>1996</time>&ndash;<time>{{ now|date("Y") }}</time>,
       American Society of Civil Engineers | ASCE.org</a>
   </p>
 </footer>

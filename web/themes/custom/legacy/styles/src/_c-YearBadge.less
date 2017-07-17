@@ -1,0 +1,70 @@
+
+/*################################*\
+    legacy  |  _c-YearBadge.less
+\*################################*/
+
+
+// The YearBadge component represents the shield-like icon
+// in the header and footer.
+//
+// ^subclasses
+// --tab - badge used to select and indicate year in the footer
+// ^author
+// : Dae Clarke
+// : Chris Harvey
+// ^updated
+// : 2017-06-16
+
+// overwritten below if var() is supported
+.c-YearBadge {
+  display: none;
+}
+.c-YearBadge--tab {
+  display: inline;
+  font-size: 3rem;
+}
+
+@supports (width: var(--width)) {
+.c-YearBadge {
+  display: block;
+  position: relative;
+  left: calc(~'-0.5 * var(--year-badge-width)');
+  width: var(--year-badge-width);
+  padding-top: calc(~'0.5 * var(--year-badge-width)');
+  font-weight: 700;
+  font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+  font-size: calc(~'0.25 * var(--year-badge-width)');
+  text-align: center;
+  background-color: @g-color-asce-blue;
+  &::before {
+    content: '20';
+    font-weight: 300;
+  }
+  &::after {
+    --year-badge-corner-height: calc(~'0.25 * var(--year-badge-width)');
+    content: '';
+    display: block;
+    position: relative;
+    top: var(--year-badge-corner-height);
+    width: 0;
+    height: 0;
+    border-width: var(--year-badge-corner-height) calc(~'0.5 * var(--year-badge-width)') 0;
+    border-color: @g-color-asce-blue transparent;
+  }
+}
+}
+
+.c-YearBadge--tab {
+  z-index: 1; // over footer panels
+  color: @g-color-banner-txt; // because not inside a Banner
+  .mx-bc-secondary();
+  &::after {
+    border-color: transparent;
+  }
+  input:checked + & {
+    .mx-bc-accent();
+    &::after {
+      .mx-btc-accent();
+    }
+  }
+}

@@ -1,0 +1,42 @@
+
+/*################################*\
+    legacy  |  _c-KeynoteSpeaker.less
+\*################################*/
+
+
+// Keynote Speaker
+//
+// ^subcomponents
+// __Session  - column for session date
+// __Headshot - column for headshot photo
+// __Details  - column for speaker information
+// ^author
+// Chris Harvey
+// ^updated
+// 2017-06-11
+.c-KeynoteSpeaker {
+  align-items: center;
+  margin-bottom: @g-vru; // HACK fallback
+  margin-bottom: var(--vru);
+}
+
+
+.c-KeynoteSpeaker__Session,
+.c-KeynoteSpeaker__Details {
+  flex: (100% * 2/5);
+}
+
+.c-KeynoteSpeaker__Session {
+}
+
+.c-KeynoteSpeaker__Headshot {
+  flex: (100% * 1/5);
+  margin-left:  1rem;
+  margin-right: 1rem;
+  & > img {
+    width: 100%;
+  }
+}
+
+.c-KeynoteSpeaker__Details {
+}

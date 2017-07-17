@@ -1,0 +1,27 @@
+
+/*################################*\
+    legacy  |  _c-AsceLogo.less
+\*################################*/
+
+
+// ASCE’s logo (<svg> element) at copyright line.
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2017-06-15
+.c-AsceLogo {
+  display: inline-block;
+  line-height: inherit;
+  width: auto;
+  height: @g-vru; // HACK fallback
+  height: var(--copyright-logo-height);
+  margin-right: 1rem;
+  vertical-align: middle;
+  @media screen and (min-width: 60em) {
+    height: (2 * @g-vru); // HACK fallback
+  }
+  path {
+    fill: currentColor;
+  }
+}
