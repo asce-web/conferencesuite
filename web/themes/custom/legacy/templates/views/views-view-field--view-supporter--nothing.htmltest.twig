@@ -19,6 +19,18 @@
  */
 #}
 <a href="{{ field_supporter_url }}" rel="external nofollow" itemprop="url">
-  <img class="c-SupporterBlock__Logo" src="{{ field_supporter_logo }}" alt="{{ title }}" itemprop="logo"/>
-  <meta content="{{ title }}" itemprop="name"/>
+  <img class="c-SupporterBlock__Logo" src="{{ field_supporter_logo }}" alt="
+    {%- if field_supporter_displayname %}
+      {{- field_supporter_displayname -}}
+    {% else %}
+      {{- title -}}
+    {% endif -%}
+  " itemprop="logo"/>
+  <meta content="
+    {%- if field_supporter_displayname %}
+      {{- field_supporter_displayname -}}
+    {% else %}
+      {{- title -}}
+    {% endif -%}
+  " itemprop="name"/>
 </a>
