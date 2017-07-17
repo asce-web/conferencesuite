@@ -24,4 +24,10 @@
     <span class="h-Block">{{ field_importantdate_startdate|date('Y') }}</span>
   </time>
 </dt>
-<dd class="c-DateBlock__Desc">{{ title }}</dd>
+<dd class="c-DateBlock__Desc">
+  {%- if field_importantdate_displayname %}
+    {{- field_importantdate_displayname -}}
+  {% else %}
+    {{- title -}}
+  {% endif -%}
+</dd>
