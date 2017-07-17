@@ -1,5 +1,5 @@
 global-styling:
-  version: 0.7.0
+  version: 0.7.1
   js:
     vendor/jquery.hoverIntent.min.js: {minified: true}
     scripts/menu.js: {minified: false}
