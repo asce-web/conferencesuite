@@ -21,22 +21,20 @@
 {% if field_venue_image %}
   <img class="h-Block -mb-1" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
 {% endif %}
-{% if field_venue_label == '1' %}
+{% if field_venue_label == 'On' %}
   <h2 class="-fz-el-kilo" itemprop="description">{{ title }}</h2>
 {% endif %}
 <p>
   {% if field_venue_url %}<a href="{{ field_venue_url }}" itemprop="url">{% endif %}
-  <b itemprop="name">{{ field_venue_name }}</b>
+  <b class="h-Clearfix" itemprop="name">{{ field_venue_name }}</b>
   {% if field_venue_url %}</a>{% endif %}
-  <br/>
   <span itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
-    <span itemprop="streetAddress">{{ field_venue_streetaddress }}</span>
-    <br/>
+    <span class="h-Clearfix" itemprop="streetAddress">{{ field_venue_streetaddress }}</span>
     <span itemprop="addressLocality">{{ field_venue_addresslocality }}</span>,
     <span itemprop="addressRegion">{{ field_venue_addressregion }}</span>
-    <span itemprop="postalCode">{{ field_venue_postalcode }}</span>
-    {% if field_venue_addresscountry %}<br/><span itemprop="addressCountry">{{ field_venue_addresscountry }}</span>{% endif %}
-    {% if field_venue_telephone %}<br/><a href="tel:{{ field_venue_telephone }}" itemprop="telephone">{{ field_venue_telephone }}</a>{% endif %}
+    <span class="h-Clearfix" itemprop="postalCode">{{ field_venue_postalcode }}</span>
+    {% if field_venue_addresscountry %}<span class="h-Clearfix" itemprop="addressCountry">{{ field_venue_addresscountry }}</span>{% endif %}
+    {% if field_venue_telephone %}<a href="tel:{{ field_venue_telephone }}" itemprop="telephone">{{ field_venue_telephone }}</a>{% endif %}
   </span>
 </p>
 {% if field_venue_cta %}
