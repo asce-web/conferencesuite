@@ -95,8 +95,9 @@ html(lang="en")
               li.o-List__Item: a(href="") For Speakers
               li.o-List__Item: a(href="./sponsors.html") Sponsors
               li.o-List__Item: a(href="") Exhibitors
-      nav.c-Banner.c-Banner--nav.-d-n-nM: div.o-Constrain.o-Flex
-          h1.h-Hidden Main Menus
+      nav.c-Banner.c-Banner--nav.-d-n-nM
+        h1.h-Hidden Main Menus
+        div.o-Constrain.o-Flex
           div.o-Flex__Item.o-MainCol: ul.o-List.o-Flex.c-NavBar.c-NavBar--main
             li.o-List__Item: a(href="./")
               i.glyphicons.glyphicons-home: span.h-Hidden Home
@@ -115,16 +116,19 @@ html(lang="en")
             //- change div to ul.o-List later
             a(href="") Why Attend
             a(href="") Registration
-      nav.c-Banner.c-Banner--nav.c-Banner--nav--sub: div.o-Constrain
-          h1.h-Hidden Sub Menus
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#programlevel2
+      nav
+        h1.h-Hidden Sub Menus
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#programlevel2: div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Speakers
             li: a(href="") Exhibitor List
             li: a(href="") ASCE Communities &amp; Pavilion
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#locationlevel2(class={'active':conference.menuhover})
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#locationlevel2(class={'active':conference.menuhover}): div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Lodging &amp; Transportation
             li: a(href="") For International Travel
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#aboutlevel2
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#aboutlevel2: div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Cooperating Organizations
             li: a(href="") Volunteer
     main#main: div.o-Constrain.o-Flex.-xd-c-nM.-mb-2

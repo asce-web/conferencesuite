@@ -19,8 +19,8 @@
 // ^author
 // : Chris Harvey
 // ^updated
-// 2017-06-11
-.c-NavBar {
+// 2017-07-24
+/*ul*/.c-NavBar {
   margin-bottom: 0; // override base ul
   .font-size-mod(12/16);
   font-weight: 700;
@@ -81,18 +81,9 @@
 }
 
 .c-NavBar--sub {
-  position: absolute;
-  left: 0; right: 0;
-  z-index: 1;
   justify-content: flex-start;
   font-weight: 600;
   text-transform: none; // undo .c-NavBar
-  transform-origin: top;
-  transition: transform 100ms;
-  .mx-bc-accent(); // FIXME only here because position absolute
-  &:not(.active) {
-    transform: scale(1,0);
-  }
 }
 
 .c-NavBar--mobile {

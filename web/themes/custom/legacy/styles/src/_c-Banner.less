@@ -15,7 +15,7 @@
 // ^author
 // Chris Harvey
 // ^updated
-// : 2017-06-12
+// 2017-07-24
 .c-Banner {
   color: @g-color-banner-txt;
 }
@@ -26,7 +26,15 @@
   .mx-bc-secondary();
 }
 .c-Banner--nav--sub {
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 1; // display on top of relatively-positioned contextual regions while logged into Drupal
+  transform-origin: top;
   .mx-bc-accent();
+  transition: transform 100ms;
+  &:not(.active) {
+    transform: scale(1,0);
+  }
 }
 .c-Banner--copyright {
   padding: @g-vru 1rem; // HACK fallback
