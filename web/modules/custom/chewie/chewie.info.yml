@@ -9,6 +9,8 @@ dependencies:
   - admin_toolbar_tools
   - coffee
   - devel
+  # Statistics
+  - google_tag
   # Content stuff
   - node
   - block

@@ -1,5 +1,4 @@
 global-styling:
-  version: 0.7.2
   js:
     vendor/jquery.hoverIntent.min.js: {minified: true}
     scripts/menu.js: {minified: false}
@@ -8,8 +7,8 @@ global-styling:
   css:
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      //cdn.rawgit.com/chharvey/xmeter/v5.7.0/xmeter.min.css: {type: external, minified: true}
-      //cdn.rawgit.com/chharvey/bangs/v0.14.0/bangs.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/xmeter/v5.7.2/xmeter.min.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
