@@ -61,11 +61,7 @@
   flex: 0 0 @datewidth;
 }
 .c-DateBlock__Desc {
-  width: calc(~'100% - '(@datewidth + 1rem)); // FIXME IE doesn’t support `calc()` values of `flex` // extra 1rem because margins
-  @supports (flex: calc(1px + 1px)) {
-    width: auto;
     flex: 0 0 calc(~'100% - '@datewidth);
-  }
 }
 
 
