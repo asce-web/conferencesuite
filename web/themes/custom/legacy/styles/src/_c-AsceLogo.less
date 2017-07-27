@@ -15,11 +15,12 @@
   line-height: inherit;
   width: auto;
   height: @g-vru; // HACK fallback
-  height: var(--copyright-logo-height);
+  height: var(--vru);
   margin-right: 1rem;
   vertical-align: middle;
   @media screen and (min-width: 60em) {
     height: (2 * @g-vru); // HACK fallback
+    height: calc(~'2 * var(--vru)');
   }
   path {
     fill: currentColor;
