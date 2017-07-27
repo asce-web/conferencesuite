@@ -26,10 +26,10 @@
  */
 #}
 {% set classes = [ html_developer_class ] %}
-{% set branch = [null, 'production', 'staging', 'development'][html_developer_branch] %}
+{% set channel = [null, 'production', 'staging', 'development', 'canary'][html_developer_channel] %}
 
 <!DOCTYPE html>
-<html{{ html_attributes.setAttribute('data-asset-branch', branch) }}>
+<html{{ html_attributes.setAttribute('data-asset-channel', channel) }}>
   <head>
     <title>{{ head_title|safe_join(' | ') }}</title>
     <head-placeholder token="{{ placeholder_token }}">

@@ -4,22 +4,20 @@
  * HTML Variables
  */
 function legacy_preprocess_html(&$variables) {
-  $variables['html_developer_class']  = theme_get_setting('developer_class');
-  $variables['html_developer_branch'] = theme_get_setting('developer_branch');
+  $variables['html_developer_class']   = theme_get_setting('developer_class');
+  $variables['html_developer_channel'] = theme_get_setting('developer_branch');
 
-  $repo_branch = theme_get_setting('developer_branch');
+  $asset_channel = theme_get_setting('developer_branch');
 
   // Determine which library to use; see `legacy.libraries.yml`
-  if (!empty($repo_branch)) {
-    $variables['#attached']['library'][] = array(
-      1 => 'legacy/prod-branch',
-      2 => 'legacy/stage-branch',
-      3 => 'legacy/dev-branch',
-    )[$repo_branch];
-  }
-  else {
-    $variables['#attached']['library'][] = 'legacy/stage-branch';
-  }
+  $variables['#attached']['library'][] = (!empty($asset_channel)) ?
+    array(
+      1 => 'legacy/channel-prod',
+      2 => 'legacy/channel-stage',
+      3 => 'legacy/channel-dev',
+      4 => 'legacy/channel-canary',
+    )[$asset_channel]
+    : 'legacy/channel-stage';
 }
 
 /**
@@ -190,14 +188,15 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   );
   $form['conference_settings']['developer']['developer_branch'] = array(
     '#type'    => 'select',
-    '#title'   => t('Style Repository Channel'),
+    '#title'   => t('Asset Channel'),
     '#options' => array(
       1 => t('production'),
       2 => t('staging'),
       3 => t('development'),
+      4 => t('canary'),
     ),
     '#default_value' => theme_get_setting('developer_branch'),
-    '#description'   => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
+    '#description'   => t('Collection of assets to use on the site. <strong>Flush all caches after changing selection.</strong>'),
   );
 
   /**

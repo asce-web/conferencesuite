@@ -16,6 +16,15 @@
 @color-site-primary:   #6a9556;
 @color-site-secondary: #6fc2c4;
 @color-site-accent:    #714509;
+@color-stage-primary:   #beae43;
+@color-stage-secondary: #10860e;
+@color-stage-accent:    #5e004c;
+@color-dev-primary:   #cd8ea3;
+@color-dev-secondary: #e04a00;
+@color-dev-accent:    #006ff1;
+@color-canary-primary:   #68b5b5;
+@color-canary-secondary: #c392f5;
+@color-canary-accent:    #c8ec71;
 
 // CI Summit 2016 // not equipped with chewie
 @color-ci-primary:   #21a0f2;
@@ -179,6 +188,9 @@
 //++++++++++++++++++++++++++++++++//
 .mx-bc-primary() {
   :root                & { background-color: @color-site-primary; }
+  .sample-stage        & { background-color: @color-stage-primary; }
+  .sample-dev          & { background-color: @color-dev-primary; }
+  .sample-canary       & { background-color: @color-canary-primary; }
   .pipelinesconference & { background-color: @color-pl-primary; }
   .icsiconference      & { background-color: @color-icsi-primary; }
   .lidconference       & { background-color: @color-lid-primary; }
@@ -207,6 +219,9 @@
 }
 .mx-bc-secondary() {
   :root                & { background-color: @color-site-secondary; }
+  .sample-stage        & { background-color: @color-stage-secondary; }
+  .sample-dev          & { background-color: @color-dev-secondary; }
+  .sample-canary       & { background-color: @color-canary-secondary; }
   .pipelinesconference & { background-color: @color-pl-secondary; }
   .icsiconference      & { background-color: @color-icsi-secondary; }
   .lidconference       & { background-color: @color-lid-secondary; }
@@ -235,6 +250,9 @@
 }
 .mx-bc-accent() {
   :root                & { background-color: @color-site-accent; }
+  .sample-stage        & { background-color: @color-stage-accent; }
+  .sample-dev          & { background-color: @color-dev-accent; }
+  .sample-canary       & { background-color: @color-canary-accent; }
   .pipelinesconference & { background-color: @color-pl-accent; }
   .icsiconference      & { background-color: @color-icsi-accent; }
   .lidconference       & { background-color: @color-lid-accent; }
@@ -263,6 +281,9 @@
 }
 .mx-c-primary() {
   :root                & { color: @color-site-primary; }
+  .sample-stage        & { color: @color-stage-primary; }
+  .sample-dev          & { color: @color-dev-primary; }
+  .sample-canary       & { color: @color-canary-primary; }
   .pipelinesconference & { color: @color-pl-primary; }
   .icsiconference      & { color: @color-icsi-primary; }
   .lidconference       & { color: @color-lid-primary; }
@@ -291,6 +312,9 @@
 }
 .mx-c-secondary() {
   :root                & { color: @color-site-secondary; }
+  .sample-stage        & { color: @color-stage-secondary; }
+  .sample-dev          & { color: @color-dev-secondary; }
+  .sample-canary       & { color: @color-canary-secondary; }
   .pipelinesconference & { color: @color-pl-secondary; }
   .icsiconference      & { color: @color-icsi-secondary; }
   .lidconference       & { color: @color-lid-secondary; }
@@ -319,6 +343,9 @@
 }
 .mx-c-accent() {
   :root                & { color: @color-site-accent; }
+  .sample-stage        & { color: @color-stage-accent; }
+  .sample-dev          & { color: @color-dev-accent; }
+  .sample-canary       & { color: @color-canary-accent; }
   .pipelinesconference & { color: @color-pl-accent; }
   .icsiconference      & { color: @color-icsi-accent; }
   .lidconference       & { color: @color-lid-accent; }
@@ -347,6 +374,9 @@
 }
 .mx-btc-accent() {
   :root                & { border-top-color: @color-site-accent; }
+  .sample-stage        & { border-top-color: @color-stage-accent; }
+  .sample-dev          & { border-top-color: @color-dev-accent; }
+  .sample-canary       & { border-top-color: @color-canary-accent; }
   .pipelinesconference & { border-top-color: @color-pl-accent; }
   .icsiconference      & { border-top-color: @color-icsi-accent; }
   .lidconference       & { border-top-color: @color-lid-accent; }
@@ -375,6 +405,9 @@
 }
 .mx-bc-primary-fade(...) {
   :root                & { .bg-grad(@color-site-primary); }
+  .sample-stage        & { .bg-grad(@color-stage-primary); }
+  .sample-dev          & { .bg-grad(@color-dev-primary); }
+  .sample-canary       & { .bg-grad(@color-canary-primary); }
   .pipelinesconference & { .bg-grad(@color-pl-primary); }
   .icsiconference      & { .bg-grad(@color-icsi-primary); }
   .lidconference       & { .bg-grad(@color-lid-primary); }
@@ -403,6 +436,9 @@
 }
 .mx-bc-primary-fade-reverse() {
   :root                & { .bg-grad-rev(@color-site-primary); }
+  .sample-stage        & { .bg-grad-rev(@color-stage-primary); }
+  .sample-dev          & { .bg-grad-rev(@color-dev-primary); }
+  .sample-canary       & { .bg-grad-rev(@color-canary-primary); }
   .pipelinesconference & { .bg-grad-rev(@color-pl-primary); }
   .icsiconference      & { .bg-grad-rev(@color-icsi-primary); }
   .lidconference       & { .bg-grad-rev(@color-lid-primary); }
