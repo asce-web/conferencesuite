@@ -6,79 +6,80 @@
   //-------------------------------//
   // ## Vertical rhythm unit
   //-------------------------------//
+  @p-vru: 1.5rem;
     //********************************//
     //  ### _dev.less
     //********************************//
     .o-Flex--siteHead {
-      margin: @g-vru 0;
+      margin: @p-vru 0;
     }
     .o-Flex--siteFoot {
       @media screen and (min-width: 30em) and (max-width: 44.999em) {
-        max-height: calc((3*5 + 7*2) ~'*' @g-vru);
+        max-height: calc((3*5 + 7*2) ~'*' @p-vru);
       }
     }
     //**** end ### _dev.less ****//
   .o-MobileBar__Item {
-    padding: (0.5 * @g-vru) 1rem;
+    padding: (0.5 * @p-vru) 1rem;
   }
   .c-Banner--copyright {
-    padding: @g-vru 1rem;
+    padding: @p-vru 1rem;
   }
   .c-ConferenceTitles > * {
-    margin-bottom: 0.5 * @g-vru;
+    margin-bottom: 0.5 * @p-vru;
   }
   .c-SiteLogo--secondary {
     @media not all and (min-width: 45em) {
-      padding-top: @g-vru;
+      padding-top: @p-vru;
     }
   }
   .c-AsceLogo {
-    height: @g-vru;
+    height: @p-vru;
     @media screen and (min-width: 60em) {
-      height: (2 * @g-vru);
+      height: (2 * @p-vru);
     }
   }
   .c-Callout {
-    margin-bottom: @g-vru;
+    margin-bottom: @p-vru;
   }
   .c-Callout__Body {
-    padding: @g-vru 1rem 0;
+    padding: @p-vru 1rem 0;
   }
   .c-Sitemap__Item {
-    margin-bottom: @g-vru;
+    margin-bottom: @p-vru;
   }
   .c-Hero {
-    margin-bottom: (2 * @g-vru);
+    margin-bottom: (2 * @p-vru);
   }
   .c-Hero__Blurb {
-    padding-bottom: @g-vru;
+    padding-bottom: @p-vru;
   }
   .c-KeynoteSpeaker {
-    margin-bottom: @g-vru;
+    margin-bottom: @p-vru;
   }
   .c-Chair {
-    margin-bottom: 0.5 * @g-vru;
+    margin-bottom: 0.5 * @p-vru;
   }
   .c-SupporterBlock {
-    margin-bottom: 2 * @g-vru;
+    margin-bottom: 2 * @p-vru;
   }
   .c-SupporterBlock__List__Item {
-    margin: 0 1rem @g-vru;
+    margin: 0 1rem @p-vru;
   }
   .c-DateBlock {
     @supports (display: grid) {
-      grid-row-gap: 0.5 * @g-vru;
+      grid-row-gap: 0.5 * @p-vru;
     }
   }
   .c-DateBlock__Date,
   .c-DateBlock__Desc {
-    margin-bottom: 0.5 * @g-vru;
+    margin-bottom: 0.5 * @p-vru;
     @supports (display: grid) {
       margin-bottom: 0; // undo fallback above (again)
     }
   }
   .c-Button {
-    padding: (0.5 * @g-vru) 1rem;
+    padding: (0.5 * @p-vru) 1rem;
   }
   //---- end ## Vertical rhythm unit ----//
 //++++ end # CUSTOM PROPERTY FALLBACKS ++++//
