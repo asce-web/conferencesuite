@@ -16,17 +16,22 @@ global-styling:
       vendor/futura.css: {minified: true}
       styles/legacy.css: {minified: true}
 
-dev-branch:
+channel-prod:
   css:
     theme:
       {}
 
-stage-branch:
+channel-stage:
   css:
     theme:
       {}
 
-prod-branch:
+channel-dev:
+  css:
+    theme:
+      {}
+
+channel-canary:
   css:
     theme:
       {}
