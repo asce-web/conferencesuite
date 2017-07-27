@@ -15,6 +15,7 @@ function legacy_preprocess_html(&$variables) {
       1 => 'legacy/prod-branch',
       2 => 'legacy/stage-branch',
       3 => 'legacy/dev-branch',
+      4 => 'legacy/canary-branch',
     )[$repo_branch];
   }
   else {
@@ -195,6 +196,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
       1 => t('production'),
       2 => t('staging'),
       3 => t('development'),
+      4 => t('canary'),
     ),
     '#default_value' => theme_get_setting('developer_branch'),
     '#description'   => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),

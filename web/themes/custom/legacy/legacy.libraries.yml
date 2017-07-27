@@ -30,3 +30,8 @@ prod-branch:
   css:
     theme:
       {}
+
+canary-branch:
+  css:
+    theme:
+      {}

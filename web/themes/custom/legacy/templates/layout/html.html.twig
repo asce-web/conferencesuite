@@ -26,7 +26,7 @@
  */
 #}
 {% set classes = [ html_developer_class ] %}
-{% set branch = [null, 'production', 'staging', 'development'][html_developer_branch] %}
+{% set branch = [null, 'production', 'staging', 'development', 'canary'][html_developer_branch] %}
 
 <!DOCTYPE html>
 <html{{ html_attributes.setAttribute('data-asset-branch', branch) }}>
