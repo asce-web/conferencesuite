@@ -23,9 +23,6 @@
   box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw;
   color: @g-color-btn-txt;
   cursor: pointer;
-  &.c-Btn { // HACK specificity without using `!important`
-    text-decoration: none; // override `.t-Content >> a`
-  }
   &:hover,
   &:focus {
     background-color: lighten(@g-color-btn-bg, 5%);
