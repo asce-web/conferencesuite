@@ -225,7 +225,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   // $banner_folder = file_prepare_directory($default_file_dir, FILE_CREATE_DIRECTORY);
 
   $form['conference_images']['images']['secondary_logo'] = array(
-    '#title'              => t('Seconday Logo'),
+    '#title'              => t('Secondary Logo'),
     '#type'               => 'managed_file',
     '#description'        => t('Optional secondary logo.'),
     '#default_value'      => theme_get_setting('secondary_logo'),
