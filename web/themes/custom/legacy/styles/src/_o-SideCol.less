@@ -12,11 +12,7 @@
 // ^updated
 // : 2017-06-21
 .o-SideCol {
-  // HACK fallbacks // FIXME magic numbers! see `_base.less`
-  @media screen and (min-width: 45em) { flex: 0 0 300px; }
-  @media screen and (min-width: 60em) { flex: 0 0 385px; }
-  @media screen and (min-width: 75em) { flex: 0 0 450px; }
-  @media screen and (min-width: 45em) {
-    flex: 0 0 var(--sidebar-width);
-  }
+  @media screen and (min-width: 45em) { flex: 0 0 40%; }
+  @media screen and (min-width: 60em) { flex: 0 0 35%; }
+  @media screen and (min-width: 90em) { flex: 0 0 30%; }
 }
