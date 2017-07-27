@@ -14,13 +14,9 @@
   display: inline-block;
   line-height: inherit;
   width: auto;
-  height: @g-vru; // HACK fallback
   height: var(--copyright-logo-height);
   margin-right: 1rem;
   vertical-align: middle;
-  @media screen and (min-width: 60em) {
-    height: (2 * @g-vru); // HACK fallback
-  }
   path {
     fill: currentColor;
   }

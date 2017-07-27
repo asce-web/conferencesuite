@@ -54,7 +54,6 @@
 }
 .c-DateBlock__Date,
 .c-DateBlock__Desc {
-  margin-bottom: 0.5 * @g-vru; // HACK fallback
   margin-bottom: calc(~'0.5 * var(--vru)');
 }
 .c-DateBlock__Date {
@@ -70,12 +69,11 @@
   .c-DateBlock {
     display: grid;
     grid-template-columns: @datewidth auto;
-    grid-row-gap: 0.5 * @g-vru; // HACK fallback
     grid-row-gap: calc(~'0.5 * var(--vru)');
   }
   .c-DateBlock__Date,
   .c-DateBlock__Desc {
-    margin-bottom: 0; // unset
+    margin-bottom: 0; // undo fallback above
   }
   .c-DateBlock__Date {
   }

@@ -16,7 +16,6 @@
 // ^updated
 // : 2017-04-04
 .c-Hero {
-  margin-bottom: 2*@g-vru; // HACK fallback
   margin-bottom: calc('2 * var(--vru)');
   // Banner--head colors (but not a Banner--head component)
   .mx-bc-primary();
@@ -46,7 +45,6 @@
 }
 .c-Hero__Blurb {
   font-weight: 300;
-  padding-bottom: @g-vru; // HACK fallback
   padding-bottom: var(--vru);
   @media not all and (min-width: 45em) {
     .font-size-el(0.875); // REVIEW magic number!!!
@@ -57,7 +55,7 @@
 }
 
 // custom property support & linear-gradient syntax support
-@supports (display: var(--var))
+@supports (display: var(--variable))
   and (background-image: linear-gradient(to bottom, transparent 0%, #fff 100%)) {
   .c-Hero__Hn::before,
   .c-Hero__Blurb::after {
