@@ -10,17 +10,14 @@ function legacy_preprocess_html(&$variables) {
   $asset_channel = theme_get_setting('developer_branch');
 
   // Determine which library to use; see `legacy.libraries.yml`
-  if (!empty($asset_channel)) {
-    $variables['#attached']['library'][] = array(
+  $variables['#attached']['library'][] = (!empty($asset_channel)) ?
+    array(
       1 => 'legacy/channel-prod',
       2 => 'legacy/channel-stage',
       3 => 'legacy/channel-dev',
       4 => 'legacy/channel-canary',
-    )[$asset_channel];
-  }
-  else {
-    $variables['#attached']['library'][] = 'legacy/channel-stage';
-  }
+    )[$asset_channel]
+    : 'legacy/channel-stage';
 }
 
 /**
