@@ -20,11 +20,9 @@
   color: @g-color-banner-txt;
 }
 .c-Banner--head {
-  .mx-bc-primary(); // HACK fallback
   background-color: var(--color-primary);
 }
 .c-Banner--nav {
-  .mx-bc-secondary(); // HACK fallback
   background-color: var(--color-secondary);
 }
 .c-Banner--nav--sub {
@@ -32,7 +30,6 @@
   left: 0; right: 0;
   z-index: 1; // display on top of relatively-positioned contextual regions while logged into Drupal
   transform-origin: top;
-  .mx-bc-accent(); // HACK fallback
   background-color: var(--color-accent);
   transition: transform 100ms;
   &:not(.active) {

@@ -453,6 +453,51 @@
   .unsatsoilsconf      & { background-image: linear-gradient(to top, transparent 0%, @color-unsat-primary      100%); }
 }
     //**** end ### mixins ****//
+    .c-Banner--head {
+      .mx-bc-primary();
+    }
+    .c-Banner--nav {
+      .mx-bc-secondary();
+    }
+    .c-Banner--nav--sub {
+      .mx-bc-accent();
+    }
+    .c-YearBadge--tab {
+      .mx-bc-secondary();
+      input:checked + & {
+        .mx-bc-accent();
+        &::after {
+          .mx-btc-accent();
+        }
+      }
+    }
+    .c-NavBar--main > * {
+      &:hover,
+      &:focus,
+      &.active {
+        .mx-bc-accent();
+      }
+    }
+    .c-NavBar--mobile {
+      .mx-bc-secondary();
+    }
+    .c-Hero {
+      .mx-bc-primary();
+    }
+    .c-Hero__Hn::before {
+      .mx-bc-primary-fade(); // TODO remove
+    }
+    .c-Hero__Blurb::after {
+      .mx-bc-primary-fade-reverse(); // TODO remove
+    }
+    .c-DateBlock__MonthDay {
+      .mx-c-secondary();
+    }
+    .t-Content {
+      h1, h2, h3, h4, h5, h6 {
+        .mx-c-primary();
+      }
+    }
   //---- end ## Site Color Schemes ----//
 
 
