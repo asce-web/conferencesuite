@@ -25,161 +25,286 @@
 @color-canary-primary:   #68b5b5;
 @color-canary-secondary: #c392f5;
 @color-canary-accent:    #c8ec71;
+:root {
+  --color-primary:   @color-site-primary;
+  --color-secondary: @color-site-secondary;
+  --color-accent:    @color-site-accent;
+}
+.sample-stage {
+  --color-primary:   @color-stage-primary;
+  --color-secondary: @color-stage-secondary;
+  --color-accent:    @color-stage-accent;
+}
+.sample-dev {
+  --color-primary:   @color-dev-primary;
+  --color-secondary: @color-dev-secondary;
+  --color-accent:    @color-dev-accent;
+}
+.sample-canary {
+  --color-primary:   @color-canary-primary;
+  --color-secondary: @color-canary-secondary;
+  --color-accent:    @color-canary-accent;
+}
 
-// CI Summit 2016 // not equipped with chewie
+// CI Summit 2018
 @color-ci-primary:   #21a0f2;
 @color-ci-secondary: #5e6167;
 @color-ci-accent:    #ffc72a;
+.cisummit {
+  --color-primary:   @color-ci-primary;
+  --color-secondary: @color-ci-secondary;
+  --color-accent:    @color-ci-accent;
+}
 
 // Pipelines 2018
-// class: .pipelinesconference
 @color-pl-primary:   #013d4b;
 @color-pl-secondary: #1f8234;
 @color-pl-accent:    #974800;
+.pipelinesconference {
+  --color-primary:   @color-pl-primary;
+  --color-secondary: @color-pl-secondary;
+  --color-accent:    @color-pl-accent;
+}
 
-// ICSI 2016 & 2017
-// class: .icsiconference
+// ICSI 2017
 @color-icsi-primary:   #0b2f69;
 @color-icsi-secondary: #a6044d;
 @color-icsi-accent:    #a3446d;
+.icsiconference {
+  --color-primary:   @color-icsi-primary;
+  --color-secondary: @color-icsi-secondary;
+  --color-accent:    @color-icsi-accent;
+}
 
-// EWRI LID 2016 // equipped with Chewie on CDN
-// class: .lidconference
+// EWRI LID 2016
 @color-lid-primary:   #354e71;
 @color-lid-secondary: #841f27;
 @color-lid-accent:    #7d98ab;
+.lidconference {
+  --color-primary:   @color-lid-primary;
+  --color-secondary: @color-lid-secondary;
+  --color-accent:    @color-lid-accent;
+}
 
 // SEI Structures
-// class: .structurescongress
 @color-struct-primary:   #005a9c;
 @color-struct-secondary: #76ad7b; // darken(#c6ddc8, 25%);
 @color-struct-accent:    #b99a77;
+.structurescongress {
+  --color-primary:   @color-struct-primary;
+  --color-secondary: @color-struct-secondary;
+  --color-accent:    @color-struct-accent;
+}
 
 // Geo Risk 2017
-// class: .georiskconference
 @color-georisk-primary:   #00535e;
 @color-georisk-secondary: #6e6259; // old: #5f504e
 @color-georisk-accent:    #82b2ba;
+.georiskconference {
+  --color-primary:   @color-georisk-primary;
+  --color-secondary: @color-georisk-secondary;
+  --color-accent:    @color-georisk-accent;
+}
 
 // AEI 2017
-// class: .aei-conference
 @color-aei-primary:   #00548e;
 @color-aei-secondary: #7f7f73;
 @color-aei-accent:    #aba9a0;
+.aei-conference {
+  --color-primary:   @color-aei-primary;
+  --color-secondary: @color-aei-secondary;
+  --color-accent:    @color-aei-accent;
+}
 
 // Pavements 2017
-// class: .pavementsconference
 @color-pave-primary:   #5e6167;
 @color-pave-secondary: #8a8a8d;
 @color-pave-accent:    darken(#ffce34, 15%);
+.pavementsconference {
+  --color-primary:   @color-pave-primary;
+  --color-secondary: @color-pave-secondary;
+  --color-accent:    @color-pave-accent;
+}
 
 // GI Grouting 2017
-// class: .groutingconference
 @color-grout-primary:   #00565b;
 @color-grout-secondary: #82b1ba;
 @color-grout-accent:    #ff8038;
+.groutingconference {
+  --color-primary:   @color-grout-primary;
+  --color-secondary: @color-grout-secondary;
+  --color-accent:    @color-grout-accent;
+}
 
 // CI Summit 2017 & 2018 (same)
-// class: .cisummit
 @color-ci-primary:   #d06f1a;
 @color-ci-secondary: #7f7f73;
 @color-ci-accent:    #aba9a0;
+.cisummit {
+  --color-primary:   @color-ci-primary;
+  --color-secondary: @color-ci-secondary;
+  --color-accent:    @color-ci-accent;
+}
 
 // AEI Student Design Competition (non-conference)
-// class: .aeisdc
 @color-aeisdc-primary:   #00163e;//#020f19;
 @color-aeisdc-secondary: #8ca7c2;
 @color-aeisdc-accent:    #797667;//#7b7761;
+.aeisdc {
+  --color-primary:   @color-aeisdc-primary;
+  --color-secondary: @color-aeisdc-secondary;
+  --color-accent:    @color-aeisdc-accent;
+}
 
 // ASCE Convention 2016
-// class: .asceconvention
 @color-convention-primary:   #3fae2a;
 @color-convention-secondary: #00a1e1;
 @color-convention-accent:    #01b7ff;
+.asceconvention {
+  --color-primary:   @color-convention-primary;
+  --color-secondary: @color-convention-secondary;
+  --color-accent:    @color-convention-accent;
+}
 
 // EWRI HMEM 2017
-// class: .hmemconference
 @color-hmem-primary:   #3b421b;
 @color-hmem-secondary: #b4c1d1;
 @color-hmem-accent:    #a5904f;
+.hmemconference {
+  --color-primary:   @color-hmem-primary;
+  --color-secondary: @color-hmem-secondary;
+  --color-accent:    @color-hmem-accent;
+}
 
 // EWRI Congress 2018
-// class: .ewricongress
 @color-ewri-primary:   #3d2758;
 @color-ewri-secondary: #7a4b8f;
 @color-ewri-accent:    #aecb6e;
+.ewricongress {
+  --color-primary:   @color-ewri-primary;
+  --color-secondary: @color-ewri-secondary;
+  --color-accent:    @color-ewri-accent;
+}
 
 // ASCE Convention 2017
-// class: .asceconvention2017
 @color-2017-primary:   #00737b;
 @color-2017-secondary: #694890;
 @color-2017-accent:    #8e75ac;
+.asceconvention2017 {
+  --color-primary:   @color-2017-primary;
+  --color-secondary: @color-2017-secondary;
+  --color-accent:    @color-2017-accent;
+}
 
 // ICCE 2018
-// class: .icce2018
 @color-icce-primary:   #004990;
 @color-icce-secondary: #9b2242;
 @color-icce-accent:    #647cb2;
+.icce2018 {
+  --color-primary:   @color-icce-primary;
+  --color-secondary: @color-icce-secondary;
+  --color-accent:    @color-icce-accent;
+}
 
 // Congress on Technical Advancement 2017
-// class: .asce-cta
 @color-cta-primary:   #0033a0;
 @color-cta-secondary: #8c8279;
 @color-cta-accent:    #49a112; // desaturate(darken(#63ff00, 30%, relative), 20%, relative);
+.asce-cta {
+  --color-primary:   @color-cta-primary;
+  --color-secondary: @color-cta-secondary;
+  --color-accent:    @color-cta-accent;
+}
 
 // CI Student Days
-// class: .ascestudentdays
 @color-cisd-primary:   #41434b;
 @color-cisd-secondary: #ffcf01;
 @color-cisd-accent:    #dac689;
+.ascestudentdays {
+  --color-primary:   @color-cisd-primary;
+  --color-secondary: @color-cisd-secondary;
+  --color-accent:    @color-cisd-accent;
+}
 
 // EWRI OMSW (stormwater)
-// class: .omswconference
 @color-omsw-primary:   #355d6e;
 @color-omsw-secondary: #5b8424;
 @color-omsw-accent:    #c0bba7;
+.omswconference {
+  --color-primary:   @color-omsw-primary;
+  --color-secondary: @color-omsw-secondary;
+  --color-accent:    @color-omsw-accent;
+}
 
 // T&DI APM Conference
-// class: .apmconference
 @color-apm-primary:   #e37f1c;
 @color-apm-secondary: #eda868;
 @color-apm-accent:    #1561a6;
+.apmconference {
+  --color-primary:   @color-apm-primary;
+  --color-secondary: @color-apm-secondary;
+  --color-accent:    @color-apm-accent;
+}
 
 // G-I Unsat Soils
-// class: .unsatsoilsconf
 @color-unsat-primary:   #00565b;
 @color-unsat-secondary: #b80007;
 @color-unsat-accent:    #82b1ba;
+.unsatsoilsconf {
+  --color-primary:   @color-unsat-primary;
+  --color-secondary: @color-unsat-secondary;
+  --color-accent:    @color-unsat-accent;
+}
 
 // SEI ETS Conference
-// class: .etsconference
 @color-ets-primary:   #002c73;
 @color-ets-secondary: #7c858c;
 @color-ets-accent:    #5a87d9;
+.etsconference {
+  --color-primary:   @color-ets-primary;
+  --color-secondary: @color-ets-secondary;
+  --color-accent:    @color-ets-accent;
+}
 
 // GEESD 2018
-// class: .geesdconference
 @color-geesd-primary:   #004e58;
 @color-geesd-secondary: #985f35;
 @color-geesd-accent:    #97a8b0;
+.geesdconference {
+  --color-primary:   @color-geesd-primary;
+  --color-secondary: @color-geesd-secondary;
+  --color-accent:    @color-geesd-accent;
+}
 
 // AEI Forum 2018
-// class: .aei-forum
 @color-aeiforum-primary:   #7f7f73;
 @color-aeiforum-secondary: #00548e;
 @color-aeiforum-accent:    #aba9a0;
+.aei-forum {
+  --color-primary:   @color-aeiforum-primary;
+  --color-secondary: @color-aeiforum-secondary;
+  --color-accent:    @color-aeiforum-accent;
+}
 
 // ICTD 2018
-// class: .asce-ictd
 @color-ictd-primary:   #1a355e;
 @color-ictd-secondary: #918c13;
 @color-ictd-accent:    #605c06;
+.asce-ictd {
+  --color-primary:   @color-ictd-primary;
+  --color-secondary: @color-ictd-secondary;
+  --color-accent:    @color-ictd-accent;
+}
 
 // Surveying 2018
-// class: .surveyingconference
 @color-surv-primary:   #547975;
 @color-surv-secondary: #e37f1c;
 @color-surv-accent:    #729d98;
+.surveyingconference {
+  --color-primary:   @color-surv-primary;
+  --color-secondary: @color-surv-secondary;
+  --color-accent:    @color-surv-accent;
+}
 //++++ end # CONFERENCE SITE-SPECIFIC COLORS ++++//
 
 
