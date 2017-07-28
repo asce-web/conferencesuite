@@ -18,7 +18,8 @@
 .c-Hero {
   margin-bottom: calc(~'2 * var(--vru)');
   // Banner--head colors (but not a Banner--head component)
-  .mx-bc-primary();
+  .mx-bc-primary(); // HACK fallback
+  background-color: var(--color-primary);
   color: @g-color-banner-txt;
 }
 .c-Hero__Img {
@@ -66,11 +67,13 @@
   .c-Hero__Hn::before {
     top:    calc(~'-2 * var(--vru)');
     height: calc(~' 2 * var(--vru)');
-    .mx-bc-primary-fade();
+    .mx-bc-primary-fade(); // HACK fallback
+    background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);
   }
   .c-Hero__Blurb::after {
     bottom: calc(~'-1 * var(--vru)');
     height: calc(~' 1 * var(--vru)');
-    .mx-bc-primary-fade-reverse();
+    .mx-bc-primary-fade-reverse(); // HACK fallback
+    background-image: linear-gradient(to top, transparent 0%, var(--color-primary) 100%);
   }
 }
