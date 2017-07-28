@@ -34,6 +34,13 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
+    <style>
+      body {
+        --color-primary:   {{ html_colors_primary }};
+        --color-secondary: {{ html_colors_secondary }};
+        --color-accent:    {{ html_colors_accent }};
+      }
+    </style>
     <js-placeholder token="{{ placeholder_token }}">
     <noscript>
       <!-- NOTE: removes Toggle menu when JS is disabled-->

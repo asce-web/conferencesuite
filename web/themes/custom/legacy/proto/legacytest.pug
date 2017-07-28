@@ -15,6 +15,11 @@ html(lang="en")
         banner : '../../../../sites/default/files/site-images/CECAR%207%20Banner%20Image.jpg',
         sidebar: '../../../../sites/default/files/2017-07/slide_2.jpg',
       },
+      colors: {
+        primary  : '#6a9556',
+        secondary: '#6fc2c4',
+        accent   : '#714509',
+      }
     }
   head
     title Sample ASCE Conference
@@ -38,7 +43,11 @@ html(lang="en")
           .c-Toggle,
           .o-Drawer { display: none; }
         }
-  body(class=conference.classname)#top
+  body#top(class=conference.classname style={
+    '--color-primary':   conference.colors.primary,
+    '--color-secondary': conference.colors.secondary,
+    '--color-accent':    conference.colors.accent,
+  })
     a.h-Hidden(href="#main") skip to main content
     header
       nav.o-Flex.o-MobileBar.c-Banner.c-Banner--nav.-d-n-sM
