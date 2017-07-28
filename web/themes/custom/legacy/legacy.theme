@@ -282,7 +282,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'   => 'fieldset',
     '#title'  => t('Site Colors'),
     '#weight' => -140,
-    '#description' => t('Enter hex codes in <code>#rrggbb</code> format. <strong>Flush all caches after changing values.</strong>'),
+    '#description' => t('Enter hex codes in <code>#rrggbb</code> format.'),
   );
   $form['conference_images']['colors']['colors_primary'] = array(
     '#type'          => 'textfield',
