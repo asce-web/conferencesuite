@@ -29,12 +29,4 @@ gulp.task('lessc:core', function () {
     .pipe(gulp.dest('./styles/'))
 })
 
-// IE-only stylesheet. no grid, no minification, no sourcemaps.
-gulp.task('lessc:ie', function () {
-  return gulp.src(__dirname + '/styles/src/legacy-ie.less')
-    .pipe(less())
-    .pipe(autoprefixer({ cascade:false }))
-    .pipe(gulp.dest('./styles/'))
-})
-
-gulp.task('build', ['pug:test', 'lessc:core', 'lessc:ie'])
+gulp.task('build', ['pug:test', 'lessc:core'])

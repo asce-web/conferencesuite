@@ -1,6 +1,13 @@
 
+/*################################*\
+    legacy  |  _ie.less
+\*################################*/
 
-// Only IE supports -ms-high-contrast
+
+// IE fixes go here. These styles should *only* be rendered on IE!
+// Using the -ms-high-contrast quirk: only IE supports -ms-high-contrast
+///////////////////////////////////////////////////////////////////////////////
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 //+++++++++++++++++++++++++++++++//
 // # CUSTOM PROPERTY FALLBACKS
@@ -159,6 +166,6 @@
   // IE doesn’t support `calc()` values of `flex` shorthand, so must separate into longhands
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: calc(~'100% - 8rem'); // for some reason we need a shorter width on IE
+  flex-basis: calc(~'100% - 8rem'); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
 }

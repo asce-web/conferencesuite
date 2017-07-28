@@ -15,7 +15,6 @@ global-styling:
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
       vendor/futura.css: {minified: true}
       styles/legacy.css: {minified: true}
-      styles/legacy-ie.css: {minified: false}
 
 channel-prod:
   css:
