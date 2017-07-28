@@ -525,74 +525,68 @@
   .surveyingconference & { border-top-color: @color-surv-accent; }
   .unsatsoilsconf      & { border-top-color: @color-unsat-accent; }
 }
-.mx-bc-primary-fade(...) {
-  :root                & { .bg-grad(@color-site-primary); }
-  .sample-stage        & { .bg-grad(@color-stage-primary); }
-  .sample-dev          & { .bg-grad(@color-dev-primary); }
-  .sample-canary       & { .bg-grad(@color-canary-primary); }
-  .aei-conference      & { .bg-grad(@color-aei-primary); }
-  .aei-forum           & { .bg-grad(@color-aeiforum-primary); }
-  .aeisdc              & { .bg-grad(@color-aeisdc-primary); }
-  .apmconference       & { .bg-grad(@color-apm-primary); }
-  .asce-cta            & { .bg-grad(@color-cta-primary); }
-  .asce-ictd           & { .bg-grad(@color-ictd-primary); }
-  .asceconvention      & { .bg-grad(@color-convention-primary); }
-  .asceconvention2017  & { .bg-grad(@color-2017-primary); }
-  .ascestudentdays     & { .bg-grad(@color-cisd-primary); }
-  .cisummit            & { .bg-grad(@color-ci-primary); }
-  .etsconference       & { .bg-grad(@color-ets-primary); }
-  .ewricongress        & { .bg-grad(@color-ewri-primary); }
-  .geesdconference     & { .bg-grad(@color-geesd-primary); }
-  .georiskconference   & { .bg-grad(@color-georisk-primary); }
-  .groutingconference  & { .bg-grad(@color-grout-primary); }
-  .hmemconference      & { .bg-grad(@color-hmem-primary); }
-  .icce2018            & { .bg-grad(@color-icce-primary); }
-  .icsiconference      & { .bg-grad(@color-icsi-primary); }
-  .lidconference       & { .bg-grad(@color-lid-primary); }
-  .omswconference      & { .bg-grad(@color-omsw-primary); }
-  .pavementsconference & { .bg-grad(@color-pave-primary); }
-  .pipelinesconference & { .bg-grad(@color-pl-primary); }
-  .structurescongress  & { .bg-grad(@color-struct-primary); }
-  .surveyingconference & { .bg-grad(@color-surv-primary); }
-  .unsatsoilsconf      & { .bg-grad(@color-unsat-primary); }
+.mx-bc-primary-fade() {
+  // in your project, use `background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);`
+  :root                & { background-image: linear-gradient(to bottom, transparent 0%, @color-site-primary       100%); }
+  .sample-stage        & { background-image: linear-gradient(to bottom, transparent 0%, @color-stage-primary      100%); }
+  .sample-dev          & { background-image: linear-gradient(to bottom, transparent 0%, @color-dev-primary        100%); }
+  .sample-canary       & { background-image: linear-gradient(to bottom, transparent 0%, @color-canary-primary     100%); }
+  .aei-conference      & { background-image: linear-gradient(to bottom, transparent 0%, @color-aei-primary        100%); }
+  .aei-forum           & { background-image: linear-gradient(to bottom, transparent 0%, @color-aeiforum-primary   100%); }
+  .aeisdc              & { background-image: linear-gradient(to bottom, transparent 0%, @color-aeisdc-primary     100%); }
+  .apmconference       & { background-image: linear-gradient(to bottom, transparent 0%, @color-apm-primary        100%); }
+  .asce-cta            & { background-image: linear-gradient(to bottom, transparent 0%, @color-cta-primary        100%); }
+  .asce-ictd           & { background-image: linear-gradient(to bottom, transparent 0%, @color-ictd-primary       100%); }
+  .asceconvention      & { background-image: linear-gradient(to bottom, transparent 0%, @color-convention-primary 100%); }
+  .asceconvention2017  & { background-image: linear-gradient(to bottom, transparent 0%, @color-2017-primary       100%); }
+  .ascestudentdays     & { background-image: linear-gradient(to bottom, transparent 0%, @color-cisd-primary       100%); }
+  .cisummit            & { background-image: linear-gradient(to bottom, transparent 0%, @color-ci-primary         100%); }
+  .etsconference       & { background-image: linear-gradient(to bottom, transparent 0%, @color-ets-primary        100%); }
+  .ewricongress        & { background-image: linear-gradient(to bottom, transparent 0%, @color-ewri-primary       100%); }
+  .geesdconference     & { background-image: linear-gradient(to bottom, transparent 0%, @color-geesd-primary      100%); }
+  .georiskconference   & { background-image: linear-gradient(to bottom, transparent 0%, @color-georisk-primary    100%); }
+  .groutingconference  & { background-image: linear-gradient(to bottom, transparent 0%, @color-grout-primary      100%); }
+  .hmemconference      & { background-image: linear-gradient(to bottom, transparent 0%, @color-hmem-primary       100%); }
+  .icce2018            & { background-image: linear-gradient(to bottom, transparent 0%, @color-icce-primary       100%); }
+  .icsiconference      & { background-image: linear-gradient(to bottom, transparent 0%, @color-icsi-primary       100%); }
+  .lidconference       & { background-image: linear-gradient(to bottom, transparent 0%, @color-lid-primary        100%); }
+  .omswconference      & { background-image: linear-gradient(to bottom, transparent 0%, @color-omsw-primary       100%); }
+  .pavementsconference & { background-image: linear-gradient(to bottom, transparent 0%, @color-pave-primary       100%); }
+  .pipelinesconference & { background-image: linear-gradient(to bottom, transparent 0%, @color-pl-primary         100%); }
+  .structurescongress  & { background-image: linear-gradient(to bottom, transparent 0%, @color-struct-primary     100%); }
+  .surveyingconference & { background-image: linear-gradient(to bottom, transparent 0%, @color-surv-primary       100%); }
+  .unsatsoilsconf      & { background-image: linear-gradient(to bottom, transparent 0%, @color-unsat-primary      100%); }
 }
 .mx-bc-primary-fade-reverse() {
-  :root                & { .bg-grad-rev(@color-site-primary); }
-  .sample-stage        & { .bg-grad-rev(@color-stage-primary); }
-  .sample-dev          & { .bg-grad-rev(@color-dev-primary); }
-  .sample-canary       & { .bg-grad-rev(@color-canary-primary); }
-  .aei-conference      & { .bg-grad-rev(@color-aei-primary); }
-  .aei-forum           & { .bg-grad-rev(@color-aeiforum-primary); }
-  .aeisdc              & { .bg-grad-rev(@color-aeisdc-primary); }
-  .apmconference       & { .bg-grad-rev(@color-apm-primary); }
-  .asce-cta            & { .bg-grad-rev(@color-cta-primary); }
-  .asce-ictd           & { .bg-grad-rev(@color-ictd-primary); }
-  .asceconvention      & { .bg-grad-rev(@color-convention-primary); }
-  .asceconvention2017  & { .bg-grad-rev(@color-2017-primary); }
-  .ascestudentdays     & { .bg-grad-rev(@color-cisd-primary); }
-  .cisummit            & { .bg-grad-rev(@color-ci-primary); }
-  .etsconference       & { .bg-grad-rev(@color-ets-primary); }
-  .ewricongress        & { .bg-grad-rev(@color-ewri-primary); }
-  .geesdconference     & { .bg-grad-rev(@color-geesd-primary); }
-  .georiskconference   & { .bg-grad-rev(@color-georisk-primary); }
-  .groutingconference  & { .bg-grad-rev(@color-grout-primary); }
-  .hmemconference      & { .bg-grad-rev(@color-hmem-primary); }
-  .icce2018            & { .bg-grad-rev(@color-icce-primary); }
-  .icsiconference      & { .bg-grad-rev(@color-icsi-primary); }
-  .lidconference       & { .bg-grad-rev(@color-lid-primary); }
-  .omswconference      & { .bg-grad-rev(@color-omsw-primary); }
-  .pavementsconference & { .bg-grad-rev(@color-pave-primary); }
-  .pipelinesconference & { .bg-grad-rev(@color-pl-primary); }
-  .structurescongress  & { .bg-grad-rev(@color-struct-primary); }
-  .surveyingconference & { .bg-grad-rev(@color-surv-primary); }
-  .unsatsoilsconf      & { .bg-grad-rev(@color-unsat-primary); }
-}
-.bg-grad(@primary) {
-  background-image: linear-gradient(to bottom, transparent 0%, @primary 100%);
-  // in your project, use `background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);`
-}
-.bg-grad-rev(@primary) {
-  background-image: linear-gradient(to top, transparent 0%, @primary 100%);
   // in your project, use `background-image: linear-gradient(to top, transparent 0%, var(--color-primary) 100%);`
+  :root                & { background-image: linear-gradient(to top, transparent 0%, @color-site-primary       100%); }
+  .sample-stage        & { background-image: linear-gradient(to top, transparent 0%, @color-stage-primary      100%); }
+  .sample-dev          & { background-image: linear-gradient(to top, transparent 0%, @color-dev-primary        100%); }
+  .sample-canary       & { background-image: linear-gradient(to top, transparent 0%, @color-canary-primary     100%); }
+  .aei-conference      & { background-image: linear-gradient(to top, transparent 0%, @color-aei-primary        100%); }
+  .aei-forum           & { background-image: linear-gradient(to top, transparent 0%, @color-aeiforum-primary   100%); }
+  .aeisdc              & { background-image: linear-gradient(to top, transparent 0%, @color-aeisdc-primary     100%); }
+  .apmconference       & { background-image: linear-gradient(to top, transparent 0%, @color-apm-primary        100%); }
+  .asce-cta            & { background-image: linear-gradient(to top, transparent 0%, @color-cta-primary        100%); }
+  .asce-ictd           & { background-image: linear-gradient(to top, transparent 0%, @color-ictd-primary       100%); }
+  .asceconvention      & { background-image: linear-gradient(to top, transparent 0%, @color-convention-primary 100%); }
+  .asceconvention2017  & { background-image: linear-gradient(to top, transparent 0%, @color-2017-primary       100%); }
+  .ascestudentdays     & { background-image: linear-gradient(to top, transparent 0%, @color-cisd-primary       100%); }
+  .cisummit            & { background-image: linear-gradient(to top, transparent 0%, @color-ci-primary         100%); }
+  .etsconference       & { background-image: linear-gradient(to top, transparent 0%, @color-ets-primary        100%); }
+  .ewricongress        & { background-image: linear-gradient(to top, transparent 0%, @color-ewri-primary       100%); }
+  .geesdconference     & { background-image: linear-gradient(to top, transparent 0%, @color-geesd-primary      100%); }
+  .georiskconference   & { background-image: linear-gradient(to top, transparent 0%, @color-georisk-primary    100%); }
+  .groutingconference  & { background-image: linear-gradient(to top, transparent 0%, @color-grout-primary      100%); }
+  .hmemconference      & { background-image: linear-gradient(to top, transparent 0%, @color-hmem-primary       100%); }
+  .icce2018            & { background-image: linear-gradient(to top, transparent 0%, @color-icce-primary       100%); }
+  .icsiconference      & { background-image: linear-gradient(to top, transparent 0%, @color-icsi-primary       100%); }
+  .lidconference       & { background-image: linear-gradient(to top, transparent 0%, @color-lid-primary        100%); }
+  .omswconference      & { background-image: linear-gradient(to top, transparent 0%, @color-omsw-primary       100%); }
+  .pavementsconference & { background-image: linear-gradient(to top, transparent 0%, @color-pave-primary       100%); }
+  .pipelinesconference & { background-image: linear-gradient(to top, transparent 0%, @color-pl-primary         100%); }
+  .structurescongress  & { background-image: linear-gradient(to top, transparent 0%, @color-struct-primary     100%); }
+  .surveyingconference & { background-image: linear-gradient(to top, transparent 0%, @color-surv-primary       100%); }
+  .unsatsoilsconf      & { background-image: linear-gradient(to top, transparent 0%, @color-unsat-primary      100%); }
 }
 //++++ end # MIXINS ++++//
