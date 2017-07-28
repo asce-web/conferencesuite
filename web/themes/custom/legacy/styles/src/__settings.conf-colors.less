@@ -302,6 +302,7 @@
 //    # MIXINS
 //++++++++++++++++++++++++++++++++//
 .mx-bc-primary() {
+  // in your project, use `background-color: var(--color-primary);`
   :root                & { background-color: @color-site-primary; }
   .sample-stage        & { background-color: @color-stage-primary; }
   .sample-dev          & { background-color: @color-dev-primary; }
@@ -333,6 +334,7 @@
   .unsatsoilsconf      & { background-color: @color-unsat-primary; }
 }
 .mx-bc-secondary() {
+  // in your project, use `background-color: var(--color-secondary);`
   :root                & { background-color: @color-site-secondary; }
   .sample-stage        & { background-color: @color-stage-secondary; }
   .sample-dev          & { background-color: @color-dev-secondary; }
@@ -364,6 +366,7 @@
   .unsatsoilsconf      & { background-color: @color-unsat-secondary; }
 }
 .mx-bc-accent() {
+  // in your project, use `background-color: var(--color-accent);`
   :root                & { background-color: @color-site-accent; }
   .sample-stage        & { background-color: @color-stage-accent; }
   .sample-dev          & { background-color: @color-dev-accent; }
@@ -395,6 +398,7 @@
   .unsatsoilsconf      & { background-color: @color-unsat-accent; }
 }
 .mx-c-primary() {
+  // in your project, use `color: var(--color-primary);`
   :root                & { color: @color-site-primary; }
   .sample-stage        & { color: @color-stage-primary; }
   .sample-dev          & { color: @color-dev-primary; }
@@ -426,6 +430,7 @@
   .unsatsoilsconf      & { color: @color-unsat-primary; }
 }
 .mx-c-secondary() {
+  // in your project, use `color: var(--color-secondary);`
   :root                & { color: @color-site-secondary; }
   .sample-stage        & { color: @color-stage-secondary; }
   .sample-dev          & { color: @color-dev-secondary; }
@@ -457,6 +462,7 @@
   .unsatsoilsconf      & { color: @color-unsat-secondary; }
 }
 .mx-c-accent() {
+  // in your project, use `color: var(--color-accent);`
   :root                & { color: @color-site-accent; }
   .sample-stage        & { color: @color-stage-accent; }
   .sample-dev          & { color: @color-dev-accent; }
@@ -488,6 +494,7 @@
   .unsatsoilsconf      & { color: @color-unsat-accent; }
 }
 .mx-btc-accent() {
+  // in your project, use `border-top-color: var(--color-accent);`
   :root                & { border-top-color: @color-site-accent; }
   .sample-stage        & { border-top-color: @color-stage-accent; }
   .sample-dev          & { border-top-color: @color-dev-accent; }
@@ -582,8 +589,10 @@
 }
 .bg-grad(@primary) {
   background-image: linear-gradient(to bottom, transparent 0%, @primary 100%);
+  // in your project, use `background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);`
 }
 .bg-grad-rev(@primary) {
   background-image: linear-gradient(to top, transparent 0%, @primary 100%);
+  // in your project, use `background-image: linear-gradient(to top, transparent 0%, var(--color-primary) 100%);`
 }
 //++++ end # MIXINS ++++//
