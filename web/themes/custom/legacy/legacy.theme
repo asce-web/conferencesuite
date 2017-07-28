@@ -6,6 +6,9 @@
 function legacy_preprocess_html(&$variables) {
   $variables['html_developer_class']   = theme_get_setting('developer_class');
   $variables['html_developer_channel'] = theme_get_setting('developer_branch');
+  $variables['html_colors_primary']   = (theme_get_setting('colors_primary'))   ? theme_get_setting('colors_primary')   : '#6a9556';
+  $variables['html_colors_secondary'] = (theme_get_setting('colors_secondary')) ? theme_get_setting('colors_secondary') : '#6fc2c4';
+  $variables['html_colors_accent']    = (theme_get_setting('colors_accent'))    ? theme_get_setting('colors_accent')    : '#714509';
 
   $asset_channel = theme_get_setting('developer_branch');
 
@@ -205,9 +208,9 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 
   $form['conference_images'] = array(
     '#type'        => 'details',
-    '#title'       => t('Images'),
+    '#title'       => t('Images &amp; Colors'),
     '#group'       => 'legacy_theme_settings',
-    '#description' => t('Upload conference images.'),
+    '#description' => t('Upload conference images and colors.'),
     '#weight'      => -4
   );
 
@@ -273,6 +276,28 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
         'uri_scheme'      => 'public',
       ),
     ),
+  );
+
+  $form['conference_images']['colors'] = array(
+    '#type'   => 'fieldset',
+    '#title'  => t('Site Colors'),
+    '#weight' => -140,
+    '#description' => t('Enter hex codes in <code>#rrggbb</code> format. <strong>Flush all caches after changing values.</strong>'),
+  );
+  $form['conference_images']['colors']['colors_primary'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Primary Color'),
+    '#default_value' => theme_get_setting('colors_primary'),
+  );
+  $form['conference_images']['colors']['colors_secondary'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Secondary Color'),
+    '#default_value' => theme_get_setting('colors_secondary'),
+  );
+  $form['conference_images']['colors']['colors_accent'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Accent Color'),
+    '#default_value' => theme_get_setting('colors_accent'),
   );
 
   $form['#submit'][] = 'legacy_form_system_theme_settings_submit';
