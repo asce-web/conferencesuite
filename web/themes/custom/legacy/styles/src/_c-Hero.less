@@ -69,13 +69,11 @@
   .c-Hero__Hn::before {
     top:    calc(~'-2 * var(--vru)');
     height: calc(~' 2 * var(--vru)');
-    .mx-bc-primary-fade(); // HACK fallback
     background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);
   }
   .c-Hero__Blurb::after {
     bottom: calc(~'-1 * var(--vru)');
     height: calc(~' 1 * var(--vru)');
-    .mx-bc-primary-fade-reverse(); // HACK fallback
     background-image: linear-gradient(to top, transparent 0%, var(--color-primary) 100%);
   }
 }
