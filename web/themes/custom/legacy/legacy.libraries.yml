@@ -1,9 +1,9 @@
 global-styling:
   js:
     vendor/jquery.hoverIntent.min.js: {minified: true}
-    scripts/menu.js: {minified: false}
-    scripts/o-Tabs.js: {minified: false}
-    scripts/orphaned.js: {minified: false}
+    js/menu.js: {minified: false}
+    js/o-Tabs.js: {minified: false}
+    js/orphaned.js: {minified: false}
   css:
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
@@ -14,7 +14,7 @@ global-styling:
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
       vendor/futura.css: {minified: true}
-      styles/legacy.css: {minified: true}
+      css/legacy.css: {minified: true}
 
 channel-prod:
   css:

@@ -16,17 +16,17 @@ gulp.task('pug:test', function () {
 })
 
 gulp.task('lessc:core', function () {
-  return gulp.src(__dirname + '/styles/src/legacy.less')
+  return gulp.src(__dirname + '/css/src/legacy.less')
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
       cascade: false,
     }))
-    .pipe(gulp.dest('./styles/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(sourcemaps.init())
     .pipe(clean_css())
     .pipe(sourcemaps.write('./')) // write to an external .map file
-    .pipe(gulp.dest('./styles/'))
+    .pipe(gulp.dest('./css/'))
 })
 
 gulp.task('build', ['pug:test', 'lessc:core'])
