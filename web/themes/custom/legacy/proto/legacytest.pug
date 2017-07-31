@@ -10,10 +10,10 @@ html(lang="en")
       theme    : 'New ideas. New practices. New science. New resources. New colleagues. New business procedures.',
       detail   : 'Boston, Massachusetts  |  April 3–5, 2015',
       image    : {
-        shield : './logo.svg',
-        hero   : '../../../sites/default/files/2017-05/new-orleans-trolley.jpg',
-        banner : '../../../sites/default/files/site-images/CECAR%207%20Banner%20Image.jpg',
-        sidebar: '../../../sites/default/files/2017-07/slide_2.jpg',
+        shield : '../logo.svg',
+        hero   : '../../../../sites/default/files/2017-05/new-orleans-trolley.jpg',
+        banner : '../../../../sites/default/files/site-images/CECAR%207%20Banner%20Image.jpg',
+        sidebar: '../../../../sites/default/files/2017-07/slide_2.jpg',
       },
     }
   head
@@ -23,14 +23,14 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
-    link(rel="stylesheet" href="vendor/futura.css")
-    link(rel="stylesheet" href="//cdn.rawgit.com/chharvey/xmeter/v5.7.0/xmeter.min.css")
-    link(rel="stylesheet" href="//cdn.rawgit.com/chharvey/bangs/v0.14.0/bangs.min.css")
-    link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
-    link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
-    link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
-    link(rel="stylesheet" href="vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
-    link(rel="stylesheet" href="styles/legacy.css")
+    link(rel="stylesheet" href="../node_modules/xmeter/xmeter.min.css")
+    link(rel="stylesheet" href="../node_modules/bangs/bangs.min.css")
+    link(rel="stylesheet" href="../vendor/futura.css")
+    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
+    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
+    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
+    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
+    link(rel="stylesheet" href="../styles/legacy.css")
     noscript
       // remove Toggle menu when JS is disabled
       style.
@@ -51,7 +51,7 @@ html(lang="en")
             span.h-Hidden toggle main menu
         noscript
           a(href="#sitemap") Site Map
-        ul.o-List.o-Drawer.c-NavBar.c-NavBar--mobile
+        ul.o-List.o-Drawer.c-NavBar.c-NavBar--mobile(role="directory")
           li.o-List__Item
             a(href="./") Home
           li.o-List__Item
@@ -91,12 +91,12 @@ html(lang="en")
           div.o-Flex__Item.o-SideCol.c-TopImg.-d-n-nM(style=`background-image: url('${conference.image.banner}');`)
             span.c-YearBadge(role="none") 15
             ul.o-List.o-Flex.c-NavBar.c-NavBar--contrib
-              //- change to ul.o-List later
-              li.o-List__Item: a(href="") For Speakers
-              li.o-List__Item: a(href="./sponsors.html") Sponsors
-              li.o-List__Item: a(href="") Exhibitors
-      nav.c-Banner.c-Banner--nav.-d-n-nM: div.o-Constrain.o-Flex
-          h1.h-Hidden Main Menus
+              li.o-List__Item: a(href="#0") For Speakers
+              li.o-List__Item: a(href="#0") Sponsors
+              li.o-List__Item: a(href="#0") Exhibitors
+      nav.c-Banner.c-Banner--nav.-d-n-nM
+        h1.h-Hidden Main Menus
+        div.o-Constrain.o-Flex
           div.o-Flex__Item.o-MainCol: ul.o-List.o-Flex.c-NavBar.c-NavBar--main
             li.o-List__Item: a(href="./")
               i.glyphicons.glyphicons-home: span.h-Hidden Home
@@ -112,25 +112,27 @@ html(lang="en")
             li.o-List__Item(data-menu-target="#contactlevel2"): a(href="#0")
               | Contact
           div.o-Flex__Item.o-SideCol: ul.o-List.o-Flex.c-NavBar.c-NavBar--register
-            //- change div to ul.o-List later
-            a(href="") Why Attend
-            a(href="") Registration
-      nav.c-Banner.c-Banner--nav.c-Banner--nav--sub: div.o-Constrain
-          h1.h-Hidden Sub Menus
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#programlevel2
+            li.o-List__Item: a(href="#0") Why Attend
+            li.o-List__Item: a(href="#0") Registration
+      nav
+        h1.h-Hidden Sub Menus
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#programlevel2: div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Speakers
             li: a(href="") Exhibitor List
             li: a(href="") ASCE Communities &amp; Pavilion
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#locationlevel2(class={'active':conference.menuhover})
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#locationlevel2(class={'active':conference.menuhover}): div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Lodging &amp; Transportation
             li: a(href="") For International Travel
-          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub#aboutlevel2
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#aboutlevel2: div.o-Constrain
+          ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Cooperating Organizations
             li: a(href="") Volunteer
     main#main: div.o-Constrain.o-Flex.-xd-c-nM.-mb-2
         div.o-Flex__Item.o-MainCol
           header.c-Hero
-            img.c-Hero__Img(src=conference.image.hero alt="unsaturated soil&mdash;dry cracked earth")
+            img.c-Hero__Img(src=conference.image.hero alt="unsaturated soil—dry cracked earth")
             h1.c-Hero__Hn= conference.theme
             div.c-Hero__Blurb
               p.
@@ -150,7 +152,7 @@ html(lang="en")
                     span.h-Block Thursday
                     span.h-Block.c-DateBlock__MonthDay Apr 3
                   div.c-DateBlock__Desc Opening Plenary
-                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../sites/default/files/sample-images/speaker-scott-zimmer.jpg" alt="Charles Johnson")
+                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../../sites/default/files/sample-images/speaker-scott-zimmer.jpg" alt="Charles Johnson")
                 div.o-Flex__Item.c-KeynoteSpeaker__Details
                   p.c-Chair
                     span.h-Block.c-Chair__Name Charles Johnson, Ph.D., P.E., S.E., CVS, F.ASCE
@@ -162,7 +164,7 @@ html(lang="en")
                     span.h-Block Wednesday
                     span.h-Block.c-DateBlock__MonthDay Apr 12
                   div.c-DateBlock__Desc Special Session
-                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../sites/default/files/sample-images/louise-comfort.jpg" alt="Louise Comfort")
+                div.o-Flex__Item.c-KeynoteSpeaker__Headshot: img(src="../../../../sites/default/files/sample-images/louise-comfort.jpg" alt="Louise Comfort")
                 div.o-Flex__Item.c-KeynoteSpeaker__Details
                   p.c-Chair
                     span.h-Block.c-Chair__Name Dr. Louise K. Comfort, Ph.D.
@@ -195,7 +197,7 @@ html(lang="en")
                       span(class="h-Clearfix" itemprop="streetAddress") 1201 Houston Street
                       | #[span(itemprop="addressLocality") Fort Worth], #[span(itemprop="addressRegion") TX] #[span(class="h-Clearfix" itemprop="postalCode") 76102]
                       span(class="h-Clearfix" itemprop="addressCountry") United States
-                      a(href="tel:+1-800-555-5555" itemprop="telephone") +1-800-555-5555
+                    a(href="tel:+1-800-555-5555" itemprop="telephone") +1-800-555-5555
                   p: a.c-Button(href="#0") link
                   p: a.c-Button link without href
                   p: button.c-Button button
@@ -242,8 +244,8 @@ html(lang="en")
               div.c-Callout__Body
                 p Enhance your conference experience with our mobile app.
                 ul.o-List.o-Flex
-                  li: a(href=""): img(src="./img/App-Store.png" alt="")
-                  li: a(href=""): img(src="./img/Google-Play.png" alt="")
+                  li: a(href=""): img(src="../../../../sites/default/files/sample-images/App-Store.png" alt="")
+                  li: a(href=""): img(src="../../../../sites/default/files/sample-images/Google-Play.png" alt="")
             aside.c-Callout
               h1.c-Callout__Hn Join the Conversation
               div.c-Callout__Body
@@ -263,48 +265,48 @@ html(lang="en")
                   img.c-SupporterBlock__Logo(src=item.img alt=item.name itemprop="logo")
                   meta(content=item.name itemprop="name")
       +supporterBlock('Platinum', 'lrg', [
-        { name: 'Espon'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
-      , { name: 'Alliance', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
+        { name: 'Espon'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
+      , { name: 'Alliance', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
       ])
       +supporterBlock('Gold', 'lrg', [
-        { name: 'Ria'     , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
-      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
+        { name: 'Ria'     , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
+      , { name: 'Geico'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Corporate', 'med', [
-        { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
+        { name: 'Geico'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Silver', 'med', [
-        { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
-      , { name: 'Espon'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
+        { name: 'Exponent', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
+      , { name: 'Espon'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal2.gif' }
       ])
       +supporterBlock('Bronze', 'sml', [
-        { name: 'Ria'     , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
-      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+        { name: 'Ria'     , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square1.gif'      }
+      , { name: 'Geico'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
       ])
       +supporterBlock('Copper', 'sml', [
-        { name: 'Alliance', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
-      , { name: 'Geico'   , url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
-      , { name: 'Exponent', url: '#0', img: '../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
+        { name: 'Alliance', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal1.gif' }
+      , { name: 'Geico'   , url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal3.gif' }
+      , { name: 'Exponent', url: '#0', img: '../../../../sites/default/files/sample-images/sponsor_logo_horizontal4.gif' }
       ])
       +supporterBlock('Cooperating Organizations', 'sml', [
-        { name: 'AISC'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
-      , { name: 'Correios', url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
-      , { name: 'Jacobs'  , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
-      , { name: 'T&DI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
-      , { name: 'CI'      , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
-      , { name: 'EWRI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
-      , { name: 'KU'      , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
+        { name: 'AISC'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
+      , { name: 'Correios', url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
+      , { name: 'Jacobs'  , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
+      , { name: 'T&DI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
+      , { name: 'CI'      , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
+      , { name: 'EWRI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
+      , { name: 'KU'      , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
       +supporterBlock('Educational Grant', 'sml', [
-        { name: 'AISC'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
-      , { name: 'Correios', url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
-      , { name: 'Jacobs'  , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
-      , { name: 'T&DI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
-      , { name: 'CI'      , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
-      , { name: 'EWRI'    , url: '#0', img: '../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
-      , { name: 'KU'      , url: '#0', img: '../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
+        { name: 'AISC'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_square1.gif'     }
+      , { name: 'Correios', url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontalcolor1.gif' }
+      , { name: 'Jacobs'  , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontalcolor2.gif' }
+      , { name: 'T&DI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal2.gif' }
+      , { name: 'CI'      , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_square4.gif'     }
+      , { name: 'EWRI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
+      , { name: 'KU'      , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
     footer
       dl.o-Flex.o-Tabs
@@ -355,7 +357,7 @@ html(lang="en")
               li.o-List__Item.c-Sitemap__Item: a(href="") Why Attend
               li.o-List__Item.c-Sitemap__Item: a(href="") Registration
               li.o-List__Item.c-Sitemap__Item: a(href="") For Speakers
-              li.o-List__Item.c-Sitemap__Item: a(href="./sponsors.html") Sponsors
+              li.o-List__Item.c-Sitemap__Item: a(href="") Sponsors
               li.o-List__Item.c-Sitemap__Item: a(href="") Exhibitors
             div.o-Flex__Item
               section
@@ -372,20 +374,20 @@ html(lang="en")
                     | Other contacts
               section
                 h3 Connect With ASCE
-                ul.o-List.o-Flex.-xjc-xs.-jc-xs.-jc-s
-                  li.o-List__Item.o-Flex__Item.-x-z.-mr-1: a(href="#0")
+                ul.o-List.o-Flex.c-SocialListFooter
+                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
                     i.glyphicons.social.social-linked-in
                       span.h-Hidden linkedin
-                  li.o-List__Item.o-Flex__Item.-x-z.-mr-1: a(href="#0")
+                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
                     i.glyphicons.social.social-facebook
                       span.h-Hidden facebook
-                  li.o-List__Item.o-Flex__Item.-x-z.-mr-1: a(href="#0")
+                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
                     i.glyphicons.social.social-twitter
                       span.h-Hidden twitter
-                  li.o-List__Item.o-Flex__Item.-x-z.-mr-1: a(href="#0")
+                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
                     i.glyphicons.social.social-youtube
                       span.h-Hidden youtube
-                  li.o-List__Item.o-Flex__Item.-x-z.-mr-1: a(href="#0")
+                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
                     i.glyphicons.social.social-google-plus
                       span.h-Hidden google plus
         +yearTab(2013, {name:'Sample ASCE Conference 2013', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Toronto, Canada | May 2–4, 2013'}, 'prev')
@@ -395,7 +397,7 @@ html(lang="en")
         +yearTab(2015, {name:'Sample ASCE Conference 2015', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Mexico City, Mexico | April 30–May 2, 2015'}, 'next')
           div.t-Content
                     p: a.c-LinkArrow(href="") Call for submissions
-                    p: a.c-LinkArrow(href="./sponsors.html") Sponsors
+                    p: a.c-LinkArrow(href="") Sponsors
                     p: a.c-LinkArrow(href="") Exhibit
       p.c-Banner.c-Banner--copyright.-mb-z.-ta-c
         svg.c-AsceLogo(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254.89 81.06")
@@ -409,7 +411,7 @@ html(lang="en")
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous")
-    script(src="vendor/jquery.hoverIntent.min.js")
-    script(src="scripts/menu.js")
-    script(src="scripts/o-Tabs.js")
-    script(src="scripts/orphaned.js")
+    script(src="../vendor/jquery.hoverIntent.min.js")
+    script(src="../scripts/menu.js")
+    script(src="../scripts/o-Tabs.js")
+    script(src="../scripts/orphaned.js")

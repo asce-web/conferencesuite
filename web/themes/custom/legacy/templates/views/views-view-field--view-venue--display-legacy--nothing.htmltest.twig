@@ -34,8 +34,8 @@
     <span itemprop="addressRegion">{{ field_venue_addressregion }}</span>
     <span class="h-Clearfix" itemprop="postalCode">{{ field_venue_postalcode }}</span>
     {% if field_venue_addresscountry %}<span class="h-Clearfix" itemprop="addressCountry">{{ field_venue_addresscountry }}</span>{% endif %}
-    {% if field_venue_telephone %}<a href="tel:{{ field_venue_telephone }}" itemprop="telephone">{{ field_venue_telephone }}</a>{% endif %}
   </span>
+  {% if field_venue_telephone %}<a href="tel:{{ field_venue_telephone }}" itemprop="telephone">{{ field_venue_telephone }}</a>{% endif %}
 </p>
 {% if field_venue_cta %}
   <p><a class="c-Button" href="{{ field_venue_cta }}">{{ field_venue_cta_1 }}</a></p>

@@ -1,0 +1,64 @@
+
+/*################################*\
+    legacy  |  _c-SocialListFooter.less
+\*################################*/
+
+
+// Social List Footer
+//
+// List of social media icons, under “Connect with ASCE” in footer.
+//
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-07-26</time></dd>
+// </dl></header>
+//
+// Markup:
+// <ul class="o-List o-Flex c-SocialListFooter">
+//   <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item">
+//     <a href="http://www.linkedin.com/groups?gid=143956&trk=hb_side_g">
+//       <i class="glyphicons social social-linked-in">
+//         <span class="h-Hidden">linkedin</span>
+//       </i>
+//     </a>
+//   </li>
+//   <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item">
+//     <a href="http://www.facebook.com/asce.org">
+//       <i class="glyphicons social social-facebook">
+//         <span class="h-Hidden">facebook</span>
+//       </i>
+//     </a>
+//   </li>
+//   <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item">
+//     <a href="http://www.twitter.com/ascetweets">
+//       <i class="glyphicons social social-twitter">
+//         <span class="h-Hidden">twitter</span>
+//       </i>
+//     </a>
+//   </li>
+//   <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item">
+//     <a href="https://www.youtube.com/user/AmerSocCivilEng">
+//       <i class="glyphicons social social-youtube">
+//         <span class="h-Hidden">youtube</span>
+//       </i>
+//     </a>
+//   </li>
+//   <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item">
+//     <a href="https://plus.google.com/u/0/b/105603289001341360426/+AmerSocCivilEng/posts">
+//       <i class="glyphicons social social-google-plus">
+//         <span class="h-Hidden">google plus</span>
+//       </i>
+//     </a>
+//   </li>
+// </ul>
+//
+// Styleguide Components.SocialListFooter
+.c-SocialListFooter {
+  justify-content: flex-start;
+  justify-content: start; // CHANGED: supported soon // override `.o-Flex`
+}
+
+.c-SocialListFooter__Item {
+  flex: none;
+  margin-right: 1rem;
+}

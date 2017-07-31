@@ -6,13 +6,13 @@ var clean_css = require('gulp-clean-css')
 var sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('pug:test', function () {
-  return gulp.src(__dirname + '/legacytest.pug')
+  return gulp.src(__dirname + '/proto/legacytest.pug')
     .pipe(pug({
       basedir: './',
       locals: {
       }
     }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./proto/'))
 })
 
 gulp.task('lessc:core', function () {

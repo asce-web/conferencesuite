@@ -212,7 +212,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<dt class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</dt>\n<dd class=\"c-DateBlock__Desc\">{{ title }}</dd>\n"
+            text: "<dt class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</dt>\n<dd class=\"c-DateBlock__Desc\">\n  {%- if field_importantdate_displayname %}\n    {{- field_importantdate_displayname -}}\n  {% else %}\n    {{- title -}}\n  {% endif -%}\n</dd>"
             make_link: false
             path: ''
             absolute: false
