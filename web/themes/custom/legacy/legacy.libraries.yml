@@ -5,6 +5,10 @@ global-styling:
     js/o-Tabs.js: {minified: false}
     js/orphaned.js: {minified: false}
   css:
+    base: {}
+    layout: {}
+    component: {}
+    state: {}
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
       //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
@@ -35,3 +39,11 @@ channel-canary:
   css:
     theme:
       {}
+
+
+# copied from classy.libraries.yml
+messages:
+  version: VERSION
+  css:
+    component:
+      ../../../core/themes/classy/css/components/messages.css: { weight: -10 }
