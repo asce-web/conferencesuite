@@ -1,6 +1,7 @@
 name: Legacy
 type: theme
-description: 'Theme for the ASCE Conference style 2015&ndash;2018.'
+description: 'Theme for ASCE conference sites 2015&ndash;2018.'
+version: VERSION
 core: 8.x
 libraries:
   - legacy/global-styling

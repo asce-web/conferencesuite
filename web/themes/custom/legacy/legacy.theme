@@ -131,15 +131,15 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'textfield',
     '#title'         => t('Conference Name'),
     '#default_value' => theme_get_setting('conference_info_name'),
-    '#description'   => t('Name displayed in header.'),
+    '#description'   => t('Name of the conference, displayed in the header/footer.'),
     '#required'      => TRUE,
   );
   $form['conference_settings']['conference_info']['conference_info_theme'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Conference Theme'),
     '#default_value' => theme_get_setting('conference_info_theme'),
-    '#description'   => t('Conference theme or tagline.'),
-    '#required'      => TRUE,
+    '#description'   => t('Conference theme or tagline, displayed in the hero region.'),
+    '#required'      => FALSE,
   );
   $form['conference_settings']['conference_dates'] = array(
     '#type'   => 'fieldset',
@@ -167,14 +167,15 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'textfield',
     '#title'         => t('Display Name'),
     '#default_value' => theme_get_setting('conference_location_display'),
-    '#description'   => t('Location displayed in header.'),
+    '#description'   => t('Location of the conference.'),
     '#required'      => TRUE,
   );
   $form['conference_settings']['conference_location']['conference_location_advisory'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Advisory Title'),
     '#default_value' => theme_get_setting('conference_location_advisory'),
-    '#description'   => t('Accessible location name. <strong>Use only if different from Display Name.</strong>'),
+    '#description'   => t('Location alt text. <strong>Use only if different from Location Display Name.</strong>'),
+    '#required'      => FALSE,
   );
 
   $form['conference_settings']['developer'] = array(
