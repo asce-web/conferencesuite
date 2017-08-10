@@ -1,6 +1,7 @@
 {
   "name": "legacy",
-  "description": "Legacy theme for Drupal conference sites.",
+  "version": "VERSION",
+  "description": "Drupal theme for ASCE conference sites 2015–2018.",
   "main": "legacy.css",
   "private": true,
   "scripts": {
