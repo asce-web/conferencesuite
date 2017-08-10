@@ -12,8 +12,8 @@ field_name: field_footerblock_legacy_theme
 entity_type: block_content
 bundle: footerblock_legacy
 label: 'Conference Theme'
-description: 'Conference theme or tagline. Usually appears in the hero region.'
-required: true
+description: 'Conference theme or tagline, displayed in the hero region.'
+required: false
 translatable: false
 default_value:
   -

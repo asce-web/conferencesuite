@@ -12,7 +12,7 @@ field_name: field_footerblock_legacy_loc_dsp
 entity_type: block_content
 bundle: footerblock_legacy
 label: 'Location Display Name'
-description: 'Location name displayed on site.'
+description: 'Location of the conference.'
 required: true
 translatable: false
 default_value:

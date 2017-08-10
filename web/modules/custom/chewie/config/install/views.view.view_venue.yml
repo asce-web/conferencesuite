@@ -1115,6 +1115,18 @@ display:
           entity_field: type
           plugin_id: bundle
       sorts:
+        field_venue_weight_value:
+          id: field_venue_weight_value
+          table: node__field_venue_weight
+          field: field_venue_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
         created:
           id: created
           table: node_field_data

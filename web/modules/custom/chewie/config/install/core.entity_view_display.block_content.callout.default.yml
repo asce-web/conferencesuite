@@ -16,7 +16,7 @@ mode: default
 content:
   field_callout_body:
     weight: 0
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
