@@ -15,8 +15,9 @@
  * __tool.buttonText.less..............mixin for button text styles (used on many things)
  *
  * BASE--------------------------------BARE UNCLASSED ELEMENTS
- * _dev.css............................fixes for imported 3rd party
- * _base.css...........................unclassed html elements
+ * _dev.less...........................fixes for imported 3rd party
+ * _base.less..........................unclassed html elements
+ * __settings.conf-colors.less.........conference site colors (NOTE: HACK: fallback support for custom properties)
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
  * Constrain...........................keeps content at max width
@@ -69,6 +70,7 @@
 
 @import (less) url('_dev.less');
 @import (less) url('_base.less');
+@import (less) url('__settings.conf-colors.less'); // HACK see note in table of contents
 
 
 @import (less) url('_o-Constrain.less');
