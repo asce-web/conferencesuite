@@ -16,6 +16,7 @@
  * @see template_preprocess_views_view_list()
  */
 #}
+{{ attach_library('legacy/slick') }}
 {% if attributes -%}
   <section{{ attributes.addClass('c-SupporterBlock c-SupporterBlock--sml') }}>
 {% endif %}
@@ -23,7 +24,7 @@
     <h1 class="c-SupporterBlock__Hn">{{ title }}</h1>
   {% endif %}
 
-  <ol{{ list.attributes }}>
+  <ol class="js-slick"{{ list.attributes }}>
 
     {% for row in rows %}
       <li{{ row.attributes }}
