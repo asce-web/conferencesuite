@@ -53,6 +53,10 @@
  * Spaced..............................add horizontal space, preventing full-bleed
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
+ *
+ * HACKS-------------------------------HACKS
+ * _drupal.less........................fixes & overrides for Drupal 8 “Seven” theme
+ * ie.less.............................IE-only styles
  */
 
 
@@ -101,14 +105,16 @@
 @import (less) url('_c-Chair.less');
 @import (less) url('_c-SupporterBlock.less');
 @import (less) url('_c-DateBlock.less');
-
 @import (less) url('_c-Button.less');
 
 
 @import (less) url('_themes.less');
 @import (less) url('_t-Content.less');
 @import (less) url('_h-Spaced.less');
+
+
 @import (less) url('_drupal.less');
+@import (less) url('_ie.less');
 
 body > a:last-of-type {
   position: fixed;

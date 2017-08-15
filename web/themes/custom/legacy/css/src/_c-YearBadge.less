@@ -57,16 +57,13 @@
 .c-YearBadge--tab {
   z-index: 1; // over footer panels
   color: @g-color-banner-txt; // need to set because not inside a Banner
-  .mx-bc-secondary(); // HACK fallback
   background-color: var(--color-secondary);
   &::after {
     border-color: transparent;
   }
   input:checked + & {
-    .mx-bc-accent(); // HACK fallback
     background-color: var(--color-accent);
     &::after {
-      .mx-btc-accent(); // HACK fallback
       border-top-color: var(--color-accent);
     }
   }

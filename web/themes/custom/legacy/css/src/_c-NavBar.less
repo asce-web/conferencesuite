@@ -51,7 +51,6 @@
   & > :hover,
   & > :focus,
   & > .active { // TODO use a class
-    .mx-bc-accent(); // HACK fallback
     background-color: var(--color-accent);
   }
   .glyphicons-chevron-down { padding-left: 1ch; }
@@ -91,7 +90,6 @@
 .c-NavBar--mobile {
   font-weight: 600; // undo .c-NavBar
   text-transform: none; // undo .c-NavBar
-  .mx-bc-secondary(); // HACK fallback
   background-color: var(--color-secondary);
   box-shadow: 0 0 1rem 0.5rem rgba(0,0,0,0.25);
   & > * { // TODO use a class
