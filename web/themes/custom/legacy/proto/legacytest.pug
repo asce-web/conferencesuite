@@ -36,6 +36,12 @@ html(lang="en")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
     link(rel="stylesheet" href="../css/legacy.css")
+    style.
+      body {
+        --color-primary:   #{conference.colors.primary};
+        --color-secondary: #{conference.colors.secondary};
+        --color-accent:    #{conference.colors.accent};
+      }
     noscript
       // remove Toggle menu when JS is disabled
       style.
@@ -43,11 +49,7 @@ html(lang="en")
           .c-Toggle,
           .o-Drawer { display: none; }
         }
-  body#top(class=conference.classname style={
-    '--color-primary':   conference.colors.primary,
-    '--color-secondary': conference.colors.secondary,
-    '--color-accent':    conference.colors.accent,
-  })
+  body#top(class=conference.classname)
     a.h-Hidden(href="#main") skip to main content
     header
       nav.o-Flex.o-MobileBar.c-Banner.c-Banner--nav.-d-n-sM

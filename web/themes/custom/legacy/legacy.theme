@@ -6,9 +6,9 @@
 function legacy_preprocess_html(&$variables) {
   $variables['html_developer_class']   = theme_get_setting('developer_class');
   $variables['html_developer_channel'] = theme_get_setting('developer_branch');
-  $variables['html_colors_primary']   = (theme_get_setting('colors_primary'))   ? theme_get_setting('colors_primary')   : '#6a9556';
-  $variables['html_colors_secondary'] = (theme_get_setting('colors_secondary')) ? theme_get_setting('colors_secondary') : '#6fc2c4';
-  $variables['html_colors_accent']    = (theme_get_setting('colors_accent'))    ? theme_get_setting('colors_accent')    : '#714509';
+  $variables['html_colors_primary']   = theme_get_setting('colors_primary');
+  $variables['html_colors_secondary'] = theme_get_setting('colors_secondary');
+  $variables['html_colors_accent']    = theme_get_setting('colors_accent');
 
   $asset_channel = theme_get_setting('developer_branch');
 
