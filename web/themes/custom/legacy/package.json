@@ -1,10 +1,10 @@
 {
   "name": "legacy",
-  "description": "Legacy theme for Drupal conference sites.",
+  "description": "Drupal theme for ASCE conference sites 2015–2018.",
   "main": "legacy.css",
   "private": true,
   "scripts": {
-    "unbuild": "rm proto/legacytest.html styles/{legacy.css,legacy.css.map}",
+    "unbuild": "rm proto/legacytest.html css/{legacy.css,legacy.css.map}",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +19,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
-    "xmeter": "^5.7.0"
+    "xmeter": "git://github.com/chharvey/xmeter.git#beta-v6"
   },
   "dependencies": {}
 }

@@ -20,8 +20,7 @@
   @media (min-width: 75em) {
     .font-size-mod(20/16);
   }
-  & > *:nth-child(n) { // HACK using :nth-child(n) to override `.font-size-mod() > [h1,p]` specificity
-    margin-bottom: 0.5 * @g-vru; // HACK fallback
+  & > * {
     margin-bottom: calc(~'0.5 * var(--vru)');  // undo `h1` and `p`
   }
   & > *:last-child {
@@ -32,9 +31,7 @@
   font-weight: 700;
   .font-size-el(1.25);
   @media screen and (min-width: 45em) {
-    :root & { // HACK using :root to override `.font-size-mod() > [h1,p]` specificity // TODO remove this hack on xmeter@v6+
       padding-top: 0; // undo `h1` // already margin-top on the `.o-Flex--siteHead`
-    }
   }
 }
 .c-ConferenceTitles__Detail {

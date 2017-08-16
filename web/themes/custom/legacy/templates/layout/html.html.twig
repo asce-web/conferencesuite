@@ -26,15 +26,21 @@
  */
 #}
 {% set classes = [ html_developer_class ] %}
-{% set branch = [null, 'production', 'staging', 'development'][html_developer_branch] %}
+{% set channel = [null, 'production', 'staging', 'development', 'canary'][html_developer_channel] %}
 
 <!DOCTYPE html>
-<html{{ html_attributes.setAttribute('data-asset-branch', branch) }}>
+<html{{ html_attributes.setAttribute('data-asset-channel', channel) }}>
   <head>
     <title>{{ head_title|safe_join(' | ') }}</title>
     <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
-    <js-placeholder token="{{ placeholder_token }}">
+    <style>
+      body {
+        {% if html_colors_primary   %} --color-primary:   {{ html_colors_primary   }}; {% endif %}
+        {% if html_colors_secondary %} --color-secondary: {{ html_colors_secondary }}; {% endif %}
+        {% if html_colors_accent    %} --color-accent:    {{ html_colors_accent    }}; {% endif %}
+      }
+    </style>
     <noscript>
       <!-- NOTE: removes Toggle menu when JS is disabled-->
       <style>
@@ -44,6 +50,7 @@
         }
       </style>
     </noscript>
+    <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body{{ attributes.addClass(classes) }} id="top">
     <a class="h-Hidden" href="#main">skip to main content</a>

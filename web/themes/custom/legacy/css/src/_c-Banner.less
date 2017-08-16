@@ -20,24 +20,23 @@
   color: @g-color-banner-txt;
 }
 .c-Banner--head {
-  .mx-bc-primary();
+  background-color: var(--color-primary, @g-color-primary);
 }
 .c-Banner--nav {
-  .mx-bc-secondary();
+  background-color: var(--color-secondary, @g-color-secondary);
 }
 .c-Banner--nav--sub {
   position: absolute;
   left: 0; right: 0;
   z-index: 1; // display on top of relatively-positioned contextual regions while logged into Drupal
   transform-origin: top;
-  .mx-bc-accent();
+  background-color: var(--color-accent, @g-color-accent);
   transition: transform 100ms;
   &:not(.active) {
     transform: scale(1,0);
   }
 }
 .c-Banner--copyright {
-  padding: @g-vru 1rem; // HACK fallback
   padding: var(--vru) 1rem;
   background-color: @g-color-asce-blue;
 }
