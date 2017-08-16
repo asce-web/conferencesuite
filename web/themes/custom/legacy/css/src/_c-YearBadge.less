@@ -57,14 +57,14 @@
 .c-YearBadge--tab {
   z-index: 1; // over footer panels
   color: @g-color-banner-txt; // need to set because not inside a Banner
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary, @g-color-secondary);
   &::after {
     border-color: transparent;
   }
   input:checked + & {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent, @g-color-accent);
     &::after {
-      border-top-color: var(--color-accent);
+      border-top-color: var(--color-accent, @g-color-accent);
     }
   }
 }

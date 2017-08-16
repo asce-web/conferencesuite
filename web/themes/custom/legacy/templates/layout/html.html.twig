@@ -36,12 +36,11 @@
     <css-placeholder token="{{ placeholder_token }}">
     <style>
       body {
-        --color-primary:   {{ html_colors_primary }};
-        --color-secondary: {{ html_colors_secondary }};
-        --color-accent:    {{ html_colors_accent }};
+        {% if html_colors_primary   %} --color-primary:   {{ html_colors_primary   }}; {% endif %}
+        {% if html_colors_secondary %} --color-secondary: {{ html_colors_secondary }}; {% endif %}
+        {% if html_colors_accent    %} --color-accent:    {{ html_colors_accent    }}; {% endif %}
       }
     </style>
-    <js-placeholder token="{{ placeholder_token }}">
     <noscript>
       <!-- NOTE: removes Toggle menu when JS is disabled-->
       <style>
@@ -51,6 +50,7 @@
         }
       </style>
     </noscript>
+    <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body{{ attributes.addClass(classes) }} id="top">
     <a class="h-Hidden" href="#main">skip to main content</a>

@@ -116,6 +116,11 @@
 @import (less) url('_drupal.less');
 @import (less) url('_ie.less');
 
+body > footer > fieldset {
+  margin:0;padding:0;border:0; // HACK fallback
+  display: contents;
+}
+
 body > a:last-of-type {
   position: fixed;
   bottom: var(--vru);

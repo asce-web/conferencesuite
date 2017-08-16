@@ -17,7 +17,7 @@
 // : 2017-04-04
 .c-Hero {
   margin-bottom: calc(~'2 * var(--vru)');
-  background-color: var(--color-primary); // Banner--head colors (but not a Banner--head component)
+  background-color: var(--color-primary, @g-color-primary); // Banner--head colors (but not a Banner--head component)
   color: @g-color-banner-txt;
 }
 .c-Hero__Img {
@@ -65,11 +65,11 @@
   .c-Hero__Hn::before {
     top:    calc(~'-2 * var(--vru)');
     height: calc(~' 2 * var(--vru)');
-    background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary) 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
   .c-Hero__Blurb::after {
     bottom: calc(~'-1 * var(--vru)');
     height: calc(~' 1 * var(--vru)');
-    background-image: linear-gradient(to top, transparent 0%, var(--color-primary) 100%);
+    background-image: linear-gradient(to top, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
 }
