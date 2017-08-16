@@ -1,6 +1,6 @@
 $(document).ready(function () {
   let $ = jQuery
-  $('.c-SupporterBlock__Slick').slick({
+  $('.js-slick').slick({
     dots: true,
     slidesToShow: 4,
     slidesToScroll: 1,

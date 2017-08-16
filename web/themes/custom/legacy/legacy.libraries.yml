@@ -56,4 +56,4 @@ slick:
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
   js:
     //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
-    scripts/slick-config.js: {minified: false}
+    js/slick-config.js: {minified: false}
