@@ -47,3 +47,13 @@ messages:
   css:
     component:
       ../../../core/themes/classy/css/components/messages.css: { weight: -10 }
+
+# slick carousel
+slick:
+  css:
+    theme:
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
+  js:
+    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
+    js/slick-config.js: {minified: false}
