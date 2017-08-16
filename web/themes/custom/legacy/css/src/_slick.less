@@ -1,0 +1,19 @@
+
+/*################################*\
+    legacy  |  _slick.less
+\*################################*/
+
+
+// Slick style overrides/additions here.
+///////////////////////////////////////////////////////////////////////////////
+
+.slick-slide {
+  a.h-Block {
+    height: var(--supporter-logo-sml-height);
+    position: relative; // for absolute logo child
+  }
+  .c-SupporterBlock__Logo {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%); // HACK for centering the logo
+  }
+}

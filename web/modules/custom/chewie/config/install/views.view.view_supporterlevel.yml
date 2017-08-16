@@ -934,7 +934,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a class=\"h-Block\" href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title_1 -}}\n    {% endif -%}\n  \" itemprop=\"logo\"/>\n  <meta content=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title_1 -}}\n    {% endif -%}\n  \" itemprop=\"name\"/>\n</a>\n<span class=\"h-Block\">{{ title }}</span>"
+            text: "<a class=\"h-Block\" href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title_1 -}}\n    {% endif -%}\n  \" itemprop=\"logo\"/>\n  <meta content=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title_1 -}}\n    {% endif -%}\n  \" itemprop=\"name\"/>\n</a>\n<span class=\"c-SupporterBlock__Label h-Block\">{{ title }}</span>"
             make_link: false
             path: ''
             absolute: false

@@ -155,6 +155,15 @@
       .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
     }
   }
+  .slick-slide a.h-Block {
+    height: @p-supporter-logo-sml-s-height;
+    @media screen and (min-width: 30em) {
+      height: @p-supporter-logo-sml-sK-height;
+    }
+    @media screen and (min-width: 60em) {
+      height: @p-supporter-logo-sml-sG-height;
+    }
+  }
   //---- end ## Supporter logo sizes ----//
 
 
@@ -421,6 +430,9 @@
       .mx-bc-primary();
     }
     .c-DateBlock__MonthDay {
+      .mx-c-secondary();
+    }
+    .c-SupporterBlock__Label {
       .mx-c-secondary();
     }
     .t-Content {
