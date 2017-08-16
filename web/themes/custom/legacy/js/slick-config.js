@@ -10,9 +10,7 @@ $(document).ready(function () {
   })
 })
 
-
-/* To pause the autoplay, paste this code into the console and run:
-```
-jQuery('.js-slick').slick('slickPause');
-```
-*/
+// To pause the autoplay, run this function in your browser console:
+function slickPause() {
+  jQuery('.js-slick').slick('slickPause');
+}
