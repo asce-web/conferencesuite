@@ -42,7 +42,7 @@
 
 .c-DateBlock__MonthDay {
   .buttonText();
-  .mx-c-secondary();
+  color: var(--color-secondary, @g-color-secondary);
   font-family: inherit; // override `.buttonText()`
 }
 
@@ -54,18 +54,13 @@
 }
 .c-DateBlock__Date,
 .c-DateBlock__Desc {
-  margin-bottom: 0.5 * @g-vru; // HACK fallback
   margin-bottom: calc(~'0.5 * var(--vru)');
 }
 .c-DateBlock__Date {
   flex: 0 0 @datewidth;
 }
 .c-DateBlock__Desc {
-  width: calc(~'100% - '(@datewidth + 1rem)); // FIXME IE doesn’t support `calc()` values of `flex` // extra 1rem because margins
-  @supports (flex: calc(1px + 1px)) {
-    width: auto;
     flex: 0 0 calc(~'100% - '@datewidth);
-  }
 }
 
 
@@ -74,12 +69,11 @@
   .c-DateBlock {
     display: grid;
     grid-template-columns: @datewidth auto;
-    grid-row-gap: 0.5 * @g-vru; // HACK fallback
     grid-row-gap: calc(~'0.5 * var(--vru)');
   }
   .c-DateBlock__Date,
   .c-DateBlock__Desc {
-    margin-bottom: 0; // unset
+    margin-bottom: 0; // undo fallback above
   }
   .c-DateBlock__Date {
   }

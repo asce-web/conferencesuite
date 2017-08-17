@@ -14,17 +14,17 @@
 // ^updated
 // : 2017-06-11
 .o-Flex--siteHead {
-  margin: @g-vru 0; // HACK fallback
   margin: var(--vru) 0;
   align-items: center;
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
+  @supports (width: var(--width)) {
   header & { // [1]
     @media screen and (min-width: 45em) {
-      margin-right: 4.5rem; // HACK fallback // 0.5 maximum allowed --year-badge-width
       margin-right: calc(~'0.5 * var(--year-badge-width)');
     }
+  }
   }
 }
 .o-Flex--siteFoot {
@@ -33,7 +33,7 @@
   }
   @media screen and (min-width: 30em) and (max-width: 44.999em) {
     flex-wrap: wrap;
-    max-height: calc((3*5 + 7*2) ~'*' var(--vru)); // 3 pages with height 5vru + 7 pages with height 2vru
+    max-height: calc((3*5 + 7*2) ~'* var(--vru)'); // 3 pages with height 5vru + 7 pages with height 2vru
   }
 }
 

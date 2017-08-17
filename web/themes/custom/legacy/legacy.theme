@@ -4,22 +4,23 @@
  * HTML Variables
  */
 function legacy_preprocess_html(&$variables) {
-  $variables['html_developer_class']  = theme_get_setting('developer_class');
-  $variables['html_developer_branch'] = theme_get_setting('developer_branch');
+  $variables['html_developer_class']   = theme_get_setting('developer_class');
+  $variables['html_developer_channel'] = theme_get_setting('developer_branch');
+  $variables['html_colors_primary']   = theme_get_setting('colors_primary');
+  $variables['html_colors_secondary'] = theme_get_setting('colors_secondary');
+  $variables['html_colors_accent']    = theme_get_setting('colors_accent');
 
-  $repo_branch = theme_get_setting('developer_branch');
+  $asset_channel = theme_get_setting('developer_branch');
 
   // Determine which library to use; see `legacy.libraries.yml`
-  if (!empty($repo_branch)) {
-    $variables['#attached']['library'][] = array(
-      1 => 'legacy/prod-branch',
-      2 => 'legacy/stage-branch',
-      3 => 'legacy/dev-branch',
-    )[$repo_branch];
-  }
-  else {
-    $variables['#attached']['library'][] = 'legacy/stage-branch';
-  }
+  $variables['#attached']['library'][] = (!empty($asset_channel)) ?
+    array(
+      1 => 'legacy/channel-prod',
+      2 => 'legacy/channel-stage',
+      3 => 'legacy/channel-dev',
+      4 => 'legacy/channel-canary',
+    )[$asset_channel]
+    : 'legacy/channel-stage';
 }
 
 /**
@@ -191,14 +192,15 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   );
   $form['conference_settings']['developer']['developer_branch'] = array(
     '#type'    => 'select',
-    '#title'   => t('Style Repository Channel'),
+    '#title'   => t('Asset Channel'),
     '#options' => array(
       1 => t('production'),
       2 => t('staging'),
       3 => t('development'),
+      4 => t('canary'),
     ),
     '#default_value' => theme_get_setting('developer_branch'),
-    '#description'   => t('Apply a style repository branch. <strong>Note</strong>: Flush all caches after changing selection.'),
+    '#description'   => t('Collection of assets to use on the site. <strong>Flush all caches after changing selection.</strong>'),
   );
 
   /**
@@ -207,9 +209,9 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 
   $form['conference_images'] = array(
     '#type'        => 'details',
-    '#title'       => t('Images'),
+    '#title'       => t('Images &amp; Colors'),
     '#group'       => 'legacy_theme_settings',
-    '#description' => t('Upload conference images.'),
+    '#description' => t('Upload conference images and colors.'),
     '#weight'      => -4
   );
 
@@ -275,6 +277,28 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
         'uri_scheme'      => 'public',
       ),
     ),
+  );
+
+  $form['conference_images']['colors'] = array(
+    '#type'   => 'fieldset',
+    '#title'  => t('Site Colors'),
+    '#weight' => -140,
+    '#description' => t('Enter hex codes in <code>#rrggbb</code> format.'),
+  );
+  $form['conference_images']['colors']['colors_primary'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Primary Color'),
+    '#default_value' => theme_get_setting('colors_primary'),
+  );
+  $form['conference_images']['colors']['colors_secondary'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Secondary Color'),
+    '#default_value' => theme_get_setting('colors_secondary'),
+  );
+  $form['conference_images']['colors']['colors_accent'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Accent Color'),
+    '#default_value' => theme_get_setting('colors_accent'),
   );
 
   $form['#submit'][] = 'legacy_form_system_theme_settings_submit';

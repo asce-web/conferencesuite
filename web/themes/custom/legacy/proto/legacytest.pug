@@ -15,6 +15,11 @@ html(lang="en")
         banner : '../../../../sites/default/files/site-images/CECAR%207%20Banner%20Image.jpg',
         sidebar: '../../../../sites/default/files/2017-07/slide_2.jpg',
       },
+      colors: {
+        primary  : '#6a9556',
+        secondary: '#6fc2c4',
+        accent   : '#714509',
+      }
     }
   head
     title Sample ASCE Conference
@@ -23,14 +28,20 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
-    link(rel="stylesheet" href="../node_modules/xmeter/xmeter.min.css")
-    link(rel="stylesheet" href="../node_modules/bangs/bangs.min.css")
+    link(rel="stylesheet" href="../node_modules/xmeter/xmeter.css")
+    link(rel="stylesheet" href="../node_modules/bangs/bangs.css")
     link(rel="stylesheet" href="../vendor/futura.css")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
     link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
-    link(rel="stylesheet" href="../styles/legacy.css")
+    link(rel="stylesheet" href="../css/legacy.css")
+    style.
+      body {
+        --color-primary:   #{conference.colors.primary};
+        --color-secondary: #{conference.colors.secondary};
+        --color-accent:    #{conference.colors.accent};
+      }
     noscript
       // remove Toggle menu when JS is disabled
       style.
@@ -38,7 +49,7 @@ html(lang="en")
           .c-Toggle,
           .o-Drawer { display: none; }
         }
-  body(class=conference.classname)#top
+  body#top(class=conference.classname)
     a.h-Hidden(href="#main") skip to main content
     header
       nav.o-Flex.o-MobileBar.c-Banner.c-Banner--nav.-d-n-sM
@@ -412,6 +423,6 @@ html(lang="en")
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous")
     script(src="../vendor/jquery.hoverIntent.min.js")
-    script(src="../scripts/menu.js")
-    script(src="../scripts/o-Tabs.js")
-    script(src="../scripts/orphaned.js")
+    script(src="../js/menu.js")
+    script(src="../js/o-Tabs.js")
+    script(src="../js/orphaned.js")

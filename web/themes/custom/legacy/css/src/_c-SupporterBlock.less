@@ -1,0 +1,76 @@
+
+/*################################*\
+    legacy  |  _c-SupporterBlock.less
+\*################################*/
+
+
+// A section containing one level of sponsor.
+//
+// ^subclasses
+// --sml - contains small logos
+// --med - contains medium logos
+// --lrg - contains large logos
+// ^subcomponents
+// __Hn       - name of sponsor level ("Platinum", etc.)
+// __List     - structural styles of list of logos
+//   __Item     - structural styles of list item with link and logo
+// __Logo     - <img> element of logo. cosmetic styles
+// ^author
+// : Chris Harvey
+// ^updated
+// 2017-07-19
+.c-SupporterBlock {
+  // large logos by default
+  --supporter-logo-width : var(--supporter-logo-lrg-width );
+  --supporter-logo-height: var(--supporter-logo-lrg-height);
+  text-align: center;
+  margin-bottom: calc(~'2 * var(--vru)');
+}
+.c-SupporterBlock--lrg {
+}
+.c-SupporterBlock--med {
+  --supporter-logo-width : var(--supporter-logo-med-width );
+  --supporter-logo-height: var(--supporter-logo-med-height);
+}
+.c-SupporterBlock--sml {
+  --supporter-logo-width : var(--supporter-logo-sml-width );
+  --supporter-logo-height: var(--supporter-logo-sml-height);
+}
+
+.c-SupporterBlock__Hn {
+  .font-size-el(@g-font-size-kilo);
+  font-family: inherit; // keeping here if `ff` of `h1` is changed
+  font-weight: 900;
+  color: @g-color-body-txt;
+  // visualization line separator
+  @supports (flex-wrap: wrap) {
+    display: flex;
+    align-items: center;
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border: 1px solid @g-color-table-br;
+      margin: 0 1rem;
+    }
+  }
+}
+
+.c-SupporterBlock__List {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-SupporterBlock__List__Item {
+  flex: 0 1 var(--supporter-logo-width);
+  margin: 0 1rem var(--vru);
+}
+
+.c-SupporterBlock__Logo {
+  max-height: var(--supporter-logo-height);
+  transition: filter 1000ms;
+  &:not(:hover):not(:focus) {
+    filter: grayscale(100%);
+  }
+}
