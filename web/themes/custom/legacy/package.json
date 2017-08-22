@@ -4,7 +4,8 @@
   "main": "legacy.css",
   "private": true,
   "scripts": {
-    "unbuild": "rm proto/legacytest.html css/{legacy.css,legacy.css.map}",
+    "unbuild:dist": "rm -r css/dist/",
+    "unbuild": "rm proto/legacytest.html css/legacy.css  &&  npm run unbuild:dist",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
