@@ -57,6 +57,7 @@
  * _slick.less.........................slick carousel styles
  * _drupal.less........................fixes & overrides for Drupal 8 “Seven” theme
  * _ie.less............................IE-only styles
+ * _hack.other.less....................miscellaneous hacks
  */
 
 
@@ -107,25 +108,4 @@
 @import (less) url('_slick.less');
 @import (less) url('_drupal.less');
 @import (less) url('_ie.less');
-
-body > footer > fieldset {
-  margin:0;padding:0;border:0; // HACK fallback
-  display: contents;
-  width: 100%; // FIXME HTML Spec bug: read <https://thatemil.com/blog/2017/07/01/fixing-fieldsets/>
-}
-
-body > a:last-of-type {
-  position: fixed;
-  bottom: var(--vru);
-  right: 999999px;
-  &:focus {
-    right: 1rem;
-  }
-}
-
-// Link to site map, for when JS is disabled and no mobile menu is available
-header noscript a {
-  position: relative;
-  top: 1rem;
-  right: 0.5rem;
-}
+@import (less) url('_hack.other.less');
