@@ -42,7 +42,6 @@ channel-prod:
       css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-DateBlock.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
     theme:
       css/dist/_themes.css: {minified:true}
@@ -78,7 +77,6 @@ channel-stage:
       css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-DateBlock.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
     theme:
       css/dist/_themes.css: {minified:true}
@@ -140,6 +138,13 @@ slick:
   js:
     //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
     js/slick-config.js: {minified: false}
+
+# DateBlock Component
+dateblock:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-DateBlock.css: {minified:true}
 
 # copied from classy.libraries.yml
 messages:
