@@ -42,7 +42,6 @@ channel-prod:
       css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-SupporterBlock.css: {minified:true}
       css/dist/_c-DateBlock.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
     theme:
@@ -79,7 +78,6 @@ channel-stage:
       css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-SupporterBlock.css: {minified:true}
       css/dist/_c-DateBlock.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
     theme:
@@ -126,13 +124,12 @@ hero:
     component:
       css/dist/_c-Hero.css: {minified:true}
 
-# copied from classy.libraries.yml
-messages:
+# SupporterBlock Component
+supporterblock:
   version: VERSION
   css:
     component:
-      /core/themes/classy/css/components/messages.css: {}
-
+      css/dist/_c-SupporterBlock.css: {minified:true}
 # slick carousel
 slick:
   version: VERSION
@@ -143,3 +140,10 @@ slick:
   js:
     //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
     js/slick-config.js: {minified: false}
+
+# copied from classy.libraries.yml
+messages:
+  version: VERSION
+  css:
+    component:
+      /core/themes/classy/css/components/messages.css: {}
