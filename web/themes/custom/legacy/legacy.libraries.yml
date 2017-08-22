@@ -37,7 +37,6 @@ channel-prod:
       css/dist/_c-NavBar.css: {minified:true}
       css/dist/_c-Toggle.css: {minified:true}
       css/dist/_c-AsceLogo.css: {minified:true}
-      css/dist/_c-Callout.css: {minified:true}
       css/dist/_c-FooterPanel.css: {minified:true}
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
@@ -76,7 +75,6 @@ channel-stage:
       css/dist/_c-NavBar.css: {minified:true}
       css/dist/_c-Toggle.css: {minified:true}
       css/dist/_c-AsceLogo.css: {minified:true}
-      css/dist/_c-Callout.css: {minified:true}
       css/dist/_c-FooterPanel.css: {minified:true}
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
@@ -115,6 +113,13 @@ tabs:
       css/dist/_o-Tabs.css: {minified:true}
   js:
     js/o-Tabs.js: {minified: false}
+
+# Callout Component
+callout:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Callout.css: {minified:true}
 
 # copied from classy.libraries.yml
 messages:
