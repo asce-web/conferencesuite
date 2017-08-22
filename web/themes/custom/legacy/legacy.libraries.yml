@@ -40,7 +40,6 @@ channel-prod:
       css/dist/_c-FooterPanel.css: {minified:true}
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
-      css/dist/_c-Hero.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-SupporterBlock.css: {minified:true}
@@ -78,7 +77,6 @@ channel-stage:
       css/dist/_c-FooterPanel.css: {minified:true}
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
-      css/dist/_c-Hero.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-SupporterBlock.css: {minified:true}
@@ -120,6 +118,13 @@ callout:
   css:
     component:
       css/dist/_c-Callout.css: {minified:true}
+
+# Hero Component
+hero:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Hero.css: {minified:true}
 
 # copied from classy.libraries.yml
 messages:
