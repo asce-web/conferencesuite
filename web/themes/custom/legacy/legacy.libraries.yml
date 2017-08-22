@@ -2,7 +2,6 @@ global-styling:
   js:
     vendor/jquery.hoverIntent.min.js: {minified: true}
     js/menu.js: {minified: false}
-    js/o-Tabs.js: {minified: false}
     js/orphaned.js: {minified: false}
   css:
     base:
@@ -28,7 +27,6 @@ channel-prod:
       css/dist/_o-Constrain.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
       css/dist/_o-MobileBar.css: {minified:true}
-      css/dist/_o-Tabs.css: {minified:true}
       css/dist/_o-Drawer.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
@@ -68,7 +66,6 @@ channel-stage:
       css/dist/_o-Constrain.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
       css/dist/_o-MobileBar.css: {minified:true}
-      css/dist/_o-Tabs.css: {minified:true}
       css/dist/_o-Drawer.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
@@ -110,6 +107,15 @@ channel-canary:
       css/legacy.css: {}
 
 
+# Tabs Object
+tabs:
+  version: VERSION
+  css:
+    layout:
+      css/dist/_o-Tabs.css: {minified:true}
+  js:
+    js/o-Tabs.js: {minified: false}
+
 # copied from classy.libraries.yml
 messages:
   version: VERSION
@@ -119,6 +125,7 @@ messages:
 
 # slick carousel
 slick:
+  version: VERSION
   css:
     theme:
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
