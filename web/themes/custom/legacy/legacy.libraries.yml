@@ -53,6 +53,7 @@ channel-prod:
       css/dist/_themes.css: {minified:true}
       css/dist/_t-Content.css: {minified:true}
       css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.glyphicons.css: {minified:true}
       css/dist/_hack.slick.css: {minified:true}
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
@@ -92,6 +93,7 @@ channel-stage:
       css/dist/_themes.css: {minified:true}
       css/dist/_t-Content.css: {minified:true}
       css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.glyphicons.css: {minified:true}
       css/dist/_hack.slick.css: {minified:true}
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
