@@ -5,40 +5,107 @@ global-styling:
     js/o-Tabs.js: {minified: false}
     js/orphaned.js: {minified: false}
   css:
-    base: {}
+    base:
+      //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
     layout: {}
     component: {}
-    state: {}
+    state:
+      //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
-      //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
+      vendor/futura.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
-      vendor/futura.css: {minified: true}
-      css/legacy.css: {minified: true}
 
 channel-prod:
   css:
+    base:
+      css/dist/_dev.css: {minified:true}
+      css/dist/_base.css: {minified:true}
+    layout:
+      css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-SideCol.css: {minified:true}
+      css/dist/_o-MobileBar.css: {minified:true}
+      css/dist/_o-Tabs.css: {minified:true}
+      css/dist/_o-Drawer.css: {minified:true}
+    component:
+      css/dist/_c-Banner.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-TopImg.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-NavBar.css: {minified:true}
+      css/dist/_c-Toggle.css: {minified:true}
+      css/dist/_c-AsceLogo.css: {minified:true}
+      css/dist/_c-Callout.css: {minified:true}
+      css/dist/_c-FooterPanel.css: {minified:true}
+      css/dist/_c-Sitemap.css: {minified:true}
+      css/dist/_c-SocialListFooter.css: {minified:true}
+      css/dist/_c-Hero.css: {minified:true}
+      css/dist/_c-KeynoteSpeaker.css: {minified:true}
+      css/dist/_c-Chair.css: {minified:true}
+      css/dist/_c-SupporterBlock.css: {minified:true}
+      css/dist/_c-DateBlock.css: {minified:true}
+      css/dist/_c-Button.css: {minified:true}
     theme:
-      {}
+      css/dist/_themes.css: {minified:true}
+      css/dist/_t-Content.css: {minified:true}
+      css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.slick.css: {minified:true}
+      css/dist/_hack.drupal.css: {minified:true}
+      css/dist/_hack.ie.css: {minified:true}
+      css/dist/_hack.other.css: {minified:true}
 
 channel-stage:
   css:
+    base:
+      css/dist/_dev.css: {minified:true}
+      css/dist/_base.css: {minified:true}
+    layout:
+      css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-SideCol.css: {minified:true}
+      css/dist/_o-MobileBar.css: {minified:true}
+      css/dist/_o-Tabs.css: {minified:true}
+      css/dist/_o-Drawer.css: {minified:true}
+    component:
+      css/dist/_c-Banner.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-TopImg.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-NavBar.css: {minified:true}
+      css/dist/_c-Toggle.css: {minified:true}
+      css/dist/_c-AsceLogo.css: {minified:true}
+      css/dist/_c-Callout.css: {minified:true}
+      css/dist/_c-FooterPanel.css: {minified:true}
+      css/dist/_c-Sitemap.css: {minified:true}
+      css/dist/_c-SocialListFooter.css: {minified:true}
+      css/dist/_c-Hero.css: {minified:true}
+      css/dist/_c-KeynoteSpeaker.css: {minified:true}
+      css/dist/_c-Chair.css: {minified:true}
+      css/dist/_c-SupporterBlock.css: {minified:true}
+      css/dist/_c-DateBlock.css: {minified:true}
+      css/dist/_c-Button.css: {minified:true}
     theme:
-      {}
+      css/dist/_themes.css: {minified:true}
+      css/dist/_t-Content.css: {minified:true}
+      css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.slick.css: {minified:true}
+      css/dist/_hack.drupal.css: {minified:true}
+      css/dist/_hack.ie.css: {minified:true}
+      css/dist/_hack.other.css: {minified:true}
 
 channel-dev:
   css:
     theme:
-      {}
+      css/legacy.css: {}
 
 channel-canary:
   css:
     theme:
-      {}
+      css/legacy.css: {}
 
 
 # copied from classy.libraries.yml
@@ -46,7 +113,7 @@ messages:
   version: VERSION
   css:
     component:
-      ../../../core/themes/classy/css/components/messages.css: { weight: -10 }
+      /core/themes/classy/css/components/messages.css: {}
 
 # slick carousel
 slick:
