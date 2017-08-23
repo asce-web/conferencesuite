@@ -16,6 +16,7 @@
  * @see template_preprocess_views_view_list()
  */
 #}
+{{ attach_library('legacy/supporters') }}
 {% if attributes -%}
   <section{{ attributes.addClass('c-SupporterBlock c-SupporterBlock--lrg') }}>
   {# TODO don’t forget to dynamically set this as `lrg`, `med`, `sml` depending on

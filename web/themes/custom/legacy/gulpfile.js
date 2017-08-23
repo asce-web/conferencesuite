@@ -15,7 +15,7 @@ gulp.task('pug:test', function () {
     .pipe(gulp.dest('./proto/'))
 })
 
-gulp.task('lessc:core', function () {
+gulp.task('lessc:dev', function () {
   return gulp.src(__dirname + '/css/src/legacy.less')
     .pipe(less())
     .pipe(autoprefixer({
@@ -23,10 +23,21 @@ gulp.task('lessc:core', function () {
       cascade: false,
     }))
     .pipe(gulp.dest('./css/'))
-    .pipe(sourcemaps.init())
-    .pipe(clean_css())
-    .pipe(sourcemaps.write('./')) // write to an external .map file
-    .pipe(gulp.dest('./css/'))
 })
 
-gulp.task('build', ['pug:test', 'lessc:core'])
+gulp.task('lessc:prod', function () {
+  return gulp.src([`${__dirname}/css/src/*.less`, `!${__dirname}/css/src/legacy.less`]) // ignore legacy.less
+    .pipe(less())
+    .pipe(autoprefixer({
+      grid: true,
+      cascade: false,
+    }))
+    .pipe(clean_css({
+      level: {
+        2: {restructureRules: true},
+      },
+    }))
+    .pipe(gulp.dest('./css/dist/'))
+})
+
+gulp.task('build', ['pug:test', 'lessc:dev', 'lessc:prod'])

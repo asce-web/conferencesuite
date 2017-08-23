@@ -1,27 +1,43 @@
 global-styling:
   js:
-    vendor/jquery.hoverIntent.min.js: {minified: true}
-    js/menu.js: {minified: false}
-    js/o-Tabs.js: {minified: false}
     js/orphaned.js: {minified: false}
   css:
-    base: {}
-    layout: {}
-    component: {}
-    state: {}
+    base:
+      //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
+      css/dist/_dev.css: {minified:true}
+      css/dist/_base.css: {minified:true}
+    layout:
+      css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-SideCol.css: {minified:true}
+    component:
+      css/dist/_c-KeynoteSpeaker.css: {minified:true}
+      css/dist/_c-Chair.css: {minified:true}
+      css/dist/_c-Button.css: {minified:true}
+    state:
+      //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
-      //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
+      vendor/futura.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
-      vendor/futura.css: {minified: true}
-      css/legacy.css: {minified: true}
+      css/dist/_themes.css: {minified:true}
+      css/dist/_t-Content.css: {minified:true}
+      css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.glyphicons.css: {minified:true}
+      css/dist/_hack.drupal.css: {minified:true}
+      css/dist/_hack.ie.css: {minified:true}
+      css/dist/_hack.other.css: {minified:true}
 
 channel-prod:
   css:
+    base:
+      {}
+    layout:
+      {}
+    component:
+      {}
     theme:
       {}
 
@@ -41,19 +57,89 @@ channel-canary:
       {}
 
 
+# header library
+header:
+  version: VERSION
+  css:
+    layout:
+      css/dist/_o-MobileBar.css: {minified:true}
+      css/dist/_o-Drawer.css: {minified:true}
+    component:
+      css/dist/_c-Banner.css: {minified:true}
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-TopImg.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-NavBar.css: {minified:true}
+      css/dist/_c-Toggle.css: {minified:true}
+  js:
+    vendor/jquery.hoverIntent.min.js: {minified: true}
+    js/menu.js: {minified: false}
+
+# footerpanels library
+footerpanels:
+  version: VERSION
+  css:
+    layout:
+      css/dist/_o-Tabs.css: {minified:true}
+    component:
+      css/dist/_c-Banner.css: {minified:true}
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-FooterPanel.css: {minified:true}
+      css/dist/_c-Sitemap.css: {minified:true}
+      css/dist/_c-SocialListFooter.css: {minified:true}
+  js:
+    js/o-Tabs.js: {minified: false}
+
+# footerpanels library
+copyright:
+  version: VERSION
+  css:
+    layout:
+    component:
+      css/dist/_c-Banner.css: {minified:true}
+      css/dist/_c-AsceLogo.css: {minified:true}
+
+# Callout Component
+callout:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Callout.css: {minified:true}
+
+# Hero Component
+hero:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Hero.css: {minified:true}
+
+# Supporters library
+supporters:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-SupporterBlock.css: {minified:true}
+    theme:
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
+      css/dist/_hack.slick.css: {minified:true}
+  js:
+    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
+    js/slick-config.js: {minified: false}
+
+# DateBlock Component
+dateblock:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-DateBlock.css: {minified:true}
+
 # copied from classy.libraries.yml
 messages:
   version: VERSION
   css:
     component:
-      ../../../core/themes/classy/css/components/messages.css: { weight: -10 }
-
-# slick carousel
-slick:
-  css:
-    theme:
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
-  js:
-    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
-    js/slick-config.js: {minified: false}
+      /core/themes/classy/css/components/messages.css: {}

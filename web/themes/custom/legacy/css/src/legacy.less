@@ -17,7 +17,6 @@
  * BASE--------------------------------BARE UNCLASSED ELEMENTS
  * _dev.less...........................fixes for imported 3rd party
  * _base.less..........................unclassed html elements
- * __settings.conf-colors.less.........conference site colors (NOTE: HACK: fallback support for custom properties)
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
  * Constrain...........................keeps content at max width
@@ -55,23 +54,16 @@
  * ATOMS-------------------------------FUNCTIONAL CSS
  *
  * HACKS-------------------------------HACKS
- * _slick.less.........................slick carousel styles
- * _drupal.less........................fixes & overrides for Drupal 8 “Seven” theme
- * _ie.less............................IE-only styles
+ * _hack.glyphicons.less...............glyphicons overrides
+ * _hack.slick.less....................slick carousel styles
+ * _hack.drupal.less...................fixes & overrides for Drupal 8 “Seven” theme
+ * _hack.ie.less.......................IE-only styles
+ * _hack.other.less....................miscellaneous hacks. should be moved elsewhere.
  */
 
 
-@import (reference) url('../../node_modules/xmeter/src/__settings.less');
-@import (reference) url('../../node_modules/xmeter/src/__tool.transitions.less'); // for transitions() mixin
-@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
-@import (reference) url('../../node_modules/xmeter/src/__tool.borders.less');
-
-@import (reference) url('__settings.less');
-@import (reference) url('__tool.buttonText.less');
-
 @import (less) url('_dev.less');
 @import (less) url('_base.less');
-@import (less) url('__settings.conf-colors.less'); // HACK see note in table of contents
 
 
 @import (less) url('_o-Constrain.less');
@@ -90,8 +82,8 @@
 
 
 @import (less) url('_c-Banner.less');
-@import (less) url('_c-ConferenceTitles.less');
 @import (less) url('_c-SiteLogo.less');
+@import (less) url('_c-ConferenceTitles.less');
 @import (less) url('_c-TopImg.less');
 @import (less) url('_c-YearBadge.less');
 @import (less) url('_c-NavBar.less');
@@ -114,27 +106,8 @@
 @import (less) url('_h-Spaced.less');
 
 
-@import (less) url('_slick.less');
-@import (less) url('_drupal.less');
-@import (less) url('_ie.less');
-
-body > footer > fieldset {
-  margin:0;padding:0;border:0; // HACK fallback
-  display: contents;
-}
-
-body > a:last-of-type {
-  position: fixed;
-  bottom: var(--vru);
-  right: 999999px;
-  &:focus {
-    right: 1rem;
-  }
-}
-
-// Link to site map, for when JS is disabled and no mobile menu is available
-header noscript a {
-  position: relative;
-  top: 1rem;
-  right: 0.5rem;
-}
+@import (less) url('_hack.glyphicons.less');
+@import (less) url('_hack.slick.less');
+@import (less) url('_hack.drupal.less');
+@import (less) url('_hack.ie.less');
+@import (less) url('_hack.other.less');
