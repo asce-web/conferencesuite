@@ -26,20 +26,9 @@ channel-prod:
     layout:
       css/dist/_o-Constrain.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
-      css/dist/_o-MobileBar.css: {minified:true}
-      css/dist/_o-Drawer.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
-      css/dist/_c-ConferenceTitles.css: {minified:true}
-      css/dist/_c-SiteLogo.css: {minified:true}
-      css/dist/_c-TopImg.css: {minified:true}
-      css/dist/_c-YearBadge.css: {minified:true}
-      css/dist/_c-NavBar.css: {minified:true}
-      css/dist/_c-Toggle.css: {minified:true}
       css/dist/_c-AsceLogo.css: {minified:true}
-      css/dist/_c-FooterPanel.css: {minified:true}
-      css/dist/_c-Sitemap.css: {minified:true}
-      css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
@@ -61,20 +50,9 @@ channel-stage:
     layout:
       css/dist/_o-Constrain.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
-      css/dist/_o-MobileBar.css: {minified:true}
-      css/dist/_o-Drawer.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
-      css/dist/_c-ConferenceTitles.css: {minified:true}
-      css/dist/_c-SiteLogo.css: {minified:true}
-      css/dist/_c-TopImg.css: {minified:true}
-      css/dist/_c-YearBadge.css: {minified:true}
-      css/dist/_c-NavBar.css: {minified:true}
-      css/dist/_c-Toggle.css: {minified:true}
       css/dist/_c-AsceLogo.css: {minified:true}
-      css/dist/_c-FooterPanel.css: {minified:true}
-      css/dist/_c-Sitemap.css: {minified:true}
-      css/dist/_c-SocialListFooter.css: {minified:true}
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
@@ -99,12 +77,34 @@ channel-canary:
       css/legacy.css: {}
 
 
-# Tabs Object
-tabs:
+# header library
+header:
+  version: VERSION
+  css:
+    layout:
+      css/dist/_o-MobileBar.css: {minified:true}
+      css/dist/_o-Drawer.css: {minified:true}
+    component:
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-TopImg.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-NavBar.css: {minified:true}
+      css/dist/_c-Toggle.css: {minified:true}
+
+# footerpanels library
+footerpanels:
   version: VERSION
   css:
     layout:
       css/dist/_o-Tabs.css: {minified:true}
+    component:
+      css/dist/_c-SiteLogo.css: {minified:true}
+      css/dist/_c-ConferenceTitles.css: {minified:true}
+      css/dist/_c-YearBadge.css: {minified:true}
+      css/dist/_c-FooterPanel.css: {minified:true}
+      css/dist/_c-Sitemap.css: {minified:true}
+      css/dist/_c-SocialListFooter.css: {minified:true}
   js:
     js/o-Tabs.js: {minified: false}
 
