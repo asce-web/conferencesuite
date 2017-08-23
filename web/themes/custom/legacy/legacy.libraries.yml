@@ -1,13 +1,18 @@
 global-styling:
   js:
-    vendor/jquery.hoverIntent.min.js: {minified: true}
-    js/menu.js: {minified: false}
     js/orphaned.js: {minified: false}
   css:
     base:
       //cdn.rawgit.com/chharvey/xmeter/beta-v6/xmeter.css: {type: external, minified: true}
-    layout: {}
-    component: {}
+      css/dist/_dev.css: {minified:true}
+      css/dist/_base.css: {minified:true}
+    layout:
+      css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-SideCol.css: {minified:true}
+    component:
+      css/dist/_c-KeynoteSpeaker.css: {minified:true}
+      css/dist/_c-Chair.css: {minified:true}
+      css/dist/_c-Button.css: {minified:true}
     state:
       //cdn.rawgit.com/chharvey/bangs/v0.14.1/bangs.min.css: {type: external, minified: true}
     theme:
@@ -17,58 +22,39 @@ global-styling:
       vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
       vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
       vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
+      css/dist/_themes.css: {minified:true}
+      css/dist/_t-Content.css: {minified:true}
+      css/dist/_h-Spaced.css: {minified:true}
+      css/dist/_hack.glyphicons.css: {minified:true}
+      css/dist/_hack.drupal.css: {minified:true}
+      css/dist/_hack.ie.css: {minified:true}
+      css/dist/_hack.other.css: {minified:true}
 
 channel-prod:
   css:
     base:
-      css/dist/_dev.css: {minified:true}
-      css/dist/_base.css: {minified:true}
+      {}
     layout:
-      css/dist/_o-Constrain.css: {minified:true}
-      css/dist/_o-SideCol.css: {minified:true}
+      {}
     component:
-      css/dist/_c-KeynoteSpeaker.css: {minified:true}
-      css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-Button.css: {minified:true}
+      {}
     theme:
-      css/dist/_themes.css: {minified:true}
-      css/dist/_t-Content.css: {minified:true}
-      css/dist/_h-Spaced.css: {minified:true}
-      css/dist/_hack.glyphicons.css: {minified:true}
-      css/dist/_hack.drupal.css: {minified:true}
-      css/dist/_hack.ie.css: {minified:true}
-      css/dist/_hack.other.css: {minified:true}
+      {}
 
 channel-stage:
   css:
-    base:
-      css/dist/_dev.css: {minified:true}
-      css/dist/_base.css: {minified:true}
-    layout:
-      css/dist/_o-Constrain.css: {minified:true}
-      css/dist/_o-SideCol.css: {minified:true}
-    component:
-      css/dist/_c-KeynoteSpeaker.css: {minified:true}
-      css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-Button.css: {minified:true}
     theme:
-      css/dist/_themes.css: {minified:true}
-      css/dist/_t-Content.css: {minified:true}
-      css/dist/_h-Spaced.css: {minified:true}
-      css/dist/_hack.glyphicons.css: {minified:true}
-      css/dist/_hack.drupal.css: {minified:true}
-      css/dist/_hack.ie.css: {minified:true}
-      css/dist/_hack.other.css: {minified:true}
+      {}
 
 channel-dev:
   css:
     theme:
-      css/legacy.css: {}
+      {}
 
 channel-canary:
   css:
     theme:
-      css/legacy.css: {}
+      {}
 
 
 # header library
@@ -86,6 +72,9 @@ header:
       css/dist/_c-YearBadge.css: {minified:true}
       css/dist/_c-NavBar.css: {minified:true}
       css/dist/_c-Toggle.css: {minified:true}
+  js:
+    vendor/jquery.hoverIntent.min.js: {minified: true}
+    js/menu.js: {minified: false}
 
 # footerpanels library
 footerpanels:
