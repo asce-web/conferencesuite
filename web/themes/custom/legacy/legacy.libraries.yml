@@ -122,16 +122,12 @@ hero:
     component:
       css/dist/_c-Hero.css: {minified:true}
 
-# SupporterBlock Component
-supporterblock:
+# Supporters library
+supporters:
   version: VERSION
   css:
     component:
       css/dist/_c-SupporterBlock.css: {minified:true}
-# slick carousel
-slick:
-  version: VERSION
-  css:
     theme:
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
