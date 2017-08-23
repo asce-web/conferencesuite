@@ -28,7 +28,7 @@ global-styling:
       css/dist/_hack.glyphicons.css: {minified:true}
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
-      css/dist/_hack.other.css: {minified:true}
+      css/dist/_hack.shame.css: {minified:true}
 
 channel-prod:
   css:
