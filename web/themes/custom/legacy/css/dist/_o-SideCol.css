@@ -1,1 +1,1 @@
-@media screen and (min-width:45em){.o-SideCol{-webkit-box-flex:0;-ms-flex:0 0 40%;flex:0 0 40%}}@media screen and (min-width:60em){.o-SideCol{-webkit-box-flex:0;-ms-flex:0 0 35%;flex:0 0 35%}}@media screen and (min-width:90em){.o-SideCol{-webkit-box-flex:0;-ms-flex:0 0 30%;flex:0 0 30%}}
+@media screen and (min-width:45em){.o-SideCol{-webkit-box-flex:0;-ms-flex:0 0 var(--side-col-size);flex:0 0 var(--side-col-size)}}

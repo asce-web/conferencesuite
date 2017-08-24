@@ -54,7 +54,7 @@
  * _hack.slick.less....................slick carousel styles
  * _hack.drupal.less...................fixes & overrides for Drupal 8 “Seven” theme
  * _hack.ie.less.......................IE-only styles
- * _hack.other.less....................miscellaneous hacks. should be moved elsewhere.
+ * _hack.shame.less....................miscellaneous hacks. should be moved elsewhere.
  */
 /*################################*\
     legacy  |  _dev.less
@@ -120,8 +120,14 @@ html {
     --supporter-logo-sml-height: 62px ;
   }
 }
+@media screen and (min-width: 45em) {
+  html {
+    --side-col-size: 40%;
+  }
+}
 @media screen and (min-width: 60em) {
   html {
+    --side-col-size: 35%;
     --supporter-logo-lrg-width: 360px;
     --supporter-logo-lrg-height: 160px;
     --supporter-logo-med-width: 270px;
@@ -132,6 +138,7 @@ html {
 }
 @media screen and (min-width: 90em) {
   html {
+    --side-col-size: 30%;
     --year-badge-width: 9rem;
   }
 }
@@ -192,22 +199,8 @@ a:focus {
 @media screen and (min-width: 45em) {
   .o-SideCol {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-  }
-}
-@media screen and (min-width: 60em) {
-  .o-SideCol {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 35%;
-    flex: 0 0 35%;
-  }
-}
-@media screen and (min-width: 90em) {
-  .o-SideCol {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
+    -ms-flex: 0 0 var(--side-col-size);
+    flex: 0 0 var(--side-col-size);
   }
 }
 /*################################*\
@@ -996,7 +989,7 @@ button.c-Button:disabled {
 .t-Content {
   margin: 0 1rem;
 }
-.t-Content h1,
+.t-Content h1:not(.c-Hero__Hn),
 .t-Content h2,
 .t-Content h3,
 .t-Content h4,
@@ -2234,7 +2227,7 @@ button.c-Button:disabled {
   .unsatsoilsconf .c-SupporterBlock__Label {
     color: #b80007;
   }
-  :root .t-Content h1,
+  :root .t-Content h1:not(.c-Hero__Hn),
   :root .t-Content h2,
   :root .t-Content h3,
   :root .t-Content h4,
@@ -2242,7 +2235,7 @@ button.c-Button:disabled {
   :root .t-Content h6 {
     color: #6a9556;
   }
-  .sample-stage .t-Content h1,
+  .sample-stage .t-Content h1:not(.c-Hero__Hn),
   .sample-stage .t-Content h2,
   .sample-stage .t-Content h3,
   .sample-stage .t-Content h4,
@@ -2250,7 +2243,7 @@ button.c-Button:disabled {
   .sample-stage .t-Content h6 {
     color: #c9bb58;
   }
-  .sample-dev .t-Content h1,
+  .sample-dev .t-Content h1:not(.c-Hero__Hn),
   .sample-dev .t-Content h2,
   .sample-dev .t-Content h3,
   .sample-dev .t-Content h4,
@@ -2258,7 +2251,7 @@ button.c-Button:disabled {
   .sample-dev .t-Content h6 {
     color: #d64153;
   }
-  .sample-canary .t-Content h1,
+  .sample-canary .t-Content h1:not(.c-Hero__Hn),
   .sample-canary .t-Content h2,
   .sample-canary .t-Content h3,
   .sample-canary .t-Content h4,
@@ -2266,7 +2259,7 @@ button.c-Button:disabled {
   .sample-canary .t-Content h6 {
     color: #58c2d6;
   }
-  .aei-conference .t-Content h1,
+  .aei-conference .t-Content h1:not(.c-Hero__Hn),
   .aei-conference .t-Content h2,
   .aei-conference .t-Content h3,
   .aei-conference .t-Content h4,
@@ -2274,7 +2267,7 @@ button.c-Button:disabled {
   .aei-conference .t-Content h6 {
     color: #00548e;
   }
-  .aei-forum .t-Content h1,
+  .aei-forum .t-Content h1:not(.c-Hero__Hn),
   .aei-forum .t-Content h2,
   .aei-forum .t-Content h3,
   .aei-forum .t-Content h4,
@@ -2282,7 +2275,7 @@ button.c-Button:disabled {
   .aei-forum .t-Content h6 {
     color: #7f7f73;
   }
-  .aeisdc .t-Content h1,
+  .aeisdc .t-Content h1:not(.c-Hero__Hn),
   .aeisdc .t-Content h2,
   .aeisdc .t-Content h3,
   .aeisdc .t-Content h4,
@@ -2290,7 +2283,7 @@ button.c-Button:disabled {
   .aeisdc .t-Content h6 {
     color: #00163e;
   }
-  .apmconference .t-Content h1,
+  .apmconference .t-Content h1:not(.c-Hero__Hn),
   .apmconference .t-Content h2,
   .apmconference .t-Content h3,
   .apmconference .t-Content h4,
@@ -2298,7 +2291,7 @@ button.c-Button:disabled {
   .apmconference .t-Content h6 {
     color: #e37f1c;
   }
-  .asce-cta .t-Content h1,
+  .asce-cta .t-Content h1:not(.c-Hero__Hn),
   .asce-cta .t-Content h2,
   .asce-cta .t-Content h3,
   .asce-cta .t-Content h4,
@@ -2306,7 +2299,7 @@ button.c-Button:disabled {
   .asce-cta .t-Content h6 {
     color: #0033a0;
   }
-  .asce-ictd .t-Content h1,
+  .asce-ictd .t-Content h1:not(.c-Hero__Hn),
   .asce-ictd .t-Content h2,
   .asce-ictd .t-Content h3,
   .asce-ictd .t-Content h4,
@@ -2314,7 +2307,7 @@ button.c-Button:disabled {
   .asce-ictd .t-Content h6 {
     color: #1a355e;
   }
-  .asceconvention .t-Content h1,
+  .asceconvention .t-Content h1:not(.c-Hero__Hn),
   .asceconvention .t-Content h2,
   .asceconvention .t-Content h3,
   .asceconvention .t-Content h4,
@@ -2322,7 +2315,7 @@ button.c-Button:disabled {
   .asceconvention .t-Content h6 {
     color: #3fae2a;
   }
-  .asceconvention2017 .t-Content h1,
+  .asceconvention2017 .t-Content h1:not(.c-Hero__Hn),
   .asceconvention2017 .t-Content h2,
   .asceconvention2017 .t-Content h3,
   .asceconvention2017 .t-Content h4,
@@ -2330,7 +2323,7 @@ button.c-Button:disabled {
   .asceconvention2017 .t-Content h6 {
     color: #00737b;
   }
-  .ascestudentdays .t-Content h1,
+  .ascestudentdays .t-Content h1:not(.c-Hero__Hn),
   .ascestudentdays .t-Content h2,
   .ascestudentdays .t-Content h3,
   .ascestudentdays .t-Content h4,
@@ -2338,7 +2331,7 @@ button.c-Button:disabled {
   .ascestudentdays .t-Content h6 {
     color: #41434b;
   }
-  .cisummit .t-Content h1,
+  .cisummit .t-Content h1:not(.c-Hero__Hn),
   .cisummit .t-Content h2,
   .cisummit .t-Content h3,
   .cisummit .t-Content h4,
@@ -2346,7 +2339,7 @@ button.c-Button:disabled {
   .cisummit .t-Content h6 {
     color: #d06f1a;
   }
-  .etsconference .t-Content h1,
+  .etsconference .t-Content h1:not(.c-Hero__Hn),
   .etsconference .t-Content h2,
   .etsconference .t-Content h3,
   .etsconference .t-Content h4,
@@ -2354,7 +2347,7 @@ button.c-Button:disabled {
   .etsconference .t-Content h6 {
     color: #002c73;
   }
-  .ewricongress .t-Content h1,
+  .ewricongress .t-Content h1:not(.c-Hero__Hn),
   .ewricongress .t-Content h2,
   .ewricongress .t-Content h3,
   .ewricongress .t-Content h4,
@@ -2362,7 +2355,7 @@ button.c-Button:disabled {
   .ewricongress .t-Content h6 {
     color: #3d2758;
   }
-  .geesdconference .t-Content h1,
+  .geesdconference .t-Content h1:not(.c-Hero__Hn),
   .geesdconference .t-Content h2,
   .geesdconference .t-Content h3,
   .geesdconference .t-Content h4,
@@ -2370,7 +2363,7 @@ button.c-Button:disabled {
   .geesdconference .t-Content h6 {
     color: #004e58;
   }
-  .georiskconference .t-Content h1,
+  .georiskconference .t-Content h1:not(.c-Hero__Hn),
   .georiskconference .t-Content h2,
   .georiskconference .t-Content h3,
   .georiskconference .t-Content h4,
@@ -2378,7 +2371,7 @@ button.c-Button:disabled {
   .georiskconference .t-Content h6 {
     color: #00535e;
   }
-  .groutingconference .t-Content h1,
+  .groutingconference .t-Content h1:not(.c-Hero__Hn),
   .groutingconference .t-Content h2,
   .groutingconference .t-Content h3,
   .groutingconference .t-Content h4,
@@ -2386,7 +2379,7 @@ button.c-Button:disabled {
   .groutingconference .t-Content h6 {
     color: #00565b;
   }
-  .hmemconference .t-Content h1,
+  .hmemconference .t-Content h1:not(.c-Hero__Hn),
   .hmemconference .t-Content h2,
   .hmemconference .t-Content h3,
   .hmemconference .t-Content h4,
@@ -2394,7 +2387,7 @@ button.c-Button:disabled {
   .hmemconference .t-Content h6 {
     color: #3b421b;
   }
-  .icce2018 .t-Content h1,
+  .icce2018 .t-Content h1:not(.c-Hero__Hn),
   .icce2018 .t-Content h2,
   .icce2018 .t-Content h3,
   .icce2018 .t-Content h4,
@@ -2402,7 +2395,7 @@ button.c-Button:disabled {
   .icce2018 .t-Content h6 {
     color: #004990;
   }
-  .icsiconference .t-Content h1,
+  .icsiconference .t-Content h1:not(.c-Hero__Hn),
   .icsiconference .t-Content h2,
   .icsiconference .t-Content h3,
   .icsiconference .t-Content h4,
@@ -2410,7 +2403,7 @@ button.c-Button:disabled {
   .icsiconference .t-Content h6 {
     color: #0b2f69;
   }
-  .lidconference .t-Content h1,
+  .lidconference .t-Content h1:not(.c-Hero__Hn),
   .lidconference .t-Content h2,
   .lidconference .t-Content h3,
   .lidconference .t-Content h4,
@@ -2418,7 +2411,7 @@ button.c-Button:disabled {
   .lidconference .t-Content h6 {
     color: #354e71;
   }
-  .omswconference .t-Content h1,
+  .omswconference .t-Content h1:not(.c-Hero__Hn),
   .omswconference .t-Content h2,
   .omswconference .t-Content h3,
   .omswconference .t-Content h4,
@@ -2426,7 +2419,7 @@ button.c-Button:disabled {
   .omswconference .t-Content h6 {
     color: #355d6e;
   }
-  .pavementsconference .t-Content h1,
+  .pavementsconference .t-Content h1:not(.c-Hero__Hn),
   .pavementsconference .t-Content h2,
   .pavementsconference .t-Content h3,
   .pavementsconference .t-Content h4,
@@ -2434,7 +2427,7 @@ button.c-Button:disabled {
   .pavementsconference .t-Content h6 {
     color: #5e6167;
   }
-  .pipelinesconference .t-Content h1,
+  .pipelinesconference .t-Content h1:not(.c-Hero__Hn),
   .pipelinesconference .t-Content h2,
   .pipelinesconference .t-Content h3,
   .pipelinesconference .t-Content h4,
@@ -2442,7 +2435,7 @@ button.c-Button:disabled {
   .pipelinesconference .t-Content h6 {
     color: #013d4b;
   }
-  .structurescongress .t-Content h1,
+  .structurescongress .t-Content h1:not(.c-Hero__Hn),
   .structurescongress .t-Content h2,
   .structurescongress .t-Content h3,
   .structurescongress .t-Content h4,
@@ -2450,7 +2443,7 @@ button.c-Button:disabled {
   .structurescongress .t-Content h6 {
     color: #005a9c;
   }
-  .surveyingconference .t-Content h1,
+  .surveyingconference .t-Content h1:not(.c-Hero__Hn),
   .surveyingconference .t-Content h2,
   .surveyingconference .t-Content h3,
   .surveyingconference .t-Content h4,
@@ -2458,7 +2451,7 @@ button.c-Button:disabled {
   .surveyingconference .t-Content h6 {
     color: #547975;
   }
-  .unsatsoilsconf .t-Content h1,
+  .unsatsoilsconf .t-Content h1:not(.c-Hero__Hn),
   .unsatsoilsconf .t-Content h2,
   .unsatsoilsconf .t-Content h3,
   .unsatsoilsconf .t-Content h4,
@@ -2566,8 +2559,29 @@ button.c-Button:disabled {
     margin-right: 4.5rem;
   }
 }
+@media (-ms-high-contrast: none) and (min-width: 45em), (-ms-high-contrast: active) and (min-width: 45em) {
+  .o-SideCol {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+  }
+}
+@media (-ms-high-contrast: none) and (min-width: 60em), (-ms-high-contrast: active) and (min-width: 60em) {
+  .o-SideCol {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 35%;
+    flex: 0 0 35%;
+  }
+}
+@media (-ms-high-contrast: none) and (min-width: 90em), (-ms-high-contrast: active) and (min-width: 90em) {
+  .o-SideCol {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+  }
+}
 /*################################*\
-    legacy  |  _hack.other.less
+    legacy  |  _hack.shame.less
 \*################################*/
 body > footer > fieldset {
   margin: 0;
