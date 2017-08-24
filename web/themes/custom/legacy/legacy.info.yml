@@ -7,7 +7,6 @@ libraries:
   - legacy/global-styling
 regions:
   header: Header
-  hero: Hero
   content: Content
   sidebar: Sidebar
   supporters: Supporters

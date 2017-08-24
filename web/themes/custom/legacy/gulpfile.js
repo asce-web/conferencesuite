@@ -25,7 +25,7 @@ gulp.task('lessc:dev', function () {
     .pipe(gulp.dest('./css/'))
 })
 
-gulp.task('lessc:prod', function () {
+gulp.task('lessc:core', ['lessc:dev'], function () {
   return gulp.src([`${__dirname}/css/src/*.less`, `!${__dirname}/css/src/legacy.less`]) // ignore legacy.less
     .pipe(less())
     .pipe(autoprefixer({
@@ -40,4 +40,4 @@ gulp.task('lessc:prod', function () {
     .pipe(gulp.dest('./css/dist/'))
 })
 
-gulp.task('build', ['pug:test', 'lessc:dev', 'lessc:prod'])
+gulp.task('build', ['pug:test', 'lessc:core'])
