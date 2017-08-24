@@ -7,12 +7,13 @@
 // IE fixes go here. These styles should *only* be rendered on IE!
 // Using the -ms-high-contrast quirk: only IE supports -ms-high-contrast
 ///////////////////////////////////////////////////////////////////////////////
-@import (reference) url('__settings.conf-colors.less');
 
 
 // Table of Contents
 // # CUSTOM PROPERTY FALLBACKS
 //   ## Vertical rhythm unit
+//     ### xmeter
+//     ### bangs
 //     ### _dev.less
 //   ## Supporter logo sizes
 //   ## Site color schemes
@@ -47,14 +48,14 @@
     //********************************//
     //  ### bangs
     //********************************//
-    .-mt-1 {  margin-top   : 1 * @p-vru; } .-mb-1 {  margin-bottom: 1 * @p-vru; }
-    .-mt-2 {  margin-top   : 2 * @p-vru; } .-mb-2 {  margin-bottom: 2 * @p-vru; }
-    .-mv-1 {  margin-top   : 1 * @p-vru;             margin-bottom: 1 * @p-vru; }
-    .-mv-2 {  margin-top   : 2 * @p-vru;             margin-bottom: 2 * @p-vru; }
-    .-pt-1 { padding-top   : 1 * @p-vru; } .-pb-1 { padding-bottom: 1 * @p-vru; }
-    .-pt-2 { padding-top   : 2 * @p-vru; } .-pb-2 { padding-bottom: 2 * @p-vru; }
-    .-pv-1 { padding-top   : 1 * @p-vru;            padding-bottom: 1 * @p-vru; }
-    .-pv-2 { padding-top   : 2 * @p-vru;            padding-bottom: 2 * @p-vru; }
+    .-mt-1 {  margin-top: (1 * @p-vru); } .-mb-1 {  margin-bottom: (1 * @p-vru); }
+    .-mt-2 {  margin-top: (2 * @p-vru); } .-mb-2 {  margin-bottom: (2 * @p-vru); }
+    .-mv-1 {  margin-top: (1 * @p-vru);             margin-bottom: (1 * @p-vru); }
+    .-mv-2 {  margin-top: (2 * @p-vru);             margin-bottom: (2 * @p-vru); }
+    .-pt-1 { padding-top: (1 * @p-vru); } .-pb-1 { padding-bottom: (1 * @p-vru); }
+    .-pt-2 { padding-top: (2 * @p-vru); } .-pb-2 { padding-bottom: (2 * @p-vru); }
+    .-pv-1 { padding-top: (1 * @p-vru);            padding-bottom: (1 * @p-vru); }
+    .-pv-2 { padding-top: (2 * @p-vru);            padding-bottom: (2 * @p-vru); }
     //**** end ### bangs ****//
     //********************************//
     //  ### _dev.less
@@ -75,7 +76,7 @@
     padding: @p-vru 1rem;
   }
   .c-ConferenceTitles > * {
-    margin-bottom: 0.5 * @p-vru;
+    margin-bottom: (0.5 * @p-vru);
   }
   .c-SiteLogo--secondary {
     @media (max-width: 44.999em) {
@@ -107,22 +108,22 @@
     margin-bottom: @p-vru;
   }
   .c-Chair {
-    margin-bottom: 0.5 * @p-vru;
+    margin-bottom: (0.5 * @p-vru);
   }
   .c-SupporterBlock {
-    margin-bottom: 2 * @p-vru;
+    margin-bottom: (2 * @p-vru);
   }
   .c-SupporterBlock__List__Item {
     margin: 0 1rem @p-vru;
   }
   .c-DateBlock {
     @supports (display: grid) {
-      grid-row-gap: 0.5 * @p-vru;
+      grid-row-gap: (0.5 * @p-vru);
     }
   }
   .c-DateBlock__Date,
   .c-DateBlock__Desc {
-    margin-bottom: 0.5 * @p-vru;
+    margin-bottom: (0.5 * @p-vru);
     @supports (display: grid) {
       margin-bottom: 0; // undo fallback above (again)
     }
@@ -200,6 +201,8 @@
     //********************************//
     //  ### mixins
     //********************************//
+    @import (reference) url('__settings.conf-colors.less');
+    // REVIEW indentation
 .mx-bc-primary() {
   // in your project, use `background-color: var(--color-primary, @g-color-primary);`
   :root                & { background-color: @color-site-primary; }
@@ -425,6 +428,7 @@
   .unsatsoilsconf      & { border-top-color: @color-unsat-accent; }
 }
     //**** end ### mixins ****//
+  // REVIEW indentation
     .c-Banner--head {
       .mx-bc-primary();
     }
@@ -481,9 +485,12 @@
         margin-right: 4.5rem; // 0.5 maximum allowed --year-badge-width
       }
     }
-    .o-Flex--siteFoot {
-    }
     //**** end ### _dev.less ****//
+  .o-SideCol {
+    @media (min-width: 45em) { flex: 0 0 40%; }
+    @media (min-width: 60em) { flex: 0 0 35%; }
+    @media (min-width: 90em) { flex: 0 0 30%; }
+  }
   //---- end ## Other custom props ----//
 //++++ end # CUSTOM PROPERTY FALLBACKS ++++//
 

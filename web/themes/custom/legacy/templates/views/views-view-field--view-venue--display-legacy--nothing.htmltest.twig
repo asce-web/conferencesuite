@@ -19,11 +19,9 @@
  */
 #}
 {% if field_venue_image %}
-  <img class="h-Block -mb-1" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
+  <img class="h-Block" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
 {% endif %}
-{% if field_venue_label == 'On' %}
-  <h2 class="-fz-el-kilo" itemprop="description">{{ title }}</h2>
-{% endif %}
+<h1 class="-fz-el-kilo{% if field_venue_label == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ title }}</h1>
 <p>
   {% if field_venue_url %}<a href="{{ field_venue_url }}" itemprop="url">{% endif %}
   <b class="h-Clearfix" itemprop="name">{{ field_venue_name }}</b>
