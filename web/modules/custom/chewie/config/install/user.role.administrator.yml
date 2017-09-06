@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - chewie
-_core:
-  default_config_hash: Om6FEO7vZZMkPIbVvfxtdkWerQ2PvQM4sWUd6Q3ZnfI
 id: administrator
 label: Administrator
 weight: -6
