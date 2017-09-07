@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - chewie
+id: manager
+label: Manager
+weight: -7
+is_admin: null
