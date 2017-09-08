@@ -1,0 +1,29 @@
+
+/*################################*\
+    legacy  |  _hack.slick.less
+\*################################*/
+
+
+// Slick style overrides/additions here.
+///////////////////////////////////////////////////////////////////////////////
+
+.slick-slider {
+  padding: 0; // override base ol
+  @media screen and (min-width: 30em) {
+    margin: 0 2rem;
+  }
+  @media screen and (min-width: 45em) {
+    margin: 0 4rem;
+  }
+}
+
+.slick-slide {
+  a.h-Block {
+    height: var(--supporter-logo-height);
+    position: relative; // for absolute logo child
+  }
+  .c-SupporterBlock__Logo {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%); // HACK for centering the logo
+  }
+}

@@ -7,7 +7,7 @@ dependencies:
 id: manager
 label: Manager
 weight: -7
-is_admin: null
+is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
@@ -23,6 +23,7 @@ permissions:
   - 'create pagedefault content'
   - 'create supporter content'
   - 'create supporterlevel content'
+  - 'create url aliases'
   - 'create venue content'
   - 'delete any importantdate content'
   - 'delete any pagedefault content'

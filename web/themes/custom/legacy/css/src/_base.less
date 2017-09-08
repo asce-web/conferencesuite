@@ -2,6 +2,8 @@
 /*################################*\
     legacy  |  _base.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('__settings.less');
 
 
 // Table of Contents
@@ -25,6 +27,8 @@
 //    # GENERIC
 //++++++++++++++++++++++++++++++++//
 html {
+  --site-logo-size: 6rem;
+  --site-logo-space: 0;
   --year-badge-width: 10vw;
   --supporter-logo-lrg-width: 120px; --supporter-logo-lrg-height: 65px ;
   --supporter-logo-med-width: 90px ; --supporter-logo-med-height: 48px ;
@@ -35,6 +39,7 @@ html {
     --supporter-logo-sml-width: 140px; --supporter-logo-sml-height: 62px ;
   }
   @media screen and (min-width: 45em) {
+    --site-logo-space: 1rem;
     --side-col-size: 40%;
   }
   @media screen and (min-width: 60em) {
@@ -44,6 +49,7 @@ html {
     --supporter-logo-sml-width: 202px; --supporter-logo-sml-height: 90px ;
   }
   @media screen and (min-width: 75em) {
+    --site-logo-space: 2rem;
   }
   @media screen and (min-width: 90em) {
     --side-col-size: 30%;
@@ -51,6 +57,9 @@ html {
     // (1/10 * 90em) ≈≈ (10vw)
     // NOTE don’t use `em` because font-size is in terms of this variable
     --year-badge-width: 9rem;
+  }
+  @media screen and (min-width: 45em) and (max-width: 74.999em) {
+    --site-logo-size: 4rem;
   }
 }
 body {
@@ -63,11 +72,6 @@ body {
 //++++++++++++++++++++++++++++++++//
 //    # SECTIONS
 //++++++++++++++++++++++++++++++++//
-footer {
-  @media not all and (min-width: 45em) {
-    --site-logo-width: 0;
-  }
-}
 //++++ end # SECTIONS ++++//
 
 

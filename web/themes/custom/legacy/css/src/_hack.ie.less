@@ -1,6 +1,6 @@
 
 /*################################*\
-    legacy  |  _ie.less
+    legacy  |  _hack.ie.less
 \*################################*/
 
 
@@ -181,6 +181,15 @@
     }
     @media (min-width: 60em) {
       .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
+    }
+  }
+  .slick-slide a.h-Block {
+    height: @p-supporter-logo-sml-s-height;
+    @media (min-width: 30em) {
+      height: @p-supporter-logo-sml-sK-height;
+    }
+    @media (min-width: 60em) {
+      height: @p-supporter-logo-sml-sG-height;
     }
   }
   //---- end ## Supporter logo sizes ----//
@@ -454,8 +463,11 @@
     .c-DateBlock__MonthDay {
       .mx-c-secondary();
     }
+    .c-SupporterBlock__Label {
+      .mx-c-secondary();
+    }
     .t-Content {
-      h1, h2, h3, h4, h5, h6 {
+      h1:not(.c-Hero__Hn), h2, h3, h4, h5, h6 {
         .mx-c-primary();
       }
     }
@@ -474,6 +486,18 @@
       }
     }
     //**** end ### _dev.less ****//
+  .c-SiteLogo {
+    width: 6rem;
+    @media (min-width: 45em) and (max-width: 74.999em) {
+      width: 4rem;
+    }
+    @media (min-width: 45em) {
+      margin: 0 1rem;
+    }
+    @media (min-width: 75em) {
+      margin: 0 2rem;
+    }
+  }
   .o-SideCol {
     @media (min-width: 45em) { flex: 0 0 40%; }
     @media (min-width: 60em) { flex: 0 0 35%; }

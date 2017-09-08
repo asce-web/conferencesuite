@@ -2,6 +2,8 @@
 /*################################*\
     legacy  |  _c-Hero.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('__settings.less');
 
 
 // Big Hero region of the homepage.
@@ -32,8 +34,6 @@
 }
 .c-Hero__Hn {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
-  // text-transform: uppercase;
-  // color: inherit; // keeping here if `color` of `h1` is changed
   .font-size-el(1.125); // REVIEW magic number!!!
   @media screen and (min-width: 45em) {
     .font-size-el(1.375); // REVIEW magic number!!!

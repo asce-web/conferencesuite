@@ -2,6 +2,9 @@
 /*################################*\
     legacy  |  _c-SupporterBlock.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/src/__settings.less');
+@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('__settings.less');
 
 
 // A section containing one level of sponsor.
@@ -15,10 +18,11 @@
 // __List     - structural styles of list of logos
 //   __Item     - structural styles of list item with link and logo
 // __Logo     - <img> element of logo. cosmetic styles
+// __Label    - label for a logo’s sponsor level, in the carousel
 // ^author
 // : Chris Harvey
 // ^updated
-// 2017-07-19
+// 2017-08-16
 .c-SupporterBlock {
   // large logos by default
   --supporter-logo-width : var(--supporter-logo-lrg-width );
@@ -73,4 +77,10 @@
   &:not(:hover):not(:focus) {
     filter: grayscale(100%);
   }
+}
+
+.c-SupporterBlock__Label {
+  .font-size-el(@g-font-size-mill);
+  text-transform: uppercase;
+  color: var(--color-secondary, @g-color-secondary);
 }

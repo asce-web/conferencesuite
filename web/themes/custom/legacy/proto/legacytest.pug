@@ -140,7 +140,7 @@ html(lang="en")
           ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Cooperating Organizations
             li: a(href="") Volunteer
-    main#main: div.o-Constrain.o-Flex.-xd-c-nM.-mb-2
+    main#main.o-Constrain.o-Flex.-xd-c-nM.-mb-2
         div.o-Flex__Item.o-MainCol
           header.c-Hero
             img.c-Hero__Img(src=conference.image.hero alt="unsaturated soil—dry cracked earth")
@@ -154,7 +154,7 @@ html(lang="en")
                 Ultimately, #[cite Structures Congress 2014]
                 will #[a.c-LinkBanner(href) prepare you and your organization]
                 to tackle greater challenges.
-          section.t-Content
+          div.t-Content: article
             h2 Keynote Speakers
             ul.o-List
               li.o-Flex.c-KeynoteSpeaker
@@ -195,6 +195,24 @@ html(lang="en")
               li Networking with more than 1,200 colleagues
             p: a.c-Button(href="") View Program
         div.o-Flex__Item.o-SideCol.-pt-1.-ph-2
+            aside.c-Callout
+              h1.c-Callout__Hn Site Colors
+              p.-ta-c: button.c-Button(onclick="activateColorPickers()") Activate
+              ol.o-List.o-Flex
+                li.o-Flex__Item.-mr-h Primary  : #[input.js-picker.js-picker-primary(  type="color" value=conference.colors.primary  )]
+                li.o-Flex__Item.-mr-h Secondary: #[input.js-picker.js-picker-secondary(type="color" value=conference.colors.secondary)]
+                li.o-Flex__Item(    ) Accent   : #[input.js-picker.js-picker-accent(   type="color" value=conference.colors.accent   )]
+              p #[strong Note:] Color settings are not saved. Refresh the page to reset.
+              script.
+                function activateColorPickers() {
+                  $('button[onclick="activateColorPickers()"]').replaceWith(`<button class="c-Button" disabled="">Ready!</button>`)
+                  $('[data-menu-target="#locationlevel2"], #locationlevel2').toggleClass('active')
+                  $('input.js-picker').change(function () {
+                    document.querySelector('body').style.setProperty('--color-primary'  , $('input.js-picker-primary'  ).val())
+                    document.querySelector('body').style.setProperty('--color-secondary', $('input.js-picker-secondary').val())
+                    document.querySelector('body').style.setProperty('--color-accent'   , $('input.js-picker-accent'   ).val())
+                  })
+                }
             aside.c-Callout
               h1.c-Callout__Hn Location
               div.c-Callout__Body

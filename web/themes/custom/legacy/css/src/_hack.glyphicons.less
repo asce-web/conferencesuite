@@ -1,0 +1,19 @@
+
+/*################################*\
+    legacy  |  _hack.glyphicons.less
+\*################################*/
+
+
+// Glyphicons fixes go here.
+///////////////////////////////////////////////////////////////////////////////
+
+.glyphicons {
+  vertical-align: middle; // undo -va-t
+  line-height: 0; // fix vertical spacing
+  &::before {
+    padding: 0; // unset all padding on all icon characters. use margin/padding on icon itself if you need it.
+  }
+  &:not(.-fz-norm) {
+    font-size: 1.5em;
+  }
+}
