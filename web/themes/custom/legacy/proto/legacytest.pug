@@ -196,6 +196,24 @@ html(lang="en")
             p: a.c-Button(href="") View Program
         div.o-Flex__Item.o-SideCol.-pt-1.-ph-2
             aside.c-Callout
+              h1.c-Callout__Hn Site Colors
+              p.-ta-c: button.c-Button(onclick="activateColorPickers()") Activate
+              ol.o-List.o-Flex
+                li.o-Flex__Item.-mr-h Primary  : #[input.js-picker.js-picker-primary(  type="color" value=conference.colors.primary  )]
+                li.o-Flex__Item.-mr-h Secondary: #[input.js-picker.js-picker-secondary(type="color" value=conference.colors.secondary)]
+                li.o-Flex__Item(    ) Accent   : #[input.js-picker.js-picker-accent(   type="color" value=conference.colors.accent   )]
+              p #[strong Note:] Color settings are not saved. Refresh the page to reset.
+              script.
+                function activateColorPickers() {
+                  $('button[onclick="activateColorPickers()"]').replaceWith(`<button class="c-Button" disabled="">Ready!</button>`)
+                  $('[data-menu-target="#locationlevel2"], #locationlevel2').toggleClass('active')
+                  $('input.js-picker').change(function () {
+                    document.querySelector('body').style.setProperty('--color-primary'  , $('input.js-picker-primary'  ).val())
+                    document.querySelector('body').style.setProperty('--color-secondary', $('input.js-picker-secondary').val())
+                    document.querySelector('body').style.setProperty('--color-accent'   , $('input.js-picker-accent'   ).val())
+                  })
+                }
+            aside.c-Callout
               h1.c-Callout__Hn Location
               div.c-Callout__Body
                 section(itemprop="location" itemscope="" itemtype="https://schema.org/Accommodation")
