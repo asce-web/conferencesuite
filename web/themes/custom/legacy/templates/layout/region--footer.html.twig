@@ -14,13 +14,16 @@
 #}
 {{ attach_library('legacy/footerpanels') }}
 {% if content %}
-  <dl{{ attributes.addClass('o-Flex o-Tabs') }}>
-    <!--
-      NOTE: for accessibility, the order of blocks should be:
-      1. current year
-      2. previous year
-      3. next year
-    -->
-    {{ content }}
-  </dl>
+  <fieldset class="o-Tablist" role="tablist">
+    <legend class="h-Hidden">Footer Tabs</legend>
+    <dl{{ attributes.addClass('o-Flex') }}>
+      <!--
+        NOTE: for accessibility, the order of blocks should be:
+        1. current year
+        2. previous year
+        3. next year
+      -->
+      {{ content }}
+    </dl>
+  </fieldset>
 {% endif %}

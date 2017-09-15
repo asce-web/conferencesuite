@@ -1,35 +1,33 @@
-function resizeTabBlock() {
-  /*
-   * number of headings stacked vertically
-   * 480 == @media screen and (min-width: 30em)
+// NOTE: CHANGED:
+// This file is copied directly from xmeter@6.1.0.
+// No development work should be done on this file!
+// Submit a pull request to Xmeter instead:
+// <https://github.com/chharvey/xmeter/pulls>
+// Original file source:
+// <https://github.com/chharvey/xmeter/blob/master/js/o-Tablist.js>
+(function TablistObject ($) {
+  /**
+   * Update tab and panel accessibilty on input change.
    */
-  var n = ($(window).width() < 480) ? $('.o-Tabs__Tab').length : 1
-  $('.o-Tabs').height(function () {
-    var current_panel = $(this).find('.o-Tabs__Panel--shown')
-    var current_tab = current_panel.prev('.o-Tabs__Tab')
-    function totalHeight($jq) {
-      return $jq.height()
-        + parseInt($jq.css('padding-top'))
-        + parseInt($jq.css('margin-bottom'))
-    }
-    return totalHeight(current_panel) + (totalHeight(current_tab))
-  })
-}
-function updateTabs() {
-  $(this).parents('.o-Tabs').each(function () {
-    $(this).find('.o-Tabs__Tab').removeClass('o-Tabs__Tab--selected')
-    $(this).find('.o-Tabs__Panel').removeClass('o-Tabs__Panel--shown o-Tabs__Panel--hiddenBefore o-Tabs__Panel--hiddenAfter').removeAttr('aria-hidden')
-      .find('a').removeAttr('tabindex')
-  })
-  $(this).parents('.o-Tabs__Tab').each(function () {
-    $(this).addClass('o-Tabs__Tab--selected')
-      .next('.o-Tabs__Panel--js').addClass('o-Tabs__Panel--shown')
-    $(this).prevAll('.o-Tabs__Tab').next('.o-Tabs__Panel--js').addClass('o-Tabs__Panel--hiddenBefore').attr('aria-hidden', true).find('a').attr('tabindex', -1)
-    $(this).nextAll('.o-Tabs__Tab').next('.o-Tabs__Panel--js').addClass('o-Tabs__Panel--hiddenAfter ').attr('aria-hidden', true).find('a').attr('tabindex', -1)
-  })
-  resizeTabBlock()
-}
-$('.o-Tabs .o-Tabs__Panel').addClass('o-Tabs__Panel--js')
-$('.o-Tabs .o-Tabs__Check:checked').each(updateTabs)
-$('.o-Tabs .o-Tabs__Check').change(updateTabs)
-$(window).resize(resizeTabBlock)
+  function update() {
+    // set the `[aria-selected]` attribute and `.o-Tablist__Tab--js-selected` class
+    $(this).parents('.o-Tablist').find('.o-Tablist__Tab')
+      .removeClass('o-Tablist__Tab--js-selected')
+      .attr('aria-selected',false)
+    $(this).parents('.o-Tablist__Tab')
+      .addClass('o-Tablist__Tab--js-selected')
+      .attr('aria-selected',true)
+
+    // set the `[hidden]` attribute and `.o-Tablist__Panel--js-selected` class
+    $(this).parents('.o-Tablist').find('.o-Tablist__Panel')
+      .removeClass('o-Tablist__Panel--js-selected')
+      .attr('hidden','')
+    $(this).parents('.o-Tablist__Tab').next('.o-Tablist__Panel')
+      .addClass('o-Tablist__Panel--js-selected')
+      .removeAttr('hidden')
+  }
+
+
+  $('.o-Tablist__Check:checked').each(update)
+  $('.o-Tablist__Check').change(update)
+})(jQuery)
