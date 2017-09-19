@@ -6,12 +6,11 @@
     <a class="o-Flex__Item o-MobileBar__Item h-Block" href="/">
       <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
     </a>
-    <label class="o-Flex__Item o-MobileBar__Item c-Toggle h-Block">
-      <input class="c-Toggle__Check h-Hidden" type="checkbox" value="closed" role="switch" aria-checked="false"/>
+    <button class="o-Flex__Item o-MobileBar__Item c-Toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">
       <i class="c-Toggle__Viz glyphicons glyphicons-menu-hamburger">
         <span class="h-Hidden">toggle main menu</span>
       </i>
-    </label>
+    </button>
     <noscript><a href="#sitemap">Site Map</a></noscript>
     {{ page.menu_mobile }}
   </nav>
