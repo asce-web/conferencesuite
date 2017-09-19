@@ -25,16 +25,16 @@
  * @see template_preprocess_block()
  */
 #}
-<dt class="o-Flex__Item o-Tabs__Tab [ js-xo-_1 ]" id="tab-prev">
+<dt class="o-Flex__Item o-Tablist__Tab [ js-xo-_1 ]" id="tab-prev" role="tab">
   <label class="h-Block">
-    <input class="o-Tabs__Check h-Hidden" type="radio" name="footertabs" value="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"/>
+    <input class="o-Tablist__Check h-Hidden" type="radio" name="footertabs" value="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"/>
     <time class="c-YearBadge c-YearBadge--tab"
       datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"
       aria-label="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"
     >{{ (content.field_footerblock_legacy_start.0['#markup']|date('Y'))[2:] }}</time>
   </label>
 </dt>
-<dd class="o-Flex__Item o-Tabs__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-prev">
+<dd class="o-Flex__Item o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-prev" role="tabpanel">
   <div{{ attributes.addClass('o-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
@@ -52,14 +52,12 @@
       <div class="o-Flex__Item c-ConferenceTitles">
         <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
         <p class="c-ConferenceTitles__Detail">
-          {%- if content.field_footerblock_legacy_loc_ttl.0 -%}
-            <abbr title="{{ content.field_footerblock_legacy_loc_ttl.0 }}">
-          {%- endif %}
-          {{- content.field_footerblock_legacy_loc_dsp.0 }}
-          {%- if content.field_footerblock_legacy_loc_ttl.0 -%}
-            </abbr>
-          {%- endif %}
-          |
+          {% if content.field_footerblock_legacy_loc_ttl.0 %}
+            <abbr title="{{ content.field_footerblock_legacy_loc_ttl.0 }}">{{ content.field_footerblock_legacy_loc_dsp.0 }}</abbr>
+          {% else %}
+            <span>{{ content.field_footerblock_legacy_loc_dsp.0 }}</span>
+          {% endif %}
+          {{- ' | ' -}}
           <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}">
             {{- content.field_footerblock_legacy_start.0['#markup']|date('F j') -}}
             {%- if content.field_footerblock_legacy_start.0['#markup']|date('Y') != content.field_footerblock_legacy_end.0['#markup']|date('Y') %}
