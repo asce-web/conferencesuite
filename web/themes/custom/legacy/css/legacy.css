@@ -236,47 +236,41 @@ a:focus {
 /*################################*\
     legacy  |  _o-Tabs.less
 \*################################*/
-.o-Tabs {
-  position: relative;
-  margin-bottom: 0;
+.o-Tablist {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+.o-Tablist > .o-Flex {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  margin-bottom: 0;
 }
-.o-Tabs__Tab {
-  text-align: center;
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
-}
-.o-Tabs__Check {
+.o-Tablist__Check {
   position: absolute;
 }
-.o-Tabs__Panel {
+.o-Tablist__Panel {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
   -webkit-box-flex: 100%;
   -ms-flex: 100%;
   flex: 100%;
 }
-.o-Tabs__Panel--js {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+footer .o-Tablist > .o-Flex {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
-.o-Tabs__Panel--hiddenBefore,
-.o-Tabs__Panel--hiddenAfter {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+footer .o-Tablist__Tab {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
 }
 /*################################*\
     legacy  |  _o-Drawer.less
@@ -514,6 +508,9 @@ input:checked + .c-YearBadge--tab::after {
 .c-NavBar--main > :focus,
 .c-NavBar--main > .active {
   background-color: var(--color-accent, #714509);
+}
+.c-NavBar--main .glyphicons {
+  height: 0;
 }
 .c-NavBar--main .glyphicons-chevron-down {
   padding-left: 1ch;

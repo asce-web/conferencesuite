@@ -337,15 +337,15 @@ html(lang="en")
       , { name: 'EWRI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
       , { name: 'KU'      , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
-    footer: fieldset
-      dl.o-Flex.o-Tabs
+    footer: fieldset.o-Tablist(role="tablist")
+      dl.o-Flex
         //- NOTE: 'current' displayed first for accessibility
         mixin yearTab(year, conference_info, which)
-          dt.o-Flex__Item.o-Tabs__Tab(class={'js-xo-_1': which==='prev'} id=`tab-${which}`)
+          dt.o-Flex__Item.o-Tablist__Tab(class={'js-xo-_1': which==='prev'} id=`tab-${which}` role="tab")
             label.h-Block
-              input.o-Tabs__Check.h-Hidden(type="radio" name="footertabs" value=year)&attributes((which==='current') ? {checked:''} : {})
+              input.o-Tablist__Check.h-Hidden(type="radio" name="footertabs" value=year)&attributes((which==='current') ? {checked:''} : {})
               time.c-YearBadge.c-YearBadge--tab(datetime=year aria-label=year)= year.toString().slice(2)
-          dd.o-Flex__Item.o-Tabs__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}`): div.o-Constrain
+          dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.o-Constrain
             div.o-Flex.o-Flex--siteHead.-mv-2
               //- div.o-Flex__Item: span.c-YearBadge(role="none")= year.toString().slice(2)
               div.o-Flex__Item.c-SiteLogo
