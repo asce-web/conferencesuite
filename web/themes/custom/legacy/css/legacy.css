@@ -587,10 +587,13 @@ input:checked + .c-YearBadge--tab::after {
 /*################################*\
     legacy  |  _c-Toggle.less
 \*################################*/
-.c-Toggle__Check:focus {
-  position: absolute;
-}
-.c-Toggle__Viz {
+.c-Toggle {
+  background: transparent;
+  background: initial;
+  background: unset;
+  font-size: inherit;
+  font-size: unset;
+  border: 0;
   z-index: 3;
 }
 /*################################*\
