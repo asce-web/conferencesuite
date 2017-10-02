@@ -236,47 +236,41 @@ a:focus {
 /*################################*\
     legacy  |  _o-Tabs.less
 \*################################*/
-.o-Tabs {
-  position: relative;
-  margin-bottom: 0;
+.o-Tablist {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+.o-Tablist > .o-Flex {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  margin-bottom: 0;
 }
-.o-Tabs__Tab {
-  text-align: center;
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
-}
-.o-Tabs__Check {
+.o-Tablist__Check {
   position: absolute;
 }
-.o-Tabs__Panel {
+.o-Tablist__Panel {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
   -webkit-box-flex: 100%;
   -ms-flex: 100%;
   flex: 100%;
 }
-.o-Tabs__Panel--js {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+footer .o-Tablist > .o-Flex {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
-.o-Tabs__Panel--hiddenBefore,
-.o-Tabs__Panel--hiddenAfter {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+footer .o-Tablist__Tab {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
 }
 /*################################*\
     legacy  |  _o-Drawer.less
@@ -515,6 +509,9 @@ input:checked + .c-YearBadge--tab::after {
 .c-NavBar--main > .active {
   background-color: var(--color-accent, #714509);
 }
+.c-NavBar--main .glyphicons {
+  height: 0;
+}
 .c-NavBar--main .glyphicons-chevron-down {
   padding-left: 1ch;
 }
@@ -590,10 +587,13 @@ input:checked + .c-YearBadge--tab::after {
 /*################################*\
     legacy  |  _c-Toggle.less
 \*################################*/
-.c-Toggle__Check:focus {
-  position: absolute;
-}
-.c-Toggle__Viz {
+.c-Toggle {
+  background: transparent;
+  background: initial;
+  background: unset;
+  font-size: inherit;
+  font-size: unset;
+  border: 0;
   z-index: 3;
 }
 /*################################*\
@@ -1273,7 +1273,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Banner--head {
-    background-color: #354e71;
+    background-color: #426298;
   }
   .omswconference .c-Banner--head {
     background-color: #355d6e;
@@ -1360,7 +1360,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-Banner--nav {
-    background-color: #841f27;
+    background-color: #d8763d;
   }
   .omswconference .c-Banner--nav {
     background-color: #5b8424;
@@ -1447,7 +1447,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference .c-Banner--nav--sub {
-    background-color: #7d98ab;
+    background-color: #765c79;
   }
   .omswconference .c-Banner--nav--sub {
     background-color: #c0bba7;
@@ -1534,7 +1534,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-YearBadge--tab {
-    background-color: #841f27;
+    background-color: #d8763d;
   }
   .omswconference .c-YearBadge--tab {
     background-color: #5b8424;
@@ -1621,7 +1621,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference input:checked + .c-YearBadge--tab {
-    background-color: #7d98ab;
+    background-color: #765c79;
   }
   .omswconference input:checked + .c-YearBadge--tab {
     background-color: #c0bba7;
@@ -1708,7 +1708,7 @@ button.c-Button:disabled {
     border-top-color: #a3446d;
   }
   .lidconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #7d98ab;
+    border-top-color: #765c79;
   }
   .omswconference input:checked + .c-YearBadge--tab::after {
     border-top-color: #c0bba7;
@@ -1841,7 +1841,7 @@ button.c-Button:disabled {
   .lidconference .c-NavBar--main > *:hover,
   .lidconference .c-NavBar--main > *:focus,
   .lidconference .c-NavBar--main > *.active {
-    background-color: #7d98ab;
+    background-color: #765c79;
   }
   .omswconference .c-NavBar--main > *:hover,
   .omswconference .c-NavBar--main > *:focus,
@@ -1940,7 +1940,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-NavBar--mobile {
-    background-color: #841f27;
+    background-color: #d8763d;
   }
   .omswconference .c-NavBar--mobile {
     background-color: #5b8424;
@@ -2027,7 +2027,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Hero {
-    background-color: #354e71;
+    background-color: #426298;
   }
   .omswconference .c-Hero {
     background-color: #355d6e;
@@ -2114,7 +2114,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-DateBlock__MonthDay {
-    color: #841f27;
+    color: #d8763d;
   }
   .omswconference .c-DateBlock__MonthDay {
     color: #5b8424;
@@ -2201,7 +2201,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-SupporterBlock__Label {
-    color: #841f27;
+    color: #d8763d;
   }
   .omswconference .c-SupporterBlock__Label {
     color: #5b8424;
@@ -2403,7 +2403,7 @@ button.c-Button:disabled {
   .lidconference .t-Content h4,
   .lidconference .t-Content h5,
   .lidconference .t-Content h6 {
-    color: #354e71;
+    color: #426298;
   }
   .omswconference .t-Content h1:not(.c-Hero__Hn),
   .omswconference .t-Content h2,
