@@ -1239,6 +1239,9 @@ button.c-Button:disabled {
   .asceconvention2017 .c-Banner--head {
     background-color: #00737b;
   }
+  .asceconvention2018 .c-Banner--head {
+    background-color: #26487b;
+  }
   .ascestudentdays .c-Banner--head {
     background-color: #41434b;
   }
@@ -1325,6 +1328,9 @@ button.c-Button:disabled {
   }
   .asceconvention2017 .c-Banner--nav {
     background-color: #694890;
+  }
+  .asceconvention2018 .c-Banner--nav {
+    background-color: #8e191b;
   }
   .ascestudentdays .c-Banner--nav {
     background-color: #ffcf01;
@@ -1413,6 +1419,9 @@ button.c-Button:disabled {
   .asceconvention2017 .c-Banner--nav--sub {
     background-color: #8e75ac;
   }
+  .asceconvention2018 .c-Banner--nav--sub {
+    background-color: #b0914e;
+  }
   .ascestudentdays .c-Banner--nav--sub {
     background-color: #dac689;
   }
@@ -1499,6 +1508,9 @@ button.c-Button:disabled {
   }
   .asceconvention2017 .c-YearBadge--tab {
     background-color: #694890;
+  }
+  .asceconvention2018 .c-YearBadge--tab {
+    background-color: #8e191b;
   }
   .ascestudentdays .c-YearBadge--tab {
     background-color: #ffcf01;
@@ -1587,6 +1599,9 @@ button.c-Button:disabled {
   .asceconvention2017 input:checked + .c-YearBadge--tab {
     background-color: #8e75ac;
   }
+  .asceconvention2018 input:checked + .c-YearBadge--tab {
+    background-color: #b0914e;
+  }
   .ascestudentdays input:checked + .c-YearBadge--tab {
     background-color: #dac689;
   }
@@ -1637,93 +1652,6 @@ button.c-Button:disabled {
   }
   .unsatsoilsconf input:checked + .c-YearBadge--tab {
     background-color: #82b1ba;
-  }
-  :root input:checked + .c-YearBadge--tab::after {
-    border-top-color: #714509;
-  }
-  .sample-stage input:checked + .c-YearBadge--tab::after {
-    border-top-color: #bf7889;
-  }
-  .sample-dev input:checked + .c-YearBadge--tab::after {
-    border-top-color: #034087;
-  }
-  .sample-canary input:checked + .c-YearBadge--tab::after {
-    border-top-color: #948462;
-  }
-  .aei-conference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #aba9a0;
-  }
-  .aei-forum input:checked + .c-YearBadge--tab::after {
-    border-top-color: #aba9a0;
-  }
-  .aeisdc input:checked + .c-YearBadge--tab::after {
-    border-top-color: #797667;
-  }
-  .apmconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #1561a6;
-  }
-  .asce-cta input:checked + .c-YearBadge--tab::after {
-    border-top-color: #49a112;
-  }
-  .asce-ictd input:checked + .c-YearBadge--tab::after {
-    border-top-color: #605c06;
-  }
-  .asceconvention input:checked + .c-YearBadge--tab::after {
-    border-top-color: #01b7ff;
-  }
-  .asceconvention2017 input:checked + .c-YearBadge--tab::after {
-    border-top-color: #8e75ac;
-  }
-  .ascestudentdays input:checked + .c-YearBadge--tab::after {
-    border-top-color: #dac689;
-  }
-  .cisummit input:checked + .c-YearBadge--tab::after {
-    border-top-color: #aba9a0;
-  }
-  .etsconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #5a87d9;
-  }
-  .ewricongress input:checked + .c-YearBadge--tab::after {
-    border-top-color: #aecb6e;
-  }
-  .geesdconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #97a8b0;
-  }
-  .georiskconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #82b2ba;
-  }
-  .groutingconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #ff8038;
-  }
-  .hmemconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #a5904f;
-  }
-  .icce2018 input:checked + .c-YearBadge--tab::after {
-    border-top-color: #647cb2;
-  }
-  .icsiconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #a3446d;
-  }
-  .lidconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #765c79;
-  }
-  .omswconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #c0bba7;
-  }
-  .pavementsconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #e6af00;
-  }
-  .pipelinesconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #974800;
-  }
-  .structurescongress input:checked + .c-YearBadge--tab::after {
-    border-top-color: #b99a77;
-  }
-  .surveyingconference input:checked + .c-YearBadge--tab::after {
-    border-top-color: #729d98;
-  }
-  .unsatsoilsconf input:checked + .c-YearBadge--tab::after {
-    border-top-color: #82b1ba;
   }
   :root .c-NavBar--main > *:hover,
   :root .c-NavBar--main > *:focus,
@@ -1784,6 +1712,11 @@ button.c-Button:disabled {
   .asceconvention2017 .c-NavBar--main > *:focus,
   .asceconvention2017 .c-NavBar--main > *.active {
     background-color: #8e75ac;
+  }
+  .asceconvention2018 .c-NavBar--main > *:hover,
+  .asceconvention2018 .c-NavBar--main > *:focus,
+  .asceconvention2018 .c-NavBar--main > *.active {
+    background-color: #b0914e;
   }
   .ascestudentdays .c-NavBar--main > *:hover,
   .ascestudentdays .c-NavBar--main > *:focus,
@@ -1906,6 +1839,9 @@ button.c-Button:disabled {
   .asceconvention2017 .c-NavBar--mobile {
     background-color: #694890;
   }
+  .asceconvention2018 .c-NavBar--mobile {
+    background-color: #8e191b;
+  }
   .ascestudentdays .c-NavBar--mobile {
     background-color: #ffcf01;
   }
@@ -1992,6 +1928,9 @@ button.c-Button:disabled {
   }
   .asceconvention2017 .c-Hero {
     background-color: #00737b;
+  }
+  .asceconvention2018 .c-Hero {
+    background-color: #26487b;
   }
   .ascestudentdays .c-Hero {
     background-color: #41434b;
@@ -2080,6 +2019,9 @@ button.c-Button:disabled {
   .asceconvention2017 .c-DateBlock__MonthDay {
     color: #694890;
   }
+  .asceconvention2018 .c-DateBlock__MonthDay {
+    color: #8e191b;
+  }
   .ascestudentdays .c-DateBlock__MonthDay {
     color: #ffcf01;
   }
@@ -2166,6 +2108,9 @@ button.c-Button:disabled {
   }
   .asceconvention2017 .c-SupporterBlock__Label {
     color: #694890;
+  }
+  .asceconvention2018 .c-SupporterBlock__Label {
+    color: #8e191b;
   }
   .ascestudentdays .c-SupporterBlock__Label {
     color: #ffcf01;
@@ -2313,6 +2258,14 @@ button.c-Button:disabled {
   .asceconvention2017 .t-Content h5,
   .asceconvention2017 .t-Content h6 {
     color: #00737b;
+  }
+  .asceconvention2018 .t-Content h1:not(.c-Hero__Hn),
+  .asceconvention2018 .t-Content h2,
+  .asceconvention2018 .t-Content h3,
+  .asceconvention2018 .t-Content h4,
+  .asceconvention2018 .t-Content h5,
+  .asceconvention2018 .t-Content h6 {
+    color: #26487b;
   }
   .ascestudentdays .t-Content h1:not(.c-Hero__Hn),
   .ascestudentdays .t-Content h2,
