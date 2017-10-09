@@ -20,7 +20,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
-    "xmeter": "git://github.com/chharvey/xmeter.git#beta-v6"
+    "xmeter": "^6.0.0"
   },
   "dependencies": {}
 }
