@@ -5,13 +5,34 @@
 @import (reference) url('__settings.less');
 
 
-// The Content theme is used for editable content.
-// This is the main content of the page.
+// Content Theme
 //
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-04-04
+// The Content Theme wraps editable content,
+// where editors and managers use the
+// <abbr title="What You See Is What You Get">WYSIWYG</abbr>
+// editor to enter content.
+// Editable content is illustrated below, and is treated differently from
+// non-editable content (such as hard-coded content or Drupal Views).
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-10-09</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="t-Content">
+//   <h1>Heading 1</h1>
+//   <h2>Heading 2</h2>
+//   <h3>Heading 3</h3>
+//   <h4>Heading 4</h4>
+//   <h5>Heading 5</h5>
+//   <h6>Heading 6</h6>
+//   <p>Call for Abstracts due by <time datetime="2017-10-09">Monday, October 9, 2017</time>.</p>
+//   <p>Read the <a href="#0">submission guidelines</a> before submitting.</p>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Helpers.Content
 .t-Content {
   margin: 0 1rem;
   h1:not(.c-Hero__Hn), h2, h3, h4, h5, h6 {
