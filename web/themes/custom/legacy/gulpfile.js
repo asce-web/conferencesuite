@@ -1,9 +1,9 @@
-var gulp = require('gulp')
-var pug = require('gulp-pug')
-var less = require('gulp-less')
-var autoprefixer = require('gulp-autoprefixer')
-var clean_css = require('gulp-clean-css')
-var sourcemaps = require('gulp-sourcemaps')
+const kss          = require('kss')
+const gulp         = require('gulp')
+const pug          = require('gulp-pug')
+const less         = require('gulp-less')
+const autoprefixer = require('gulp-autoprefixer')
+const clean_css    = require('gulp-clean-css')
 
 gulp.task('pug:test', function () {
   return gulp.src(__dirname + '/proto/legacytest.pug')
@@ -13,6 +13,11 @@ gulp.task('pug:test', function () {
       }
     }))
     .pipe(gulp.dest('./proto/'))
+})
+
+// HOW-TO: https://github.com/kss-node/kss-node/issues/161#issuecomment-222292620
+gulp.task('docs:kss', function () {
+  return kss(require('./config-kss.json'))
 })
 
 gulp.task('lessc:dev', function () {
