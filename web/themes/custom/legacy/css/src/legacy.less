@@ -62,9 +62,33 @@
  */
 
 
+// Principles
+//
+// Parts of an overarching design theme.
+// - voice-and-tone, mood, and look-and-feel of the site
+// - typographical conventions & rhythm (typefaces, font sizes, and leading used throughout the site)
+// - additionally, any atypical writing modes / other languages required
+// - site-wide color scheme
+// - image treatment conventions (story-telling, image placement, quality, filters, etc)
+//
+// Weight: 1
+//
+// Styleguide Principles
+
 @import (less) url('_dev.less');
 @import (less) url('_base.less');
 
+// Objects
+//
+// Layout and structural design patterns that can be reused many times for many different purposes.
+// - layout display (grid/flexbox/multicol)
+// - positioning/floats/alignment
+// - sizing (width & height)
+// - spacing (padding & margin)
+//
+// Weight: 2
+//
+// Styleguide Objects
 
 @import (less) url('_o-Constrain.less');
 // Main column of the site.
@@ -80,6 +104,17 @@
 @import (less) url('_o-Tabs.less');
 @import (less) url('_o-Drawer.less');
 
+// Components
+//
+// Cosmetic design patterns that are each only used for one functional purpose.
+// - box effects (backgrounds, borders, opacity)
+// - typefaces and font weights/styles
+// - textual effects (letter-spacing, alignment, indentation, decoration, list-style, color)
+// - bells & whistles (transformations, overflows, shadows, filters, transitions, icons)
+//
+// Weight: 3
+//
+// Styleguide Components
 
 @import (less) url('_c-Banner.less');
 @import (less) url('_c-SiteLogo.less');
@@ -100,11 +135,33 @@
 @import (less) url('_c-DateBlock.less');
 @import (less) url('_c-Button.less');
 
+// Organisms
+//
+// Aggregate compositions of Objects and Components that form single, self-sustaining interfaces.
+//
+// Weight: 4
+//
+// Styleguide Organisms
+
+// Helpers & Themes
+//
+// Somewhat explicit classes used for enhancing default styles.
+//
+// Weight: 5
+//
+// Styleguide Helpers
 
 @import (less) url('_themes.less');
 @import (less) url('_t-Content.less');
 @import (less) url('_h-Spaced.less');
 
+// Atoms & Hacks
+//
+// Very specific classes used for creating anomalies or fixing broken styles.
+//
+// Weight: 6
+//
+// Styleguide Atoms
 
 @import (less) url('_hack.glyphicons.less');
 @import (less) url('_hack.slick.less');
