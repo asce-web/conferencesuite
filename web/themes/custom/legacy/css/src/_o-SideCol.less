@@ -4,13 +4,22 @@
 \*################################*/
 
 
+// Side Column
+//
 // Side column of the site.
 // Contains callouts and aside info.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-21</time></dd>
+// </dl></header>
 //
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-06-21
+// Markup:
+// <div class="o-SideCol">
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Objects.SideCol
 .o-SideCol {
   @media screen and (min-width: 45em) {
     flex: 0 0 var(--side-col-size);

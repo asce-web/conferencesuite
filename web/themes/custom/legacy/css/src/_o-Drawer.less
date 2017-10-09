@@ -5,19 +5,24 @@
 @import (reference) url('../../node_modules/xmeter/src/__tool.transitions.less');
 
 
+// The Drawer Object
+//
 // Drawer object slides out from a side on mobile devices.
 // Most commonly used for a menu.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-11</time></dd>
+// </dl></header>
 //
-// ^subclasses
-// --open - for when drawer is activated/shown
-// ^subcomponents
-// __Item - each item in the list
-// __Link - each link inside an __Item in the menu
-// __Link--current - link to the current convention (home) page
-// ^author
-// Chris Harvey
-// ^updated
-// 2017-06-11
+// Markup:
+// <div class="o-Drawer {{ modifier_class }}">
+// </div>
+//
+// .o-Drawer--open - for when drawer is activated/shown
+//
+// Weight: 5
+//
+// Styleguide Objects.Drawer
 .o-Drawer {
   .transitions(transform, opacity; 250ms);
   transition-timing-function: ease-in; // animation for *closing* drawer
@@ -36,3 +41,7 @@
     opacity: 1;
     transition-timing-function: ease-out; // animation for *opening* drawer
 }
+// ^subcomponents
+// __Item - each item in the list
+// __Link - each link inside an __Item in the menu
+// __Link--current - link to the current convention (home) page
