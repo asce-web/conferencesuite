@@ -217,6 +217,7 @@
   .asce-ictd           & { background-color: @color-ictd-primary; }
   .asceconvention      & { background-color: @color-convention-primary; }
   .asceconvention2017  & { background-color: @color-2017-primary; }
+  .asceconvention2018  & { background-color: @color-2018-primary; }
   .ascestudentdays     & { background-color: @color-cisd-primary; }
   .cisummit            & { background-color: @color-ci-primary; }
   .etsconference       & { background-color: @color-ets-primary; }
@@ -249,6 +250,7 @@
   .asce-ictd           & { background-color: @color-ictd-secondary; }
   .asceconvention      & { background-color: @color-convention-secondary; }
   .asceconvention2017  & { background-color: @color-2017-secondary; }
+  .asceconvention2018  & { background-color: @color-2018-secondary; }
   .ascestudentdays     & { background-color: @color-cisd-secondary; }
   .cisummit            & { background-color: @color-ci-secondary; }
   .etsconference       & { background-color: @color-ets-secondary; }
@@ -281,6 +283,7 @@
   .asce-ictd           & { background-color: @color-ictd-accent; }
   .asceconvention      & { background-color: @color-convention-accent; }
   .asceconvention2017  & { background-color: @color-2017-accent; }
+  .asceconvention2018  & { background-color: @color-2018-accent; }
   .ascestudentdays     & { background-color: @color-cisd-accent; }
   .cisummit            & { background-color: @color-ci-accent; }
   .etsconference       & { background-color: @color-ets-accent; }
@@ -313,6 +316,7 @@
   .asce-ictd           & { color: @color-ictd-primary; }
   .asceconvention      & { color: @color-convention-primary; }
   .asceconvention2017  & { color: @color-2017-primary; }
+  .asceconvention2018  & { color: @color-2018-primary; }
   .ascestudentdays     & { color: @color-cisd-primary; }
   .cisummit            & { color: @color-ci-primary; }
   .etsconference       & { color: @color-ets-primary; }
@@ -345,6 +349,7 @@
   .asce-ictd           & { color: @color-ictd-secondary; }
   .asceconvention      & { color: @color-convention-secondary; }
   .asceconvention2017  & { color: @color-2017-secondary; }
+  .asceconvention2018  & { color: @color-2018-secondary; }
   .ascestudentdays     & { color: @color-cisd-secondary; }
   .cisummit            & { color: @color-ci-secondary; }
   .etsconference       & { color: @color-ets-secondary; }
@@ -377,6 +382,7 @@
   .asce-ictd           & { color: @color-ictd-accent; }
   .asceconvention      & { color: @color-convention-accent; }
   .asceconvention2017  & { color: @color-2017-accent; }
+  .asceconvention2018  & { color: @color-2018-accent; }
   .ascestudentdays     & { color: @color-cisd-accent; }
   .cisummit            & { color: @color-ci-accent; }
   .etsconference       & { color: @color-ets-accent; }
@@ -395,38 +401,6 @@
   .surveyingconference & { color: @color-surv-accent; }
   .unsatsoilsconf      & { color: @color-unsat-accent; }
 }
-.mx-btc-accent() {
-  // in your project, use `border-top-color: var(--color-accent, @g-color-accent);`
-  :root                & { border-top-color: @color-site-accent; }
-  .sample-stage        & { border-top-color: @color-stage-accent; }
-  .sample-dev          & { border-top-color: @color-dev-accent; }
-  .sample-canary       & { border-top-color: @color-canary-accent; }
-  .aei-conference      & { border-top-color: @color-aei-accent; }
-  .aei-forum           & { border-top-color: @color-aeiforum-accent; }
-  .aeisdc              & { border-top-color: @color-aeisdc-accent; }
-  .apmconference       & { border-top-color: @color-apm-accent; }
-  .asce-cta            & { border-top-color: @color-cta-accent; }
-  .asce-ictd           & { border-top-color: @color-ictd-accent; }
-  .asceconvention      & { border-top-color: @color-convention-accent; }
-  .asceconvention2017  & { border-top-color: @color-2017-accent; }
-  .ascestudentdays     & { border-top-color: @color-cisd-accent; }
-  .cisummit            & { border-top-color: @color-ci-accent; }
-  .etsconference       & { border-top-color: @color-ets-accent; }
-  .ewricongress        & { border-top-color: @color-ewri-accent; }
-  .geesdconference     & { border-top-color: @color-geesd-accent; }
-  .georiskconference   & { border-top-color: @color-georisk-accent; }
-  .groutingconference  & { border-top-color: @color-grout-accent; }
-  .hmemconference      & { border-top-color: @color-hmem-accent; }
-  .icce2018            & { border-top-color: @color-icce-accent; }
-  .icsiconference      & { border-top-color: @color-icsi-accent; }
-  .lidconference       & { border-top-color: @color-lid-accent; }
-  .omswconference      & { border-top-color: @color-omsw-accent; }
-  .pavementsconference & { border-top-color: @color-pave-accent; }
-  .pipelinesconference & { border-top-color: @color-pl-accent; }
-  .structurescongress  & { border-top-color: @color-struct-accent; }
-  .surveyingconference & { border-top-color: @color-surv-accent; }
-  .unsatsoilsconf      & { border-top-color: @color-unsat-accent; }
-}
     //**** end ### mixins ****//
   // REVIEW indentation
     .c-Banner--head {
@@ -442,9 +416,6 @@
       .mx-bc-secondary();
       input:checked + & {
         .mx-bc-accent();
-        &::after {
-          .mx-btc-accent();
-        }
       }
     }
     .c-NavBar--main > * {

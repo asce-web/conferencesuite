@@ -3,7 +3,7 @@ global-styling:
     js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.0.0-beta/xmeter.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/xmeter/v6.0.0/xmeter.css: {type: external, minified: true}
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
