@@ -5,16 +5,21 @@
 @import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
 
 
-// Typographical styles for conference titles.
+// Conference Titles
 //
-// ^subcomponents
-// __Name    - Name of conference in header/footer
-// __Detail  - Location & dates line in header/footer
-// __Tagline - Site Slogan (NOT the Conference Theme) in header/footer
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-04-13
+// Typographical styles for conference titles.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-13</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.ConferenceTitles
 .c-ConferenceTitles {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
   text-align: center;

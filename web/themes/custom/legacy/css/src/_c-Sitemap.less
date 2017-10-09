@@ -5,15 +5,23 @@
 @import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
 
 
-// Navigation in footer.
+// The Site Map
 //
-// ^subcomponents
-// __Item - an item at the top-most level in the sitemap
-// __Sub  - list to subpages
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-06-12
+// Footer navigation.
+// Shown on desktop so users don’t have to scroll to top nav.
+// Also shown on mobile as a fallback for the Javascript mobile menu.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-12</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// Weight: 11
+//
+// Styleguide Components.Sitemap
 .c-Sitemap {
   font-weight: 600;
   text-transform: uppercase;

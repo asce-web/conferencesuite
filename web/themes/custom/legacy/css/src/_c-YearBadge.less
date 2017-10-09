@@ -5,16 +5,24 @@
 @import (reference) url('__settings.less');
 
 
+// The Year Badge
+//
 // The YearBadge component represents the shield-like icon
 // in the header and footer.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-16</time></dd>
+// </dl></header>
 //
-// ^subclasses
-// --tab - badge used to select and indicate year in the footer
-// ^author
-// : Dae Clarke
-// : Chris Harvey
-// ^updated
-// : 2017-06-16
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// .c-YearBadge--tab - badge used to select and indicate year in the footer
+//
+// Weight: 5
+//
+// Styleguide Components.YearBadge
 
 // overwritten below if var() is supported
 .c-YearBadge {

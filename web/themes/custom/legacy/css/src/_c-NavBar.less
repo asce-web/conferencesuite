@@ -6,22 +6,31 @@
 @import (reference) url('__settings.less');
 
 
-// Any navigation bar.
+// The Navigation Bar
 //
-// ^subclasses
-// : --main         - A main navigation component containing
-//                    the main directories: program, location, about, and contact.
-// : --register     - A side navigation component containing call-to-actions:
-//                    why attend, registration, etc.
-// : --contrib      - The navigation component on the top of the page containing
-//                    information for people: for speakers, sponsors, exhibitors, etc.
-// : --sub          - Secondary-level navigation component containing subpages
-//                    of the main directories
-// : --mobile       - Mobile Menu
-// ^author
-// : Chris Harvey
-// ^updated
-// 2017-07-24
+// Typographical styles for conference titles.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-07-24</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// .c-NavBar--main     - A main navigation component containing
+//                       the main directories: program, location, about, and contact.
+// .c-NavBar--register - A side navigation component containing call-to-actions:
+//                       why attend, registration, etc.
+// .c-NavBar--contrib  - The navigation component on the top of the page containing
+//                       information for people: for speakers, sponsors, exhibitors, etc.
+// .c-NavBar--sub      - Secondary-level navigation component containing subpages
+//                       of the main directories
+// .c-NavBar--mobile   - Mobile Menu
+//
+// Weight: 6
+//
+// Styleguide Components.NavBar
 /*ul*/.c-NavBar {
   margin-bottom: 0; // override base ul
   .font-size-mod(12/16);
