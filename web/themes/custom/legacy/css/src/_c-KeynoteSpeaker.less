@@ -9,7 +9,7 @@
 // A keynote speaker promoted on the front page.
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-06-11</time></dd>
+//   <dt>updated</dt> <dd><time>2017-10-10</time></dd>
 // </dl></header>
 //
 // Markup:
@@ -50,12 +50,15 @@
 }
 
 .c-KeynoteSpeaker__Session {
+  justify-content: center;
 }
 
 .c-KeynoteSpeaker__Headshot {
   flex: (100% * 1/5);
-  margin-left:  1rem;
-  margin-right: 1rem;
+  margin-left:  1rem; margin-right: 1rem;
+  margin-inline: 1rem; // CHANGED not widely supported
+  border-radius: 50%;
+  overflow: hidden; // if image is not cropped correctly
   & > img {
     width: 100%;
   }
