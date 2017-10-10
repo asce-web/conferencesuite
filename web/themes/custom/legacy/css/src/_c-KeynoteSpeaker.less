@@ -41,6 +41,9 @@
 .c-KeynoteSpeaker {
   align-items: center;
   margin-bottom: var(--vru);
+  @media not all and (min-width: 30em) {
+    flex-direction: column;
+  }
 }
 
 
@@ -51,6 +54,10 @@
 
 .c-KeynoteSpeaker__Session {
   justify-content: center;
+  @media not all and (min-width: 30em) {
+    margin-top: var(--vru); margin-bottom: var(--vru);
+    margin-block: var(--vru); // CHANGED not widely supported
+  }
 }
 
 .c-KeynoteSpeaker__Headshot {
@@ -59,10 +66,16 @@
   margin-inline: 1rem; // CHANGED not widely supported
   border-radius: 50%;
   overflow: hidden; // if image is not cropped correctly
+  @media not all and (min-width: 30em) {
+    order: -1;
+  }
   & > img {
     width: 100%;
   }
 }
 
 .c-KeynoteSpeaker__Details {
+  @media not all and (min-width: 30em) {
+    text-align: center;
+  }
 }
