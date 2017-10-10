@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _c-Chair.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
 
 
@@ -25,10 +26,9 @@
 }
 
 .c-Chair__Name {
-  .font-size-el(20/16); // REVIEW magic number
+  .font-size-el(@g-font-size-kilo);
 }
 
 .c-Chair__Affiliation {
-  .font-size-el(12/16); // REVIEW magic number
   font-style: italic;
 }
