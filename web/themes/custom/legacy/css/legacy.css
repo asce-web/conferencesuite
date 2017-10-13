@@ -1273,7 +1273,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Banner--head {
-    background-color: #426298;
+    background-color: #39629d;
   }
   .omswconference .c-Banner--head {
     background-color: #355d6e;
@@ -1363,7 +1363,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-Banner--nav {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-Banner--nav {
     background-color: #5b8424;
@@ -1453,7 +1453,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference .c-Banner--nav--sub {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference .c-Banner--nav--sub {
     background-color: #c0bba7;
@@ -1543,7 +1543,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-YearBadge--tab {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-YearBadge--tab {
     background-color: #5b8424;
@@ -1633,7 +1633,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference input:checked + .c-YearBadge--tab {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference input:checked + .c-YearBadge--tab {
     background-color: #c0bba7;
@@ -1771,7 +1771,7 @@ button.c-Button:disabled {
   .lidconference .c-NavBar--main > *:hover,
   .lidconference .c-NavBar--main > *:focus,
   .lidconference .c-NavBar--main > *.active {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference .c-NavBar--main > *:hover,
   .omswconference .c-NavBar--main > *:focus,
@@ -1873,7 +1873,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-NavBar--mobile {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-NavBar--mobile {
     background-color: #5b8424;
@@ -1963,7 +1963,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Hero {
-    background-color: #426298;
+    background-color: #39629d;
   }
   .omswconference .c-Hero {
     background-color: #355d6e;
@@ -2053,7 +2053,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-DateBlock__MonthDay {
-    color: #d8763d;
+    color: #5592e9;
   }
   .omswconference .c-DateBlock__MonthDay {
     color: #5b8424;
@@ -2143,7 +2143,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-SupporterBlock__Label {
-    color: #d8763d;
+    color: #5592e9;
   }
   .omswconference .c-SupporterBlock__Label {
     color: #5b8424;
@@ -2353,7 +2353,7 @@ button.c-Button:disabled {
   .lidconference .t-Content h4,
   .lidconference .t-Content h5,
   .lidconference .t-Content h6 {
-    color: #426298;
+    color: #39629d;
   }
   .omswconference .t-Content h1:not(.c-Hero__Hn),
   .omswconference .t-Content h2,
