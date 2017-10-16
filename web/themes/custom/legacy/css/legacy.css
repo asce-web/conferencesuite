@@ -15,11 +15,11 @@
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
  * Constrain...........................keeps content at max width
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
  * MobileBar...........................top bar on mobile devices
- * Tabs................................tabbed panel interface
  * Drawer..............................pull-out container
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
@@ -194,6 +194,22 @@ a:focus {
   color: #19a1cf;
 }
 /*################################*\
+    legacy  |  _o-Tablist--footertabs.less
+\*################################*/
+.o-Tablist--footertabs {
+  margin-bottom: 0;
+}
+.o-Tablist--footertabs > .o-Flex {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.o-Tablist--footertabs .o-Tablist__Tab {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+}
+/*################################*\
     legacy  |  _o-Constrain.less
 \*################################*/
 .o-Constrain {
@@ -232,45 +248,6 @@ a:focus {
 }
 .o-MobileBar__Item .glyphicons {
   line-height: inherit;
-}
-/*################################*\
-    legacy  |  _o-Tabs.less
-\*################################*/
-.o-Tablist {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  -webkit-margin-before: 0;
-  margin-block-start: 0;
-  margin-inline: 0;
-  padding: 0;
-  border: 0;
-}
-.o-Tablist > .o-Flex {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-}
-.o-Tablist__Check {
-  position: absolute;
-}
-.o-Tablist__Panel {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-  -webkit-box-flex: 100%;
-  -ms-flex: 100%;
-  flex: 100%;
-}
-footer .o-Tablist > .o-Flex {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-footer .o-Tablist__Tab {
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
 }
 /*################################*\
     legacy  |  _o-Drawer.less
@@ -1053,6 +1030,9 @@ button.c-Button:disabled {
     legacy  |  _hack.ie.less
 \*################################*/
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  html {
+    line-height: 1.5rem;
+  }
   h1,
   h2,
   h3,
@@ -2545,10 +2525,7 @@ button.c-Button:disabled {
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
-body > footer > fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
+.o-Tablist {
   display: contents;
   width: 100%;
 }
