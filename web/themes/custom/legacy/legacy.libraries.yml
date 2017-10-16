@@ -81,7 +81,7 @@ footerpanels:
   version: VERSION
   css:
     layout:
-      css/dist/_o-Tabs.css: {minified:true}
+      css/dist/_o-Tablist--footertabs.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
       css/dist/_c-SiteLogo.css: {minified:true}
@@ -91,7 +91,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    js/o-Tabs.js: {minified: false}
+    //cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:
