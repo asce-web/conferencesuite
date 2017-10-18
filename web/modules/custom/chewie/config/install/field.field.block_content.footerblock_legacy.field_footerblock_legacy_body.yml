@@ -6,9 +6,6 @@ dependencies:
     - field.storage.block_content.field_footerblock_legacy_body
   module:
     - text
-  enforced:
-    module:
-      - chewie
 id: block_content.footerblock_legacy.field_footerblock_legacy_body
 field_name: field_footerblock_legacy_body
 entity_type: block_content

@@ -5,9 +5,6 @@ dependencies:
     - block_content
     - file
     - image
-  enforced:
-    module:
-      - chewie
 id: block_content.field_heroblock_legacy_image
 field_name: field_heroblock_legacy_image
 entity_type: block_content

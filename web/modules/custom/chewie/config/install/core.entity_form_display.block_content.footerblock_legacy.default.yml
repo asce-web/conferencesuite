@@ -13,9 +13,6 @@ dependencies:
   module:
     - datetime
     - text
-  enforced:
-    module:
-      - chewie
 id: block_content.footerblock_legacy.default
 targetEntityType: block_content
 bundle: footerblock_legacy

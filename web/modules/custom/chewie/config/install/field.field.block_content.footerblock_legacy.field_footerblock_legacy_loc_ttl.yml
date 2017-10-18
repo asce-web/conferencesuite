@@ -4,9 +4,6 @@ dependencies:
   config:
     - block_content.type.footerblock_legacy
     - field.storage.block_content.field_footerblock_legacy_loc_ttl
-  enforced:
-    module:
-      - chewie
 id: block_content.footerblock_legacy.field_footerblock_legacy_loc_ttl
 field_name: field_footerblock_legacy_loc_ttl
 entity_type: block_content

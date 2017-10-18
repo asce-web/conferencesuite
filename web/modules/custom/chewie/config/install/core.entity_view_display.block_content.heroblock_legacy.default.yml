@@ -8,9 +8,6 @@ dependencies:
   module:
     - image
     - text
-  enforced:
-    module:
-      - chewie
 id: block_content.heroblock_legacy.default
 targetEntityType: block_content
 bundle: heroblock_legacy

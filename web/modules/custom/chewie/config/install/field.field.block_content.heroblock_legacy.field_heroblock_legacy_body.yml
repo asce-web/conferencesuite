@@ -6,9 +6,6 @@ dependencies:
     - field.storage.block_content.field_heroblock_legacy_body
   module:
     - text
-  enforced:
-    module:
-      - chewie
 id: block_content.heroblock_legacy.field_heroblock_legacy_body
 field_name: field_heroblock_legacy_body
 entity_type: block_content

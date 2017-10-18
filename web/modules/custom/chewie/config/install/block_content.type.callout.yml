@@ -1,9 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  enforced:
-    module:
-      - chewie
+dependencies: { }
 id: callout
 label: Callout
 revision: 1

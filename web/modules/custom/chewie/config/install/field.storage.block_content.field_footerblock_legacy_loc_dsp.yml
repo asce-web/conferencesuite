@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - block_content
-  enforced:
-    module:
-      - chewie
 id: block_content.field_footerblock_legacy_loc_dsp
 field_name: field_footerblock_legacy_loc_dsp
 entity_type: block_content
