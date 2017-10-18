@@ -5,9 +5,6 @@ dependencies:
     - file
     - image
     - node
-  enforced:
-    module:
-      - chewie
 id: node.field_venue_image
 field_name: field_venue_image
 entity_type: node

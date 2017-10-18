@@ -6,9 +6,6 @@ dependencies:
     - node.type.venue
   module:
     - link
-  enforced:
-    module:
-      - chewie
 id: node.venue.field_venue_cta
 field_name: field_venue_cta
 entity_type: node

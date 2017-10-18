@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    module:
-      - chewie
 id: queue_sponsorspage
 label: 'Sponsors Page'
 handler: simple

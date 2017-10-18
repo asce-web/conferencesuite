@@ -5,9 +5,6 @@ dependencies:
     - field.storage.node.field_supporter_level
     - node.type.supporter
     - node.type.supporterlevel
-  enforced:
-    module:
-      - chewie
 id: node.supporter.field_supporter_level
 field_name: field_supporter_level
 entity_type: node

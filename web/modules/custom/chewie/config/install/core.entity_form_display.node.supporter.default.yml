@@ -13,9 +13,6 @@ dependencies:
     - image
     - link
     - text
-  enforced:
-    module:
-      - chewie
 id: node.supporter.default
 targetEntityType: node
 bundle: supporter

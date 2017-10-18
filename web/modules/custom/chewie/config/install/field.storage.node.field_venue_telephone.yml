@@ -4,9 +4,6 @@ dependencies:
   module:
     - node
     - telephone
-  enforced:
-    module:
-      - chewie
 id: node.field_venue_telephone
 field_name: field_venue_telephone
 entity_type: node

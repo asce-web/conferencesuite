@@ -9,9 +9,6 @@ dependencies:
     - datetime
     - node
     - user
-  enforced:
-    module:
-      - chewie
 id: view_importantdate
 label: 'Important Date'
 module: views

@@ -6,9 +6,6 @@ dependencies:
     - node.type.importantdate
   module:
     - datetime
-  enforced:
-    module:
-      - chewie
 id: node.importantdate.field_importantdate_enddate
 field_name: field_importantdate_enddate
 entity_type: node
