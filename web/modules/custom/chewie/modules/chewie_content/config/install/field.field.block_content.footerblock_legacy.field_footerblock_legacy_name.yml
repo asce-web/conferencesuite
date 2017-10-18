@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footerblock_legacy
+    - field.storage.block_content.field_footerblock_legacy_name
+id: block_content.footerblock_legacy.field_footerblock_legacy_name
+field_name: field_footerblock_legacy_name
+entity_type: block_content
+bundle: footerblock_legacy
+label: 'Conference Name'
+description: 'Name of the conference, displayed in the header/footer.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Civil Engineering Congress 2017'
+default_value_callback: ''
+settings: {  }
+field_type: string

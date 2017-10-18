@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.callout
+    - field.field.block_content.callout.field_callout_body
+  module:
+    - text
+id: block_content.callout.default
+targetEntityType: block_content
+bundle: callout
+mode: default
+content:
+  field_callout_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

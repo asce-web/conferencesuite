@@ -1,0 +1,8 @@
+bundle: chewie
+excluded:
+  - block.block.legacy_content
+  - core.entity_view_mode.menu_link_content.token
+  - core.entity_view_mode.block_content.token
+  - core.entity_form_display.node.supporter.default
+  - core.entity_form_display.node.venue.default
+required: true
