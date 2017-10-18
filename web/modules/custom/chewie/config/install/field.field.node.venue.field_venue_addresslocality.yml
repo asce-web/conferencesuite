@@ -4,9 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_venue_addresslocality
     - node.type.venue
-  enforced:
-    module:
-      - chewie
 id: node.venue.field_venue_addresslocality
 field_name: field_venue_addresslocality
 entity_type: node

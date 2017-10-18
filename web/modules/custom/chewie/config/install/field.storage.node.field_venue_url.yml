@@ -4,9 +4,6 @@ dependencies:
   module:
     - link
     - node
-  enforced:
-    module:
-      - chewie
 id: node.field_venue_url
 field_name: field_venue_url
 entity_type: node

@@ -21,9 +21,6 @@ dependencies:
     - node
     - text
     - user
-  enforced:
-    module:
-      - chewie
 id: view_venue
 label: Venue
 module: views

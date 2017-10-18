@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    module:
-      - chewie
 id: node.field_venue_postalcode
 field_name: field_venue_postalcode
 entity_type: node

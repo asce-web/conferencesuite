@@ -22,9 +22,6 @@ dependencies:
     - telephone
     - text
     - user
-  enforced:
-    module:
-      - chewie
 id: node.venue.default
 targetEntityType: node
 bundle: venue
