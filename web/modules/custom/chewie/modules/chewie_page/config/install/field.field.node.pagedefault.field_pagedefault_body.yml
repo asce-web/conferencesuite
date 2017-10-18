@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pagedefault_body
+    - node.type.pagedefault
+  module:
+    - text
+id: node.pagedefault.field_pagedefault_body
+field_name: field_pagedefault_body
+entity_type: node
+bundle: pagedefault
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
