@@ -7,9 +7,6 @@ dependencies:
   module:
     - text
     - user
-  enforced:
-    module:
-      - chewie
 id: node.pagedefault.default
 targetEntityType: node
 bundle: pagedefault

@@ -4,9 +4,6 @@ dependencies:
   module:
     - node
     - text
-  enforced:
-    module:
-      - chewie
 id: node.field_pagedefault_body
 field_name: field_pagedefault_body
 entity_type: node
