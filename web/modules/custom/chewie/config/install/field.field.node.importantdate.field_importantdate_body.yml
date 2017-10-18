@@ -6,9 +6,6 @@ dependencies:
     - node.type.importantdate
   module:
     - text
-  enforced:
-    module:
-      - chewie
 id: node.importantdate.field_importantdate_body
 field_name: field_importantdate_body
 entity_type: node
