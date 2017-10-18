@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    module:
-      - chewie
 id: node.field_supporter_level
 field_name: field_supporter_level
 entity_type: node

@@ -6,9 +6,6 @@ dependencies:
     - node.type.supporter
   module:
     - link
-  enforced:
-    module:
-      - chewie
 id: node.supporter.field_supporter_url
 field_name: field_supporter_url
 entity_type: node
