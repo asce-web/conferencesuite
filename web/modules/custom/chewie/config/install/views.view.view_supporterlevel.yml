@@ -14,9 +14,6 @@ dependencies:
     - link
     - node
     - user
-  enforced:
-    module:
-      - chewie
 id: view_supporterlevel
 label: 'Supporter Level'
 module: views

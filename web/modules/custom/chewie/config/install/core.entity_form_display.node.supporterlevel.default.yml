@@ -5,9 +5,6 @@ dependencies:
     - field.field.node.supporterlevel.field_supporterlevel_body
     - field.field.node.supporterlevel.field_supporterlevel_logosize
     - node.type.supporterlevel
-  enforced:
-    module:
-      - chewie
   module:
     - text
 id: node.supporterlevel.default

@@ -4,9 +4,6 @@ dependencies:
   module:
     - node
     - options
-  enforced:
-    module:
-      - chewie
 id: node.field_supporterlevel_logosize
 field_name: field_supporterlevel_logosize
 entity_type: node
