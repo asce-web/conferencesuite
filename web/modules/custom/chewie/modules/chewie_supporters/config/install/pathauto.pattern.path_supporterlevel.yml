@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: path_supporterlevel
+label: 'Supporter Level'
+type: 'canonical_entities:node'
+pattern: 'supporter-level/[node:title]'
+selection_criteria:
+  44fca908-24be-457b-8ade-491e7b3f2486:
+    id: node_type
+    bundles:
+      supporterlevel: supporterlevel
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 44fca908-24be-457b-8ade-491e7b3f2486
+selection_logic: and
+weight: -5
+relationships: {  }

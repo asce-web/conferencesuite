@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.supporter.field_supporter_body
+    - field.field.node.supporter.field_supporter_displayname
+    - field.field.node.supporter.field_supporter_level
+    - field.field.node.supporter.field_supporter_logo
+    - field.field.node.supporter.field_supporter_url
+    - image.style.thumbnail
+    - node.type.supporter
+  module:
+    - image
+    - link
+    - text
+id: node.supporter.default
+targetEntityType: node
+bundle: supporter
+mode: default
+content:
+  field_supporter_body:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_supporter_displayname:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_supporter_level:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_supporter_logo:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_supporter_url:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
