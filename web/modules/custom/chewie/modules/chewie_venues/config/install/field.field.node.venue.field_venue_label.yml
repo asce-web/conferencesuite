@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_venue_label
+    - node.type.venue
+id: node.venue.field_venue_label
+field_name: field_venue_label
+entity_type: node
+bundle: venue
+label: Label
+description: 'Check to display this venue’s Title as a heading on the site.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
