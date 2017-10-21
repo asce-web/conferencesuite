@@ -15,11 +15,11 @@
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
  * Constrain...........................keeps content at max width
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
  * MobileBar...........................top bar on mobile devices
- * Tabs................................tabbed panel interface
  * Drawer..............................pull-out container
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
@@ -194,6 +194,22 @@ a:focus {
   color: #19a1cf;
 }
 /*################################*\
+    legacy  |  _o-Tablist--footertabs.less
+\*################################*/
+.o-Tablist--footertabs {
+  margin-bottom: 0;
+}
+.o-Tablist--footertabs > .o-Flex {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.o-Tablist--footertabs .o-Tablist__Tab {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+}
+/*################################*\
     legacy  |  _o-Constrain.less
 \*################################*/
 .o-Constrain {
@@ -232,45 +248,6 @@ a:focus {
 }
 .o-MobileBar__Item .glyphicons {
   line-height: inherit;
-}
-/*################################*\
-    legacy  |  _o-Tabs.less
-\*################################*/
-.o-Tablist {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  -webkit-margin-before: 0;
-  margin-block-start: 0;
-  margin-inline: 0;
-  padding: 0;
-  border: 0;
-}
-.o-Tablist > .o-Flex {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-}
-.o-Tablist__Check {
-  position: absolute;
-}
-.o-Tablist__Panel {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-  -webkit-box-flex: 100%;
-  -ms-flex: 100%;
-  flex: 100%;
-}
-footer .o-Tablist > .o-Flex {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-footer .o-Tablist__Tab {
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
 }
 /*################################*\
     legacy  |  _o-Drawer.less
@@ -980,10 +957,7 @@ button.c-Button:disabled {
 /*################################*\
     legacy  |  _h-Spaced.less
 \*################################*/
-.t-Content {
-  margin: 0 1rem;
-}
-.t-Content h1:not(.c-Hero__Hn),
+.t-Content h1,
 .t-Content h2,
 .t-Content h3,
 .t-Content h4,
@@ -1056,6 +1030,9 @@ button.c-Button:disabled {
     legacy  |  _hack.ie.less
 \*################################*/
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  html {
+    line-height: 1.5rem;
+  }
   h1,
   h2,
   h3,
@@ -1218,6 +1195,9 @@ button.c-Button:disabled {
   .sample-canary .c-Banner--head {
     background-color: #58c2d6;
   }
+  .sample-training .c-Banner--head {
+    background-color: #714509;
+  }
   .aei-conference .c-Banner--head {
     background-color: #00548e;
   }
@@ -1260,6 +1240,9 @@ button.c-Button:disabled {
   .geesdconference .c-Banner--head {
     background-color: #004e58;
   }
+  .geocongress .c-Banner--head {
+    background-color: #004e58;
+  }
   .georiskconference .c-Banner--head {
     background-color: #00535e;
   }
@@ -1276,7 +1259,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Banner--head {
-    background-color: #426298;
+    background-color: #39629d;
   }
   .omswconference .c-Banner--head {
     background-color: #355d6e;
@@ -1307,6 +1290,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-Banner--nav {
     background-color: #560877;
+  }
+  .sample-training .c-Banner--nav {
+    background-color: #6a9556;
   }
   .aei-conference .c-Banner--nav {
     background-color: #7f7f73;
@@ -1350,6 +1336,9 @@ button.c-Button:disabled {
   .geesdconference .c-Banner--nav {
     background-color: #985f35;
   }
+  .geocongress .c-Banner--nav {
+    background-color: #066f5e;
+  }
   .georiskconference .c-Banner--nav {
     background-color: #6e6259;
   }
@@ -1366,7 +1355,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-Banner--nav {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-Banner--nav {
     background-color: #5b8424;
@@ -1397,6 +1386,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-Banner--nav--sub {
     background-color: #948462;
+  }
+  .sample-training .c-Banner--nav--sub {
+    background-color: #6fc2c4;
   }
   .aei-conference .c-Banner--nav--sub {
     background-color: #aba9a0;
@@ -1440,6 +1432,9 @@ button.c-Button:disabled {
   .geesdconference .c-Banner--nav--sub {
     background-color: #97a8b0;
   }
+  .geocongress .c-Banner--nav--sub {
+    background-color: #985f35;
+  }
   .georiskconference .c-Banner--nav--sub {
     background-color: #82b2ba;
   }
@@ -1456,7 +1451,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference .c-Banner--nav--sub {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference .c-Banner--nav--sub {
     background-color: #c0bba7;
@@ -1487,6 +1482,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-YearBadge--tab {
     background-color: #560877;
+  }
+  .sample-training .c-YearBadge--tab {
+    background-color: #6a9556;
   }
   .aei-conference .c-YearBadge--tab {
     background-color: #7f7f73;
@@ -1530,6 +1528,9 @@ button.c-Button:disabled {
   .geesdconference .c-YearBadge--tab {
     background-color: #985f35;
   }
+  .geocongress .c-YearBadge--tab {
+    background-color: #066f5e;
+  }
   .georiskconference .c-YearBadge--tab {
     background-color: #6e6259;
   }
@@ -1546,7 +1547,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-YearBadge--tab {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-YearBadge--tab {
     background-color: #5b8424;
@@ -1577,6 +1578,9 @@ button.c-Button:disabled {
   }
   .sample-canary input:checked + .c-YearBadge--tab {
     background-color: #948462;
+  }
+  .sample-training input:checked + .c-YearBadge--tab {
+    background-color: #6fc2c4;
   }
   .aei-conference input:checked + .c-YearBadge--tab {
     background-color: #aba9a0;
@@ -1620,6 +1624,9 @@ button.c-Button:disabled {
   .geesdconference input:checked + .c-YearBadge--tab {
     background-color: #97a8b0;
   }
+  .geocongress input:checked + .c-YearBadge--tab {
+    background-color: #985f35;
+  }
   .georiskconference input:checked + .c-YearBadge--tab {
     background-color: #82b2ba;
   }
@@ -1636,7 +1643,7 @@ button.c-Button:disabled {
     background-color: #a3446d;
   }
   .lidconference input:checked + .c-YearBadge--tab {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference input:checked + .c-YearBadge--tab {
     background-color: #c0bba7;
@@ -1675,6 +1682,11 @@ button.c-Button:disabled {
   .sample-canary .c-NavBar--main > *:focus,
   .sample-canary .c-NavBar--main > *.active {
     background-color: #948462;
+  }
+  .sample-training .c-NavBar--main > *:hover,
+  .sample-training .c-NavBar--main > *:focus,
+  .sample-training .c-NavBar--main > *.active {
+    background-color: #6fc2c4;
   }
   .aei-conference .c-NavBar--main > *:hover,
   .aei-conference .c-NavBar--main > *:focus,
@@ -1746,6 +1758,11 @@ button.c-Button:disabled {
   .geesdconference .c-NavBar--main > *.active {
     background-color: #97a8b0;
   }
+  .geocongress .c-NavBar--main > *:hover,
+  .geocongress .c-NavBar--main > *:focus,
+  .geocongress .c-NavBar--main > *.active {
+    background-color: #985f35;
+  }
   .georiskconference .c-NavBar--main > *:hover,
   .georiskconference .c-NavBar--main > *:focus,
   .georiskconference .c-NavBar--main > *.active {
@@ -1774,7 +1791,7 @@ button.c-Button:disabled {
   .lidconference .c-NavBar--main > *:hover,
   .lidconference .c-NavBar--main > *:focus,
   .lidconference .c-NavBar--main > *.active {
-    background-color: #765c79;
+    background-color: #e8702a;
   }
   .omswconference .c-NavBar--main > *:hover,
   .omswconference .c-NavBar--main > *:focus,
@@ -1818,6 +1835,9 @@ button.c-Button:disabled {
   .sample-canary .c-NavBar--mobile {
     background-color: #560877;
   }
+  .sample-training .c-NavBar--mobile {
+    background-color: #6a9556;
+  }
   .aei-conference .c-NavBar--mobile {
     background-color: #7f7f73;
   }
@@ -1860,6 +1880,9 @@ button.c-Button:disabled {
   .geesdconference .c-NavBar--mobile {
     background-color: #985f35;
   }
+  .geocongress .c-NavBar--mobile {
+    background-color: #066f5e;
+  }
   .georiskconference .c-NavBar--mobile {
     background-color: #6e6259;
   }
@@ -1876,7 +1899,7 @@ button.c-Button:disabled {
     background-color: #a6044d;
   }
   .lidconference .c-NavBar--mobile {
-    background-color: #d8763d;
+    background-color: #5592e9;
   }
   .omswconference .c-NavBar--mobile {
     background-color: #5b8424;
@@ -1907,6 +1930,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-Hero {
     background-color: #58c2d6;
+  }
+  .sample-training .c-Hero {
+    background-color: #714509;
   }
   .aei-conference .c-Hero {
     background-color: #00548e;
@@ -1950,6 +1976,9 @@ button.c-Button:disabled {
   .geesdconference .c-Hero {
     background-color: #004e58;
   }
+  .geocongress .c-Hero {
+    background-color: #004e58;
+  }
   .georiskconference .c-Hero {
     background-color: #00535e;
   }
@@ -1966,7 +1995,7 @@ button.c-Button:disabled {
     background-color: #0b2f69;
   }
   .lidconference .c-Hero {
-    background-color: #426298;
+    background-color: #39629d;
   }
   .omswconference .c-Hero {
     background-color: #355d6e;
@@ -1997,6 +2026,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-DateBlock__MonthDay {
     color: #560877;
+  }
+  .sample-training .c-DateBlock__MonthDay {
+    color: #6a9556;
   }
   .aei-conference .c-DateBlock__MonthDay {
     color: #7f7f73;
@@ -2040,6 +2072,9 @@ button.c-Button:disabled {
   .geesdconference .c-DateBlock__MonthDay {
     color: #985f35;
   }
+  .geocongress .c-DateBlock__MonthDay {
+    color: #066f5e;
+  }
   .georiskconference .c-DateBlock__MonthDay {
     color: #6e6259;
   }
@@ -2056,7 +2091,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-DateBlock__MonthDay {
-    color: #d8763d;
+    color: #5592e9;
   }
   .omswconference .c-DateBlock__MonthDay {
     color: #5b8424;
@@ -2087,6 +2122,9 @@ button.c-Button:disabled {
   }
   .sample-canary .c-SupporterBlock__Label {
     color: #560877;
+  }
+  .sample-training .c-SupporterBlock__Label {
+    color: #6a9556;
   }
   .aei-conference .c-SupporterBlock__Label {
     color: #7f7f73;
@@ -2130,6 +2168,9 @@ button.c-Button:disabled {
   .geesdconference .c-SupporterBlock__Label {
     color: #985f35;
   }
+  .geocongress .c-SupporterBlock__Label {
+    color: #066f5e;
+  }
   .georiskconference .c-SupporterBlock__Label {
     color: #6e6259;
   }
@@ -2146,7 +2187,7 @@ button.c-Button:disabled {
     color: #a6044d;
   }
   .lidconference .c-SupporterBlock__Label {
-    color: #d8763d;
+    color: #5592e9;
   }
   .omswconference .c-SupporterBlock__Label {
     color: #5b8424;
@@ -2166,7 +2207,7 @@ button.c-Button:disabled {
   .unsatsoilsconf .c-SupporterBlock__Label {
     color: #b80007;
   }
-  :root .t-Content h1:not(.c-Hero__Hn),
+  :root .t-Content h1,
   :root .t-Content h2,
   :root .t-Content h3,
   :root .t-Content h4,
@@ -2174,7 +2215,7 @@ button.c-Button:disabled {
   :root .t-Content h6 {
     color: #6a9556;
   }
-  .sample-stage .t-Content h1:not(.c-Hero__Hn),
+  .sample-stage .t-Content h1,
   .sample-stage .t-Content h2,
   .sample-stage .t-Content h3,
   .sample-stage .t-Content h4,
@@ -2182,7 +2223,7 @@ button.c-Button:disabled {
   .sample-stage .t-Content h6 {
     color: #c9bb58;
   }
-  .sample-dev .t-Content h1:not(.c-Hero__Hn),
+  .sample-dev .t-Content h1,
   .sample-dev .t-Content h2,
   .sample-dev .t-Content h3,
   .sample-dev .t-Content h4,
@@ -2190,7 +2231,7 @@ button.c-Button:disabled {
   .sample-dev .t-Content h6 {
     color: #d64153;
   }
-  .sample-canary .t-Content h1:not(.c-Hero__Hn),
+  .sample-canary .t-Content h1,
   .sample-canary .t-Content h2,
   .sample-canary .t-Content h3,
   .sample-canary .t-Content h4,
@@ -2198,7 +2239,15 @@ button.c-Button:disabled {
   .sample-canary .t-Content h6 {
     color: #58c2d6;
   }
-  .aei-conference .t-Content h1:not(.c-Hero__Hn),
+  .sample-training .t-Content h1,
+  .sample-training .t-Content h2,
+  .sample-training .t-Content h3,
+  .sample-training .t-Content h4,
+  .sample-training .t-Content h5,
+  .sample-training .t-Content h6 {
+    color: #714509;
+  }
+  .aei-conference .t-Content h1,
   .aei-conference .t-Content h2,
   .aei-conference .t-Content h3,
   .aei-conference .t-Content h4,
@@ -2206,7 +2255,7 @@ button.c-Button:disabled {
   .aei-conference .t-Content h6 {
     color: #00548e;
   }
-  .aei-forum .t-Content h1:not(.c-Hero__Hn),
+  .aei-forum .t-Content h1,
   .aei-forum .t-Content h2,
   .aei-forum .t-Content h3,
   .aei-forum .t-Content h4,
@@ -2214,7 +2263,7 @@ button.c-Button:disabled {
   .aei-forum .t-Content h6 {
     color: #7f7f73;
   }
-  .aeisdc .t-Content h1:not(.c-Hero__Hn),
+  .aeisdc .t-Content h1,
   .aeisdc .t-Content h2,
   .aeisdc .t-Content h3,
   .aeisdc .t-Content h4,
@@ -2222,7 +2271,7 @@ button.c-Button:disabled {
   .aeisdc .t-Content h6 {
     color: #00163e;
   }
-  .apmconference .t-Content h1:not(.c-Hero__Hn),
+  .apmconference .t-Content h1,
   .apmconference .t-Content h2,
   .apmconference .t-Content h3,
   .apmconference .t-Content h4,
@@ -2230,7 +2279,7 @@ button.c-Button:disabled {
   .apmconference .t-Content h6 {
     color: #e37f1c;
   }
-  .asce-cta .t-Content h1:not(.c-Hero__Hn),
+  .asce-cta .t-Content h1,
   .asce-cta .t-Content h2,
   .asce-cta .t-Content h3,
   .asce-cta .t-Content h4,
@@ -2238,7 +2287,7 @@ button.c-Button:disabled {
   .asce-cta .t-Content h6 {
     color: #0033a0;
   }
-  .asce-ictd .t-Content h1:not(.c-Hero__Hn),
+  .asce-ictd .t-Content h1,
   .asce-ictd .t-Content h2,
   .asce-ictd .t-Content h3,
   .asce-ictd .t-Content h4,
@@ -2246,7 +2295,7 @@ button.c-Button:disabled {
   .asce-ictd .t-Content h6 {
     color: #1a355e;
   }
-  .asceconvention .t-Content h1:not(.c-Hero__Hn),
+  .asceconvention .t-Content h1,
   .asceconvention .t-Content h2,
   .asceconvention .t-Content h3,
   .asceconvention .t-Content h4,
@@ -2254,7 +2303,7 @@ button.c-Button:disabled {
   .asceconvention .t-Content h6 {
     color: #3fae2a;
   }
-  .asceconvention2017 .t-Content h1:not(.c-Hero__Hn),
+  .asceconvention2017 .t-Content h1,
   .asceconvention2017 .t-Content h2,
   .asceconvention2017 .t-Content h3,
   .asceconvention2017 .t-Content h4,
@@ -2262,7 +2311,7 @@ button.c-Button:disabled {
   .asceconvention2017 .t-Content h6 {
     color: #00737b;
   }
-  .asceconvention2018 .t-Content h1:not(.c-Hero__Hn),
+  .asceconvention2018 .t-Content h1,
   .asceconvention2018 .t-Content h2,
   .asceconvention2018 .t-Content h3,
   .asceconvention2018 .t-Content h4,
@@ -2270,7 +2319,7 @@ button.c-Button:disabled {
   .asceconvention2018 .t-Content h6 {
     color: #26487b;
   }
-  .ascestudentdays .t-Content h1:not(.c-Hero__Hn),
+  .ascestudentdays .t-Content h1,
   .ascestudentdays .t-Content h2,
   .ascestudentdays .t-Content h3,
   .ascestudentdays .t-Content h4,
@@ -2278,7 +2327,7 @@ button.c-Button:disabled {
   .ascestudentdays .t-Content h6 {
     color: #41434b;
   }
-  .cisummit .t-Content h1:not(.c-Hero__Hn),
+  .cisummit .t-Content h1,
   .cisummit .t-Content h2,
   .cisummit .t-Content h3,
   .cisummit .t-Content h4,
@@ -2286,7 +2335,7 @@ button.c-Button:disabled {
   .cisummit .t-Content h6 {
     color: #d06f1a;
   }
-  .etsconference .t-Content h1:not(.c-Hero__Hn),
+  .etsconference .t-Content h1,
   .etsconference .t-Content h2,
   .etsconference .t-Content h3,
   .etsconference .t-Content h4,
@@ -2294,7 +2343,7 @@ button.c-Button:disabled {
   .etsconference .t-Content h6 {
     color: #002c73;
   }
-  .ewricongress .t-Content h1:not(.c-Hero__Hn),
+  .ewricongress .t-Content h1,
   .ewricongress .t-Content h2,
   .ewricongress .t-Content h3,
   .ewricongress .t-Content h4,
@@ -2302,7 +2351,7 @@ button.c-Button:disabled {
   .ewricongress .t-Content h6 {
     color: #3d2758;
   }
-  .geesdconference .t-Content h1:not(.c-Hero__Hn),
+  .geesdconference .t-Content h1,
   .geesdconference .t-Content h2,
   .geesdconference .t-Content h3,
   .geesdconference .t-Content h4,
@@ -2310,7 +2359,15 @@ button.c-Button:disabled {
   .geesdconference .t-Content h6 {
     color: #004e58;
   }
-  .georiskconference .t-Content h1:not(.c-Hero__Hn),
+  .geocongress .t-Content h1,
+  .geocongress .t-Content h2,
+  .geocongress .t-Content h3,
+  .geocongress .t-Content h4,
+  .geocongress .t-Content h5,
+  .geocongress .t-Content h6 {
+    color: #004e58;
+  }
+  .georiskconference .t-Content h1,
   .georiskconference .t-Content h2,
   .georiskconference .t-Content h3,
   .georiskconference .t-Content h4,
@@ -2318,7 +2375,7 @@ button.c-Button:disabled {
   .georiskconference .t-Content h6 {
     color: #00535e;
   }
-  .groutingconference .t-Content h1:not(.c-Hero__Hn),
+  .groutingconference .t-Content h1,
   .groutingconference .t-Content h2,
   .groutingconference .t-Content h3,
   .groutingconference .t-Content h4,
@@ -2326,7 +2383,7 @@ button.c-Button:disabled {
   .groutingconference .t-Content h6 {
     color: #00565b;
   }
-  .hmemconference .t-Content h1:not(.c-Hero__Hn),
+  .hmemconference .t-Content h1,
   .hmemconference .t-Content h2,
   .hmemconference .t-Content h3,
   .hmemconference .t-Content h4,
@@ -2334,7 +2391,7 @@ button.c-Button:disabled {
   .hmemconference .t-Content h6 {
     color: #3b421b;
   }
-  .icce2018 .t-Content h1:not(.c-Hero__Hn),
+  .icce2018 .t-Content h1,
   .icce2018 .t-Content h2,
   .icce2018 .t-Content h3,
   .icce2018 .t-Content h4,
@@ -2342,7 +2399,7 @@ button.c-Button:disabled {
   .icce2018 .t-Content h6 {
     color: #004990;
   }
-  .icsiconference .t-Content h1:not(.c-Hero__Hn),
+  .icsiconference .t-Content h1,
   .icsiconference .t-Content h2,
   .icsiconference .t-Content h3,
   .icsiconference .t-Content h4,
@@ -2350,15 +2407,15 @@ button.c-Button:disabled {
   .icsiconference .t-Content h6 {
     color: #0b2f69;
   }
-  .lidconference .t-Content h1:not(.c-Hero__Hn),
+  .lidconference .t-Content h1,
   .lidconference .t-Content h2,
   .lidconference .t-Content h3,
   .lidconference .t-Content h4,
   .lidconference .t-Content h5,
   .lidconference .t-Content h6 {
-    color: #426298;
+    color: #39629d;
   }
-  .omswconference .t-Content h1:not(.c-Hero__Hn),
+  .omswconference .t-Content h1,
   .omswconference .t-Content h2,
   .omswconference .t-Content h3,
   .omswconference .t-Content h4,
@@ -2366,7 +2423,7 @@ button.c-Button:disabled {
   .omswconference .t-Content h6 {
     color: #355d6e;
   }
-  .pavementsconference .t-Content h1:not(.c-Hero__Hn),
+  .pavementsconference .t-Content h1,
   .pavementsconference .t-Content h2,
   .pavementsconference .t-Content h3,
   .pavementsconference .t-Content h4,
@@ -2374,7 +2431,7 @@ button.c-Button:disabled {
   .pavementsconference .t-Content h6 {
     color: #5e6167;
   }
-  .pipelinesconference .t-Content h1:not(.c-Hero__Hn),
+  .pipelinesconference .t-Content h1,
   .pipelinesconference .t-Content h2,
   .pipelinesconference .t-Content h3,
   .pipelinesconference .t-Content h4,
@@ -2382,7 +2439,7 @@ button.c-Button:disabled {
   .pipelinesconference .t-Content h6 {
     color: #013d4b;
   }
-  .structurescongress .t-Content h1:not(.c-Hero__Hn),
+  .structurescongress .t-Content h1,
   .structurescongress .t-Content h2,
   .structurescongress .t-Content h3,
   .structurescongress .t-Content h4,
@@ -2390,7 +2447,7 @@ button.c-Button:disabled {
   .structurescongress .t-Content h6 {
     color: #005a9c;
   }
-  .surveyingconference .t-Content h1:not(.c-Hero__Hn),
+  .surveyingconference .t-Content h1,
   .surveyingconference .t-Content h2,
   .surveyingconference .t-Content h3,
   .surveyingconference .t-Content h4,
@@ -2398,7 +2455,7 @@ button.c-Button:disabled {
   .surveyingconference .t-Content h6 {
     color: #547975;
   }
-  .unsatsoilsconf .t-Content h1:not(.c-Hero__Hn),
+  .unsatsoilsconf .t-Content h1,
   .unsatsoilsconf .t-Content h2,
   .unsatsoilsconf .t-Content h3,
   .unsatsoilsconf .t-Content h4,
@@ -2548,10 +2605,7 @@ button.c-Button:disabled {
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
-body > footer > fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
+.o-Tablist {
   display: contents;
   width: 100%;
 }
