@@ -19,11 +19,11 @@
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
  * Constrain...........................keeps content at max width
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
  * MobileBar...........................top bar on mobile devices
- * Tabs................................tabbed panel interface
  * Drawer..............................pull-out container
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
@@ -66,6 +66,7 @@
 @import (less) url('_base.less');
 
 
+@import (less) url('_o-Tablist--footertabs.less');
 @import (less) url('_o-Constrain.less');
 // Main column of the site.
 // Contains super relevant info.
@@ -77,7 +78,6 @@
 .o-MainCol {}
 @import (less) url('_o-SideCol.less');
 @import (less) url('_o-MobileBar.less');
-@import (less) url('_o-Tabs.less');
 @import (less) url('_o-Drawer.less');
 
 
