@@ -29,7 +29,6 @@
  * TopImg..............................top banner image containing
  * YearBadge...........................badge at top indicating year
  * NavBar..............................any navigation bar
- * Toggle..............................toggle button for Drawer Object
  * AsceLogo............................company logo in copyright line
  * Callout.............................aside section, in sidebar
  * FooterPanel.........................panel in tabbed footer
@@ -252,7 +251,7 @@ a:focus {
 /*################################*\
     legacy  |  _o-Drawer.less
 \*################################*/
-.o-Drawer {
+.o-Drawer__Bar {
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
@@ -275,12 +274,21 @@ a:focus {
   opacity: 0;
   overflow: auto;
 }
-.o-Drawer--open {
+.o-Drawer__Bar--js-open {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   opacity: 1;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
+}
+.o-Drawer__Button {
+  background: transparent;
+  background: initial;
+  background: unset;
+  font-size: inherit;
+  font-size: unset;
+  border: 0;
+  z-index: 3;
 }
 /*################################*\
     legacy  |  _c-Banner.less
@@ -560,18 +568,6 @@ input:checked + .c-YearBadge--tab::after {
 }
 .c-NavBar--mobile a {
   padding: 0.25em;
-}
-/*################################*\
-    legacy  |  _c-Toggle.less
-\*################################*/
-.c-Toggle {
-  background: transparent;
-  background: initial;
-  background: unset;
-  font-size: inherit;
-  font-size: unset;
-  border: 0;
-  z-index: 3;
 }
 /*################################*\
     legacy  |  _c-AsceLogo.less
@@ -1024,6 +1020,37 @@ button.c-Button:disabled {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+@supports ((display: -ms-grid) or (display: grid)) {
+  /*li*/
+  .slick-slide a.h-Block {
+    position: initial;
+    position: unset;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+  .slick-slide .c-SupporterBlock__Logo {
+    position: static;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    transform: none;
+    position: initial;
+    top: initial;
+    left: initial;
+    -webkit-transform: initial;
+    transform: initial;
+    position: unset;
+    top: unset;
+    left: unset;
+    -webkit-transform: unset;
+    transform: unset;
+  }
 }
 /*################################*\
     legacy  |  _hack.drupal.less
