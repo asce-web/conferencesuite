@@ -6,13 +6,13 @@
     <a class="o-Flex__Item o-MobileBar__Item h-Block" href="/">
       <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
     </a>
-    <button class="o-Flex__Item o-MobileBar__Item c-Toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">
+    <button class="o-Flex__Item o-MobileBar__Item c-Toggle" type="button" aria-controls="mobile-drawer">
       <i class="c-Toggle__Viz glyphicons glyphicons-menu-hamburger">
         <span class="h-Hidden">toggle main menu</span>
       </i>
     </button>
     <noscript><a href="#sitemap">Site Map</a></noscript>
-    {{ page.menu_mobile }}
+    <div id="mobile-drawer" class="o-Drawer" aria-expanded="false" aria-hidden="true">{{ page.menu_mobile }}</div>
   </nav>
   <div class="c-Banner c-Banner--head">
     <div class="o-Flex o-Constrain">
