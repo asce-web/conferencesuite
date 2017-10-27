@@ -71,10 +71,10 @@ header:
       css/dist/_c-TopImg.css: {minified:true}
       css/dist/_c-YearBadge.css: {minified:true}
       css/dist/_c-NavBar.css: {minified:true}
-      css/dist/_c-Toggle.css: {minified:true}
   js:
     //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: {type: external, minified: true}
     js/menu.js: {minified: false}
+    js/o-Drawer.js: {minified: false}
 
 # footerpanels library
 footerpanels:
