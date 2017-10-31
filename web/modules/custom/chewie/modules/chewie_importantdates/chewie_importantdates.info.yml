@@ -3,13 +3,7 @@ description: 'Important Date content type and associated functionality and style
 type: module
 core: 8.x
 dependencies:
+  - chewie_content
   - datetime
-  - field
-  - menu_ui
-  - node
-  - pathauto
-  - text
-  - user
-  - views
-version: 8.x-1.0-beta.1
+version: 8.x-1.0-beta.2
 package: Chewie
