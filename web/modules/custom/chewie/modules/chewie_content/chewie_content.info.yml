@@ -6,8 +6,11 @@ dependencies:
   - block
   - block_content
   - ckeditor
+  - contextual
   - datetime
   - editor
+  - editor_advanced_link
+  - editor_file
   - field
   - file
   - filter
@@ -17,10 +20,11 @@ dependencies:
   - menu_link_content
   - node
   - pathauto
+  - quickedit
   - system
   - telephone
   - text
   - user
   - views
-version: 8.x-1.0-beta.1
+version: 8.x-1.0-beta.2
 package: Chewie
