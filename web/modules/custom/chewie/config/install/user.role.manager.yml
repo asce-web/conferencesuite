@@ -15,6 +15,7 @@ permissions:
   - 'access toolbar'
   - 'administer blocks'
   - 'administer menu'
+  - 'administer nodes'
   - 'administer themes'
   - 'create importantdate content'
   - 'create pagedefault content'

@@ -1,5 +1,6 @@
 {
   "name": "legacy",
+  "version": "0.10.3",
   "description": "Drupal theme for ASCE conference sites 2015–2018.",
   "main": "legacy.css",
   "private": true,
@@ -12,15 +13,14 @@
   "author": "ASCE Web Team <webteam@asce.org> (https://github.com/asce-web)",
   "license": "MIT",
   "devDependencies": {
-    "bangs": "^0.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.8.0",
+    "gulp-clean-css": "^3.9.0",
     "gulp-less": "^3.3.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
-    "xmeter": "git://github.com/chharvey/xmeter.git#beta-v6"
+    "xmeter": "^6.1.0"
   },
   "dependencies": {}
 }

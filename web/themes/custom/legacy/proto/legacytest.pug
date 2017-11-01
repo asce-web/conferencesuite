@@ -28,13 +28,13 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
-    link(rel="stylesheet" href="../node_modules/xmeter/xmeter.css")
-    link(rel="stylesheet" href="../node_modules/bangs/bangs.css")
-    link(rel="stylesheet" href="../vendor/futura.css")
-    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
-    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
-    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
-    link(rel="stylesheet" href="../vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
+    link(rel="stylesheet" href="../node_modules/xmeter/css/xmeter.css")
+    link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css")
+    link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/futura.css")
+    link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
+    link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css")
+    link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css")
+    link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css")
     link(rel="stylesheet" href="../css/legacy.css")
     style.
       body {
@@ -336,97 +336,99 @@ html(lang="en")
       , { name: 'EWRI'    , url: '#0', img: '../../../../sites/default/files/sample-images/cooplogo_horizontal4.gif' }
       , { name: 'KU'      , url: '#0', img: '../../../../sites/default/files/sample-images/Sponsorlogo_square2.gif' }
       ])
-    footer: fieldset.o-Tablist(role="tablist")
-      dl.o-Flex
-        //- NOTE: 'current' displayed first for accessibility
-        mixin yearTab(year, conference_info, which)
-          dt.o-Flex__Item.o-Tablist__Tab(class={'js-xo-_1': which==='prev'} id=`tab-${which}` role="tab")
-            label.h-Block
-              input.o-Tablist__Check.h-Hidden(type="radio" name="footertabs" value=year)&attributes((which==='current') ? {checked:''} : {})
-              time.c-YearBadge.c-YearBadge--tab(datetime=year aria-label=year)= year.toString().slice(2)
-          dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.o-Constrain
-            div.o-Flex.o-Flex--siteHead.-mv-2
-              //- div.o-Flex__Item: span.c-YearBadge(role="none")= year.toString().slice(2)
-              div.o-Flex__Item.c-SiteLogo
-                img(src=conference.image.shield alt="" role="none")
-              if conference.secondary_logo
-                div.o-Flex__Item.c-SiteLogo.c-SiteLogo--secondary
+    footer
+      fieldset.o-Tablist.o-Tablist--footertabs(role="tablist")
+        legend.h-Hidden Footer Tabs
+        dl.o-Flex
+          //- NOTE: 'current' displayed first for accessibility
+          mixin yearTab(year, conference_info, which)
+            dt.o-Flex__Item.o-Tablist__Tab(class={'js-xo-_1': which==='prev'} id=`tab-${which}` role="tab")
+              label.h-Block
+                input.o-Tablist__Check.h-Hidden(type="radio" name="footertabs" value=year)&attributes((which==='current') ? {checked:''} : {})
+                time.c-YearBadge.c-YearBadge--tab(datetime=year aria-label=year)= year.toString().slice(2)
+            dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.o-Constrain
+              div.o-Flex.o-Flex--siteHead.-mv-2
+                //- div.o-Flex__Item: span.c-YearBadge(role="none")= year.toString().slice(2)
+                div.o-Flex__Item.c-SiteLogo
                   img(src=conference.image.shield alt="" role="none")
-              div.o-Flex__Item.c-ConferenceTitles
-                h1.c-ConferenceTitles__Name= conference_info.name
-                p.c-ConferenceTitles__Detail= conference_info.detail
-                p.c-ConferenceTitles__Tagline= conference_info.tagline
-            block
-        +yearTab(2014, {name:'Sample ASCE Conference 2014'}, 'current')
-          nav.o-Flex.o-Flex--siteFoot#sitemap
-            h2.h-Hidden Sitemap
-            ul.o-Flex__Item.o-List.c-Sitemap(role="directory")
-              li.o-List__Item.c-Sitemap__Item
-                a(href="./") Home
-              li.o-List__Item.c-Sitemap__Item
-                a(href="") Program
-                ul.o-List.c-Sitemap__Sub
-                  li.o-List__Item: a(href="") Speakers
-                  li.o-List__Item: a(href="") Exhibitor List
-                  li.o-List__Item: a(href="") ASCE Communities &amp; Pavilions
-              li.o-List__Item.c-Sitemap__Item
-                a(href="") Location
-                ul.o-List.c-Sitemap__Sub
-                  li.o-List__Item: a(href="") Lodging &amp; Transportation
-                  li.o-List__Item: a(href="") For International Travel
-              li.o-List__Item.c-Sitemap__Item
-                a(href="") About
-                ul.o-List.c-Sitemap__Sub
-                  li.o-List__Item: a(href="") Cooperating Organizations
-                  li.o-List__Item: a(href="") Volunteer
-              li.o-List__Item.c-Sitemap__Item
-                a(href="") Contact
-            ul.o-Flex__Item.o-List.c-Sitemap(role="directory")
-              li.o-List__Item.c-Sitemap__Item: a(href="") Why Attend
-              li.o-List__Item.c-Sitemap__Item: a(href="") Registration
-              li.o-List__Item.c-Sitemap__Item: a(href="") For Speakers
-              li.o-List__Item.c-Sitemap__Item: a(href="") Sponsors
-              li.o-List__Item.c-Sitemap__Item: a(href="") Exhibitors
-            div.o-Flex__Item
-              section
-                h3 Contact Us
-                ul.o-List
-                  li.o-List__Item.-mb-1: a(href="#0")
-                    i.-mr-1.glyphicons.glyphicons-iphone(role="none")
-                    | (800) 548-2723
-                  li.o-List__Item.-mb-1: a(href="#0")
-                    i.-mr-1.glyphicons.glyphicons-earphone(role="none")
-                    | +1 (703) 295-7300
-                  li.o-List__Item.-mb-1: a(href="#0")
-                    i.-mr-1.glyphicons.glyphicons-envelope(role="none")
-                    | Other contacts
-              section
-                h3 Connect With ASCE
-                ul.o-List.o-Flex.c-SocialListFooter
-                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
-                    i.glyphicons.social.social-linked-in
-                      span.h-Hidden linkedin
-                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
-                    i.glyphicons.social.social-facebook
-                      span.h-Hidden facebook
-                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
-                    i.glyphicons.social.social-twitter
-                      span.h-Hidden twitter
-                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
-                    i.glyphicons.social.social-youtube
-                      span.h-Hidden youtube
-                  li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
-                    i.glyphicons.social.social-google-plus
-                      span.h-Hidden google plus
-        +yearTab(2013, {name:'Sample ASCE Conference 2013', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Toronto, Canada | May 2–4, 2013'}, 'prev')
-          div.t-Content
-                    p: a.c-LinkArrow(href="") Program
-                    p: a.c-LinkArrow(href="") Proceedings
-        +yearTab(2015, {name:'Sample ASCE Conference 2015', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Mexico City, Mexico | April 30–May 2, 2015'}, 'next')
-          div.t-Content
-                    p: a.c-LinkArrow(href="") Call for submissions
-                    p: a.c-LinkArrow(href="") Sponsors
-                    p: a.c-LinkArrow(href="") Exhibit
+                if conference.secondary_logo
+                  div.o-Flex__Item.c-SiteLogo.c-SiteLogo--secondary
+                    img(src=conference.image.shield alt="" role="none")
+                div.o-Flex__Item.c-ConferenceTitles
+                  h1.c-ConferenceTitles__Name= conference_info.name
+                  p.c-ConferenceTitles__Detail= conference_info.detail
+                  p.c-ConferenceTitles__Tagline= conference_info.tagline
+              block
+          +yearTab(2014, {name:'Sample ASCE Conference 2014'}, 'current')
+            nav.o-Flex.o-Flex--siteFoot#sitemap
+              h2.h-Hidden Sitemap
+              ul.o-Flex__Item.o-List.c-Sitemap(role="directory")
+                li.o-List__Item.c-Sitemap__Item
+                  a(href="./") Home
+                li.o-List__Item.c-Sitemap__Item
+                  a(href="") Program
+                  ul.o-List.c-Sitemap__Sub
+                    li.o-List__Item: a(href="") Speakers
+                    li.o-List__Item: a(href="") Exhibitor List
+                    li.o-List__Item: a(href="") ASCE Communities &amp; Pavilions
+                li.o-List__Item.c-Sitemap__Item
+                  a(href="") Location
+                  ul.o-List.c-Sitemap__Sub
+                    li.o-List__Item: a(href="") Lodging &amp; Transportation
+                    li.o-List__Item: a(href="") For International Travel
+                li.o-List__Item.c-Sitemap__Item
+                  a(href="") About
+                  ul.o-List.c-Sitemap__Sub
+                    li.o-List__Item: a(href="") Cooperating Organizations
+                    li.o-List__Item: a(href="") Volunteer
+                li.o-List__Item.c-Sitemap__Item
+                  a(href="") Contact
+              ul.o-Flex__Item.o-List.c-Sitemap(role="directory")
+                li.o-List__Item.c-Sitemap__Item: a(href="") Why Attend
+                li.o-List__Item.c-Sitemap__Item: a(href="") Registration
+                li.o-List__Item.c-Sitemap__Item: a(href="") For Speakers
+                li.o-List__Item.c-Sitemap__Item: a(href="") Sponsors
+                li.o-List__Item.c-Sitemap__Item: a(href="") Exhibitors
+              div.o-Flex__Item
+                section
+                  h3 Contact Us
+                  ul.o-List
+                    li.o-List__Item.-mb-1: a(href="#0")
+                      i.-mr-1.glyphicons.glyphicons-iphone(role="none")
+                      | (800) 548-2723
+                    li.o-List__Item.-mb-1: a(href="#0")
+                      i.-mr-1.glyphicons.glyphicons-earphone(role="none")
+                      | +1 (703) 295-7300
+                    li.o-List__Item.-mb-1: a(href="#0")
+                      i.-mr-1.glyphicons.glyphicons-envelope(role="none")
+                      | Other contacts
+                section
+                  h3 Connect With ASCE
+                  ul.o-List.o-Flex.c-SocialListFooter
+                    li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
+                      i.glyphicons.social.social-linked-in
+                        span.h-Hidden linkedin
+                    li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
+                      i.glyphicons.social.social-facebook
+                        span.h-Hidden facebook
+                    li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
+                      i.glyphicons.social.social-twitter
+                        span.h-Hidden twitter
+                    li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
+                      i.glyphicons.social.social-youtube
+                        span.h-Hidden youtube
+                    li.o-List__Item.o-Flex__Item.c-SocialListFooter__Item: a(href="#0")
+                      i.glyphicons.social.social-google-plus
+                        span.h-Hidden google plus
+          +yearTab(2013, {name:'Sample ASCE Conference 2013', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Toronto, Canada | May 2–4, 2013'}, 'prev')
+            div.t-Content
+                      p: a.c-LinkArrow(href="") Program
+                      p: a.c-LinkArrow(href="") Proceedings
+          +yearTab(2015, {name:'Sample ASCE Conference 2015', tagline:'Lorem Ipsum Optional Tagline for the Conference Goes Here', detail:'Mexico City, Mexico | April 30–May 2, 2015'}, 'next')
+            div.t-Content
+                      p: a.c-LinkArrow(href="") Call for submissions
+                      p: a.c-LinkArrow(href="") Sponsors
+                      p: a.c-LinkArrow(href="") Exhibit
       p.c-Banner.c-Banner--copyright.-mb-z.-ta-c
         svg.c-AsceLogo(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254.89 81.06")
           path(d="M110.19,110c-.78.1,22.24-.17,22.24-.17L102.21,33.17l-22.72-.08L61.94,76.19l21.83-.31,7-20.46L98,77.16l12.4,2.95.37,1.59s-37.81-5.44-64.59,1.8l.12.6s41.56-6,65.41,2.62l.25,1.18S78.63,81.8,47.48,90l.19.92s32.25-6.82,65.41,2l.06.28.23,1.1s-24.79-6.11-64.56,2.1l.19.9s2.37-.32,4.76-.4L48.39,110h22.2l5.55-13.37s16.56-2.35,29.16.46Z" transform="translate(-46.16 -30.97)")
@@ -439,7 +441,7 @@ html(lang="en")
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous")
-    script(src="../vendor/jquery.hoverIntent.min.js")
+    script(src="http://cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js")
+    script(src="https://cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js")
     script(src="../js/menu.js")
-    script(src="../js/o-Tabs.js")
     script(src="../js/orphaned.js")
