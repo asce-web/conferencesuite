@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: path_session
+label: Session
+type: 'canonical_entities:node'
+pattern: 'session/[node:title]'
+selection_criteria:
+  07b141a5-591f-4890-b812-ece3054eaf31:
+    id: node_type
+    bundles:
+      session: session
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 07b141a5-591f-4890-b812-ece3054eaf31
+selection_logic: and
+weight: -5
+relationships: {  }
