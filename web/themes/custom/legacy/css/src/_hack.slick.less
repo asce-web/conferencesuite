@@ -7,17 +7,23 @@
 // Slick style overrides/additions here.
 ///////////////////////////////////////////////////////////////////////////////
 
-.slick-slider {
+/*ol*/.slick-slider {
   padding: 0; // override base ol
   @media screen and (min-width: 30em) {
-    margin: 0 2rem;
+    margin: 0 2rem; // HACK fallback for logical properties
+    margin-inline: 2rem;
   }
   @media screen and (min-width: 45em) {
-    margin: 0 4rem;
+    margin: 0 4rem; // HACK fallback for logical properties
+    margin-inline: 4rem;
   }
 }
 
-.slick-slide {
+/*li*/.slick-slide {
+  @media screen and (min-width: 30em) {
+    margin: 0 1rem; // HACK fallback for logical properties
+    margin-inline: 1rem;
+  }
   a.h-Block {
     height: var(--supporter-logo-height);
     position: relative; // for absolute logo child
@@ -25,5 +31,34 @@
   .c-SupporterBlock__Logo {
     position: absolute;
     top: 50%; left: 50%; transform: translate(-50%, -50%); // HACK for centering the logo
+  }
+}
+@supports (display: grid) {
+  /*li*/.slick-slide {
+    a.h-Block {
+      position: initial; // HACK fallback for unset
+      position: unset;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+    }
+    .c-SupporterBlock__Logo {
+      // HACK fallbacks for initial
+      position: static;
+      top: auto;
+      left: auto;
+      transform: none;
+
+      // HACK fallbacks for unset
+      position: initial;
+      top: initial;
+      left: initial;
+      transform: initial;
+
+      position: unset;
+      top: unset;
+      left: unset;
+      transform: unset;
+    }
   }
 }

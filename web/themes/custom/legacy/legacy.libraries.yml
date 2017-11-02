@@ -3,7 +3,7 @@ global-styling:
     js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.0.0-beta/xmeter.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/xmeter/v6.1.0/xmeter.css: {type: external, minified: true}
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
@@ -17,11 +17,11 @@ global-styling:
       //cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css: {type: external, minified: true}
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      vendor/futura.css: {minified: true}
-      vendor/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {minified: true}
-      vendor/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {minified: true}
-      vendor/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {minified: false}
-      vendor/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {minified: true}
+      //cdn.asce.org/chewie/assets/futura.css: {type: external, minified: true}
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {type: external, minified: true}
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {type: external, minified: true}
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {type: external, minified: false}
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {type: external, minified: true}
       css/dist/_themes.css: {minified:true}
       css/dist/_t-Content.css: {minified:true}
       css/dist/_h-Spaced.css: {minified:true}
@@ -71,17 +71,17 @@ header:
       css/dist/_c-TopImg.css: {minified:true}
       css/dist/_c-YearBadge.css: {minified:true}
       css/dist/_c-NavBar.css: {minified:true}
-      css/dist/_c-Toggle.css: {minified:true}
   js:
-    vendor/jquery.hoverIntent.min.js: {minified: true}
+    //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: {type: external, minified: true}
     js/menu.js: {minified: false}
+    js/o-Drawer.js: {minified: false}
 
 # footerpanels library
 footerpanels:
   version: VERSION
   css:
     layout:
-      css/dist/_o-Tabs.css: {minified:true}
+      css/dist/_o-Tablist--footertabs.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
       css/dist/_c-SiteLogo.css: {minified:true}
@@ -91,7 +91,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    js/o-Tabs.js: {minified: false}
+    //cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:
