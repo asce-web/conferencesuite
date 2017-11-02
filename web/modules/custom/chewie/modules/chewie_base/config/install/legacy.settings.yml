@@ -13,10 +13,3 @@ logo:
   use_default: 1
 favicon:
   use_default: 1
-developer_class: sample-dev
-developer_branch: '3'
-secondary_logo: {  }
-images_banner: {  }
-colors_primary: '#75C8DB'
-colors_secondary: '#203837'
-colors_accent: '#C8AFC4'

@@ -18,5 +18,5 @@ dependencies:
   - user
   - views
   - views_ui
-version: 8.x-1.0-beta.2
+version: 8.x-1.0-beta.3
 package: Chewie
