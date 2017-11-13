@@ -990,6 +990,8 @@ button.c-Button:disabled {
 /*ol*/
 .slick-slider {
   padding: 0;
+  margin: 0 1rem;
+  margin-inline: 1rem;
 }
 @media screen and (min-width: 30em) {
   .slick-slider {
@@ -1159,6 +1161,9 @@ button.c-Button:disabled {
   }
   .c-Hero {
     margin-bottom: 3rem;
+  }
+  .c-Hero__Hn {
+    line-height: calc(1.33333333);
   }
   .c-Hero__Blurb {
     padding-bottom: 1.5rem;
@@ -2526,6 +2531,16 @@ button.c-Button:disabled {
 @media (-ms-high-contrast: none) and (min-width: 60em), (-ms-high-contrast: active) and (min-width: 60em) {
   .c-AsceLogo {
     height: 3rem;
+  }
+}
+@media (-ms-high-contrast: none) and screen and (min-width: 45em), (-ms-high-contrast: active) and screen and (min-width: 45em) {
+  .c-Hero__Hn {
+    line-height: calc(1.09090909);
+  }
+}
+@media (-ms-high-contrast: none) and screen and (min-width: 60em), (-ms-high-contrast: active) and screen and (min-width: 60em) {
+  .c-Hero__Hn {
+    line-height: calc(1.33333333);
   }
 }
 @media (-ms-high-contrast: none) and (min-width: 30em), (-ms-high-contrast: active) and (min-width: 30em) {
