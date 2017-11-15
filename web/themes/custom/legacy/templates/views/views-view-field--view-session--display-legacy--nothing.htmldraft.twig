@@ -19,17 +19,19 @@
  */
 #}
 <span class="c-TimeBlock__Times">
-  <time datetime="{{ field_session_starttime }}">{{ field_session_starttime|date('g:ia') }}</time>
+  <time datetime="{{ field_session_starttime }}" itemprop="startDate">{{ field_session_starttime|date('g:ia') }}</time>
   {{- '&ndash;' -}}
-  <time datetime="{{ field_session_endtime }}">{{ field_session_endtime|date('g:ia') }}</time>
+  <time datetime="{{ field_session_endtime }}" itemprop="endDate">{{ field_session_endtime|date('g:ia') }}</time>
 </span>
 |
-<span class="c-TimeBlock__Desc" itemprop="name">
-  <a class="c-TimeBlock__Link"{% if field_session_link == 'On' %} href="{{ path }}"{% endif %} data-title="{{ title }}">
-    {%- if field_session_displayname %}
-      {{- field_session_displayname -}}
-    {% else %}
-      {{- title -}}
-    {% endif -%}
+<span class="c-TimeBlock__Desc">
+  <a class="c-TimeBlock__Link"{% if field_session_link == 'On' %} href="{{ path }}"{% endif %}>
+    <data value="{{ title }}" itemprop="name">
+      {%- if field_session_displayname %}
+        {{- field_session_displayname -}}
+      {% else %}
+        {{- title -}}
+      {% endif -%}
+    </data>
   </a>
 </span>

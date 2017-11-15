@@ -458,7 +458,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime }}\">{{ field_session_starttime|date('g:ia') }}</time>\n  {{- '&ndash;' -}}\n  <time datetime=\"{{ field_session_endtime }}\">{{ field_session_endtime|date('g:ia') }}</time>\n</span>\n|\n<span class=\"c-TimeBlock__Desc\" itemprop=\"name\">\n  <a class=\"c-TimeBlock__Link\"{% if field_session_link == 'On' %} href=\"{{ path }}\"{% endif %} data-title=\"{{ title }}\">\n    {%- if field_session_displayname %}\n      {{- field_session_displayname -}}\n    {% else %}\n      {{- title -}}\n    {% endif -%}\n  </a>\n</span>"
+            text: "<span class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:ia') }}</time>\n  {{- '&ndash;' -}}\n  <time datetime=\"{{ field_session_endtime }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:ia') }}</time>\n</span>\n|\n<span class=\"c-TimeBlock__Desc\">\n  <a class=\"c-TimeBlock__Link\"{% if field_session_link == 'On' %} href=\"{{ path }}\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {%- if field_session_displayname %}\n        {{- field_session_displayname -}}\n      {% else %}\n        {{- title -}}\n      {% endif -%}\n    </data>\n  </a>\n</span>"
             make_link: false
             path: ''
             absolute: false
