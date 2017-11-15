@@ -39,6 +39,7 @@
  * Chair...............................conference chair
  * SupporterBlock......................block of supporters in one level
  * DateBlock...........................container for important dates
+ * TimeBlock...........................container for sessions
  * Button..............................standard link button
  *
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
@@ -893,6 +894,23 @@ input:checked + .c-YearBadge--tab::after {
   .c-DateBlock__Desc {
     margin-bottom: 0;
   }
+}
+/*################################*\
+    legacy  |  _c-DateBlock.less
+\*################################*/
+.t-Content .c-TimeBlock__Times > time {
+  font-weight: inherit;
+}
+.c-TimeBlock__Link:not([href]) {
+  opacity: 1;
+}
+.c-TimeBlock__Link:not([href]),
+.c-TimeBlock__Link:not([href]):hover,
+.c-TimeBlock__Link:not([href]):focus {
+  color: inherit;
+}
+.t-Content .c-TimeBlock__Link:not([href]) {
+  text-decoration: none;
 }
 /*################################*\
     legacy  |  _c-Button.less
