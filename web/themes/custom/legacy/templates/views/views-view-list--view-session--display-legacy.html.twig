@@ -23,10 +23,10 @@
     <h3>{{ title }}</h3>
   {% endif %}
 
-  <{{ list.type }} class="o-List"{{ list.attributes }}>
+  <{{ list.type }} class="o-List c-TimeBlock" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event"{{ list.attributes }}>
 
     {% for row in rows %}
-      <li{{ row.attributes.addClass('o-List__Item') }}>{{ row.content }}</li>
+      <li{{ row.attributes.addClass('o-List__Item c-TimeBlock__Item') }}>{{ row.content }}</li>
     {% endfor %}
 
   </{{ list.type }}>
