@@ -1,0 +1,15 @@
+conference_info_name: 'Civil Engineering Congress 2017'
+conference_info_theme: 'Where Engineering Dreams are Built'
+conference_dates_start: '2017-12-31'
+conference_dates_end: '2018-01-01'
+conference_location_display: 'Reston, VA'
+conference_location_advisory: 'Reston, Virginia'
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1

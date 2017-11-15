@@ -1,0 +1,58 @@
+
+/*################################*\
+    legacy  |  _c-DateBlock.less
+\*################################*/
+
+
+// Time Block
+//
+// A container of Sessions for a single day.
+// Displayed on the Program page.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-11-15</time></dd>
+// </dl></header>
+//
+// Markup:
+// <ol class="o-List c-TimeBlock">
+//   <li class="o-List__Item c-TimeBlock__Item" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+//     <span class="c-TimeBlock__Times">
+//       <time datetime="2016-09-28 10:00" itemprop="startDate">10:00am</time>
+//       &ndash;
+//       <time datetime="2016-09-28 19:00" itemprop="endDate">7:00pm</time>
+//     </span>
+//     |
+//     <span class="c-TimeBlock__Desc">
+//       <a class="c-TimeBlock__Link" href="/session/registration-day-1" itemprop="url">
+//         <data value="Registration Day 1" itemprop="name">Registration</data>
+//       </a>
+//     </span>
+//   </li>
+// </ol>
+//
+// Styleguide Components.TimeBlock
+
+.c-TimeBlock {
+}
+.c-TimeBlock__Item {
+}
+.c-TimeBlock__Times {
+  .t-Content & > time {
+    font-weight: inherit; // unset `.t-Content >> time`
+  }
+}
+.c-TimeBlock__Desc {
+}
+.c-TimeBlock__Link {
+  &:not([href]) {  // unset a:not([href]) // TODO import Camo component from Neo
+    opacity: 1;
+    &,
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+    .t-Content & {
+      text-decoration: none;
+    }
+  }
+}

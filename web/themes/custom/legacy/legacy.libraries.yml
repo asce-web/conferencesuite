@@ -137,6 +137,13 @@ dateblock:
     component:
       css/dist/_c-DateBlock.css: {minified:true}
 
+# TimeBlock Component
+timeblock:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-TimeBlock.css: {minified:true}
+
 # copied from classy.libraries.yml
 messages:
   version: VERSION
