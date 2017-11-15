@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.session.field_session_body
     - field.field.node.session.field_session_displayname
     - field.field.node.session.field_session_endtime
+    - field.field.node.session.field_session_link
     - field.field.node.session.field_session_starttime
     - node.type.session
   module:
@@ -16,7 +17,7 @@ bundle: session
 mode: default
 content:
   field_session_body:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -32,13 +33,20 @@ content:
     type: string_textfield
     region: content
   field_session_endtime:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_session_starttime:
+  field_session_link:
     weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_session_starttime:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -47,7 +55,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
