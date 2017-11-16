@@ -15,6 +15,7 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+{{ attach_library('legacy/callout') }}
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
@@ -24,7 +25,7 @@
       default_row_class ? 'views-row',
     ]
   %}
-  <section{{ row.attributes.addClass(row_classes) }} itemprop="location" itemscope="" itemtype="https://schema.org/Accommodation">
+  <section{{ row.attributes.addClass(row_classes).addClass('c-Callout') }} itemprop="location" itemscope="" itemtype="https://schema.org/Accommodation">
     {{ row.content }}
   </section>
 {% endfor %}

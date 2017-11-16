@@ -49,6 +49,17 @@
   font-family: inherit; // override `.buttonText()`
 }
 
+.c-DateBlock__Link {
+  &:not([href]) {  // unset a:not([href]) // TODO import Camo component from Neo
+    opacity: 1;
+    &,
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+  }
+}
+
 
 // flexbox support
 .c-DateBlock {
