@@ -861,6 +861,14 @@ input:checked + .c-YearBadge--tab::after {
   color: var(--color-secondary, #6fc2c4);
   font-family: inherit;
 }
+.c-DateBlock__Link:not([href]) {
+  opacity: 1;
+}
+.c-DateBlock__Link:not([href]),
+.c-DateBlock__Link:not([href]):hover,
+.c-DateBlock__Link:not([href]):focus {
+  color: inherit;
+}
 .c-DateBlock {
   display: -webkit-box;
   display: -ms-flexbox;
