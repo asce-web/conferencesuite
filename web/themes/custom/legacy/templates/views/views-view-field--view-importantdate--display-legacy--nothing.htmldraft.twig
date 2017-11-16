@@ -25,9 +25,13 @@
   </time>
 </dt>
 <dd class="c-DateBlock__Desc">
-  {%- if field_importantdate_displayname %}
-    {{- field_importantdate_displayname -}}
-  {% else %}
-    {{- title -}}
-  {% endif -%}
+  <a class="c-DateBlock__Link"{% if field_importantdate_link == 'On' %} href="{{ path }}"{% endif %}>
+    <data value="{{ title }}" itemprop="name">
+      {%- if field_importantdate_displayname %}
+        {{- field_importantdate_displayname -}}
+      {% else %}
+        {{- title -}}
+      {% endif -%}
+    </data>
+  </a>
 </dd>
