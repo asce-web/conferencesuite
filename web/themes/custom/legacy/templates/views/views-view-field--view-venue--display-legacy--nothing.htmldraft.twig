@@ -21,7 +21,8 @@
 {% if field_venue_image %}
   <img class="h-Block -mb-1" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
 {% endif %}
-<h1 class="-fz-el-kilo -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ title }}</h1>
+<h1 class="c-Callout__Hn -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ title }}</h1>
+<div class="c-Callout__Body">
 <p>
   {% if field_venue_url %}<a href="{{ field_venue_url }}" itemprop="url">{% endif %}
   <b class="h-Clearfix" itemprop="name">{{ field_venue_name }}</b>
@@ -38,3 +39,7 @@
 {% if field_venue_cta %}
   <p><a class="c-Button" href="{{ field_venue_cta }}">{{ field_venue_cta_1 }}</a></p>
 {% endif %}
+{% if field_venue_body %}
+  <div class="t-Content">{{ field_venue_body }}</div>
+{% endif %}
+</div>
