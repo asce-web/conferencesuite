@@ -143,10 +143,3 @@ timeblock:
   css:
     component:
       css/dist/_c-TimeBlock.css: {minified:true}
-
-# copied from classy.libraries.yml
-messages:
-  version: VERSION
-  css:
-    component:
-      /core/themes/classy/css/components/messages.css: {}
