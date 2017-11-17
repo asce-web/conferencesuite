@@ -18,6 +18,21 @@
   width: 100%; // FIXME HTML Spec bug: read <https://thatemil.com/blog/2017/07/01/fixing-fieldsets/>
 }
 
+// TODO: import the c-Camo component from Neo, which camouflages links.
+// This hack fixes the style of non-linked venue names in the Venue view.
+// NOTE: there is no Venue class selector, so this selector is a little convoluted.
+// TODO: create a Venue component with a Venue__Link subcomponent?
+// @author    charvey@asce.org
+// @submitted 2017-11-17
+.c-Callout[itemtype="http://schema.org/Accommodation"] .c-Callout__Body > p > a:first-child:not([href]) {
+  opacity: 1;
+  &,
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}
+
 // HACK: this aligns the content of the footer with the conference titles.
 // TODO: remove this hack and use css grid instead, when we can fully support it.
 // @author    charvey@asce.org

@@ -18,16 +18,18 @@
  * @see template_preprocess_views_view_field()
  */
 #}
+<header>
 {% if field_venue_image %}
   <img class="h-Block -mb-1" src="{{ field_venue_image }}" alt="{{ field_venue_image_1 }}" itemprop="photo"/>
 {% endif %}
 <h1 class="c-Callout__Hn -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ title }}</h1>
+</header>
 <div class="c-Callout__Body">
 <p>
-  {% if field_venue_url %}<a href="{{ field_venue_url }}" itemprop="url">{% endif %}
-  <b class="h-Clearfix" itemprop="name">{{ field_venue_name }}</b>
-  {% if field_venue_url %}</a>{% endif %}
-  <span itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
+  <a class="h-Clearfix -fw-b"{% if field_venue_url %} href="{{ field_venue_url }}" itemprop="url"{% endif %}>
+    <span itemprop="name">{{ field_venue_name }}</span>
+  </a>
+  <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
     <span class="h-Clearfix" itemprop="streetAddress">{{ field_venue_streetaddress }}</span>
     <span itemprop="addressLocality">{{ field_venue_addresslocality }}</span>,
     <span itemprop="addressRegion">{{ field_venue_addressregion }}</span>
@@ -40,6 +42,6 @@
   <p><a class="c-Button" href="{{ field_venue_cta }}">{{ field_venue_cta_1 }}</a></p>
 {% endif %}
 {% if field_venue_body %}
-  <div class="t-Content">{{ field_venue_body }}</div>
+  <article class="t-Content">{{ field_venue_body }}</article>
 {% endif %}
 </div>
