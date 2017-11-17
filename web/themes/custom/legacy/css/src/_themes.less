@@ -13,7 +13,7 @@
 .c-Banner,
 .c-NavBar--mobile,
 .c-FooterPanel {
-  a {
+  a[href] {
     // unset base stylesheet
     color: inherit;
   }
@@ -23,9 +23,9 @@
 .c-NavBar--contrib,
 .c-NavBar--mobile,
 .c-FooterPanel {
-  a:hover,
-  a:focus {
-    // underline links on hover, where color change is not indicated
+  a[href]:hover,
+  a[href]:focus {
+    // underline links on hover (only in some banners), where color change is not indicated
     text-decoration: underline;
   }
 }

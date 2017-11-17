@@ -50,13 +50,8 @@
 }
 
 .c-DateBlock__Link {
-  &:not([href]) {  // unset a:not([href]) // TODO import Camo component from Neo
-    opacity: 1;
-    &,
-    &:hover,
-    &:focus {
-      color: inherit;
-    }
+  &[href] {
+    text-decoration: underline;
   }
 }
 
