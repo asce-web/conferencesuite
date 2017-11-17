@@ -20,6 +20,8 @@
 //     ### mixins
 //   ## Other custom props
 //     ### _dev.less
+// # CSS3 FALLBACKS
+//   ## Filters
 
 
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -510,6 +512,19 @@
 //++++ end # CUSTOM PROPERTY FALLBACKS ++++//
 
 
+//+++++++++++++++++++++++++++++++//
+// # CSS3 FALLBACKS
+//+++++++++++++++++++++++++++++++//
+  //-------------------------------//
+  // ## Filters
+  //-------------------------------//
+  // fallback for `filter: grayscale(100%);`
+  .c-Button--disabled,
+  button.c-Button:disabled {
+    background-color: #585858; // approximation of `@g-color-btn-bg` grayscale
+  }
+  //---- end ## Filters ----//
+//++++ end # CSS3 FALLBACKS ++++//
 
 
 
