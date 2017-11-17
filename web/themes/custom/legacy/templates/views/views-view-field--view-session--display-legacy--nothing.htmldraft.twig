@@ -25,7 +25,7 @@
 </span>
 |
 <span class="c-TimeBlock__Desc">
-  <a class="c-TimeBlock__Link"{% if field_session_link == 'On' %} href="{{ path }}"{% endif %}>
+  <a{% if field_session_link == 'On' %} class="c-TimeBlock__Link" href="{{ path }}"{% endif %}>
     <data value="{{ title }}" itemprop="name">
       {%- if field_session_displayname %}
         {{- field_session_displayname -}}

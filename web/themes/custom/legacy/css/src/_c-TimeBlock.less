@@ -37,22 +37,9 @@
 .c-TimeBlock__Item {
 }
 .c-TimeBlock__Times {
-  .t-Content & > time {
-    font-weight: inherit; // unset `.t-Content >> time`
-  }
 }
 .c-TimeBlock__Desc {
 }
 .c-TimeBlock__Link {
-  &:not([href]) {  // unset a:not([href]) // TODO import Camo component from Neo
-    opacity: 1;
-    &,
-    &:hover,
-    &:focus {
-      color: inherit;
-    }
-    .t-Content & {
-      text-decoration: none;
-    }
-  }
+    text-decoration: underline;
 }

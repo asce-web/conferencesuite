@@ -49,7 +49,6 @@
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
  * _theme.less.........................overrides for any Base, Object, or Component styles
  * Content.............................main page content (CMS-editable)
- * Spaced..............................add horizontal space, preventing full-bleed
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
  *
@@ -68,14 +67,7 @@
 
 @import (less) url('_o-Tablist--footertabs.less');
 @import (less) url('_o-Constrain.less');
-// Main column of the site.
-// Contains super relevant info.
-//
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-04-03
-.o-MainCol {}
+@import (less) url('_o-MainCol.less');
 @import (less) url('_o-SideCol.less');
 @import (less) url('_o-MobileBar.less');
 @import (less) url('_o-Drawer.less');
@@ -103,7 +95,6 @@
 
 @import (less) url('_themes.less');
 @import (less) url('_t-Content.less');
-@import (less) url('_h-Spaced.less');
 
 
 @import (less) url('_hack.glyphicons.less');
