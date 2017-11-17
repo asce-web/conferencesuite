@@ -8,6 +8,7 @@ global-styling:
       css/dist/_base.css: {minified:true}
     layout:
       css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-MainCol.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
     component:
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
