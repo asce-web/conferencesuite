@@ -45,7 +45,6 @@
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
  * _theme.less.........................overrides for any Base, Object, or Component styles
  * Content.............................main page content (CMS-editable)
- * Spaced..............................add horizontal space, preventing full-bleed
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
  *
@@ -59,6 +58,12 @@
 /*################################*\
     legacy  |  _dev.less
 \*################################*/
+a {
+  color: inherit;
+}
+a:not([href]) {
+  opacity: 1;
+}
 .o-Flex--siteHead {
   margin: var(--vru) 0;
   -webkit-box-align: center;
@@ -159,6 +164,28 @@ body {
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   color: #333;
 }
+main {
+  margin-bottom: calc(2 * var(--vru));
+  -webkit-margin-after: calc(2 * var(--vru));
+  margin-block-end: calc(2 * var(--vru));
+}
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+  color: var(--color-primary, #6a9556);
+}
+@media not all and (min-width: 45em) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 figcaption {
   font-weight: 300;
   font-style: italic;
@@ -186,11 +213,11 @@ table.bordered th,
 table.bordered td {
   border: 1px solid #e8eaeb;
 }
-a {
+a[href] {
   color: #0c5fa8;
 }
-a:hover,
-a:focus {
+a[href]:hover,
+a[href]:focus {
   color: #19a1cf;
 }
 /*################################*\
@@ -218,8 +245,24 @@ a:focus {
   margin-right: auto;
 }
 /*################################*\
+    legacy  |  _o-MainCol.less
+\*################################*/
+main .o-MainCol {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-inline: 1rem;
+}
+/*################################*\
     legacy  |  _o-SideCol.less
 \*################################*/
+main .o-SideCol {
+  padding-top: var(--vru);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-padding-before: var(--vru);
+  padding-block-start: var(--vru);
+  padding-inline: 2rem;
+}
 @media screen and (min-width: 45em) {
   .o-SideCol {
     -webkit-box-flex: 0;
@@ -596,10 +639,10 @@ input:checked + .c-YearBadge--tab::after {
   margin-bottom: var(--vru);
 }
 .c-Callout__Hn {
-  font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
   font-weight: inherit;
   font-size: 2em;
   line-height: calc(var(--line-height) /  2);
+  color: inherit;
 }
 .c-Callout__Body {
   background-image: url('../../images/pattern-bg-fade.png');
@@ -861,13 +904,8 @@ input:checked + .c-YearBadge--tab::after {
   color: var(--color-secondary, #6fc2c4);
   font-family: inherit;
 }
-.c-DateBlock__Link:not([href]) {
-  opacity: 1;
-}
-.c-DateBlock__Link:not([href]),
-.c-DateBlock__Link:not([href]):hover,
-.c-DateBlock__Link:not([href]):focus {
-  color: inherit;
+.c-DateBlock__Link {
+  text-decoration: underline;
 }
 .c-DateBlock {
   display: -webkit-box;
@@ -906,19 +944,8 @@ input:checked + .c-YearBadge--tab::after {
 /*################################*\
     legacy  |  _c-DateBlock.less
 \*################################*/
-.t-Content .c-TimeBlock__Times > time {
-  font-weight: inherit;
-}
-.c-TimeBlock__Link:not([href]) {
-  opacity: 1;
-}
-.c-TimeBlock__Link:not([href]),
-.c-TimeBlock__Link:not([href]):hover,
-.c-TimeBlock__Link:not([href]):focus {
-  color: inherit;
-}
-.t-Content .c-TimeBlock__Link:not([href]) {
-  text-decoration: none;
+.c-TimeBlock__Link {
+  text-decoration: underline;
 }
 /*################################*\
     legacy  |  _c-Button.less
@@ -938,21 +965,27 @@ input:checked + .c-YearBadge--tab::after {
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 0.125em 0 0 #cdcdcd;
   box-shadow: 0 0.125em 0 0 #cdcdcd;
-  color: #fff;
   cursor: pointer;
+}
+.c-Button,
+a.c-Button,
+.c-Button:hover,
+a.c-Button:hover,
+.c-Button:focus,
+a.c-Button:focus {
+  color: #fff;
 }
 .c-Button:hover,
 .c-Button:focus {
   background-color: #0e6cc0;
-  color: #fff;
 }
 .c-Button:active {
   background-color: #0a5290;
   -webkit-box-shadow: 0 0.125em 0 0 #cdcdcd inset;
   box-shadow: 0 0.125em 0 0 #cdcdcd inset;
 }
-a.c-Button:not([href]),
-button.c-Button:disabled {
+button.c-Button:disabled,
+.c-Button--disabled {
   opacity: 0.25;
   cursor: not-allowed;
   -webkit-filter: grayscale(100%);
@@ -961,42 +994,30 @@ button.c-Button:disabled {
 /*################################*\
     legacy  |  _themes.less
 \*################################*/
-.c-Banner a,
-.c-NavBar--mobile a,
-.c-FooterPanel a {
+.c-Banner a[href],
+.c-NavBar--mobile a[href],
+.c-FooterPanel a[href] {
   color: inherit;
 }
-.c-Banner--copyright a:hover,
-.c-NavBar--contrib a:hover,
-.c-NavBar--mobile a:hover,
-.c-FooterPanel a:hover,
-.c-Banner--copyright a:focus,
-.c-NavBar--contrib a:focus,
-.c-NavBar--mobile a:focus,
-.c-FooterPanel a:focus {
+.c-Banner--copyright a[href]:hover,
+.c-NavBar--contrib a[href]:hover,
+.c-NavBar--mobile a[href]:hover,
+.c-FooterPanel a[href]:hover,
+.c-Banner--copyright a[href]:focus,
+.c-NavBar--contrib a[href]:focus,
+.c-NavBar--mobile a[href]:focus,
+.c-FooterPanel a[href]:focus {
   text-decoration: underline;
 }
 /*################################*\
-    legacy  |  _h-Spaced.less
+    legacy  |  _t-Content.less
 \*################################*/
-.t-Content h1,
-.t-Content h2,
-.t-Content h3,
-.t-Content h4,
-.t-Content h5,
-.t-Content h6 {
-  font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-  color: var(--color-primary, #6a9556);
-}
-.t-Content a:not(.c-Button) {
+.t-Content a[href]:not(.c-Button) {
   text-decoration: underline;
 }
 .t-Content time {
   font-weight: bold;
 }
-/*################################*\
-    legacy  |  _h-Spaced.less
-\*################################*/
 /*################################*\
     legacy  |  _hack.glyphicons.less
 \*################################*/
@@ -1091,6 +1112,15 @@ button.c-Button:disabled {
   -webkit-box-sizing: unset;
   box-sizing: unset;
 }
+.toolbar-tray a[href] {
+  color: #565656;
+}
+.toolbar-tray a[href]:hover,
+.toolbar-tray a[href]:active,
+.toolbar-tray a[href]:focus,
+.toolbar-tray a[href].is-active {
+  color: #000;
+}
 /*################################*\
     legacy  |  _hack.ie.less
 \*################################*/
@@ -1163,6 +1193,12 @@ button.c-Button:disabled {
   }
   .o-Flex--siteHead {
     margin: 1.5rem 0;
+  }
+  main {
+    margin-bottom: 3rem;
+  }
+  main .o-SideCol {
+    padding-top: 1.5rem;
   }
   .o-MobileBar__Item {
     padding: 0.75rem 1rem;
@@ -2533,6 +2569,10 @@ button.c-Button:disabled {
   }
   .c-SiteLogo {
     width: 6rem;
+  }
+  .c-Button--disabled,
+  button.c-Button:disabled {
+    background-color: #585858;
   }
   .c-DateBlock__Desc {
     -webkit-box-flex: 0;
