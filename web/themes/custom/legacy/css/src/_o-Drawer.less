@@ -7,7 +7,8 @@
 
 // The Drawer Object
 //
-// Drawer object slides out from a side on mobile devices.
+// No actual styles on this; serves as a container and hook.
+// Drawer__Bar object slides out from a side on mobile devices.
 // Most commonly used for a menu.
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
@@ -23,7 +24,8 @@
 // Weight: 5
 //
 // Styleguide Objects.Drawer
-.o-Drawer {
+.o-Drawer {}
+.o-Drawer__Bar {
   .transitions(transform, opacity; 250ms);
   transition-timing-function: ease-in; // animation for *closing* drawer
     @width: 15rem;
@@ -36,12 +38,26 @@
     opacity: 0;
   overflow: auto;
 }
-.o-Drawer--open {
+// added by JS only! do not add manually!
+.o-Drawer__Bar--js-open {
     transform: translateX(-100%);
     opacity: 1;
     transition-timing-function: ease-out; // animation for *opening* drawer
 }
-// ^subcomponents
-// __Item - each item in the list
-// __Link - each link inside an __Item in the menu
-// __Link--current - link to the current convention (home) page
+
+
+
+// Drawer__Button with "menu" icon in inactive state and "close" icon in active state.
+//
+// ^author
+// Chris Harvey
+// ^updated
+// 2016-09-19
+.o-Drawer__Button {
+  // resets:
+  background: transparent; background: initial; background: unset;
+  font-size: inherit; font-size : unset;
+  border: 0;
+
+  z-index: 3; // over Drawer
+}

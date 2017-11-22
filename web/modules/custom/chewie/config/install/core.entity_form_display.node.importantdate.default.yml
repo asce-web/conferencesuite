@@ -10,9 +10,6 @@ dependencies:
   module:
     - datetime
     - text
-  enforced:
-    module:
-      - chewie
 id: node.importantdate.default
 targetEntityType: node
 bundle: importantdate

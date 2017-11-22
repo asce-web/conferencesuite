@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ */
+#}
+<header>
+  {% if fields.field_venue_image.content %}
+    <img class="h-Block -mb-1" src="{{ fields.field_venue_image.content }}" alt="{{ fields.field_venue_image_1.content }}" itemprop="photo"/>
+  {% endif %}
+  <h1 class="c-Callout__Hn -pt-0{% if fields.field_venue_label.content == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ fields.title.content }}</h1>
+</header>
+<div class="c-Callout__Body">
+  <p>
+    <a class="h-Clearfix -fw-b"{% if fields.field_venue_url.content %} href="{{ fields.field_venue_url.content }}" itemprop="url"{% endif %}>
+      <span itemprop="name">{{ fields.field_venue_name.content }}</span>
+    </a>
+    <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+      <span class="h-Clearfix" itemprop="streetAddress">{{ fields.field_venue_streetaddress.content }}</span>
+      <span itemprop="addressLocality">{{ fields.field_venue_addresslocality.content }}</span>,
+      <span itemprop="addressRegion">{{ fields.field_venue_addressregion.content }}</span>
+      <span class="h-Clearfix" itemprop="postalCode">{{ fields.field_venue_postalcode.content }}</span>
+      {% if fields.field_venue_addresscountry.content %}<span class="h-Clearfix" itemprop="addressCountry">{{ fields.field_venue_addresscountry.content }}</span>{% endif %}
+    </span>
+    {% if fields.field_venue_telephone.content %}<a href="tel:{{ fields.field_venue_telephone.content }}" itemprop="telephone">{{ fields.field_venue_telephone.content }}</a>{% endif %}
+  </p>
+  {% if fields.field_venue_cta.content %}
+    <p><a class="c-Button" href="{{ fields.field_venue_cta.content }}">{{ fields.field_venue_cta_1.content }}</a></p>
+  {% endif %}
+  {% if fields.field_venue_body.content %}
+    <article class="t-Content">{{ fields.field_venue_body.content }}</article>
+  {% endif %}
+</div>

@@ -1,0 +1,9 @@
+name: Sessions
+description: 'Session content type and associated functionality and styles.'
+type: module
+core: 8.x
+dependencies:
+  - chewie_content
+  - datetime
+version: 8.x-1.0-beta.3
+package: Chewie

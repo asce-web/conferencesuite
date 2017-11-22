@@ -1,0 +1,12 @@
+name: Venues
+description: 'Venue content type and associated functionality and styles.'
+type: module
+core: 8.x
+dependencies:
+  - chewie_content
+  - file
+  - image
+  - link
+  - telephone
+version: 8.x-1.0-beta.5
+package: Chewie

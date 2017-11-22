@@ -19,11 +19,11 @@
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
  * Constrain...........................keeps content at max width
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
  * MobileBar...........................top bar on mobile devices
- * Tabs................................tabbed panel interface
  * Drawer..............................pull-out container
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
@@ -33,7 +33,6 @@
  * TopImg..............................top banner image containing
  * YearBadge...........................badge at top indicating year
  * NavBar..............................any navigation bar
- * Toggle..............................toggle button for Drawer Object
  * AsceLogo............................company logo in copyright line
  * Callout.............................aside section, in sidebar
  * FooterPanel.........................panel in tabbed footer
@@ -44,12 +43,12 @@
  * Chair...............................conference chair
  * SupporterBlock......................block of supporters in one level
  * DateBlock...........................container for important dates
+ * TimeBlock...........................container for sessions
  * Button..............................standard link button
  *
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
  * _theme.less.........................overrides for any Base, Object, or Component styles
  * Content.............................main page content (CMS-editable)
- * Spaced..............................add horizontal space, preventing full-bleed
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
  *
@@ -90,29 +89,11 @@
 //
 // Styleguide Objects
 
+@import (less) url('_o-Tablist--footertabs.less');
 @import (less) url('_o-Constrain.less');
-
-// Main Column
-//
-// Main column of the site.
-// Contains super relevant info.
-// <header><dl>
-//   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-04-03</time></dd>
-// </dl></header>
-//
-// Markup:
-// <div class="o-MainCol">
-// </div>
-//
-// Weight: 2
-//
-// Styleguide Objects.MainCol
-.o-MainCol {}
-
+@import (less) url('_o-MainCol.less');
 @import (less) url('_o-SideCol.less');
 @import (less) url('_o-MobileBar.less');
-@import (less) url('_o-Tabs.less');
 @import (less) url('_o-Drawer.less');
 
 // Components
@@ -133,7 +114,6 @@
 @import (less) url('_c-TopImg.less');
 @import (less) url('_c-YearBadge.less');
 @import (less) url('_c-NavBar.less');
-@import (less) url('_c-Toggle.less');
 @import (less) url('_c-AsceLogo.less');
 @import (less) url('_c-Callout.less');
 @import (less) url('_c-FooterPanel.less');
@@ -144,6 +124,7 @@
 @import (less) url('_c-Chair.less');
 @import (less) url('_c-SupporterBlock.less');
 @import (less) url('_c-DateBlock.less');
+@import (less) url('_c-TimeBlock.less');
 @import (less) url('_c-Button.less');
 
 // Organisms
@@ -164,7 +145,6 @@
 
 @import (less) url('_themes.less');
 @import (less) url('_t-Content.less');
-@import (less) url('_h-Spaced.less');
 
 // Atoms & Hacks
 //

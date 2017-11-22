@@ -1,0 +1,13 @@
+name: Supporters
+description: 'Supporter & Supporter Level content types, entity queues, and associated functionality and styles.'
+type: module
+core: 8.x
+dependencies:
+  - chewie_content
+  - entityqueue
+  - file
+  - image
+  - link
+  - options
+version: 8.x-1.0-beta.2
+package: Chewie

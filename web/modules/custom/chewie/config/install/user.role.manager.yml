@@ -1,9 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  enforced:
-    module:
-      - chewie
+dependencies: { }
 id: manager
 label: Manager
 weight: -7
@@ -18,6 +15,7 @@ permissions:
   - 'access toolbar'
   - 'administer blocks'
   - 'administer menu'
+  - 'administer nodes'
   - 'administer themes'
   - 'create importantdate content'
   - 'create pagedefault content'

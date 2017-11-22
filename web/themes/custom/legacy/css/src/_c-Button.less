@@ -82,22 +82,28 @@
   background-color: @g-color-btn-bg;
   border-radius: 0.25rem;
   box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw;
-  color: @g-color-btn-txt;
   cursor: pointer;
+  &,
+  a& {
+    &,
+    &:hover,
+    &:focus {
+      color: @g-color-btn-txt;
+    }
+  }
   &:hover,
   &:focus {
     background-color: lighten(@g-color-btn-bg, 5%);
-    color: @g-color-btn-txt; // override a[href]:hover
   }
   &:active {
     background-color: darken(@g-color-btn-bg, 5%);
     box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw inset;
   }
-  a&:not([href]),
-  button&:disabled {
+}
+
+button.c-Button:disabled, // NOTE: courtesy for those who forget the subclass
+.c-Button--disabled {
     opacity: 0.25;
     cursor: not-allowed;
     filter: grayscale(100%);
-    // background-color: @g-color-btn-sw;
-  }
 }

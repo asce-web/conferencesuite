@@ -11,9 +11,6 @@ dependencies:
     - datetime
     - text
     - user
-  enforced:
-    module:
-      - chewie
 id: node.importantdate.default
 targetEntityType: node
 bundle: importantdate
