@@ -1,3 +1,4 @@
+(function ($) {
 $('.o-Drawer__Bar:not(.o-Drawer__Bar--js-open)').find('a').attr('tabindex', -1);
 $('.o-Drawer__Button').click(function () {
   var drawer = $(this).siblings('.o-Drawer__Bar');
@@ -9,3 +10,4 @@ $('.o-Drawer__Button').click(function () {
     .find('a').attr('tabindex', (is_open) ? -1 : 0);
   $(this).find('.glyphicons').toggleClass('glyphicons-menu-hamburger glyphicons-remove-circle');
 });
+})(jQuery)

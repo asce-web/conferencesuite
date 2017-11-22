@@ -26,21 +26,23 @@
 // Styleguide Objects.Drawer
 .o-Drawer {}
 .o-Drawer__Bar {
-  .transitions(transform, opacity; 250ms);
-  transition-timing-function: ease-in; // animation for *closing* drawer
     @width: 15rem;
     position: fixed;
     top: 0; bottom: 0;
-    right: -@width;
+  right: 0;
     z-index: 2; // over footer tabs
     width: @width;
     border-left: 1px solid currentColor;
     opacity: 0;
   overflow: auto;
+  transform: scaleX(0);
+  transform-origin: right;
+  .transitions(transform, opacity; 250ms);
+  transition-timing-function: ease-in; // animation for *closing* drawer
 }
 // added by JS only! do not add manually!
 .o-Drawer__Bar--js-open {
-    transform: translateX(-100%);
+  transform: none;
     opacity: 1;
     transition-timing-function: ease-out; // animation for *opening* drawer
 }

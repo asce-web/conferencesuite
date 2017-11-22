@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _c-Banner.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.transitions.less');
 @import (reference) url('__settings.less');
 @import (reference) url('__tool.buttonText.less');
 
@@ -41,9 +42,10 @@
   z-index: 1; // display on top of relatively-positioned contextual regions while logged into Drupal
   transform-origin: top;
   background-color: var(--color-accent, @g-color-accent);
-  transition: transform 100ms;
+  .transitions(transform, opacity; 100ms);
   &:not(.active) {
-    transform: scale(1,0);
+    transform: scaleY(0);
+    opacity: 0;
   }
 }
 .c-Banner--copyright {
