@@ -17,7 +17,7 @@ gulp.task('pug:test', function () {
 
 // HOW-TO: https://github.com/kss-node/kss-node/issues/161#issuecomment-222292620
 gulp.task('docs:kss', function () {
-  return kss(require('./config-kss.json'))
+  return kss(require('./kss.config.json'))
 })
 
 gulp.task('lessc:dev', function () {
