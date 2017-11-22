@@ -2,18 +2,33 @@
 /*################################*\
     legacy  |  _c-Callout.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 
 
-// An aside/section in the sidebar.
+// The Callout
 //
-// ^subcomponents
-// __Hn   - heading
-// __Body - body
-// ^author
-// Chris Harvey
-// ^updated
-// 2017-04-18
+// An aside/section in the sidebar.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-18</time></dd>
+// </dl></header>
+//
+// Markup:
+// <aside class="c-Callout">
+//   <h1 class="c-Callout__Hn">Questions?</h1>
+//   <div class="c-Callout__Body">
+//     <p><a href="tel:+1-800-548-2723">(800) 548-2723</a></p>
+//     <p><strong>International</strong></p>
+//     <p><a href="tel:+1-703-295-6300">+1 (703) 295-6300</a></p>
+//     <p><a href="mailto:registrations@asce.org">registrations@asce.org</a></p>
+//     <p>Customer service representatives are available to answer your questions
+//       Monday&ndash;Friday, 9am to 6pm <abbr title="Eastern Time">ET</abbr>.</p>
+//   </div>
+// </aside>
+//
+// Weight: 9
+//
+// Styleguide Components.Callout
 .c-Callout {
   margin-bottom: var(--vru);
 }
@@ -25,7 +40,7 @@
 }
 
 .c-Callout__Body {
-  background-image: url('../../images/pattern-bg-fade.png');
+  background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
   padding: var(--vru) 1rem 0;
 }

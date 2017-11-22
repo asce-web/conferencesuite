@@ -6,12 +6,72 @@
 @import (reference) url('__tool.buttonText.less');
 
 
-// A button.
+// Buttons
 //
-// ^author
-// Chris Harvey
-// ^updated
-// 2017-06-14
+// Buttons are displayed inline-block, so in order to preserve
+// vertical rhythm, be sure to contain them in typographical block-level elements
+// such as paragraphs or lists.
+//
+// Buttons may be in the form of <code>a</code> elements (links or anchors) or
+// <code>button</code> elements.
+//
+// Keep in mind these button usage guidelines:
+// - <code>button</code> elements should indicate action and be worded actionably.
+// - Use an <code>a</code> element instead of a <code>button</code> if there is a
+//   meaningful target href or url.
+// - Of course, <code>a</code> elements as well as <code>button</code> elements
+//   may be styled to look like Button Components.
+//
+// Every Button Component must have styles available for each of the following states:
+// <dl>
+//   <dt><b>default</b></dt>
+//   <dd>the button does something or the link goes somewhere, but the user is not interacting with the component</dd>
+//   <dt><b>hover</b>/<b>focus</b></dt>
+//   <dd>the user’s cursor is hovering over the component, or the user agent is focusing on the component</dd>
+//   <dt><b>active</b></dt>
+//   <dd>the user is in the process of clicking/activating the component</dd>
+//   <dt><b>disabled</b></dt>
+//   <dd>the component is inaccessable and/or does nothing, and the user may not
+//     interact with it; this state is implemented by:
+//     <ul>
+//       <li>a <code>button</code> with the <code>[disabled]</code> attribute, or</li>
+//       <li>an <code>a</code> with the <code>[href]</code> attribute <em>absent</em>
+//         (this is not the same as an empty attribute <code>[href=""]</code>).</li>
+//     </ul>
+//   </dd>
+// </dl>
+//
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-14</time></dd>
+// </dl></header>
+//
+// Markup:
+// <ul class="o-List o-Flex">
+//   <li class="o-List__Item o-Flex__Item"><a class="c-Button {{ modifier_class }}" href="#0">link</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-Button {{ modifier_class }} _hover" href="#0">link hover</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-Button {{ modifier_class }} _active" href="#0">link active</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-Button {{ modifier_class }}">link disabled</a></li>
+// </ul>
+// <ul class="o-List o-Flex">
+//   <li class="o-List__Item o-Flex__Item"><button class="c-Button {{ modifier_class }}">button</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-Button {{ modifier_class }} _hover">button hover</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-Button {{ modifier_class }} _active">button active</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-Button {{ modifier_class }}" disabled="">button disabled</a></li>
+// </ul>
+//
+// .c-Button--dark      - (color style) generic button but dark
+// .c-Button--primary   - (color style) site primary color
+// .c-Button--secondary - (color style) site secondary color
+// .c-Button--ghost     - (color style) ghost button, for light backgrounds
+// .c-Button--ghost.c-Button--ghost--dark - (color style) ghost, for dark backgrounds
+// .c-Button--glossy    - (texture style) shiny & 3D. Mix with any color style as needed.
+// .c-Button--hilite    - (sizing style) group of large buttons in a highlight block ("callout"). Use with any color or texture style.
+// .c-Button--inline    - (sizing style) buttons in-line with text. Use with any color or texture style.
+//
+// Weight: 18
+//
+// Styleguide Components.Button
 .c-Button {
   .buttonText();
   display: inline-block;
