@@ -1,0 +1,1 @@
+.o-Tablist{display:contents;width:100%}#panel-next .t-Content,#panel-prev .t-Content{margin-left:calc(var(--site-logo-size) + (2 * var(--site-logo-space)) + 1rem)}body>a:last-of-type{position:fixed;bottom:var(--vru);right:999999px}body>a:last-of-type:focus{right:1rem}header noscript a{position:relative;top:1rem;right:.5rem}
