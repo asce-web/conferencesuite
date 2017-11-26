@@ -24,8 +24,8 @@
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
  * Banner..............................full-bleed container with background color
- * ConferenceTitles....................container for name, tagline, detail of conference
  * SiteLogo............................logo for conference site (usually an Institute shield)
+ * ConferenceTitles....................container for name, tagline, detail of conference
  * TopImg..............................top banner image containing
  * YearBadge...........................badge at top indicating year
  * NavBar..............................any navigation bar
@@ -43,7 +43,7 @@
  * Button..............................standard link button
  *
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
- * _theme.less.........................overrides for any Base, Object, or Component styles
+ * _themes.less........................overrides for any Base, Object, or Component styles
  * Content.............................main page content (CMS-editable)
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
@@ -243,6 +243,8 @@ a[href]:focus {
   max-width: 90rem;
   margin-left: auto;
   margin-right: auto;
+  max-inline-size: 90rem;
+  margin-inline: auto;
 }
 /*################################*\
     legacy  |  _o-MainCol.less
@@ -296,6 +298,19 @@ main .o-SideCol {
     legacy  |  _o-Drawer.less
 \*################################*/
 .o-Drawer__Bar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  width: 15rem;
+  border-left: 1px solid currentColor;
+  opacity: 0;
+  overflow: auto;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: right;
+  transform-origin: right;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
@@ -308,19 +323,10 @@ main .o-SideCol {
   transition-delay: 0ms;
   -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: -15rem;
-  z-index: 2;
-  width: 15rem;
-  border-left: 1px solid currentColor;
-  opacity: 0;
-  overflow: auto;
 }
 .o-Drawer__Bar--js-open {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: none;
+  transform: none;
   opacity: 1;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
@@ -354,14 +360,21 @@ main .o-SideCol {
   -webkit-transform-origin: top;
   transform-origin: top;
   background-color: var(--color-accent, #714509);
-  -webkit-transition: -webkit-transform 100ms;
-  transition: -webkit-transform 100ms;
-  transition: transform 100ms;
-  transition: transform 100ms, -webkit-transform 100ms;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
 }
 .c-Banner--nav--sub:not(.active) {
-  -webkit-transform: scale(1, 0);
-  transform: scale(1, 0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  opacity: 0;
 }
 .c-Banner--copyright {
   padding: var(--vru) 1rem;
@@ -429,6 +442,7 @@ main .o-SideCol {
 \*################################*/
 .c-TopImg {
   position: relative;
+  background-image: url('/themes/custom/legacy/images/banner-default.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -645,7 +659,7 @@ input:checked + .c-YearBadge--tab::after {
   color: inherit;
 }
 .c-Callout__Body {
-  background-image: url('../../images/pattern-bg-fade.png');
+  background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
   padding: var(--vru) 1rem 0;
 }
@@ -653,7 +667,7 @@ input:checked + .c-YearBadge--tab::after {
     legacy  |  _c-FooterPanel.less
 \*################################*/
 .c-FooterPanel {
-  background-image: url('../../images/pattern-bg.png');
+  background-image: url('/themes/custom/legacy/images/pattern-bg.png');
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -710,6 +724,7 @@ input:checked + .c-YearBadge--tab::after {
   font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
   font-size: 1.125em;
   line-height: calc(var(--line-height) /  1.125);
+  color: inherit;
 }
 @media screen and (min-width: 45em) {
   .c-Hero__Hn {
@@ -767,11 +782,31 @@ input:checked + .c-YearBadge--tab::after {
   align-items: center;
   margin-bottom: var(--vru);
 }
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .c-KeynoteSpeaker__Session,
 .c-KeynoteSpeaker__Details {
   -webkit-box-flex: 40%;
   -ms-flex: 40%;
   flex: 40%;
+}
+.c-KeynoteSpeaker__Session {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Session {
+    margin-top: var(--vru);
+    margin-bottom: var(--vru);
+    margin-block: var(--vru);
+  }
 }
 .c-KeynoteSpeaker__Headshot {
   -webkit-box-flex: 20%;
@@ -779,15 +814,37 @@ input:checked + .c-YearBadge--tab::after {
   flex: 20%;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-inline: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Headshot {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
 }
 .c-KeynoteSpeaker__Headshot > img {
   width: 100%;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Details {
+    text-align: center;
+  }
 }
 /*################################*\
     legacy  |  _c-Chair.less
 \*################################*/
 .c-Chair {
   margin-bottom: calc(0.5 * var(--vru));
+}
+.c-Chair__Name,
+.c-Chair__Affiliation {
+  margin-bottom: 0;
+  margin-bottom: unset;
+  -webkit-margin-after: unset;
+  margin-block-end: unset;
 }
 .c-Chair__Name {
   font-size: 1.25em;
