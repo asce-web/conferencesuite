@@ -4,6 +4,7 @@ type: module
 core: 8.x
 dependencies:
   - admin_toolbar_tools
+  - automated_cron
   - block
   - coffee
   - devel
@@ -18,5 +19,5 @@ dependencies:
   - user
   - views
   - views_ui
-version: 8.x-1.0-beta.3
+version: 8.x-1.0-beta.4
 package: Chewie
