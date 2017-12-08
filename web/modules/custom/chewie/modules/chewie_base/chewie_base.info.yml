@@ -14,6 +14,7 @@ dependencies:
   - help
   - image
   - menu_ui
+  - path
   - shortcut
   - system
   - user
