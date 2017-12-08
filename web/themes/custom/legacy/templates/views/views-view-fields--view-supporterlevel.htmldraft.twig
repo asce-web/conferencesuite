@@ -29,7 +29,7 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<a href="{{ fields.field_supporter_url.content }}" rel="external nofollow" itemprop="url">
+<a href="{{ fields.field_supporter_url.content }}" rel="external nofollow" target="_blank" itemprop="url">
   <img class="c-SupporterBlock__Logo" src="{{ fields.field_supporter_logo.content }}" alt="
     {%- if fields.field_supporter_displayname.content %}
       {{- fields.field_supporter_displayname.content -}}
@@ -37,11 +37,5 @@
       {{- fields.title1.content -}}
     {% endif -%}
   " itemprop="logo"/>
-  <meta content="
-    {%- if fields.field_supporter_displayname.content %}
-      {{- fields.field_supporter_displayname.content -}}
-    {% else %}
-      {{- fields.title1.content -}}
-    {% endif -%}
-  " itemprop="name"/>
+  <meta content="{{ fields.title1.content }}" itemprop="name"/>
 </a>
