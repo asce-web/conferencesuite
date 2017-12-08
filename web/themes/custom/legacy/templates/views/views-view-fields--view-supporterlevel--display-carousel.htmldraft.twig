@@ -37,12 +37,6 @@
       {{- fields.title1.content -}}
     {% endif -%}
   " itemprop="logo"/>
-  <meta content="
-    {%- if fields.field_supporter_displayname.content %}
-      {{- fields.field_supporter_displayname.content -}}
-    {% else %}
-      {{- fields.title1.content -}}
-    {% endif -%}
-  " itemprop="name"/>
+  <meta content="{{ fields.title1.content }}" itemprop="name"/>
 </a>
 <span class="c-SupporterBlock__Label h-Block">{{ fields.title.content }}</span>
