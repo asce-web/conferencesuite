@@ -1263,7 +1263,7 @@ button.c-Button:disabled,
     margin-bottom: 3rem;
   }
   .c-Hero__Hn {
-    line-height: calc(1.33333333);
+    line-height: 1.33333333;
   }
   .c-Hero__Blurb {
     padding-bottom: 1.5rem;
@@ -1370,6 +1370,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-Banner--head {
     background-color: #41434b;
   }
+  .asceweek .c-Banner--head {
+    background-color: #6a9556;
+  }
   .cisummit .c-Banner--head {
     background-color: #d06f1a;
   }
@@ -1411,6 +1414,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-Banner--head {
     background-color: #013d4b;
+  }
+  .portsconference .c-Banner--head {
+    background-color: #004990;
   }
   .structurescongress .c-Banner--head {
     background-color: #005a9c;
@@ -1466,6 +1472,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-Banner--nav {
     background-color: #ffcf01;
   }
+  .asceweek .c-Banner--nav {
+    background-color: #6fc2c4;
+  }
   .cisummit .c-Banner--nav {
     background-color: #7f7f73;
   }
@@ -1507,6 +1516,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-Banner--nav {
     background-color: #1f8234;
+  }
+  .portsconference .c-Banner--nav {
+    background-color: #99381f;
   }
   .structurescongress .c-Banner--nav {
     background-color: #76ad7b;
@@ -1562,6 +1574,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-Banner--nav--sub {
     background-color: #dac689;
   }
+  .asceweek .c-Banner--nav--sub {
+    background-color: #714509;
+  }
   .cisummit .c-Banner--nav--sub {
     background-color: #aba9a0;
   }
@@ -1603,6 +1618,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-Banner--nav--sub {
     background-color: #974800;
+  }
+  .portsconference .c-Banner--nav--sub {
+    background-color: #ed7700;
   }
   .structurescongress .c-Banner--nav--sub {
     background-color: #b99a77;
@@ -1658,6 +1676,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-YearBadge--tab {
     background-color: #ffcf01;
   }
+  .asceweek .c-YearBadge--tab {
+    background-color: #6fc2c4;
+  }
   .cisummit .c-YearBadge--tab {
     background-color: #7f7f73;
   }
@@ -1699,6 +1720,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-YearBadge--tab {
     background-color: #1f8234;
+  }
+  .portsconference .c-YearBadge--tab {
+    background-color: #99381f;
   }
   .structurescongress .c-YearBadge--tab {
     background-color: #76ad7b;
@@ -1754,6 +1778,9 @@ button.c-Button:disabled,
   .ascestudentdays input:checked + .c-YearBadge--tab {
     background-color: #dac689;
   }
+  .asceweek input:checked + .c-YearBadge--tab {
+    background-color: #714509;
+  }
   .cisummit input:checked + .c-YearBadge--tab {
     background-color: #aba9a0;
   }
@@ -1795,6 +1822,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference input:checked + .c-YearBadge--tab {
     background-color: #974800;
+  }
+  .portsconference input:checked + .c-YearBadge--tab {
+    background-color: #ed7700;
   }
   .structurescongress input:checked + .c-YearBadge--tab {
     background-color: #b99a77;
@@ -1880,6 +1910,11 @@ button.c-Button:disabled,
   .ascestudentdays .c-NavBar--main > *.active {
     background-color: #dac689;
   }
+  .asceweek .c-NavBar--main > *:hover,
+  .asceweek .c-NavBar--main > *:focus,
+  .asceweek .c-NavBar--main > *.active {
+    background-color: #714509;
+  }
   .cisummit .c-NavBar--main > *:hover,
   .cisummit .c-NavBar--main > *:focus,
   .cisummit .c-NavBar--main > *.active {
@@ -1950,6 +1985,11 @@ button.c-Button:disabled,
   .pipelinesconference .c-NavBar--main > *.active {
     background-color: #974800;
   }
+  .portsconference .c-NavBar--main > *:hover,
+  .portsconference .c-NavBar--main > *:focus,
+  .portsconference .c-NavBar--main > *.active {
+    background-color: #ed7700;
+  }
   .structurescongress .c-NavBar--main > *:hover,
   .structurescongress .c-NavBar--main > *:focus,
   .structurescongress .c-NavBar--main > *.active {
@@ -2010,6 +2050,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-NavBar--mobile {
     background-color: #ffcf01;
   }
+  .asceweek .c-NavBar--mobile {
+    background-color: #6fc2c4;
+  }
   .cisummit .c-NavBar--mobile {
     background-color: #7f7f73;
   }
@@ -2051,6 +2094,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-NavBar--mobile {
     background-color: #1f8234;
+  }
+  .portsconference .c-NavBar--mobile {
+    background-color: #99381f;
   }
   .structurescongress .c-NavBar--mobile {
     background-color: #76ad7b;
@@ -2106,6 +2152,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-Hero {
     background-color: #41434b;
   }
+  .asceweek .c-Hero {
+    background-color: #6a9556;
+  }
   .cisummit .c-Hero {
     background-color: #d06f1a;
   }
@@ -2147,6 +2196,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-Hero {
     background-color: #013d4b;
+  }
+  .portsconference .c-Hero {
+    background-color: #004990;
   }
   .structurescongress .c-Hero {
     background-color: #005a9c;
@@ -2202,6 +2254,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-DateBlock__MonthDay {
     color: #ffcf01;
   }
+  .asceweek .c-DateBlock__MonthDay {
+    color: #6fc2c4;
+  }
   .cisummit .c-DateBlock__MonthDay {
     color: #7f7f73;
   }
@@ -2243,6 +2298,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-DateBlock__MonthDay {
     color: #1f8234;
+  }
+  .portsconference .c-DateBlock__MonthDay {
+    color: #99381f;
   }
   .structurescongress .c-DateBlock__MonthDay {
     color: #76ad7b;
@@ -2298,6 +2356,9 @@ button.c-Button:disabled,
   .ascestudentdays .c-SupporterBlock__Label {
     color: #ffcf01;
   }
+  .asceweek .c-SupporterBlock__Label {
+    color: #6fc2c4;
+  }
   .cisummit .c-SupporterBlock__Label {
     color: #7f7f73;
   }
@@ -2339,6 +2400,9 @@ button.c-Button:disabled,
   }
   .pipelinesconference .c-SupporterBlock__Label {
     color: #1f8234;
+  }
+  .portsconference .c-SupporterBlock__Label {
+    color: #99381f;
   }
   .structurescongress .c-SupporterBlock__Label {
     color: #76ad7b;
@@ -2469,6 +2533,14 @@ button.c-Button:disabled,
   .ascestudentdays .t-Content h6 {
     color: #41434b;
   }
+  .asceweek .t-Content h1,
+  .asceweek .t-Content h2,
+  .asceweek .t-Content h3,
+  .asceweek .t-Content h4,
+  .asceweek .t-Content h5,
+  .asceweek .t-Content h6 {
+    color: #6a9556;
+  }
   .cisummit .t-Content h1,
   .cisummit .t-Content h2,
   .cisummit .t-Content h3,
@@ -2581,6 +2653,14 @@ button.c-Button:disabled,
   .pipelinesconference .t-Content h6 {
     color: #013d4b;
   }
+  .portsconference .t-Content h1,
+  .portsconference .t-Content h2,
+  .portsconference .t-Content h3,
+  .portsconference .t-Content h4,
+  .portsconference .t-Content h5,
+  .portsconference .t-Content h6 {
+    color: #004990;
+  }
   .structurescongress .t-Content h1,
   .structurescongress .t-Content h2,
   .structurescongress .t-Content h3,
@@ -2639,12 +2719,12 @@ button.c-Button:disabled,
 }
 @media (-ms-high-contrast: none) and screen and (min-width: 45em), (-ms-high-contrast: active) and screen and (min-width: 45em) {
   .c-Hero__Hn {
-    line-height: calc(1.09090909);
+    line-height: 1.09090909;
   }
 }
 @media (-ms-high-contrast: none) and screen and (min-width: 60em), (-ms-high-contrast: active) and screen and (min-width: 60em) {
   .c-Hero__Hn {
-    line-height: calc(1.33333333);
+    line-height: 1.33333333;
   }
 }
 @media (-ms-high-contrast: none) and (min-width: 30em), (-ms-high-contrast: active) and (min-width: 30em) {

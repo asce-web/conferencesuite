@@ -115,12 +115,12 @@
     margin-bottom: (2 * @p-vru);
   }
   .c-Hero__Hn {
-    line-height: calc(1.5 / 1.125);
+    line-height: (1.5 / 1.125);
     @media screen and (min-width: 45em) {
-      line-height: calc(1.5 / 1.375);
+      line-height: (1.5 / 1.375);
     }
     @media screen and (min-width: 60em) {
-      line-height: calc(1.5 / (2.25 / 2));
+      line-height: (1.5 / (2.25 / 2));
     }
   }
   .c-Hero__Blurb {
@@ -242,6 +242,7 @@
   .asceconvention2017  & { background-color: @color-2017-primary; }
   .asceconvention2018  & { background-color: @color-2018-primary; }
   .ascestudentdays     & { background-color: @color-cisd-primary; }
+  .asceweek            & { background-color: @color-asceweek-primary; }
   .cisummit            & { background-color: @color-ci-primary; }
   .etsconference       & { background-color: @color-ets-primary; }
   .ewricongress        & { background-color: @color-ewri-primary; }
@@ -256,6 +257,7 @@
   .omswconference      & { background-color: @color-omsw-primary; }
   .pavementsconference & { background-color: @color-pave-primary; }
   .pipelinesconference & { background-color: @color-pl-primary; }
+  .portsconference     & { background-color: @color-ports-primary; }
   .structurescongress  & { background-color: @color-struct-primary; }
   .surveyingconference & { background-color: @color-surv-primary; }
   .unsatsoilsconf      & { background-color: @color-unsat-primary; }
@@ -277,6 +279,7 @@
   .asceconvention2017  & { background-color: @color-2017-secondary; }
   .asceconvention2018  & { background-color: @color-2018-secondary; }
   .ascestudentdays     & { background-color: @color-cisd-secondary; }
+  .asceweek            & { background-color: @color-asceweek-secondary; }
   .cisummit            & { background-color: @color-ci-secondary; }
   .etsconference       & { background-color: @color-ets-secondary; }
   .ewricongress        & { background-color: @color-ewri-secondary; }
@@ -291,6 +294,7 @@
   .omswconference      & { background-color: @color-omsw-secondary; }
   .pavementsconference & { background-color: @color-pave-secondary; }
   .pipelinesconference & { background-color: @color-pl-secondary; }
+  .portsconference     & { background-color: @color-ports-secondary; }
   .structurescongress  & { background-color: @color-struct-secondary; }
   .surveyingconference & { background-color: @color-surv-secondary; }
   .unsatsoilsconf      & { background-color: @color-unsat-secondary; }
@@ -312,6 +316,7 @@
   .asceconvention2017  & { background-color: @color-2017-accent; }
   .asceconvention2018  & { background-color: @color-2018-accent; }
   .ascestudentdays     & { background-color: @color-cisd-accent; }
+  .asceweek            & { background-color: @color-asceweek-accent; }
   .cisummit            & { background-color: @color-ci-accent; }
   .etsconference       & { background-color: @color-ets-accent; }
   .ewricongress        & { background-color: @color-ewri-accent; }
@@ -326,6 +331,7 @@
   .omswconference      & { background-color: @color-omsw-accent; }
   .pavementsconference & { background-color: @color-pave-accent; }
   .pipelinesconference & { background-color: @color-pl-accent; }
+  .portsconference     & { background-color: @color-ports-accent; }
   .structurescongress  & { background-color: @color-struct-accent; }
   .surveyingconference & { background-color: @color-surv-accent; }
   .unsatsoilsconf      & { background-color: @color-unsat-accent; }
@@ -347,6 +353,7 @@
   .asceconvention2017  & { color: @color-2017-primary; }
   .asceconvention2018  & { color: @color-2018-primary; }
   .ascestudentdays     & { color: @color-cisd-primary; }
+  .asceweek            & { color: @color-asceweek-primary; }
   .cisummit            & { color: @color-ci-primary; }
   .etsconference       & { color: @color-ets-primary; }
   .ewricongress        & { color: @color-ewri-primary; }
@@ -361,6 +368,7 @@
   .omswconference      & { color: @color-omsw-primary; }
   .pavementsconference & { color: @color-pave-primary; }
   .pipelinesconference & { color: @color-pl-primary; }
+  .portsconference     & { color: @color-ports-primary; }
   .structurescongress  & { color: @color-struct-primary; }
   .surveyingconference & { color: @color-surv-primary; }
   .unsatsoilsconf      & { color: @color-unsat-primary; }
@@ -382,6 +390,7 @@
   .asceconvention2017  & { color: @color-2017-secondary; }
   .asceconvention2018  & { color: @color-2018-secondary; }
   .ascestudentdays     & { color: @color-cisd-secondary; }
+  .asceweek            & { color: @color-asceweek-secondary; }
   .cisummit            & { color: @color-ci-secondary; }
   .etsconference       & { color: @color-ets-secondary; }
   .ewricongress        & { color: @color-ewri-secondary; }
@@ -396,6 +405,7 @@
   .omswconference      & { color: @color-omsw-secondary; }
   .pavementsconference & { color: @color-pave-secondary; }
   .pipelinesconference & { color: @color-pl-secondary; }
+  .portsconference     & { color: @color-ports-secondary; }
   .structurescongress  & { color: @color-struct-secondary; }
   .surveyingconference & { color: @color-surv-secondary; }
   .unsatsoilsconf      & { color: @color-unsat-secondary; }
@@ -417,6 +427,7 @@
   .asceconvention2017  & { color: @color-2017-accent; }
   .asceconvention2018  & { color: @color-2018-accent; }
   .ascestudentdays     & { color: @color-cisd-accent; }
+  .asceweek            & { color: @color-asceweek-accent; }
   .cisummit            & { color: @color-ci-accent; }
   .etsconference       & { color: @color-ets-accent; }
   .ewricongress        & { color: @color-ewri-accent; }
@@ -431,6 +442,7 @@
   .omswconference      & { color: @color-omsw-accent; }
   .pavementsconference & { color: @color-pave-accent; }
   .pipelinesconference & { color: @color-pl-accent; }
+  .portsconference     & { color: @color-ports-accent; }
   .structurescongress  & { color: @color-struct-accent; }
   .surveyingconference & { color: @color-surv-accent; }
   .unsatsoilsconf      & { color: @color-unsat-accent; }
