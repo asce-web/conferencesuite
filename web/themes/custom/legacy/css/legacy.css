@@ -243,6 +243,8 @@ a[href]:focus {
   max-width: 90rem;
   margin-left: auto;
   margin-right: auto;
+  max-inline-size: 90rem;
+  margin-inline: auto;
 }
 /*################################*\
     legacy  |  _o-MainCol.less
@@ -398,7 +400,7 @@ main .o-SideCol {
     font-size: 1.25rem;
   }
   .c-ConferenceTitles > * {
-    --vru: calc(1.25  * var(--line-height) * 1rem);
+    --lh: calc(1.25  * var(--line-height) * 1rem);
   }
 }
 .c-ConferenceTitles > * {
@@ -429,6 +431,7 @@ main .o-SideCol {
 \*################################*/
 .c-TopImg {
   position: relative;
+  background-image: url('/themes/custom/legacy/images/banner-default.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -497,14 +500,14 @@ input:checked + .c-YearBadge--tab::after {
   text-transform: uppercase;
 }
 .c-NavBar > * {
-  --vru: calc(0.75  * var(--line-height) * 1rem);
+  --lh: calc(0.75  * var(--line-height) * 1rem);
 }
 @media screen and (min-width: 75em) {
   .c-NavBar {
     font-size: 1rem;
   }
   .c-NavBar > * {
-    --vru: calc(1  * var(--line-height) * 1rem);
+    --lh: calc(1  * var(--line-height) * 1rem);
   }
 }
 .c-NavBar a {
@@ -645,7 +648,7 @@ input:checked + .c-YearBadge--tab::after {
   color: inherit;
 }
 .c-Callout__Body {
-  background-image: url('../../images/pattern-bg-fade.png');
+  background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
   padding: var(--vru) 1rem 0;
 }
@@ -653,7 +656,7 @@ input:checked + .c-YearBadge--tab::after {
     legacy  |  _c-FooterPanel.less
 \*################################*/
 .c-FooterPanel {
-  background-image: url('../../images/pattern-bg.png');
+  background-image: url('/themes/custom/legacy/images/pattern-bg.png');
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -767,11 +770,31 @@ input:checked + .c-YearBadge--tab::after {
   align-items: center;
   margin-bottom: var(--vru);
 }
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .c-KeynoteSpeaker__Session,
 .c-KeynoteSpeaker__Details {
   -webkit-box-flex: 40%;
   -ms-flex: 40%;
   flex: 40%;
+}
+.c-KeynoteSpeaker__Session {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Session {
+    margin-top: var(--vru);
+    margin-bottom: var(--vru);
+    margin-block: var(--vru);
+  }
 }
 .c-KeynoteSpeaker__Headshot {
   -webkit-box-flex: 20%;
@@ -779,9 +802,24 @@ input:checked + .c-YearBadge--tab::after {
   flex: 20%;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-inline: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Headshot {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
 }
 .c-KeynoteSpeaker__Headshot > img {
   width: 100%;
+}
+@media not all and (min-width: 30em) {
+  .c-KeynoteSpeaker__Details {
+    text-align: center;
+  }
 }
 /*################################*\
     legacy  |  _c-Chair.less
@@ -882,7 +920,7 @@ input:checked + .c-YearBadge--tab::after {
   font-weight: 600;
 }
 .c-DateBlock > * {
-  --vru: calc(0.875  * var(--line-height) * 1rem);
+  --lh: calc(0.875  * var(--line-height) * 1rem);
 }
 .c-DateBlock__Date {
   padding-right: 0.5rem;
