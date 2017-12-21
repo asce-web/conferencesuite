@@ -448,6 +448,11 @@
   .unsatsoilsconf      & { color: @color-unsat-accent; }
 }
     //**** end ### mixins ****//
+  main {
+    h1, h2, h3, h4, h5, h6 {
+      .mx-c-primary();
+    }
+  }
   // REVIEW indentation
     .c-Banner--head {
       .mx-bc-primary();
@@ -482,11 +487,6 @@
     }
     .c-SupporterBlock__Label {
       .mx-c-secondary();
-    }
-    .t-Content {
-      h1, h2, h3, h4, h5, h6 {
-        .mx-c-primary();
-      }
     }
   //---- end ## Site Color Schemes ----//
 
