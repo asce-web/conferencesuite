@@ -20,7 +20,10 @@
         {{ page.header }}
       </a>
       <div class="o-Flex__Item o-SideCol c-TopImg -d-n-nM" style="background-image: url('{{ page_images_banner }}');">
-        <span class="c-YearBadge" role="none">{{ (page_startdate|date('Y'))[2:] }}</span>
+        <span class="c-YearBadge" aria-hidden="true">
+          {{- (page_startdate|date('Y'))[:2] -}}
+          <span class="c-YearBadge__Year">{{ (page_startdate|date('Y'))[2:] }}</span>
+        </span>
         {{ page.menu_contrib }}
       </div>
     </div>

@@ -28,10 +28,10 @@
 <dt class="o-Flex__Item o-Tablist__Tab" id="tab-current" role="tab">
   <label class="h-Block">
     <input class="o-Tablist__Check h-Hidden" type="radio" name="footertabs" value="{{ block_startdate|date('Y') }}" checked=""/>
-    <time class="c-YearBadge c-YearBadge--tab"
-      datetime="{{ block_startdate|date('Y') }}"
-      aria-label="{{ block_startdate|date('Y') }}"
-    >{{ (block_startdate|date('Y'))[2:] }}</time>
+    <time class="c-YearBadge c-YearBadge--tab" datetime="{{ block_startdate|date('Y') }}">
+      {{- (block_startdate|date('Y'))[:2] -}}
+      <span class="c-YearBadge__Year">{{ (block_startdate|date('Y'))[2:] }}</span>
+    </time>
   </label>
 </dt>
 <dd class="o-Flex__Item o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-current" role="tabpanel">
