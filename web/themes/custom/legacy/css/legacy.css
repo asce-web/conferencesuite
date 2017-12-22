@@ -58,12 +58,6 @@
 /*################################*\
     legacy  |  _dev.less
 \*################################*/
-a {
-  color: inherit;
-}
-a:not([href]) {
-  opacity: 1;
-}
 .o-Flex--siteHead {
   margin: var(--vru) 0;
   -webkit-box-align: center;
@@ -298,6 +292,9 @@ main .o-SideCol {
     legacy  |  _o-Drawer.less
 \*################################*/
 .o-Drawer__Bar {
+  background-color: var(--color-secondary, #6fc2c4);
+  -webkit-box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
@@ -452,15 +449,12 @@ main .o-SideCol {
     left: calc(-0.5 * var(--year-badge-width));
     width: var(--year-badge-width);
     padding-top: calc(0.5 * var(--year-badge-width));
-    font-weight: 700;
+    font-weight: 300;
     font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: calc(0.25 * var(--year-badge-width));
     text-align: center;
     background-color: #0c5fa8;
-  }
-  .c-YearBadge::before {
-    content: '20';
-    font-weight: 300;
+    color: #fff;
   }
   .c-YearBadge::after {
     --year-badge-corner-height: calc(0.25 * var(--year-badge-width));
@@ -473,10 +467,12 @@ main .o-SideCol {
     border-width: var(--year-badge-corner-height) calc(0.5 * var(--year-badge-width)) 0;
     border-color: #0c5fa8 transparent;
   }
+  .c-YearBadge__Year {
+    font-weight: 700;
+  }
 }
 .c-YearBadge--tab {
   z-index: 1;
-  color: #fff;
   background-color: var(--color-secondary, #6fc2c4);
 }
 .c-YearBadge--tab::after {
@@ -595,9 +591,6 @@ input:checked + .c-YearBadge--tab::after {
 .c-NavBar--mobile {
   font-weight: 600;
   text-transform: none;
-  background-color: var(--color-secondary, #6fc2c4);
-  -webkit-box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.25);
 }
 .c-NavBar--mobile > * {
   padding: 0.75rem;
@@ -1326,6 +1319,278 @@ button.c-Button:disabled,
   }
   .slick-slide a.h-Block {
     height: 36px;
+  }
+  :root main h1,
+  :root main h2,
+  :root main h3,
+  :root main h4,
+  :root main h5,
+  :root main h6 {
+    color: #6a9556;
+  }
+  .sample-stage main h1,
+  .sample-stage main h2,
+  .sample-stage main h3,
+  .sample-stage main h4,
+  .sample-stage main h5,
+  .sample-stage main h6 {
+    color: #c9bb58;
+  }
+  .sample-dev main h1,
+  .sample-dev main h2,
+  .sample-dev main h3,
+  .sample-dev main h4,
+  .sample-dev main h5,
+  .sample-dev main h6 {
+    color: #d64153;
+  }
+  .sample-canary main h1,
+  .sample-canary main h2,
+  .sample-canary main h3,
+  .sample-canary main h4,
+  .sample-canary main h5,
+  .sample-canary main h6 {
+    color: #58c2d6;
+  }
+  .sample-training main h1,
+  .sample-training main h2,
+  .sample-training main h3,
+  .sample-training main h4,
+  .sample-training main h5,
+  .sample-training main h6 {
+    color: #714509;
+  }
+  .aei-conference main h1,
+  .aei-conference main h2,
+  .aei-conference main h3,
+  .aei-conference main h4,
+  .aei-conference main h5,
+  .aei-conference main h6 {
+    color: #00548e;
+  }
+  .aei-forum main h1,
+  .aei-forum main h2,
+  .aei-forum main h3,
+  .aei-forum main h4,
+  .aei-forum main h5,
+  .aei-forum main h6 {
+    color: #7f7f73;
+  }
+  .aeisdc main h1,
+  .aeisdc main h2,
+  .aeisdc main h3,
+  .aeisdc main h4,
+  .aeisdc main h5,
+  .aeisdc main h6 {
+    color: #00163e;
+  }
+  .apmconference main h1,
+  .apmconference main h2,
+  .apmconference main h3,
+  .apmconference main h4,
+  .apmconference main h5,
+  .apmconference main h6 {
+    color: #e37f1c;
+  }
+  .asce-cta main h1,
+  .asce-cta main h2,
+  .asce-cta main h3,
+  .asce-cta main h4,
+  .asce-cta main h5,
+  .asce-cta main h6 {
+    color: #0033a0;
+  }
+  .asce-ictd main h1,
+  .asce-ictd main h2,
+  .asce-ictd main h3,
+  .asce-ictd main h4,
+  .asce-ictd main h5,
+  .asce-ictd main h6 {
+    color: #1a355e;
+  }
+  .asceconvention main h1,
+  .asceconvention main h2,
+  .asceconvention main h3,
+  .asceconvention main h4,
+  .asceconvention main h5,
+  .asceconvention main h6 {
+    color: #3fae2a;
+  }
+  .asceconvention2017 main h1,
+  .asceconvention2017 main h2,
+  .asceconvention2017 main h3,
+  .asceconvention2017 main h4,
+  .asceconvention2017 main h5,
+  .asceconvention2017 main h6 {
+    color: #00737b;
+  }
+  .asceconvention2018 main h1,
+  .asceconvention2018 main h2,
+  .asceconvention2018 main h3,
+  .asceconvention2018 main h4,
+  .asceconvention2018 main h5,
+  .asceconvention2018 main h6 {
+    color: #26487b;
+  }
+  .ascestudentdays main h1,
+  .ascestudentdays main h2,
+  .ascestudentdays main h3,
+  .ascestudentdays main h4,
+  .ascestudentdays main h5,
+  .ascestudentdays main h6 {
+    color: #41434b;
+  }
+  .asceweek main h1,
+  .asceweek main h2,
+  .asceweek main h3,
+  .asceweek main h4,
+  .asceweek main h5,
+  .asceweek main h6 {
+    color: #6a9556;
+  }
+  .cisummit main h1,
+  .cisummit main h2,
+  .cisummit main h3,
+  .cisummit main h4,
+  .cisummit main h5,
+  .cisummit main h6 {
+    color: #d06f1a;
+  }
+  .etsconference main h1,
+  .etsconference main h2,
+  .etsconference main h3,
+  .etsconference main h4,
+  .etsconference main h5,
+  .etsconference main h6 {
+    color: #002c73;
+  }
+  .ewricongress main h1,
+  .ewricongress main h2,
+  .ewricongress main h3,
+  .ewricongress main h4,
+  .ewricongress main h5,
+  .ewricongress main h6 {
+    color: #3d2758;
+  }
+  .geesdconference main h1,
+  .geesdconference main h2,
+  .geesdconference main h3,
+  .geesdconference main h4,
+  .geesdconference main h5,
+  .geesdconference main h6 {
+    color: #004e58;
+  }
+  .geocongress main h1,
+  .geocongress main h2,
+  .geocongress main h3,
+  .geocongress main h4,
+  .geocongress main h5,
+  .geocongress main h6 {
+    color: #004e58;
+  }
+  .georiskconference main h1,
+  .georiskconference main h2,
+  .georiskconference main h3,
+  .georiskconference main h4,
+  .georiskconference main h5,
+  .georiskconference main h6 {
+    color: #00535e;
+  }
+  .groutingconference main h1,
+  .groutingconference main h2,
+  .groutingconference main h3,
+  .groutingconference main h4,
+  .groutingconference main h5,
+  .groutingconference main h6 {
+    color: #00565b;
+  }
+  .hmemconference main h1,
+  .hmemconference main h2,
+  .hmemconference main h3,
+  .hmemconference main h4,
+  .hmemconference main h5,
+  .hmemconference main h6 {
+    color: #3b421b;
+  }
+  .icce2018 main h1,
+  .icce2018 main h2,
+  .icce2018 main h3,
+  .icce2018 main h4,
+  .icce2018 main h5,
+  .icce2018 main h6 {
+    color: #004990;
+  }
+  .icsiconference main h1,
+  .icsiconference main h2,
+  .icsiconference main h3,
+  .icsiconference main h4,
+  .icsiconference main h5,
+  .icsiconference main h6 {
+    color: #0b2f69;
+  }
+  .lidconference main h1,
+  .lidconference main h2,
+  .lidconference main h3,
+  .lidconference main h4,
+  .lidconference main h5,
+  .lidconference main h6 {
+    color: #39629d;
+  }
+  .omswconference main h1,
+  .omswconference main h2,
+  .omswconference main h3,
+  .omswconference main h4,
+  .omswconference main h5,
+  .omswconference main h6 {
+    color: #355d6e;
+  }
+  .pavementsconference main h1,
+  .pavementsconference main h2,
+  .pavementsconference main h3,
+  .pavementsconference main h4,
+  .pavementsconference main h5,
+  .pavementsconference main h6 {
+    color: #5e6167;
+  }
+  .pipelinesconference main h1,
+  .pipelinesconference main h2,
+  .pipelinesconference main h3,
+  .pipelinesconference main h4,
+  .pipelinesconference main h5,
+  .pipelinesconference main h6 {
+    color: #013d4b;
+  }
+  .portsconference main h1,
+  .portsconference main h2,
+  .portsconference main h3,
+  .portsconference main h4,
+  .portsconference main h5,
+  .portsconference main h6 {
+    color: #004990;
+  }
+  .structurescongress main h1,
+  .structurescongress main h2,
+  .structurescongress main h3,
+  .structurescongress main h4,
+  .structurescongress main h5,
+  .structurescongress main h6 {
+    color: #005a9c;
+  }
+  .surveyingconference main h1,
+  .surveyingconference main h2,
+  .surveyingconference main h3,
+  .surveyingconference main h4,
+  .surveyingconference main h5,
+  .surveyingconference main h6 {
+    color: #547975;
+  }
+  .unsatsoilsconf main h1,
+  .unsatsoilsconf main h2,
+  .unsatsoilsconf main h3,
+  .unsatsoilsconf main h4,
+  .unsatsoilsconf main h5,
+  .unsatsoilsconf main h6 {
+    color: #00565b;
   }
   :root .c-Banner--head {
     background-color: #6a9556;
@@ -2415,278 +2680,6 @@ button.c-Button:disabled,
   .unsatsoilsconf .c-SupporterBlock__Label {
     color: #b80007;
   }
-  :root .t-Content h1,
-  :root .t-Content h2,
-  :root .t-Content h3,
-  :root .t-Content h4,
-  :root .t-Content h5,
-  :root .t-Content h6 {
-    color: #6a9556;
-  }
-  .sample-stage .t-Content h1,
-  .sample-stage .t-Content h2,
-  .sample-stage .t-Content h3,
-  .sample-stage .t-Content h4,
-  .sample-stage .t-Content h5,
-  .sample-stage .t-Content h6 {
-    color: #c9bb58;
-  }
-  .sample-dev .t-Content h1,
-  .sample-dev .t-Content h2,
-  .sample-dev .t-Content h3,
-  .sample-dev .t-Content h4,
-  .sample-dev .t-Content h5,
-  .sample-dev .t-Content h6 {
-    color: #d64153;
-  }
-  .sample-canary .t-Content h1,
-  .sample-canary .t-Content h2,
-  .sample-canary .t-Content h3,
-  .sample-canary .t-Content h4,
-  .sample-canary .t-Content h5,
-  .sample-canary .t-Content h6 {
-    color: #58c2d6;
-  }
-  .sample-training .t-Content h1,
-  .sample-training .t-Content h2,
-  .sample-training .t-Content h3,
-  .sample-training .t-Content h4,
-  .sample-training .t-Content h5,
-  .sample-training .t-Content h6 {
-    color: #714509;
-  }
-  .aei-conference .t-Content h1,
-  .aei-conference .t-Content h2,
-  .aei-conference .t-Content h3,
-  .aei-conference .t-Content h4,
-  .aei-conference .t-Content h5,
-  .aei-conference .t-Content h6 {
-    color: #00548e;
-  }
-  .aei-forum .t-Content h1,
-  .aei-forum .t-Content h2,
-  .aei-forum .t-Content h3,
-  .aei-forum .t-Content h4,
-  .aei-forum .t-Content h5,
-  .aei-forum .t-Content h6 {
-    color: #7f7f73;
-  }
-  .aeisdc .t-Content h1,
-  .aeisdc .t-Content h2,
-  .aeisdc .t-Content h3,
-  .aeisdc .t-Content h4,
-  .aeisdc .t-Content h5,
-  .aeisdc .t-Content h6 {
-    color: #00163e;
-  }
-  .apmconference .t-Content h1,
-  .apmconference .t-Content h2,
-  .apmconference .t-Content h3,
-  .apmconference .t-Content h4,
-  .apmconference .t-Content h5,
-  .apmconference .t-Content h6 {
-    color: #e37f1c;
-  }
-  .asce-cta .t-Content h1,
-  .asce-cta .t-Content h2,
-  .asce-cta .t-Content h3,
-  .asce-cta .t-Content h4,
-  .asce-cta .t-Content h5,
-  .asce-cta .t-Content h6 {
-    color: #0033a0;
-  }
-  .asce-ictd .t-Content h1,
-  .asce-ictd .t-Content h2,
-  .asce-ictd .t-Content h3,
-  .asce-ictd .t-Content h4,
-  .asce-ictd .t-Content h5,
-  .asce-ictd .t-Content h6 {
-    color: #1a355e;
-  }
-  .asceconvention .t-Content h1,
-  .asceconvention .t-Content h2,
-  .asceconvention .t-Content h3,
-  .asceconvention .t-Content h4,
-  .asceconvention .t-Content h5,
-  .asceconvention .t-Content h6 {
-    color: #3fae2a;
-  }
-  .asceconvention2017 .t-Content h1,
-  .asceconvention2017 .t-Content h2,
-  .asceconvention2017 .t-Content h3,
-  .asceconvention2017 .t-Content h4,
-  .asceconvention2017 .t-Content h5,
-  .asceconvention2017 .t-Content h6 {
-    color: #00737b;
-  }
-  .asceconvention2018 .t-Content h1,
-  .asceconvention2018 .t-Content h2,
-  .asceconvention2018 .t-Content h3,
-  .asceconvention2018 .t-Content h4,
-  .asceconvention2018 .t-Content h5,
-  .asceconvention2018 .t-Content h6 {
-    color: #26487b;
-  }
-  .ascestudentdays .t-Content h1,
-  .ascestudentdays .t-Content h2,
-  .ascestudentdays .t-Content h3,
-  .ascestudentdays .t-Content h4,
-  .ascestudentdays .t-Content h5,
-  .ascestudentdays .t-Content h6 {
-    color: #41434b;
-  }
-  .asceweek .t-Content h1,
-  .asceweek .t-Content h2,
-  .asceweek .t-Content h3,
-  .asceweek .t-Content h4,
-  .asceweek .t-Content h5,
-  .asceweek .t-Content h6 {
-    color: #6a9556;
-  }
-  .cisummit .t-Content h1,
-  .cisummit .t-Content h2,
-  .cisummit .t-Content h3,
-  .cisummit .t-Content h4,
-  .cisummit .t-Content h5,
-  .cisummit .t-Content h6 {
-    color: #d06f1a;
-  }
-  .etsconference .t-Content h1,
-  .etsconference .t-Content h2,
-  .etsconference .t-Content h3,
-  .etsconference .t-Content h4,
-  .etsconference .t-Content h5,
-  .etsconference .t-Content h6 {
-    color: #002c73;
-  }
-  .ewricongress .t-Content h1,
-  .ewricongress .t-Content h2,
-  .ewricongress .t-Content h3,
-  .ewricongress .t-Content h4,
-  .ewricongress .t-Content h5,
-  .ewricongress .t-Content h6 {
-    color: #3d2758;
-  }
-  .geesdconference .t-Content h1,
-  .geesdconference .t-Content h2,
-  .geesdconference .t-Content h3,
-  .geesdconference .t-Content h4,
-  .geesdconference .t-Content h5,
-  .geesdconference .t-Content h6 {
-    color: #004e58;
-  }
-  .geocongress .t-Content h1,
-  .geocongress .t-Content h2,
-  .geocongress .t-Content h3,
-  .geocongress .t-Content h4,
-  .geocongress .t-Content h5,
-  .geocongress .t-Content h6 {
-    color: #004e58;
-  }
-  .georiskconference .t-Content h1,
-  .georiskconference .t-Content h2,
-  .georiskconference .t-Content h3,
-  .georiskconference .t-Content h4,
-  .georiskconference .t-Content h5,
-  .georiskconference .t-Content h6 {
-    color: #00535e;
-  }
-  .groutingconference .t-Content h1,
-  .groutingconference .t-Content h2,
-  .groutingconference .t-Content h3,
-  .groutingconference .t-Content h4,
-  .groutingconference .t-Content h5,
-  .groutingconference .t-Content h6 {
-    color: #00565b;
-  }
-  .hmemconference .t-Content h1,
-  .hmemconference .t-Content h2,
-  .hmemconference .t-Content h3,
-  .hmemconference .t-Content h4,
-  .hmemconference .t-Content h5,
-  .hmemconference .t-Content h6 {
-    color: #3b421b;
-  }
-  .icce2018 .t-Content h1,
-  .icce2018 .t-Content h2,
-  .icce2018 .t-Content h3,
-  .icce2018 .t-Content h4,
-  .icce2018 .t-Content h5,
-  .icce2018 .t-Content h6 {
-    color: #004990;
-  }
-  .icsiconference .t-Content h1,
-  .icsiconference .t-Content h2,
-  .icsiconference .t-Content h3,
-  .icsiconference .t-Content h4,
-  .icsiconference .t-Content h5,
-  .icsiconference .t-Content h6 {
-    color: #0b2f69;
-  }
-  .lidconference .t-Content h1,
-  .lidconference .t-Content h2,
-  .lidconference .t-Content h3,
-  .lidconference .t-Content h4,
-  .lidconference .t-Content h5,
-  .lidconference .t-Content h6 {
-    color: #39629d;
-  }
-  .omswconference .t-Content h1,
-  .omswconference .t-Content h2,
-  .omswconference .t-Content h3,
-  .omswconference .t-Content h4,
-  .omswconference .t-Content h5,
-  .omswconference .t-Content h6 {
-    color: #355d6e;
-  }
-  .pavementsconference .t-Content h1,
-  .pavementsconference .t-Content h2,
-  .pavementsconference .t-Content h3,
-  .pavementsconference .t-Content h4,
-  .pavementsconference .t-Content h5,
-  .pavementsconference .t-Content h6 {
-    color: #5e6167;
-  }
-  .pipelinesconference .t-Content h1,
-  .pipelinesconference .t-Content h2,
-  .pipelinesconference .t-Content h3,
-  .pipelinesconference .t-Content h4,
-  .pipelinesconference .t-Content h5,
-  .pipelinesconference .t-Content h6 {
-    color: #013d4b;
-  }
-  .portsconference .t-Content h1,
-  .portsconference .t-Content h2,
-  .portsconference .t-Content h3,
-  .portsconference .t-Content h4,
-  .portsconference .t-Content h5,
-  .portsconference .t-Content h6 {
-    color: #004990;
-  }
-  .structurescongress .t-Content h1,
-  .structurescongress .t-Content h2,
-  .structurescongress .t-Content h3,
-  .structurescongress .t-Content h4,
-  .structurescongress .t-Content h5,
-  .structurescongress .t-Content h6 {
-    color: #005a9c;
-  }
-  .surveyingconference .t-Content h1,
-  .surveyingconference .t-Content h2,
-  .surveyingconference .t-Content h3,
-  .surveyingconference .t-Content h4,
-  .surveyingconference .t-Content h5,
-  .surveyingconference .t-Content h6 {
-    color: #547975;
-  }
-  .unsatsoilsconf .t-Content h1,
-  .unsatsoilsconf .t-Content h2,
-  .unsatsoilsconf .t-Content h3,
-  .unsatsoilsconf .t-Content h4,
-  .unsatsoilsconf .t-Content h5,
-  .unsatsoilsconf .t-Content h6 {
-    color: #00565b;
-  }
   .c-SiteLogo {
     width: 6rem;
   }
@@ -2843,10 +2836,6 @@ button.c-Button:disabled,
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
-.o-Tablist {
-  display: contents;
-  width: 100%;
-}
 #panel-prev .t-Content,
 #panel-next .t-Content {
   margin-left: calc(var(--site-logo-size) + (2 * var(--site-logo-space)) + 1rem);
