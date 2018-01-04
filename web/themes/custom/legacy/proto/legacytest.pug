@@ -56,12 +56,12 @@ html(lang="en")
         h1.h-Hidden Mobile Menu
         a.o-Flex__Item.o-MobileBar__Item.h-Block(href="./")
           i.glyphicons.glyphicons-home: span.h-Hidden Home
-        button.o-Flex__Item.o-MobileBar__Item.o-Drawer__Button(type="button" aria-controls="mobile-drawer")
+        button.o-Flex__Item.o-MobileBar__Item.o-Drawer__Button(type="button" aria-controls="mobile-drawer" aria-expanded="false")
           i.glyphicons.glyphicons-menu-hamburger
             span.h-Hidden toggle main menu
         noscript
           a(href="#sitemap") Site Map
-        div#mobile-drawer.o-Drawer__Bar(aria-expanded="false" aria-hidden="true"): ul.o-List.c-NavBar.c-NavBar--mobile(role="directory")
+        div#mobile-drawer.o-Drawer__Bar(aria-hidden="true"): ul.o-List.c-NavBar.c-NavBar--mobile(role="directory")
           li.o-List__Item
             a(href="./") Home
           li.o-List__Item
