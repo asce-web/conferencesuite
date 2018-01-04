@@ -1,6 +1,6 @@
 {
     "name": "drupal-composer/drupal-project",
-    "version": "0.10.6",
+    "version": "1.0.0-beta",
     "description": "Project template for Drupal 8 projects with composer",
     "type": "project",
     "license": "GPL-2.0+",

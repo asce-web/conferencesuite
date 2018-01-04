@@ -542,7 +542,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
-      title: Supporters
+      title: 'All Sponsors'
       header: {  }
       footer: {  }
       empty: {  }
@@ -976,6 +976,7 @@ display:
         relationships: false
         filters: false
         filter_groups: false
+        title: false
       allow:
         items_per_page: false
       style:
@@ -1082,6 +1083,7 @@ display:
         operator: AND
         groups:
           1: AND
+      title: 'Top Sponsors'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1106,6 +1108,20 @@ display:
       display_description: ''
       allow:
         items_per_page: false
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<h2>Thank You to Our Sponsors!</h2>\n<p>The generous contributions from the following sponsors enable our conference to continue its commitment to excellence in programming and networking events for the attendees.</p>\n\n"
+          plugin_id: text_custom
+      defaults:
+        header: false
     cache_metadata:
       max-age: -1
       contexts:

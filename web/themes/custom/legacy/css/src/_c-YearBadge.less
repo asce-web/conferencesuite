@@ -11,12 +11,12 @@
 // in the header and footer.
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-06-16</time></dd>
+//   <dt>updated</dt> <dd><time>2017-12-22</time></dd>
 // </dl></header>
 //
 // Markup:
-// <span class="c-YearBadge {{ modifier_class }}" role="none">16</span>
-// <time class="c-YearBadge {{ modifier_class }}" datetime="2016" aria-label="2016">16</time>
+// <span class="c-YearBadge {{ modifier_class }}" role="none">20<span class="c-YearBadge__Year">16</span></span>
+// <time class="c-YearBadge {{ modifier_class }}" datetime="2016">20<span class="c-YearBadge__Year">16</span></time>
 //
 // .c-YearBadge--tab - badge used to select and indicate year in the footer
 //
@@ -24,13 +24,14 @@
 //
 // Styleguide Components.YearBadge
 
-// overwritten below if var() is supported
 .c-YearBadge {
-  display: none;
+  display: none; // overwritten below if var() is supported
+  color: @g-color-banner-txt;
 }
 .c-YearBadge--tab {
   display: inline;
   font-size: 3rem;
+  margin-right: 1em; // overwritten below if var() is supported
 }
 
 @supports (width: var(--width)) {
@@ -40,15 +41,11 @@
   left: calc(~'-0.5 * var(--year-badge-width)');
   width: var(--year-badge-width);
   padding-top: calc(~'0.5 * var(--year-badge-width)');
-  font-weight: 700;
+  font-weight: 300;
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
   font-size: calc(~'0.25 * var(--year-badge-width)');
   text-align: center;
   background-color: @g-color-asce-blue;
-  &::before {
-    content: '20';
-    font-weight: 300;
-  }
   &::after {
     --year-badge-corner-height: calc(~'0.25 * var(--year-badge-width)');
     content: '';
@@ -61,11 +58,18 @@
     border-color: @g-color-asce-blue transparent;
   }
 }
+  .c-YearBadge--tab {
+    margin-right: initial; // HACK fallback
+    margin-right: unset; // unset 1em above
+  }
+  .c-YearBadge__Year {
+    font-weight: 700;
+  }
 }
 
+// must be after @supports so it doesn’t get overridden
 .c-YearBadge--tab {
   z-index: 1; // over footer panels
-  color: @g-color-banner-txt; // need to set because not inside a Banner
   background-color: var(--color-secondary, @g-color-secondary);
   &::after {
     border-color: transparent;

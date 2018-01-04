@@ -3,7 +3,7 @@ global-styling:
     js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.1.1/css/xmeter.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/xmeter/v6.2.0/css/xmeter.css: {type: external, minified: true}
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
@@ -91,7 +91,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    //cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js: {minified: false}
+    //cdn.rawgit.com/chharvey/xmeter/v6.2.0/js/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:

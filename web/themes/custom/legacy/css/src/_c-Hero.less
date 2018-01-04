@@ -40,6 +40,8 @@
 .c-Hero__Hn {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
   .font-size-el(1.125); // REVIEW magic number!!!
+  color: inherit; // HACK fallback
+  color: unset; // override `main >> h1`
   @media screen and (min-width: 45em) {
     .font-size-el(1.375); // REVIEW magic number!!!
   }
