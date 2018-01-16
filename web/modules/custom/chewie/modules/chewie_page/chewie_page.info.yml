@@ -7,5 +7,5 @@ dependencies:
   - block
   - path
   - system
-version: 8.x-1.0-beta.2
+version: 8.x-1.0.0
 package: Chewie
