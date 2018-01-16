@@ -9,5 +9,5 @@ dependencies:
   - image
   - link
   - options
-version: 8.x-1.0.1
+version: 8.x-1.1.0
 package: Chewie
