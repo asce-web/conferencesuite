@@ -390,7 +390,11 @@ main .o-SideCol {
 \*################################*/
 .c-ConferenceTitles {
   font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-  text-align: center;
+}
+@media not all and (min-width: 45em) {
+  .c-ConferenceTitles {
+    text-align: center;
+  }
 }
 @media (min-width: 75em) {
   .c-ConferenceTitles {
@@ -437,10 +441,12 @@ main .o-SideCol {
 \*################################*/
 .c-YearBadge {
   display: none;
+  color: #fff;
 }
 .c-YearBadge--tab {
   display: inline;
   font-size: 3rem;
+  margin-right: 1em;
 }
 @supports (width: var(--width)) {
   .c-YearBadge {
@@ -454,7 +460,6 @@ main .o-SideCol {
     font-size: calc(0.25 * var(--year-badge-width));
     text-align: center;
     background-color: #0c5fa8;
-    color: #fff;
   }
   .c-YearBadge::after {
     --year-badge-corner-height: calc(0.25 * var(--year-badge-width));
@@ -466,6 +471,10 @@ main .o-SideCol {
     height: 0;
     border-width: var(--year-badge-corner-height) calc(0.5 * var(--year-badge-width)) 0;
     border-color: #0c5fa8 transparent;
+  }
+  .c-YearBadge--tab {
+    margin-right: initial;
+    margin-right: unset;
   }
   .c-YearBadge__Year {
     font-weight: 700;
@@ -1158,32 +1167,6 @@ button.c-Button:disabled,
     legacy  |  _hack.ie.less
 \*################################*/
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  html {
-    line-height: 1.5rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  pre,
-  figure,
-  blockquote,
-  ol,
-  ul,
-  dl,
-  table,
-  form,
-  fieldset,
-  textarea,
-  details {
-    margin-bottom: 1.5rem;
-  }
-  h1 {
-    padding-top: 1.5rem;
-  }
   .-mt-1 {
     margin-top: 1.5rem;
   }
@@ -1472,6 +1455,14 @@ button.c-Button:disabled,
   .ewricongress main h6 {
     color: #3d2758;
   }
+  .forensiccongress main h1,
+  .forensiccongress main h2,
+  .forensiccongress main h3,
+  .forensiccongress main h4,
+  .forensiccongress main h5,
+  .forensiccongress main h6 {
+    color: #13274a;
+  }
   .geesdconference main h1,
   .geesdconference main h2,
   .geesdconference main h3,
@@ -1649,6 +1640,9 @@ button.c-Button:disabled,
   .ewricongress .c-Banner--head {
     background-color: #3d2758;
   }
+  .forensiccongress .c-Banner--head {
+    background-color: #13274a;
+  }
   .geesdconference .c-Banner--head {
     background-color: #004e58;
   }
@@ -1750,6 +1744,9 @@ button.c-Button:disabled,
   }
   .ewricongress .c-Banner--nav {
     background-color: #7a4b8f;
+  }
+  .forensiccongress .c-Banner--nav {
+    background-color: #7c6a54;
   }
   .geesdconference .c-Banner--nav {
     background-color: #985f35;
@@ -1853,6 +1850,9 @@ button.c-Button:disabled,
   .ewricongress .c-Banner--nav--sub {
     background-color: #aecb6e;
   }
+  .forensiccongress .c-Banner--nav--sub {
+    background-color: #8b1c40;
+  }
   .geesdconference .c-Banner--nav--sub {
     background-color: #97a8b0;
   }
@@ -1955,6 +1955,9 @@ button.c-Button:disabled,
   .ewricongress .c-YearBadge--tab {
     background-color: #7a4b8f;
   }
+  .forensiccongress .c-YearBadge--tab {
+    background-color: #7c6a54;
+  }
   .geesdconference .c-YearBadge--tab {
     background-color: #985f35;
   }
@@ -2056,6 +2059,9 @@ button.c-Button:disabled,
   }
   .ewricongress input:checked + .c-YearBadge--tab {
     background-color: #aecb6e;
+  }
+  .forensiccongress input:checked + .c-YearBadge--tab {
+    background-color: #8b1c40;
   }
   .geesdconference input:checked + .c-YearBadge--tab {
     background-color: #97a8b0;
@@ -2197,6 +2203,11 @@ button.c-Button:disabled,
   .ewricongress .c-NavBar--main > *.active {
     background-color: #aecb6e;
   }
+  .forensiccongress .c-NavBar--main > *:hover,
+  .forensiccongress .c-NavBar--main > *:focus,
+  .forensiccongress .c-NavBar--main > *.active {
+    background-color: #8b1c40;
+  }
   .geesdconference .c-NavBar--main > *:hover,
   .geesdconference .c-NavBar--main > *:focus,
   .geesdconference .c-NavBar--main > *.active {
@@ -2329,6 +2340,9 @@ button.c-Button:disabled,
   .ewricongress .c-NavBar--mobile {
     background-color: #7a4b8f;
   }
+  .forensiccongress .c-NavBar--mobile {
+    background-color: #7c6a54;
+  }
   .geesdconference .c-NavBar--mobile {
     background-color: #985f35;
   }
@@ -2430,6 +2444,9 @@ button.c-Button:disabled,
   }
   .ewricongress .c-Hero {
     background-color: #3d2758;
+  }
+  .forensiccongress .c-Hero {
+    background-color: #13274a;
   }
   .geesdconference .c-Hero {
     background-color: #004e58;
@@ -2533,6 +2550,9 @@ button.c-Button:disabled,
   .ewricongress .c-DateBlock__MonthDay {
     color: #7a4b8f;
   }
+  .forensiccongress .c-DateBlock__MonthDay {
+    color: #7c6a54;
+  }
   .geesdconference .c-DateBlock__MonthDay {
     color: #985f35;
   }
@@ -2634,6 +2654,9 @@ button.c-Button:disabled,
   }
   .ewricongress .c-SupporterBlock__Label {
     color: #7a4b8f;
+  }
+  .forensiccongress .c-SupporterBlock__Label {
+    color: #7c6a54;
   }
   .geesdconference .c-SupporterBlock__Label {
     color: #985f35;
@@ -2838,7 +2861,7 @@ button.c-Button:disabled,
 \*################################*/
 #panel-prev .t-Content,
 #panel-next .t-Content {
-  margin-left: calc(var(--site-logo-size) + (2 * var(--site-logo-space)) + 1rem);
+  margin-left: calc(var(--site-logo-size) + (2 * var(--site-logo-space)));
 }
 body > a:last-of-type {
   position: fixed;
