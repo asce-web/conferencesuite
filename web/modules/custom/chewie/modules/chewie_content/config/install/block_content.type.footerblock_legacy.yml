@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footerblock_legacy
+label: 'Footer Block Legacy'
+revision: 1
+description: 'A panel in the footer that contains information for the previous or next year’s conference.'

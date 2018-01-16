@@ -52,17 +52,16 @@ html(lang="en")
   body#top(class=conference.classname)
     a.h-Hidden(href="#main") skip to main content
     header
-      nav.o-Flex.o-MobileBar.c-Banner.c-Banner--nav.-d-n-sM
+      nav.o-Flex.o-MobileBar.o-Drawer.c-Banner.c-Banner--nav.-d-n-sM
         h1.h-Hidden Mobile Menu
         a.o-Flex__Item.o-MobileBar__Item.h-Block(href="./")
           i.glyphicons.glyphicons-home: span.h-Hidden Home
-        label.o-Flex__Item.o-MobileBar__Item.c-Toggle.h-Block
-          input.c-Toggle__Check.h-Hidden(type="checkbox" value="main menu is open" role="switch")
-          i.c-Toggle__Viz.glyphicons.glyphicons-menu-hamburger
+        button.o-Flex__Item.o-MobileBar__Item.o-Drawer__Button(type="button" aria-controls="mobile-drawer" aria-expanded="false")
+          i.glyphicons.glyphicons-menu-hamburger
             span.h-Hidden toggle main menu
         noscript
           a(href="#sitemap") Site Map
-        ul.o-List.o-Drawer.c-NavBar.c-NavBar--mobile(role="directory")
+        div#mobile-drawer.o-Drawer__Bar(aria-hidden="true"): ul.o-List.c-NavBar.c-NavBar--mobile(role="directory")
           li.o-List__Item
             a(href="./") Home
           li.o-List__Item
@@ -95,12 +94,14 @@ html(lang="en")
             if conference.secondary_logo
               div.o-Flex__Item.c-SiteLogo.c-SiteLogo--secondary
                 img(src=conference.image.shield alt="Home")
-            div.o-Flex__Item.c-ConferenceTitles.-ta-l-sM
+            div.o-Flex__Item.c-ConferenceTitles
               h1.c-ConferenceTitles__Name= conference.name
               p.c-ConferenceTitles__Detail= conference.detail
               p.c-ConferenceTitles__Tagline= conference.tagline
           div.o-Flex__Item.o-SideCol.c-TopImg.-d-n-nM(style=`background-image: url('${conference.image.banner}');`)
-            span.c-YearBadge(role="none") 15
+            span.c-YearBadge(aria-hidden="true")
+              | 20
+              span.c-YearBadge__Year 15
             ul.o-List.o-Flex.c-NavBar.c-NavBar--contrib
               li.o-List__Item: a(href="#0") For Speakers
               li.o-List__Item: a(href="#0") Sponsors
@@ -140,9 +141,9 @@ html(lang="en")
           ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Cooperating Organizations
             li: a(href="") Volunteer
-    main#main.o-Constrain.o-Flex.-xd-c-nM.-mb-2
+    main#main.o-Constrain.o-Flex
         div.o-Flex__Item.o-MainCol
-          header.c-Hero
+          div.-mh-_1: header.c-Hero
             img.c-Hero__Img(src=conference.image.hero alt="unsaturated soil—dry cracked earth")
             h1.c-Hero__Hn= conference.theme
             div.c-Hero__Blurb
@@ -157,7 +158,7 @@ html(lang="en")
           div.t-Content: article
             h2 Keynote Speakers
             ul.o-List
-              li.o-Flex.c-KeynoteSpeaker
+              li.o-List__Item: article.o-Flex.c-KeynoteSpeaker
                 div.o-Flex__Item.c-KeynoteSpeaker__Session.c-DateBlock
                   div.c-DateBlock__Date: time.h-Block(datetime="2014-04-03")
                     span.h-Block Thursday
@@ -169,7 +170,7 @@ html(lang="en")
                     span.h-Block.c-Chair__Name Charles Johnson, Ph.D., P.E., S.E., CVS, F.ASCE
                     span.h-Block.c-Chair__Affiliation Illuminate Foundry, Inc.
                   p: a.c-Button(href="#0") Speaker Details
-              li.o-Flex.c-KeynoteSpeaker
+              li.o-List__Item: article.o-Flex.c-KeynoteSpeaker
                 div.o-Flex__Item.c-KeynoteSpeaker__Session.c-DateBlock
                   div.c-DateBlock__Date: time.h-Block(datetime="2014-04-03")
                     span.h-Block Wednesday
@@ -216,13 +217,13 @@ html(lang="en")
             aside.c-Callout
               h1.c-Callout__Hn Location
               div.c-Callout__Body
-                section(itemprop="location" itemscope="" itemtype="https://schema.org/Accommodation")
+                section(itemprop="location" itemscope="" itemtype="http://schema.org/Accommodation")
                   img.h-Block.-mb-1(src=conference.image.sidebar alt="Boston Skyline" itemprop="photo")
                   h2.-fz-el-kilo(itemprop="description") Official Conference Venue
                   p
                     a(href="/location/hotel-travel" itemprop="url")
                       b(class="h-Clearfix" itemprop="name") Sheraton Boston Hotel &amp; Hynes Convention Center
-                    span(itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress")
+                    span(itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress")
                       span(class="h-Clearfix" itemprop="streetAddress") 1201 Houston Street
                       | #[span(itemprop="addressLocality") Fort Worth], #[span(itemprop="addressRegion") TX] #[span(class="h-Clearfix" itemprop="postalCode") 76102]
                       span(class="h-Clearfix" itemprop="addressCountry") United States
@@ -346,7 +347,9 @@ html(lang="en")
             dt.o-Flex__Item.o-Tablist__Tab(class={'js-xo-_1': which==='prev'} id=`tab-${which}` role="tab")
               label.h-Block
                 input.o-Tablist__Check.h-Hidden(type="radio" name="footertabs" value=year)&attributes((which==='current') ? {checked:''} : {})
-                time.c-YearBadge.c-YearBadge--tab(datetime=year aria-label=year)= year.toString().slice(2)
+                time.c-YearBadge.c-YearBadge--tab(datetime=year)
+                  = year.toString().slice(0,2)
+                  span.c-YearBadge__Year= year.toString().slice(2)
             dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.o-Constrain
               div.o-Flex.o-Flex--siteHead.-mv-2
                 //- div.o-Flex__Item: span.c-YearBadge(role="none")= year.toString().slice(2)
@@ -442,7 +445,8 @@ html(lang="en")
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous")
-    script(src="http://cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js")
+    script(src="../node_modules/xmeter/js/o-Tablist.js")
     script(src="https://cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js")
     script(src="../js/menu.js")
     script(src="../js/orphaned.js")
+    script(src="../js/o-Drawer.js")

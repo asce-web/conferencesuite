@@ -26,3 +26,8 @@ node_modules
 
 # Ignore third-party libraries
 /web/themes/custom/legacy/vendor/
+
+
+# Auto-generated documentation & style guides
+/web/themes/**/docs/styleguide
+/web/themes/**/docs/api

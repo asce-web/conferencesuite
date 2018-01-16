@@ -2,22 +2,37 @@
 /*################################*\
     legacy  |  _c-ConferenceTitles.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 
 
-// Typographical styles for conference titles.
+// Conference Titles
 //
-// ^subcomponents
-// __Name    - Name of conference in header/footer
-// __Detail  - Location & dates line in header/footer
-// __Tagline - Site Slogan (NOT the Conference Theme) in header/footer
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-04-13
+// Typographical styles for conference titles.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-13</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+//   <h1 class="c-ConferenceTitles__Name">Civil Engineering Congress 2016</h1>
+//   <p class="c-ConferenceTitles__Detail">
+//     <span>New York, New York</span>
+//     |
+//     <time datetime="2016-06-07T00:00:00-04:00">June 7</time>&ndash;<time
+//       datetime="2016-06-09T00:00:00-04:00">9, 2016</time>
+//   </p>
+//   <p class="c-ConferenceTitles__Tagline">Building on the Past</p>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.ConferenceTitles
 .c-ConferenceTitles {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
+  @media not all and (min-width: 45em) {
   text-align: center;
+  }
   @media (min-width: 75em) {
     .font-size-mod(20/16);
   }

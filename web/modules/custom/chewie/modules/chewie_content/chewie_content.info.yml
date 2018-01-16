@@ -1,0 +1,32 @@
+name: Content
+description: 'Generic conference site and content manipulation. Includes content tools & actions, block types, data formats, and text formats.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_content
+  - chewie_base
+  - ckeditor
+  - contextual
+  - datetime
+  - editor
+  - editor_advanced_link
+  - editor_file
+  - field_ui
+  - file
+  - filter
+  - image
+  - link
+  - linkit
+  - menu_link_content
+  - node
+  - pathauto
+  - quickedit
+  - search
+  - system
+  - telephone
+  - text
+  - user
+  - views
+version: 8.x-1.0.0
+package: Chewie

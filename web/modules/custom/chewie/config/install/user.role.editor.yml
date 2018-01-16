@@ -1,9 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  enforced:
-    module:
-      - chewie
+dependencies: { }
 id: editor
 label: Editor
 weight: -8

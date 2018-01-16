@@ -3,11 +3,12 @@ global-styling:
     js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.1.1/css/xmeter.css: {type: external, minified: true}
+      //cdn.rawgit.com/chharvey/xmeter/v6.2.0/css/xmeter.css: {type: external, minified: true}
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
       css/dist/_o-Constrain.css: {minified:true}
+      css/dist/_o-MainCol.css: {minified:true}
       css/dist/_o-SideCol.css: {minified:true}
     component:
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
@@ -24,7 +25,6 @@ global-styling:
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {type: external, minified: true}
       css/dist/_themes.css: {minified:true}
       css/dist/_t-Content.css: {minified:true}
-      css/dist/_h-Spaced.css: {minified:true}
       css/dist/_hack.glyphicons.css: {minified:true}
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
@@ -71,10 +71,10 @@ header:
       css/dist/_c-TopImg.css: {minified:true}
       css/dist/_c-YearBadge.css: {minified:true}
       css/dist/_c-NavBar.css: {minified:true}
-      css/dist/_c-Toggle.css: {minified:true}
   js:
     //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: {type: external, minified: true}
     js/menu.js: {minified: false}
+    js/o-Drawer.js: {minified: false}
 
 # footerpanels library
 footerpanels:
@@ -91,7 +91,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    //cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js: {minified: false}
+    //cdn.rawgit.com/chharvey/xmeter/v6.2.0/js/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:
@@ -137,9 +137,9 @@ dateblock:
     component:
       css/dist/_c-DateBlock.css: {minified:true}
 
-# copied from classy.libraries.yml
-messages:
+# TimeBlock Component
+timeblock:
   version: VERSION
   css:
     component:
-      /core/themes/classy/css/components/messages.css: {}
+      css/dist/_c-TimeBlock.css: {minified:true}

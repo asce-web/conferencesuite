@@ -2,21 +2,26 @@
 /*################################*\
     legacy  |  _c-Hero.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('__settings.less');
 
 
+// The Hero
+//
 // Big Hero region of the homepage.
 // Contains image, heading, and blurb.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-04</time></dd>
+// </dl></header>
 //
-// ^subcomponents
-// __Img   - hero image
-// __Hn    - headline / Conference Theme
-// __Blurb - short description/promo of conference
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2017-04-04
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// Weight: 13
+//
+// Styleguide Components.Hero
 .c-Hero {
   margin-bottom: calc(~'2 * var(--vru)');
   background-color: var(--color-primary, @g-color-primary); // Banner--head colors (but not a Banner--head component)
@@ -35,6 +40,8 @@
 .c-Hero__Hn {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
   .font-size-el(1.125); // REVIEW magic number!!!
+  color: inherit; // HACK fallback
+  color: unset; // override `main >> h1`
   @media screen and (min-width: 45em) {
     .font-size-el(1.375); // REVIEW magic number!!!
   }

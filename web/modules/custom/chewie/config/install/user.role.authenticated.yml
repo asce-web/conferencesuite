@@ -1,9 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  enforced:
-    module:
-      - chewie
+dependencies: { }
 id: authenticated
 label: Visitor
 weight: -9

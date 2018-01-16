@@ -1,0 +1,11 @@
+name: Page
+description: 'Page content type and associated functionality and styles.'
+type: module
+core: 8.x
+dependencies:
+  - chewie_content
+  - block
+  - path
+  - system
+version: 8.x-1.0.0
+package: Chewie

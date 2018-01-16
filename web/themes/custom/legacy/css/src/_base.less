@@ -2,7 +2,7 @@
 /*################################*\
     legacy  |  _base.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('__settings.less');
 
 
@@ -72,6 +72,17 @@ body {
 //++++++++++++++++++++++++++++++++//
 //    # SECTIONS
 //++++++++++++++++++++++++++++++++//
+main {
+  margin-bottom: calc(~'2 * var(--vru)');
+  margin-block-end: calc(~'2 * var(--vru)');
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+    color: var(--color-primary, @g-color-primary);
+  }
+  @media not all and (min-width: 45em) {
+    flex-direction: column;
+  }
+}
 //++++ end # SECTIONS ++++//
 
 
@@ -132,7 +143,7 @@ body {
   //--------------------------------//
   //    ## Links
   //--------------------------------//
-  a {
+  a[href] {
     color: @g-color-link-txt;
     &:hover,
     &:focus {
