@@ -390,7 +390,11 @@ main .o-SideCol {
 \*################################*/
 .c-ConferenceTitles {
   font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-  text-align: center;
+}
+@media not all and (min-width: 45em) {
+  .c-ConferenceTitles {
+    text-align: center;
+  }
 }
 @media (min-width: 75em) {
   .c-ConferenceTitles {
@@ -2857,7 +2861,7 @@ button.c-Button:disabled,
 \*################################*/
 #panel-prev .t-Content,
 #panel-next .t-Content {
-  margin-left: calc(var(--site-logo-size) + (2 * var(--site-logo-space)) + 1rem);
+  margin-left: calc(var(--site-logo-size) + (2 * var(--site-logo-space)));
 }
 body > a:last-of-type {
   position: fixed;
