@@ -1014,6 +1014,8 @@ display:
         filters: false
         filter_groups: false
         title: false
+        style: false
+        row: false
       filters:
         status:
           value: '1'
@@ -1081,6 +1083,22 @@ display:
           1: AND
       display_description: ''
       title: 'Top Sponsors'
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+          type: ul
+          wrapper_class: ''
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
     cache_metadata:
       max-age: -1
       contexts:
