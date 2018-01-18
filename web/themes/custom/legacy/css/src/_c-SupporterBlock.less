@@ -52,21 +52,8 @@
 //
 // Styleguide Components.SupporterBlock
 .c-SupporterBlock {
-  // large logos by default
-  --supporter-logo-width : var(--supporter-logo-lrg-width );
-  --supporter-logo-height: var(--supporter-logo-lrg-height);
   text-align: center;
   margin-bottom: calc(~'2 * var(--vru)');
-}
-.c-SupporterBlock--lrg {
-}
-.c-SupporterBlock--med {
-  --supporter-logo-width : var(--supporter-logo-med-width );
-  --supporter-logo-height: var(--supporter-logo-med-height);
-}
-.c-SupporterBlock--sml {
-  --supporter-logo-width : var(--supporter-logo-sml-width );
-  --supporter-logo-height: var(--supporter-logo-sml-height);
 }
 
 .c-SupporterBlock__Hn {
@@ -95,8 +82,29 @@
 }
 
 .c-SupporterBlock__List__Item {
+  // small logos by default
+  --supporter-logo-width : var(--supporter-logo-sml-width );
+  --supporter-logo-height: var(--supporter-logo-sml-height);
   flex: 0 1 var(--supporter-logo-width);
   margin: 0 1rem var(--vru);
+
+  // The following CSS classnames are dictated by configuration. Do not change them.
+  // See the file:
+  // </web/modules/custom/chewie/modules/chewie_supporters/config/install/field.storage.node.field_supporterlevel_logosize.yml>
+  // NOTE we cannot put these styles on the list (which would be more efficient),
+  // because Drupal cannot determine the logo size for the entire list.
+  // It knows the logo size only for a single supporter (because the supporter is linked to a level),
+  // so we must style each individual list item.
+  &.small {
+  }
+  &.medium {
+    --supporter-logo-width : var(--supporter-logo-med-width );
+    --supporter-logo-height: var(--supporter-logo-med-height);
+  }
+  &.large {
+    --supporter-logo-width : var(--supporter-logo-lrg-width );
+    --supporter-logo-height: var(--supporter-logo-lrg-height);
+  }
 }
 
 .c-SupporterBlock__Logo {

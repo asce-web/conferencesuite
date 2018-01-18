@@ -8,12 +8,14 @@ dependencies:
     - field.storage.node.field_supporter_displayname
     - field.storage.node.field_supporter_logo
     - field.storage.node.field_supporter_url
+    - field.storage.node.field_supporterlevel_logosize
     - node.type.supporter
   module:
     - entityqueue
     - image
     - link
     - node
+    - options
     - user
 id: view_supporter
 label: Supporter
@@ -68,7 +70,7 @@ display:
               field: title_1
               rendered: false
               rendered_strip: false
-          row_class: ''
+          row_class: '{{ field_supporterlevel_logosize }}'
           default_row_class: false
           type: ul
           wrapper_class: ''
@@ -453,6 +455,68 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        field_supporterlevel_logosize:
+          id: field_supporterlevel_logosize
+          table: node__field_supporterlevel_logosize
+          field: field_supporterlevel_logosize
+          relationship: field_supporter_level
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -581,6 +645,7 @@ display:
         - 'config:field.storage.node.field_supporter_displayname'
         - 'config:field.storage.node.field_supporter_logo'
         - 'config:field.storage.node.field_supporter_url'
+        - 'config:field.storage.node.field_supporterlevel_logosize'
         - entity_field_info
         - views_data
   display_allsponsorlevels:
@@ -625,6 +690,7 @@ display:
         - 'config:field.storage.node.field_supporter_displayname'
         - 'config:field.storage.node.field_supporter_logo'
         - 'config:field.storage.node.field_supporter_url'
+        - 'config:field.storage.node.field_supporterlevel_logosize'
         - entity_field_info
         - views_data
   display_carousel:
@@ -1205,5 +1271,6 @@ display:
         - 'config:field.storage.node.field_supporter_displayname'
         - 'config:field.storage.node.field_supporter_logo'
         - 'config:field.storage.node.field_supporter_url'
+        - 'config:field.storage.node.field_supporterlevel_logosize'
         - entity_field_info
         - views_data
