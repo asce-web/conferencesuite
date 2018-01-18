@@ -16,24 +16,20 @@
  * @see template_preprocess_views_view_list()
  */
 #}
+{{ attach_library('legacy/supporters') }}
 {% if attributes -%}
-  <section{{ attributes.addClass('c-SupporterBlock c-SupporterBlock--lrg') }}>
-  {# TODO don’t forget to dynamically set this as `lrg`, `med`, `sml` depending on
-  the supporter level logo size! #}
+  <div{{ attributes.addClass('c-SupporterBlock c-SupporterBlock--sml') }}>
 {% endif %}
-  {% if title %}
-    <h1 class="c-SupporterBlock__Hn">{{ title }}</h1>
-  {% endif %}
 
-  <ul class="o-List o-Flex c-SupporterBlock__List"{{ list.attributes }}>
+  <ol class="js-slick"{{ list.attributes }}>
 
     {% for row in rows %}
-      <li{{ row.attributes.addClass('o-List__Item o-Flex__Item c-SupporterBlock__List__Item') }}
+      <li{{ row.attributes }}
         itemprop="sponsor" itemscope="" itemtype="http://schema.org/Organization">{{ row.content }}</li>
     {% endfor %}
 
-  </ul>
+  </ol>
 
 {% if attributes -%}
-  </section>
+  </div>
 {% endif %}
