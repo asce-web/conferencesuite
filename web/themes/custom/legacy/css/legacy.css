@@ -844,18 +844,10 @@ input:checked + .c-YearBadge--tab::after {
     legacy  |  _c-SupporterBlock.less
 \*################################*/
 .c-SupporterBlock {
-  --supporter-logo-width: var(--supporter-logo-lrg-width);
-  --supporter-logo-height: var(--supporter-logo-lrg-height);
-  text-align: center;
-  margin-bottom: calc(2 * var(--vru));
-}
-.c-SupporterBlock--med {
-  --supporter-logo-width: var(--supporter-logo-med-width);
-  --supporter-logo-height: var(--supporter-logo-med-height);
-}
-.c-SupporterBlock--sml {
   --supporter-logo-width: var(--supporter-logo-sml-width);
   --supporter-logo-height: var(--supporter-logo-sml-height);
+  text-align: center;
+  margin-bottom: calc(2 * var(--vru));
 }
 .c-SupporterBlock__Hn {
   font-size: 1.5em;
@@ -898,6 +890,14 @@ input:checked + .c-YearBadge--tab::after {
   -ms-flex: 0 1 var(--supporter-logo-width);
   flex: 0 1 var(--supporter-logo-width);
   margin: 0 1rem var(--vru);
+}
+.c-SupporterBlock__List__Item.medium {
+  --supporter-logo-width: var(--supporter-logo-med-width);
+  --supporter-logo-height: var(--supporter-logo-med-height);
+}
+.c-SupporterBlock__List__Item.large {
+  --supporter-logo-width: var(--supporter-logo-lrg-width);
+  --supporter-logo-height: var(--supporter-logo-lrg-height);
 }
 .c-SupporterBlock__Logo {
   max-height: var(--supporter-logo-height);
