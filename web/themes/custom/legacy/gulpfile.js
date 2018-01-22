@@ -39,7 +39,10 @@ gulp.task('lessc:core', ['lessc:dev'], function () {
     }))
     .pipe(clean_css({
       level: {
-        2: {restructureRules: true},
+        2: {
+          overrideProperties: false,
+          restructureRules: true,
+        },
       },
     }))
     .pipe(gulp.dest('./css/dist/'))
