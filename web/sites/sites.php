@@ -53,3 +53,7 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
+
+ $sites = array(
+   'www.asceconvention.org' => '2018.asceconvention.org',
+ );
