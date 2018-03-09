@@ -1583,6 +1583,9 @@ button.c-Button:disabled,
   .unsatsoilsconf main h6 {
     color: #00565b;
   }
+  :root .c-Hero__Hn {
+    color: inherit;
+  }
   :root .c-Banner--head {
     background-color: #6a9556;
   }
@@ -2492,9 +2495,6 @@ button.c-Button:disabled,
   }
   .unsatsoilsconf .c-Hero {
     background-color: #00565b;
-  }
-  .c-Hero__Hn {
-    color: inherit;
   }
   :root .c-DateBlock__MonthDay {
     color: #6fc2c4;
