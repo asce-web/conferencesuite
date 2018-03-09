@@ -2493,6 +2493,9 @@ button.c-Button:disabled,
   .unsatsoilsconf .c-Hero {
     background-color: #00565b;
   }
+  .c-Hero__Hn {
+    color: inherit;
+  }
   :root .c-DateBlock__MonthDay {
     color: #6fc2c4;
   }
