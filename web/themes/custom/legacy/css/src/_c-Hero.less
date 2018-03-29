@@ -4,6 +4,7 @@
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('__settings.less');
+@import (reference) url('./__mx.mb2.less');
 
 
 // The Hero
@@ -23,7 +24,7 @@
 //
 // Styleguide Components.Hero
 .c-Hero {
-  margin-bottom: calc(~'2 * var(--vru)');
+  .mx-mb2();
   background-color: var(--color-primary, @g-color-primary); // Banner--head colors (but not a Banner--head component)
   color: @g-color-banner-txt;
 }
@@ -70,13 +71,13 @@
     left: 0; right: 0;
   }
   .c-Hero__Hn::before {
-    top:    calc(~'-2 * var(--vru)');
-    height: calc(~' 2 * var(--vru)');
+    top:    calc(-2 * var(--vru));
+    height: calc( 2 * var(--vru));
     background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
   .c-Hero__Blurb::after {
-    bottom: calc(~'-1 * var(--vru)');
-    height: calc(~' 1 * var(--vru)');
+    bottom: calc(-1 * var(--vru));
+    height: calc( 1 * var(--vru));
     background-image: linear-gradient(to top, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
 }

@@ -51,7 +51,7 @@
     }
     .o-Flex--siteFoot {
       @media (min-width: 30em) and (max-width: 44.999em) {
-        max-height: calc((3*5 + 7*2) ~'*' @p-vru);
+        max-height: calc((3*5 + 7*2) * @p-vru);
       }
     }
     //**** end ### _dev.less ****//
@@ -531,6 +531,6 @@
   // IE doesn’t support `calc()` values of `flex` shorthand, so must separate into longhands
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: calc(~'100% - 8rem'); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
+  flex-basis: calc(100% - 8rem); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
 }
