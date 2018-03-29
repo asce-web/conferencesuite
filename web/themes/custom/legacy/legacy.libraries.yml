@@ -1,9 +1,7 @@
 global-styling:
-  js:
-    js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.2.0/css/xmeter.css: {type: external, minified: true}
+      node_modules/xmeter/css/dist/xmeter.css: { minified: true }
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
@@ -29,6 +27,10 @@ global-styling:
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
       css/dist/_hack.shame.css: {minified:true}
+  js:
+    js/orphaned.js: {minified: false}
+  dependencies:
+    - core/jquery
 
 channel-prod:
   css:
@@ -91,7 +93,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    //cdn.rawgit.com/chharvey/xmeter/v6.2.0/js/o-Tablist.js: {minified: false}
+    node_modules/xmeter/js/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:
