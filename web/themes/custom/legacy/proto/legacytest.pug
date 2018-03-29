@@ -87,7 +87,7 @@ html(lang="en")
           li.o-List__Item: a(href="./sponsors.html") Sponsors
           li.o-List__Item: a(href="") Exhibitors
       div.c-Banner.c-Banner--head
-        div.o-Flex.o-Constrain
+        div.o-Flex.h-Constrain
           a.o-Flex__Item.o-Flex.o-Flex--siteHead.o-MainCol(href="./" rel="home")
             div.o-Flex__Item.c-SiteLogo
               img(src=conference.image.shield alt="Home")
@@ -108,7 +108,7 @@ html(lang="en")
               li.o-List__Item: a(href="#0") Exhibitors
       nav.c-Banner.c-Banner--nav.-d-n-nM
         h1.h-Hidden Main Menus
-        div.o-Constrain.o-Flex
+        div.h-Constrain.o-Flex
           div.o-Flex__Item.o-MainCol: ul.o-List.o-Flex.c-NavBar.c-NavBar--main
             li.o-List__Item: a(href="./")
               i.glyphicons.glyphicons-home: span.h-Hidden Home
@@ -128,20 +128,20 @@ html(lang="en")
             li.o-List__Item: a(href="#0") Registration
       nav
         h1.h-Hidden Sub Menus
-        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#programlevel2: div.o-Constrain
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#programlevel2: div.h-Constrain
           ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Speakers
             li: a(href="") Exhibitor List
             li: a(href="") ASCE Communities &amp; Pavilion
-        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#locationlevel2(class={'active':conference.menuhover}): div.o-Constrain
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#locationlevel2(class={'active':conference.menuhover}): div.h-Constrain
           ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Lodging &amp; Transportation
             li: a(href="") For International Travel
-        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#aboutlevel2: div.o-Constrain
+        div.c-Banner.c-Banner--nav.c-Banner--nav--sub#aboutlevel2: div.h-Constrain
           ul.o-List.o-Flex.c-NavBar.c-NavBar--sub
             li: a(href="") Cooperating Organizations
             li: a(href="") Volunteer
-    main#main.o-Constrain.o-Flex
+    main#main.o-Flex.h-Constrain
         div.o-Flex__Item.o-MainCol
           div.-mh-_1: header.c-Hero
             img.c-Hero__Img(src=conference.image.hero alt="unsaturated soil—dry cracked earth")
@@ -283,7 +283,7 @@ html(lang="en")
                 p: a(href="#0")
                   i.glyphicons.social.social-twitter.-mr-h(role="none")
                   | #structures2014
-    aside: div.o-Constrain
+    aside: div.h-Constrain
       h2.h-Hidden Supporters
       mixin supporterBlock(level, size, list)
         section.c-SupporterBlock(class=`c-SupporterBlock--${size}`)
@@ -350,7 +350,7 @@ html(lang="en")
                 time.c-YearBadge.c-YearBadge--tab(datetime=year)
                   = year.toString().slice(0,2)
                   span.c-YearBadge__Year= year.toString().slice(2)
-            dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.o-Constrain
+            dd.o-Flex__Item.o-Tablist__Panel.c-Banner.c-Banner--head.c-FooterPanel(id=`panel-${which}` role="tabpanel" style="background-image: url('../images/pattern-bg.png');"): div.h-Constrain
               div.o-Flex.o-Flex--siteHead.-mv-2
                 //- div.o-Flex__Item: span.c-YearBadge(role="none")= year.toString().slice(2)
                 div.o-Flex__Item.c-SiteLogo
