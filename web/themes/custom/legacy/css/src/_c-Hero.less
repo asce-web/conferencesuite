@@ -52,7 +52,15 @@
 }
 .c-Hero__Blurb {
   font-weight: 300;
-  padding-bottom: var(--vru);
+  // TODO make this a mixin! (copied from __mx.pt1.less and modified)
+  padding-bottom: 1.5rem;    // COMBAK:FALLBACK
+  padding-bottom: var(--lh); // COMBAK:FALLBACK
+  padding-bottom: 1lh;
+  @suports (padding-block-end: var(--variable)) {
+    padding-bottom: unset;
+    padding-block-end: var(--lh); // COMBAK:FALLBACK
+    padding-block-end: 1lh;
+  }
   @media not all and (min-width: 45em) {
     .font-size-el(0.875); // REVIEW magic number!!!
   }
@@ -71,13 +79,17 @@
     left: 0; right: 0;
   }
   .c-Hero__Hn::before {
-    top:    calc(-2 * var(--vru));
-    height: calc( 2 * var(--vru));
+    top:    calc(-2 * var(--lh));
+    height: calc( 2 * var(--lh));
+    top:    -2lh;
+    height:  2lh;
     background-image: linear-gradient(to bottom, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
   .c-Hero__Blurb::after {
-    bottom: calc(-1 * var(--vru));
-    height: calc( 1 * var(--vru));
+    bottom: calc(-1 * var(--lh));
+    height: calc( 1 * var(--lh));
+    bottom: -1lh;
+    height:  1lh;
     background-image: linear-gradient(to top, transparent 0%, var(--color-primary, @g-color-primary) 100%);
   }
 }

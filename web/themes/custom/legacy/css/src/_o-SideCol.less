@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _o-SideCol.less
 \*################################*/
+@import (reference) url('./__mx.pt1.less');
 
 
 // Side Column
@@ -22,10 +23,12 @@
 // Styleguide Objects.SideCol
 .o-SideCol {
   main & {
-    padding-top: var(--vru);
+    .mx-pt1();
     padding-left: 2rem; padding-right: 2rem;
-    padding-block-start: var(--vru);
+    @supports (padding-inline: 1rem) {
+    padding-left: unset; padding-right: unset;
     padding-inline: 2rem;
+    }
   }
   @media screen and (min-width: 45em) {
     flex: 0 0 var(--side-col-size);
