@@ -16,6 +16,7 @@
 .o-Flex--siteHead {
   margin: var(--lh) 0;
   margin: 1lh 0;
+  justify-content: flex-start;
   align-items: center;
   @media not all and (min-width: 45em) {
     flex-direction: column;
@@ -37,6 +38,11 @@
     max-height: calc((3*5 + 7*2) * var(--lh)); // COMBAK:FALLBACK
     max-height: (3*5lh + 7*2lh); // 3 pages with height 5lh + 7 pages with height 2lh
   }
+}
+
+
+.o-Grid--siteFoot {
+  grid-template-columns: auto 1fr;
 }
 
 

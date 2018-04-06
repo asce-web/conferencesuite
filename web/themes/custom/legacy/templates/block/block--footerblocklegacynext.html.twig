@@ -32,7 +32,7 @@
       <span class="c-YearBadge__Year">{{ (content.field_footerblock_legacy_start.0['#markup']|date('Y'))[2:] }}</span>
     </time>
   </summary>
-  <div{{ attributes.addClass('h-Constrain') }}>
+  <div{{ attributes.addClass('o-Grid o-Grid--siteFoot h-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
     <div class="o-Flex o-Flex--siteHead -mv-2">
@@ -42,7 +42,8 @@
       {% if block_secondarylogo %}
         <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="" role="none"/>
       {% endif %}
-      <div class="o-Flex__Item c-ConferenceTitles">
+    </div>
+      <div class="c-ConferenceTitles -mv-2">
         <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
         <p class="c-ConferenceTitles__Detail">
           {% if content.field_footerblock_legacy_loc_ttl.0 %}
@@ -67,7 +68,6 @@
         </p>
         <p class="c-ConferenceTitles__Tagline">{{ content.field_footerblock_legacy_theme.0 }}</p>
       </div>
-    </div>
     <div class="t-Content">{{ content.field_footerblock_legacy_body.0 }}</div>
   </div>
 </details>
