@@ -25,16 +25,13 @@
  * @see template_preprocess_block()
  */
 #}
-<dt class="o-Flex__Item o-Tablist__Tab [ js-xo-_1 ]" id="tab-prev" role="tab">
-  <label class="h-Block">
-    <input class="o-Tablist__Check h-Hidden" type="radio" name="footertabs" value="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}"/>
+<details class="o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" role="tabpanel" id="panel-prev">
+  <summary class="o-Tablist__Tab" role="tab">
     <time class="c-YearBadge c-YearBadge--tab" datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('Y') }}">
       {{- (content.field_footerblock_legacy_start.0['#markup']|date('Y'))[:2] -}}
       <span class="c-YearBadge__Year">{{ (content.field_footerblock_legacy_start.0['#markup']|date('Y'))[2:] }}</span>
     </time>
-  </label>
-</dt>
-<dd class="o-Flex__Item o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-prev" role="tabpanel">
+  </summary>
   <div{{ attributes.addClass('h-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
@@ -77,4 +74,4 @@
     </div>
     <div class="t-Content">{{ content.field_footerblock_legacy_body.0 }}</div>
   </div>
-</dd>
+</details>

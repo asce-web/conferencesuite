@@ -452,7 +452,7 @@
     }
     .c-YearBadge--tab {
       .mx-bc-secondary();
-      input:checked + & {
+      .o-Tablist__Tab[aria-expanded="true"] > & {
         .mx-bc-accent();
       }
     }
