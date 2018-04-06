@@ -1583,6 +1583,9 @@ button.c-Button:disabled,
   .unsatsoilsconf main h6 {
     color: #00565b;
   }
+  :root .c-Hero__Hn {
+    color: inherit;
+  }
   :root .c-Banner--head {
     background-color: #6a9556;
   }
