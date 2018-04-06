@@ -37,14 +37,10 @@
     {{ title_suffix }}
     <div class="o-Flex o-Flex--siteHead -mv-2">
       {% if block_sitelogo %}
-        <div class="o-Flex__Item c-SiteLogo">
-          <img src="{{ block_sitelogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
       {% endif %}
       {% if block_secondarylogo %}
-        <div class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary">
-          <img src="{{ block_secondarylogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="" role="none"/>
       {% endif %}
       <div class="o-Flex__Item c-ConferenceTitles">
         <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
