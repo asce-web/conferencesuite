@@ -74,7 +74,7 @@
   &::after {
     border-color: transparent;
   }
-  input:checked + & {
+  .o-Tablist__Tab[aria-expanded="true"] > & {
     background-color: var(--color-accent, @g-color-accent);
     &::after {
       border-top-color: var(--color-accent, @g-color-accent);

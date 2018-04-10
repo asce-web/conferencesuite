@@ -18,14 +18,10 @@
   {{ title_prefix }}
   {{ title_suffix }}
     {% if block_sitelogo %}
-      <div class="o-Flex__Item c-SiteLogo">
-        <img src="{{ block_sitelogo }}" alt="Home"/>
-      </div>
+      <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="Home"/>
     {% endif %}
     {% if block_secondarylogo %}
-      <div class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary">
-        <img src="{{ block_secondarylogo }}" alt="Home"/>
-      </div>
+      <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="Home"/>
     {% endif %}
     <div class="o-Flex__Item c-ConferenceTitles">
       <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>

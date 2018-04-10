@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _dev.less
 \*################################*/
+@import (reference) url('./__mx.pt2.less');
 
 
 // Extensions of `.o-Flex` used in site header & footer.
@@ -14,13 +15,16 @@
 // ^updated
 // : 2017-06-11
 .o-Flex--siteHead {
-  margin: var(--lh) 0;
+  margin: 1.5rem 0;    // COMBAK:FALLBACK
+  margin: var(--lh) 0; // COMBAK:FALLBACK
   margin: 1lh 0;
+  justify-content: flex-start;
   align-items: center;
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
   @supports (width: var(--width)) {
+    // REVIEW:INDENTATION
   header & { // [1]
     @media screen and (min-width: 45em) {
       margin-right: calc(0.5 * var(--year-badge-width));
@@ -29,6 +33,8 @@
   }
 }
 .o-Flex--siteFoot {
+  grid-column: 1 ~'/' -1;
+  .mx-pt2();
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
@@ -36,6 +42,23 @@
     flex-wrap: wrap;
     max-height: calc((3*5 + 7*2) * var(--lh)); // COMBAK:FALLBACK
     max-height: (3*5lh + 7*2lh); // 3 pages with height 5lh + 7 pages with height 2lh
+  }
+}
+
+
+// Extensions of `.o-Grid` used in site footer.
+// --siteFoot only appears in the prev/next year footer panel.
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2018-04-10
+.o-Grid--siteFoot {
+  .mx-pt2();
+  align-items: center;
+  @media screen and (min-width: 45em) {
+    // REVIEW:INDENTATION
+  grid-template-columns: auto 1fr;
   }
 }
 

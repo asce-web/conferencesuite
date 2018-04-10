@@ -83,6 +83,7 @@ footerpanels:
   version: VERSION
   css:
     layout:
+      node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
       css/dist/_o-Tablist--footertabs.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
@@ -93,7 +94,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    node_modules/xmeter/js/o-Tablist.js: {minified: false}
+    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:
