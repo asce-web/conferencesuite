@@ -12,6 +12,7 @@ global-styling:
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
+      css/dist/_c-Alert.css: {minified:true}
     state:
       //cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css: {type: external, minified: true}
     theme:
