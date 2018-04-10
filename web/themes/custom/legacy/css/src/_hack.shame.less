@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
+@import (reference) url('./__mx.pt2.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -14,10 +15,16 @@
 // TODO: remove this hack and use css grid instead, when we can fully support it.
 // @author    charvey@asce.org
 // @submitted 2017-08-30
-// @updated   2018-01-05
+// @updated   2018-04-10
 #panel-prev .t-Content,
 #panel-next .t-Content {
+  @media not all and (min-width: 45em) {
+    .mx-pt2()
+  }
+  @media screen and (min-width: 45em) {
+    // REVIEW:INDENTATION
   grid-column: 2;
+  }
 }
 
 
