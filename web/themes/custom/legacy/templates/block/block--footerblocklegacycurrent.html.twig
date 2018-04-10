@@ -25,34 +25,27 @@
  * @see template_preprocess_block()
  */
 #}
-<dt class="o-Flex__Item o-Tablist__Tab" id="tab-current" role="tab">
-  <label class="h-Block">
-    <input class="o-Tablist__Check h-Hidden" type="radio" name="footertabs" value="{{ block_startdate|date('Y') }}" checked=""/>
+<details class="o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" role="tabpanel" id="panel-current" open>
+  <summary class="o-Tablist__Tab" role="tab">
     <time class="c-YearBadge c-YearBadge--tab" datetime="{{ block_startdate|date('Y') }}">
       {{- (block_startdate|date('Y'))[:2] -}}
       <span class="c-YearBadge__Year">{{ (block_startdate|date('Y'))[2:] }}</span>
     </time>
-  </label>
-</dt>
-<dd class="o-Flex__Item o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-current" role="tabpanel">
-  <div{{ attributes.addClass('o-Constrain') }}>
+  </summary>
+  <div{{ attributes.addClass('o-Grid o-Grid--siteFoot h-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
-    <div class="o-Flex o-Flex--siteHead -mv-2">
+    <div class="o-Flex o-Flex--siteHead">
       {% if block_sitelogo %}
-        <div class="o-Flex__Item c-SiteLogo">
-          <img src="{{ block_sitelogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
       {% endif %}
       {% if block_secondarylogo %}
-        <div class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary">
-          <img src="{{ block_secondarylogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="" role="none"/>
       {% endif %}
+    </div>
       <div class="o-Flex__Item c-ConferenceTitles">
         <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
       </div>
-    </div>
     <nav class="o-Flex o-Flex--siteFoot" id="sitemap">
       <h2 class="h-Hidden">Sitemap</h2>
       {{ content.body.0 }}
@@ -78,4 +71,4 @@
       </div>
     </nav>
   </div>
-</dd>
+</details>

@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
+@import (reference) url('./__mx.pt2.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -14,11 +15,14 @@
 // TODO: remove this hack and use css grid instead, when we can fully support it.
 // @author    charvey@asce.org
 // @submitted 2017-08-30
-// @updated   2018-01-05
+// @updated   2018-04-10
 #panel-prev .t-Content,
 #panel-next .t-Content {
-  margin-left: calc(~'var(--site-logo-size) + (2 * var(--site-logo-space))');
-  //                                           ^ double the logo margin
+  .mx-pt2();
+  @media screen and (min-width: 45em) {
+    // REVIEW:INDENTATION
+  grid-column: 2;
+  }
 }
 
 
@@ -32,7 +36,8 @@
 // @submitted 2017-01-01
 body > a:last-of-type {
   position: fixed;
-  bottom: var(--vru);
+  bottom: var(--lh);
+  bottom: 1lh;
   right: 999999px;
   &:focus {
     right: 1rem;

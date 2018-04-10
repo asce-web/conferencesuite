@@ -3,6 +3,7 @@
     legacy  |  _c-Callout.less
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('./__mx.mb1.less');
 
 
 // The Callout
@@ -30,7 +31,7 @@
 //
 // Styleguide Components.Callout
 .c-Callout {
-  margin-bottom: var(--vru);
+  .mx-mb1();
 }
 
 .c-Callout__Hn {
@@ -42,5 +43,6 @@
 .c-Callout__Body {
   background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
-  padding: var(--vru) 1rem 0;
+  padding: var(--lh) 1rem 0;
+  padding: 1lh 1rem 0;
 }

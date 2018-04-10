@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _c-KeynoteSpeaker.less
 \*################################*/
+@import (reference) url('./__mx.mb1.less');
 
 
 // The Keynote Speaker
@@ -40,7 +41,7 @@
 // Styleguide Components.KeynoteSpeaker
 .c-KeynoteSpeaker {
   align-items: center;
-  margin-bottom: var(--vru);
+  .mx-mb1();
   @media not all and (min-width: 30em) {
     flex-direction: column;
   }
@@ -55,8 +56,16 @@
 .c-KeynoteSpeaker__Session {
   justify-content: center;
   @media not all and (min-width: 30em) {
-    margin-top: var(--vru); margin-bottom: var(--vru);
-    margin-block: var(--vru); // CHANGED not widely supported
+    .mx-mb1();
+    // TODO make this a mixin! (copied from __mx.mb1.less and modified)
+    margin-top: 1.5rem;    // COMBAK:FALLBACK
+    margin-top: var(--lh); // COMBAK:FALLBACK
+    margin-top: 1lh;
+    @suports (margin-block-start: var(--variable)) {
+      margin-top: unset;
+      margin-block-start: var(--lh); // COMBAK:FALLBACK
+      margin-block-start: 1lh;
+    }
   }
 }
 

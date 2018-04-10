@@ -3,6 +3,7 @@
     legacy  |  _c-ConferenceTitles.less
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('./__mx.mbh.less');
 
 
 // Conference Titles
@@ -37,10 +38,11 @@
     .font-size-mod(20/16);
   }
   & > * {
-    margin-bottom: calc(~'0.5 * var(--vru)');  // undo `h1` and `p`
-  }
-  & > *:last-child {
-    margin-bottom: 0; // undo `p`
+    .mx-mbh();
+    &:last-child {
+      margin-bottom   : 0; // COMBAK:FALLBACK
+      margin-block-end: unset;
+    }
   }
 }
 .c-ConferenceTitles__Name {
