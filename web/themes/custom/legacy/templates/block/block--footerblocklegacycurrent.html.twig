@@ -32,20 +32,20 @@
       <span class="c-YearBadge__Year">{{ (block_startdate|date('Y'))[2:] }}</span>
     </time>
   </summary>
-  <div{{ attributes.addClass('h-Constrain') }}>
+  <div{{ attributes.addClass('o-Grid o-Grid--siteFoot h-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
-    <div class="o-Flex o-Flex--siteHead -mv-2">
+    <div class="o-Flex o-Flex--siteHead">
       {% if block_sitelogo %}
         <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
       {% endif %}
       {% if block_secondarylogo %}
         <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="" role="none"/>
       {% endif %}
+    </div>
       <div class="o-Flex__Item c-ConferenceTitles">
         <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
       </div>
-    </div>
     <nav class="o-Flex o-Flex--siteFoot" id="sitemap">
       <h2 class="h-Hidden">Sitemap</h2>
       {{ content.body.0 }}
