@@ -1,3 +1,5 @@
+const path = require('path')
+
 const kss          = require('kss')
 const gulp         = require('gulp')
 const pug          = require('gulp-pug')
@@ -21,17 +23,17 @@ gulp.task('docs:kss', function () {
 })
 
 gulp.task('lessc:dev', function () {
-  return gulp.src(__dirname + '/css/src/legacy.less')
+  return gulp.src(path.resolve(__dirname, './css/src/legacy.less'))
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
       cascade: false,
     }))
-    .pipe(gulp.dest('./css/'))
+    .pipe(gulp.dest('./css/dist/'))
 })
 
 gulp.task('lessc:core', ['lessc:dev'], function () {
-  return gulp.src([`${__dirname}/css/src/*.less`, `!${__dirname}/css/src/legacy.less`]) // ignore legacy.less
+  return gulp.src([path.resolve(__dirname, './css/src/*.less'), `!${path.resolve(__dirname, './css/src/legacy.less')}`]) // ignore legacy.less
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
