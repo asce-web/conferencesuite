@@ -417,7 +417,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" target=\"_blank\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title -}}\n    {% endif -%}\n  \" itemprop=\"logo\"/>\n  <meta content=\"{{ title }}\" itemprop=\"name\"/>\n</a>"
+            text: "<a rel=\"external nofollow\" href=\"{{ field_supporter_url }}\" itemprop=\"url\" target=\"_blank\">\n  <data value=\"{{ title }}\" itemprop=\"name\">\n    <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n      {{- field_supporter_displayname ?: title -}}\n    \" itemprop=\"logo\"/>\n  </data>\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -1037,7 +1037,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a class=\"h-Block\" href=\"{{ field_supporter_url }}\" rel=\"external nofollow\" target=\"_blank\" itemprop=\"url\">\n  <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n    {%- if field_supporter_displayname %}\n      {{- field_supporter_displayname -}}\n    {% else %}\n      {{- title -}}\n    {% endif -%}\n  \" itemprop=\"logo\"/>\n  <meta content=\"{{ title }}\" itemprop=\"name\"/>\n</a>\n<span class=\"c-SupporterBlock__Label h-Block\">{{ title_1 }}</span>"
+            text: "<a class=\"h-Block\" rel=\"external nofollow\" href=\"{{ field_supporter_url }}\" itemprop=\"url\" target=\"_blank\">\n  <data value=\"{{ title }}\" itemprop=\"name\">\n    <img class=\"c-SupporterBlock__Logo\" src=\"{{ field_supporter_logo }}\" alt=\"\n      {{- field_supporter_displayname ?: title -}}\n    \" itemprop=\"logo\"/>\n  </data>\n</a>\n<span class=\"c-SupporterBlock__Label h-Block\">{{ title_1 }}</span>"
             make_link: false
             path: ''
             absolute: false

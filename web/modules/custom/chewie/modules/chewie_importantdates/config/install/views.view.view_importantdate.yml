@@ -454,7 +454,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<dt class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</dt>\n<dd class=\"c-DateBlock__Desc\">\n  <a{% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ path }}\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {%- if field_importantdate_displayname %}\n        {{- field_importantdate_displayname -}}\n      {% else %}\n        {{- title -}}\n      {% endif -%}\n    </data>\n  </a>\n</dd>"
+            text: "<dt class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</dt>\n<dd class=\"c-DateBlock__Desc\">\n  <a{% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ path }}\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</dd>"
             make_link: false
             path: ''
             absolute: false

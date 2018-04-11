@@ -38,11 +38,7 @@
 <dd class="c-DateBlock__Desc">
   <a{% if fields.field_importantdate_link.content == 'On' %} class="c-DateBlock__Link" href="{{ fields.path.content }}"{% endif %}>
     <data value="{{ fields.title.content }}" itemprop="name">
-      {%- if fields.field_importantdate_displayname.content %}
-        {{- fields.field_importantdate_displayname.content -}}
-      {% else %}
-        {{- fields.title.content -}}
-      {% endif -%}
+      {{- fields.field_importantdate_displayname.content ?: fields.title.content -}}
     </data>
   </a>
 </dd>
