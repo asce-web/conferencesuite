@@ -38,11 +38,7 @@
 <span class="c-TimeBlock__Desc">
   <a{% if fields.field_session_link.content == 'On' %} class="c-TimeBlock__Link" href="{{ fields.path.content }}"{% endif %}>
     <data value="{{ fields.title.content }}" itemprop="name">
-      {%- if fields.field_session_displayname.content %}
-        {{- fields.field_session_displayname.content -}}
-      {% else %}
-        {{- fields.title.content -}}
-      {% endif -%}
+      {{- fields.field_session_displayname.content ?: fields.title.content -}}
     </data>
   </a>
 </span>
