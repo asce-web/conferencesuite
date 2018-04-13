@@ -2,7 +2,7 @@
 /*################################*\
     legacy  |  _dev.less
 \*################################*/
-@import (reference) url('./__mx.pt2.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // Extensions of `.o-Flex` used in site header & footer.
@@ -34,7 +34,7 @@
 }
 .o-Flex--siteFoot {
   grid-column: 1 ~'/' -1;
-  .mx-pt2();
+  .-pt-2;
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
@@ -54,7 +54,7 @@
 // ^updated
 // : 2018-04-10
 .o-Grid--siteFoot {
-  .mx-pt2();
+  .-pt-2;
   align-items: center;
   @media screen and (min-width: 45em) {
     // REVIEW:INDENTATION
