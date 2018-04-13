@@ -69,4 +69,12 @@
 .-r-1 {
   right: 1rem !important;
 }
+.c-FooterIcon,
+.-mr-1 {
+  margin-right: 1rem;
+  @supports (margin-inline-end: 1rem) {
+    margin-right: unset;
+    margin-inline-end: 1rem;
+  }
+}
 .-fw-b { font-weight: bold; }

@@ -56,11 +56,10 @@
 //
 // Styleguide Components.SocialListFooter
 .c-SocialListFooter {
-  justify-content: flex-start;
-  justify-content: start; // CHANGED: supported soon // override `.o-Flex`
+  justify-content: flex-start; // COMBAK:FALLBACK
+  justify-content: start; // override `.o-Flex`
 }
 
 .c-SocialListFooter__Item {
   flex: none;
-  margin-right: 1rem;
 }
