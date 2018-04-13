@@ -2,7 +2,7 @@
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
-@import (reference) url('./__mx.pt2.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -15,10 +15,10 @@
 // TODO: remove this hack and use css grid instead, when we can fully support it.
 // @author    charvey@asce.org
 // @submitted 2017-08-30
-// @updated   2018-04-10
+// @updated   2018-04-13
 #panel-prev .t-Content,
 #panel-next .t-Content {
-  .mx-pt2();
+  .-pt-2;
   @media screen and (min-width: 45em) {
     // REVIEW:INDENTATION
   grid-column: 2;
