@@ -102,6 +102,15 @@ main {
   //--------------------------------//
   //    ## Lists
   //--------------------------------//
+  ol,
+  ul {
+    // override Xmeter base 4rem
+    padding-left: 2rem;
+    @supports (padding-inline-start: 1rem) {
+      padding-left: unset;
+      padding-inline-start: 2rem;
+    }
+  }
   //---- end ## Lists ----//
 
   //--------------------------------//
