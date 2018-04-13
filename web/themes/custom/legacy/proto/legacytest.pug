@@ -198,13 +198,15 @@ html(lang="en")
         div.o-Flex__Item.o-SideCol
             aside.c-Callout
               h1.c-Callout__Hn Site Colors
-              p.-ta-c: button.c-Button(onclick="activateColorPickers()") Activate
-              ol.o-List.o-Flex
-                li.o-Flex__Item.-mr-h Primary  : #[input.js-picker.js-picker-primary(  type="color" value=conference.colors.primary  )]
-                li.o-Flex__Item.-mr-h Secondary: #[input.js-picker.js-picker-secondary(type="color" value=conference.colors.secondary)]
-                li.o-Flex__Item(    ) Accent   : #[input.js-picker.js-picker-accent(   type="color" value=conference.colors.accent   )]
-              p #[strong Note:] Color settings are not saved. Refresh the page to reset.
-              script.
+              div.
+                <p class="o-Flex"><button class="c-Button -m-a" onclick="activateColorPickers()">Activate</button></p>
+                <ol class="o-List o-Flex">
+                  <li class="o-List__Item o-Flex__Item -mr-1"><label>Primary:   <input class="js-picker js-picker-primary"   type="color" value="#6a9556"/></label></li>
+                  <li class="o-List__Item o-Flex__Item -mr-1"><label>Secondary: <input class="js-picker js-picker-secondary" type="color" value="#6fc2c4"/></label></li>
+                  <li class="o-List__Item o-Flex__Item"      ><label>Accent:    <input class="js-picker js-picker-accent"    type="color" value="#714509"/></label></li>
+                </ol>
+                <p><strong>Note:</strong> Color settings are not saved. Refresh the page to reset.</p>
+                <script>
                 function activateColorPickers() {
                   $('button[onclick="activateColorPickers()"]').replaceWith(`<button class="c-Button" disabled="">Ready!</button>`)
                   $('[data-menu-target="#locationlevel2"], #locationlevel2').toggleClass('active')
@@ -214,6 +216,7 @@ html(lang="en")
                     document.querySelector('body').style.setProperty('--color-accent'   , $('input.js-picker-accent'   ).val())
                   })
                 }
+                </script>
             aside.c-Callout
               h1.c-Callout__Hn Location
               div.c-Callout__Body
