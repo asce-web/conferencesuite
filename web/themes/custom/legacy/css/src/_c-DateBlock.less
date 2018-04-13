@@ -3,9 +3,9 @@
     legacy  |  _c-DateBlock.less
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 @import (reference) url('__tool.buttonText.less');
-@import (reference) url('./__mx.mbh.less');
 
 
 // The Date Block
@@ -93,7 +93,7 @@
 }
 .c-DateBlock__Date,
 .c-DateBlock__Desc {
-  .mx-mbh();
+  .-mb-h;
 }
 .c-DateBlock__Date {
   flex: 0 0 @datewidth;
