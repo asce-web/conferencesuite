@@ -9,5 +9,5 @@ dependencies:
   - image
   - link
   - telephone
-version: 8.x-1.0.1
+version: 8.x-1.2.0
 package: Chewie
