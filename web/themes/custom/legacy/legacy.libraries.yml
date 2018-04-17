@@ -86,6 +86,7 @@ footerpanels:
     layout:
       node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
       css/dist/_o-Tablist--footertabs.css: {minified:true}
+      css/dist/_o-FooterGrid.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
       css/dist/_c-SiteLogo.css: {minified:true}

@@ -2,7 +2,7 @@
 /*################################*\
     legacy  |  _c-Hero.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 
@@ -40,14 +40,17 @@
 }
 .c-Hero__Hn {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
-  .font-size-el(1.125); // REVIEW magic number!!!
+  .h-FontSize;
+  --font-scale: 1.125; // REVIEW magic number!!!
+  --tracks: 1;
   color: inherit; // HACK fallback
   color: unset; // override `main >> h1`
   @media screen and (min-width: 45em) {
-    .font-size-el(1.375); // REVIEW magic number!!!
+    --font-scale: 1.375; // REVIEW magic number!!!
   }
   @media screen and (min-width: 60em) {
-    .font-size-el(2.25; 2); // REVIEW magic number!!!
+    --font-scale: 2.25; // REVIEW magic number!!!
+    --tracks: 2;
   }
 }
 .c-Hero__Blurb {
@@ -62,7 +65,8 @@
     padding-block-end: 1lh;
   }
   @media not all and (min-width: 45em) {
-    .font-size-el(0.875); // REVIEW magic number!!!
+    .h-FontSize;
+    --font-scale: 0.875; // REVIEW magic number!!!
   }
   & > :last-child {
     margin-bottom: 0; // unset typographical blocks

@@ -75,7 +75,8 @@
 .c-Button {
   .buttonText();
   display: inline-block;
-  padding: calc(0.5 * var(--lh)) 1rem;
+  padding: (0.5 * 1.5rem) 1rem;        // COMBAK:FALLBACK
+  padding: calc(0.5 * var(--lh)) 1rem; // COMBAK:FALLBACK
   padding: 0.5lh 1rem;
   font-size: (1em * 14/16);
   white-space: nowrap;

@@ -108,7 +108,8 @@
   .c-DateBlock {
     display: grid;
     grid-template-columns: @datewidth auto;
-    grid-row-gap: calc(0.5 * var(--lh));
+    grid-row-gap: (0.5 * 1.5rem);        // COMBAK:FALLBACK
+    grid-row-gap: calc(0.5 * var(--lh)); // COMBAK:FALLBACK
     grid-row-gap: 0.5lh;
     row-gap: calc(0.5 * var(--lh));
     row-gap: 0.5lh;

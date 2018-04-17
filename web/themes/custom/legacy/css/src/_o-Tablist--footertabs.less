@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _o-Tablist--footertabs.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // Tablist--footertabs
@@ -57,5 +58,11 @@
     // justify-content: end; // FIXME CHANGED not supported on flexbox yet
   .o-Tablist__Tab {
     flex: none; // override .o-Flex__Item `auto`
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .-pt-2;
+      text-align: center;
+      list-style-type: none; // override `normalize.css`
+      cursor: auto; // override `aria-patterns`
+    }
   }
 }
