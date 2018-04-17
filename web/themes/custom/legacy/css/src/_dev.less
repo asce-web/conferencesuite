@@ -2,7 +2,6 @@
 /*################################*\
     legacy  |  _dev.less
 \*################################*/
-@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // Extensions of `.o-Flex` used in site header & footer.
@@ -24,17 +23,14 @@
     flex-direction: column;
   }
   @supports (width: var(--width)) {
-    // REVIEW:INDENTATION
-  header & { // [1]
-    @media screen and (min-width: 45em) {
-      margin-right: calc(0.5 * var(--year-badge-width));
+    header & { // [1]
+      @media screen and (min-width: 45em) {
+        margin-right: calc(0.5 * var(--year-badge-width));
+      }
     }
-  }
   }
 }
 .o-Flex--siteFoot {
-  grid-column: 1 ~'/' -1;
-  .-pt-2;
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
@@ -46,21 +42,6 @@
 }
 
 
-// Extensions of `.o-Grid` used in site footer.
-// --siteFoot only appears in the prev/next year footer panel.
-//
-// ^author
-// : Chris Harvey
-// ^updated
-// : 2018-04-10
-.o-Grid--siteFoot {
-  .-pt-2;
-  align-items: center;
-  @media screen and (min-width: 45em) {
-    // REVIEW:INDENTATION
-  grid-template-columns: auto 1fr;
-  }
-}
 
 
 // Extensions & fixes to bangs.less

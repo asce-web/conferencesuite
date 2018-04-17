@@ -11,21 +11,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-// HACK: this aligns the content of the footer with the conference titles.
-// TODO: remove this hack and use css grid instead, when we can fully support it.
-// @author    charvey@asce.org
-// @submitted 2017-08-30
-// @updated   2018-04-13
-#panel-prev .t-Content,
-#panel-next .t-Content {
-  .-pt-2;
-  @media screen and (min-width: 45em) {
-    // REVIEW:INDENTATION
-  grid-column: 2;
-  }
-}
-
-
 // Copied from Xmeter base styles.
 // Hides the "jump to top" link at the bottom of the body.
 // See Xmeter HACK to address bugfixes
