@@ -30,8 +30,8 @@
   width: auto;
   inline-size: auto;
 
-  height: 1.5rem;
-  height: var(--lh);
+  height: 1.5rem;    // COMBAK:FALLBACK
+  height: var(--lh); // COMBAK:FALLBACK
   height: 1lh;
   @supports (block-size: var(--v)) {
     height: unset;
@@ -46,12 +46,12 @@
   }
 
   @media screen and (min-width: 60em) {
-    height: (2 * 1.5rem);
-    height: calc(2 * var(--lh));
+    height: (2 * 1.5rem);        // COMBAK:FALLBACK
+    height: calc(2 * var(--lh)); // COMBAK:FALLBACK
     height: 2lh;
     @supports (block-size: var(--v)) {
       height: unset;
-      block-size: calc(2 * var(--lh));
+      block-size: calc(2 * var(--lh)); // COMBAK:FALLBACK
       block-size: 2lh;
     }
   }
