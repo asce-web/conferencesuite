@@ -6,6 +6,7 @@ const pug          = require('gulp-pug')
 const less         = require('gulp-less')
 const autoprefixer = require('gulp-autoprefixer')
 const clean_css    = require('gulp-clean-css')
+const sourcemaps   = require('gulp-sourcemaps')
 
 gulp.task('pug:test', function () {
   return gulp.src(__dirname + '/proto/legacytest.pug')
@@ -34,6 +35,7 @@ gulp.task('lessc:dev', function () {
 
 gulp.task('lessc:core', ['lessc:dev'], function () {
   return gulp.src([path.resolve(__dirname, './css/src/*.less'), `!${path.resolve(__dirname, './css/src/legacy.less')}`]) // ignore legacy.less
+    .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer({
       grid: true,
@@ -47,6 +49,7 @@ gulp.task('lessc:core', ['lessc:dev'], function () {
         },
       },
     }))
+    .pipe(sourcemaps.write('./')) // writes to an external .map file
     .pipe(gulp.dest('./css/dist/'))
 })
 
