@@ -14,7 +14,7 @@ global-styling:
       css/dist/_c-Button.css: {minified:true}
       css/dist/_c-Alert.css: {minified:true}
     state:
-      //cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css: {type: external, minified: true}
+      node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
       //cdn.asce.org/chewie/assets/futura.css: {type: external, minified: true}
@@ -29,7 +29,7 @@ global-styling:
       css/dist/_hack.ie.css: {minified:true}
       css/dist/_hack.shame.css: {minified:true}
   js:
-    js/orphaned.js: {minified: false}
+    {}
   dependencies:
     - core/jquery
 
