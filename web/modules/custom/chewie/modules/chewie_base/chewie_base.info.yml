@@ -13,12 +13,11 @@ dependencies:
   - file
   - help
   - image
-  - menu_ui
   - path
   - shortcut
   - system
   - user
   - views
   - views_ui
-version: 8.x-1.0.0
+version: 8.x-1.0.1
 package: Chewie

@@ -18,6 +18,7 @@ dependencies:
   - image
   - link
   - linkit
+  - menu_ui
   - menu_link_content
   - node
   - pathauto
@@ -28,5 +29,5 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-1.0.0
+version: 8.x-1.0.1
 package: Chewie
