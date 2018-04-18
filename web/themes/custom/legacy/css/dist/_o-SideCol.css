@@ -1,1 +1,1 @@
-main .o-SideCol{padding-top:var(--vru);padding-left:2rem;padding-right:2rem;-webkit-padding-before:var(--vru);padding-block-start:var(--vru);padding-inline:2rem}@media screen and (min-width:45em){.o-SideCol{-webkit-box-flex:0;-ms-flex:0 0 var(--side-col-size);flex:0 0 var(--side-col-size)}}
+main .o-SideCol{padding-top:var(--vru);padding-left:2rem;padding-right:2rem;-webkit-padding-before:var(--vru);padding-block-start:var(--vru);padding-inline:2rem}@media screen and (min-width:45em){.o-SideCol{flex:0 0 var(--side-col-size)}}

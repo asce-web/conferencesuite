@@ -3,9 +3,15 @@ description: 'Page content type and associated functionality and styles.'
 type: module
 core: 8.x
 dependencies:
-  - chewie_content
   - block
+  - chewie_content
+  - field
+  - menu_ui
+  - node
   - path
+  - pathauto
   - system
-version: 8.x-1.0.0
+  - text
+  - user
+version: 8.x-1.0.1
 package: Chewie

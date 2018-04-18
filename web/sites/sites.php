@@ -54,6 +54,7 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
- $sites = array(
-   'www.asceconvention.org' => '2018.asceconvention.org',
- );
+$sites = array(
+  '2019.aei-conference.org' => '2019.aei-conference.org',
+  'www.asceconvention.org' => '2018.asceconvention.org',
+);
