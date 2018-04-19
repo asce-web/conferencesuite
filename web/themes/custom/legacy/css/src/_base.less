@@ -2,7 +2,9 @@
 /*################################*\
     legacy  |  _base.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 
@@ -95,7 +97,11 @@ main {
   figcaption {
     font-weight: 300;
     font-style: italic;
-    .font-size-el(0.75);
+    .h-FontSize;
+    --font-scale: @g-font-size-mill;
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .font-size-el(@g-font-size-mill);
+    }
   }
   //---- end ## Paragraphs ----//
 

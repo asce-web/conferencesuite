@@ -2,6 +2,8 @@
 /*################################*\
     legacy  |  _c-Hero.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
+@import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
@@ -28,33 +30,46 @@
   background-color: var(--color-primary, @g-color-primary); // Banner--head colors (but not a Banner--head component)
   color: @g-color-banner-txt;
 }
+
 .c-Hero__Img {
   display: block;
   width: 100%; // in case img is smaller than column
 }
+
 .c-Hero__Hn,
 .c-Hero__Blurb {
   position: relative; // for the fadeout gradients
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 .c-Hero__Hn {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
-  .h-FontSize;
-  --font-scale: 1.125; // REVIEW magic number!!!
-  --tracks: 1;
   color: inherit; // HACK fallback
   color: unset; // override `main >> h1`
+
+  .h-FontSize;
+  --font-scale: @g-font-size-kilo;
+  --tracks: 1;
   @media screen and (min-width: 45em) {
-    --font-scale: 1.375; // REVIEW magic number!!!
-  }
-  @media screen and (min-width: 60em) {
-    --font-scale: 2.25; // REVIEW magic number!!!
+    --font-scale: @g-font-size-mega;
     --tracks: 2;
   }
+  @media screen and (min-width: 60em) {
+    --font-scale: @g-font-size-giga;
+  }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-kilo);
+    @media (min-width: 45em) {
+      .font-size-el(@g-font-size-mega; 2);
+    }
+    @media (min-width: 60em) {
+      .font-size-el(@g-font-size-giga; 2);
+    }
+  }
 }
+
 .c-Hero__Blurb {
-  font-weight: 300;
   // TODO make this a mixin! (copied from __mx.pt1.less and modified)
   padding-bottom: 1.5rem;    // COMBAK:FALLBACK
   padding-bottom: var(--lh); // COMBAK:FALLBACK
@@ -64,10 +79,18 @@
     padding-block-end: var(--lh); // COMBAK:FALLBACK
     padding-block-end: 1lh;
   }
+
+  font-weight: 300;
+  .h-FontSize;
   @media not all and (min-width: 45em) {
-    .h-FontSize;
-    --font-scale: 0.875; // REVIEW magic number!!!
+    --font-scale: @g-font-size-mill;
   }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media (max-width: 44.999em) {
+      .font-size-el(@g-font-size-mill);
+    }
+  }
+
   & > :last-child {
     margin-bottom: 0; // unset typographical blocks
   }

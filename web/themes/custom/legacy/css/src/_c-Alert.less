@@ -2,8 +2,10 @@
 /*################################*\
     legacy  |  _c-Alert.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.borders.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 
 
@@ -74,7 +76,11 @@
   // new styles
   .-mb-1;
   font-weight: 900;
-  .font-size-el(1.5);
+  .h-FontSize;
+  --font-scale: @g-font-size-kilo;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-kilo);
+  }
   text-transform: uppercase;
   text-align: center;
 }

@@ -2,7 +2,9 @@
 /*################################*\
     legacy  |  _c-Callout.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 
 
@@ -36,7 +38,11 @@
 
 .c-Callout__Hn {
   font-weight: inherit; // unset `h1`
-  .font-size-el(2); // REVIEW magic number
+  .h-FontSize;
+  --font-scale: @g-font-size-giga;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-giga);
+  }
   color: inherit; // unset `main > h1`
 }
 
