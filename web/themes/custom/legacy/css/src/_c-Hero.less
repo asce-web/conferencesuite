@@ -33,14 +33,21 @@
 
 .c-Hero__Img {
   display: block;
-  width: 100%; // in case img is smaller than column
+  width: 100%; // COMBAK:FALLBACK
+  @supports (inline-size: 1%) {
+    width: unset;
+    inline-size: 100%; // in case img is smaller than column
+  }
 }
 
 .c-Hero__Hn,
 .c-Hero__Blurb {
   position: relative; // for the fadeout gradients
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2rem; padding-right: 2rem;
+  @suports (padding-inline: 1rem) {
+    padding-left: unset; padding-right: unset;
+    padding-inline: 2rem;
+  }
 }
 
 .c-Hero__Hn {
@@ -73,7 +80,7 @@
   // TODO make this a mixin! (copied from __mx.pt1.less and modified)
   padding-bottom: 1.5rem;    // COMBAK:FALLBACK
   padding-bottom: var(--lh); // COMBAK:FALLBACK
-  padding-bottom: 1lh;
+  padding-bottom: 1lh;       // COMBAK:FALLBACK
   @suports (padding-block-end: var(--variable)) {
     padding-bottom: unset;
     padding-block-end: var(--lh); // COMBAK:FALLBACK
@@ -92,7 +99,8 @@
   }
 
   & > :last-child {
-    margin-bottom: 0; // unset typographical blocks
+    margin-bottom: 0; // COMBAK:FALLBACK
+    margin-block-end: unset; // unset typographical blocks
   }
 }
 
