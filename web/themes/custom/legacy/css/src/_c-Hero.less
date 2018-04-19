@@ -57,7 +57,7 @@
 
   .h-FontSize;
   --font-scale: @g-font-size-kilo;
-  --tracks: 1;
+  --tracks: 1; // override `h1`
   @media screen and (min-width: 45em) {
     --font-scale: @g-font-size-mega;
     --tracks: 2;
@@ -86,18 +86,7 @@
     padding-block-end: var(--lh); // COMBAK:FALLBACK
     padding-block-end: 1lh;
   }
-
   font-weight: 300;
-  .h-FontSize;
-  @media not all and (min-width: 45em) {
-    --font-scale: @g-font-size-mill;
-  }
-  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @media (max-width: 44.999em) {
-      .font-size-el(@g-font-size-mill);
-    }
-  }
-
   & > :last-child {
     margin-bottom: 0; // COMBAK:FALLBACK
     margin-block-end: unset; // unset typographical blocks

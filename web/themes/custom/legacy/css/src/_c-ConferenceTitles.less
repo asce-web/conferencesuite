@@ -34,7 +34,7 @@
 .c-ConferenceTitles {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
   @media not all and (min-width: 45em) {
-  text-align: center;
+    text-align: center;
   }
   @media (min-width: 75em) {
     .font-size-mod(@g-font-size-kilo);
@@ -47,10 +47,12 @@
     }
   }
 }
+
 .c-ConferenceTitles__Name {
   font-weight: 700;
   .h-FontSize;
   --font-scale: @g-font-size-kilo;
+  --tracks: 1; // override `h1`
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .font-size-el(@g-font-size-kilo);
   }
@@ -58,9 +60,11 @@
       padding-top: 0; // undo `h1` // already margin-top on the `.o-Flex--siteHead`
   }
 }
+
 .c-ConferenceTitles__Detail {
   font-weight: 500;
 }
+
 .c-ConferenceTitles__Tagline {
   font-weight: 400;
   font-style: italic;
