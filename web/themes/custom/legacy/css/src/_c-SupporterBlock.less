@@ -53,12 +53,22 @@
 // Weight: 16
 //
 // Styleguide Components.SupporterBlock
+.mx-mh-1() {
+  margin-left : 1rem; // COMBAK:FALLBACK
+  margin-right: 1rem; // COMBAK:FALLBACK
+  @supports (margin-inline: 1rem) {
+    margin-left : unset;
+    margin-right: unset;
+    margin-inline: 1rem;
+  }
+}
+
 .c-SupporterBlock {
+  .-mb-2;
   // small logos by default
   --supporter-logo-width : var(--supporter-logo-sml-width );
   --supporter-logo-height: var(--supporter-logo-sml-height);
   text-align: center;
-  .-mb-2;
 }
 
 .c-SupporterBlock__Hn {
@@ -92,9 +102,8 @@
 
 .c-SupporterBlock__List__Item {
   flex: 0 1 var(--supporter-logo-width);
-  margin: 0 1rem 1.5rem;    // COMBAK:FALLBACK
-  margin: 0 1rem var(--lh); // COMBAK:FALLBACK
-  margin: 0 1rem 1lh;
+  .-mb-1;
+  .mx-mh-1();
 
   // The following CSS classnames are dictated by configuration. Do not change them.
   // See the file:

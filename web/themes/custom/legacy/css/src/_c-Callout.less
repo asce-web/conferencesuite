@@ -6,6 +6,7 @@
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // The Callout
@@ -32,6 +33,16 @@
 // Weight: 9
 //
 // Styleguide Components.Callout
+.mx-ph-1() {
+  padding-left : 1rem; // COMBAK:FALLBACK
+  padding-right: 1rem; // COMBAK:FALLBACK
+  @supports (padding-inline: 1rem) {
+    padding-left : unset;
+    padding-right: unset;
+    padding-inline: 1rem;
+  }
+}
+
 .c-Callout {
   .-mb-1;
 }
@@ -49,7 +60,6 @@
 .c-Callout__Body {
   background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
-  padding: 1.5rem 1rem 0;    // COMBAK:FALLBACK
-  padding: var(--lh) 1rem 0; // COMBAK:FALLBACK
-  padding: 1lh 1rem 0;
+  .-pt-1;
+  .mx-ph-1();
 }
