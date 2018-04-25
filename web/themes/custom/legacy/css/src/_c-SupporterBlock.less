@@ -4,6 +4,8 @@
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 
 
@@ -51,29 +53,34 @@
 // Weight: 16
 //
 // Styleguide Components.SupporterBlock
+.mx-mh-1() {
+  margin-left : 1rem; // COMBAK:FALLBACK
+  margin-right: 1rem; // COMBAK:FALLBACK
+  @supports (margin-inline: 1rem) {
+    margin-left : unset;
+    margin-right: unset;
+    margin-inline: 1rem;
+  }
+}
+
 .c-SupporterBlock {
-  // large logos by default
-  --supporter-logo-width : var(--supporter-logo-lrg-width );
-  --supporter-logo-height: var(--supporter-logo-lrg-height);
-  text-align: center;
-  margin-bottom: calc(~'2 * var(--vru)');
-}
-.c-SupporterBlock--lrg {
-}
-.c-SupporterBlock--med {
-  --supporter-logo-width : var(--supporter-logo-med-width );
-  --supporter-logo-height: var(--supporter-logo-med-height);
-}
-.c-SupporterBlock--sml {
+  .-mb-2;
+  // small logos by default
   --supporter-logo-width : var(--supporter-logo-sml-width );
   --supporter-logo-height: var(--supporter-logo-sml-height);
+  text-align: center;
 }
 
 .c-SupporterBlock__Hn {
-  .font-size-el(@g-font-size-kilo);
+  .h-FontSize;
+  --font-scale: @g-font-size-mega;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mega);
+  }
   font-family: inherit; // keeping here if `ff` of `h1` is changed
   font-weight: 900;
   color: @g-color-body-txt;
+
   // visualization line separator
   @supports (flex-wrap: wrap) {
     display: flex;
@@ -82,8 +89,29 @@
     &::after {
       content: '';
       flex: 1;
-      border: 1px solid @g-color-table-br;
+      height: (0.125 * 1.5rem);        // COMBAK:FALLBACK
+      height: calc(0.125 * var(--lh)); // COMBAK:FALLBACK
+      height: 0.125lh;
+      @supports (block-size: var(--v)) {
+        height: unset;
+        block-size: calc(0.125 * var(--lh));
+        block-size: 0.125lh;
+      }
       margin: 0 1rem;
+      background-image: linear-gradient(to right, transparent, @g-color-table-br, transparent); // COMBAK:FALLBACK for `linear-gradient(var(--v))`
+      background-image: linear-gradient(var(--direction), @g-color-table-br, transparent);
+    }
+    &::before {
+      --direction: to left;
+      @supports (background-image: linear-gradient(to inline-start, transparent, black) {
+        --direction: to inline-start;
+      }
+    }
+    &::after {
+      --direction: to right;
+      @supports (background-image: linear-gradient(to inline-end, transparent, black) {
+        --direction: to inline-end;
+      }
     }
   }
 }
@@ -96,7 +124,26 @@
 
 .c-SupporterBlock__List__Item {
   flex: 0 1 var(--supporter-logo-width);
-  margin: 0 1rem var(--vru);
+  .-mb-1;
+  .mx-mh-1();
+
+  // The following CSS classnames are dictated by configuration. Do not change them.
+  // See the file:
+  // </web/modules/custom/chewie/modules/chewie_supporters/config/install/field.storage.node.field_supporterlevel_logosize.yml>
+  // NOTE we cannot put these styles on the list (which would be more efficient),
+  // because Drupal cannot determine the logo size for the entire list.
+  // It knows the logo size only for a single supporter (because the supporter is linked to a level),
+  // so we must style each individual list item.
+  &.small {
+  }
+  &.medium {
+    --supporter-logo-width : var(--supporter-logo-med-width );
+    --supporter-logo-height: var(--supporter-logo-med-height);
+  }
+  &.large {
+    --supporter-logo-width : var(--supporter-logo-lrg-width );
+    --supporter-logo-height: var(--supporter-logo-lrg-height);
+  }
 }
 
 .c-SupporterBlock__Logo {
@@ -108,7 +155,11 @@
 }
 
 .c-SupporterBlock__Label {
-  .font-size-el(@g-font-size-mill);
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
+  }
   text-transform: uppercase;
   color: var(--color-secondary, @g-color-secondary);
 }

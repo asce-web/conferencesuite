@@ -2,7 +2,10 @@
 /*################################*\
     legacy  |  _c-Sitemap.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 
 
 // The Site Map
@@ -25,14 +28,21 @@
 .c-Sitemap {
   font-weight: 600;
   text-transform: uppercase;
+  @media (min-width: 75em) {
+    .font-size-mod(@g-font-size-kilo);
+  }
 }
 
 .c-Sitemap__Item {
-  margin-bottom: var(--vru);
+  .-mb-1;
 }
 
 .c-Sitemap__Sub {
   font-weight: 300;
-  .font-size-el(14/16); // REVIEW magic number
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
+  }
   text-transform: none; // override Sitemap
 }

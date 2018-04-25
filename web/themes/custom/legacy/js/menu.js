@@ -1,5 +1,4 @@
-(function () {
-  var $ = jQuery
+;(function ($) {
   $.fn.menuify = function() {
       var activeNavEl = null;
       var activeTargetEl = null;
@@ -83,4 +82,4 @@
   };
 
   $( "[data-menu-target]").menuify(); // Makes all the links green.
-})()
+})(jQuery)

@@ -2,24 +2,13 @@
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // Use this stylesheet for all other hacks that don’t have a home.
 // Please comment vigorously. Do not generate KSS styleguide components for these.
 ///////////////////////////////////////////////////////////////////////////////
-
-
-// HACK: this aligns the content of the footer with the conference titles.
-// TODO: remove this hack and use css grid instead, when we can fully support it.
-// @author    charvey@asce.org
-// @submitted 2017-08-30
-// @updated   2018-01-05
-#panel-prev .t-Content,
-#panel-next .t-Content {
-  margin-left: calc(~'var(--site-logo-size) + (2 * var(--site-logo-space))');
-  //                                           ^ double the logo margin
-}
 
 
 // Copied from Xmeter base styles.
@@ -32,7 +21,8 @@
 // @submitted 2017-01-01
 body > a:last-of-type {
   position: fixed;
-  bottom: var(--vru);
+  bottom: var(--lh);
+  bottom: 1lh;
   right: 999999px;
   &:focus {
     right: 1rem;

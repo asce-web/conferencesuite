@@ -25,57 +25,50 @@
  * @see template_preprocess_block()
  */
 #}
-<dt class="o-Flex__Item o-Tablist__Tab" id="tab-current" role="tab">
-  <label class="h-Block">
-    <input class="o-Tablist__Check h-Hidden" type="radio" name="footertabs" value="{{ block_startdate|date('Y') }}" checked=""/>
+<details class="o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" role="tabpanel" id="panel-current" open>
+  <summary class="o-Tablist__Tab" role="tab">
     <time class="c-YearBadge c-YearBadge--tab" datetime="{{ block_startdate|date('Y') }}">
       {{- (block_startdate|date('Y'))[:2] -}}
       <span class="c-YearBadge__Year">{{ (block_startdate|date('Y'))[2:] }}</span>
     </time>
-  </label>
-</dt>
-<dd class="o-Flex__Item o-Tablist__Panel c-Banner c-Banner--head c-FooterPanel" id="panel-current" role="tabpanel">
-  <div{{ attributes.addClass('o-Constrain') }}>
+  </summary>
+  <div{{ attributes.addClass('o-FooterGrid h-Constrain') }}>
     {{ title_prefix }}
     {{ title_suffix }}
-    <div class="o-Flex o-Flex--siteHead -mv-2">
+    <div class="o-FooterGrid__Logos o-Flex o-Flex--siteHead">
       {% if block_sitelogo %}
-        <div class="o-Flex__Item c-SiteLogo">
-          <img src="{{ block_sitelogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="" role="none"/>
       {% endif %}
       {% if block_secondarylogo %}
-        <div class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary">
-          <img src="{{ block_secondarylogo }}" alt="" role="none"/>
-        </div>
+        <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="" role="none"/>
       {% endif %}
-      <div class="o-Flex__Item c-ConferenceTitles">
-        <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
-      </div>
     </div>
-    <nav class="o-Flex o-Flex--siteFoot" id="sitemap">
+    <div class="o-FooterGrid__Titles o-Flex__Item c-ConferenceTitles">
+      <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
+    </div>
+    <nav class="o-FooterGrid__Sitemap o-Flex o-Flex--siteFoot" id="sitemap">
       <h2 class="h-Hidden">Sitemap</h2>
       {{ content.body.0 }}
       <div class="o-Flex__Item">
         <section>
           <h3>Contact Us</h3>
           <ul class="o-List">
-            <li class="o-List__Item -mb-1"><a href="tel:800-548-2723"   ><i class="-mr-1 glyphicons glyphicons-iphone"   role="none"></i> (800) 548-2723</a></li>
-            <li class="o-List__Item -mb-1"><a href="tel:+1-703-295-6300"><i class="-mr-1 glyphicons glyphicons-earphone" role="none"></i> +1 (703) 295-6300</a></li>
-            <li class="o-List__Item -mb-1"><a href="/contact"           ><i class="-mr-1 glyphicons glyphicons-envelope" role="none"></i> Other Contacts</a></li>
+            <li class="o-List__Item -mb-1"><a href="tel:800-548-2723"   ><i class="c-FooterIcon glyphicons glyphicons-iphone"   aria-hidden="true"></i> (800) 548-2723</a></li>
+            <li class="o-List__Item -mb-1"><a href="tel:+1-703-295-6300"><i class="c-FooterIcon glyphicons glyphicons-earphone" aria-hidden="true"></i> +1 (703) 295-6300</a></li>
+            <li class="o-List__Item -mb-1"><a href="/contact"           ><i class="c-FooterIcon glyphicons glyphicons-envelope" aria-hidden="true"></i> Other Contacts</a></li>
           </ul>
         </section>
         <section>
           <h3>Connect With ASCE</h3>
           <ul class="o-List o-Flex c-SocialListFooter">
-            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.linkedin.com/groups?gid=143956&trk=hb_side_g"                   ><i class="glyphicons social social-linked-in"  ><span class="h-Hidden">LinkedIn</span></i></a></li>
-            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.facebook.com/asce.org"                                          ><i class="glyphicons social social-facebook"   ><span class="h-Hidden">Facebook</span></i></a></li>
-            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.twitter.com/ascetweets"                                         ><i class="glyphicons social social-twitter"    ><span class="h-Hidden">Twitter</span></i></a></li>
-            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="https://www.youtube.com/user/AmerSocCivilEng"                              ><i class="glyphicons social social-youtube"    ><span class="h-Hidden">YouTube</span></i></a></li>
-            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="https://plus.google.com/u/0/b/105603289001341360426/+AmerSocCivilEng/posts"><i class="glyphicons social social-google-plus"><span class="h-Hidden">Google Plus</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.linkedin.com/groups?gid=143956&trk=hb_side_g"                   ><i class="c-FooterIcon glyphicons social social-linked-in"  ><span class="h-Hidden">LinkedIn</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.facebook.com/asce.org"                                          ><i class="c-FooterIcon glyphicons social social-facebook"   ><span class="h-Hidden">Facebook</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="http://www.twitter.com/ascetweets"                                         ><i class="c-FooterIcon glyphicons social social-twitter"    ><span class="h-Hidden">Twitter</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="https://www.youtube.com/user/AmerSocCivilEng"                              ><i class="c-FooterIcon glyphicons social social-youtube"    ><span class="h-Hidden">YouTube</span></i></a></li>
+            <li class="o-List__Item o-Flex__Item c-SocialListFooter__Item"><a rel="external nofollow" target="_blank" href="https://plus.google.com/u/0/b/105603289001341360426/+AmerSocCivilEng/posts"><i class="c-FooterIcon glyphicons social social-google-plus"><span class="h-Hidden">Google Plus</span></i></a></li>
           </ul>
         </section>
       </div>
     </nav>
   </div>
-</dd>
+</details>

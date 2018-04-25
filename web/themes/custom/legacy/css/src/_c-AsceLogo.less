@@ -26,13 +26,36 @@
 .c-AsceLogo {
   display: inline-block;
   line-height: inherit;
+
   width: auto;
-  height: var(--vru);
-  margin-right: 1rem;
-  vertical-align: middle;
-  @media screen and (min-width: 60em) {
-    height: calc(~'2 * var(--vru)');
+  inline-size: auto;
+
+  height: 1.5rem;    // COMBAK:FALLBACK
+  height: var(--lh); // COMBAK:FALLBACK
+  height: 1lh;
+  @supports (block-size: var(--v)) {
+    height: unset;
+    block-size: var(--lh);
+    block-size: 1lh;
   }
+
+  margin-right: 1rem;
+  @supports (margin-inline-end: 1rem) {
+    margin-right: unset;
+    margin-inline-end: 1rem;
+  }
+
+  @media screen and (min-width: 60em) {
+    height: (2 * 1.5rem);        // COMBAK:FALLBACK
+    height: calc(2 * var(--lh)); // COMBAK:FALLBACK
+    height: 2lh;
+    @supports (block-size: var(--v)) {
+      height: unset;
+      block-size: calc(2 * var(--lh)); // COMBAK:FALLBACK
+      block-size: 2lh;
+    }
+  }
+
   path {
     fill: currentColor;
   }

@@ -3,11 +3,20 @@ description: 'Supporter & Supporter Level content types, entity queues, and asso
 type: module
 core: 8.x
 dependencies:
+  - block
   - chewie_content
   - entityqueue
+  - field
   - file
   - image
   - link
+  - menu_ui
+  - node
   - options
-version: 8.x-1.1.0
+  - pathauto
+  - system
+  - text
+  - user
+  - views
+version: 8.x-2.0.0
 package: Chewie

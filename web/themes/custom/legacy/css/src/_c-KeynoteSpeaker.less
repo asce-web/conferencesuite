@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _c-KeynoteSpeaker.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 
 
 // The Keynote Speaker
@@ -40,7 +41,7 @@
 // Styleguide Components.KeynoteSpeaker
 .c-KeynoteSpeaker {
   align-items: center;
-  margin-bottom: var(--vru);
+  .-mb-1;
   @media not all and (min-width: 30em) {
     flex-direction: column;
   }
@@ -55,8 +56,7 @@
 .c-KeynoteSpeaker__Session {
   justify-content: center;
   @media not all and (min-width: 30em) {
-    margin-top: var(--vru); margin-bottom: var(--vru);
-    margin-block: var(--vru); // CHANGED not widely supported
+    .-mb-1;
   }
 }
 
@@ -68,6 +68,7 @@
   overflow: hidden; // if image is not cropped correctly
   @media not all and (min-width: 30em) {
     order: -1;
+    .-mb-1;
   }
   & > img {
     width: 100%;

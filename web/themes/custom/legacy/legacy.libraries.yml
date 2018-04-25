@@ -1,9 +1,7 @@
 global-styling:
-  js:
-    js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.2.0/css/xmeter.css: {type: external, minified: true}
+      node_modules/xmeter/css/dist/xmeter.css: { minified: true }
       css/dist/_dev.css: {minified:true}
       css/dist/_base.css: {minified:true}
     layout:
@@ -14,8 +12,9 @@ global-styling:
       css/dist/_c-KeynoteSpeaker.css: {minified:true}
       css/dist/_c-Chair.css: {minified:true}
       css/dist/_c-Button.css: {minified:true}
+      css/dist/_c-Alert.css: {minified:true}
     state:
-      //cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css: {type: external, minified: true}
+      node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
       //cdn.asce.org/chewie/assets/futura.css: {type: external, minified: true}
@@ -29,6 +28,10 @@ global-styling:
       css/dist/_hack.drupal.css: {minified:true}
       css/dist/_hack.ie.css: {minified:true}
       css/dist/_hack.shame.css: {minified:true}
+  js:
+    {}
+  dependencies:
+    - core/jquery
 
 channel-prod:
   css:
@@ -81,7 +84,9 @@ footerpanels:
   version: VERSION
   css:
     layout:
+      node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
       css/dist/_o-Tablist--footertabs.css: {minified:true}
+      css/dist/_o-FooterGrid.css: {minified:true}
     component:
       css/dist/_c-Banner.css: {minified:true}
       css/dist/_c-SiteLogo.css: {minified:true}
@@ -91,7 +96,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: {minified:true}
       css/dist/_c-SocialListFooter.css: {minified:true}
   js:
-    //cdn.rawgit.com/chharvey/xmeter/v6.2.0/js/o-Tablist.js: {minified: false}
+    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: {minified: false}
 
 # footerpanels library
 copyright:

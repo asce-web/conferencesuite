@@ -3,6 +3,7 @@
     legacy  |  _c-DateBlock.less
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 @import (reference) url('__tool.buttonText.less');
 
@@ -92,13 +93,13 @@
 }
 .c-DateBlock__Date,
 .c-DateBlock__Desc {
-  margin-bottom: calc(~'0.5 * var(--vru)');
+  .-mb-h;
 }
 .c-DateBlock__Date {
   flex: 0 0 @datewidth;
 }
 .c-DateBlock__Desc {
-    flex: 0 0 calc(~'100% - '@datewidth);
+    flex: 0 0 calc(100% - @datewidth);
 }
 
 
@@ -107,11 +108,16 @@
   .c-DateBlock {
     display: grid;
     grid-template-columns: @datewidth auto;
-    grid-row-gap: calc(~'0.5 * var(--vru)');
+    grid-row-gap: (0.5 * 1.5rem);        // COMBAK:FALLBACK
+    grid-row-gap: calc(0.5 * var(--lh)); // COMBAK:FALLBACK
+    grid-row-gap: 0.5lh;
+    row-gap: calc(0.5 * var(--lh));
+    row-gap: 0.5lh;
   }
   .c-DateBlock__Date,
   .c-DateBlock__Desc {
-    margin-bottom: 0; // undo fallback above
+    margin-bottom: 0; // COMBAK:FALLBACK
+    margin-block-end: unset; // undo flexbox fallback above
   }
   .c-DateBlock__Date {
   }

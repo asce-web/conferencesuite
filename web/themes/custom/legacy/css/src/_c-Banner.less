@@ -47,6 +47,18 @@
   }
 }
 .c-Banner--copyright {
-  padding: var(--vru) 1rem;
+  // TODO make this a separate object, like `.o-Flex--center`
+  & > .o-Flex__Item {
+    flex: none;
+  }
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;       // COMBAK:FALLBACK
+  margin-bottom: initial; // COMBAK:FALLBACK
+  margin-bottom: unset;   // COMBAK:FALLBACK
+  margin-block-end: unset;
+  padding: 1.5rem 1rem;    // COMBAK:FALLBACK
+  padding: var(--lh) 1rem; // COMBAK:FALLBACK
+  padding: 1lh 1rem;
   background-color: @g-color-asce-blue;
 }
