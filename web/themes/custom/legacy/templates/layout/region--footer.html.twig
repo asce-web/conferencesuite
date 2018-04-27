@@ -15,12 +15,6 @@
 {{ attach_library('legacy/footerpanels') }}
 {% if content %}
   <div{{ attributes.addClass('o-Tablist o-Tablist--footertabs') }} role="tablist">
-      <!--
-        NOTE: for accessibility, the order of blocks should be:
-        1. current year
-        2. previous year
-        3. next year
-      -->
-      {{ content }}
+    {{ content }}
   </div>
 {% endif %}
