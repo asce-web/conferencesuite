@@ -58,7 +58,7 @@
   padding: var(--lh) 1rem; // COMBAK:FALLBACK
   padding: 1lh 1rem;
   background-color: @g-color-asce-blue;
-  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
     display: block; // override .o-Flex
     text-align: center;
   }
