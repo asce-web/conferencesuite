@@ -70,23 +70,22 @@
   @p-supporter-logo-sml-sG-width: 202px; @p-supporter-logo-sml-sG-height: 90px ;
   // (private) mixin for setting the dimensions of logos
   .p-dimensions(@x; @y) {
-    .c-SupporterBlock__List__Item {
       flex: 0 1 @x;
-    }
     .c-SupporterBlock__Logo {
       max-height: @y;
     }
   }
-  .c-SupporterBlock--lrg {
-    .p-dimensions(@p-supporter-logo-lrg-s-width; @p-supporter-logo-lrg-s-height);
+  // TODO put the classes on the entire list, not just the item (use a Supporter Level view)
+  .c-SupporterBlock__List__Item.small {
+    .p-dimensions(@p-supporter-logo-sml-s-width; @p-supporter-logo-sml-s-height);
     @media (min-width: 30em) {
-      .p-dimensions(@p-supporter-logo-lrg-sK-width; @p-supporter-logo-lrg-sK-height);
+      .p-dimensions(@p-supporter-logo-sml-sK-width; @p-supporter-logo-sml-sK-height);
     }
     @media (min-width: 60em) {
-      .p-dimensions(@p-supporter-logo-lrg-sG-width; @p-supporter-logo-lrg-sG-height);
+      .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
     }
   }
-  .c-SupporterBlock--med {
+  .c-SupporterBlock__List__Item.medium {
     .p-dimensions(@p-supporter-logo-med-s-width; @p-supporter-logo-med-s-height);
     @media (min-width: 30em) {
       .p-dimensions(@p-supporter-logo-med-sK-width; @p-supporter-logo-med-sK-height);
@@ -95,13 +94,13 @@
       .p-dimensions(@p-supporter-logo-med-sG-width; @p-supporter-logo-med-sG-height);
     }
   }
-  .c-SupporterBlock--sml {
-    .p-dimensions(@p-supporter-logo-sml-s-width; @p-supporter-logo-sml-s-height);
+  .c-SupporterBlock__List__Item.large {
+    .p-dimensions(@p-supporter-logo-lrg-s-width; @p-supporter-logo-lrg-s-height);
     @media (min-width: 30em) {
-      .p-dimensions(@p-supporter-logo-sml-sK-width; @p-supporter-logo-sml-sK-height);
+      .p-dimensions(@p-supporter-logo-lrg-sK-width; @p-supporter-logo-lrg-sK-height);
     }
     @media (min-width: 60em) {
-      .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
+      .p-dimensions(@p-supporter-logo-lrg-sG-width; @p-supporter-logo-lrg-sG-height);
     }
   }
   .slick-slide a.h-Block {
