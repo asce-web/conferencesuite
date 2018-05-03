@@ -2,6 +2,8 @@ name: Base
 description: 'Administrative operations required to run a basic site. Includes development tools & settings, basic site settings, and user configs, and theme settings.'
 type: module
 core: 8.x
+package: Chewie
+version: 8.x-1.0.1
 dependencies:
   - admin_toolbar_tools
   - automated_cron
@@ -19,5 +21,3 @@ dependencies:
   - user
   - views
   - views_ui
-version: 8.x-1.0.1
-package: Chewie

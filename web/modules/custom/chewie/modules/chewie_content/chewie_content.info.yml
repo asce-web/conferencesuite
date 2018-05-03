@@ -2,6 +2,8 @@ name: Content
 description: 'Generic conference site and content manipulation. Includes content tools & actions, block types, data formats, and text formats.'
 type: module
 core: 8.x
+package: Chewie
+version: 8.x-1.0.1
 dependencies:
   - block
   - block_content
@@ -29,5 +31,3 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-1.0.1
-package: Chewie
