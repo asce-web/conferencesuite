@@ -21,7 +21,7 @@
   <div{{ attributes.addClass('c-SupporterBlock') }}>
 {% endif %}
 
-  <ol class="js-slick"{{ list.attributes }}>
+  <ol class="js-slick"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
       <li{{ row.attributes }}
