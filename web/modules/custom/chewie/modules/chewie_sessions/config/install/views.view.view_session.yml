@@ -273,7 +273,7 @@ display:
         path:
           id: path
           table: node
-          field: path
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
@@ -320,7 +320,8 @@ display:
           hide_alter_empty: true
           absolute: false
           entity_type: node
-          plugin_id: node_path
+          plugin_id: entity_link
+          output_url_as_text: true
         field_session_starttime:
           id: field_session_starttime
           table: node__field_session_starttime
@@ -458,7 +459,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:ia') }}</time>\n  {{- '&ndash;' -}}\n  <time datetime=\"{{ field_session_endtime }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:ia') }}</time>\n</span>\n|\n<span class=\"c-TimeBlock__Desc\">\n  <a{% if field_session_link == 'On' %} class=\"c-TimeBlock__Link\" href=\"{{ path }}\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_session_displayname ?: title -}}\n    </data>\n  </a>\n</span>"
+            text: "<td class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:i a') }}</time>\n  &ndash;\n  <time datetime=\"{{ field_session_endtime }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:i a') }}</time>\n</td>\n<td class=\"c-TimeBlock__Desc\">\n  <a{% if field_session_link == 'On' %} class=\"c-TimeBlock__Link\" href=\"{{ path }}\" itemprop=\"url\"{% endif %}{% if field_session_link == 'Off' %} role=\"none\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_session_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
             make_link: false
             path: ''
             absolute: false

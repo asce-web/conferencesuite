@@ -29,16 +29,15 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<span class="c-TimeBlock__Times">
-  <time datetime="{{ fields.field_session_starttime.content }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:ia') }}</time>
-  {{- '&ndash;' -}}
-  <time datetime="{{ fields.field_session_endtime.content }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:ia') }}</time>
-</span>
-|
-<span class="c-TimeBlock__Desc">
-  <a{% if fields.field_session_link.content == 'On' %} class="c-TimeBlock__Link" href="{{ fields.path.content }}"{% endif %}>
+<td class="c-TimeBlock__Times">
+  <time datetime="{{ fields.field_session_starttime.content }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:i a') }}</time>
+  &ndash;
+  <time datetime="{{ fields.field_session_endtime.content }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:i a') }}</time>
+</td>
+<td class="c-TimeBlock__Desc">
+  <a{% if fields.field_session_link.content == 'On' %} class="c-TimeBlock__Link" href="{{ fields.path.content }}" itemprop="url"{% endif %}{% if fields.field_session_link.content == 'Off' %} role="none"{% endif %}>
     <data value="{{ fields.title.content }}" itemprop="name">
       {{- fields.field_session_displayname.content ?: fields.title.content -}}
     </data>
   </a>
-</span>
+</td>
