@@ -33,11 +33,20 @@
 // Styleguide Components.ConferenceTitles
 .c-ConferenceTitles {
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
+  margin-left: var(--site-logo-space);
   @media not all and (min-width: 45em) {
     text-align: center;
   }
   @media (min-width: 75em) {
     .font-size-mod(@g-font-size-kilo);
+  }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
+    @media (min-width: 45em) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 75em) {
+      margin-left: 2rem;
+    }
   }
   & > * {
     .-mb-h;

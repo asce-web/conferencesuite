@@ -30,13 +30,28 @@
   //     (cannot use `flex` to set width if flex-direction=column)
   // [2] for when <img> width is smaller than this width
   flex: 0 0 auto; // [1]
-  margin: 0 var(--site-logo-space);
   width: var(--site-logo-size);
+  margin-left: var(--site-logo-space);
+  @supports (margin-inline-start: var(--v)) {
+    margin-left: unset;
+    margin-inline-start: var(--site-logo-space);
+  }
   text-align: center; // [2]
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
+    width: 6rem;
+    @media (min-width: 45em) and (max-width: 74.999em) {
+      width: 4rem;
+    }
+    @media (min-width: 45em) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 75em) {
+      margin-left: 2rem;
+    }
+  }
 }
 
 .c-SiteLogo--secondary {
-  margin-left: 0;
   @media not all and (min-width: 45em) {
     .-pt-1;
   }
