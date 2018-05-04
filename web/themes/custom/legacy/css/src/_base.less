@@ -122,16 +122,18 @@ main {
   //--------------------------------//
   //    ## Tables
   //--------------------------------//
+  caption {
+    text-align: inherit; // unset Xmeter base
+  }
   thead,
   tfoot {
-    background-color: @g-color-table-bg;
-    font-weight: 600;
-    font-size: 0.75em; // REVIEW is this necessary?
+    // background-color: @g-color-table-bg;
+    // font-weight: 600;
+    // font-size: 0.75em; // REVIEW is this necessary?
   }
   th,
   td {
-    padding: 10px;
-    border: 1px solid @g-color-table-br;
+    // border: 1px solid @g-color-table-br;
   }
   // REVIEW striped & bordered tables
   table.striped {
