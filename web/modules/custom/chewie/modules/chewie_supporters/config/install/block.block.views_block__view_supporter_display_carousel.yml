@@ -11,7 +11,7 @@ dependencies:
 id: views_block__view_supporter_display_carousel
 theme: legacy
 region: supporters
-weight: -7
+weight: -6
 provider: null
 plugin: 'views_block:view_supporter-display_carousel'
 settings:

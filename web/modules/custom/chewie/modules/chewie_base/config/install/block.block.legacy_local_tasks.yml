@@ -6,7 +6,7 @@ dependencies:
 id: legacy_local_tasks
 theme: legacy
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:
