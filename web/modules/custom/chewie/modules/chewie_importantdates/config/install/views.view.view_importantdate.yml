@@ -269,7 +269,7 @@ display:
         path:
           id: path
           table: node
-          field: path
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
@@ -316,7 +316,8 @@ display:
           hide_alter_empty: true
           absolute: false
           entity_type: node
-          plugin_id: node_path
+          plugin_id: entity_link
+          output_url_as_text: true
         field_importantdate_startdate:
           id: field_importantdate_startdate
           table: node__field_importantdate_startdate
@@ -454,7 +455,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<dt class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</dt>\n<dd class=\"c-DateBlock__Desc\">\n  <a{% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ path }}\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</dd>"
+            text: "<td class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\" itemprop=\"startTime endTime\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</td>\n<td class=\"c-DateBlock__Desc\">\n  <a{% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ path }}\" itemprop=\"url\"{% endif %}{% if field_importantdate_link == 'Off' %} role=\"none\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
             make_link: false
             path: ''
             absolute: false

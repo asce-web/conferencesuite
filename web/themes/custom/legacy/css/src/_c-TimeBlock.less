@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _c-DateBlock.less
 \*################################*/
+@import (reference) url('__settings.less');
 
 
 // Time Block
@@ -10,36 +11,75 @@
 // Displayed on the Program page.
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-11-15</time></dd>
+//   <dt>updated</dt> <dd><time>2018-05-04</time></dd>
 // </dl></header>
 //
 // Markup:
-// <ol class="o-List c-TimeBlock">
-//   <li class="o-List__Item c-TimeBlock__Item" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-//     <span class="c-TimeBlock__Times">
-//       <time datetime="2016-09-28 10:00" itemprop="startDate">10:00am</time>
+// <table><tbody class="c-TimeBlock">
+//   <tr class="c-TimeBlock__Item" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+//     <td class="c-TimeBlock__Times">
+//       <time datetime="2016-09-28 10:00" itemprop="startDate">10:00 am</time>
 //       &ndash;
-//       <time datetime="2016-09-28 19:00" itemprop="endDate">7:00pm</time>
-//     </span>
-//     |
-//     <span class="c-TimeBlock__Desc">
+//       <time datetime="2016-09-28 19:00" itemprop="endDate">7:00 pm</time>
+//     </td>
+//     <td class="c-TimeBlock__Desc">
 //       <a class="c-TimeBlock__Link" href="/session/registration-day-1" itemprop="url">
 //         <data value="Registration Day 1" itemprop="name">Registration</data>
 //       </a>
-//     </span>
-//   </li>
-// </ol>
+//     </td>
+//   </tr>
+// </tbody></table>
 //
 // Styleguide Components.TimeBlock
 
+@columngap: 1rem;
+@rowgap: 0.25lh;
+
 .c-TimeBlock {
 }
+
 .c-TimeBlock__Item {
+  border-bottom: solid white;
+  border-bottom-width: (0.25 * 1.5rem);
+  border-bottom-width: calc(0.25 * var(--lh));
+  border-bottom-width: @rowgap;
 }
+
 .c-TimeBlock__Times {
+  padding-right: @columngap;
 }
+
 .c-TimeBlock__Desc {
+  padding-left: @columngap;
+  border-left: 1px solid currentColor; // COMBAK:FALLBACK
+  border-left: 1px solid var(--color-secondary, @g-color-secondary);
 }
+
 .c-TimeBlock__Link {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+
+@supports (display: grid) and (display: contents) {
+  .c-TimeBlock {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-row-gap: (0.25 * 1.5rem);
+    grid-row-gap: calc(0.25 * var(--lh));
+    grid-row-gap: @rowgap;
+    row-gap: (0.25 * 1.5rem);
+    row-gap: calc(0.25 * var(--lh));
+    row-gap: @rowgap;
+    grid-column-gap: @columngap;
+    column-gap: @columngap;
+  }
+  .c-TimeBlock__Item {
+    display: contents;
+  }
+  .c-TimeBlock__Times {
+    padding-right: 0; // COMBAK:FALLBACK
+    padding-right: unset;
+  }
+  .c-TimeBlock__Desc {
+  }
 }
