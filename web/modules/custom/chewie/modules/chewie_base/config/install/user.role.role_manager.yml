@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: role_manager
 label: Manager
-weight: -7
+weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
