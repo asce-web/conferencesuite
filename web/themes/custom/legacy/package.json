@@ -5,8 +5,9 @@
   "main": "legacy.css",
   "private": true,
   "scripts": {
+    "unbuild:docs": "rm -r docs/styleguide/",
     "unbuild:dist": "rm -r css/dist/",
-    "unbuild": "rm proto/legacytest.html css/legacy.css  &&  npm run unbuild:dist",
+    "unbuild": "rm proto/legacytest.html  &&  npm run unbuild:docs  &&  npm run unbuild:dist",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
