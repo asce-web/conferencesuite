@@ -19,9 +19,20 @@ gulp.task('test', async function () {
 })
 
 // HOW-TO: https://github.com/kss-node/kss-node/issues/161#issuecomment-222292620
-gulp.task('docs', async function () {
-  return kss(require('./kss.config.json'))
+gulp.task('docs-kss-markup', async function () {
+  return kss(require('./config/kss.json'))
 })
+
+gulp.task('docs-kss-style', async function () {
+  return gulp.src('./docs/css/kss-custom.less')
+  .pipe(less())
+  .pipe(autoprefixer({
+    grid: true,
+  }))
+  .pipe(gulp.dest('./docs/styleguide/'))
+})
+
+gulp.task('docs', ['docs-kss-markup', 'docs-kss-style'])
 
 gulp.task('dist', async function () {
   return gulp.src(['./css/src/*.less', '!./css/src/__*.less'])
