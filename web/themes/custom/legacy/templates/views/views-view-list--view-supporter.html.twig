@@ -24,7 +24,7 @@
     <h1 class="c-SupporterBlock__Hn">{{ title }}</h1>
   {% endif %}
 
-  <ul class="o-List o-Flex c-SupporterBlock__List"{{ list.attributes }}>
+  <ul class="o-List o-Flex c-SupporterBlock__List"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
       <li{{ row.attributes.addClass('o-List__Item o-Flex__Item c-SupporterBlock__List__Item') }}

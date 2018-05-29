@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: role_editor
 label: Editor
-weight: -8
+weight: 2
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -30,9 +30,7 @@ permissions:
   - 'edit any supporterlevel content'
   - 'edit any venue content'
   - 'manipulate all entityqueues'
-  - 'use text format basic_html'
-  - 'use text format full_html'
-  - 'use text format restricted_html'
+  - 'use text format rich_text'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

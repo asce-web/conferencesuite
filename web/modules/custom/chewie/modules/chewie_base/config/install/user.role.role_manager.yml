@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: role_manager
 label: Manager
-weight: -7
+weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -14,6 +14,7 @@ permissions:
   - 'access shortcuts'
   - 'access toolbar'
   - 'administer blocks'
+  - 'administer google tag manager'
   - 'administer menu'
   - 'administer nodes'
   - 'administer themes'
@@ -22,9 +23,8 @@ permissions:
   - 'manipulate all entityqueues'
   - 'manipulate entityqueues'
   - 'revert all revisions'
-  - 'use text format basic_html'
   - 'use text format full_html'
-  - 'use text format restricted_html'
+  - 'use text format rich_text'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

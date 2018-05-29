@@ -18,23 +18,20 @@
 #}
 {{ attach_library('legacy/dateblock') }}
 {% if attributes -%}
-  <div{{ attributes }}>
+  <table{{ attributes }}>
 {% endif %}
   {% if title %}
-    <h3>{{ title }}</h3>
+    <caption><h3>{{ title }}</h3></caption>
   {% endif %}
 
-  <dl class="c-DateBlock"{{ list.attributes }}>
+  <tbody class="c-DateBlock"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
-      {% if row.attributes.0 %}
-        <meta{{ row.attributes }}/>
-      {% endif %}
-      {{ row.content }}
+      <tr{{ row.attributes.addClass('c-DateBlock__Item').setAttribute('itemprop','potentialAction').setAttribute('itemscope','').setAttribute('itemtype','http://schema.org/Action') }}>{{ row.content }}</tr>
     {% endfor %}
 
-  </dl>
+  </tbody>
 
 {% if attributes -%}
-  </div>
+  </table>
 {% endif %}
