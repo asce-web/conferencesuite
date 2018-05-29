@@ -1,2 +1,5 @@
 bundle: chewie
+excluded:
+  - core.entity_view_mode.block_content.token
+  - core.entity_view_mode.menu_link_content.token
 required: true

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.full_html
+    - filter.format.rich_text
   module:
     - ckeditor
     - editor_file
@@ -12,25 +12,24 @@ third_party_settings:
     scheme: public
     directory: inline-files
     extensions: 'pdf doc docx xls xlsx ppt pptx txt'
-    max_size: '1 MB'
-format: full_html
+    max_size: '8 MB'
+format: rich_text
 editor: ckeditor
 settings:
   toolbar:
     rows:
       -
         -
+          name: Structure
+          items:
+            - Format
+        -
           name: Formatting
           items:
             - Bold
             - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
         -
-          name: Linking
+          name: Links
           items:
             - DrupalLink
             - DrupalUnlink
@@ -39,30 +38,34 @@ settings:
           items:
             - BulletedList
             - NumberedList
+            - '-'
+            - Outdent
+            - Indent
         -
           name: Media
           items:
             - Blockquote
             - DrupalImage
-            - Table
-            - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
+            - DrupalFile
         -
           name: Tools
           items:
             - ShowBlocks
+            - Maximize
             - Source
   plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    language:
+      language_list: un
     stylescombo:
       styles: ''
 image_upload:
   status: true
   scheme: public
   directory: inline-images
-  max_size: ''
+  max_size: '256 KB'
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

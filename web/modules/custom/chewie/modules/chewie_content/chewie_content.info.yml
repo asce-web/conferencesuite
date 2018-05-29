@@ -3,7 +3,7 @@ description: 'Generic conference site and content manipulation. Includes content
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.1.0
+version: 8.x-1.3.0
 dependencies:
   - block
   - block_content
