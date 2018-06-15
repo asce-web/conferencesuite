@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:heroblock_legacy:a3e965da-4167-46cd-8303-748ba789baf5'
+  module:
+    - block_content
+    - system
+  theme:
+    - legacy
+id: hero
+theme: legacy
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:a3e965da-4167-46cd-8303-748ba789baf5'
+settings:
+  id: 'block_content:a3e965da-4167-46cd-8303-748ba789baf5'
+  label: Hero
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
