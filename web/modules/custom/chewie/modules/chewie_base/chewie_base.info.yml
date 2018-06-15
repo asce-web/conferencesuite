@@ -3,7 +3,7 @@ description: 'Administrative operations required to run a basic site. Includes d
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.2.0
+version: 8.x-1.2.1
 dependencies:
   - admin_toolbar_tools
   - automated_cron

@@ -30,6 +30,7 @@ permissions:
   - 'edit any supporterlevel content'
   - 'edit any venue content'
   - 'manipulate all entityqueues'
+  - 'use text format full_html'
   - 'use text format rich_text'
   - 'view all revisions'
   - 'view own unpublished content'
