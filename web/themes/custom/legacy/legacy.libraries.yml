@@ -35,6 +35,7 @@ global-styling:
       node_modules/xmeter/css/dist/-fz.css: { minified: true }
       css/dist/_themes.css: { minified: true }
       css/dist/_t-Content.css: { minified: true }
+      css/dist/_atom.css: { minified: true }
       css/dist/_hack.glyphicons.css: { minified: true }
       css/dist/_hack.drupal.css: { minified: true }
       css/dist/_hack.ie.css: { minified: true }
