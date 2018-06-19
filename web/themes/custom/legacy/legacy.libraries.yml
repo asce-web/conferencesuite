@@ -1,10 +1,13 @@
 global-styling:
   css:
     base:
-      node_modules/xmeter/css/dist/xmeter.css: { minified: true }
+      node_modules/xmeter/css/dist/base.css: { minified: true }
       css/dist/_dev.css: { minified: true }
       css/dist/_base.css: { minified: true }
     layout:
+      node_modules/xmeter/css/dist/o-List.css: { minified: true }
+      node_modules/xmeter/css/dist/o-Flex.css: { minified: true }
+      node_modules/xmeter/css/dist/o-Grid.css: { minified: true }
       css/dist/_o-MainCol.css: { minified: true }
       css/dist/_o-SideCol.css: { minified: true }
     component:
@@ -13,6 +16,12 @@ global-styling:
       css/dist/_c-Button.css: { minified: true }
       css/dist/_c-Alert.css: { minified: true }
     state:
+      node_modules/xmeter/css/dist/h-Block.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Inline.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Clearfix.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Measure.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Constrain.css: { minified: true }
+      node_modules/xmeter/css/dist/h-FontSize.css: { minified: true }
       node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
@@ -21,6 +30,9 @@ global-styling:
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: { type: external, minified: true }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: { type: external, minified: true }
+      node_modules/xmeter/css/dist/-mb.css: { minified: true }
+      node_modules/xmeter/css/dist/-pt.css: { minified: true }
+      node_modules/xmeter/css/dist/-fz.css: { minified: true }
       css/dist/_themes.css: { minified: true }
       css/dist/_t-Content.css: { minified: true }
       css/dist/_hack.glyphicons.css: { minified: true }
