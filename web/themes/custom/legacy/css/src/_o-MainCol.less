@@ -21,6 +21,11 @@
 //
 // Styleguide Objects.MainCol
 .o-MainCol {
+  a[href]& {
+    text-decoration: none;    // COMBAK:FALLBACK
+    text-decoration: initial; // COMBAK:FALLBACK
+    text-decoration: unset; // override xmeter a[href]
+  }
   main & {
     margin-left: 1rem; margin-right: 1rem;
     @supports (margin-inline: 1rem) {
