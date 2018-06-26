@@ -47,9 +47,6 @@
   }
 }
 .c-Banner--copyright {
-  // TODO make this a separate object, like `.o-Flex--center`
-  justify-content: center;
-  align-items: center;
   margin-bottom: 0;       // COMBAK:FALLBACK
   margin-bottom: initial; // COMBAK:FALLBACK
   margin-bottom: unset;   // COMBAK:FALLBACK
@@ -62,7 +59,12 @@
     display: block; // override .o-Flex
     text-align: center;
   }
-  & > .o-Flex__Item {
-    flex: none;
+  & > a.o-Flex {
+    // TODO make this a separate object, like `.o-Flex--center`
+    justify-content: center;
+    align-items: center;
+    & > .o-Flex__Item {
+      flex: none;
+    }
   }
 }
