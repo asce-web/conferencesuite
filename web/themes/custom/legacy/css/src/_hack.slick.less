@@ -13,18 +13,18 @@
   margin: 0 1rem;
   margin-inline: 1rem;
   @media screen and (min-width: 30em) {
-    margin: 0 2rem; // HACK fallback for logical properties
+    margin: 0 2rem; // COMBAK:FALLBACK for logical properties
     margin-inline: 2rem;
   }
   @media screen and (min-width: 45em) {
-    margin: 0 4rem; // HACK fallback for logical properties
+    margin: 0 4rem; // COMBAK:FALLBACK for logical properties
     margin-inline: 4rem;
   }
 }
 
 /*li*/.slick-slide {
   @media screen and (min-width: 30em) {
-    margin: 0 1rem; // HACK fallback for logical properties
+    margin: 0 1rem; // COMBAK:FALLBACK for logical properties
     margin-inline: 1rem;
   }
   a.h-Block {
@@ -39,20 +39,20 @@
 @supports (display: grid) {
   /*li*/.slick-slide {
     a.h-Block {
-      position: initial; // HACK fallback for unset
+      position: initial; // COMBAK:FALLBACK for unset
       position: unset;
       display: grid;
       justify-content: center;
       align-content: center;
     }
     .c-SupporterBlock__Logo {
-      // HACK fallbacks for initial
+      // COMBAK:FALLBACK for initial
       position: static;
       top: auto;
       left: auto;
       transform: none;
 
-      // HACK fallbacks for unset
+      // COMBAK:FALLBACK for unset
       position: initial;
       top: initial;
       left: initial;
