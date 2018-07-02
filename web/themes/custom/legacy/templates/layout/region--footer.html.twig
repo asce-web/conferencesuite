@@ -14,7 +14,7 @@
 #}
 {{ attach_library('legacy/footerpanels') }}
 {% if content %}
-  <div{{ attributes.addClass('o-Tablist o-Tablist--footertabs') }} role="tablist">
+  <div{{ attributes.addClass('o-Tablist o-Tablist--footertabs') }} role="tablist" aria-orientation="horizontal">
     {{ content }}
   </div>
 {% endif %}

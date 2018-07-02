@@ -8,7 +8,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const clean_css    = require('gulp-clean-css')
 const sourcemaps   = require('gulp-sourcemaps')
 
-gulp.task('pug:test', function () {
+gulp.task('test', async function () {
   return gulp.src(__dirname + '/proto/legacytest.pug')
     .pipe(pug({
       basedir: './',
@@ -19,22 +19,23 @@ gulp.task('pug:test', function () {
 })
 
 // HOW-TO: https://github.com/kss-node/kss-node/issues/161#issuecomment-222292620
-gulp.task('docs:kss', function () {
-  return kss(require('./kss.config.json'))
+gulp.task('docs-kss-markup', async function () {
+  return kss(require('./config/kss.json'))
 })
 
-gulp.task('lessc:dev', function () {
-  return gulp.src(path.resolve(__dirname, './css/src/legacy.less'))
-    .pipe(less())
-    .pipe(autoprefixer({
-      grid: true,
-      cascade: false,
-    }))
-    .pipe(gulp.dest('./css/dist/'))
+gulp.task('docs-kss-style', async function () {
+  return gulp.src('./docs/css/kss-custom.less')
+  .pipe(less())
+  .pipe(autoprefixer({
+    grid: true,
+  }))
+  .pipe(gulp.dest('./docs/styleguide/'))
 })
 
-gulp.task('lessc:core', ['lessc:dev'], function () {
-  return gulp.src([path.resolve(__dirname, './css/src/*.less'), `!${path.resolve(__dirname, './css/src/legacy.less')}`]) // ignore legacy.less
+gulp.task('docs', ['docs-kss-markup', 'docs-kss-style'])
+
+gulp.task('dist', async function () {
+  return gulp.src(['./css/src/*.less', '!./css/src/__*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer({
@@ -53,4 +54,4 @@ gulp.task('lessc:core', ['lessc:dev'], function () {
     .pipe(gulp.dest('./css/dist/'))
 })
 
-gulp.task('build', ['pug:test', 'lessc:core'])
+gulp.task('build', ['test', 'docs', 'dist'])

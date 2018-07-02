@@ -29,15 +29,16 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
+<aside class="c-Callout" itemprop="location" itemscope="" itemtype="http://schema.org/Accommodation">
 <header>
   {% if fields.field_venue_image.content %}
-    <img class="h-Block -mb-1" src="{{ fields.field_venue_image.content }}" alt="{{ fields.field_venue_image_1.content }}" itemprop="photo"/>
+    <img class="h-Block -mb-1" alt="" src="{{ fields.field_venue_image.content }}" itemprop="photo"/>
   {% endif %}
   <h1 class="c-Callout__Hn -pt-0{% if fields.field_venue_label.content == 'Off' %} h-Hidden{% endif %}" itemprop="description">{{ fields.title.content }}</h1>
 </header>
 <div class="c-Callout__Body">
   <p>
-    <a class="-fw-b"{% if fields.field_venue_url.content %} href="{{ fields.field_venue_url.content }}" itemprop="url"{% endif %}>
+    <a class="-fw-b"{% if fields.field_venue_url.content %} href="{{ fields.field_venue_url.content }}" itemprop="url"{% endif %}{% if not fields.field_venue_url.content %} role="none"{% endif %}>
       <span itemprop="name">{{ fields.field_venue_name.content }}</span>
     </a>
     <br/>
@@ -69,3 +70,4 @@
     <article class="t-Content">{{ fields.field_venue_body.content }}</article>
   {% endif %}
 </div>
+</aside>

@@ -3,7 +3,6 @@
     legacy  |  _c-DateBlock.less
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
-@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 @import (reference) url('__tool.buttonText.less');
 
@@ -16,7 +15,7 @@
 //
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-07-14</time></dd>
+//   <dt>updated</dt> <dd><time>2018-05-04</time></dd>
 // </dl></header>
 //
 // Markup:
@@ -53,26 +52,34 @@
 //
 // Styleguide Components.DateBlock
 
-@datewidth: 6rem;
+@columngap: 0.5rem;
+@rowgap: 0.5lh;
 
-// ALL supports (regardless of layout)
 .c-DateBlock {
   .font-size-mod(14/16);
   font-weight: 600;
 }
 
+.c-DateBlock__Item {
+  border-bottom: solid white;
+  border-bottom-width: (0.5 * 1.5rem);
+  border-bottom-width: calc(0.5 * var(--lh));
+  border-bottom-width: @rowgap;
+}
+
 .c-DateBlock__Date {
-  padding-right: 0.5rem;
-  border-right: 1px solid #ccc; // REVIEW magic color
+  padding-right: @columngap;
   text-align: right;
 }
 
 .c-DateBlock__Desc {
-  padding-left: 0.5rem;
+  padding-left: @columngap;
+  border-left: 1px solid currentColor; // COMBAK:FALLBACK
+  // border-left: 1px solid var(--color-secondary, @g-color-secondary);
 }
 
 .c-DateBlock__Expired {
-  opacity: 0.25; // fadeout(@g-color-body-txt, 75%) equivalent to #ccc (Date border)
+  opacity: 0.25;
 }
 
 .c-DateBlock__MonthDay {
@@ -82,44 +89,29 @@
 }
 
 .c-DateBlock__Link {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
-// flexbox support
-.c-DateBlock {
-  display: flex;
-  flex-wrap: wrap;
-}
-.c-DateBlock__Date,
-.c-DateBlock__Desc {
-  .-mb-h;
-}
-.c-DateBlock__Date {
-  flex: 0 0 @datewidth;
-}
-.c-DateBlock__Desc {
-    flex: 0 0 calc(100% - @datewidth);
-}
-
-
-// feature query support & grid support
-@supports (display: grid) {
+@supports (display: grid) and (display: contents) {
   .c-DateBlock {
     display: grid;
-    grid-template-columns: @datewidth auto;
-    grid-row-gap: (0.5 * 1.5rem);        // COMBAK:FALLBACK
-    grid-row-gap: calc(0.5 * var(--lh)); // COMBAK:FALLBACK
-    grid-row-gap: 0.5lh;
+    grid-template-columns: max-content 1fr;
+    grid-row-gap: (0.5 * 1.5rem);
+    grid-row-gap: calc(0.5 * var(--lh));
+    grid-row-gap: @rowgap;
+    row-gap: (0.5 * 1.5rem);
     row-gap: calc(0.5 * var(--lh));
-    row-gap: 0.5lh;
+    row-gap: @rowgap;
+    grid-column-gap: @columngap;
+    column-gap: @columngap;
   }
-  .c-DateBlock__Date,
-  .c-DateBlock__Desc {
-    margin-bottom: 0; // COMBAK:FALLBACK
-    margin-block-end: unset; // undo flexbox fallback above
+  .c-DateBlock__Item {
+    display: contents;
   }
   .c-DateBlock__Date {
+    padding-right: 0; // COMBAK:FALLBACK
+    padding-right: unset;
   }
   .c-DateBlock__Desc {
   }

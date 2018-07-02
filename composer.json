@@ -2,7 +2,7 @@
     "name": "drupal-composer/drupal-project",
     "description": "Project template for Drupal 8 projects with composer",
     "type": "project",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "",
@@ -19,20 +19,28 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
-        "drupal/console": "~1.0",
-        "drupal/core": "~8.0",
-        "drush/drush": "~8.0",
-        "webflo/drupal-finder": "^0.2.1",
+        "drupal/admin_toolbar": "^1.23",
+        "drupal/coffee": "^1.0@beta",
+        "drupal/config_update": "^1.5",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "~8.5.3",
+        "drupal/ctools": "^3.0",
+        "drupal/devel": "^1.2",
+        "drupal/editor_advanced_link": "^1.4",
+        "drupal/editor_file": "^1.2",
+        "drupal/entityqueue": "^1.0@alpha",
+        "drupal/features": "^3.7",
+        "drupal/google_tag": "^1.0",
+        "drupal/linkit": "^5.0@beta",
+        "drupal/pathauto": "^1.2",
+        "drupal/token": "^1.1",
+        "drush/drush": "^9.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
-        "jcalderonzumba/gastonjs": "~1.0.2",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsstream": "~1.2",
-        "phpunit/phpunit": ">=4.8.28 <5",
-        "symfony/css-selector": "~2.8"
+        "webflo/drupal-core-require-dev": "~8.5.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -40,12 +48,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-      "sort-packages": true
+        "sort-packages": true
     },
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
-        ]
+        ],
+        "files": ["load.environment.php"]
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",

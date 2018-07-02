@@ -29,16 +29,16 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<dt class="c-DateBlock__Date">
-  <time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content }}">
+<td class="c-DateBlock__Date">
+  <time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content }}" itemprop="startTime endTime">
     <span class="c-DateBlock__MonthDay h-Block">{{ fields.field_importantdate_startdate.content|date('M j') }}</span>
     <span class="h-Block">{{ fields.field_importantdate_startdate.content|date('Y') }}</span>
   </time>
-</dt>
-<dd class="c-DateBlock__Desc">
-  <a{% if fields.field_importantdate_link.content == 'On' %} class="c-DateBlock__Link" href="{{ fields.path.content }}"{% endif %}>
+</td>
+<td class="c-DateBlock__Desc">
+  <a{% if fields.field_importantdate_link.content == 'On' %} class="c-DateBlock__Link" href="{{ fields.path.content }}" itemprop="url"{% endif %}{% if fields.field_importantdate_link.content == 'Off' %} role="none"{% endif %}>
     <data value="{{ fields.title.content }}" itemprop="name">
       {{- fields.field_importantdate_displayname.content ?: fields.title.content -}}
     </data>
   </a>
-</dd>
+</td>
