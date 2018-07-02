@@ -63,7 +63,10 @@
 .c-KeynoteSpeaker__Headshot {
   flex: (100% * 1/5);
   margin-left:  1rem; margin-right: 1rem;
-  margin-inline: 1rem; // CHANGED not widely supported
+  @supports (margin-inline: 1rem) {
+    margin-left: unset; margin-right: unset;
+    margin-inline: 1rem; // TODO import .mx-mh-1() from _c-SupporterBlock.less
+  }
   border-radius: 50%;
   overflow: hidden; // if image is not cropped correctly
   @media not all and (min-width: 30em) {
