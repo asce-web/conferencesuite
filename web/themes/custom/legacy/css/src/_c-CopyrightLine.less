@@ -1,0 +1,40 @@
+
+/*################################*\
+    legacy  |  _c-Banner.less
+\*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
+
+
+// Copyright Line
+//
+// A line of copyright info, in the copyright footer banner.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2018-07-02</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-CopyrightLine">
+// </div>
+//
+// Weight: 17
+//
+// Styleguide Components.CopyrightLine
+.c-CopyrightLine {
+  .-mb-0; // override base `p`
+  padding: 1.5rem 1rem;    // COMBAK:FALLBACK
+  padding: var(--lh) 1rem; // COMBAK:FALLBACK
+  padding: 1lh 1rem;
+}
+
+.c-CopyrightLine__Link {
+  // COMBAK:FALLBACK : copied from `.o-Flex.o-Flex--center;`, for when `display:contents` is not supported
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > .o-Flex__Item {
+    flex: none;
+  }
+
+  display: contents; // override entire box model for browsers that support it
+}

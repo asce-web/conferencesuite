@@ -103,6 +103,7 @@ copyright:
   css:
     component:
       css/dist/_c-Banner.css: { minified: true }
+      css/dist/_c-CopyrightLine.css: { minified: true }
       css/dist/_c-AsceLogo.css: { minified: true }
 
 # Callout Component
