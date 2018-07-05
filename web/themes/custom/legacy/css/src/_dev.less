@@ -4,6 +4,14 @@
 \*################################*/
 
 
+// Extension of `.o-Flex` for centering items.
+.o-Flex--center {
+  justify-content: center;
+  align-items: center;
+  & > .o-Flex__Item {
+    flex: none;
+  }
+}
 // Extensions of `.o-Flex` used in site header & footer.
 // --siteFoot only appears in the current year footer panel.
 //
