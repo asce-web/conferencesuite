@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad63949908d9a2b0e6907a52f12c6726",
+    "content-hash": "c6cac6f8e2a1ba6f588a5b4889f7c9d3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2600,6 +2600,53 @@
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
                 "source": "http://cgit.drupalcode.org/pathauto"
+            }
+        },
+        {
+            "name": "drupal/rebuild_cache_access",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/rebuild_cache_access",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/rebuild_cache_access-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "31766f60f6f7dfeb29001f4532d457cfb6cbb3dd"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1523998080",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "leymannx",
+                    "homepage": "https://www.drupal.org/user/2482808"
+                }
+            ],
+            "description": "Provide a Rebuild Cache admin toolbar button accessible to every role with the corresponding permission set.",
+            "homepage": "https://www.drupal.org/project/rebuild_cache_access",
+            "support": {
+                "source": "http://cgit.drupalcode.org/rebuild_cache_access"
             }
         },
         {
