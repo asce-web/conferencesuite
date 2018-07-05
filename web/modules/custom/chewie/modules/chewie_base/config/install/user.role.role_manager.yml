@@ -22,6 +22,7 @@ permissions:
   - 'create url aliases'
   - 'manipulate all entityqueues'
   - 'manipulate entityqueues'
+  - 'rebuild cache access'
   - 'revert all revisions'
   - 'use text format full_html'
   - 'use text format rich_text'
