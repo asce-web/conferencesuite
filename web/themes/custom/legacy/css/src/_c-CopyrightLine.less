@@ -101,6 +101,11 @@
   path {
     fill: currentColor;
   }
+
+  // IE BUG where flexbox doesn’t work with <svg>
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    flex: auto;
+  }
 }
 
 .c-CopyrightLine__Text {
