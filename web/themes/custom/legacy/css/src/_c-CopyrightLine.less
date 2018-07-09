@@ -38,6 +38,9 @@
   align-items: center;
 
   display: contents; // override entire box model for browsers that support it
+  &:not(:hover):not(:focus) { // CHANGED:NEW syntax not supported yet // &:not(:hover, :focus)
+    text-decoration: none; // override base `a[href]`
+  }
 }
 
 .c-CopyrightLine__Logo,
