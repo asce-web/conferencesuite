@@ -15,10 +15,10 @@
  * __tool.buttonText.less..............mixin for button text styles (used on many things)
  *
  * BASE--------------------------------BARE UNCLASSED ELEMENTS
- * _dev.less...........................fixes for imported 3rd party
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Flex--..............................extensions to Xmeter’x o-Flex Object
  * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
@@ -76,7 +76,6 @@
 //
 // Styleguide Principles
 
-@import (less) url('_dev.less');
 @import (less) url('_base.less');
 
 // Objects
@@ -91,6 +90,7 @@
 //
 // Styleguide Objects
 
+@import (less) url('_o-Flex--.less');
 @import (less) url('_o-Tablist--footertabs.less');
 @import (less) url('_o-MainCol.less');
 @import (less) url('_o-SideCol.less');

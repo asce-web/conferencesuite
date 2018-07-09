@@ -2,12 +2,12 @@ global-styling:
   css:
     base:
       node_modules/xmeter/css/dist/base.css: { minified: true }
-      css/dist/_dev.css: { minified: true }
       css/dist/_base.css: { minified: true }
     layout:
       node_modules/xmeter/css/dist/o-List.css: { minified: true }
       node_modules/xmeter/css/dist/o-Flex.css: { minified: true }
       node_modules/xmeter/css/dist/o-Grid.css: { minified: true }
+      css/dist/_o-Flex--.css: { minified: true }
       css/dist/_o-MainCol.css: { minified: true }
       css/dist/_o-SideCol.css: { minified: true }
     component:
