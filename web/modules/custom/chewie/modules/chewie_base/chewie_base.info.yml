@@ -3,9 +3,11 @@ description: 'Administrative operations required to run a basic site. Includes d
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.4.0
+version: 8.x-1.5.2
 dependencies:
   - admin_toolbar_tools
+  - authorization
+  - authorization_drupal_roles
   - automated_cron
   - block
   - dblog
@@ -14,6 +16,10 @@ dependencies:
   - field
   - file
   - image
+  - ldap_authentication
+  - ldap_authorization
+  - ldap_servers
+  - ldap_user
   - menu_ui
   - path
   - rebuild_cache_access

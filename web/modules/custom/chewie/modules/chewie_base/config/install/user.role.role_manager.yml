@@ -18,6 +18,7 @@ permissions:
   - 'administer menu'
   - 'administer nodes'
   - 'administer themes'
+  - 'administer users'
   - 'bypass node access'
   - 'create url aliases'
   - 'manipulate all entityqueues'
