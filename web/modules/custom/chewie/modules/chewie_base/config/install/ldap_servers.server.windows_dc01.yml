@@ -12,8 +12,8 @@ followrefs: null
 weight: null
 bind_method: service_account
 binddn: 'CN=LDAPADM,OU=Service Accounts,DC=asce,DC=org'
-bindpw: SONY2000
-basedn: 'OU=ASCE Users,DC=asce,DC=org '
+bindpw: PASSWORD
+basedn: 'OU=ASCE Users,DC=asce,DC=org'
 user_attr: samaccountname
 account_name_attr: ''
 mail_attr: mail
