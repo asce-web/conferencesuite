@@ -68,6 +68,22 @@ function legacy_preprocess_block(&$variables) {
 }
 
 /**
+ * User Variables
+ */
+function legacy_preprocess_user(&$variables) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  // option 1: check each role (not very extensible)
+  $variables['has_role'] = in_array('role_editor', $roles) || in_array('role_manager', $roles) || in_array('administrator', $roles);
+
+  // option 2: check all at once
+  // $variables['has_role'] = array_reduce(array_map(function ($entry) {
+  //   return in_array($entry, ['role_editor', 'role_manager', 'administrator']);
+  // }, $roles), function ($a, $b) { return $a || $b });
+}
+
+/**
  * Region Variables
  */
 function legacy_preprocess_region(&$variables) {
