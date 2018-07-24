@@ -242,10 +242,11 @@ html(lang="en")
                       | #[span(itemprop="addressLocality") Fort Worth], #[span(itemprop="addressRegion") TX] #[span(class="h-Clearfix" itemprop="postalCode") 76102]
                       span(class="h-Clearfix" itemprop="addressCountry") United States
                     a(href="tel:+1-800-555-5555" itemprop="telephone") +1-800-555-5555
-                  p: a.c-Button(href="#0") link
-                  p: a.c-Button link without href
-                  p: button.c-Button button
-                  p: button.c-Button(disabled="") disabled button
+                  ul
+                    li: button.c-Button(type="button") button
+                    li: button.c-Button(disabled="") disabled button
+                    li: a.c-Button(href="#0") cta link
+                    li: a.c-Button cta link without href
                   p Early Bird Rates - Save up to $200!
                   p.
                     $675 - Members #[br]

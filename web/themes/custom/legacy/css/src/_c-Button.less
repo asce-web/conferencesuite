@@ -12,16 +12,6 @@
 // vertical rhythm, be sure to contain them in typographical block-level elements
 // such as paragraphs or lists.
 //
-// Buttons may be in the form of <code>a</code> elements (links or anchors) or
-// <code>button</code> elements.
-//
-// Keep in mind these button usage guidelines:
-// - <code>button</code> elements should indicate action and be worded actionably.
-// - Use an <code>a</code> element instead of a <code>button</code> if there is a
-//   meaningful target href or url.
-// - Of course, <code>a</code> elements as well as <code>button</code> elements
-//   may be styled to look like Button Components.
-//
 // Every Button Component must have styles available for each of the following states:
 // <dl>
 //   <dt><b>default</b></dt>
@@ -31,19 +21,12 @@
 //   <dt><b>active</b></dt>
 //   <dd>the user is in the process of clicking/activating the component</dd>
 //   <dt><b>disabled</b></dt>
-//   <dd>the component is inaccessable and/or does nothing, and the user may not
-//     interact with it; this state is implemented by:
-//     <ul>
-//       <li>a <code>button</code> with the <code>[disabled]</code> attribute, or</li>
-//       <li>an <code>a</code> with the <code>[href]</code> attribute <em>absent</em>
-//         (this is not the same as an empty attribute <code>[href=""]</code>).</li>
-//     </ul>
-//   </dd>
+//   <dd>the component is inaccessable and/or does nothing, and the user may not interact with it</dd>
 // </dl>
 //
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-06-14</time></dd>
+//   <dt>updated</dt> <dd><time>2018-07-24</time></dd>
 // </dl></header>
 //
 // Markup:
@@ -93,7 +76,7 @@
     }
   }
   a& {
-    text-decoration: none; // TEMP for links that look like buttons. remove when `c-CtaLink` is created
+    text-decoration: none; // TEMP for links that look like buttons. remove when `c-CtaLink` is used
   }
   &:hover,
   &:focus {
@@ -105,7 +88,7 @@
   }
 }
 
-button.c-Button:disabled, // NOTE: courtesy for those who forget the subclass
+button.c-Button:disabled, // courtesy for those who forget the subclass
 .c-Button--disabled {
     opacity: 0.25;
     cursor: not-allowed;
