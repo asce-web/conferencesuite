@@ -28,7 +28,9 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
     link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700")
-    link(rel="stylesheet" href="../node_modules/xmeter/css/xmeter.css")
+    link(rel="stylesheet" href="../node_modules/xmeter/css/dist/xmeter.css")
+    link(rel="stylesheet" href="../node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css")
+    link(rel="stylesheet" href="../node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css")
     link(rel="stylesheet" href="https://cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css")
     link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/futura.css")
     link(rel="stylesheet" href="https://cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css")
@@ -42,6 +44,15 @@ html(lang="en")
         --color-secondary: #{conference.colors.secondary};
         --color-accent:    #{conference.colors.accent};
       }
+    script(
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+      defer="")
+    script(src="https://cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js" defer="")
+    script(src="../node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js" defer="")
+    script(src="../js/menu.js" defer="")
+    script(src="../js/o-Drawer.js" defer="")
     noscript
       // remove Toggle menu when JS is disabled
       style.
@@ -440,12 +451,3 @@ html(lang="en")
         span.c-CopyrightLine__Text(aria-label="Copyright 1996 to 2018, American Society of Civil Engineers, ASCE.org")
           | &copy; #[span.-d-n-nM #[time 1996]&ndash;]#[time 2018]#[span.-d-n-nK , American Society of Civil Engineers]#[span.-d-n-nM , ASCE.org]
     a(href="#top") jump to top
-    script(
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous")
-    script(src="../node_modules/xmeter/js/o-Tablist.js")
-    script(src="https://cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js")
-    script(src="../js/menu.js")
-    script(src="../js/orphaned.js")
-    script(src="../js/o-Drawer.js")
