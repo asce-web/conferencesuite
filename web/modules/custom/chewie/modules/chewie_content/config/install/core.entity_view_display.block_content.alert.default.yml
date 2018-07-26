@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.alert
+    - field.field.block_content.alert.field_alert_body
+  module:
+    - text
+id: block_content.alert.default
+targetEntityType: block_content
+bundle: alert
+mode: default
+content:
+  field_alert_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
