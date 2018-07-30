@@ -103,13 +103,13 @@
     }
     &::before {
       --direction: to left;
-      @supports (background-image: linear-gradient(to inline-start, transparent, black) {
+      @supports (background-image: linear-gradient(to inline-start, transparent, black)) {
         --direction: to inline-start;
       }
     }
     &::after {
       --direction: to right;
-      @supports (background-image: linear-gradient(to inline-end, transparent, black) {
+      @supports (background-image: linear-gradient(to inline-end, transparent, black)) {
         --direction: to inline-end;
       }
     }

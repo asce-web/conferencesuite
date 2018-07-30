@@ -1,0 +1,51 @@
+
+/*################################*\
+    legacy  |  _atom.less
+\*################################*/
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Atoms are single-responsibility utility classes, serving as add-ons
+// to the Objects, Components, and Helpers in a design system.
+// Atoms are meant to be used as "fixers": they tweak the style
+// of a design pattern due to anomolous circumstances.
+//
+// For example, if a heading normally has a bottom margin of `1rem`,
+// but due to the specific content on a particular page, you need to remove the margin,
+// then you can use Atoms in your HTML: `<h1 class="-mb-0">Outlier Heading</h1>`.
+// This uses the `.-mb-0` Atom, which sets `margin-bottom: 0`.
+//
+// If you find yourself using Atoms a lot, or using them repetitively,
+// you’re doing it wrong. Atoms are helpful because they have very targeted
+// functionality, but the drawback is that they add *a lot* of HTML bloat.
+// They are not meant to be used as building blocks
+// to create larger patterns---for that, use plain CSS instead.
+//
+// E.g., instead of `<a class="-p-h -bc-green -rr-1 -ks-med -tt-uc" href="...">See Hotels</a>`,
+// you should consider `<a class="c-Button--primary" href="...">See Hotels</a>`
+// and then write your own CSS.
+///////////////////////////////////////////////////////////////////////////////
+
+
+.-d-n { display: none; }
+.-d-n-sK { @media screen  and (min-width: 30em) { display: none; } }
+.-d-n-nK { @media not all and (min-width: 30em) { display: none; } }
+.-d-n-sM { @media screen  and (min-width: 45em) { display: none; } }
+.-d-n-nM { @media not all and (min-width: 45em) { display: none; } }
+
+.-r-1 {
+  right: 1rem !important; // QUESTION why !important?
+}
+
+.c-FooterIcon, // TODO make this a separate component
+.-mr-1 {
+  margin-right: 1rem;
+  @supports (margin-inline-end: 1rem) {
+    margin-right: unset;
+    margin-inline-end: 1rem;
+  }
+}
+
+.-fw-b {
+  font-weight: bold;
+}

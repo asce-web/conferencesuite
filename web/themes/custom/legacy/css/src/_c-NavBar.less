@@ -48,9 +48,9 @@
       background-color: rgba(255,255,255, 0.25);
     }
     & > a { // TODO use a class
-      padding: 0.75rem; // REVIEW magic number
+      padding: 0.75rem; // REVIEW:MAGICNUMBER
       @media screen and (min-width: 75em) {
-        padding: 1rem; // REVIEW magic number
+        padding: 1rem; // REVIEW:MAGICNUMBER
       }
     }
   }
@@ -79,8 +79,7 @@
   left: 0; right: 0;
   justify-content: center; // undo .o-Flex
   align-items: flex-start; // undo .o-Flex
-  text-shadow: 0 0 4px black; // IDEA this replaces gradient. enable gradient if people complain
-  // background-image: linear-gradient(to bottom, rgba(0,0,0, 0.5) 0%, transparent 50%);
+  text-shadow: 0 0 4px black;
   @media not all and (min-width: 60em) {
     flex-direction: column;
     justify-content: flex-start;
@@ -102,11 +101,11 @@
 .c-NavBar--mobile {
   font-weight: 600; // undo .c-NavBar
   text-transform: none; // undo .c-NavBar
-  // HACK: cannot use background and shadow on .c-NavBar--mobile due to fixed position
+  // NB:LINK ./o-Drawer.less#L30 // cannot use background and shadow on .c-NavBar--mobile due to fixed position
   // background-color: var(--color-secondary, @g-color-secondary);
   // box-shadow: 0 0 1rem 0.5rem rgba(0,0,0,0.25);
   & > * { // TODO use a class
-    padding: 0.75rem; // REVIEW magic number
+    padding: 0.75rem; // REVIEW:MAGICNUMBER
     &:hover,
     &:focus {
       background-color: transparent; // unset `.c-Navbar > *:hover`

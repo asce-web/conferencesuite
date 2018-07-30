@@ -11,7 +11,7 @@ dependencies:
 id: views_block__view_session_display_legacy
 theme: legacy
 region: content
-weight: 0
+weight: 6
 provider: null
 plugin: 'views_block:view_session-display_legacy'
 settings:

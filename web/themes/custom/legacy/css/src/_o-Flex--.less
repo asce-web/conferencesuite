@@ -1,9 +1,17 @@
 
 /*################################*\
-    legacy  |  _dev.less
+    legacy  |  _o-Flex--.less
 \*################################*/
 
 
+// Extension of `.o-Flex` for centering items.
+.o-Flex--center {
+  justify-content: center;
+  align-items: center;
+  & > .o-Flex__Item {
+    flex: none;
+  }
+}
 // Extensions of `.o-Flex` used in site header & footer.
 // --siteFoot only appears in the current year footer panel.
 //
@@ -40,22 +48,3 @@
     max-height: (3*5lh + 7*2lh); // 3 pages with height 5lh + 7 pages with height 2lh
   }
 }
-
-
-
-
-// Extensions & fixes to bangs.less
-.-d-n-sM { @media screen  and (min-width: 45em) { display: none; } }
-.-d-n-nM { @media not all and (min-width: 45em) { display: none; } }
-.-r-1 {
-  right: 1rem !important;
-}
-.c-FooterIcon,
-.-mr-1 {
-  margin-right: 1rem;
-  @supports (margin-inline-end: 1rem) {
-    margin-right: unset;
-    margin-inline-end: 1rem;
-  }
-}
-.-fw-b { font-weight: bold; }

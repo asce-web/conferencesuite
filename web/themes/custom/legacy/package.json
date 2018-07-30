@@ -1,6 +1,6 @@
 {
   "name": "legacy",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Drupal theme for ASCE conference sites 2015–2018.",
   "main": "legacy.css",
   "private": true,
@@ -23,7 +23,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",
     "kss": "3.0.0-beta.18",
-    "xmeter": "^6.5.0-beta.2"
+    "xmeter": "^7.0.0-beta.1"
   },
   "dependencies": {}
 }

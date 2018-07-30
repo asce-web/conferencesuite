@@ -84,7 +84,6 @@
   background-color: @g-color-btn-bg;
   border-radius: 0.25rem;
   box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw;
-  cursor: pointer;
   &,
   a& {
     &,
@@ -92,6 +91,9 @@
     &:focus {
       color: @g-color-btn-txt;
     }
+  }
+  a& {
+    text-decoration: none; // TEMP for links that look like buttons. remove when `c-CtaLink` is created
   }
   &:hover,
   &:focus {
