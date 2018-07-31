@@ -9,7 +9,7 @@ field_name: field_venue_label
 entity_type: node
 bundle: venue
 label: Label
-description: 'Check to display this venue’s Title as a heading on the site.'
+description: 'Should this venue’s Title appear on the site?'
 required: false
 translatable: false
 default_value:
