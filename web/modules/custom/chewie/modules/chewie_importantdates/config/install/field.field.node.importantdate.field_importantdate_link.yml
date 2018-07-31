@@ -9,7 +9,7 @@ field_name: field_importantdate_link
 entity_type: node
 bundle: importantdate
 label: Link
-description: 'Check to link this important date’s visible text to its content page.'
+description: 'Should this important date’s visible text be a hyperlink?'
 required: false
 translatable: false
 default_value:
