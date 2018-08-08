@@ -359,14 +359,6 @@
   .unsatsoilsconf      & { color: @color-unsat-accent; }
 }
     //**** end ### mixins ****//
-  main {
-    h1, h2, h3, h4, h5, h6 {
-      .mx-c-primary();
-    }
-  }
-  :root .c-Hero__Hn {
-    color: inherit; // HACK override `.mx-c-primary()`
-  }
   // REVIEW:INDENTATION
     .c-Banner--head {
       .mx-bc-primary();
@@ -390,12 +382,23 @@
     .c-Hero {
       .mx-bc-primary();
     }
+  .c-ProgramHn {
+    .mx-c-primary();
+  }
     .c-DateBlock__MonthDay {
       .mx-c-secondary();
     }
     .c-SupporterBlock__Label {
       .mx-c-secondary();
     }
+  .t-Content {
+    h1, h2, h3, h4, h5, h6 {
+      .mx-c-primary();
+    }
+  }
+  .-c-primary {
+    .mx-c-primary();
+  }
   //---- end ## Site Color Schemes ----//
 
 

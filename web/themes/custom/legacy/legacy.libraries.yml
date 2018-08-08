@@ -158,6 +158,7 @@ timeblock:
   version: VERSION
   css:
     component:
+      css/dist/_c-ProgramHn.css: { minified: true }
       css/dist/_c-TimeBlock.css: { minified: true }
 
 # extension of 'classy/messages'
