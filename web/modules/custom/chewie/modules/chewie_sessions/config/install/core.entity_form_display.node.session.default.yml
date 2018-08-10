@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.session.field_session_url
     - node.type.session
   module:
+    - conditional_fields
     - datetime
     - link
     - text
@@ -58,7 +59,28 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        e26b74e4-ff85-48ce-b3a3-5729dfc90b97:
+          dependee: field_session_link
+          settings:
+            state: visible
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: fade
+            effect_options:
+              fade:
+                speed: '250'
+              slide:
+                speed: '400'
+            selector: ''
+          entity_type: node
+          bundle: session
     type: link_default
     region: content
   promote:

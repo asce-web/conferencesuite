@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.importantdate.field_importantdate_url
     - node.type.importantdate
   module:
+    - conditional_fields
     - datetime
     - link
     - text
@@ -58,7 +59,28 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        8aaea62c-91dd-4301-911a-61829c6ac59d:
+          dependee: field_importantdate_link
+          settings:
+            state: visible
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: fade
+            effect_options:
+              fade:
+                speed: '250'
+              slide:
+                speed: '400'
+            selector: ''
+          entity_type: node
+          bundle: importantdate
     type: link_default
     region: content
   promote:
