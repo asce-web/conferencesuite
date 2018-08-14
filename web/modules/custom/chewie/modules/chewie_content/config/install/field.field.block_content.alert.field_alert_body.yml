@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.callout
-    - field.storage.block_content.field_callout_body
+    - block_content.type.alert
+    - field.storage.block_content.field_alert_body
   module:
     - text
-id: block_content.callout.field_callout_body
-field_name: field_callout_body
+id: block_content.alert.field_alert_body
+field_name: field_alert_body
 entity_type: block_content
-bundle: callout
+bundle: alert
 label: Body
 description: ''
 required: false

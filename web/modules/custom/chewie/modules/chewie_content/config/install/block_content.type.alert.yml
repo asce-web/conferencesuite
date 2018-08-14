@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: alert
+label: Alert
+revision: 1
+description: 'A content block important for readers.'

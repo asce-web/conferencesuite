@@ -14,7 +14,6 @@ global-styling:
       css/dist/_c-KeynoteSpeaker.css: { minified: true }
       css/dist/_c-Chair.css: { minified: true }
       css/dist/_c-Button.css: { minified: true }
-      css/dist/_c-Alert.css: { minified: true }
     state:
       node_modules/xmeter/css/dist/h-Block.css: { minified: true }
       node_modules/xmeter/css/dist/h-Inline.css: { minified: true }
@@ -124,6 +123,13 @@ callout:
   css:
     component:
       css/dist/_c-Callout.css: { minified: true }
+
+# Alert Component
+alert:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Alert.css: { minified: true }
 
 # Hero Component
 hero:
