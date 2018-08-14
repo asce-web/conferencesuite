@@ -7,6 +7,7 @@
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // Alerts
@@ -34,7 +35,9 @@
 //   even a <code>figure</code>!</p>
 // <aside class="c-Alert">
 //   <h1 class="c-Alert__Hn">Attention!</h1>
-//   <p>An alert aside with a heading!</p>
+//   <div class="c-Alert__Body">
+//     <p>An alert aside with a heading!</p>
+//   </div>
 // </aside>
 // <p class="c-Alert">
 //   <strong class="c-Alert__Hn h-Block">New!</strong>
@@ -59,31 +62,34 @@
   .border-vert(topbot; 1px);
   border-style: solid;
   .mx-alert-padding();
+  .-mb-h;
 }
 
 .c-Alert__Hn {
-  // COMBAK:FALLBACK for `unset`
-  padding-top: 0;
-  font: inherit;
-  padding-top: initial;
-  color: inherit;
-
   // unset `h1`
+  font: inherit; // COMBAK:FALLBACK for `unset`
   font: unset;
-  padding-top: unset;
+  color: inherit; // COMBAK:FALLBACK for `unset`
   color: unset;
 
-  // new styles
+  // in case of pseudo-heading
   .-mb-1;
+  .-pt-1;
   font-weight: 900;
+  // override `h1`
   .h-FontSize;
   --font-scale: @g-font-size-kilo;
-  --tracks: 1; // override `h1`
+  --tracks: 1;
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .font-size-el(@g-font-size-kilo);
   }
+
+  // new styles
   text-transform: uppercase;
   text-align: center;
+}
+
+.c-Alert__Body {
 }
 
 .c-Alert__Item {

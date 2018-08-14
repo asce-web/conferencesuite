@@ -24,8 +24,10 @@
   <ol class="js-slick"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
-      <li{{ row.attributes }}
-        itemprop="sponsor" itemscope="" itemtype="http://schema.org/Organization">{{ row.content }}</li>
+      <li{{ row.attributes
+        .setAttribute('itemprop'  , 'sponsor')
+        .setAttribute('itemscope' , '')
+        .setAttribute('itemtype'  , 'http://schema.org/Organization') }}>{{ row.content }}</li>
     {% endfor %}
 
   </ol>

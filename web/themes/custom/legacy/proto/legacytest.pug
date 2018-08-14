@@ -295,7 +295,7 @@ html(lang="en")
               div.c-Callout__Body
                 p Follow ASCE on social media for real-time conversation.
                 p: a(href="#0")
-                  i.glyphicons.social.social-twitter.-mr-h(role="none")
+                  i.glyphicons.social.social-twitter.-mr-h(aria-hidden="true")
                   | #structures2014
     aside: div.h-Constrain
       h2.h-Hidden Supporters
@@ -363,10 +363,10 @@ html(lang="en")
             div.o-Grid.o-Grid--siteFoot.h-Constrain
               div.o-Flex.o-Flex--siteHead
                 div.o-Flex__Item.c-SiteLogo
-                  img(src=conference.image.shield alt="" role="none")
+                  img(src=conference.image.shield alt="" role="none presentation")
                 if conference.secondary_logo
                   div.o-Flex__Item.c-SiteLogo.c-SiteLogo--secondary
-                    img(src=conference.image.shield alt="" role="none")
+                    img(src=conference.image.shield alt="" role="none presentation")
               div.c-ConferenceTitles
                 h1.c-ConferenceTitles__Name= conference_info.name
                 p.c-ConferenceTitles__Detail= conference_info.detail
@@ -407,13 +407,13 @@ html(lang="en")
                 h3 Contact Us
                 ul.o-List
                   li.o-List__Item.-mb-1: a(href="#0")
-                    i.c-FooterIcon.glyphicons.glyphicons-iphone(role="none")
+                    i.c-FooterIcon.glyphicons.glyphicons-iphone(aria-hidden="true")
                     | (800) 548-2723
                   li.o-List__Item.-mb-1: a(href="#0")
-                    i.c-FooterIcon.glyphicons.glyphicons-earphone(role="none")
+                    i.c-FooterIcon.glyphicons.glyphicons-earphone(aria-hidden="true")
                     | +1 (703) 295-7300
                   li.o-List__Item.-mb-1: a(href="#0")
-                    i.c-FooterIcon.glyphicons.glyphicons-envelope(role="none")
+                    i.c-FooterIcon.glyphicons.glyphicons-envelope(aria-hidden="true")
                     | Other contacts
               section
                 h3 Connect With ASCE
