@@ -27,7 +27,10 @@
   <tbody class="c-DateBlock"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
-      <tr{{ row.attributes.addClass('c-DateBlock__Item').setAttribute('itemprop','potentialAction').setAttribute('itemscope','').setAttribute('itemtype','http://schema.org/Action') }}>{{ row.content }}</tr>
+      <tr{{ row.attributes.addClass('c-DateBlock__Item')
+        .setAttribute('itemprop'  , 'potentialAction')
+        .setAttribute('itemscope' , '')
+        .setAttribute('itemtype'  , 'http://schema.org/Action') }}>{{ row.content }}</tr>
     {% endfor %}
 
   </tbody>
