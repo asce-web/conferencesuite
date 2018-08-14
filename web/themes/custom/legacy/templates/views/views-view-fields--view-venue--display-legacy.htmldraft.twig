@@ -38,7 +38,7 @@
 </header>
 <div class="c-Callout__Body">
   <p>
-    <a class="-fw-b"{% if fields.field_venue_url.content %} href="{{ fields.field_venue_url.content }}" itemprop="url"{% endif %}{% if not fields.field_venue_url.content %} role="none"{% endif %}>
+    <a class="-fw-b"{% if fields.field_venue_url.content %} href="{{ fields.field_venue_url.content }}" itemprop="url"{% endif %}{% if not fields.field_venue_url.content %} role="none presentation"{% endif %}>
       <span itemprop="name">{{ fields.field_venue_name.content }}</span>
     </a>
     <br/>
