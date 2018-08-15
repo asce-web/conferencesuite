@@ -674,8 +674,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2>Thank You to Our Sponsors!</h2>\n<p>The generous contributions from the following sponsors enable our conference to continue its commitment to excellence in programming and networking events for the attendees.</p>"
-            format: basic_html
+            value: "<h2 style=\"--font-scale: 2.25; font-weight: 400; text-align: center;\">Thank You to Our Sponsors!</h2>\n<p style=\"text-align: center;\">The generous contributions from the following sponsors enable our conference to continue its commitment to excellence in programming and networking events for the attendees.</p>"
+            format: unfiltered_text
           plugin_id: text
       title: 'All Sponsors'
     cache_metadata:

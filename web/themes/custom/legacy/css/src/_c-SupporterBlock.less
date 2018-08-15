@@ -95,7 +95,8 @@
       }
       margin: 0 1rem;
       background-image: linear-gradient(to right, transparent, @g-color-table-br, transparent); // COMBAK:FALLBACK for `linear-gradient(var(--v))`
-      background-image: linear-gradient(var(--direction), @g-color-table-br, transparent);
+      background-image: linear-gradient(var(--direction), var(--color-primary, @g-color-primary), transparent);
+      opacity: 0.5;
     }
     &::before {
       --direction: to left;
