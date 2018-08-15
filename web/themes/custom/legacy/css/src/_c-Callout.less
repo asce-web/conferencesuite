@@ -48,13 +48,11 @@
 }
 
 .c-Callout__Hn {
-  font-weight: inherit; // unset `h1`
-  .h-FontSize;
-  --font-scale: @g-font-size-giga;
+  font-weight: 400;
+  --font-scale: @g-font-size-h2;
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .font-size-el(@g-font-size-giga);
+    .font-size-el(@g-font-size-h2);
   }
-  color: inherit; // unset `main > h1`
 }
 
 .c-Callout__Body {

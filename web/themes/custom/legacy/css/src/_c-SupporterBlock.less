@@ -72,14 +72,10 @@
 }
 
 .c-SupporterBlock__Hn {
-  .h-FontSize;
   --font-scale: @g-font-size-mega;
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .font-size-el(@g-font-size-mega);
   }
-  font-family: inherit; // keeping here if `ff` of `h1` is changed
-  font-weight: 900;
-  color: @g-color-body-txt;
 
   // visualization line separator
   @supports (flex-wrap: wrap) {
