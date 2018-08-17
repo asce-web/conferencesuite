@@ -70,14 +70,14 @@
 // must be after @supports so it doesn’t get overridden
 .c-YearBadge--tab {
   z-index: 1; // over footer panels
-  background-color: var(--color-secondary, @g-color-secondary);
+  background-color: var(--color-secondary);
   &::after {
     border-color: transparent;
   }
   .o-Tablist__Tab[aria-selected="true"] > & {
-    background-color: var(--color-accent, @g-color-accent);
+    background-color: var(--color-accent);
     &::after {
-      border-top-color: var(--color-accent, @g-color-accent);
+      border-top-color: var(--color-accent);
     }
   }
 }

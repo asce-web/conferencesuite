@@ -66,6 +66,9 @@ html {
   }
 }
 body {
+  --color-primary:   @g-color-primary;   // overridden with internal stylesheet, pulled from database
+  --color-secondary: @g-color-secondary; // overridden with internal stylesheet, pulled from database
+  --color-accent:    @g-color-accent;    // overridden with internal stylesheet, pulled from database
   font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
   color: @g-color-body-txt;
 }
@@ -80,7 +83,7 @@ main {
   h1, h2, h3, h4, h5, h6 {
     // TODO move this to .t-Content // NB:LINK update _c-Hero.less#L56
     font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-    color: var(--color-primary, @g-color-primary);
+    color: var(--color-primary);
   }
   @media not all and (min-width: 45em) {
     flex-direction: column;

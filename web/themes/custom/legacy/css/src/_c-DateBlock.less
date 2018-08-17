@@ -74,8 +74,8 @@
 
 .c-DateBlock__Desc {
   padding-left: @columngap;
-  border-left: 1px solid currentColor; // COMBAK:FALLBACK
-  // border-left: 1px solid var(--color-secondary, @g-color-secondary);
+  border-left: 1px solid currentColor;
+  // border-left: 1px solid var(--color-secondary);
 }
 
 .c-DateBlock__Expired {
@@ -84,7 +84,7 @@
 
 .c-DateBlock__MonthDay {
   .buttonText();
-  color: var(--color-secondary, @g-color-secondary);
+  color: var(--color-secondary);
   font-family: inherit; // override `.buttonText()`
 }
 

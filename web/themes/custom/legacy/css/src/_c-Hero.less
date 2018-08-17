@@ -27,7 +27,7 @@
 // Styleguide Components.Hero
 .c-Hero {
   .-mb-2;
-  background-color: var(--color-primary, @g-color-primary); // Banner--head colors (but not a Banner--head component)
+  background-color: var(--color-primary); // Banner--head colors (but not a Banner--head component)
   color: @g-color-banner-txt;
 }
 
@@ -102,7 +102,7 @@
     left: 0; right: 0;                          // COMBAK:FALLBACK
     inset-inline-start: 0; inset-inline-end: 0; // COMBAK:FALLBACK
     inset-inline: 0;
-    background-image: linear-gradient(var(--direction), var(--color-primary, @g-color-primary), transparent);
+    background-image: linear-gradient(var(--direction), var(--color-primary), transparent);
   }
   .c-Hero__Hn::before {
     --direction: to top;
