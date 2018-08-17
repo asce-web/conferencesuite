@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.session.field_session_endtime
     - field.field.node.session.field_session_link
     - field.field.node.session.field_session_starttime
+    - field.field.node.session.field_session_url
     - node.type.session
   module:
     - datetime
+    - link
     - text
     - user
 id: node.session.default
@@ -57,6 +59,18 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_plain
+    region: content
+  field_session_url:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
 hidden:
   links: true

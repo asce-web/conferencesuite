@@ -9,7 +9,7 @@ field_name: field_session_link
 entity_type: node
 bundle: session
 label: Link
-description: 'Check to link this session’s visible text to its content page.'
+description: 'Should this session’s visible text be a hyperlink?'
 required: false
 translatable: false
 default_value:
