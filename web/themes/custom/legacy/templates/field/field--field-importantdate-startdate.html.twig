@@ -44,7 +44,12 @@
     <span>
   {% endif %}
   {% for item in items %}
-    <time{{ item.attributes }}>{{ item.content }}</time>
+    <time{{ item.attributes.setAttribute('datetime', item.content|render|date('Y-m-d'))
+      .setAttribute('itemprop', 'startTime') }}>{# NOTE: 'startTime' is the itemprop for the start of the Action item #}
+      <span>{{ item.content|render|date('l,') }}</span>
+      <span>{{ item.content|render|date('F j,') }}</span>
+      <span>{{ item.content|render|date('Y') }}</span>
+    </time>
   {% endfor %}
   {% if multiple %}
     </span>

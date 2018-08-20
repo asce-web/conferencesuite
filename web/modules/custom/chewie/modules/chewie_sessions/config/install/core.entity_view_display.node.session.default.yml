@@ -38,18 +38,16 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'g:i a'
     third_party_settings: {  }
-    type: datetime_custom
+    type: datetime_plain
     region: content
   field_session_starttime:
     weight: 1
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'g:i a'
     third_party_settings: {  }
-    type: datetime_custom
+    type: datetime_plain
     region: content
 hidden:
   field_session_link: true

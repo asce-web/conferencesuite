@@ -30,9 +30,9 @@
  */
 #}
 <td class="c-TimeBlock__Times">
-  <time datetime="{{ fields.field_session_starttime.content }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:i a') }}</time>
+  <time datetime="{{ fields.field_session_starttime.content|date('Y-m-d\\TH:i') }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:i a') }}</time>
   &ndash;
-  <time datetime="{{ fields.field_session_endtime.content }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:i a') }}</time>
+  <time datetime="{{ fields.field_session_endtime.content|date('Y-m-d\\TH:i') }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:i a') }}</time>
 </td>
 <td class="c-TimeBlock__Desc">
   <a

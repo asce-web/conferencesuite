@@ -528,7 +528,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<td class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:i a') }}</time>\n  &ndash;\n  <time datetime=\"{{ field_session_endtime }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:i a') }}</time>\n</td>\n<td class=\"c-TimeBlock__Desc\">\n  <a\n    {% if field_session_link == 'On' %} class=\"c-TimeBlock__Link\" href=\"{{ field_session_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_session_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_session_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
+            text: "<td class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime|date('Y-m-d\\\\TH:i') }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:i a') }}</time>\n  &ndash;\n  <time datetime=\"{{ field_session_endtime|date('Y-m-d\\\\TH:i') }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:i a') }}</time>\n</td>\n<td class=\"c-TimeBlock__Desc\">\n  <a\n    {% if field_session_link == 'On' %} class=\"c-TimeBlock__Link\" href=\"{{ field_session_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_session_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_session_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
             make_link: false
             path: ''
             absolute: false

@@ -525,7 +525,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<td class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\" itemprop=\"startTime endTime\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</td>\n<td class=\"c-DateBlock__Desc\">\n  <a\n    {% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ field_importantdate_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_importantdate_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
+            text: "<td class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate|date('Y-m-d') }}\" itemprop=\"startTime endTime\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</td>\n<td class=\"c-DateBlock__Desc\">\n  <a\n    {% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ field_importantdate_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_importantdate_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
             make_link: false
             path: ''
             absolute: false

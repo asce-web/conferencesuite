@@ -38,18 +38,16 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'l, F j, Y'
     third_party_settings: {  }
-    type: datetime_custom
+    type: datetime_plain
     region: content
   field_importantdate_startdate:
     weight: 1
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'l, F j, Y'
     third_party_settings: {  }
-    type: datetime_custom
+    type: datetime_plain
     region: content
 hidden:
   field_importantdate_link: true
