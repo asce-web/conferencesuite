@@ -36,30 +36,17 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass('t-Content') }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass('t-Content') }}>{{ item.content }}</div>
-    {% endfor %}
+<span{{ attributes }}>
+  {% if not label_hidden %}
+    <span{{ title_attributes }}>{{ label }}</span>
   {% endif %}
-{% else %}
-  <div{{ attributes.addClass('t-Content') }}>
-    <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+  {% if multiple %}
+    <span>
+  {% endif %}
+  {% for item in items %}
+    <time{{ item.attributes }}>{{ item.content }}</time>
+  {% endfor %}
+  {% if multiple %}
+    </span>
+  {% endif %}
+</span>
