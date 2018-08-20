@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _atom.less
 \*################################*/
+@import (reference) url('__settings.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -46,10 +47,18 @@
   }
 }
 
+.-mx-1 {
+  margin-left: 1rem; margin-right: 1rem;
+  @supports (margin-inline: 1rem) {
+    margin-left: unset; margin-right: unset;
+    margin-inline: 1rem;
+  }
+}
+
 .-fw-b {
   font-weight: bold;
 }
 
-.-sp-nw {
-  white-space: nowrap;
+.-c-primary {
+  color: var(--color-primary);
 }

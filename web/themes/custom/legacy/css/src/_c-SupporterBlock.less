@@ -72,14 +72,10 @@
 }
 
 .c-SupporterBlock__Hn {
-  .h-FontSize;
   --font-scale: @g-font-size-mega;
   @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .font-size-el(@g-font-size-mega);
   }
-  font-family: inherit; // keeping here if `ff` of `h1` is changed
-  font-weight: 900;
-  color: @g-color-body-txt;
 
   // visualization line separator
   @supports (flex-wrap: wrap) {
@@ -99,7 +95,8 @@
       }
       margin: 0 1rem;
       background-image: linear-gradient(to right, transparent, @g-color-table-br, transparent); // COMBAK:FALLBACK for `linear-gradient(var(--v))`
-      background-image: linear-gradient(var(--direction), @g-color-table-br, transparent);
+      background-image: linear-gradient(var(--direction), var(--color-primary, @g-color-primary), transparent);
+      opacity: 0.5;
     }
     &::before {
       --direction: to left;
