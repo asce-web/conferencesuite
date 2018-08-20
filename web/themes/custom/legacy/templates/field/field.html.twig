@@ -36,30 +36,21 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass('t-Content') }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass('t-Content') }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass('t-Content') }}>
+{#
+NOTE: This is a fork of the built-in Drupal template for a field. See:
+`/web/core/themes/stable/templates/field/field.html.twig`
+#}
+<div{{ attributes }}>
+  {% if not label_hidden %}
     <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+  {% endif %}
+  {% if multiple %}
+    <div>
+  {% endif %}
+  {% for item in items %}
+    <div{{ item.attributes }}>{{ item.content }}</div>
+  {% endfor %}
+  {% if multiple %}
+    </div>
+  {% endif %}
+</div>
