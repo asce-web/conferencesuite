@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+{{ attach_library('legacy/daterange') }}
 <article{{ attributes.setAttribute('itemscope', '').setAttribute('itemtype', 'http://schema.org/Action') }}>
 
   {{ title_prefix }}
@@ -92,12 +93,15 @@
 
   <div{{ content_attributes }}>
     <header>
-      <h2>{{ content.field_importantdate_displayname }}</h2>
-      <p>
-        {{ content.field_importantdate_startdate }}
-        {% if content.field_importantdate_enddate.0 %}
-          &ndash; {{ content.field_importantdate_enddate }}
-        {% endif %}
+      <h2 class="-c-primary">{{ content.field_importantdate_displayname }}</h2>
+      <p class="c-DateRange">
+        <span class="c-DateRange__Dates">
+          {{ content.field_importantdate_startdate }}
+          {% if content.field_importantdate_enddate.0 %}
+            &ndash;
+            {{ content.field_importantdate_enddate }}
+          {% endif %}
+        </span>
       </p>
     </header>
     <div class="t-Content">

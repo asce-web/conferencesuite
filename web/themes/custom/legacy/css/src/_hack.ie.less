@@ -2,6 +2,8 @@
 /*################################*\
     legacy  |  _hack.ie.less
 \*################################*/
+@import (reference) url('__settings.less');
+@import (reference) url('__settings.conf-colors.less');
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -391,6 +393,13 @@
     .c-SupporterBlock__Label {
       .mx-c-secondary();
     }
+  .c-DateRange {
+    // .mx-rc-secondary(); // TODO make this mixin
+    border-color: @g-color-table-br;
+  }
+  .c-DateRange__Times {
+    .mx-bc-secondary();
+  }
   .t-Content {
     h1, h2, h3, h4, h5, h6 {
       .mx-c-primary();

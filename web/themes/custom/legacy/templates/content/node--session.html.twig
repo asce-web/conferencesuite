@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+{{ attach_library('legacy/daterange') }}
 <article{{ attributes.setAttribute('itemscope', '').setAttribute('itemtype', 'http://schema.org/Event') }}>
 
   {{ title_prefix }}
@@ -92,17 +93,17 @@
 
   <div{{ content_attributes }}>
     <header>
-      <h2>{{ content.field_session_displayname }}</h2>
-      <p>
-        <span>
+      <h2 class="-c-primary">{{ content.field_session_displayname }}</h2>
+      <p class="c-DateRange">
+        <span class="c-DateRange__Times">
           {{ content.field_session_starttime }}
           &ndash;
           {{ content.field_session_endtime }}
         </span>
-        <span>
-          <span>{{ content.field_session_starttime.0|render|date('l,') }}</span>
-          <span>{{ content.field_session_starttime.0|render|date('F j,') }}</span>
-          <span>{{ content.field_session_starttime.0|render|date('Y') }}</span>
+        <span class="c-DateRange__Dates">
+          <span class="c-DateRange__Dates__Day"      >{{ content.field_session_starttime.0|render|date('l,') }}</span>
+          <span class="c-DateRange__Dates__MonthDate">{{ content.field_session_starttime.0|render|date('F j,') }}</span>
+          <span class="c-DateRange__Dates__Year"     >{{ content.field_session_starttime.0|render|date('Y') }}</span>
         </span>
       </p>
     </header>
