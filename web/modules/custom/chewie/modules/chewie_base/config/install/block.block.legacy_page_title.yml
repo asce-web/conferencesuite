@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - legacy
@@ -22,3 +23,13 @@ visibility:
     pages: '<front>'
     negate: true
     context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      pagedefault: pagedefault
+      supporter: supporter
+      supporterlevel: supporterlevel
+      venue: venue
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

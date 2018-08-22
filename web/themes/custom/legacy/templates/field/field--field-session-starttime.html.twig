@@ -36,30 +36,19 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass('t-Content') }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass('t-Content') }}>{{ item.content }}</div>
-    {% endfor %}
+<span{{ attributes }}>
+  {% if not label_hidden %}
+    <span{{ title_attributes }}>{{ label }}</span>
   {% endif %}
-{% else %}
-  <div{{ attributes.addClass('t-Content') }}>
-    <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+  {% if multiple %}
+    <span>
+  {% endif %}
+  {% for item in items %}
+    <time{{ item.attributes.setAttribute('datetime', item.content|render|date('Y-m-d\\TH:i'))
+      .setAttribute('itemprop', 'startDate') }}>{{ item.content|render|date('g:i a') }}</time>
+      {# NOTE: 'startDate' is the itemprop for the start of the Event item #}
+  {% endfor %}
+  {% if multiple %}
+    </span>
+  {% endif %}
+</span>

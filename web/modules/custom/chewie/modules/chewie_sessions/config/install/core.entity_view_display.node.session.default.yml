@@ -11,7 +11,6 @@ dependencies:
     - node.type.session
   module:
     - datetime
-    - link
     - text
     - user
 id: node.session.default
@@ -20,57 +19,37 @@ bundle: session
 mode: default
 content:
   field_session_body:
-    weight: 4
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_session_displayname:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_session_endtime:
-    weight: 3
-    label: above
-    settings:
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_plain
-    region: content
-  field_session_link:
-    type: boolean
-    weight: 1
-    region: content
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-  field_session_starttime:
     weight: 2
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_plain
     region: content
-  field_session_url:
-    weight: 5
-    label: above
+  field_session_starttime:
+    weight: 1
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      timezone_override: ''
     third_party_settings: {  }
-    type: link
+    type: datetime_plain
     region: content
 hidden:
+  field_session_link: true
+  field_session_url: true
   links: true

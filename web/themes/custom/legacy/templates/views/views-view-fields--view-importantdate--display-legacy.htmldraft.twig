@@ -30,7 +30,7 @@
  */
 #}
 <td class="c-DateBlock__Date">
-  <time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content }}" itemprop="startTime endTime">
+  <time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content|date('Y-m-d') }}" itemprop="startTime endTime">
     <span class="c-DateBlock__MonthDay h-Block">{{ fields.field_importantdate_startdate.content|date('M j') }}</span>
     <span class="h-Block">{{ fields.field_importantdate_startdate.content|date('Y') }}</span>
   </time>

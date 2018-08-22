@@ -36,30 +36,22 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass('t-Content') }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass('t-Content') }}>{{ item.content }}</div>
-    {% endfor %}
+<span{{ attributes }}>
+  {% if not label_hidden %}
+    <span{{ title_attributes }}>{{ label }}</span>
   {% endif %}
-{% else %}
-  <div{{ attributes.addClass('t-Content') }}>
-    <div{{ title_attributes }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+  {% if multiple %}
+    <span>
+  {% endif %}
+  {% for item in items %}
+    <time{{ item.attributes.setAttribute('datetime', item.content|render|date('Y-m-d'))
+      .setAttribute('itemprop', 'startTime') }}>{# NOTE: 'startTime' is the itemprop for the start of the Action item #}
+      <span class="c-DateRange__Dates__Day"      >{{ item.content|render|date('l,') }}</span>
+      <span class="c-DateRange__Dates__MonthDate">{{ item.content|render|date('F j,') }}</span>
+      <span class="c-DateRange__Dates__Year"     >{{ item.content|render|date('Y') }}</span>
+    </time>
+  {% endfor %}
+  {% if multiple %}
+    </span>
+  {% endif %}
+</span>

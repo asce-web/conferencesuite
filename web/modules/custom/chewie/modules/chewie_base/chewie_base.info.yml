@@ -3,7 +3,7 @@ description: 'Administrative operations required to run a basic site. Includes d
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.5.4
+version: 8.x-1.5.5
 dependencies:
   - admin_toolbar_tools
   - authorization
@@ -21,6 +21,7 @@ dependencies:
   - ldap_servers
   - ldap_user
   - menu_ui
+  - node
   - path
   - rebuild_cache_access
   - system
