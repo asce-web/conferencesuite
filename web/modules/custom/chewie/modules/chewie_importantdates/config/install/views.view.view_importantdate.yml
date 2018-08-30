@@ -6,9 +6,11 @@ dependencies:
     - field.storage.node.field_importantdate_enddate
     - field.storage.node.field_importantdate_link
     - field.storage.node.field_importantdate_startdate
+    - field.storage.node.field_importantdate_url
     - node.type.importantdate
   module:
     - datetime
+    - link
     - node
     - user
 id: view_importantdate
@@ -201,123 +203,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_importantdate_link:
-          id: field_importantdate_link
-          table: node__field_importantdate_link
-          field: field_importantdate_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        path:
-          id: path
-          table: node
-          field: view_node
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          absolute: false
-          entity_type: node
-          plugin_id: entity_link
-          output_url_as_text: true
         field_importantdate_startdate:
           id: field_importantdate_startdate
           table: node__field_importantdate_startdate
@@ -444,6 +329,191 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_importantdate_link:
+          id: field_importantdate_link
+          table: node__field_importantdate_link
+          field: field_importantdate_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        path:
+          id: path
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: view
+          output_url_as_text: true
+          absolute: false
+          entity_type: node
+          plugin_id: entity_link
+        field_importantdate_url:
+          id: field_importantdate_url
+          table: node__field_importantdate_url
+          field: field_importantdate_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -455,7 +525,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<td class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate }}\" itemprop=\"startTime endTime\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</td>\n<td class=\"c-DateBlock__Desc\">\n  <a{% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ path }}\" itemprop=\"url\"{% endif %}{% if field_importantdate_link == 'Off' %} role=\"none\"{% endif %}>\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
+            text: "<td class=\"c-DateBlock__Date\">\n  <time class=\"h-Block\" datetime=\"{{ field_importantdate_startdate|date('Y-m-d') }}\" itemprop=\"startTime endTime\">\n    <span class=\"c-DateBlock__MonthDay h-Block\">{{ field_importantdate_startdate|date('M j') }}</span>\n    <span class=\"h-Block\">{{ field_importantdate_startdate|date('Y') }}</span>\n  </time>\n</td>\n<td class=\"c-DateBlock__Desc\">\n  <a\n    {% if field_importantdate_link == 'On' %} class=\"c-DateBlock__Link\" href=\"{{ field_importantdate_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_importantdate_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_importantdate_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
             make_link: false
             path: ''
             absolute: false
@@ -612,6 +682,7 @@ display:
         - 'config:field.storage.node.field_importantdate_enddate'
         - 'config:field.storage.node.field_importantdate_link'
         - 'config:field.storage.node.field_importantdate_startdate'
+        - 'config:field.storage.node.field_importantdate_url'
   display_legacy:
     display_plugin: block
     id: display_legacy
@@ -634,3 +705,4 @@ display:
         - 'config:field.storage.node.field_importantdate_enddate'
         - 'config:field.storage.node.field_importantdate_link'
         - 'config:field.storage.node.field_importantdate_startdate'
+        - 'config:field.storage.node.field_importantdate_url'

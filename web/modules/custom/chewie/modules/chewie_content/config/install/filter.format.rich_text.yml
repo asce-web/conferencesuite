@@ -38,7 +38,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <pre> <figure> <figcaption> <blockquote cite> <ul> <ol start type reversed> <li value> <dl> <dt> <dd> <em> <strong> <i> <mark> <u> <small> <s> <ins datetime cite> <del datetime cite> <dfn id title> <b> <abbr title> <var> <q cite> <cite> <sup> <sub> <data> <time datetime> <code> <kbd> <samp> <br> <img class src alt data-caption data-entity-type data-entity-uuid data-entity-substitution data-align> <a class rel href hreflang target data-entity-type data-entity-uuid data-entity-substitution>'
+      allowed_html: '<h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <pre> <figure> <figcaption> <blockquote cite> <ul> <ol start type reversed> <li value> <dl> <dt> <dd> <em> <strong> <i> <mark> <u> <small> <s> <ins datetime cite> <del datetime cite> <dfn id title> <b> <abbr title> <var> <q cite> <cite> <sup> <sub> <data> <time datetime> <code> <kbd> <samp> <br> <img class src alt data-caption data-entity-type data-entity-uuid data-entity-substitution data-align> <a class id rel href hreflang target data-entity-type data-entity-uuid data-entity-substitution>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:

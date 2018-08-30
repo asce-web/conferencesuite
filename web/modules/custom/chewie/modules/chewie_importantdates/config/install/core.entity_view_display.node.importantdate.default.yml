@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.importantdate.field_importantdate_enddate
     - field.field.node.importantdate.field_importantdate_link
     - field.field.node.importantdate.field_importantdate_startdate
+    - field.field.node.importantdate.field_importantdate_url
     - node.type.importantdate
   module:
     - datetime
@@ -18,47 +19,37 @@ bundle: importantdate
 mode: default
 content:
   field_importantdate_body:
-    weight: 4
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_importantdate_displayname:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_importantdate_enddate:
-    weight: 3
-    label: above
+    weight: 2
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: long
     third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_importantdate_link:
-    weight: 1
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: datetime_plain
     region: content
   field_importantdate_startdate:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: long
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_plain
     region: content
 hidden:
+  field_importantdate_link: true
+  field_importantdate_url: true
   links: true

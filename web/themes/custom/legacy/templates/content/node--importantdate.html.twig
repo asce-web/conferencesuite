@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a node.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -68,19 +68,16 @@
  * @todo Remove the id attribute (or make it a class), because if that gets
  *   rendered twice on a page this is invalid CSS for example: two lists
  *   in different view modes.
- *
- * @ingroup themeable
  */
 #}
-<article{{ attributes }}>
+{{ attach_library('legacy/daterange') }}
+<article{{ attributes.setAttribute('itemscope', '').setAttribute('itemtype', 'http://schema.org/Action') }}>
 
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
-  {% else %}
-    <h1{{ title_attributes}}>{{ label }}</h1>
   {% endif %}
   {{ title_suffix }}
 
@@ -95,7 +92,21 @@
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content }}
+    <header>
+      <h1 class="-c-primary">{{ content.field_importantdate_displayname.0 ?: label }}</h1>
+      <p class="c-DateRange">
+        <span class="c-DateRange__Dates">
+          {{ content.field_importantdate_startdate }}
+          {% if content.field_importantdate_enddate.0 %}
+            &ndash;
+            {{ content.field_importantdate_enddate }}
+          {% endif %}
+        </span>
+      </p>
+    </header>
+    <div class="t-Content">
+      {{ content.field_importantdate_body }}
+    </div>
   </div>
 
 </article>

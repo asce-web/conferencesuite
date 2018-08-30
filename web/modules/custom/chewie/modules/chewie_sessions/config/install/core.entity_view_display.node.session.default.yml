@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.session.field_session_endtime
     - field.field.node.session.field_session_link
     - field.field.node.session.field_session_starttime
+    - field.field.node.session.field_session_url
     - node.type.session
   module:
     - datetime
@@ -18,45 +19,37 @@ bundle: session
 mode: default
 content:
   field_session_body:
-    weight: 4
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_session_displayname:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_session_endtime:
-    weight: 3
-    label: above
+    weight: 2
+    label: hidden
     settings:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_plain
     region: content
-  field_session_link:
-    type: boolean
-    weight: 1
-    region: content
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
   field_session_starttime:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_plain
     region: content
 hidden:
+  field_session_link: true
+  field_session_url: true
   links: true

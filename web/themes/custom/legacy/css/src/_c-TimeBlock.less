@@ -1,6 +1,6 @@
 
 /*################################*\
-    legacy  |  _c-DateBlock.less
+    legacy  |  _c-TimeBlock.less
 \*################################*/
 @import (reference) url('__settings.less');
 
@@ -18,9 +18,9 @@
 // <table><tbody class="c-TimeBlock">
 //   <tr class="c-TimeBlock__Item" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
 //     <td class="c-TimeBlock__Times">
-//       <time datetime="2016-09-28 10:00" itemprop="startDate">10:00 am</time>
+//       <time datetime="2016-09-28T10:00" itemprop="startDate">10:00 am</time>
 //       &ndash;
-//       <time datetime="2016-09-28 19:00" itemprop="endDate">7:00 pm</time>
+//       <time datetime="2016-09-28T19:00" itemprop="endDate">7:00 pm</time>
 //     </td>
 //     <td class="c-TimeBlock__Desc">
 //       <a class="c-TimeBlock__Link" href="/session/registration-day-1" itemprop="url">
@@ -52,7 +52,7 @@
 .c-TimeBlock__Desc {
   padding-left: @columngap;
   border-left: 1px solid currentColor; // COMBAK:FALLBACK
-  border-left: 1px solid var(--color-secondary, @g-color-secondary);
+  border-left: 1px solid var(--color-secondary);
 }
 
 .c-TimeBlock__Link {
