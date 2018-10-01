@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: { }
-id: heroblock_legacy
-label: 'Hero Block Legacy'
-revision: 1
-description: 'Hero block on the home page.'

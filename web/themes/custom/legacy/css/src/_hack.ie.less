@@ -2,8 +2,11 @@
 /*################################*\
     legacy  |  _hack.ie.less
 \*################################*/
+@import (reference) url('__settings.less');
+@import (reference) url('__settings.conf-colors.less');
 
 
+///////////////////////////////////////////////////////////////////////////////
 // IE fixes go here. These styles should *only* be rendered on IE!
 // Using the -ms-high-contrast quirk: only IE supports -ms-high-contrast
 ///////////////////////////////////////////////////////////////////////////////
@@ -12,7 +15,6 @@
 // Table of Contents
 // # CUSTOM PROPERTY FALLBACKS
 //   ## Vertical rhythm unit
-//     ### xmeter
 //     ### bangs
 //     ### _dev.less
 //   ## Supporter logo sizes
@@ -33,126 +35,26 @@
   //-------------------------------//
   @p-vru: 1.5rem;
     //********************************//
-    //  ### xmeter
-    //********************************//
-    html {
-      line-height: @p-vru;
-    }
-    h1, h2, h3, h4, h5, h6,
-    p, pre, figure, blockquote,
-    ol, ul, dl,
-    table,
-    form, fieldset, textarea,
-    details {
-      margin-bottom: @p-vru;
-    }
-    h1 {
-      padding-top: @p-vru;
-    }
-    //**** end ### xmeter ****//
-    //********************************//
     //  ### bangs
     //********************************//
-    .-mt-1 {  margin-top: (1 * @p-vru); } .-mb-1 {  margin-bottom: (1 * @p-vru); }
-    .-mt-2 {  margin-top: (2 * @p-vru); } .-mb-2 {  margin-bottom: (2 * @p-vru); }
+    .-mt-1 {  margin-top: (1 * @p-vru); }
+    .-mt-2 {  margin-top: (2 * @p-vru); }
     .-mv-1 {  margin-top: (1 * @p-vru);             margin-bottom: (1 * @p-vru); }
     .-mv-2 {  margin-top: (2 * @p-vru);             margin-bottom: (2 * @p-vru); }
-    .-pt-1 { padding-top: (1 * @p-vru); } .-pb-1 { padding-bottom: (1 * @p-vru); }
-    .-pt-2 { padding-top: (2 * @p-vru); } .-pb-2 { padding-bottom: (2 * @p-vru); }
+    .-pb-1 { padding-bottom: (1 * @p-vru); }
+    .-pb-2 { padding-bottom: (2 * @p-vru); }
     .-pv-1 { padding-top: (1 * @p-vru);            padding-bottom: (1 * @p-vru); }
     .-pv-2 { padding-top: (2 * @p-vru);            padding-bottom: (2 * @p-vru); }
     //**** end ### bangs ****//
     //********************************//
     //  ### _dev.less
     //********************************//
-    .o-Flex--siteHead {
-      margin: @p-vru 0;
-    }
     .o-Flex--siteFoot {
       @media (min-width: 30em) and (max-width: 44.999em) {
-        max-height: calc((3*5 + 7*2) ~'*' @p-vru);
+        max-height: calc((3*5 + 7*2) * @p-vru);
       }
     }
     //**** end ### _dev.less ****//
-  main {
-    margin-bottom: (2 * @p-vru);
-  }
-  .o-SideCol {
-    main & {
-      padding-top: @p-vru;
-    }
-  }
-  .o-MobileBar__Item {
-    padding: (0.5 * @p-vru) 1rem;
-  }
-  .c-Banner--copyright {
-    padding: @p-vru 1rem;
-  }
-  .c-ConferenceTitles > * {
-    margin-bottom: (0.5 * @p-vru);
-  }
-  .c-SiteLogo--secondary {
-    @media (max-width: 44.999em) {
-      padding-top: @p-vru;
-    }
-  }
-  .c-AsceLogo {
-    height: @p-vru;
-    @media (min-width: 60em) {
-      height: (2 * @p-vru);
-    }
-  }
-  .c-Callout {
-    margin-bottom: @p-vru;
-  }
-  .c-Callout__Body {
-    padding: @p-vru 1rem 0;
-  }
-  .c-Sitemap__Item {
-    margin-bottom: @p-vru;
-  }
-  .c-Hero {
-    margin-bottom: (2 * @p-vru);
-  }
-  .c-Hero__Hn {
-    line-height: calc(1.5 / 1.125);
-    @media screen and (min-width: 45em) {
-      line-height: calc(1.5 / 1.375);
-    }
-    @media screen and (min-width: 60em) {
-      line-height: calc(1.5 / (2.25 / 2));
-    }
-  }
-  .c-Hero__Blurb {
-    padding-bottom: @p-vru;
-  }
-  .c-KeynoteSpeaker {
-    margin-bottom: @p-vru;
-  }
-  .c-Chair {
-    margin-bottom: (0.5 * @p-vru);
-  }
-  .c-SupporterBlock {
-    margin-bottom: (2 * @p-vru);
-  }
-  .c-SupporterBlock__List__Item {
-    margin: 0 1rem @p-vru;
-  }
-  .c-DateBlock {
-    @supports (display: grid) {
-      grid-row-gap: (0.5 * @p-vru);
-    }
-  }
-  .c-DateBlock__Date,
-  .c-DateBlock__Desc {
-    margin-bottom: (0.5 * @p-vru);
-    @supports (display: grid) {
-      margin-bottom: 0; // undo fallback above (again)
-    }
-  }
-  .c-Button {
-    padding: (0.5 * @p-vru) 1rem;
-  }
   //---- end ## Vertical rhythm unit ----//
 
 
@@ -171,23 +73,22 @@
   @p-supporter-logo-sml-sG-width: 202px; @p-supporter-logo-sml-sG-height: 90px ;
   // (private) mixin for setting the dimensions of logos
   .p-dimensions(@x; @y) {
-    .c-SupporterBlock__List__Item {
       flex: 0 1 @x;
-    }
     .c-SupporterBlock__Logo {
       max-height: @y;
     }
   }
-  .c-SupporterBlock--lrg {
-    .p-dimensions(@p-supporter-logo-lrg-s-width; @p-supporter-logo-lrg-s-height);
+  // TODO put the classes on the entire list, not just the item (use a Supporter Level view)
+  .c-SupporterBlock__List__Item.small {
+    .p-dimensions(@p-supporter-logo-sml-s-width; @p-supporter-logo-sml-s-height);
     @media (min-width: 30em) {
-      .p-dimensions(@p-supporter-logo-lrg-sK-width; @p-supporter-logo-lrg-sK-height);
+      .p-dimensions(@p-supporter-logo-sml-sK-width; @p-supporter-logo-sml-sK-height);
     }
     @media (min-width: 60em) {
-      .p-dimensions(@p-supporter-logo-lrg-sG-width; @p-supporter-logo-lrg-sG-height);
+      .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
     }
   }
-  .c-SupporterBlock--med {
+  .c-SupporterBlock__List__Item.medium {
     .p-dimensions(@p-supporter-logo-med-s-width; @p-supporter-logo-med-s-height);
     @media (min-width: 30em) {
       .p-dimensions(@p-supporter-logo-med-sK-width; @p-supporter-logo-med-sK-height);
@@ -196,13 +97,13 @@
       .p-dimensions(@p-supporter-logo-med-sG-width; @p-supporter-logo-med-sG-height);
     }
   }
-  .c-SupporterBlock--sml {
-    .p-dimensions(@p-supporter-logo-sml-s-width; @p-supporter-logo-sml-s-height);
+  .c-SupporterBlock__List__Item.large {
+    .p-dimensions(@p-supporter-logo-lrg-s-width; @p-supporter-logo-lrg-s-height);
     @media (min-width: 30em) {
-      .p-dimensions(@p-supporter-logo-sml-sK-width; @p-supporter-logo-sml-sK-height);
+      .p-dimensions(@p-supporter-logo-lrg-sK-width; @p-supporter-logo-lrg-sK-height);
     }
     @media (min-width: 60em) {
-      .p-dimensions(@p-supporter-logo-sml-sG-width; @p-supporter-logo-sml-sG-height);
+      .p-dimensions(@p-supporter-logo-lrg-sG-width; @p-supporter-logo-lrg-sG-height);
     }
   }
   .slick-slide a.h-Block {
@@ -224,9 +125,9 @@
     //  ### mixins
     //********************************//
     @import (reference) url('__settings.conf-colors.less');
-    // REVIEW indentation
+    // REVIEW:INDENTATION
 .mx-bc-primary() {
-  // in your project, use `background-color: var(--color-primary, @g-color-primary);`
+  // in your project, use `background-color: var(--color-primary);`
   :root                & { background-color: @color-site-primary; }
   .sample-stage        & { background-color: @color-stage-primary; }
   .sample-dev          & { background-color: @color-dev-primary; }
@@ -242,9 +143,12 @@
   .asceconvention2017  & { background-color: @color-2017-primary; }
   .asceconvention2018  & { background-color: @color-2018-primary; }
   .ascestudentdays     & { background-color: @color-cisd-primary; }
+  .asceweek            & { background-color: @color-asceweek-primary; }
+  .asceweekinternational & { background-color: @color-asceweekint-primary; }
   .cisummit            & { background-color: @color-ci-primary; }
   .etsconference       & { background-color: @color-ets-primary; }
   .ewricongress        & { background-color: @color-ewri-primary; }
+  .forensiccongress    & { background-color: @color-forensic-primary; }
   .geesdconference     & { background-color: @color-geesd-primary; }
   .geocongress         & { background-color: @color-geocong-primary; }
   .georiskconference   & { background-color: @color-georisk-primary; }
@@ -256,12 +160,13 @@
   .omswconference      & { background-color: @color-omsw-primary; }
   .pavementsconference & { background-color: @color-pave-primary; }
   .pipelinesconference & { background-color: @color-pl-primary; }
+  .portsconference     & { background-color: @color-ports-primary; }
   .structurescongress  & { background-color: @color-struct-primary; }
   .surveyingconference & { background-color: @color-surv-primary; }
   .unsatsoilsconf      & { background-color: @color-unsat-primary; }
 }
 .mx-bc-secondary() {
-  // in your project, use `background-color: var(--color-secondary, @g-color-secondary);`
+  // in your project, use `background-color: var(--color-secondary);`
   :root                & { background-color: @color-site-secondary; }
   .sample-stage        & { background-color: @color-stage-secondary; }
   .sample-dev          & { background-color: @color-dev-secondary; }
@@ -277,9 +182,12 @@
   .asceconvention2017  & { background-color: @color-2017-secondary; }
   .asceconvention2018  & { background-color: @color-2018-secondary; }
   .ascestudentdays     & { background-color: @color-cisd-secondary; }
+  .asceweek            & { background-color: @color-asceweek-secondary; }
+  .asceweekinternational & { background-color: @color-asceweekint-secondary; }
   .cisummit            & { background-color: @color-ci-secondary; }
   .etsconference       & { background-color: @color-ets-secondary; }
   .ewricongress        & { background-color: @color-ewri-secondary; }
+  .forensiccongress    & { background-color: @color-forensic-secondary; }
   .geesdconference     & { background-color: @color-geesd-secondary; }
   .geocongress         & { background-color: @color-geocong-secondary; }
   .georiskconference   & { background-color: @color-georisk-secondary; }
@@ -291,12 +199,13 @@
   .omswconference      & { background-color: @color-omsw-secondary; }
   .pavementsconference & { background-color: @color-pave-secondary; }
   .pipelinesconference & { background-color: @color-pl-secondary; }
+  .portsconference     & { background-color: @color-ports-secondary; }
   .structurescongress  & { background-color: @color-struct-secondary; }
   .surveyingconference & { background-color: @color-surv-secondary; }
   .unsatsoilsconf      & { background-color: @color-unsat-secondary; }
 }
 .mx-bc-accent() {
-  // in your project, use `background-color: var(--color-accent, @g-color-accent);`
+  // in your project, use `background-color: var(--color-accent);`
   :root                & { background-color: @color-site-accent; }
   .sample-stage        & { background-color: @color-stage-accent; }
   .sample-dev          & { background-color: @color-dev-accent; }
@@ -312,9 +221,12 @@
   .asceconvention2017  & { background-color: @color-2017-accent; }
   .asceconvention2018  & { background-color: @color-2018-accent; }
   .ascestudentdays     & { background-color: @color-cisd-accent; }
+  .asceweek            & { background-color: @color-asceweek-accent; }
+  .asceweekinternational & { background-color: @color-asceweekint-accent; }
   .cisummit            & { background-color: @color-ci-accent; }
   .etsconference       & { background-color: @color-ets-accent; }
   .ewricongress        & { background-color: @color-ewri-accent; }
+  .forensiccongress    & { background-color: @color-forensic-accent; }
   .geesdconference     & { background-color: @color-geesd-accent; }
   .geocongress         & { background-color: @color-geocong-accent; }
   .georiskconference   & { background-color: @color-georisk-accent; }
@@ -326,12 +238,13 @@
   .omswconference      & { background-color: @color-omsw-accent; }
   .pavementsconference & { background-color: @color-pave-accent; }
   .pipelinesconference & { background-color: @color-pl-accent; }
+  .portsconference     & { background-color: @color-ports-accent; }
   .structurescongress  & { background-color: @color-struct-accent; }
   .surveyingconference & { background-color: @color-surv-accent; }
   .unsatsoilsconf      & { background-color: @color-unsat-accent; }
 }
 .mx-c-primary() {
-  // in your project, use `color: var(--color-primary, @g-color-primary);`
+  // in your project, use `color: var(--color-primary);`
   :root                & { color: @color-site-primary; }
   .sample-stage        & { color: @color-stage-primary; }
   .sample-dev          & { color: @color-dev-primary; }
@@ -347,9 +260,12 @@
   .asceconvention2017  & { color: @color-2017-primary; }
   .asceconvention2018  & { color: @color-2018-primary; }
   .ascestudentdays     & { color: @color-cisd-primary; }
+  .asceweek            & { color: @color-asceweek-primary; }
+  .asceweekinternational & { color: @color-asceweekint-primary; }
   .cisummit            & { color: @color-ci-primary; }
   .etsconference       & { color: @color-ets-primary; }
   .ewricongress        & { color: @color-ewri-primary; }
+  .forensiccongress    & { color: @color-forensic-primary; }
   .geesdconference     & { color: @color-geesd-primary; }
   .geocongress         & { color: @color-geocong-primary; }
   .georiskconference   & { color: @color-georisk-primary; }
@@ -361,12 +277,13 @@
   .omswconference      & { color: @color-omsw-primary; }
   .pavementsconference & { color: @color-pave-primary; }
   .pipelinesconference & { color: @color-pl-primary; }
+  .portsconference     & { color: @color-ports-primary; }
   .structurescongress  & { color: @color-struct-primary; }
   .surveyingconference & { color: @color-surv-primary; }
   .unsatsoilsconf      & { color: @color-unsat-primary; }
 }
 .mx-c-secondary() {
-  // in your project, use `color: var(--color-secondary, @g-color-secondary);`
+  // in your project, use `color: var(--color-secondary);`
   :root                & { color: @color-site-secondary; }
   .sample-stage        & { color: @color-stage-secondary; }
   .sample-dev          & { color: @color-dev-secondary; }
@@ -382,9 +299,12 @@
   .asceconvention2017  & { color: @color-2017-secondary; }
   .asceconvention2018  & { color: @color-2018-secondary; }
   .ascestudentdays     & { color: @color-cisd-secondary; }
+  .asceweek            & { color: @color-asceweek-secondary; }
+  .asceweekinternational & { color: @color-asceweekint-secondary; }
   .cisummit            & { color: @color-ci-secondary; }
   .etsconference       & { color: @color-ets-secondary; }
   .ewricongress        & { color: @color-ewri-secondary; }
+  .forensiccongress    & { color: @color-forensic-secondary; }
   .geesdconference     & { color: @color-geesd-secondary; }
   .geocongress         & { color: @color-geocong-secondary; }
   .georiskconference   & { color: @color-georisk-secondary; }
@@ -396,12 +316,13 @@
   .omswconference      & { color: @color-omsw-secondary; }
   .pavementsconference & { color: @color-pave-secondary; }
   .pipelinesconference & { color: @color-pl-secondary; }
+  .portsconference     & { color: @color-ports-secondary; }
   .structurescongress  & { color: @color-struct-secondary; }
   .surveyingconference & { color: @color-surv-secondary; }
   .unsatsoilsconf      & { color: @color-unsat-secondary; }
 }
 .mx-c-accent() {
-  // in your project, use `color: var(--color-accent, @g-color-accent);`
+  // in your project, use `color: var(--color-accent);`
   :root                & { color: @color-site-accent; }
   .sample-stage        & { color: @color-stage-accent; }
   .sample-dev          & { color: @color-dev-accent; }
@@ -417,9 +338,12 @@
   .asceconvention2017  & { color: @color-2017-accent; }
   .asceconvention2018  & { color: @color-2018-accent; }
   .ascestudentdays     & { color: @color-cisd-accent; }
+  .asceweek            & { color: @color-asceweek-accent; }
+  .asceweekinternational & { color: @color-asceweekint-accent; }
   .cisummit            & { color: @color-ci-accent; }
   .etsconference       & { color: @color-ets-accent; }
   .ewricongress        & { color: @color-ewri-accent; }
+  .forensiccongress    & { color: @color-forensic-accent; }
   .geesdconference     & { color: @color-geesd-accent; }
   .geocongress         & { color: @color-geocong-accent; }
   .georiskconference   & { color: @color-georisk-accent; }
@@ -431,12 +355,13 @@
   .omswconference      & { color: @color-omsw-accent; }
   .pavementsconference & { color: @color-pave-accent; }
   .pipelinesconference & { color: @color-pl-accent; }
+  .portsconference     & { color: @color-ports-accent; }
   .structurescongress  & { color: @color-struct-accent; }
   .surveyingconference & { color: @color-surv-accent; }
   .unsatsoilsconf      & { color: @color-unsat-accent; }
 }
     //**** end ### mixins ****//
-  // REVIEW indentation
+  // REVIEW:INDENTATION
     .c-Banner--head {
       .mx-bc-primary();
     }
@@ -445,12 +370,6 @@
     }
     .c-Banner--nav--sub {
       .mx-bc-accent();
-    }
-    .c-YearBadge--tab {
-      .mx-bc-secondary();
-      input:checked + & {
-        .mx-bc-accent();
-      }
     }
     .c-NavBar--main > * {
       &:hover,
@@ -465,17 +384,30 @@
     .c-Hero {
       .mx-bc-primary();
     }
+  .c-ProgramHn {
+    .mx-c-primary();
+  }
     .c-DateBlock__MonthDay {
       .mx-c-secondary();
     }
     .c-SupporterBlock__Label {
       .mx-c-secondary();
     }
-    .t-Content {
-      h1, h2, h3, h4, h5, h6 {
-        .mx-c-primary();
-      }
+  .c-DateRange {
+    // .mx-rc-secondary(); // TODO make this mixin
+    border-color: @g-color-table-br;
+  }
+  .c-DateRange__Times {
+    .mx-bc-secondary();
+  }
+  .t-Content {
+    h1, h2, h3, h4, h5, h6 {
+      .mx-c-primary();
     }
+  }
+  .-c-primary {
+    .mx-c-primary();
+  }
   //---- end ## Site Color Schemes ----//
 
 
@@ -491,18 +423,6 @@
       }
     }
     //**** end ### _dev.less ****//
-  .c-SiteLogo {
-    width: 6rem;
-    @media (min-width: 45em) and (max-width: 74.999em) {
-      width: 4rem;
-    }
-    @media (min-width: 45em) {
-      margin: 0 1rem;
-    }
-    @media (min-width: 75em) {
-      margin: 0 2rem;
-    }
-  }
   .o-SideCol {
     @media (min-width: 45em) { flex: 0 0 40%; }
     @media (min-width: 60em) { flex: 0 0 35%; }
@@ -532,6 +452,6 @@
   // IE doesn’t support `calc()` values of `flex` shorthand, so must separate into longhands
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: calc(~'100% - 8rem'); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
+  flex-basis: calc(100% - 8rem); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
 }

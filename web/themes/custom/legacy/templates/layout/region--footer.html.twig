@@ -14,16 +14,7 @@
 #}
 {{ attach_library('legacy/footerpanels') }}
 {% if content %}
-  <fieldset class="o-Tablist o-Tablist--footertabs" role="tablist">
-    <legend class="h-Hidden">Footer Tabs</legend>
-    <dl{{ attributes.addClass('o-Flex') }}>
-      <!--
-        NOTE: for accessibility, the order of blocks should be:
-        1. current year
-        2. previous year
-        3. next year
-      -->
-      {{ content }}
-    </dl>
-  </fieldset>
+  <div{{ attributes.addClass('o-Tablist o-Tablist--footertabs') }} role="tablist" aria-orientation="horizontal">
+    {{ content }}
+  </div>
 {% endif %}

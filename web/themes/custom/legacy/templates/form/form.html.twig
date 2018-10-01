@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('legacy/messages') }}
+<form{{ attributes }}>
+  <div role="alert" class="messages messages--warning">
+    <h2 class="visually-hidden">Warning message</h2>
+    <p class="-mb-0"><strong>Notice:</strong> You can now log in with your ASCE workstation credentials.</p>
+  </div>
+  {{ children }}
+</form>

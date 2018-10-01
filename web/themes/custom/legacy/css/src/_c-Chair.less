@@ -4,6 +4,8 @@
 \*################################*/
 @import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 
 
 // The Conference Chair
@@ -30,7 +32,7 @@
 //
 // Styleguide Components.Chair
 .c-Chair {
-  margin-bottom: calc(~'0.5 * var(--vru)');
+  .-mb-h;
 }
 
 .c-Chair__Name,
@@ -41,10 +43,18 @@
 }
 
 .c-Chair__Name {
-  .font-size-el(20/16); // REVIEW magic number
+  .h-FontSize;
+  --font-scale: @g-font-size-kilo;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-kilo);
+  }
 }
 
 .c-Chair__Affiliation {
-  .font-size-el(@g-font-size-mill);
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
+  }
   font-style: italic;
 }

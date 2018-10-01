@@ -1,4 +1,4 @@
-(function ($) {
+;(function ($) {
   $.fn.menuify = function() {
       var activeNavEl = null;
       var activeTargetEl = null;

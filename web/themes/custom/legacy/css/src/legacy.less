@@ -15,16 +15,16 @@
  * __tool.buttonText.less..............mixin for button text styles (used on many things)
  *
  * BASE--------------------------------BARE UNCLASSED ELEMENTS
- * _dev.less...........................fixes for imported 3rd party
  * _base.less..........................unclassed html elements
  *
  * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
+ * Flex--..............................extensions to Xmeter’x o-Flex Object
  * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
- * Constrain...........................keeps content at max width
  * MainCol.............................main column of a site page
  * SideCol.............................side column of a site page
  * MobileBar...........................top bar on mobile devices
  * Drawer..............................pull-out container
+ * FooterGrid..........................layout for things inside a c-FooterPanel
  *
  * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
  * Banner..............................full-bleed container with background color
@@ -33,7 +33,6 @@
  * TopImg..............................top banner image containing
  * YearBadge...........................badge at top indicating year
  * NavBar..............................any navigation bar
- * AsceLogo............................company logo in copyright line
  * Callout.............................aside section, in sidebar
  * FooterPanel.........................panel in tabbed footer
  * Sitemap.............................footer navigation
@@ -41,16 +40,21 @@
  * Hero................................hero section on homepage
  * KeynoteSpeaker......................keynote speaker promoted on homepage
  * Chair...............................conference chair
+ * ProgramHn...........................heading for a TimeBlock in a program
  * SupporterBlock......................block of supporters in one level
  * DateBlock...........................container for important dates
  * TimeBlock...........................container for sessions
+ * DateRange...........................time data for important date & session node pages
  * Button..............................standard link button
+ * Alert...............................textual block standing out visually from normal prose
+ * CopyrightLine.......................line of copyright info, in the copyright footer banner
  *
  * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
  * _themes.less........................overrides for any Base, Object, or Component styles
  * Content.............................main page content (CMS-editable)
  *
  * ATOMS-------------------------------FUNCTIONAL CSS
+ * _atom.less..........................fixers
  *
  * HACKS-------------------------------HACKS
  * _hack.glyphicons.less...............glyphicons overrides
@@ -74,7 +78,6 @@
 //
 // Styleguide Principles
 
-@import (less) url('_dev.less');
 @import (less) url('_base.less');
 
 // Objects
@@ -89,12 +92,13 @@
 //
 // Styleguide Objects
 
+@import (less) url('_o-Flex--.less');
 @import (less) url('_o-Tablist--footertabs.less');
-@import (less) url('_o-Constrain.less');
 @import (less) url('_o-MainCol.less');
 @import (less) url('_o-SideCol.less');
 @import (less) url('_o-MobileBar.less');
 @import (less) url('_o-Drawer.less');
+@import (less) url('_o-FooterGrid.less');
 
 // Components
 //
@@ -114,7 +118,6 @@
 @import (less) url('_c-TopImg.less');
 @import (less) url('_c-YearBadge.less');
 @import (less) url('_c-NavBar.less');
-@import (less) url('_c-AsceLogo.less');
 @import (less) url('_c-Callout.less');
 @import (less) url('_c-FooterPanel.less');
 @import (less) url('_c-Sitemap.less');
@@ -122,10 +125,14 @@
 @import (less) url('_c-Hero.less');
 @import (less) url('_c-KeynoteSpeaker.less');
 @import (less) url('_c-Chair.less');
+@import (less) url('_c-ProgramHn.less');
 @import (less) url('_c-SupporterBlock.less');
 @import (less) url('_c-DateBlock.less');
 @import (less) url('_c-TimeBlock.less');
+@import (less) url('_c-DateRange.less');
 @import (less) url('_c-Button.less');
+@import (less) url('_c-Alert.less');
+@import (less) url('_c-CopyrightLine.less');
 
 // Organisms
 //
@@ -153,6 +160,7 @@
 // Weight: 6
 //
 // Styleguide Atoms
+@import (less) url('_atom.less');
 
 @import (less) url('_hack.glyphicons.less');
 @import (less) url('_hack.slick.less');

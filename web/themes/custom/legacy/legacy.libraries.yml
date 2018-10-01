@@ -1,34 +1,48 @@
 global-styling:
-  js:
-    js/orphaned.js: {minified: false}
   css:
     base:
-      //cdn.rawgit.com/chharvey/xmeter/v6.1.1/css/xmeter.css: {type: external, minified: true}
-      css/dist/_dev.css: {minified:true}
-      css/dist/_base.css: {minified:true}
+      node_modules/xmeter/css/dist/base.css: { minified: true }
+      css/dist/_base.css: { minified: true }
     layout:
-      css/dist/_o-Constrain.css: {minified:true}
-      css/dist/_o-MainCol.css: {minified:true}
-      css/dist/_o-SideCol.css: {minified:true}
+      node_modules/xmeter/css/dist/o-List.css: { minified: true }
+      node_modules/xmeter/css/dist/o-Flex.css: { minified: true }
+      node_modules/xmeter/css/dist/o-Grid.css: { minified: true }
+      css/dist/_o-Flex--.css: { minified: true }
+      css/dist/_o-MainCol.css: { minified: true }
+      css/dist/_o-SideCol.css: { minified: true }
     component:
-      css/dist/_c-KeynoteSpeaker.css: {minified:true}
-      css/dist/_c-Chair.css: {minified:true}
-      css/dist/_c-Button.css: {minified:true}
+      css/dist/_c-KeynoteSpeaker.css: { minified: true }
+      css/dist/_c-Chair.css: { minified: true }
+      css/dist/_c-Button.css: { minified: true }
     state:
-      //cdn.rawgit.com/chharvey/bangs/v0.15.0/bangs.css: {type: external, minified: true}
+      node_modules/xmeter/css/dist/h-Block.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Inline.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Clearfix.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Measure.css: { minified: true }
+      node_modules/xmeter/css/dist/h-Constrain.css: { minified: true }
+      node_modules/xmeter/css/dist/h-FontSize.css: { minified: true }
+      node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
-      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: {type: external, minified: false}
-      //cdn.asce.org/chewie/assets/futura.css: {type: external, minified: true}
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: {type: external, minified: true}
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: {type: external, minified: true}
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: {type: external, minified: false}
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: {type: external, minified: true}
-      css/dist/_themes.css: {minified:true}
-      css/dist/_t-Content.css: {minified:true}
-      css/dist/_hack.glyphicons.css: {minified:true}
-      css/dist/_hack.drupal.css: {minified:true}
-      css/dist/_hack.ie.css: {minified:true}
-      css/dist/_hack.shame.css: {minified:true}
+      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
+      //cdn.asce.org/chewie/assets/futura.css: { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: { type: external, minified: false }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: { type: external, minified: true }
+      node_modules/xmeter/css/dist/-mb.css: { minified: true }
+      node_modules/xmeter/css/dist/-pt.css: { minified: true }
+      node_modules/xmeter/css/dist/-fz.css: { minified: true }
+      css/dist/_themes.css: { minified: true }
+      css/dist/_t-Content.css: { minified: true }
+      css/dist/_atom.css: { minified: true }
+      css/dist/_hack.glyphicons.css: { minified: true }
+      css/dist/_hack.drupal.css: { minified: true }
+      css/dist/_hack.ie.css: { minified: true }
+      css/dist/_hack.shame.css: { minified: true }
+  js:
+    {}
+  dependencies:
+    - core/jquery
 
 channel-prod:
   css:
@@ -62,84 +76,109 @@ header:
   version: VERSION
   css:
     layout:
-      css/dist/_o-MobileBar.css: {minified:true}
-      css/dist/_o-Drawer.css: {minified:true}
+      css/dist/_o-MobileBar.css: { minified: true }
+      css/dist/_o-Drawer.css: { minified: true }
     component:
-      css/dist/_c-Banner.css: {minified:true}
-      css/dist/_c-SiteLogo.css: {minified:true}
-      css/dist/_c-ConferenceTitles.css: {minified:true}
-      css/dist/_c-TopImg.css: {minified:true}
-      css/dist/_c-YearBadge.css: {minified:true}
-      css/dist/_c-NavBar.css: {minified:true}
+      css/dist/_c-Banner.css: { minified: true }
+      css/dist/_c-SiteLogo.css: { minified: true }
+      css/dist/_c-ConferenceTitles.css: { minified: true }
+      css/dist/_c-TopImg.css: { minified: true }
+      css/dist/_c-YearBadge.css: { minified: true }
+      css/dist/_c-NavBar.css: { minified: true }
   js:
-    //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: {type: external, minified: true}
-    js/menu.js: {minified: false}
-    js/o-Drawer.js: {minified: false}
+    //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: { type: external, minified: true }
+    js/menu.js: { minified: false }
+    js/o-Drawer.js: { minified: false }
 
 # footerpanels library
 footerpanels:
   version: VERSION
   css:
     layout:
-      css/dist/_o-Tablist--footertabs.css: {minified:true}
+      node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
+      css/dist/_o-Tablist--footertabs.css: { minified: true }
+      css/dist/_o-FooterGrid.css: { minified: true }
     component:
-      css/dist/_c-Banner.css: {minified:true}
-      css/dist/_c-SiteLogo.css: {minified:true}
-      css/dist/_c-ConferenceTitles.css: {minified:true}
-      css/dist/_c-YearBadge.css: {minified:true}
-      css/dist/_c-FooterPanel.css: {minified:true}
-      css/dist/_c-Sitemap.css: {minified:true}
-      css/dist/_c-SocialListFooter.css: {minified:true}
+      css/dist/_c-Banner.css: { minified: true }
+      css/dist/_c-SiteLogo.css: { minified: true }
+      css/dist/_c-ConferenceTitles.css: { minified: true }
+      css/dist/_c-YearBadge.css: { minified: true }
+      css/dist/_c-FooterPanel.css: { minified: true }
+      css/dist/_c-Sitemap.css: { minified: true }
+      css/dist/_c-SocialListFooter.css: { minified: true }
   js:
-    //cdn.rawgit.com/chharvey/xmeter/v6.1.0/js/o-Tablist.js: {minified: false}
+    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: { minified: false }
 
-# footerpanels library
+# copyright library
 copyright:
   version: VERSION
   css:
-    layout:
     component:
-      css/dist/_c-Banner.css: {minified:true}
-      css/dist/_c-AsceLogo.css: {minified:true}
+      css/dist/_c-Banner.css: { minified: true }
+      css/dist/_c-CopyrightLine.css: { minified: true }
 
 # Callout Component
 callout:
   version: VERSION
   css:
     component:
-      css/dist/_c-Callout.css: {minified:true}
+      css/dist/_c-Callout.css: { minified: true }
+
+# Alert Component
+alert:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Alert.css: { minified: true }
 
 # Hero Component
 hero:
   version: VERSION
   css:
     component:
-      css/dist/_c-Hero.css: {minified:true}
+      css/dist/_c-Hero.css: { minified: true }
 
 # Supporters library
 supporters:
   version: VERSION
   css:
     component:
-      css/dist/_c-SupporterBlock.css: {minified:true}
+      css/dist/_c-SupporterBlock.css: { minified: true }
     theme:
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: {type: external, minified: false}
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: {type: external, minified: false}
-      css/dist/_hack.slick.css: {minified:true}
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: { type: external, minified: false }
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: { type: external, minified: false }
+      css/dist/_hack.slick.css: { minified: true }
   js:
-    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: {type: external, minified: true}
-    js/slick-config.js: {minified: false}
+    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: { type: external, minified: true }
+    js/slick-config.js: { minified: false }
 
 # DateBlock Component
 dateblock:
   version: VERSION
   css:
     component:
-      css/dist/_c-DateBlock.css: {minified:true}
+      css/dist/_c-DateBlock.css: { minified: true }
 
 # TimeBlock Component
 timeblock:
   version: VERSION
   css:
     component:
-      css/dist/_c-TimeBlock.css: {minified:true}
+      css/dist/_c-ProgramHn.css: { minified: true }
+      css/dist/_c-TimeBlock.css: { minified: true }
+
+# DateRange Component
+daterange:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-DateRange.css: { minified: true }
+
+# extension of 'classy/messages'
+messages:
+  version: VERSION
+  css:
+    component:
+      ../../../core/themes/classy/css/components/messages.css: {}
+      ../../../core/themes/seven/css/components/messages.css: {}
+      css/dist/messages.css: { minified: true }

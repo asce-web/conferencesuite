@@ -2,21 +2,29 @@ name: Base
 description: 'Administrative operations required to run a basic site. Includes development tools & settings, basic site settings, and user configs, and theme settings.'
 type: module
 core: 8.x
+package: Chewie
+version: 8.x-1.5.5
 dependencies:
   - admin_toolbar_tools
+  - authorization
+  - authorization_drupal_roles
+  - automated_cron
   - block
-  - coffee
-  - devel
+  - dblog
+  - features
   - features_ui
   - field
   - file
-  - help
   - image
+  - ldap_authentication
+  - ldap_authorization
+  - ldap_servers
+  - ldap_user
   - menu_ui
-  - shortcut
+  - node
+  - path
+  - rebuild_cache_access
   - system
   - user
   - views
   - views_ui
-version: 8.x-1.0-beta.3
-package: Chewie

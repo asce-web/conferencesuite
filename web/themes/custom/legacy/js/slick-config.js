@@ -1,5 +1,5 @@
+;(function ($) {
 $(document).ready(function () {
-  let $ = jQuery
   $('.js-slick').slick({
     dots: true,
     slidesToShow: 4,
@@ -12,5 +12,6 @@ $(document).ready(function () {
 
 // To pause the autoplay, run this function in your browser console:
 function slickPause() {
-  jQuery('.js-slick').slick('slickPause');
+  $('.js-slick').slick('slickPause');
 }
+})(jQuery)

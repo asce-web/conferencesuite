@@ -2,7 +2,11 @@
 /*################################*\
     legacy  |  _c-Callout.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // The Callout
@@ -29,18 +33,31 @@
 // Weight: 9
 //
 // Styleguide Components.Callout
+.mx-ph-1() {
+  padding-left : 1rem; // COMBAK:FALLBACK
+  padding-right: 1rem; // COMBAK:FALLBACK
+  @supports (padding-inline: 1rem) {
+    padding-left : unset;
+    padding-right: unset;
+    padding-inline: 1rem;
+  }
+}
+
 .c-Callout {
-  margin-bottom: var(--vru);
+  .-mb-1;
 }
 
 .c-Callout__Hn {
-  font-weight: inherit; // unset `h1`
-  .font-size-el(2); // REVIEW magic number
-  color: inherit; // unset `main > h1`
+  font-weight: 400;
+  --font-scale: @g-font-size-h2;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-h2);
+  }
 }
 
 .c-Callout__Body {
   background-image: url('/themes/custom/legacy/images/pattern-bg-fade.png');
   background-repeat: repeat-x;
-  padding: var(--vru) 1rem 0;
+  .-pt-1;
+  .mx-ph-1();
 }

@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entityqueue.entity_queue.queue_venues
     - field.storage.node.field_venue_addresscountry
     - field.storage.node.field_venue_addresslocality
     - field.storage.node.field_venue_addressregion
@@ -16,6 +17,7 @@ dependencies:
     - field.storage.node.field_venue_url
     - node.type.venue
   module:
+    - entityqueue
     - image
     - link
     - node
@@ -67,11 +69,14 @@ display:
           items_per_page: 0
           offset: 0
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: false
+          type: ul
+          wrapper_class: ''
+          class: ''
       row:
         type: fields
         options:
@@ -1052,7 +1057,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<header>\n{% if field_venue_image %}\n  <img class=\"h-Block -mb-1\" src=\"{{ field_venue_image }}\" alt=\"{{ field_venue_image_1 }}\" itemprop=\"photo\"/>\n{% endif %}\n<h1 class=\"c-Callout__Hn -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}\" itemprop=\"description\">{{ title }}</h1>\n</header>\n<div class=\"c-Callout__Body\">\n<p>\n  <a class=\"h-Clearfix -fw-b\"{% if field_venue_url %} href=\"{{ field_venue_url }}\" itemprop=\"url\"{% endif %}>\n    <span itemprop=\"name\">{{ field_venue_name }}</span>\n  </a>\n  <span itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n    <span class=\"h-Clearfix\" itemprop=\"streetAddress\">{{ field_venue_streetaddress }}</span>\n    <span itemprop=\"addressLocality\">{{ field_venue_addresslocality }}</span>,\n    <span itemprop=\"addressRegion\">{{ field_venue_addressregion }}</span>\n    <span class=\"h-Clearfix\" itemprop=\"postalCode\">{{ field_venue_postalcode }}</span>\n    {% if field_venue_addresscountry %}<span class=\"h-Clearfix\" itemprop=\"addressCountry\">{{ field_venue_addresscountry }}</span>{% endif %}\n  </span>\n  {% if field_venue_telephone %}<a href=\"tel:{{ field_venue_telephone }}\" itemprop=\"telephone\">{{ field_venue_telephone }}</a>{% endif %}\n</p>\n{% if field_venue_cta %}\n  <p><a class=\"c-Button\" href=\"{{ field_venue_cta }}\">{{ field_venue_cta_1 }}</a></p>\n{% endif %}\n{% if field_venue_body %}\n  <article class=\"t-Content\">{{ field_venue_body }}</article>\n{% endif %}\n</div>"
+            text: "<aside class=\"c-Callout\" itemprop=\"location\" itemscope=\"\" itemtype=\"http://schema.org/Accommodation\">\n<header>\n  {% if field_venue_image %}\n    <img class=\"h-Block -mb-1\" alt=\"\" src=\"{{ field_venue_image }}\" itemprop=\"photo\"/>\n  {% endif %}\n  <h1 class=\"c-Callout__Hn -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}\" itemprop=\"description\">{{ title }}</h1>\n</header>\n<div class=\"c-Callout__Body\">\n  <p>\n    <a class=\"-fw-b\"{% if field_venue_url %} href=\"{{ field_venue_url }}\" itemprop=\"url\"{% endif %}{% if not field_venue_url %} role=\"none presentation\"{% endif %}>\n      <span itemprop=\"name\">{{ field_venue_name }}</span>\n    </a>\n    <br/>\n    <span itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n      <span itemprop=\"streetAddress\">{{ field_venue_streetaddress }}</span>\n      <br/>\n      <span itemprop=\"addressLocality\">{{ field_venue_addresslocality }}</span>\n      {%- if field_venue_addressregion -%}\n        ,\n        <span itemprop=\"addressRegion\">{{ field_venue_addressregion }}</span>\n      {% endif %}\n      {% if field_venue_postalcode %}\n        <span itemprop=\"postalCode\">{{ field_venue_postalcode }}</span>\n      {% endif %}\n      {% if field_venue_addresscountry %}\n        <br/>\n        <span itemprop=\"addressCountry\">{{ field_venue_addresscountry }}</span>\n      {% endif %}\n    </span>\n    {% if field_venue_telephone %}\n      <br/>\n      <a href=\"tel:{{ field_venue_telephone }}\" itemprop=\"telephone\">{{ field_venue_telephone }}</a>\n    {% endif %}\n  </p>\n  {% if field_venue_cta %}\n    <p><a class=\"c-Button\" href=\"{{ field_venue_cta }}\">{{ field_venue_cta_1 }}</a></p>\n  {% endif %}\n  {% if field_venue_body %}\n    <article class=\"t-Content\">{{ field_venue_body }}</article>\n  {% endif %}\n</div>\n</aside>"
             make_link: false
             path: ''
             absolute: false
@@ -1111,61 +1116,12 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        promote:
-          id: promote
-          table: node_field_data
-          field: promote
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
           group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: promote
-          plugin_id: boolean
       sorts:
-        field_venue_weight_value:
-          id: field_venue_weight_value
-          table: node__field_venue_weight
-          field: field_venue_weight_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: standard
-        created:
-          id: created
+        entityqueue_relationship:
+          id: entityqueue_relationship
           table: node_field_data
-          field: created
+          field: entityqueue_relationship
           relationship: none
           group_type: group
           admin_label: ''
@@ -1173,17 +1129,30 @@ display:
           exposed: false
           expose:
             label: ''
-          granularity: day
           entity_type: node
-          entity_field: created
-          plugin_id: date
+          plugin_id: entity_queue_position
       title: Location
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: true
+          limit_queue: queue_venues
+          entity_type: node
+          plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1192,6 +1161,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:entityqueue.entity_queue.queue_venues'
         - 'config:field.storage.node.field_venue_addresscountry'
         - 'config:field.storage.node.field_venue_addresslocality'
         - 'config:field.storage.node.field_venue_addressregion'
@@ -1204,6 +1174,8 @@ display:
         - 'config:field.storage.node.field_venue_streetaddress'
         - 'config:field.storage.node.field_venue_telephone'
         - 'config:field.storage.node.field_venue_url'
+        - entity_field_info
+        - views_data
   display_legacy:
     display_plugin: block
     id: display_legacy
@@ -1222,6 +1194,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:entityqueue.entity_queue.queue_venues'
         - 'config:field.storage.node.field_venue_addresscountry'
         - 'config:field.storage.node.field_venue_addresslocality'
         - 'config:field.storage.node.field_venue_addressregion'
@@ -1234,3 +1207,5 @@ display:
         - 'config:field.storage.node.field_venue_streetaddress'
         - 'config:field.storage.node.field_venue_telephone'
         - 'config:field.storage.node.field_venue_url'
+        - entity_field_info
+        - views_data

@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _o-Tablist--footertabs.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
 // Tablist--footertabs
@@ -9,56 +10,47 @@
 // Customized Tablist object to this project.
 // <header><dl>
 //   <dt>author</dt> <dd>Chris Harvey</dd>
-//   <dt>updated</dt><dd>2017-10-16</dd>
+//   <dt>updated</dt><dd>2018-05-10</dd>
 // </dl></header>
 //
 // Markup:
-// <fieldset class="o-Tablist o-Tablist--footertabs" role="tablist">
-//   <legend class="h-Hidden">Tabs</legend>
-//   <dl class="o-Flex">
-//     <dt class="o-Flex__Item o-Tablist__Tab" role="tab">
-//       <label class="h-Block">
-//         <input class="o-Tablist__Check h-Hidden" type="radio" name="tablistdocs" value="slide1" checked=""/>
+// <div class="o-Tablist o-Tablist--footertabs" role="tablist" aria-orientation="horizontal">
+//   <details class="o-Tablist__Panel" role="tabpanel" id="panel-prev">
+//     <summary class="o-Tablist__Tab" role="tab">
 //         Slide 1
-//       </label>
-//     </dt>
-//     <dd class="o-Flex__Item o-Tablist__Panel" role="tabpanel">
+//     </summary>
 //       <p>This is slide 1. Switch to the next panel by clicking its heading.</p>
-//     </dd>
-//     <dt class="o-Flex__Item o-Tablist__Tab" role="tab">
-//       <label class="h-Block">
-//         <input class="o-Tablist__Check h-Hidden" type="radio" name="tablistdocs" value="slide2"/>
+//   </details>
+//   <details class="o-Tablist__Panel" role="tabpanel" id="panel-current" open="">
+//     <summary class="o-Tablist__Tab" role="tab">
 //         Slide 2
-//       </label>
-//     </dt>
-//     <dd class="o-Flex__Item o-Tablist__Panel" role="tabpanel">
+//     </summary>
 //       <p>This is slide 2. This slide is slightly larger than slide 1.</p>
 //       <p>This is slide 2. This slide is slightly larger than slide 1.</p>
-//     </dd>
-//     <dt class="o-Flex__Item o-Tablist__Tab" role="tab">
-//       <label class="h-Block">
-//         <input class="o-Tablist__Check h-Hidden" type="radio" name="tablistdocs" value="slide3"/>
+//   </details>
+//   <details class="o-Tablist__Panel" role="tabpanel" id="panel-next">
+//     <summary class="o-Tablist__Tab" role="tab">
 //         Slide 3
-//       </label>
-//     </dt>
-//     <dd class="o-Flex__Item o-Tablist__Panel" role="tabpanel">
+//     </summary>
 //       <p>This is slide 3. The largest slide.</p>
 //       <p>This is slide 3. The largest slide.</p>
 //       <p>This is slide 3. The largest slide.</p>
-//     </dd>
-//   </dl>
-// </fieldset>
+//   </details>
+// </div>
 //
 // Weight: 0.1
 //
 // Styleguide Objects.Tablist--footertabs
 .o-Tablist--footertabs {
-  margin-bottom: 0; // unset fieldset base
-  & > .o-Flex {
     justify-content: flex-end; // push year-tabs to inline-end side
-    // justify-content: end; // FIXME CHANGED not supported on flexbox yet
-  }
+    // justify-content: end; // CHANGED:NEW not supported on flexbox yet
   .o-Tablist__Tab {
-    flex: none; // override .o-Flex__Item `auto`
+    flex: none; // override aria-patterns `.o-Tablist__Tab: 1`
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .-pt-2;
+      text-align: center;
+      list-style-type: none; // override `normalize.css`
+      cursor: auto; // override `aria-patterns`
+    }
   }
 }

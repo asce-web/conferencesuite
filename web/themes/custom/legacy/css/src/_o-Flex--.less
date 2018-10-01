@@ -1,0 +1,50 @@
+
+/*################################*\
+    legacy  |  _o-Flex--.less
+\*################################*/
+
+
+// Extension of `.o-Flex` for centering items.
+.o-Flex--center {
+  justify-content: center;
+  align-items: center;
+  & > .o-Flex__Item {
+    flex: none;
+  }
+}
+// Extensions of `.o-Flex` used in site header & footer.
+// --siteFoot only appears in the current year footer panel.
+//
+// [1] When inside the site header, add a right margin (because of c-YearBadge)
+//
+// ^author
+// : Chris Harvey
+// ^updated
+// : 2017-06-11
+.o-Flex--siteHead {
+  margin: 1.5rem 0;    // COMBAK:FALLBACK
+  margin: var(--lh) 0; // COMBAK:FALLBACK
+  margin: 1lh 0;
+  justify-content: flex-start;
+  align-items: center;
+  @media not all and (min-width: 45em) {
+    flex-direction: column;
+  }
+  @supports (width: var(--width)) {
+    header & { // [1]
+      @media screen and (min-width: 45em) {
+        margin-right: calc(0.5 * var(--year-badge-width));
+      }
+    }
+  }
+}
+.o-Flex--siteFoot {
+  @media not all and (min-width: 45em) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 30em) and (max-width: 44.999em) {
+    flex-wrap: wrap;
+    max-height: calc((3*5 + 7*2) * var(--lh)); // COMBAK:FALLBACK
+    max-height: (3*5lh + 7*2lh); // 3 pages with height 5lh + 7 pages with height 2lh
+  }
+}

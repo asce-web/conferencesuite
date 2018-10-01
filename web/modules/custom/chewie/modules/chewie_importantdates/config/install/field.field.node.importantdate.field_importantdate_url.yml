@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_importantdate_url
+    - node.type.importantdate
+  module:
+    - link
+id: node.importantdate.field_importantdate_url
+field_name: field_importantdate_url
+entity_type: node
+bundle: importantdate
+label: 'Custom URL'
+description: 'Provide a custom URL for the link. If left blank, this important date’s node page will be used.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 0
+field_type: link

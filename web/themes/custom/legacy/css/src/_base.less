@@ -2,7 +2,10 @@
 /*################################*\
     legacy  |  _base.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/__settings.less');
 @import (reference) url('../../node_modules/xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('__settings.less');
 
 
@@ -30,13 +33,13 @@ html {
   --site-logo-size: 6rem;
   --site-logo-space: 0;
   --year-badge-width: 10vw;
-  --supporter-logo-lrg-width: 120px; --supporter-logo-lrg-height: 65px ;
-  --supporter-logo-med-width: 90px ; --supporter-logo-med-height: 48px ;
   --supporter-logo-sml-width: 68px ; --supporter-logo-sml-height: 36px ;
+  --supporter-logo-med-width: 90px ; --supporter-logo-med-height: 48px ;
+  --supporter-logo-lrg-width: 120px; --supporter-logo-lrg-height: 65px ;
   @media screen and (min-width: 30em) {
-    --supporter-logo-lrg-width: 250px; --supporter-logo-lrg-height: 110px;
-    --supporter-logo-med-width: 188px; --supporter-logo-med-height: 82px ;
     --supporter-logo-sml-width: 140px; --supporter-logo-sml-height: 62px ;
+    --supporter-logo-med-width: 188px; --supporter-logo-med-height: 82px ;
+    --supporter-logo-lrg-width: 250px; --supporter-logo-lrg-height: 110px;
   }
   @media screen and (min-width: 45em) {
     --site-logo-space: 1rem;
@@ -44,9 +47,9 @@ html {
   }
   @media screen and (min-width: 60em) {
     --side-col-size: 35%;
-    --supporter-logo-lrg-width: 360px; --supporter-logo-lrg-height: 160px;
-    --supporter-logo-med-width: 270px; --supporter-logo-med-height: 120px;
     --supporter-logo-sml-width: 202px; --supporter-logo-sml-height: 90px ;
+    --supporter-logo-med-width: 270px; --supporter-logo-med-height: 120px;
+    --supporter-logo-lrg-width: 360px; --supporter-logo-lrg-height: 160px;
   }
   @media screen and (min-width: 75em) {
     --site-logo-space: 2rem;
@@ -63,6 +66,9 @@ html {
   }
 }
 body {
+  --color-primary:   @g-color-primary;   // overridden with internal stylesheet, pulled from database
+  --color-secondary: @g-color-secondary; // overridden with internal stylesheet, pulled from database
+  --color-accent:    @g-color-accent;    // overridden with internal stylesheet, pulled from database
   font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
   color: @g-color-body-txt;
 }
@@ -73,16 +79,15 @@ body {
 //    # SECTIONS
 //++++++++++++++++++++++++++++++++//
 main {
-  margin-bottom: calc(~'2 * var(--vru)');
-  margin-block-end: calc(~'2 * var(--vru)');
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-    color: var(--color-primary, @g-color-primary);
-  }
+  .-mb-2;
   @media not all and (min-width: 45em) {
     flex-direction: column;
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'futura-pt', 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
 //++++ end # SECTIONS ++++//
 
 
@@ -95,28 +100,43 @@ main {
   figcaption {
     font-weight: 300;
     font-style: italic;
-    .font-size-el(0.75);
+    .h-FontSize;
+    --font-scale: @g-font-size-mill;
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .font-size-el(@g-font-size-mill);
+    }
   }
   //---- end ## Paragraphs ----//
 
   //--------------------------------//
   //    ## Lists
   //--------------------------------//
+  ol,
+  ul {
+    // override Xmeter base 4rem
+    padding-left: 2rem;
+    @supports (padding-inline-start: 1rem) {
+      padding-left: unset;
+      padding-inline-start: 2rem;
+    }
+  }
   //---- end ## Lists ----//
 
   //--------------------------------//
   //    ## Tables
   //--------------------------------//
+  caption {
+    text-align: inherit; // unset Xmeter base
+  }
   thead,
   tfoot {
-    background-color: @g-color-table-bg;
-    font-weight: 600;
-    font-size: 0.75em; // REVIEW is this necessary?
+    // background-color: @g-color-table-bg;
+    // font-weight: 600;
+    // font-size: 0.75em; // REVIEW is this necessary?
   }
   th,
   td {
-    padding: 10px;
-    border: 1px solid @g-color-table-br;
+    // border: 1px solid @g-color-table-br;
   }
   // REVIEW striped & bordered tables
   table.striped {

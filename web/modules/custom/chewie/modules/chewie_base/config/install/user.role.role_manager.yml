@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies: {  }
+id: role_manager
+label: Manager
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'administer blocks'
+  - 'administer google tag manager'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer themes'
+  - 'administer users'
+  - 'bypass node access'
+  - 'create url aliases'
+  - 'manipulate all entityqueues'
+  - 'manipulate entityqueues'
+  - 'rebuild cache access'
+  - 'revert all revisions'
+  - 'use text format full_html'
+  - 'use text format rich_text'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

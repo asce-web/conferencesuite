@@ -1,0 +1,101 @@
+
+/*################################*\
+    legacy  |  _c-DateRange.less
+\*################################*/
+@import (reference) url('__settings.less');
+
+
+// Date Range
+//
+// A container of date and/or time data for an Important Date or a Session,
+// displayed on that content’s node page.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2018-08-20</time></dd>
+// </dl></header>
+//
+// Markup:
+// <strong>for an Important Date (or range thereof):</strong>
+// <p class="c-DateRange">
+//   <span class="c-DateRange__Dates">
+//     <time datetime="2016-09-28" itemprop="startTime">
+//       <span class="c-DateRange__Dates__Day"      >Monday,</span>
+//       <span class="c-DateRange__Dates__MonthDate">September 28,</span>
+//       <span class="c-DateRange__Dates__Year"     >2016</span>
+//     </time>
+//     &ndash;
+//     <time datetime="2016-09-29" itemprop="endTime">
+//       <span class="c-DateRange__Dates__Day"      >Tuesday,</span>
+//       <span class="c-DateRange__Dates__MonthDate">September 29,</span>
+//       <span class="c-DateRange__Dates__Year"     >2016</span>
+//     </time>
+//   </span>
+// </p>
+// <strong>for a Session:</strong>
+// <p class="c-DateRange">
+//   <span class="c-DateRange__Times">
+//     <time datetime="2016-09-28T10:00" itemprop="startDate">10:00 am</time>
+//     &ndash;
+//     <time datetime="2016-09-28T19:00" itemprop="endDate">7:00 pm</time>
+//   </span>
+//   <span class="c-DateRange__Dates">
+//     <span class="c-DateRange__Dates__Day"      >Monday,</span>
+//     <span class="c-DateRange__Dates__MonthDate">September 28,</span>
+//     <span class="c-DateRange__Dates__Year"     >2016</span>
+//   </span>
+// </p>
+//
+// Styleguide Components.DateRange
+@p-lh: 1.5rem;
+
+.c-DateRange {
+  display: flex;
+  border: 1px solid var(--color-secondary);
+  border-left-width: 0.25rem;
+  @supports (border-inline-start-width: 1rem) {
+    border-left-width: unset;
+    border-inline-start-width: 0.25rem;
+  }
+}
+
+.c-DateRange__Dates,
+.c-DateRange__Times {
+  line-height: inherit;
+  padding: 0 0.5rem;
+
+  // TODO import `.-py` from xmeter@7.1.0
+  padding-top: (0.25 * @p-lh);         // COMBAK:FALLBACK
+  padding-top: calc(0.25 * var(--lh)); // COMBAK:FALLBACK
+  padding-top: 0.25lh;
+  @supports (padding-block-start: var(--v)) {
+    padding-top: unset;
+    padding-block-start: calc(0.25 * var(--lh)); // COMBAK:FALLBACK
+    padding-block-start: 0.25lh;
+  }
+  padding-bottom: (0.25 * @p-lh);         // COMBAK:FALLBACK
+  padding-bottom: calc(0.25 * var(--lh)); // COMBAK:FALLBACK
+  padding-bottom: 0.25lh;
+  @supports (padding-block-end: var(--v)) {
+    padding-bottom: unset;
+    padding-block-end: calc(0.25 * var(--lh)); // COMBAK:FALLBACK
+    padding-block-end: 0.25lh;
+  }
+}
+
+.c-DateRange__Dates {
+}
+
+.c-DateRange__Times {
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--color-secondary);
+}
+
+.c-DateRange__Dates__Day {
+  font-weight: 700;
+}
+.c-DateRange__Dates__MonthDate {
+  font-weight: 600;
+}
+.c-DateRange__Dates__Year {
+}

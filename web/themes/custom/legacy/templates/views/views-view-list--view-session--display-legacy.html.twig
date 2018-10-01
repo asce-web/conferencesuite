@@ -18,20 +18,23 @@
 #}
 {{ attach_library('legacy/timeblock') }}
 {% if attributes -%}
-  <div{{ attributes }}>
+  <table{{ attributes }}>
 {% endif %}
   {% if title %}
-    <h3>{{ title }}</h3>
+    <caption><h3 class="c-ProgramHn">{{ title }}</h3></caption>
   {% endif %}
 
-  <{{ list.type }} class="o-List c-TimeBlock"{{ list.attributes }}>
+  <tbody class="c-TimeBlock"{{ list.attributes }}>{# BUG https://www.drupal.org/project/drupal/issues/2845400 #}
 
     {% for row in rows %}
-      <li {{ row.attributes.addClass('o-List__Item c-TimeBlock__Item').setAttribute('itemprop','subEvent').setAttribute('itemscope','').setAttribute('itemtype','http://schema.org/Event') }}>{{ row.content }}</li>
+      <tr{{ row.attributes.addClass('c-TimeBlock__Item')
+        .setAttribute('itemprop'  , 'subEvent')
+        .setAttribute('itemscope' , '')
+        .setAttribute('itemtype'  , 'http://schema.org/Event') }}>{{ row.content }}</tr>
     {% endfor %}
 
-  </{{ list.type }}>
+  </tbody>
 
 {% if attributes -%}
-  </div>
+  </table>
 {% endif %}

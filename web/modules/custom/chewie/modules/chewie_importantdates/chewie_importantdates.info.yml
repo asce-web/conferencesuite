@@ -2,8 +2,18 @@ name: 'Important Dates'
 description: 'Important Date content type and associated functionality and styles.'
 type: module
 core: 8.x
-dependencies:
-  - chewie_content
-  - datetime
-version: 8.x-1.0-beta.4
 package: Chewie
+version: 8.x-1.4.0
+dependencies:
+  - block
+  - chewie_content
+  - conditional_fields
+  - datetime
+  - field
+  - link
+  - menu_ui
+  - node
+  - pathauto
+  - text
+  - user
+  - views

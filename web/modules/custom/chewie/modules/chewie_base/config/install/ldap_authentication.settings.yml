@@ -1,0 +1,21 @@
+sids:
+  windows_dc01: windows_dc01
+authenticationMode: 1
+loginUIUsernameTxt: 'Enter your workstation username (example: tsmith).'
+loginUIPasswordTxt: 'Enter your workstation password.'
+ldapUserHelpLinkUrl: ''
+ldapUserHelpLinkText: ''
+emailOption: 3
+emailUpdate: 1
+emailTemplateHandling: none
+emailTemplate: '@username@example.com'
+emailTemplateUsageResolveConflict: false
+emailTemplateUsageNeverUpdate: false
+emailTemplateUsagePromptUser: false
+emailTemplateUsageRedirectOnLogin: false
+emailTemplateUsagePromptRegex: '.*@example\\.com'
+passwordOption: 2
+allowOnlyIfTextInDn: {  }
+excludeIfTextInDn: {  }
+excludeIfNoAuthorizations: 0
+langcode: en

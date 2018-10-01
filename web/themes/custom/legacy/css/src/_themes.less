@@ -19,13 +19,25 @@
   }
 }
 
-.c-Banner--copyright,
+// remove underline from certain menu items, unless hovering/focusing
 .c-NavBar--contrib,
 .c-NavBar--mobile,
-.c-FooterPanel {
-  a[href]:hover,
-  a[href]:focus {
-    // underline links on hover (only in some banners), where color change is not indicated
-    text-decoration: underline;
+.o-FooterGrid__Sitemap {
+  a[href]:not(:hover):not(:focus) {
+  // a[href]:not(:hover, :focus) { // CHANGED:NEW syntax not yet supported // NB:LINK <https://caniuse.com/#feat=css-not-sel-list>
+    text-decoration: none;    // COMBAK:FALLBACK
+    text-decoration: initial; // COMBAK:FALLBACK
+    text-decoration: unset;
+  }
+}
+
+// remove underline from main and sub menu items completely (other styles indicate hover/focus)
+.c-NavBar--main,
+.c-NavBar--register,
+.c-NavBar--sub {
+  a[href] {
+    text-decoration: none;    // COMBAK:FALLBACK
+    text-decoration: initial; // COMBAK:FALLBACK
+    text-decoration: unset;
   }
 }

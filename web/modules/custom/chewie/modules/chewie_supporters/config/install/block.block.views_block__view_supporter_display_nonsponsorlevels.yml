@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.view_supporter
+  module:
+    - views
+  theme:
+    - legacy
+id: views_block__view_supporter_display_nonsponsorlevels
+theme: legacy
+region: supporters
+weight: -4
+provider: null
+plugin: 'views_block:view_supporter-display_nonsponsorlevels'
+settings:
+  id: 'views_block:view_supporter-display_nonsponsorlevels'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }
