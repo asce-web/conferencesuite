@@ -31,8 +31,6 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_theme']             = theme_get_setting('conference_info_theme');
   $variables['page_startdate']         = theme_get_setting('conference_dates_start');
   $variables['page_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['page_location_display']  = theme_get_setting('conference_location_display');
-  $variables['page_location_advisory'] = theme_get_setting('conference_location_advisory');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
       $fullpath = (file_load($image) == NULL) ? '/themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
@@ -53,7 +51,6 @@ function legacy_preprocess_block(&$variables) {
   $variables['block_startdate']         = theme_get_setting('conference_dates_start');
   $variables['block_enddate']           = theme_get_setting('conference_dates_end');
   $variables['block_location_display']  = theme_get_setting('conference_location_display');
-  $variables['block_location_advisory'] = theme_get_setting('conference_location_advisory');
 
   // for site logo (shield) in footer tabs
   $variables['block_sitelogo'] = theme_get_setting('logo.url');
@@ -91,8 +88,6 @@ function legacy_preprocess_region(&$variables) {
   $variables['region_theme']             = theme_get_setting('conference_info_theme');
   $variables['region_startdate']         = theme_get_setting('conference_dates_start');
   $variables['region_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['region_location_display']  = theme_get_setting('conference_location_display');
-  $variables['region_location_advisory'] = theme_get_setting('conference_location_advisory');
 }
 
 // function buildForm(array $form, FormStateInterface $form_state, $theme =
@@ -182,17 +177,10 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   );
   $form['conference_settings']['conference_location']['conference_location_display'] = array(
     '#type'          => 'textfield',
-    '#title'         => t('Display Name'),
+    '#title'         => t('Location'),
     '#default_value' => theme_get_setting('conference_location_display'),
     '#description'   => t('Location of the conference.'),
     '#required'      => TRUE,
-  );
-  $form['conference_settings']['conference_location']['conference_location_advisory'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Advisory Title'),
-    '#default_value' => theme_get_setting('conference_location_advisory'),
-    '#description'   => t('Location alt text. <strong>Use only if different from Location Display Name.</strong>'),
-    '#required'      => FALSE,
   );
 
   $form['conference_settings']['developer'] = array(

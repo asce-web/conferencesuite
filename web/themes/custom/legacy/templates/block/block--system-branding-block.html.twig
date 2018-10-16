@@ -26,11 +26,7 @@
     <div class="o-Flex__Item c-ConferenceTitles">
       <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
       <p class="c-ConferenceTitles__Detail">
-        {% if block_location_advisory %}
-          <abbr title="{{ block_location_advisory }}">{{ block_location_display }}</abbr>
-        {% else %}
           <span>{{ block_location_display }}</span>
-        {% endif %}
         {{- ' | ' -}}
         <time datetime="{{ block_startdate|date('c') }}">
           {{- block_startdate|date('F j') -}}
