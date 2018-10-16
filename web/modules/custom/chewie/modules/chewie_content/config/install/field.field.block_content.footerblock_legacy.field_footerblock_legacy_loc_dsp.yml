@@ -14,7 +14,7 @@ required: true
 translatable: false
 default_value:
   -
-    value: 'Reston, VA'
+    value: 'Reston, Virginia'
 default_value_callback: ''
 settings: {  }
 field_type: string

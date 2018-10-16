@@ -46,11 +46,7 @@
     <div class="o-FooterGrid__Titles c-ConferenceTitles">
       <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
       <p class="c-ConferenceTitles__Detail">
-        {% if content.field_footerblock_legacy_loc_ttl.0 %}
-          <abbr title="{{ content.field_footerblock_legacy_loc_ttl.0 }}">{{ content.field_footerblock_legacy_loc_dsp.0 }}</abbr>
-        {% else %}
           <span>{{ content.field_footerblock_legacy_loc_dsp.0 }}</span>
-        {% endif %}
         {{- ' | ' -}}
         <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}">
           {{- content.field_footerblock_legacy_start.0['#markup']|date('F j') -}}
