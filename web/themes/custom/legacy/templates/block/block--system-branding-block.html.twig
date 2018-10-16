@@ -28,19 +28,26 @@
       <p class="c-ConferenceTitles__Detail">
           <span>{{ block_location_display }}</span>
         {{- ' | ' -}}
-        <time datetime="{{ block_startdate|date('c') }}">
+        {%- if not block_enddate or (block_startdate|date('Y-m-d') == block_enddate|date('Y-m-d')) -%}
+          <time datetime="{{ block_startdate|date('c') }}" itemprop="startDate endDate">
+            {{- block_startdate|date('F j, Y') -}}
+          </time>
+        {%- else -%}
+        <time datetime="{{ block_startdate|date('c') }}" itemprop="startDate">
           {{- block_startdate|date('F j') -}}
           {%- if block_startdate|date('Y') != block_enddate|date('Y') %}
             {{- block_startdate|date(', Y') -}}
           {% endif -%}
         </time>
         {{- '&ndash;' -}}
-        <time datetime="{{ block_enddate|date('c') }}">
-          {%- if block_startdate|date('m') != block_enddate|date('m') %}
+        <time datetime="{{ block_enddate|date('c') }}" itemprop="endDate">
+          {%- if (block_startdate|date('m') != block_enddate|date('m')) or
+                 (block_startdate|date('Y') != block_enddate|date('Y')) %}
             {{- block_enddate|date('F ') -}}
           {% endif -%}
           {{- block_enddate|date('j, Y') -}}
         </time>
+        {% endif %}
       </p>
       {% if site_slogan %}
         <p class="c-ConferenceTitles__Tagline">{{ site_slogan }}</p>

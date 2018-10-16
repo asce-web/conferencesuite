@@ -168,7 +168,6 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'date',
     '#title'         => t('End Date'),
     '#default_value' => theme_get_setting('conference_dates_end'),
-    '#required'      => TRUE,
   );
   $form['conference_settings']['conference_location'] = array(
     '#type'   => 'fieldset',
