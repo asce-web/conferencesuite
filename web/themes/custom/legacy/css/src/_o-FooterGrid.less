@@ -37,8 +37,12 @@
 
 // Container for previous/next year content
 .o-FooterGrid__Content {
-  .-pt-2;
+  .-pt-1;
   margin-left: var(--site-logo-space);
+  @supports (margin-inline-start: var(--v)) {
+    margin-left: unset;
+    margin-inline-start: var(--site-logo-space);
+  }
   @media not all and (min-width: 45em) {
     -ms-grid-row: 3; // COMBAK IE fix
   }
@@ -51,7 +55,7 @@
 // Container for current year sitemap
 .o-FooterGrid__Sitemap {
   grid-column: 1 ~'/' -1;
-  .-pt-2;
+  .-pt-1;
 
   @media not all and (min-width: 45em) {
     -ms-grid-row: 3; // COMBAK IE fix
