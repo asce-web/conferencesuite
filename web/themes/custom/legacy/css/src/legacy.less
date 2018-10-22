@@ -8,162 +8,50 @@
     legacy.less
 \*================================*/
 
-/**
- * ////////////////    CONTENTS    ////////////////
- * SETTINGS & TOOLS--------------------PROJECT SETTINGS & MIXINS
- * __settings.less.....................variables
- * __tool.buttonText.less..............mixin for button text styles (used on many things)
- *
- * BASE--------------------------------BARE UNCLASSED ELEMENTS
- * _base.less..........................unclassed html elements
- *
- * OBJECTS-----------------------------REUSABLE STRUCTURAL PATTERNS
- * Flex--..............................extensions to Xmeter’x o-Flex Object
- * Tablist--footertabs.................tabbed panel interface in footer (extends Tablist)
- * MainCol.............................main column of a site page
- * SideCol.............................side column of a site page
- * MobileBar...........................top bar on mobile devices
- * Drawer..............................pull-out container
- * FooterGrid..........................layout for things inside a c-FooterPanel
- *
- * COMPONENTS--------------------------SPECIFIC STYLE PATTERNS
- * Banner..............................full-bleed container with background color
- * SiteLogo............................logo for conference site (usually an Institute shield)
- * ConferenceTitles....................container for name, tagline, detail of conference
- * TopImg..............................top banner image containing
- * YearBadge...........................badge at top indicating year
- * NavBar..............................any navigation bar
- * Callout.............................aside section, in sidebar
- * FooterPanel.........................panel in tabbed footer
- * Sitemap.............................footer navigation
- * SocialListFooter....................social media icons in footer
- * Hero................................hero section on homepage
- * KeynoteSpeaker......................keynote speaker promoted on homepage
- * Chair...............................conference chair
- * ProgramHn...........................heading for a TimeBlock in a program
- * SupporterBlock......................block of supporters in one level
- * DateBlock...........................container for important dates
- * TimeBlock...........................container for sessions
- * DateRange...........................time data for important date & session node pages
- * Button..............................standard link button
- * Alert...............................textual block standing out visually from normal prose
- * CopyrightLine.......................line of copyright info, in the copyright footer banner
- *
- * THEMES & HELPERS--------------------LOCATION-DEPENDENT STYLES
- * _themes.less........................overrides for any Base, Object, or Component styles
- * Content.............................main page content (CMS-editable)
- *
- * ATOMS-------------------------------FUNCTIONAL CSS
- * _atom.less..........................fixers
- *
- * HACKS-------------------------------HACKS
- * _hack.glyphicons.less...............glyphicons overrides
- * _hack.slick.less....................slick carousel styles
- * _hack.drupal.less...................fixes & overrides for Drupal 8 “Seven” theme
- * _hack.ie.less.......................IE-only styles
- * _hack.shame.less....................miscellaneous hacks. should be moved elsewhere.
- */
+
+@import (less) url('_base.less'); // ............................bare, unclassed html elements
+
+@import (less) url('_o-Flex--.less'); // ........................extensions to Xmeter’x o-Flex Object
+@import (less) url('_o-Tablist--footertabs.less'); // ...........tabbed panel interface in footer (extends Tablist)
+@import (less) url('_o-MainCol.less'); // .......................main column of a site page
+@import (less) url('_o-SideCol.less'); // .......................side column of a site page
+@import (less) url('_o-MobileBar.less'); // .....................top bar on mobile devices
+@import (less) url('_o-Drawer.less'); // ........................pull-out container
+@import (less) url('_o-FooterGrid.less'); // ....................layout for things inside a c-FooterPanel
 
 
-// Principles
-//
-// Parts of an overarching design theme.
-// - voice-and-tone, mood, and look-and-feel of the site
-// - typographical conventions & rhythm (typefaces, font sizes, and leading used throughout the site)
-// - additionally, any atypical writing modes / other languages required
-// - site-wide color scheme
-// - image treatment conventions (story-telling, image placement, quality, filters, etc)
-//
-// Weight: 1
-//
-// Styleguide Principles
+@import (less) url('_c-Banner.less'); // ........................full-bleed container with background color
+@import (less) url('_c-SiteLogo.less'); // ......................logo for conference site (usually an Institute shield)
+@import (less) url('_c-ConferenceTitles.less'); // ..............container for name, tagline, detail of conference
+@import (less) url('_c-TopImg.less'); // ........................top banner image containing
+@import (less) url('_c-YearBadge.less'); // .....................badge at top indicating year
+@import (less) url('_c-NavBar.less'); // ........................any navigation bar
+@import (less) url('_c-Callout.less'); // .......................aside section, in sidebar
+@import (less) url('_c-FooterPanel.less'); // ...................panel in tabbed footer
+@import (less) url('_c-Sitemap.less'); // .......................footer navigation
+@import (less) url('_c-SocialListFooter.less'); // ..............social media icons in footer
+@import (less) url('_c-Hero.less'); // ..........................hero section on homepage
+@import (less) url('_c-KeynoteSpeaker.less'); // ................keynote speaker promoted on homepage
+@import (less) url('_c-Chair.less'); // .........................conference chair
+@import (less) url('_c-ProgramHn.less'); // .....................heading for a TimeBlock in a program
+@import (less) url('_c-SupporterBlock.less'); // ................block of supporters in one level
+@import (less) url('_c-DateBlock.less'); // .....................container for important dates
+@import (less) url('_c-TimeBlock.less'); // .....................container for sessions
+@import (less) url('_c-DateRange.less'); // .....................time data for important date & session node pages
+@import (less) url('_c-Button.less'); // ........................standard link button
+@import (less) url('_c-Alert.less'); // .........................textual block standing out visually from normal prose
+@import (less) url('_c-CopyrightLine.less'); // .................line of copyright info, in the copyright footer banner
 
-@import (less) url('_base.less');
 
-// Objects
-//
-// Layout and structural design patterns that can be reused many times for many different purposes.
-// - layout display (grid/flexbox/multicol)
-// - positioning/floats/alignment
-// - sizing (width & height)
-// - spacing (padding & margin)
-//
-// Weight: 2
-//
-// Styleguide Objects
+@import (less) url('_themes.less'); // ..........................overrides for any Base, Object, or Component styles
+@import (less) url('_t-Content.less'); // .......................main page content (CMS-editable)
 
-@import (less) url('_o-Flex--.less');
-@import (less) url('_o-Tablist--footertabs.less');
-@import (less) url('_o-MainCol.less');
-@import (less) url('_o-SideCol.less');
-@import (less) url('_o-MobileBar.less');
-@import (less) url('_o-Drawer.less');
-@import (less) url('_o-FooterGrid.less');
 
-// Components
-//
-// Cosmetic design patterns that are each only used for one functional purpose.
-// - box effects (backgrounds, borders, opacity)
-// - typefaces and font weights/styles
-// - textual effects (letter-spacing, alignment, indentation, decoration, list-style, color)
-// - bells & whistles (transformations, overflows, shadows, filters, transitions, icons)
-//
-// Weight: 3
-//
-// Styleguide Components
+@import (less) url('_atom.less'); // ............................fixers
 
-@import (less) url('_c-Banner.less');
-@import (less) url('_c-SiteLogo.less');
-@import (less) url('_c-ConferenceTitles.less');
-@import (less) url('_c-TopImg.less');
-@import (less) url('_c-YearBadge.less');
-@import (less) url('_c-NavBar.less');
-@import (less) url('_c-Callout.less');
-@import (less) url('_c-FooterPanel.less');
-@import (less) url('_c-Sitemap.less');
-@import (less) url('_c-SocialListFooter.less');
-@import (less) url('_c-Hero.less');
-@import (less) url('_c-KeynoteSpeaker.less');
-@import (less) url('_c-Chair.less');
-@import (less) url('_c-ProgramHn.less');
-@import (less) url('_c-SupporterBlock.less');
-@import (less) url('_c-DateBlock.less');
-@import (less) url('_c-TimeBlock.less');
-@import (less) url('_c-DateRange.less');
-@import (less) url('_c-Button.less');
-@import (less) url('_c-Alert.less');
-@import (less) url('_c-CopyrightLine.less');
 
-// Organisms
-//
-// Aggregate compositions of Objects and Components that form single, self-sustaining interfaces.
-//
-// Weight: 4
-//
-// Styleguide Organisms
-
-// Helpers & Themes
-//
-// Somewhat explicit classes used for enhancing default styles.
-//
-// Weight: 5
-//
-// Styleguide Helpers
-
-@import (less) url('_themes.less');
-@import (less) url('_t-Content.less');
-
-// Atoms & Hacks
-//
-// Very specific classes used for creating anomalies or fixing broken styles.
-//
-// Weight: 6
-//
-// Styleguide Atoms
-@import (less) url('_atom.less');
-
-@import (less) url('_hack.glyphicons.less');
-@import (less) url('_hack.slick.less');
-@import (less) url('_hack.drupal.less');
-@import (less) url('_hack.ie.less');
-@import (less) url('_hack.shame.less');
+@import (less) url('_hack.glyphicons.less'); // .................glyphicons overrides
+@import (less) url('_hack.slick.less'); // ......................slick carousel styles
+@import (less) url('_hack.drupal.less'); // .....................fixes & overrides for Drupal 8 “Seven” theme
+@import (less) url('_hack.ie.less'); // .........................IE-only styles
+@import (less) url('_hack.shame.less'); // ......................miscellaneous hacks. should be moved elsewhere.

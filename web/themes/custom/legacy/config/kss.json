@@ -1,6 +1,9 @@
 {
   "title": "ASCE Conferences Pattern Library",
-  "source": "css/src/",
+  "source": [
+    "./node_modules/xmeter/css/src/",
+    "./css/src/"
+  ],
   "destination": "./docs/styleguide/",
   "css": [
     "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic",
