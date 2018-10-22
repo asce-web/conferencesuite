@@ -34,6 +34,7 @@
   .c-SupporterBlock__Logo {
     position: absolute;
     top: 50%; left: 50%; transform: translate(-50%, -50%); // HACK for centering the logo
+    max-height: 100%;
   }
 }
 @supports (display: grid) {
@@ -42,8 +43,6 @@
       position: initial; // COMBAK:FALLBACK for unset
       position: unset;
       display: grid;
-      justify-content: center;
-      align-content: center;
     }
     .c-SupporterBlock__Logo {
       // COMBAK:FALLBACK for initial
@@ -62,6 +61,8 @@
       top: unset;
       left: unset;
       transform: unset;
+
+      margin: auto;
     }
   }
 }
