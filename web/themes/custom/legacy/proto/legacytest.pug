@@ -195,6 +195,10 @@ html(lang="en")
                     span.h-Block.c-Chair__Affiliation University of Pittsburgh
                   p: a.c-Button(href="#0") Speaker Details
             h2 Pre-Conference Seminars
+            p: a.c-Button(href="#0") link
+            p: a.c-Button.c-Button--disabled --disabled
+            p: button.c-Button button
+            p: button.c-Button(disabled="") disabled button
             p Sign up to earn additional PDHs at a pre-conference seminar:
             div.session Post Disaster Safety Evaluations
             p 6.0 PDHs - in cooperation with California Office of Emergency Services (CalOES) and Applied Technology Council (ATC)
@@ -232,26 +236,27 @@ html(lang="en")
               h1.c-Callout__Hn Location
               div.c-Callout__Body
                 section(itemprop="location" itemscope="" itemtype="http://schema.org/Accommodation")
-                  img.h-Block.-mb-1(src=conference.image.sidebar alt="Boston Skyline" itemprop="photo")
-                  h1.c-Callout__Hn.-pt-0(itemprop="description") Official Conference Venue
-                  p
-                    a.h-Clearfix.-fw-b(href="/location/hotel-travel" itemprop="url")
-                      span(itemprop="name") Sheraton Boston Hotel &amp; Hynes Convention Center
-                    span(itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress")
-                      span(class="h-Clearfix" itemprop="streetAddress") 1201 Houston Street
-                      | #[span(itemprop="addressLocality") Fort Worth], #[span(itemprop="addressRegion") TX] #[span(class="h-Clearfix" itemprop="postalCode") 76102]
-                      span(class="h-Clearfix" itemprop="addressCountry") United States
-                    a(href="tel:+1-800-555-5555" itemprop="telephone") +1-800-555-5555
-                  p: a.c-Button(href="#0") link
-                  p: a.c-Button link without href
-                  p: button.c-Button button
-                  p: button.c-Button(disabled="") disabled button
-                  p Early Bird Rates - Save up to $200!
-                  p.
-                    $675 - Members #[br]
-                    $875 - Non-Members #[br]
-                    #[a(href="") More options &amp; rates available]#[br]
-                    Prices go up February 12, 2014
+                  header
+                    img.h-Block.-mb-1(src=conference.image.sidebar alt="Boston Skyline" itemprop="photo")
+                    h2.c-Callout__Hn.-pt-0(itemprop="description") Official Conference Venue
+                  div.c-Callout__Body
+                    p
+                      a.h-Clearfix.-fw-b(href="/location/hotel-travel" itemprop="url")
+                        span(itemprop="name") Sheraton Boston Hotel &amp; Hynes Convention Center
+                      span(itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress")
+                        span(class="h-Clearfix" itemprop="streetAddress") 1201 Houston Street
+                        | #[span(itemprop="addressLocality") Fort Worth], #[span(itemprop="addressRegion") TX] #[span(class="h-Clearfix" itemprop="postalCode") 76102]
+                        span(class="h-Clearfix" itemprop="addressCountry") United States
+                      a(href="tel:+1-800-555-5555" itemprop="telephone") +1-800-555-5555
+                    p: a.c-Button(href="#0") Call To Action
+                    article.t-Content
+                      p Early Bird Rates - Save up to $200!
+                      h2 Prices
+                      p.
+                        $675 - Members #[br]
+                        $875 - Non-Members #[br]
+                        #[a(href="") More options &amp; rates available]#[br]
+                        Prices go up February 12, 2014
             aside.c-Callout
               h1.c-Callout__Hn Important Dates
               div.c-Callout__Body
