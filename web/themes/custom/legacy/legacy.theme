@@ -244,20 +244,21 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_images']['colors'] = array(
     '#type'   => 'fieldset',
     '#title'  => t('Site Colors'),
-    '#description' => t('Enter hex codes in <code>#rrggbb</code> format.'),
+    '#description' => t('Use the color pickers to set colors.<br/>
+      If your browser does not support color pickers, enter hex codes in <code>#rrggbb</code> format.'),
   );
   $form['conference_images']['colors']['colors_primary'] = array(
-    '#type'          => 'textfield',
+    '#type'          => 'color',
     '#title'         => t('Primary Color'),
     '#default_value' => theme_get_setting('colors_primary'),
   );
   $form['conference_images']['colors']['colors_secondary'] = array(
-    '#type'          => 'textfield',
+    '#type'          => 'color',
     '#title'         => t('Secondary Color'),
     '#default_value' => theme_get_setting('colors_secondary'),
   );
   $form['conference_images']['colors']['colors_accent'] = array(
-    '#type'          => 'textfield',
+    '#type'          => 'color',
     '#title'         => t('Accent Color'),
     '#default_value' => theme_get_setting('colors_accent'),
   );
