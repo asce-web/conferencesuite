@@ -305,7 +305,7 @@ html(lang="en")
           ul.o-List.o-Flex.c-SupporterBlock__List
             each item in list
               li.o-List__Item.o-Flex__Item.c-SupporterBlock__List__Item(itemprop="sponsor" itemscope="" itemtype="http://schema.org/Organization")
-                a(href=item.url rel="external nofollow" itemprop="url")
+                a(href=item.url rel="external nofollow noopener" itemprop="url")
                   img.c-SupporterBlock__Logo(src=item.img alt=item.name itemprop="logo")
                   meta(content=item.name itemprop="name")
       +supporterBlock('Platinum', 'lrg', [
