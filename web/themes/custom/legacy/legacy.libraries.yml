@@ -107,7 +107,7 @@ footerpanels:
       css/dist/_c-Sitemap.css: { minified: true }
       css/dist/_c-SocialListFooter.css: { minified: true }
   js:
-    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: { minified: false }
+    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: { minified: true }
 
 # copyright library
 copyright:
@@ -158,6 +158,8 @@ dateblock:
   css:
     component:
       css/dist/_c-DateBlock.css: { minified: true }
+  js:
+    js/c-DateBlock.js: { minified: false }
 
 # TimeBlock Component
 timeblock:
