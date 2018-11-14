@@ -87,8 +87,8 @@ header:
       css/dist/_c-NavBar.css: { minified: true }
   js:
     //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: { type: external, minified: true }
-    js/menu.js: { minified: false }
-    js/o-Drawer.js: { minified: false }
+    js/src/menu.js: { minified: false }
+    js/src/o-Drawer.js: { minified: false }
 
 # footerpanels library
 footerpanels:
@@ -150,7 +150,7 @@ supporters:
       css/dist/_hack.slick.css: { minified: true }
   js:
     //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: { type: external, minified: true }
-    js/slick-config.js: { minified: false }
+    js/src/slick-config.js: { minified: false }
 
 # DateBlock Component
 dateblock:
@@ -159,7 +159,7 @@ dateblock:
     component:
       css/dist/_c-DateBlock.css: { minified: true }
   js:
-    js/c-DateBlock.js: { minified: false }
+    js/src/c-DateBlock.js: { minified: false }
 
 # TimeBlock Component
 timeblock:
