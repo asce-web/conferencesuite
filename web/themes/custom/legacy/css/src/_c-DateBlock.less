@@ -65,6 +65,14 @@
   border-bottom-width: calc(0.5 * var(--lh));
   border-bottom-width: @rowgap;
 }
+.c-DateBlock__Item--expired {
+  opacity: 0.25;
+}
+
+.c-DateBlock__Date,
+.c-DateBlock__Desc {
+  opacity: inherit;
+}
 
 .c-DateBlock__Date {
   padding-right: @columngap;
@@ -75,10 +83,6 @@
   padding-left: @columngap;
   border-left: 1px solid currentColor;
   // border-left: 1px solid var(--color-secondary);
-}
-
-.c-DateBlock__Expired {
-  opacity: 0.25;
 }
 
 .c-DateBlock__MonthDay {
