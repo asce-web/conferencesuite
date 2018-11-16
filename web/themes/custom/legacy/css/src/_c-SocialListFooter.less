@@ -62,4 +62,11 @@
 
 .c-SocialListFooter__Item {
   flex: none;
+  .c-FooterIcon { // TODO make this a separate component
+    transition: all 250ms;
+    &:hover,
+    &:focus {
+      transform: scale(1.5);
+    }
+  }
 }
