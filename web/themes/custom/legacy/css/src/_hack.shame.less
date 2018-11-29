@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _hack.shame.less
 \*################################*/
+@import (reference) url('../../node_modules/xmeter/css/src/_-mb.less');
 @import (reference) url('../../node_modules/xmeter/css/src/_-pt.less');
 
 
@@ -11,6 +12,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
+// site columns, containing .o-MainCol and .o-SideCol
+// TODO create a component for this
+main > .o-Flex {
+  .-mb-2;
+  @media not all and (min-width: 45em) {
+    flex-direction: column;
+  }
+}
 // Copied from Xmeter base styles.
 // Hides the "jump to top" link at the bottom of the body.
 // See Xmeter HACK to address bugfixes
