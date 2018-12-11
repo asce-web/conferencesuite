@@ -11,8 +11,8 @@ features:
   favicon: 1
 logo:
   use_default: 1
-  path: themes/custom/legacy/asce-logo.svg
+  path: themes/custom/legacy/logo.svg
 favicon:
-  use_default: 0
-  path: themes/custom/legacy/asce-blue-a.ico
+  use_default: 1
+  path: themes/custom/legacy/favicon.ico
   mimetype: image/vnd.microsoft.icon
