@@ -17,8 +17,8 @@
 <div{{ attributes.addClass('o-Flex o-Flex--siteHead') }}>
   {{ title_prefix }}
   {{ title_suffix }}
-    {% if block_sitelogo %}
-      <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="Home"/>
+    {% if site_logo %}
+      <img class="o-Flex__Item c-SiteLogo" src="{{ site_logo }}" alt="Home"/>
     {% endif %}
     {% if block_secondarylogo %}
       <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="Home"/>
