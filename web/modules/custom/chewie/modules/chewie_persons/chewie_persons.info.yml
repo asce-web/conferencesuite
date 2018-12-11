@@ -1,0 +1,19 @@
+name: Persons
+description: 'Person content type and associated functionality and styles.'
+type: module
+core: 8.x
+package: Chewie
+version: 8.x-0.1.0
+dependencies:
+  - chewie_content
+  - chewie_sessions
+  - field
+  - file
+  - image
+  - link
+  - menu_ui
+  - node
+  - pathauto
+  - telephone
+  - text
+  - user

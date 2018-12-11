@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_sessions
+    - node.type.person
+    - node.type.session
+id: node.person.field_person_sessions
+field_name: field_person_sessions
+entity_type: node
+bundle: person
+label: Session(s)
+description: 'Connect one or more sessions to this person. Session names must be separated by commas.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      session: session
+    sort:
+      field: field_session_starttime
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

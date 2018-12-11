@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_bio
+    - node.type.person
+  module:
+    - text
+id: node.person.field_person_bio
+field_name: field_person_bio
+entity_type: node
+bundle: person
+label: Bio
+description: 'Biography of the person. Click <b>Edit Summary</b> to enter a short teaser of the bio (280 characters max).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
