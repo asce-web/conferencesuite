@@ -7,25 +7,25 @@ provider: ldap_provider
 provider_config:
   status:
     server: windows_dc01
-    only_ldap_authenticated: 1
+    only_ldap_authenticated: true
   filter_and_mappings:
-    use_first_attr_as_groupid: 1
+    use_first_attr_as_groupid: true
 provider_mappings:
   -
     query: conferenceadmin
-    is_regex: 0
+    is_regex: false
   -
     query: conferencemanager
-    is_regex: 0
+    is_regex: false
   -
     query: conferenceeditor
-    is_regex: 0
+    is_regex: false
   -
     query: ''
-    is_regex: 0
+    is_regex: false
   -
     query: ''
-    is_regex: 0
+    is_regex: false
 consumer: authorization_drupal_roles
 consumer_config: {  }
 consumer_mappings:
@@ -43,5 +43,5 @@ synchronization_modes:
   user_logon: user_logon
 synchronization_actions:
   regrant_provider_provisioned: regrant_provider_provisioned
-  revoke_provider_provisioned: 0
-  create_consumers: 0
+  revoke_provider_provisioned: '0'
+  create_consumers: '0'
