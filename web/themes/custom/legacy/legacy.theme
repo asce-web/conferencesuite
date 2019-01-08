@@ -6,9 +6,9 @@
 function legacy_preprocess_html(&$variables) {
   $variables['html_developer_class']   = theme_get_setting('asset_class');
   $variables['html_developer_channel'] = theme_get_setting('asset_channel');
-  $variables['html_colors_primary']   = theme_get_setting('colors_primary');
-  $variables['html_colors_secondary'] = theme_get_setting('colors_secondary');
-  $variables['html_colors_accent']    = theme_get_setting('colors_accent');
+  $variables['html_colors_primary']   = theme_get_setting('colors_primary_override')   ?: theme_get_setting('colors_primary');
+  $variables['html_colors_secondary'] = theme_get_setting('colors_secondary_override') ?: theme_get_setting('colors_secondary');
+  $variables['html_colors_accent']    = theme_get_setting('colors_accent_override')    ?: theme_get_setting('colors_accent');
 
   $asset_channel = theme_get_setting('asset_channel');
 
@@ -244,8 +244,8 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_images']['colors'] = array(
     '#type'   => 'fieldset',
     '#title'  => t('Site Colors'),
-    '#description' => t('Use the color pickers to set colors.<br/>
-      If your browser does not support color pickers, enter hex codes in <code>#rrggbb</code> format.'),
+    '#description' => t('Use these color pickers to set website colors.<br/>
+      If you see text fields instead of color pickers, enter hex codes in <code>#rrggbb</code> format.'),
   );
   $form['conference_images']['colors']['colors_primary'] = array(
     '#type'          => 'color',
@@ -261,6 +261,27 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
     '#type'          => 'color',
     '#title'         => t('Accent Color'),
     '#default_value' => theme_get_setting('colors_accent'),
+  );
+
+  $form['conference_images']['colors_override'] = array(
+    '#type'   => 'fieldset',
+    '#title'  => t('Site Colors &mdash; Override Fields'),
+    '#description' => t('Use these text fields to override the color pickers above. Text must be in <code>#rrggbb</code> format.'),
+  );
+  $form['conference_images']['colors_override']['colors_primary_override'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Primary Color Override'),
+    '#default_value' => theme_get_setting('colors_primary_override'),
+  );
+  $form['conference_images']['colors_override']['colors_secondary_override'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Secondary Color Override'),
+    '#default_value' => theme_get_setting('colors_secondary_override'),
+  );
+  $form['conference_images']['colors_override']['colors_accent_override'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Accent Color Override'),
+    '#default_value' => theme_get_setting('colors_accent_override'),
   );
 
   /**
