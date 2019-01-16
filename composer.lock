@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7a71d67b50bdc2fba8af71b55898da5",
+    "content-hash": "b443681e17964633b9472d23c7e64cf7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2980,6 +2980,54 @@
             "homepage": "https://www.drupal.org/project/google_tag",
             "support": {
                 "source": "http://cgit.drupalcode.org/google_tag"
+            }
+        },
+        {
+            "name": "drupal/link_plain_text_formatter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/link_plain_text_formatter",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/link_plain_text_formatter-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "c8c35697adea85ea8f669845f43d44496319e2ad"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1504703644",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/1133754",
+                    "email": "bart@croquemonsieur.be"
+                }
+            ],
+            "description": "Provides a plain text formatter for a Link field.",
+            "homepage": "https://www.drupal.org/project/link_plain_text_formatter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/link_plain_text_formatter"
             }
         },
         {

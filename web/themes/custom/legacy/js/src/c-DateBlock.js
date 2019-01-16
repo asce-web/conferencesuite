@@ -7,7 +7,7 @@
   // If we did this in Drupal, the ‘current date’ would be the build date,
   // which depends on caching settings.
   $('.c-DateBlock__Date > time[datetime]').each(function () {
-    let start = new Date(this.dateTime).getTime()
+    let start = new Date(this.dateTime).getTime() + 24*60*60*1000 // add 24 hours
     if (start < Date.now()) {
       $(this).parents('.c-DateBlock__Item').addClass('c-DateBlock__Item--expired')
     }

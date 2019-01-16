@@ -17,8 +17,8 @@
 <div{{ attributes.addClass('o-Flex o-Flex--siteHead') }}>
   {{ title_prefix }}
   {{ title_suffix }}
-    {% if block_sitelogo %}
-      <img class="o-Flex__Item c-SiteLogo" src="{{ block_sitelogo }}" alt="Home"/>
+    {% if site_logo %}
+      <img class="o-Flex__Item c-SiteLogo" src="{{ site_logo }}" alt="Home"/>
     {% endif %}
     {% if block_secondarylogo %}
       <img class="o-Flex__Item c-SiteLogo c-SiteLogo--secondary" src="{{ block_secondarylogo }}" alt="Home"/>
@@ -26,25 +26,28 @@
     <div class="o-Flex__Item c-ConferenceTitles">
       <h1 class="c-ConferenceTitles__Name">{{ block_name }}</h1>
       <p class="c-ConferenceTitles__Detail">
-        {% if block_location_advisory %}
-          <abbr title="{{ block_location_advisory }}">{{ block_location_display }}</abbr>
-        {% else %}
           <span>{{ block_location_display }}</span>
-        {% endif %}
         {{- ' | ' -}}
-        <time datetime="{{ block_startdate|date('c') }}">
+        {%- if not block_enddate or (block_startdate|date('Y-m-d') == block_enddate|date('Y-m-d')) -%}
+          <time datetime="{{ block_startdate|date('c') }}" itemprop="startDate endDate">
+            {{- block_startdate|date('F j, Y') -}}
+          </time>
+        {%- else -%}
+        <time datetime="{{ block_startdate|date('c') }}" itemprop="startDate">
           {{- block_startdate|date('F j') -}}
           {%- if block_startdate|date('Y') != block_enddate|date('Y') %}
             {{- block_startdate|date(', Y') -}}
           {% endif -%}
         </time>
         {{- '&ndash;' -}}
-        <time datetime="{{ block_enddate|date('c') }}">
-          {%- if block_startdate|date('m') != block_enddate|date('m') %}
+        <time datetime="{{ block_enddate|date('c') }}" itemprop="endDate">
+          {%- if (block_startdate|date('m') != block_enddate|date('m')) or
+                 (block_startdate|date('Y') != block_enddate|date('Y')) %}
             {{- block_enddate|date('F ') -}}
           {% endif -%}
           {{- block_enddate|date('j, Y') -}}
         </time>
+        {% endif %}
       </p>
       {% if site_slogan %}
         <p class="c-ConferenceTitles__Tagline">{{ site_slogan }}</p>

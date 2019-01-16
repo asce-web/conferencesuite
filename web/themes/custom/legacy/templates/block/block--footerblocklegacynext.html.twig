@@ -46,25 +46,28 @@
     <div class="o-FooterGrid__Titles c-ConferenceTitles">
       <h1 class="c-ConferenceTitles__Name">{{ content.field_footerblock_legacy_name.0 }}</h1>
       <p class="c-ConferenceTitles__Detail">
-        {% if content.field_footerblock_legacy_loc_ttl.0 %}
-          <abbr title="{{ content.field_footerblock_legacy_loc_ttl.0 }}">{{ content.field_footerblock_legacy_loc_dsp.0 }}</abbr>
-        {% else %}
           <span>{{ content.field_footerblock_legacy_loc_dsp.0 }}</span>
-        {% endif %}
         {{- ' | ' -}}
-        <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}">
+        {%- if not content.field_footerblock_legacy_end.0['#markup'] or (content.field_footerblock_legacy_start.0['#markup']|date('Y-m-d') == content.field_footerblock_legacy_end.0['#markup']|date('Y-m-d')) -%}
+          <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}" itemprop="startDate endDate">
+            {{- content.field_footerblock_legacy_start.0['#markup']|date('F j, Y') -}}
+          </time>
+        {%- else -%}
+        <time datetime="{{ content.field_footerblock_legacy_start.0['#markup']|date('c') }}" itemprop="startDate">
           {{- content.field_footerblock_legacy_start.0['#markup']|date('F j') -}}
           {%- if content.field_footerblock_legacy_start.0['#markup']|date('Y') != content.field_footerblock_legacy_end.0['#markup']|date('Y') %}
             {{- content.field_footerblock_legacy_start.0['#markup']|date(', Y') -}}
           {% endif -%}
         </time>
         {{- '&ndash;' -}}
-        <time datetime="{{ content.field_footerblock_legacy_end.0['#markup']|date('c') }}">
-          {%- if content.field_footerblock_legacy_start.0['#markup']|date('m') != content.field_footerblock_legacy_end.0['#markup']|date('m') %}
+        <time datetime="{{ content.field_footerblock_legacy_end.0['#markup']|date('c') }}" itemprop="endDate">
+          {%- if (content.field_footerblock_legacy_start.0['#markup']|date('m') != content.field_footerblock_legacy_end.0['#markup']|date('m')) or
+                 (content.field_footerblock_legacy_start.0['#markup']|date('Y') != content.field_footerblock_legacy_end.0['#markup']|date('Y')) %}
             {{- content.field_footerblock_legacy_end.0['#markup']|date('F ') -}}
           {% endif -%}
           {{- content.field_footerblock_legacy_end.0['#markup']|date('j, Y') -}}
         </time>
+        {% endif %}
       </p>
       <p class="c-ConferenceTitles__Tagline">{{ content.field_footerblock_legacy_theme.0 }}</p>
     </div>

@@ -3,7 +3,7 @@ description: 'Venue content type and associated functionality and styles.'
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.4.2
+version: 8.x-1.5.0
 dependencies:
   - block
   - chewie_content
@@ -12,6 +12,7 @@ dependencies:
   - file
   - image
   - link
+  - link_plain_text_formatter
   - menu_ui
   - node
   - pathauto
