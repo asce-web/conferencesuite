@@ -32,6 +32,7 @@
 <html{{ html_attributes.setAttribute('data-asset-channel', channel) }}>
   <head>
     <title>{{ head_title|safe_join(' | ') }}</title>
+    <meta name="description" content="{{ site_slogan }}"/>
     <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
     <style>
