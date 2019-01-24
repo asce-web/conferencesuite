@@ -32,7 +32,9 @@
 <html{{ html_attributes.setAttribute('data-asset-channel', channel) }}>
   <head>
     <title>{{ head_title|safe_join(' | ') }}</title>
+    <meta name="author" content="American Society of Civil Engineers (ASCE)"/>
     <meta name="description" content="{{ site_slogan }}"/>
+    {% if html_colors_primary %}<meta name="theme-color" content="{{ html_colors_primary }}"/>{% endif %}
     <head-placeholder token="{{ placeholder_token }}">
     <css-placeholder token="{{ placeholder_token }}">
     <style>
