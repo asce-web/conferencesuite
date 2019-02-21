@@ -10,6 +10,8 @@ function legacy_preprocess_html(&$variables) {
   $variables['html_colors_secondary'] = theme_get_setting('colors_secondary_override') ?: theme_get_setting('colors_secondary');
   $variables['html_colors_accent']    = theme_get_setting('colors_accent_override')    ?: theme_get_setting('colors_accent');
 
+  $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan'); // NB https://www.drupal.org/forum/support/theme-development/2016-02-03/how-to-show-head_titleslogan-in-page
+
   $asset_channel = theme_get_setting('asset_channel');
 
   // Determine which library to use; see `legacy.libraries.yml`
