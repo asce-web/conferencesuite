@@ -1,0 +1,91 @@
+
+/*################################*\
+    legacy  |  _c-CtaLink.less
+\*################################*/
+@import (reference) url('__settings.less');
+@import (reference) url('__tool.buttonText.less');
+
+
+// CTA Link
+//
+// A CTA (Call-To-Action) Link is an anchor (`a` element) that is pronounced and highlighed,
+// offset from other links on the page.
+// Restrictions on **how many** CTA Links per page are not yet set in stone, but
+// they should be limited to prevent sensory overload and clutter.
+//
+// CTA Links are displayed inline-block, so in order to preserve
+// vertical rhythm, be sure to contain them in typographical block-level elements
+// such as paragraphs or lists.
+//
+// Every CTA Link Component must have styles available for each of the following states:
+// <dl>
+//   <dt><b>default</b></dt>
+//   <dd>the CTA does something or the link goes somewhere, but the user is not interacting with the component</dd>
+//   <dt><b>hover</b>/<b>focus</b></dt>
+//   <dd>the user’s cursor is hovering over the component, or the user agent is focusing on the component</dd>
+//   <dt><b>active</b></dt>
+//   <dd>the user is in the process of clicking/activating the component</dd>
+//   <dt><b>disabled</b></dt>
+//   <dd>the component is inaccessable and/or does nothing, and the user may not
+//     interact with it</dd>
+// </dl>
+//
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2018-07-24</time></dd>
+// </dl></header>
+//
+// Markup:
+// <ul class="o-List o-Flex">
+//   <li class="o-List__Item o-Flex__Item"><a class="c-CtaLink {{ modifier_class }}" href="#0">link</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-CtaLink {{ modifier_class }} _hover" href="#0">link hover</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-CtaLink {{ modifier_class }} _active" href="#0">link active</a></li>
+//   <li class="o-List__Item o-Flex__Item"><a class="c-CtaLink {{ modifier_class }}">link disabled</a></li>
+// </ul>
+// <ul class="o-List o-Flex">
+//   <li class="o-List__Item o-Flex__Item"><button class="c-CtaLink {{ modifier_class }}">button</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-CtaLink {{ modifier_class }} _hover">button hover</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-CtaLink {{ modifier_class }} _active">button active</a></li>
+//   <li class="o-List__Item o-Flex__Item"><button class="c-CtaLink {{ modifier_class }}" disabled="">button disabled</a></li>
+// </ul>
+//
+// .c-CtaLink--dark      - (color style) generic button but dark
+// .c-CtaLink--primary   - (color style) site primary color
+// .c-CtaLink--secondary - (color style) site secondary color
+// .c-CtaLink--ghost     - (color style) ghost button, for light backgrounds
+// .c-CtaLink--ghost.c-Button--ghost--dark - (color style) ghost, for dark backgrounds
+// .c-CtaLink--glossy    - (texture style) shiny & 3D. Mix with any color style as needed.
+// .c-CtaLink--hilite    - (sizing style) group of large buttons in a highlight block ("callout"). Use with any color or texture style.
+// .c-CtaLink--inline    - (sizing style) buttons in-line with text. Use with any color or texture style.
+//
+// Weight: 18.1
+//
+// Styleguide Components.CtaLink
+.c-CtaLink {
+  .buttonText();
+  display: inline-block;
+  padding: (0.5 * 1.5rem) 1rem;        // COMBAK:FALLBACK
+  padding: calc(0.5 * var(--lh)) 1rem; // COMBAK:FALLBACK
+  padding: 0.5lh 1rem;
+  font-size: (1em * 14/16);
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: @g-color-btn-bg;
+  border-radius: 0.25rem;
+  box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw;
+  a& {
+    &,
+    &:hover,
+    &:focus {
+      color: @g-color-btn-txt;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: lighten(@g-color-btn-bg, 5%);
+  }
+  &:active {
+    background-color: darken(@g-color-btn-bg, 5%);
+    box-shadow: 0 (1em/8) 0 0 @g-color-btn-sw inset;
+  }
+}
