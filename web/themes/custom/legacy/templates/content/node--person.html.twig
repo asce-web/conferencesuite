@@ -92,6 +92,18 @@
 
   <div{{ content_attributes }}>
     {{ content }}
+    <h1 class="-c-primary" itemprop="name">
+      {{- label -}}
+      {%- if content.field_person_suffix.0 %}, {{ content.field_person_suffix.0 }}{% endif -%}
+    </h1>
+    {% if content.field_person_jobtitle.0 %}<p itemprop="jobTitle">{{ content.field_person_jobtitle.0 }}</p>{% endif %}
+    {% if content.field_person_affiliation.0 %}<p itemprop="affiliation">{{ content.field_person_affiliation.0 }}</p>{% endif %}
+    {% if content.field_person_image.0 ?: content.field_person_imageurl.0 %}
+      <p><img itemprop="image" alt="" src="{{ content.field_person_image.0 ?: content.field_person_imageurl.0 }}"/></p>
+    {% endif %}
+    {{ content.field_person_sessions }}
+    {{ content.field_person_bio }}
+    <!--p itemprop="description">for summary, use: \{\{ content.field_person_bio['#items'].getValue(0).0.summary \}\}</p-->
   </div>
 
 </article>
