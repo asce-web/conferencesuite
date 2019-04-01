@@ -176,6 +176,13 @@ daterange:
     component:
       css/dist/_c-DateRange.css: { minified: true }
 
+# Venue Component
+venue:
+  version: VERSION
+  css:
+    component:
+      css/dist/_c-Venue.css: { minified: true }
+
 # extension of 'classy/messages'
 messages:
   version: VERSION
