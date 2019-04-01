@@ -1,0 +1,3 @@
+# undo Drupal git normalization for all files:
+# allow tabs in indents
+*     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tabwidth=2
