@@ -5,9 +5,7 @@
   "main": "legacy.css",
   "private": true,
   "scripts": {
-    "unbuild:docs": "rm -r docs/styleguide/",
-    "unbuild:dist": "rm -r css/dist/",
-    "unbuild": "rm proto/legacytest.html  &&  npm run unbuild:docs  &&  npm run unbuild:dist",
+    "unbuild": "rm proto/legacytest.html",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-env": "^7.4.2",
     "aria-patterns": "^1.0.0",
     "babel-preset-minify": "^0.5.0",
     "gulp": "^4.0.0",
@@ -26,7 +24,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",
-    "kss": "^3.0.0-beta.23",
+    "kss": "^3.0.0-beta.25",
     "xmeter": "^7.0.0"
   },
   "dependencies": {}
