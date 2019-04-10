@@ -12,17 +12,6 @@
 // vertical rhythm, be sure to contain them in typographical block-level elements
 // such as paragraphs or lists.
 //
-// Buttons may be in the form of <code>a</code> elements (links or anchors) or
-// <code>button</code> elements.
-//
-// Keep in mind these button usage guidelines:
-// - `button` elements should indicate action and be worded actionably.
-//   `button`s should initiate action *on the page*, not navigate the user away from the page.
-// - Use an `a` element instead of a `button` if there is a
-//   meaningful URL (or URL fragment), or if the user is navigated *away from the page*.
-// - Of course, `a` elements as well as `button` elements
-//   may be styled to look like Button Components.
-//
 // Every Button Component must have styles available for each of the following states:
 // <dl>
 //   <dt><b>default</b></dt>
@@ -32,29 +21,21 @@
 //   <dt><b>active</b></dt>
 //   <dd>the user is in the process of clicking/activating the component</dd>
 //   <dt><b>disabled</b></dt>
-//   <dd>the component is inaccessable and/or does nothing, and the user may not
-//     interact with it; this state is implemented by:
-//     <ul>
-//       <li>a <code>button</code> with the <code>[disabled]</code> attribute, or</li>
-//       <li>an <code>a</code> with the <code>[href]</code> attribute <em>absent</em>
-//         (this is not the same as an empty attribute <code>[href=""]</code>).
-//         <small>Note that as of <time>2017-12-01</time>, an <code>a:not([href])</code>
-//         element is not sufficient to implement the <b>disabled</b> style; the
-//         class <code>.c-Button--disabled</code> must be added to do so.</small></li>
-//     </ul>
-//   </dd>
+//   <dd>the component is inaccessable and/or does nothing, and the user may not interact with it</dd>
 // </dl>
 //
 // <header><dl>
 //   <dt>author</dt>  <dd>Chris Harvey</dd>
-//   <dt>updated</dt> <dd><time>2017-06-14</time></dd>
+//   <dt>updated</dt> <dd><time>2018-07-24</time></dd>
 // </dl></header>
 //
 // Markup:
-// <p><a class="c-Button" href="#0">link</a></p>
-// <p><a class="c-Button c-Button--disabled" href="#0">link with <code>.c-Button--disabled</code></a></p>
-// <p><button class="c-Button">button</button></p>
-// <p><button class="c-Button" disabled="">disabled button</button></p>
+// <p><button type="button" class="c-Button">button</button></p>
+// <p><button type="button" class="c-Button" disabled="">disabled button</button></p>
+// <p><a class="c-Button" href="#0">button-looking link</a></p>
+// <p><a class="c-Button c-Button--disabled" href="#0">button-looking link with <code>.c-Button--disabled</code></a></p>
+// <p><a class="c-Button">button-looking anchor (no href)</a></p>
+// <p><a class="c-Button c-Button--disabled">button-looking anchor with <code>.c-Button--disabled</code></a></p>
 //
 // Weight: 19
 //
@@ -80,7 +61,7 @@
     }
   }
   a& {
-    text-decoration: none; // TEMP for links that look like buttons. remove when `c-CtaLink` is created
+    text-decoration: none; // TEMP for links that look like buttons. remove when `c-CtaLink` is used
   }
   &:hover,
   &:focus {
@@ -92,7 +73,7 @@
   }
 }
 
-button.c-Button:disabled, // NOTE: courtesy for those who forget the subclass
+button.c-Button:disabled, // courtesy for those who forget the subclass
 .c-Button--disabled {
     opacity: 0.25;
     cursor: not-allowed;
