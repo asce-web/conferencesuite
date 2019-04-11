@@ -3,7 +3,7 @@ description: 'Important Date content type and associated functionality and style
 type: module
 core: 8.x
 package: Chewie
-version: 8.x-1.4.1
+version: 8.x-2.0.0
 dependencies:
   - block
   - chewie_content

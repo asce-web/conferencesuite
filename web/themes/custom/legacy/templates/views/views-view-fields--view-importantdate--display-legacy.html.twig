@@ -30,18 +30,18 @@
  */
 #}
 <td class="c-DateBlock__Date">
-  <time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content|date('Y-m-d') }}" itemprop="startTime endTime">
-    <span class="c-DateBlock__MonthDay h-Block">{{ fields.field_importantdate_startdate.content|date('M j') }}</span>
-    <span class="h-Block">{{ fields.field_importantdate_startdate.content|date('Y') }}</span>
-  </time>
+	<time class="h-Block" datetime="{{ fields.field_importantdate_startdate.content|striptags|date('Y-m-d') }}" itemprop="startTime endTime">
+		<span class="c-DateBlock__MonthDay h-Block">{{ fields.field_importantdate_startdate.content|striptags|date('M j') }}</span>
+		<span class="h-Block">{{ fields.field_importantdate_startdate.content|striptags|date('Y') }}</span>
+	</time>
 </td>
 <td class="c-DateBlock__Desc">
-  <a
-    {% if fields.field_importantdate_link.content == 'On' %} class="c-DateBlock__Link" href="{{ fields.field_importantdate_url.content ?: fields.path.content }}" itemprop="url"{% endif %}
-    {% if fields.field_importantdate_link.content == 'Off' %} role="none presentation"{% endif %}
-  >
-    <data value="{{ fields.title.content }}" itemprop="name">
-      {{- fields.field_importantdate_displayname.content ?: fields.title.content -}}
-    </data>
-  </a>
+	<a
+		{% if fields.field_importantdate_link.content|striptags|trim == 'On' %} class="c-DateBlock__Link" href="{{ fields.field_importantdate_url.content|striptags|trim ?: fields.path.content|striptags|trim }}" itemprop="url"{% endif %}
+		{% if fields.field_importantdate_link.content|striptags|trim == 'Off' %} role="none presentation"{% endif %}
+	>
+		<data value="{{ fields.title.content|striptags|trim }}" itemprop="name">
+			{{- fields.field_importantdate_displayname.content|striptags|trim ?: fields.title.content|striptags|trim -}}
+		</data>
+	</a>
 </td>
