@@ -29,11 +29,10 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<a class="h-Block" rel="external nofollow noopener" href="{{ fields.field_supporter_url.content }}" itemprop="url" target="_blank">
-  <data value="{{ fields.title.content }}" itemprop="name">
-    <img class="c-SupporterBlock__Logo" src="{{ fields.field_supporter_logo.content }}" alt="
-      {{- fields.field_supporter_displayname.content ?: fields.title.content -}}
-    " itemprop="logo"/>
-  </data>
+<a rel="external nofollow noopener" href="{{ fields.field_supporter_url.content|striptags|trim }}" itemprop="url" target="_blank">
+	<data value="{{ fields.title.content|striptags|trim }}" itemprop="name">
+		<img class="c-SupporterBlock__Logo" src="{{ fields.field_supporter_logo.content|striptags|trim }}" alt="
+			{{- fields.field_supporter_displayname.content|striptags|trim ?: fields.title.content|striptags|trim -}}
+		" itemprop="logo"/>
+	</data>
 </a>
-<span class="c-SupporterBlock__Label h-Block">{{ fields.title1.content }}</span>
