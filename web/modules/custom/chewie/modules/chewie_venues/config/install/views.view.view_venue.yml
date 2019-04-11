@@ -94,7 +94,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -159,7 +159,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -224,7 +224,7 @@ display:
           group_type: group
           admin_label: 'Content: Image (url)'
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -279,70 +279,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_venue_image_1:
-          id: field_venue_image_1
-          table: node__field_venue_image
-          field: field_venue_image
-          relationship: none
-          group_type: group
-          admin_label: 'Content: Image (alt)'
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '{{ field_venue_image_1__alt }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_venue_url:
           id: field_venue_url
           table: node__field_venue_url
@@ -351,7 +287,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -418,7 +354,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -481,7 +417,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -544,7 +480,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -607,7 +543,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -670,7 +606,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -733,7 +669,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -796,7 +732,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -859,7 +795,7 @@ display:
           group_type: group
           admin_label: 'Content: Call To Action (url)'
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -926,7 +862,7 @@ display:
           group_type: group
           admin_label: 'Content: Call To Action (title)'
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -988,7 +924,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -1042,55 +978,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<aside class=\"c-Callout c-Venue\" itemprop=\"location\" itemscope=\"\" itemtype=\"http://schema.org/LodgingBusiness\">\n  <header>\n    {% if field_venue_image %}\n      <img class=\"h-Block -mb-1\" alt=\"\" src=\"{{ field_venue_image }}\" itemprop=\"photo\"/>\n    {% endif %}\n    <h1 class=\"c-Callout__Hn -pt-0{% if field_venue_label == 'Off' %} h-Hidden{% endif %}\" itemprop=\"description\">{{ title }}</h1>\n  </header>\n  <div class=\"c-Callout__Body\">\n    <p>\n      <a class=\"-fw-b\"{% if field_venue_url %} href=\"{{ field_venue_url }}\" itemprop=\"url\"{% endif %}{% if not field_venue_url %} role=\"none presentation\"{% endif %}>\n        <span itemprop=\"name\">{{ field_venue_name }}</span>\n      </a>\n      <br/>\n      <span itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n        <span itemprop=\"streetAddress\">{{ field_venue_streetaddress }}</span>\n        <br/>\n        <span itemprop=\"addressLocality\">{{ field_venue_addresslocality }}</span>\n        {%- if field_venue_addressregion -%}\n          ,\n          <span itemprop=\"addressRegion\">{{ field_venue_addressregion }}</span>\n        {% endif %}\n        {% if field_venue_postalcode %}\n          <span itemprop=\"postalCode\">{{ field_venue_postalcode }}</span>\n        {% endif %}\n        {% if field_venue_addresscountry %}\n          <br/>\n          <span itemprop=\"addressCountry\">{{ field_venue_addresscountry }}</span>\n        {% endif %}\n      </span>\n      {% if field_venue_telephone %}\n        <br/>\n        <a href=\"tel:{{ field_venue_telephone }}\" itemprop=\"telephone\">{{ field_venue_telephone }}</a>\n      {% endif %}\n    </p>\n    {% if field_venue_cta %}\n      <p><a class=\"c-Button\" href=\"{{ field_venue_cta }}\">{{ field_venue_cta_1 }}</a></p>\n    {% endif %}\n    {% if field_venue_body %}\n      <article class=\"t-Content\">{{ field_venue_body }}</article>\n    {% endif %}\n  </div>\n</aside>"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
       filters:
         status:
           value: '1'
