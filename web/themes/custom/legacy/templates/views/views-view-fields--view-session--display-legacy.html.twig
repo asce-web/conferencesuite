@@ -30,17 +30,17 @@
  */
 #}
 <td class="c-TimeBlock__Times">
-  <time datetime="{{ fields.field_session_starttime.content|date('Y-m-d\\TH:i') }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:i a') }}</time>
-  &ndash;
-  <time datetime="{{ fields.field_session_endtime.content|date('Y-m-d\\TH:i') }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:i a') }}</time>
+	<time datetime="{{ fields.field_session_starttime.content|striptags|date('Y-m-d\\TH:i') }}" itemprop="startDate">{{ fields.field_session_starttime.content|striptags|date('g:i a') }}</time>
+	&ndash;
+	<time datetime="{{ fields.field_session_endtime.content|striptags|date('Y-m-d\\TH:i') }}" itemprop="endDate">{{ fields.field_session_endtime.content|striptags|date('g:i a') }}</time>
 </td>
 <td class="c-TimeBlock__Desc">
-  <a
-    {% if fields.field_session_link.content == 'On' %} class="c-TimeBlock__Link" href="{{ fields.field_session_url.content ?: fields.path.content }}" itemprop="url"{% endif %}
-    {% if fields.field_session_link.content == 'Off' %} role="none presentation"{% endif %}
-  >
-    <data value="{{ fields.title.content }}" itemprop="name">
-      {{- fields.field_session_displayname.content ?: fields.title.content -}}
-    </data>
-  </a>
+	<a
+		{% if fields.field_session_link.content|striptags|trim == 'On' %} class="c-TimeBlock__Link" href="{{ fields.field_session_url.content|striptags|trim ?: fields.path.content|striptags|trim }}" itemprop="url"{% endif %}
+		{% if fields.field_session_link.content|striptags|trim == 'Off' %} role="none presentation"{% endif %}
+	>
+		<data value="{{ fields.title.content|striptags|trim }}" itemprop="name">
+			{{- fields.field_session_displayname.content|striptags|trim ?: fields.title.content|striptags|trim -}}
+		</data>
+	</a>
 </td>
