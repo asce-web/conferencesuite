@@ -34,7 +34,7 @@ http://localhost:9000/themes/custom/legacy/docs/api/
 ```
 
 
-## Updating the Project
+## Update the Project
 
 ### Bump & Push
 1. Make sure that the version number is appropriate.
@@ -72,9 +72,9 @@ http://localhost:9000/themes/custom/legacy/docs/api/
 7. Provide release notes for the newly-released tag.
 
 ### Deploy
-1. Log into the **Plesk** server, find the website **conferencesuite.asce.org**, and open the **Git** plugin.
+1. Log in to the **Plesk** server, find the website **conferencesuite.asce.org**, and open the **Git** plugin.
 2. Click the **Pull Updates** button, then the **Deploy from Repository** button.
-3. Log into the SSH server on the command line
+3. Log in to the SSH server on the command line.
 4. Run the following bash commands:
 	```bash
 	$ cd ./conferencesuite.asce.org/
