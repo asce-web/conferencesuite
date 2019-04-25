@@ -83,3 +83,24 @@ http://localhost:9000/themes/custom/legacy/docs/api/
 	$ npm ci
 	$ npm run build
 	```
+
+
+## Receive Updates
+For each Drupal 8 conference site (live, staged, and dormant):
+
+1. Log in to the site with an admin account.
+2. If a database update is required, navigate to `/update.php` and perform the update. Otherwise, skip this step.
+3. Rebuild the cache. (This may take some time depending on how busy the server is.)
+4. If there are any module updates required, perform the following substeps. Otherwise, skip this step.
+  1. Navigate to **Configuration → Development → Features**
+  2. Under Bundle, select **Chewie**
+  3. Navigate to **Differences** tab.
+  4. Select the differences you want to pull in.
+    - **Caution**: Do not pull in diffs from `legacy.settings`, as this will reset theme information.
+    - **Caution**: Do not pull in diffs from `google_tag.settings`, as this will reset the GTM ID.
+  5. Hit **Import changes**.
+  6. Rebuild the cache (again).
+5. Inspect the site to ensure that the updates have been received.
+
+**Note**: For best results, perform the steps above in parallel, with each conference site in an open browser tab.
+For example, do Step 1 for all sites, then Step 2, etc. This technique tends to be faster, because you can be doing work on one site while another site is loading/processing.
