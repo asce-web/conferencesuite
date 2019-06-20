@@ -1,6 +1,6 @@
 {
   "name": "legacy",
-  "version": "2.6.3",
+  "version": "2.6.5",
   "description": "Drupal theme for ASCE conference sites 2015–2019.",
   "main": "legacy.css",
   "private": true,
