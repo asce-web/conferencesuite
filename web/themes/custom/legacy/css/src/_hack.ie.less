@@ -466,4 +466,19 @@
   flex-shrink: 0;
   flex-basis: calc(100% - 8rem); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
+
+.c-ConferenceTitles__Name { // Conferences with lengthy titles
+  @media (min-width: 25em) {
+    max-width: 45ch;
+  }
+  @media (min-width: 30em) {
+    max-width: 30ch;
+  }
+  @media (min-width: 35em) {
+    max-width: 51ch;
+  }
+}
+.c-CopyrightLine__Logo {
+  flex: 0 0 150px;
+}
 }
