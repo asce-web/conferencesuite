@@ -19,7 +19,7 @@
       <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}">
         {{ page.header }}
       </a>
-      <div class="o-Flex__Item o-SideCol c-TopImg -d-n-nM" style="background-image: url('{{ page_images_banner }}');">
+      <div class="o-Flex__Item o-SideCol o-SideCol__Header c-TopImg -d-n-nM" style="background-image: url('{{ page_images_banner }}');">
         <span class="c-YearBadge" aria-hidden="true">
           {{- (page_startdate|date('Y'))[:2] -}}
           <span class="c-YearBadge__Year">{{ (page_startdate|date('Y'))[2:] }}</span>
@@ -32,7 +32,7 @@
     <h1 class="h-Hidden">Main Menu</h1>
     <div class="h-Constrain o-Flex">
       <div class="o-Flex__Item o-MainCol">{{ page.menu_main }}</div>
-      <div class="o-Flex__Item o-SideCol">{{ page.menu_register }}</div>
+      <div class="o-Flex__Item o-SideCol o-SideCol__Header">{{ page.menu_register }}</div>
     </div>
   </nav>
   <nav>
@@ -43,7 +43,7 @@
 <main class="h-Constrain" id="main" itemscope="" itemtype="http://schema.org/Event">
   <div class="o-Flex h-Constrain">
     <div class="o-Flex__Item o-MainCol">{{ page.content }}</div>
-    <div class="o-Flex__Item o-SideCol">{{ page.sidebar }}</div>
+    <div class="o-Flex__Item o-SideCol o-SideCol__Content">{{ page.sidebar }}</div>
   </div>
   <aside>
     <h1 class="h-Hidden">Supporters</h1>
