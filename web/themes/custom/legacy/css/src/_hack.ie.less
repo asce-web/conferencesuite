@@ -435,10 +435,16 @@
       }
     }
     //**** end ### _dev.less ****//
-  .o-SideCol {
-    @media (min-width: 45em) { flex: 0 0 40%; }
-    @media (min-width: 60em) { flex: 0 0 35%; }
-    @media (min-width: 90em) { flex: 0 0 30%; }
+  .o-SideCol__Header {
+    @media (min-width: 600px)  and (max-width: 1279px) { flex: 0 0 39%; }
+    @media (min-width: 1280px) and (max-width: 1335px) { flex: 0 0 29%; }
+    @media (min-width: 1336px) { flex: 0 0 30%; }
+  }
+
+  .o-SideCol__Content {
+    @media (min-width: 600px)  and (max-width: 1279px) { flex: 0 0 33%; }
+    @media (min-width: 1280px) and (max-width: 13365px) { flex: 0 0 24%; }
+    @media (min-width: 1336px) { flex: 0 0 26%; }
   }
   //---- end ## Other custom props ----//
 //++++ end # CUSTOM PROPERTY FALLBACKS ++++//
@@ -458,8 +464,6 @@
   //---- end ## Filters ----//
 //++++ end # CSS3 FALLBACKS ++++//
 
-
-
 .c-DateBlock__Desc {
   // IE doesn’t support `calc()` values of `flex` shorthand, so must separate into longhands
   flex-grow: 0;
@@ -467,17 +471,14 @@
   flex-basis: calc(100% - 8rem); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
 
-.c-ConferenceTitles__Name { // Conferences with lengthy titles
-  @media (min-width: 25em) {
-    max-width: 45ch;
-  }
-  @media (min-width: 30em) {
-    max-width: 30ch;
-  }
-  @media (min-width: 35em) {
-    max-width: 51ch;
-  }
+.c-ConferenceTitles__Name, .c-ConferenceTitles__Tagline { // Conferences with lengthy titles
+  @media (max-width: 749px) { max-width: 52ch; }
+  @media (min-width: 750px)  and (max-width: 849px) { max-width: 30ch; }
+  @media (min-width: 850px)  and (max-width: 1279px) { max-width: 45ch; }
+  @media (min-width: 1280px) and (max-width: 1365px) { max-width: 48ch; }
+  @media (min-width: 1366px) { max-width: 52ch; }
 }
+
 .c-CopyrightLine__Logo {
   flex: 0 0 150px;
 }
