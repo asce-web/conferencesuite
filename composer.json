@@ -28,7 +28,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.0",
-        "drupal/devel": "^1.2",
+        "drupal/devel": "^2.0",
         "drupal/diff": "^1.0@RC",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/editor_file": "^1.2",
