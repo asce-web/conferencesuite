@@ -448,15 +448,21 @@
     }
     //**** end ### _dev.less ****//
   .o-SideCol__Header {
-    @media (min-width: 600px)  and (max-width: 1279px) { flex: 0 0 39%; }
+    @media (min-width: 45em)  and (max-width: 1279px) { flex: 0 0 39%; }
     @media (min-width: 1280px) and (max-width: 1335px) { flex: 0 0 29%; }
     @media (min-width: 1336px) { flex: 0 0 30%; }
   }
 
   .o-SideCol__Content {
-    @media (min-width: 600px)  and (max-width: 1279px) { flex: 0 0 33%; }
+    @media (min-width: 45em)  and (max-width: 1279px) { flex: 0 0 33%; }
     @media (min-width: 1280px) and (max-width: 13365px) { flex: 0 0 24%; }
     @media (min-width: 1336px) { flex: 0 0 26%; }
+  }
+
+  .o-Flex__Item .o-MainCol {
+    @media (min-width: 45em)  and (max-width: 1279px) { flex: 0 0 60%; }
+    @media (min-width: 1280px) and (max-width: 13365px) { flex: 0 0 71%; }
+    @media (min-width: 1336px) { flex: 0 0 70%; }
   }
   //---- end ## Other custom props ----//
 //++++ end # CUSTOM PROPERTY FALLBACKS ++++//
@@ -483,12 +489,16 @@
   flex-basis: calc(100% - 8rem); // for some reason we need a shorter width on IE (minus 8rem instead of 6rem)
 }
 
-.c-ConferenceTitles__Name, .c-ConferenceTitles__Tagline { // Conferences with lengthy titles
-  @media (max-width: 749px) { max-width: 52ch; }
+.o-Header__Items .c-ConferenceTitles__Name { // Conferences with lengthy titles
+  @media (max-width: 45em) { max-width: 52ch; }
   @media (min-width: 750px)  and (max-width: 849px) { max-width: 30ch; }
   @media (min-width: 850px)  and (max-width: 1279px) { max-width: 45ch; }
   @media (min-width: 1280px) and (max-width: 1365px) { max-width: 48ch; }
   @media (min-width: 1366px) { max-width: 52ch; }
+}
+
+.o-FooterGrid__Content li {
+  @media (max-width: 45em) { text-align: center; list-style-type: none; }
 }
 
 .c-CopyrightLine__Logo {
