@@ -32,12 +32,12 @@ function legacy_preprocess_page(&$variables) {
   $variables['page_startdate']         = theme_get_setting('conference_dates_start');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
-      $fullpath = (file_load($image) == NULL) ? '/themes/custom/legacy/images/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
+      $fullpath = (file_load($image) == NULL) ? 'https://cdn.asce.org/images/conferences/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
       //     //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ if setting path exists but no file exists at that path
       $variables['page_images_banner'] = parse_url($fullpath, PHP_URL_PATH);
     }
   } else {
-    $variables['page_images_banner'] = '/themes/custom/legacy/images/banner-default.jpg';
+    $variables['page_images_banner'] = 'https://cdn.asce.org/images/conferences/banner-default.jpg';
   }
 }
 
