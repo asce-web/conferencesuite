@@ -1,7 +1,7 @@
 {
   "name": "legacy",
-  "version": "2.7.2",
-  "description": "Drupal theme for ASCE conference sites 2015–2019.",
+  "version": "2.7.3",
+  "description": "Drupal theme for ASCE conference sites 2015–2020.",
   "main": "legacy.css",
   "private": true,
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "ASCE Web Team <webteam@asce.org> (https://github.com/asce-web)",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "aria-patterns": "^1.0.0",
     "babel-preset-minify": "^0.5.1",
     "gulp": "^4.0.0",
@@ -24,7 +24,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",
-    "kss": "^3.0.0-beta.25",
+    "kss": "^3.0.0",
     "xmeter": "^7.2.0"
   },
   "dependencies": {}
