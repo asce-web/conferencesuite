@@ -3,12 +3,18 @@
 /**
  * HTML Variables
  */
-function legacy_preprocess_html(&$variables) {
-  $variables['html_developer_class']   = theme_get_setting('asset_class');
+function legacy_preprocess_html(&$variables)
+{
+  $variables['html_developer_class'] = theme_get_setting('asset_class');
   $variables['html_developer_channel'] = theme_get_setting('asset_channel');
-  $variables['html_colors_primary']   = theme_get_setting('colors_primary_override')   ?: theme_get_setting('colors_primary');
+  $variables['html_colors_primary'] = theme_get_setting('colors_primary_override') ?: theme_get_setting('colors_primary');
   $variables['html_colors_secondary'] = theme_get_setting('colors_secondary_override') ?: theme_get_setting('colors_secondary');
-  $variables['html_colors_accent']    = theme_get_setting('colors_accent_override')    ?: theme_get_setting('colors_accent');
+  $variables['html_colors_accent'] = theme_get_setting('colors_accent_override') ?: theme_get_setting('colors_accent');
+  /*$variables['alert_type'] = theme_get_setting('conference_alert_type');
+  $variables['warning_message'] = theme_get_setting('conference_warning_message');
+  $variables['error_message'] = theme_get_setting('conference_error_message');
+  $variables['info_message'] = theme_get_setting('conference_info_message');
+  $variables['success_message'] = theme_get_setting('conference_success_message');*/
 
   $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan'); // NB https://www.drupal.org/forum/support/theme-development/2016-02-03/how-to-show-head_titleslogan-in-page
 
@@ -28,8 +34,9 @@ function legacy_preprocess_html(&$variables) {
 /**
  * Page Variables
  */
-function legacy_preprocess_page(&$variables) {
-  $variables['page_startdate']         = theme_get_setting('conference_dates_start');
+function legacy_preprocess_page(&$variables)
+{
+  $variables['page_startdate'] = theme_get_setting('conference_dates_start');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
       $fullpath = (file_load($image) == NULL) ? 'https://cdn.asce.org/images/conferences/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
@@ -44,18 +51,20 @@ function legacy_preprocess_page(&$variables) {
 /**
  * Region Variables
  */
-function legacy_preprocess_region(&$variables) {
+function legacy_preprocess_region(&$variables)
+{
 }
 
 /**
  * Block Variables
  */
-function legacy_preprocess_block(&$variables) {
-  $variables['block_name']              = theme_get_setting('conference_info_name');
-  $variables['block_theme']             = theme_get_setting('conference_info_theme');
-  $variables['block_startdate']         = theme_get_setting('conference_dates_start');
-  $variables['block_enddate']           = theme_get_setting('conference_dates_end');
-  $variables['block_location_display']  = theme_get_setting('conference_location_display');
+function legacy_preprocess_block(&$variables)
+{
+  $variables['block_name'] = theme_get_setting('conference_info_name');
+  $variables['block_theme'] = theme_get_setting('conference_info_theme');
+  $variables['block_startdate'] = theme_get_setting('conference_dates_start');
+  $variables['block_enddate'] = theme_get_setting('conference_dates_end');
+  $variables['block_location_display'] = theme_get_setting('conference_location_display');
 
   // for site logo (shield) in header banner and footer tabs
   $variables['block_sitelogo'] = theme_get_setting('logo.url');
@@ -72,7 +81,8 @@ function legacy_preprocess_block(&$variables) {
 /**
  * User Variables
  */
-function legacy_preprocess_user(&$variables) {
+function legacy_preprocess_user(&$variables)
+{
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
 
@@ -102,7 +112,8 @@ function legacy_preprocess_user(&$variables) {
 //           }
 //          }
 
-function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
   $theme_file = drupal_get_path('theme', 'legacy') . '/legacy.theme';
   $build_info = $form_state->getBuildInfo();
   if (!in_array($theme_file, $build_info['files'])) {
@@ -112,7 +123,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 
 
   $form['legacy_theme_settings'] = [
-    '#type'    => 'vertical_tabs',
+    '#type' => 'vertical_tabs',
     '#parents' => ['legacy_theme_settings'],
   ];
 
@@ -120,86 +131,86 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
    * Conference Settings Tab
    */
   $form['conference_settings'] = array(
-    '#type'        => 'details',
-    '#title'       => t('Conference Information'),
-    '#group'       => 'legacy_theme_settings',
+    '#type' => 'details',
+    '#title' => t('Conference Information'),
+    '#group' => 'legacy_theme_settings',
     '#description' => t('Enter information about the current conference.'),
   );
   $form['conference_settings']['conference_info'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Basic Information'),
+    '#type' => 'fieldset',
+    '#title' => t('Basic Information'),
   );
   $form['conference_settings']['conference_info']['conference_info_name'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Conference Name'),
+    '#type' => 'textfield',
+    '#title' => t('Conference Name'),
     '#default_value' => theme_get_setting('conference_info_name'),
-    '#description'   => t('Name of the conference, displayed in the header/footer.'),
-    '#required'      => TRUE,
+    '#description' => t('Name of the conference, displayed in the header/footer.'),
+    '#required' => TRUE,
   );
   $form['conference_settings']['conference_info']['conference_info_theme'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Conference Theme'),
+    '#type' => 'textfield',
+    '#title' => t('Conference Theme'),
     '#default_value' => theme_get_setting('conference_info_theme'),
-    '#description'   => t('Conference theme or tagline, displayed in the hero area.'),
-    '#required'      => FALSE,
+    '#description' => t('Conference theme or tagline, displayed in the hero area.'),
+    '#required' => FALSE,
   );
   $form['conference_settings']['conference_dates'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Dates'),
+    '#type' => 'fieldset',
+    '#title' => t('Dates'),
   );
   $form['conference_settings']['conference_dates']['conference_dates_start'] = array(
-    '#type'          => 'date',
-    '#title'         => t('Start Date'),
+    '#type' => 'date',
+    '#title' => t('Start Date'),
     '#default_value' => theme_get_setting('conference_dates_start'),
-    '#required'      => TRUE,
+    '#required' => TRUE,
   );
   $form['conference_settings']['conference_dates']['conference_dates_end'] = array(
-    '#type'          => 'date',
-    '#title'         => t('End Date'),
+    '#type' => 'date',
+    '#title' => t('End Date'),
     '#default_value' => theme_get_setting('conference_dates_end'),
   );
   $form['conference_settings']['conference_location'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Location'),
+    '#type' => 'fieldset',
+    '#title' => t('Location'),
   );
   $form['conference_settings']['conference_location']['conference_location_display'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Location'),
+    '#type' => 'textfield',
+    '#title' => t('Location'),
     '#default_value' => theme_get_setting('conference_location_display'),
-    '#description'   => t('Location of the conference.'),
-    '#required'      => TRUE,
+    '#description' => t('Location of the conference.'),
+    '#required' => TRUE,
   );
 
   /**
    * Conference Images Tab
    */
   $form['conference_images'] = array(
-    '#type'        => 'details',
-    '#title'       => t('Images &amp; Colors'),
-    '#group'       => 'legacy_theme_settings',
+    '#type' => 'details',
+    '#title' => t('Images &amp; Colors'),
+    '#group' => 'legacy_theme_settings',
     '#description' => t('Upload conference images and colors.'),
   );
 
   /** Move Global appearance settings logo field inside the 'confefence_images' group. */
-  $form['logo']['#group' ] = 'conference_images';
+  $form['logo']['#group'] = 'conference_images';
   $form['logo']['#weight'] = -1;
 
   $form['conference_images']['images'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Additional Images'),
+    '#type' => 'fieldset',
+    '#title' => t('Additional Images'),
   );
   $default_file_dir = 'public://site-images';
   // $banner_folder = file_prepare_directory($default_file_dir, FILE_CREATE_DIRECTORY);
 
   $form['conference_images']['images']['secondary_logo'] = array(
-    '#title'              => t('Secondary Logo'),
-    '#type'               => 'managed_file',
-    '#description'        => t('Optional secondary logo.'),
-    '#default_value'      => theme_get_setting('secondary_logo'),
+    '#title' => t('Secondary Logo'),
+    '#type' => 'managed_file',
+    '#description' => t('Optional secondary logo.'),
+    '#default_value' => theme_get_setting('secondary_logo'),
     '#progress_indicator' => 'bar',
-    '#progress_message'   => t('Please wait&hellip;'),
-    '#upload_location'    => $default_file_dir,
-    '#upload_validators'  => array(
+    '#progress_message' => t('Please wait&hellip;'),
+    '#upload_location' => $default_file_dir,
+    '#upload_validators' => array(
       'file_validate_extensions' => array('gif png jpg jpeg'),
     ),
     '#media_options' => array(
@@ -211,21 +222,21 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
           'public' => 'public',
         ),
         'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize'    => '4 MB',
-        'uri_scheme'      => 'public',
+        'max_filesize' => '4 MB',
+        'uri_scheme' => 'public',
       ),
     ),
   );
 
   $form['conference_images']['images']['images_banner'] = array(
-    '#title'              => t('Banner Image'),
-    '#type'               => 'managed_file',
-    '#description'        => t('Background image in the top-right area of the banner.'),
-    '#default_value'      => theme_get_setting('images_banner'),
+    '#title' => t('Banner Image'),
+    '#type' => 'managed_file',
+    '#description' => t('Background image in the top-right area of the banner.'),
+    '#default_value' => theme_get_setting('images_banner'),
     '#progress_indicator' => 'bar',
-    '#progress_message'   => t('Please wait&hellip;'),
-    '#upload_location'    => $default_file_dir,
-    '#upload_validators'  => array(
+    '#progress_message' => t('Please wait&hellip;'),
+    '#upload_location' => $default_file_dir,
+    '#upload_validators' => array(
       'file_validate_extensions' => array('gif png jpg jpeg'),
     ),
     '#media_options' => array(
@@ -237,83 +248,147 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
           'public' => 'public',
         ),
         'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize'    => '4 MB',
-        'uri_scheme'      => 'public',
+        'max_filesize' => '4 MB',
+        'uri_scheme' => 'public',
       ),
     ),
   );
 
   $form['conference_images']['colors'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Site Colors'),
+    '#type' => 'fieldset',
+    '#title' => t('Site Colors'),
     '#description' => t('Use these color pickers to set website colors.<br/>
       If you see text fields instead of color pickers, enter hex codes in <code>#rrggbb</code> format.'),
   );
   $form['conference_images']['colors']['colors_primary'] = array(
-    '#type'          => 'color',
-    '#title'         => t('Primary Color'),
+    '#type' => 'color',
+    '#title' => t('Primary Color'),
     '#default_value' => theme_get_setting('colors_primary'),
   );
   $form['conference_images']['colors']['colors_secondary'] = array(
-    '#type'          => 'color',
-    '#title'         => t('Secondary Color'),
+    '#type' => 'color',
+    '#title' => t('Secondary Color'),
     '#default_value' => theme_get_setting('colors_secondary'),
   );
   $form['conference_images']['colors']['colors_accent'] = array(
-    '#type'          => 'color',
-    '#title'         => t('Accent Color'),
+    '#type' => 'color',
+    '#title' => t('Accent Color'),
     '#default_value' => theme_get_setting('colors_accent'),
   );
 
   $form['conference_images']['colors_override'] = array(
-    '#type'   => 'fieldset',
-    '#title'  => t('Site Colors &mdash; Override Fields'),
+    '#type' => 'fieldset',
+    '#title' => t('Site Colors &mdash; Override Fields'),
     '#description' => t('Use these text fields to override the color pickers above. Text must be in <code>#rrggbb</code> format.'),
   );
   $form['conference_images']['colors_override']['colors_primary_override'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Primary Color Override'),
+    '#type' => 'textfield',
+    '#title' => t('Primary Color Override'),
     '#default_value' => theme_get_setting('colors_primary_override'),
   );
   $form['conference_images']['colors_override']['colors_secondary_override'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Secondary Color Override'),
+    '#type' => 'textfield',
+    '#title' => t('Secondary Color Override'),
     '#default_value' => theme_get_setting('colors_secondary_override'),
   );
   $form['conference_images']['colors_override']['colors_accent_override'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Accent Color Override'),
+    '#type' => 'textfield',
+    '#title' => t('Accent Color Override'),
     '#default_value' => theme_get_setting('colors_accent_override'),
   );
+
+  /**
+   * Conference Site Alerts
+   */
+  /*$form['conference_alerts'] = array(
+    '#type' => 'details',
+    '#title' => t('Alerts'),
+    '#group' => 'legacy_theme_settings',
+    '#description' => t('Conference Site Alerts'),
+  );
+
+  $form['conference_alerts']['conference_alert_type'] = array(
+    '#type' => 'select',
+    '#title' => t('Alert Type'),
+    '#options' => [
+      no_alerts => t('No alerts'),
+      info => t('Information'),
+      success => t('Success'),
+      warning => t('Warning'),
+      error => t('Error'),
+    ],
+    '#default_value' => theme_get_setting('conference_alert_type'),
+  );
+
+  $form['conference_alerts']['conference_information'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Information Messages'),
+  );
+
+  $form['conference_alerts']['conference_information']['conference_info_message'] = array(
+    '#type' => 'textarea',
+    '#default_value' => theme_get_setting('conference_info_message'),
+  );
+
+  $form['conference_alerts']['conference_success'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Success Messages'),
+  );
+
+  $form['conference_alerts']['conference_success']['conference_success_message'] = array(
+    '#type' => 'textarea',
+    '#default_value' => theme_get_setting('conference_success_message'),
+  );
+
+  $form['conference_alerts']['conference_warning'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Warning Messages'),
+  );
+
+  $form['conference_alerts']['conference_warning']['conference_warning_message'] = array(
+    '#type' => 'textarea',
+    '#default_value' => theme_get_setting('conference_warning_message'),
+  );
+
+  $form['conference_alerts']['conference_error'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Error Messages'),
+  );
+
+  $form['conference_alerts']['conference_error']['conference_error_message'] = array(
+    '#type' => 'textarea',
+    '#default_value' => theme_get_setting('conference_error_message'),
+  );*/
+
 
   /**
    * Developer Settings Tab
    */
   $form['dev_settings'] = [
-    '#type'        => 'details',
-    '#title'       => t('Developer Settings'),
-    '#group'       => 'legacy_theme_settings',
+    '#type' => 'details',
+    '#title' => t('Developer Settings'),
+    '#group' => 'legacy_theme_settings',
     '#description' => t('Developer and miscellaneous settings.'),
   ];
   /** Move Global appearance settings & favicon field inside the 'dev_settings' group. */
-  $form['theme_settings']['#group' ] = 'dev_settings';
+  $form['theme_settings']['#group'] = 'dev_settings';
   $form['theme_settings']['#weight'] = -2;
-  $form['favicon'       ]['#group' ] = 'dev_settings';
-  $form['favicon'       ]['#weight'] = -1;
+  $form['favicon']['#group'] = 'dev_settings';
+  $form['favicon']['#weight'] = -1;
 
   $form['dev_settings']['assets'] = [
-    '#type'   => 'fieldset',
-    '#title'  => t('Assets'),
+    '#type' => 'fieldset',
+    '#title' => t('Assets'),
   ];
   $form['dev_settings']['assets']['asset_class'] = [
-    '#type'          => 'textfield',
-    '#title'         => t('Body Class(es)'),
+    '#type' => 'textfield',
+    '#title' => t('Body Class(es)'),
     '#default_value' => theme_get_setting('asset_class'),
-    '#description'   => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
+    '#description' => t('Add classes to the <code>&lt;body&gt;</code> tag. Multiple classes must be space-separated.'),
   ];
   $form['dev_settings']['assets']['asset_channel'] = [
-    '#type'    => 'select',
-    '#title'   => t('Asset Channel'),
+    '#type' => 'select',
+    '#title' => t('Asset Channel'),
     '#options' => [
       1 => t('production'),
       2 => t('staging'),
@@ -321,7 +396,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
       4 => t('canary'),
     ],
     '#default_value' => theme_get_setting('asset_channel'),
-    '#description'   => t('Collection of assets to use on the site. <strong>Flush all caches after changing selection.</strong>'),
+    '#description' => t('Collection of assets to use on the site. <strong>Flush all caches after changing selection.</strong>'),
   ];
 
   $form['#submit'][] = 'legacy_form_system_theme_settings_submit';
@@ -336,10 +411,11 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 //   $banner_image->save();
 // }
 
-function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
   if ($form_state->getValue('images_banner')) {
     $element = $form_state->getValue('images_banner');
-    if (!empty($element[0])){
+    if (!empty($element[0])) {
       // Make submited files permanent.
       $file = \Drupal\file\Entity\File::load($element[0]);
       $file->setPermanent();
@@ -350,7 +426,7 @@ function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Form
   }
   if ($form_state->getValue('secondary_logo')) {
     $element = $form_state->getValue('secondary_logo');
-    if (!empty($element[0])){
+    if (!empty($element[0])) {
       // Make submited files permanent.
       $file = \Drupal\file\Entity\File::load($element[0]);
       $file->setPermanent();
@@ -369,7 +445,8 @@ function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Form
  * @param array $suggestions
  * @param array $variables
  */
-function legacy_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function legacy_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
