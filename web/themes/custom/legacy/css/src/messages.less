@@ -4,7 +4,6 @@
  * copied from `/web/core/themes/classy/css/components/messages.css` and modified
  */
 
-
 // copied from `/web/core/themes/seven/css/theme/colors.css` and modified
 .color-info {
   color: #1b515b;
@@ -15,7 +14,125 @@
   color: #1b515b;
   background-color: #d1ecf1;
   border-color: #bee5eb;
-  border-left-color: transparent;  /* LTR */
+  border-left-color: transparent; /* LTR */
   background-image: url('../../../../../core/misc/icons/000000/questionmark-disc.svg');
   box-shadow: -8px 0 0 #57a4b3; /* LTR */
 }
+
+//Temporary Site Alerts
+
+.site-alert {
+  font-size: 1.1em;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: black;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.warning {
+  background: darkorange;
+}
+
+.info {
+  color: #504e56;
+  background-color: #f1f0f6;
+}
+
+.error {
+  color: #8f1515;
+  background-color: #ece0e0;
+}
+
+.success {
+  color: #00572f;
+  background-color: #e2eae6;
+}
+
+// Site Alerts
+
+/*
+.site-alert {
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.5em;
+
+  .info {
+    color: #504e56;
+    background-color: #f1f0f6;
+  }
+
+  .warning {
+    color: #615800;
+    background-color: #fffde6;
+  }
+
+  .error {
+    color: #8f1515;
+    background-color: #ece0e0;
+  }
+
+  .success {
+    color: #00572f;
+    background-color: #e2eae6;
+  }
+
+  p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    text-align: left;
+    color: inherit;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    span {
+      width: auto;
+      height: auto;
+      margin: auto 0;
+      padding: 0;
+    }
+
+    a {
+      display: inline-block;
+      width: auto;
+      margin-left: 1rem;
+      color: #0c5fa8;
+      text-decoration: underline;
+    }
+
+    a:hover, a:focus {
+      cursor: pointer;
+      color: #19a1cf;
+    }
+
+    a.active {
+      color: #b58357;
+    }
+
+    a.active:hover, a.active:focus {
+      cursor: pointer;
+      color: #19a1cf;
+    }
+  }
+}*/
