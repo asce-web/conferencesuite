@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [ html_developer_class ] %}
+{% set channel = [null, 'production', 'staging', 'development', 'canary'][html_developer_channel] %}
+{{ attach_library('legacy/messages') }}
+
+<!DOCTYPE html>
+<html{{ html_attributes.setAttribute('data-asset-channel', channel) }}>
+  <head>
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <meta name="author" content="American Society of Civil Engineers (ASCE)"/>
+    <meta name="description" content="{{ site_slogan }}"/>
+    {% if html_colors_primary %}<meta name="theme-color" content="{{ html_colors_primary }}"/>{% endif %}
+    <head-placeholder token="{{ placeholder_token }}">
+    <css-placeholder token="{{ placeholder_token }}">
+    <style>
+      body {
+        {% if html_colors_primary   %} --color-primary:   {{ html_colors_primary   }}; {% endif %}
+        {% if html_colors_secondary %} --color-secondary: {{ html_colors_secondary }}; {% endif %}
+        {% if html_colors_accent    %} --color-accent:    {{ html_colors_accent    }}; {% endif %}
+      }
+    </style>
+    <noscript>
+      <!-- NOTE: removes Toggle menu when JS is disabled-->
+      <style>
+        @media not all and (min-width: 45em) {
+          .c-Toggle,
+          .o-Drawer { display: none; }
+        }
+      </style>
+    </noscript>
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes.addClass(classes) }} id="top">
+    <a class="h-Hidden" href="#main">skip to main content</a>
+    <div class="site-alert warning">
+      <p>ASCE is committed to the health and safety of our members and event participants. <a href="https://www.asce.org/covid-19" target="_blank">Details</a></p>
+    </div>
+    {% if alert_type == "error" %}
+      <div class="site-alert error">
+          {{ error_message|raw }}
+      </div>
+    {% elseif alert_type == "warning" %}
+      <div class="site-alert warning">
+          {{ warning_message|raw }}
+      </div>
+    {% elseif alert_type == "info" %}
+      <div class="site-alert info">
+        {{ info_message|raw }}
+      </div>
+    {% elseif alert_type == "success" %}
+      <div class="site-alert success">
+          {{ success_message|raw }}
+      </div>
+    {% endif %}
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <a href="#top">jump to top</a>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
