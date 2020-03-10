@@ -10,11 +10,11 @@ function legacy_preprocess_html(&$variables)
   $variables['html_colors_primary'] = theme_get_setting('colors_primary_override') ?: theme_get_setting('colors_primary');
   $variables['html_colors_secondary'] = theme_get_setting('colors_secondary_override') ?: theme_get_setting('colors_secondary');
   $variables['html_colors_accent'] = theme_get_setting('colors_accent_override') ?: theme_get_setting('colors_accent');
-  $variables['alert_type'] = theme_get_setting('conference_alert_type');
+  /*$variables['alert_type'] = theme_get_setting('conference_alert_type');
   $variables['warning_message'] = theme_get_setting('conference_warning_message');
   $variables['error_message'] = theme_get_setting('conference_error_message');
   $variables['info_message'] = theme_get_setting('conference_info_message');
-  $variables['success_message'] = theme_get_setting('conference_success_message');
+  $variables['success_message'] = theme_get_setting('conference_success_message');*/
 
   $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan'); // NB https://www.drupal.org/forum/support/theme-development/2016-02-03/how-to-show-head_titleslogan-in-page
 
@@ -300,7 +300,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   /**
    * Conference Site Alerts
    */
-  $form['conference_alerts'] = array(
+  /*$form['conference_alerts'] = array(
     '#type' => 'details',
     '#title' => t('Alerts'),
     '#group' => 'legacy_theme_settings',
@@ -358,7 +358,7 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
   $form['conference_alerts']['conference_error']['conference_error_message'] = array(
     '#type' => 'textarea',
     '#default_value' => theme_get_setting('conference_error_message'),
-  );
+  );*/
 
 
   /**

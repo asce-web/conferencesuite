@@ -58,10 +58,12 @@
   </head>
   <body{{ attributes.addClass(classes) }} id="top">
     <a class="h-Hidden" href="#main">skip to main content</a>
+    <!--Temporary Alerts-->
     <div class="site-alert warning">
       <p>ASCE is committed to the health and safety of our members and event participants. <a href="https://www.asce.org/covid-19" target="_blank">Details</a></p>
     </div>
-    {% if alert_type == "error" %}
+    <!--Alerts-->
+    {#{% if alert_type == "error" %}
       <div class="site-alert error">
           {{ error_message|raw }}
       </div>
@@ -77,7 +79,7 @@
       <div class="site-alert success">
           {{ success_message|raw }}
       </div>
-    {% endif %}
+    {% endif %}#}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
