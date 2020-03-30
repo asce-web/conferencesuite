@@ -1,5 +1,4 @@
 #!/bin/sh
-
 #https://www.aei-conference.org
 drush @confsuite.aeiconf cr
 drush @confsuite.aeiconf_19 cr
