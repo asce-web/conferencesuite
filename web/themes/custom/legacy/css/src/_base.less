@@ -1,4 +1,3 @@
-
 /*################################*\
     legacy  |  _base.less
 \*################################*/
@@ -32,13 +31,19 @@ html {
   --site-logo-size: 6rem;
   --site-logo-space: 0;
   --year-badge-width: 10vw;
-  --supporter-logo-sml-width: 68px ; --supporter-logo-sml-height: 36px ;
-  --supporter-logo-med-width: 90px ; --supporter-logo-med-height: 48px ;
-  --supporter-logo-lrg-width: 120px; --supporter-logo-lrg-height: 65px ;
+  --supporter-logo-sml-width: 68px;
+  --supporter-logo-sml-height: 36px;
+  --supporter-logo-med-width: 90px;
+  --supporter-logo-med-height: 48px;
+  --supporter-logo-lrg-width: 120px;
+  --supporter-logo-lrg-height: 65px;
   @media screen and (min-width: 30em) {
-    --supporter-logo-sml-width: 140px; --supporter-logo-sml-height: 62px ;
-    --supporter-logo-med-width: 188px; --supporter-logo-med-height: 82px ;
-    --supporter-logo-lrg-width: 250px; --supporter-logo-lrg-height: 110px;
+    --supporter-logo-sml-width: 140px;
+    --supporter-logo-sml-height: 62px ;
+    --supporter-logo-med-width: 188px;
+    --supporter-logo-med-height: 82px ;
+    --supporter-logo-lrg-width: 250px;
+    --supporter-logo-lrg-height: 110px;
   }
   @media screen and (min-width: 45em) {
     --site-logo-space: 1rem;
@@ -46,9 +51,12 @@ html {
   }
   @media screen and (min-width: 60em) {
     --side-col-size: 35%;
-    --supporter-logo-sml-width: 202px; --supporter-logo-sml-height: 90px ;
-    --supporter-logo-med-width: 270px; --supporter-logo-med-height: 120px;
-    --supporter-logo-lrg-width: 360px; --supporter-logo-lrg-height: 160px;
+    --supporter-logo-sml-width: 202px;
+    --supporter-logo-sml-height: 90px ;
+    --supporter-logo-med-width: 270px;
+    --supporter-logo-med-height: 120px;
+    --supporter-logo-lrg-width: 360px;
+    --supporter-logo-lrg-height: 160px;
   }
   @media screen and (min-width: 75em) {
     --site-logo-space: 2rem;
@@ -64,13 +72,15 @@ html {
     --site-logo-size: 4rem;
   }
 }
+
 body {
-  --color-primary:   @g-color-primary;   // overridden with internal stylesheet, pulled from database
+  --color-primary: @g-color-primary; // overridden with internal stylesheet, pulled from database
   --color-secondary: @g-color-secondary; // overridden with internal stylesheet, pulled from database
-  --color-accent:    @g-color-accent;    // overridden with internal stylesheet, pulled from database
-  font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+  --color-accent: @g-color-accent; // overridden with internal stylesheet, pulled from database
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   color: @g-color-body-txt;
 }
+
 //++++ end # GENERIC ++++//
 
 
@@ -87,95 +97,119 @@ h1, h2, h3, h4, h5, h6 {
 //++++++++++++++++++++++++++++++++//
 //    # GROUPING
 //++++++++++++++++++++++++++++++++//
-  //--------------------------------//
-  //    ## Paragraphs
-  //--------------------------------//
-  figcaption {
-    font-weight: 300;
-    font-style: italic;
-    .h-FontSize;
-    --font-scale: @g-font-size-mill;
-    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .font-size-el(@g-font-size-mill);
-    }
+//--------------------------------//
+//    ## Paragraphs
+//--------------------------------//
+figcaption {
+  font-weight: 300;
+  font-style: italic;
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
   }
-  //---- end ## Paragraphs ----//
+}
 
-  //--------------------------------//
-  //    ## Lists
-  //--------------------------------//
-  ol,
-  ul {
-    // override Xmeter base 4rem
-    padding-left: 2rem;
-    @supports (padding-inline-start: 1rem) {
-      padding-left: unset;
-      padding-inline-start: 2rem;
-    }
-  }
-  //---- end ## Lists ----//
+//---- end ## Paragraphs ----//
 
-  //--------------------------------//
-  //    ## Tables
-  //--------------------------------//
-  thead,
-  tfoot {
-    // background-color: @g-color-table-bg;
-    // font-weight: 600;
-    // font-size: 0.75em; // REVIEW is this necessary?
+//--------------------------------//
+//    ## Lists
+//--------------------------------//
+ol,
+ul {
+  // override Xmeter base 4rem
+  padding-left: 2rem;
+  @supports (padding-inline-start: 1rem) {
+    padding-left: unset
+
+  ;
+    padding-inline-start:
+
+  2rem
+
+  ;
   }
-  th,
-  td {
-    // border: 1px solid @g-color-table-br;
-  }
-  // REVIEW striped & bordered tables
-  table.striped {
-    tbody > tr:nth-child(even) {
-      background-color: @g-color-table-bg;
-    }
-  }
-  tr.striped {
+}
+
+//---- end ## Lists ----//
+
+//--------------------------------//
+//    ## Tables
+//--------------------------------//
+thead,
+tfoot {
+  // background-color: @g-color-table-bg;
+  // font-weight: 600;
+  // font-size: 0.75em; // REVIEW is this necessary?
+}
+
+th,
+td {
+  // border: 1px solid @g-color-table-br;
+}
+
+// REVIEW striped & bordered tables
+table.striped {
+  tbody > tr:nth-child(even) {
     background-color: @g-color-table-bg;
   }
-  table.bordered {
-    th,
-    td {
-      border: 1px solid @g-color-table-br;
-    }
+}
+
+tr.striped {
+  background-color: @g-color-table-bg;
+}
+
+table.bordered {
+  th,
+  td {
+    border: 1px solid @g-color-table-br;
   }
-  //---- end ## Tables ----//
+}
+
+//---- end ## Tables ----//
 //++++ end # GROUPING ++++//
 
 
 //++++++++++++++++++++++++++++++++//
 //    # TEXT
 //++++++++++++++++++++++++++++++++//
-  //--------------------------------//
-  //    ## Links
-  //--------------------------------//
-  a[href] {
-    color: @g-color-link-txt;
-    &:hover,
-    &:focus {
-      color: @g-color-link-txt-hover;
-    }
+//--------------------------------//
+//    ## Links
+//--------------------------------//
+a[href] {
+  color: @g-color-link-txt;
+
+  &:hover,
+  &:focus {
+    color: @g-color-link-txt-hover;
   }
-  //---- end ## Links ----//
+}
 
-  //--------------------------------//
-  //    ## Stress
-  //--------------------------------//
-  //---- end ## Stress ----//
+//---- end ## Links ----//
 
-  //--------------------------------//
-  //    ## Documentation
-  //--------------------------------//
-  //---- end ## Documentation ----//
+//--------------------------------//
+//    ## ChatBox
+//--------------------------------//
+.chch-groupChatList span {
+  line-height: unset;
+}
 
-  //--------------------------------//
-  //    ## Data
-  //--------------------------------//
-  //---- end ## Data ----//
+//---- end ## ChatBox ----//
+
+//--------------------------------//
+//    ## Stress
+//--------------------------------//
+//---- end ## Stress ----//
+
+//--------------------------------//
+//    ## Documentation
+//--------------------------------//
+//---- end ## Documentation ----//
+
+//--------------------------------//
+//    ## Data
+//--------------------------------//
+//---- end ## Data ----//
 //++++ end # TEXT ++++//
 
 
