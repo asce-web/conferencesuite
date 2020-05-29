@@ -199,6 +199,12 @@ cisummit_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.cisummit.org
 
+cisummit_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.cisummit.org
+
 esconf:
   host: 35.232.239.38
   user: asce-ssh
@@ -421,6 +427,12 @@ pipe_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.pipelinesconference.org
 
+pipe_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.pipelinesconference.org
+
 ports:
   host: 35.232.239.38
   user: asce-ssh
@@ -474,6 +486,18 @@ surveying_20:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.surveyingconference.org
+
+tdi:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://www.tdileadership.org
+
+tdi_20:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2020.tdileadership.org
 
 udmconf:
   host: 35.232.239.38
