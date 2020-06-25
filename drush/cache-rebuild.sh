@@ -57,6 +57,7 @@ drush @confsuite.ewri cr
 drush @confsuite.ewri_18 cr
 drush @confsuite.ewri_19 cr
 drush @confsuite.ewri_20 cr
+drush @confsuite.ewri_21 cr
 #https://www.forensiccongress.org
 drush @confsuite.forensic cr
 drush @confsuite.forensic_18 cr
