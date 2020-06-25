@@ -271,6 +271,12 @@ ewri_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.ewricongress.org
 
+ewri_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.ewricongress.org
+
 forensic:
   host: 35.232.239.38
   user: asce-ssh
