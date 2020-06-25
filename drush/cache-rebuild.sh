@@ -42,6 +42,7 @@ drush @confsuite.cisummit cr
 drush @confsuite.cisummit_18 cr
 drush @confsuite.cisummit_19 cr
 drush @confsuite.cisummit_20 cr
+drush @confsuite.cisummit_21 cr
 #https://www.earthspaceconference.org
 drush @confsuite.esconf cr
 drush @confsuite.esconf_20 cr
@@ -56,6 +57,7 @@ drush @confsuite.ewri cr
 drush @confsuite.ewri_18 cr
 drush @confsuite.ewri_19 cr
 drush @confsuite.ewri_20 cr
+drush @confsuite.ewri_21 cr
 #https://www.forensiccongress.org
 drush @confsuite.forensic cr
 drush @confsuite.forensic_18 cr
@@ -93,6 +95,7 @@ drush @confsuite.pipe cr
 drush @confsuite.pipe_18 cr
 drush @confsuite.pipe_19 cr
 drush @confsuite.pipe_20 cr
+drush @confsuite.pipe_21 cr
 #https://www.portsconference.org
 drush @confsuite.ports cr
 drush @confsuite.ports_19 cr
@@ -105,6 +108,9 @@ drush @confsuite.structures_21 cr
 drush @confsuite.surveying cr
 drush @confsuite.surveying_18 cr
 drush @confsuite.surveying_20 cr
+#https://www.tdileadership.org
+drush @confsuite.tdi cr
+drush @confsuite.tdi_20 cr
 #https://www.udmconference2021.org
 drush @confsuite.udmconf cr
 drush @confsuite.udmconf_21 cr
