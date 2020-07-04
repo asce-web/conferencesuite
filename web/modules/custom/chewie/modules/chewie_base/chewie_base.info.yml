@@ -2,6 +2,7 @@ name: Base
 description: 'Administrative operations required to run a basic site. Includes development tools & settings, basic site settings, and user configs, and theme settings.'
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Chewie
 version: 8.x-1.6.0
 dependencies:

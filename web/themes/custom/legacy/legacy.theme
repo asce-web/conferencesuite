@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
 /**
  * HTML Variables
  */
@@ -39,7 +41,7 @@ function legacy_preprocess_page(&$variables)
   $variables['page_startdate'] = theme_get_setting('conference_dates_start');
   if (theme_get_setting('images_banner')) {
     foreach (theme_get_setting('images_banner') as $image) {
-      $fullpath = (file_load($image) == NULL) ? 'https://cdn.asce.org/images/conferences/banner-default.jpg' : file_create_url(file_load($image)->getFileUri());
+      $fullpath = (\Drupal::service('entity_type.manager')->getStorage('file')->load($image) == NULL) ? 'https://cdn.asce.org/images/conferences/banner-default.jpg' : file_create_url(\Drupal::service('entity_type.manager')->getStorage('file')->load($image)->getFileUri());
       //     //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ if setting path exists but no file exists at that path
       $variables['page_images_banner'] = parse_url($fullpath, PHP_URL_PATH);
     }
@@ -72,7 +74,7 @@ function legacy_preprocess_block(&$variables)
 
   if (theme_get_setting('secondary_logo')) {
     foreach (theme_get_setting('secondary_logo') as $image) {
-      $fullpath = file_create_url(file_load($image)->getFileUri());
+      $fullpath = file_create_url(\Drupal::service('entity_type.manager')->getStorage('file')->load($image)->getFileUri());
       $variables['block_secondarylogo'] = parse_url($fullpath, PHP_URL_PATH);
     }
   }
@@ -112,7 +114,7 @@ function legacy_preprocess_user(&$variables)
 //           }
 //          }
 
-function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+function legacy_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
 {
   $theme_file = drupal_get_path('theme', 'legacy') . '/legacy.theme';
   $build_info = $form_state->getBuildInfo();
@@ -411,13 +413,13 @@ function legacy_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormS
 //   $banner_image->save();
 // }
 
-function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+function legacy_form_system_theme_settings_submit(&$form, FormStateInterface $form_state)
 {
   if ($form_state->getValue('images_banner')) {
     $element = $form_state->getValue('images_banner');
     if (!empty($element[0])) {
       // Make submited files permanent.
-      $file = \Drupal\file\Entity\File::load($element[0]);
+      $file = File::load($element[0]);
       $file->setPermanent();
       $file->save();
       $file_usage = \Drupal::service('file.usage');
@@ -428,7 +430,7 @@ function legacy_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Form
     $element = $form_state->getValue('secondary_logo');
     if (!empty($element[0])) {
       // Make submited files permanent.
-      $file = \Drupal\file\Entity\File::load($element[0]);
+      $file = File::load($element[0]);
       $file->setPermanent();
       $file->save();
       $file_usage = \Drupal::service('file.usage');

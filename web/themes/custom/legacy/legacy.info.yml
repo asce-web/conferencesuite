@@ -3,6 +3,7 @@ type: theme
 description: 'Theme for ASCE conference sites 2015&ndash;2018.'
 version: VERSION
 core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
   - legacy/global-styling
 regions:
