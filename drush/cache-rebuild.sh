@@ -13,6 +13,7 @@ drush @confsuite.aeippa_20 cr
 drush @confsuite.aeisdc cr
 drush @confsuite.aeisdc_19 cr
 drush @confsuite.aeisdc_20 cr
+drush @confsuite.aeisdc_21 cr
 #https://www.apmconference.org
 drush @confsuite.apm cr
 drush @confsuite.apm_20 cr
@@ -61,6 +62,9 @@ drush @confsuite.ewri_21 cr
 #https://www.forensiccongress.org
 drush @confsuite.forensic cr
 drush @confsuite.forensic_18 cr
+#https://www.geo-extreme.org
+drush @confsuite.geo-extreme cr
+drush @confsuite.geo-extreme_21 cr
 #https://www.geocongress.org
 drush @confsuite.geo cr
 drush @confsuite.geo_19 cr
@@ -77,6 +81,7 @@ drush @confsuite.icse_20 cr
 #https://www.icsiconference.org
 drush @confsuite.icsi cr
 drush @confsuite.icsi_19 cr
+drush @confsuite.icsi_21 cr
 #https://www.isfog2020.org
 drush @confsuite.isfog cr
 drush @confsuite.isfog_20 cr
