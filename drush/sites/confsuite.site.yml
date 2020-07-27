@@ -67,6 +67,12 @@ aeisdc_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.aeisdc.org
 
+aeisdc_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.aeisdc.org
+
 apm:
   host: 35.232.239.38
   user: asce-ssh
@@ -289,6 +295,18 @@ forensic_18:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.forensiccongress.org
 
+geo-extreme:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://www.geo-extreme.org
+
+geo-extreme_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.geo-extreme.org
+
 geo:
   host: 35.232.239.38
   user: asce-ssh
@@ -354,6 +372,12 @@ icsi_19:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.icsiconference.org
+
+icsi_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.icsiconference.org
 
 isfog:
   host: 35.232.239.38
