@@ -53,6 +53,8 @@ drush @confsuite.emi_20 cr
 #https://www.etsconference.org
 drush @confsuite.ets cr
 drush @confsuite.ets_18 cr
+#https://ewrichannels.asce.org
+drush @confsuite.channels_20 cr
 #https://www.ewricongress.org
 drush @confsuite.ewri cr
 drush @confsuite.ewri_18 cr
@@ -62,6 +64,7 @@ drush @confsuite.ewri_21 cr
 #https://www.forensiccongress.org
 drush @confsuite.forensic cr
 drush @confsuite.forensic_18 cr
+drush @confsuite.forensic_21 cr
 #https://www.geo-extreme.org
 drush @confsuite.geo-extreme cr
 drush @confsuite.geo-extreme_21 cr
