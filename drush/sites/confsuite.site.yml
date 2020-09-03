@@ -253,6 +253,12 @@ ets_21:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.etsconference.org
 
+channels_20:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://ewrichannels.asce.org
+
 ewri:
   host: 35.232.239.38
   user: asce-ssh
@@ -294,6 +300,12 @@ forensic_18:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.forensiccongress.org
+
+forensic_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.forensiccongress.org
 
 geo-extreme:
   host: 35.232.239.38
