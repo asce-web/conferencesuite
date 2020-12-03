@@ -211,6 +211,12 @@ cisummit_21:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.cisummit.org
 
+cisummit-crc:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://cisummit-crc.asce.org
+
 esconf:
   host: 35.232.239.38
   user: asce-ssh
@@ -337,6 +343,12 @@ geo_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.geocongress.org
 
+geo_22:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2022.geocongress.org
+
 geesd:
   host: 35.232.239.38
   user: asce-ssh
@@ -432,6 +444,12 @@ omsw_19:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.omswconference.org
+
+omsw_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.omswconference.org
 
 pavements:
   host: 35.232.239.38

@@ -44,6 +44,8 @@ drush @confsuite.cisummit_18 cr
 drush @confsuite.cisummit_19 cr
 drush @confsuite.cisummit_20 cr
 drush @confsuite.cisummit_21 cr
+#https://www.cisummit-crc.asce.org
+drush @confsuite.cisummit-crc cr
 #https://www.earthspaceconference.org
 drush @confsuite.esconf cr
 drush @confsuite.esconf_20 cr
@@ -72,6 +74,7 @@ drush @confsuite.geo-extreme_21 cr
 drush @confsuite.geo cr
 drush @confsuite.geo_19 cr
 drush @confsuite.geo_20 cr
+drush @confsuite.geo_22 cr
 #https://www.geesdconference.org
 drush @confsuite.geesd cr
 drush @confsuite.geesd_18 cr
@@ -95,6 +98,7 @@ drush @confsuite.lid_20 cr
 #https://www.omswconference.org
 drush @confsuite.omsw cr
 drush @confsuite.omsw_19 cr
+drush @confsuite.omsw_21 cr
 #https://www.pavementsconference.org
 drush @confsuite.pavements cr
 drush @confsuite.pavements_19 cr
