@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9800ec0ac70463bc47bb3d925e71875d",
+    "content-hash": "f9d4dd159b09308d1214d24bf1839acd",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -121,6 +121,63 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "brightcove/api",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brightcove/PHP-API-Wrapper.git",
+                "reference": "4da114984010675722140d78cfd301c33410f008"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brightcove/PHP-API-Wrapper/zipball/4da114984010675722140d78cfd301c33410f008",
+                "reference": "4da114984010675722140d78cfd301c33410f008",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.2.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Brightcove\\": "lib/Brightcove/",
+                    "Brightcove\\Test\\": "test/Brightcove/Test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tamás Demeter-Haludka",
+                    "homepage": "https://github.com/tamasd"
+                },
+                {
+                    "name": "KonczGabor",
+                    "homepage": "https://github.com/KonczGabor"
+                },
+                {
+                    "name": "janmashat",
+                    "homepage": "https://github.com/janmashat"
+                }
+            ],
+            "description": "Brightcove PHP API Wrapper",
+            "keywords": [
+                "Brightcove",
+                "api"
+            ],
+            "time": "2020-01-17T12:15:53+00:00"
         },
         {
             "name": "caxy/php-htmldiff",
@@ -2391,6 +2448,92 @@
             }
         },
         {
+            "name": "drupal/brightcove",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/brightcove.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/brightcove-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "2016ec42d5f8be8ae7b030c98b1e13bf2679313e"
+            },
+            "require": {
+                "brightcove/api": "~2.1",
+                "drupal/core": "^8",
+                "drupal/inline_entity_form": "*",
+                "drupal/time_formatter": "*",
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1600846723",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "brightcove.drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "László CSÉCSY",
+                    "homepage": "https://github.com/boobaa"
+                },
+                {
+                    "name": "Tamás NAGY",
+                    "homepage": "https://github.com/ycecube"
+                },
+                {
+                    "name": "balazswmann",
+                    "homepage": "https://www.drupal.org/user/2204810"
+                },
+                {
+                    "name": "lekob",
+                    "homepage": "https://www.drupal.org/user/3258368"
+                },
+                {
+                    "name": "mikeharty",
+                    "homepage": "https://www.drupal.org/user/315991"
+                },
+                {
+                    "name": "tamasd",
+                    "homepage": "https://www.drupal.org/user/372872"
+                },
+                {
+                    "name": "wiifm",
+                    "homepage": "https://www.drupal.org/user/358731"
+                },
+                {
+                    "name": "yce",
+                    "homepage": "https://www.drupal.org/user/2252152"
+                }
+            ],
+            "description": "Brightcove Video Connect",
+            "homepage": "https://www.drupal.org/project/brightcove",
+            "keywords": [
+                "Brightcove",
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/brightcove",
+                "issues": "http://drupal.org/project/issues/brightcove"
+            }
+        },
+        {
             "name": "drupal/coffee",
             "version": "1.0.0",
             "source": {
@@ -3648,6 +3791,89 @@
             }
         },
         {
+            "name": "drupal/inline_entity_form",
+            "version": "1.0.0-rc8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/inline_entity_form.git",
+                "reference": "8.x-1.0-rc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc8.zip",
+                "reference": "8.x-1.0-rc8",
+                "shasum": "103de382dd07b4acdd6bacd5ad76628fdf0eefda"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "require-dev": {
+                "drupal/entity_reference_revisions": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc8",
+                    "datestamp": "1602172716",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
+                },
+                {
+                    "name": "kaythay",
+                    "homepage": "https://www.drupal.org/user/2182186"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "rszrama",
+                    "homepage": "https://www.drupal.org/user/49344"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Provides a widget for inline management (creation, modification, removal) of referenced entities.",
+            "homepage": "https://www.drupal.org/project/inline_entity_form",
+            "support": {
+                "source": "https://git.drupalcode.org/project/inline_entity_form"
+            }
+        },
+        {
             "name": "drupal/ldap",
             "version": "3.0.0-beta7",
             "source": {
@@ -3985,6 +4211,70 @@
             "homepage": "https://www.drupal.org/project/rebuild_cache_access",
             "support": {
                 "source": "https://git.drupalcode.org/project/rebuild_cache_access"
+            }
+        },
+        {
+            "name": "drupal/time_formatter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/time_formatter.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/time_formatter-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "8c9fc8a99f2f0b841ba886889097bb73f70484d0"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1534930681",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Boobaa",
+                    "homepage": "https://www.drupal.org/user/199303"
+                },
+                {
+                    "name": "akosh",
+                    "homepage": "https://www.drupal.org/user/698510"
+                },
+                {
+                    "name": "jan.mashat",
+                    "homepage": "https://www.drupal.org/user/3198923"
+                },
+                {
+                    "name": "tamasd",
+                    "homepage": "https://www.drupal.org/user/372872"
+                },
+                {
+                    "name": "yce",
+                    "homepage": "https://www.drupal.org/user/2252152"
+                }
+            ],
+            "description": "Field formatter for integer fields storing time in seconds/milliseconds displaying it in various formats.",
+            "homepage": "https://www.drupal.org/project/time_formatter",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/time_formatter",
+                "issues": "http://drupal.org/project/issues/time_formatter"
             }
         },
         {
@@ -8232,12 +8522,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },

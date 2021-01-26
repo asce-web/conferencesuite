@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: asce
+label: ASCE
+account_id: '75114961001'
+client_id: ac76a1ba-24bf-4156-8c34-f94487b807fa
+default_player: default
+secret_key: ePQ-jD1cg10QtqaN7OMzbAhjerPYELkvIS9pBnNsZw2aybiqFVxahcPM1afPlXgnoCIZeYzsa_1scqG12bWjaQ
+max_custom_fields: 10

@@ -22,6 +22,7 @@ matchers:
       include_unpublished: false
       metadata: '[node:url]'
       substitution_type: canonical
+      limit: 100
   051599f1-d0a5-4ca4-9a27-10a369cb529e:
     uuid: 051599f1-d0a5-4ca4-9a27-10a369cb529e
     id: 'entity:file'
@@ -38,3 +39,4 @@ matchers:
       file_status: 1
       substitution_type: file
       metadata: '[file:url]'
+      limit: 100

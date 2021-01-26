@@ -1,8 +1,8 @@
-conference_info_name: 'Civil Engineering Congress 2017'
-conference_info_theme: 'Where Engineering Dreams are Built'
-conference_dates_start: '2017-12-31'
-conference_dates_end: '2018-01-01'
-conference_location_display: 'Reston, VA'
+conference_info_name: 'UESI Pipelines 2021 Conference'
+conference_info_theme: 'Building Today''s Infrastructure for a Changing Tomorrow'
+conference_dates_start: '2021-08-03'
+conference_dates_end: '2021-08-06'
+conference_location_display: 'Calgary, Alberta, CA'
 conference_location_advisory: 'Reston, Virginia'
 features:
   node_user_picture: 1
@@ -10,9 +10,20 @@ features:
   comment_user_verification: 1
   favicon: 1
 logo:
-  use_default: 1
-  path: themes/custom/legacy/logo.svg
+  use_default: 0
+  path: 'public://uesi-shield-logo.png'
 favicon:
   use_default: 1
   path: themes/custom/legacy/favicon.ico
   mimetype: image/vnd.microsoft.icon
+secondary_logo: {  }
+images_banner:
+  - '28'
+colors_primary: '#183977'
+colors_secondary: '#3e8e42'
+colors_accent: '#eaa827'
+colors_primary_override: ''
+colors_secondary_override: ''
+colors_accent_override: ''
+asset_class: pipelinesconference
+asset_channel: '1'
