@@ -1,0 +1,58 @@
+
+/*################################*\
+    legacy  |  _c-SiteLogo.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/_-pt.less');
+
+
+// The Site Logo
+//
+// Shield logo of the Institute (or orginaztion)
+// organizing the conference.
+// <header><dl>
+//   <dt>author</dt><dd>Chris Harvey</dd>
+//   <dt>updated</dt><dd><time>2017-06-11</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="o-Flex__Item c-SiteLogo {{ modifier_class }}">
+//   <img src="../../logo.svg" alt="Home"/>
+// </div>
+//
+// .c-SiteLogo--secondary - secondary logo, e.g. for a partnering organization hosting the conference
+//
+// Weight: 2
+//
+// Styleguide Components.SiteLogo
+.c-SiteLogo {
+  // [1] NOTE: equivalent to .flex(0 0 var(--site-logo-size));
+  //     but now works when flex-direction = column
+  //     (cannot use `flex` to set width if flex-direction=column)
+  // [2] for when <img> width is smaller than this width
+  flex: 0 0 auto; // [1]
+  width: var(--site-logo-size);
+  margin-left: var(--site-logo-space);
+  @supports (margin-inline-start: var(--v)) {
+    margin-left: unset;
+    margin-inline-start: var(--site-logo-space);
+  }
+  text-align: center; // [2]
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
+    width: 6rem;
+    @media (min-width: 45em) and (max-width: 74.999em) {
+      width: 4rem;
+    }
+    @media (min-width: 45em) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 75em) {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.c-SiteLogo--secondary {
+  @media not all and (min-width: 45em) {
+    .-pt-1;
+  }
+}

@@ -1,0 +1,57 @@
+
+/*################################*\
+    legacy  |  _c-Banner.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__tool.transitions.less');
+@import (reference) url('__settings.less');
+@import (reference) url('__tool.buttonText.less');
+
+
+// Banners
+//
+// A site region with full-bleed background color or image.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-07-24</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-Banner {{ modifier_class }}">
+// </div>
+//
+// .c-Banner--head      - masthead in header
+// .c-Banner--nav       - top-level navigation
+// .c-Banner--nav--sub  - secondary-level navigation
+// .c-Banner--copyright - copyright line footer
+//
+// Weight: 1
+//
+// Styleguide Components.Banner
+.c-Banner {
+  color: @g-color-banner-txt;
+}
+.c-Banner--head {
+  background-color: var(--color-primary);
+}
+.c-Banner--nav {
+  background-color: var(--color-secondary);
+}
+.c-Banner--nav--sub {
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 1; // display on top of relatively-positioned contextual regions while logged into Drupal
+  transform-origin: top;
+  background-color: var(--color-accent);
+  .transitions(transform, opacity; 100ms);
+  &:not(.active) {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+.c-Banner--copyright {
+  background-color: @g-color-asce-blue;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
+    display: block; // override .o-Flex
+    text-align: center;
+  }
+}

@@ -1,0 +1,2 @@
+main>.o-Flex{margin-bottom:3rem;margin-bottom:calc(2 * var(--lh));margin-bottom:2lh}@supports (margin-block-end:var(--v)){main>.o-Flex{margin-bottom:unset;margin-block-end:calc(2 * var(--lh));margin-block-end:2lh}}@media not all and (min-width:45em){main>.o-Flex{flex-direction:column}}body>a:last-of-type{position:fixed;bottom:var(--lh);bottom:1lh;right:999999px}body>a:last-of-type:focus{right:1rem}header noscript a{position:relative;top:1rem;right:0.5rem}
+/*# sourceMappingURL=_hack.shame.css.map */

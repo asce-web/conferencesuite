@@ -1,0 +1,80 @@
+
+/*################################*\
+    legacy  |  _c-ConferenceTitles.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__settings.less');
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../xmeter/css/src/_-mb.less');
+
+
+// Conference Titles
+//
+// Typographical styles for conference titles.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-13</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+//   <h1 class="c-ConferenceTitles__Name">Civil Engineering Congress 2016</h1>
+//   <p class="c-ConferenceTitles__Detail">
+//     <span>New York, New York</span>
+//     |
+//     <time datetime="2016-06-07T00:00:00-04:00">June 7</time>&ndash;<time
+//       datetime="2016-06-09T00:00:00-04:00">9, 2016</time>
+//   </p>
+//   <p class="c-ConferenceTitles__Tagline">Building on the Past</p>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.ConferenceTitles
+.c-ConferenceTitles {
+  font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica',sans-serif;
+  margin-left: var(--site-logo-space);
+  @media not all and (min-width: 45em) {
+    text-align: center;
+  }
+  @media (min-width: 75em) {
+    .font-size-mod(@g-font-size-kilo);
+  }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) { // COMBAK:FALLBACK:IE
+    @media (min-width: 45em) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 75em) {
+      margin-left: 2rem;
+    }
+  }
+  & > * {
+    .-mb-h;
+    &:last-child {
+      margin-bottom: 0; // COMBAK:FALLBACK
+      margin-block-end: unset; // unset base `p`
+    }
+  }
+}
+
+.c-ConferenceTitles__Name {
+  font-weight: 700;
+  .h-FontSize;
+  --font-scale: @g-font-size-kilo;
+  --tracks: 1; // override `h1`
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-kilo);
+  }
+  @media screen and (min-width: 45em) {
+      padding-top: 0; // undo `h1` // already margin-top on the `.o-Flex--siteHead`
+  }
+}
+
+.c-ConferenceTitles__Detail {
+  font-weight: 500;
+}
+
+.c-ConferenceTitles__Tagline {
+  font-weight: 400;
+  font-style: italic;
+}

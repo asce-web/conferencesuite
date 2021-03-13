@@ -1,0 +1,49 @@
+
+/*################################*\
+    xmeter  |  _h-Ruled.less
+\*################################*/
+
+
+// Ruled
+//
+// The Ruled Helper adds background lines for designing with vertical rhythm.
+// Each line corresponds to one line of text. Lines are separated by one vertical rhythm unit (VRU).
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-09-25</time></dd>
+// </dl></header>
+//
+// Markup:
+// <!--link rel="stylesheet" href="/node_modules/xmeter/css/dist/h-Ruled.css"/-->
+// <div class="h-Ruled">
+//   <p><q cite="https://en.wikipedia.org/wiki/A_Brief_History_of_Time">For instance,
+//     playing Ping-Pong on the train, one would find that
+//     the ball obeyed Newton’s laws just like a ball on a table by the track.
+//     So there is no way to tell whether it is the train or the earth that is moving.</q></p>
+//   <p><q cite="https://en.wikipedia.org/wiki/A_Brief_History_of_Time">The laws of science
+//     should be the same for all freely moving observers,
+//     no matter what their speed. This was true for Netwon’s laws of motion,
+//     but now the idea was extended to include Maxwell’s theory. All observers
+//     should measure the same speed of light, no matter how fast they are moving.</q></p>
+//   <p><q cite="https://en.wikipedia.org/wiki/A_Brief_History_of_Time">Gravity is not a force
+//     like other forces, but is a consequence of the
+//     fact that space-time is curved by the distribution of mass and energy in it.</q>
+//     An object in a gravitational field experiences the same effects as if it were
+//     accelerating at a rate proportional to the strength of that gravitational field.</p>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Helpers.Ruled
+@p-color-gray-fallback: rgba(0,0,0, 0.25); // COMBAK{FALLBACK} for `#rrggbbaa` color syntax
+@p-color-gray: #00000040; // same as _base.less
+.h-Ruled {
+  background-image: linear-gradient(to top, @p-color-gray-fallback 1px, transparent 1px); // COMBAK{FALLBACK} for `#rrggbbaa` color syntax
+  background-image: linear-gradient(to top, @p-color-gray 1px, transparent 1px);
+  background-size: 1px 1.5rem;    // COMBAK{FALLBACK}
+  background-size: 1px var(--lh); // COMBAK{FALLBACK}
+  background-size: 1px 1lh;
+  background-origin: content-box;
+  background-position-y: top;
+  background-position-block: start;
+}

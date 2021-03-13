@@ -1,0 +1,36 @@
+
+/*################################*\
+    legacy  |  _o-SideCol.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/_-pt.less');
+
+
+// Side Column
+//
+// Side column of the site.
+// Contains callouts and aside info.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-06-21</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="o-SideCol">
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Objects.SideCol
+.o-SideCol {
+  main & {
+    .-pt-1;
+    padding-left: 2rem; padding-right: 2rem;
+    @supports (padding-inline: 1rem) {
+      padding-left: unset; padding-right: unset;
+      padding-inline: 2rem;
+    }
+  }
+  @media screen and (min-width: 45em) {
+    flex: 0 0 var(--side-col-size);
+  }
+}

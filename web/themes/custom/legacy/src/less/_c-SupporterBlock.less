@@ -1,0 +1,212 @@
+
+/*################################*\
+    legacy  |  _c-SupporterBlock.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__settings.less');
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../xmeter/css/src/_-mb.less');
+@import (reference) url('__settings.less');
+
+
+// The Supporter Block
+//
+// A section containing one supporter level.
+// On the Sponsor page, each Supporter Block corresponds to one level,
+// e.g., Platinum, Gold, or Corporate.
+// On all other pages, this block may be used to group additional organizations,
+// such as Cooperating Organizations.
+//
+// The following table provides guidelines for dimensions of supporter logos.
+// The measurements listed indicate the maximum width/height of the logo in pixels.
+// All measurements are approximate.
+//
+// <table>
+// 	<caption>Supporter Logo Sizes</caption>
+// 	<colgroup><col/></colgroup>
+// 	<colgroup span="2"></colgroup>
+// 	<colgroup span="2"></colgroup>
+// 	<colgroup span="2"></colgroup>
+// 	<thead>
+// 		<tr>
+// 			<th scope="col">Screen Size</th>
+// 			<th scope="colgroup" colspan="2">Small Logo (width, height) in px</th>
+// 			<th scope="colgroup" colspan="2">Medium Logo (width, height) in px</th>
+// 			<th scope="colgroup" colspan="2">Large Logo (width, height) in px</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<th scope="row">XS</th>
+// 			<td>68</td>
+// 			<td>36</td>
+// 			<td>90</td>
+// 			<td>48</td>
+// 			<td>120</td>
+// 			<td>65</td>
+// 		</tr>
+// 		<tr>
+// 			<th scope="row">S&ndash;M</th>
+// 			<td>140</td>
+// 			<td>62</td>
+// 			<td>188</td>
+// 			<td>82</td>
+// 			<td>250</td>
+// 			<td>110</td>
+// 		</tr>
+// 		<tr>
+// 			<th scope="row">L+</th>
+// 			<td>202</td>
+// 			<td>90</td>
+// 			<td>270</td>
+// 			<td>120</td>
+// 			<td>360</td>
+// 			<td>160</td>
+// 		</tr>
+// 	</tbody>
+// </table>
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-08-16</time></dd>
+// </dl></header>
+//
+// Markup:
+// <section class="c-SupporterBlock {{ modifier_class }}">
+//   <h1 class="c-SupporterBlock__Hn">Titanium</h1>
+//   <ul class="o-List o-Flex c-SupporterBlock__List">
+//     <li class="o-List__Item o-Flex__Item c-SupporterBlock__List__Item" itemprop="sponsor" itemscope="" itemtype="https://schema.org/Organization">
+//       <a href="#0" rel="external nofollow" itemprop="url">
+//         <img class="c-SupporterBlock__Logo" src="http://www.asceconvention.org/sites/asceconvention.org/files/sponsors/bank-of-america-logo.jpg" alt="Bank of America" itemprop="logo"/>
+//         <meta content="Bank of America" itemprop="name"/>
+//       </a>
+//     </li>
+//     <li class="o-List__Item o-Flex__Item c-SupporterBlock__List__Item" itemprop="sponsor" itemscope="" itemtype="https://schema.org/Organization">
+//       <a href="#0" rel="external nofollow" itemprop="url">
+//         <img class="c-SupporterBlock__Logo" src="http://www.asceconvention.org/sites/asceconvention.org/files/sponsors/ups-logo.jpg" alt="UPS" itemprop="logo"/>
+//         <meta content="UPS" itemprop="name"/>
+//       </a>
+//     </li>
+//     <li class="o-List__Item o-Flex__Item c-SupporterBlock__List__Item" itemprop="sponsor" itemscope="" itemtype="https://schema.org/Organization">
+//       <a href="#0" rel="external nofollow" itemprop="url">
+//         <img class="c-SupporterBlock__Logo" src="http://www.asceconvention.org/sites/asceconvention.org/files/sponsors/geico-asce-convention-logo.png" alt="Geico" itemprop="logo"/>
+//         <meta content="Geico" itemprop="name"/>
+//       </a>
+//     </li>
+//   </ul>
+// </section>
+//
+// .c-SupporterBlock--lrg - contains large logos
+// .c-SupporterBlock--med - contains medium logos
+// .c-SupporterBlock--sml - contains small logos
+//
+// Weight: 16
+//
+// Styleguide Components.SupporterBlock
+.mx-mh-1() {
+  margin-left : 1rem; // COMBAK:FALLBACK
+  margin-right: 1rem; // COMBAK:FALLBACK
+  @supports (margin-inline: 1rem) {
+    margin-left : unset;
+    margin-right: unset;
+    margin-inline: 1rem;
+  }
+}
+
+.c-SupporterBlock {
+  .-mb-2;
+  // small logos by default
+  --supporter-logo-width : var(--supporter-logo-sml-width );
+  --supporter-logo-height: var(--supporter-logo-sml-height);
+  text-align: center;
+}
+
+.c-SupporterBlock__Hn {
+  --font-scale: @g-font-size-mega;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mega);
+  }
+
+  // visualization line separator
+  @supports (flex-wrap: wrap) {
+    display: flex;
+    align-items: center;
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: (0.125 * 1.5rem);        // COMBAK:FALLBACK
+      height: calc(0.125 * var(--lh)); // COMBAK:FALLBACK
+      height: 0.125lh;
+      @supports (block-size: var(--v)) {
+        height: unset;
+        block-size: calc(0.125 * var(--lh));
+        block-size: 0.125lh;
+      }
+      margin: 0 1rem;
+      background-image: linear-gradient(to right, transparent, @g-color-table-br, transparent); // COMBAK:FALLBACK for `linear-gradient(var(--v))`
+      background-image: linear-gradient(var(--direction), var(--color-primary), transparent);
+      opacity: 0.5;
+    }
+    &::before {
+      --direction: to left;
+      @supports (background-image: linear-gradient(to inline-start, transparent, black)) {
+        --direction: to inline-start;
+      }
+    }
+    &::after {
+      --direction: to right;
+      @supports (background-image: linear-gradient(to inline-end, transparent, black)) {
+        --direction: to inline-end;
+      }
+    }
+  }
+}
+
+.c-SupporterBlock__List {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-SupporterBlock__List__Item {
+  flex: 0 1 var(--supporter-logo-width);
+  .-mb-1;
+  .mx-mh-1();
+
+  // The following CSS classnames are dictated by configuration. Do not change them.
+  // See the file:
+  // </web/modules/custom/chewie/modules/chewie_supporters/config/install/field.storage.node.field_supporterlevel_logosize.yml>
+  // NOTE we cannot put these styles on the list (which would be more efficient),
+  // because Drupal cannot determine the logo size for the entire list.
+  // It knows the logo size only for a single supporter (because the supporter is linked to a level),
+  // so we must style each individual list item.
+  // TODO put the classes on the entire list, not just the item (use a Supporter Level view)
+  &.small {
+  }
+  &.medium {
+    --supporter-logo-width : var(--supporter-logo-med-width );
+    --supporter-logo-height: var(--supporter-logo-med-height);
+  }
+  &.large {
+    --supporter-logo-width : var(--supporter-logo-lrg-width );
+    --supporter-logo-height: var(--supporter-logo-lrg-height);
+  }
+}
+
+.c-SupporterBlock__Logo {
+  max-height: var(--supporter-logo-height);
+  transition: filter 1000ms;
+  a:not(:hover):not(:focus) & {
+    filter: grayscale(100%);
+  }
+}
+
+.c-SupporterBlock__Label {
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
+  }
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
