@@ -1,0 +1,2 @@
+main .o-SideCol{padding-top:1.5rem;padding-top:var(--lh);padding-top:1lh;padding-left:2rem;padding-right:2rem}@supports (padding-block-start:var(--v)){main .o-SideCol{padding-top:unset;padding-block-start:var(--lh);padding-block-start:1lh}}@supports (padding-inline:1rem){main .o-SideCol{padding-left:unset;padding-right:unset;padding-inline:2rem}}@media screen and (min-width:45em){.o-SideCol{flex:0 0 var(--side-col-size)}}
+/*# sourceMappingURL=_o-SideCol.css.map */

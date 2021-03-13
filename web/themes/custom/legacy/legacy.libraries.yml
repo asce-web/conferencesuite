@@ -1,27 +1,27 @@
 global-styling:
   css:
     base:
-      node_modules/xmeter/css/dist/base.css: { minified: true }
-      css/dist/_base.css: { minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/base.css: { type: external, minified: true }
+      src/css/_base.css: { minified: true }
     layout:
-      node_modules/xmeter/css/dist/o-List.css: { minified: true }
-      node_modules/xmeter/css/dist/o-Flex.css: { minified: true }
-      node_modules/xmeter/css/dist/o-Grid.css: { minified: true }
-      css/dist/_o-Flex--.css: { minified: true }
-      css/dist/_o-MainCol.css: { minified: true }
-      css/dist/_o-SideCol.css: { minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-List.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-Flex.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-Grid.css: { type: external, minified: true }
+      src/css/_o-Flex--.css: { minified: true }
+      src/css/_o-MainCol.css: { minified: true }
+      src/css/_o-SideCol.css: { minified: true }
     component:
-      css/dist/_c-KeynoteSpeaker.css: { minified: true }
-      css/dist/_c-Chair.css: { minified: true }
-      css/dist/_c-Button.css: { minified: true }
+      src/css/_c-KeynoteSpeaker.css: { minified: true }
+      src/css/_c-Chair.css: { minified: true }
+      src/css/_c-Button.css: { minified: true }
     state:
-      node_modules/xmeter/css/dist/h-Block.css: { minified: true }
-      node_modules/xmeter/css/dist/h-Inline.css: { minified: true }
-      node_modules/xmeter/css/dist/h-Clearfix.css: { minified: true }
-      node_modules/xmeter/css/dist/h-Measure.css: { minified: true }
-      node_modules/xmeter/css/dist/h-Constrain.css: { minified: true }
-      node_modules/xmeter/css/dist/h-FontSize.css: { minified: true }
-      node_modules/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Block.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Inline.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Clearfix.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Measure.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Constrain.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-FontSize.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-hidden/css/dist/h-Hidden.css: { type: external, minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/futura.css: { type: external, minified: true }
@@ -29,16 +29,16 @@ global-styling:
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: { type: external, minified: true }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: { type: external, minified: true }
-      node_modules/xmeter/css/dist/-mb.css: { minified: true }
-      node_modules/xmeter/css/dist/-pt.css: { minified: true }
-      node_modules/xmeter/css/dist/-fz.css: { minified: true }
-      css/dist/_themes.css: { minified: true }
-      css/dist/_t-Content.css: { minified: true }
-      css/dist/_atom.css: { minified: true }
-      css/dist/_hack.glyphicons.css: { minified: true }
-      css/dist/_hack.drupal.css: { minified: true }
-      css/dist/_hack.ie.css: { minified: true }
-      css/dist/_hack.shame.css: { minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-mb.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-pt.css: { type: external, minified: true }
+      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-fz.css: { type: external, minified: true }
+      src/css/_themes.css: { minified: true }
+      src/css/_t-Content.css: { minified: true }
+      src/css/_atom.css: { minified: true }
+      src/css/_hack.glyphicons.css: { minified: true }
+      src/css/_hack.drupal.css: { minified: true }
+      src/css/_hack.ie.css: { minified: true }
+      src/css/_hack.shame.css: { minified: true }
   js:
     {}
   dependencies:
@@ -76,112 +76,112 @@ header:
   version: VERSION
   css:
     layout:
-      css/dist/_o-MobileBar.css: { minified: true }
-      css/dist/_o-Drawer.css: { minified: true }
+      src/css/_o-MobileBar.css: { minified: true }
+      src/css/_o-Drawer.css: { minified: true }
     component:
-      css/dist/_c-Banner.css: { minified: true }
-      css/dist/_c-SiteLogo.css: { minified: true }
-      css/dist/_c-ConferenceTitles.css: { minified: true }
-      css/dist/_c-TopImg.css: { minified: true }
-      css/dist/_c-YearBadge.css: { minified: true }
-      css/dist/_c-NavBar.css: { minified: true }
+      src/css/_c-Banner.css: { minified: true }
+      src/css/_c-SiteLogo.css: { minified: true }
+      src/css/_c-ConferenceTitles.css: { minified: true }
+      src/css/_c-TopImg.css: { minified: true }
+      src/css/_c-YearBadge.css: { minified: true }
+      src/css/_c-NavBar.css: { minified: true }
   js:
     //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: { type: external, minified: true }
-    js/dist/menu.js: { minified: true }
-    js/dist/o-Drawer.js: { minified: true }
+    src/js/menu.js: { minified: false }
+    src/js/o-Drawer.js: { minified: false }
 
 # footerpanels library
 footerpanels:
   version: VERSION
   css:
     layout:
-      node_modules/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
-      css/dist/_o-Tablist--footertabs.css: { minified: true }
-      css/dist/_o-FooterGrid.css: { minified: true }
+      //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-tablist/css/dist/o-Tablist.css: { type: external, minified: true }
+      src/css/_o-Tablist--footertabs.css: { minified: true }
+      src/css/_o-FooterGrid.css: { minified: true }
     component:
-      css/dist/_c-Banner.css: { minified: true }
-      css/dist/_c-SiteLogo.css: { minified: true }
-      css/dist/_c-ConferenceTitles.css: { minified: true }
-      css/dist/_c-YearBadge.css: { minified: true }
-      css/dist/_c-FooterPanel.css: { minified: true }
-      css/dist/_c-Sitemap.css: { minified: true }
-      css/dist/_c-SocialListFooter.css: { minified: true }
+      src/css/_c-Banner.css: { minified: true }
+      src/css/_c-SiteLogo.css: { minified: true }
+      src/css/_c-ConferenceTitles.css: { minified: true }
+      src/css/_c-YearBadge.css: { minified: true }
+      src/css/_c-FooterPanel.css: { minified: true }
+      src/css/_c-Sitemap.css: { minified: true }
+      src/css/_c-SocialListFooter.css: { minified: true }
   js:
-    node_modules/aria-patterns/x-tablist/js/dist/o-Tablist.js: { minified: true }
+    //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-tablist/js/dist/o-Tablist.js: { type: external, minified: true }
 
 # copyright library
 copyright:
   version: VERSION
   css:
     component:
-      css/dist/_c-Banner.css: { minified: true }
-      css/dist/_c-CopyrightLine.css: { minified: true }
+      src/css/_c-Banner.css: { minified: true }
+      src/css/_c-CopyrightLine.css: { minified: true }
 
 # Callout Component
 callout:
   version: VERSION
   css:
     component:
-      css/dist/_c-Callout.css: { minified: true }
+      src/css/_c-Callout.css: { minified: true }
 
 # Alert Component
 alert:
   version: VERSION
   css:
     component:
-      css/dist/_c-Alert.css: { minified: true }
+      src/css/_c-Alert.css: { minified: true }
 
 # Hero Component
 hero:
   version: VERSION
   css:
     component:
-      css/dist/_c-Hero.css: { minified: true }
+      src/css/_c-Hero.css: { minified: true }
 
 # Supporters library
 supporters:
   version: VERSION
   css:
     component:
-      css/dist/_c-SupporterBlock.css: { minified: true }
+      src/css/_c-SupporterBlock.css: { minified: true }
     theme:
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: { type: external, minified: false }
       //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: { type: external, minified: false }
-      css/dist/_hack.slick.css: { minified: true }
+      src/css/_hack.slick.css: { minified: true }
   js:
     //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: { type: external, minified: true }
-    js/dist/slick-config.js: { minified: true }
+    src/js/slick-config.js: { minified: false }
 
 # DateBlock Component
 dateblock:
   version: VERSION
   css:
     component:
-      css/dist/_c-DateBlock.css: { minified: true }
+      src/css/_c-DateBlock.css: { minified: true }
   js:
-    js/dist/c-DateBlock.js: { minified: true }
+    src/js/c-DateBlock.js: { minified: false }
 
 # TimeBlock Component
 timeblock:
   version: VERSION
   css:
     component:
-      css/dist/_c-ProgramHn.css: { minified: true }
-      css/dist/_c-TimeBlock.css: { minified: true }
+      src/css/_c-ProgramHn.css: { minified: true }
+      src/css/_c-TimeBlock.css: { minified: true }
 
 # DateRange Component
 daterange:
   version: VERSION
   css:
     component:
-      css/dist/_c-DateRange.css: { minified: true }
+      src/css/_c-DateRange.css: { minified: true }
 
 # Venue Component
 venue:
   version: VERSION
   css:
     component:
-      css/dist/_c-Venue.css: { minified: true }
+      src/css/_c-Venue.css: { minified: true }
 
 # extension of 'classy/messages'
 messages:
@@ -190,4 +190,4 @@ messages:
     component:
       ../../../core/themes/classy/css/components/messages.css: {}
       ../../../core/themes/seven/css/components/messages.css: {}
-      css/dist/messages.css: { minified: true }
+      src/css/messages.css: { minified: true }
