@@ -1,12 +1,12 @@
 global-styling:
   css:
     base:
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/base.css: { type: external, minified: true }
+      src/xmeter/css/dist/base.css: { minified: true }
       src/css/_base.css: { minified: true }
     layout:
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-List.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-Flex.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/o-Grid.css: { type: external, minified: true }
+      src/xmeter/css/dist/o-List.css: { minified: true }
+      src/xmeter/css/dist/o-Flex.css: { minified: true }
+      src/xmeter/css/dist/o-Grid.css: { minified: true }
       src/css/_o-Flex--.css: { minified: true }
       src/css/_o-MainCol.css: { minified: true }
       src/css/_o-SideCol.css: { minified: true }
@@ -15,13 +15,13 @@ global-styling:
       src/css/_c-Chair.css: { minified: true }
       src/css/_c-Button.css: { minified: true }
     state:
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Block.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Inline.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Clearfix.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Measure.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-Constrain.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/h-FontSize.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-hidden/css/dist/h-Hidden.css: { type: external, minified: true }
+      src/xmeter/css/dist/h-Block.css: { minified: true }
+      src/xmeter/css/dist/h-Inline.css: { minified: true }
+      src/xmeter/css/dist/h-Clearfix.css: { minified: true }
+      src/xmeter/css/dist/h-Measure.css: { minified: true }
+      src/xmeter/css/dist/h-Constrain.css: { minified: true }
+      src/xmeter/css/dist/h-FontSize.css: { minified: true }
+      //cdn.asce.org/packages/aria-patterns/x-hidden/css/dist/h-Hidden.css: { type: external, minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/futura.css: { type: external, minified: true }
@@ -29,9 +29,9 @@ global-styling:
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: { type: external, minified: true }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-mb.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-pt.css: { type: external, minified: true }
-      //cdn.jsdelivr.net/npm/xmeter@7.2.0/css/dist/-fz.css: { type: external, minified: true }
+      src/xmeter/css/dist/-mb.css: { minified: true }
+      src/xmeter/css/dist/-pt.css: { minified: true }
+      src/xmeter/css/dist/-fz.css: { minified: true }
       src/css/_themes.css: { minified: true }
       src/css/_t-Content.css: { minified: true }
       src/css/_atom.css: { minified: true }
@@ -95,7 +95,7 @@ footerpanels:
   version: VERSION
   css:
     layout:
-      //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-tablist/css/dist/o-Tablist.css: { type: external, minified: true }
+      //cdn.asce.org/packages/aria-patterns/x-tablist/css/dist/o-Tablist.css: { type: external, minified: true }
       src/css/_o-Tablist--footertabs.css: { minified: true }
       src/css/_o-FooterGrid.css: { minified: true }
     component:
@@ -107,7 +107,7 @@ footerpanels:
       src/css/_c-Sitemap.css: { minified: true }
       src/css/_c-SocialListFooter.css: { minified: true }
   js:
-    //cdn.jsdelivr.net/npm/aria-patterns@1.0.0/x-tablist/js/dist/o-Tablist.js: { type: external, minified: true }
+    //cdn.asce.org/packages/aria-patterns/x-tablist/js/dist/o-Tablist.js: { type: external, minified: true }
 
 # copyright library
 copyright:

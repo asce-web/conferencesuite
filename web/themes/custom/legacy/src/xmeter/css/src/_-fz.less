@@ -1,0 +1,46 @@
+
+/*################################*\
+    xmeter  |  _-fz.less
+\*################################*/
+@import (reference) url('./__settings.less');
+@import (reference) url('./__tool.fontsize.less');
+
+
+// font-size
+//
+// Set the `font-size` property on an element.
+// There are eight Atoms available, each corresponding to a font-size given by the project’s
+// [type scale](./section-principles.html).
+// You can see the source for the font-size settings in <a>/src/__settings.less</a>.
+//
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2018-03-26</time></dd>
+// </dl></header>
+//
+// Markup:
+// <!--link rel="stylesheet" href="/node_modules/xmeter/css/dist/-fz.css"/-->
+// <ul>
+//   <li class="-fz-micr">Quark    (0.625)</li>
+//   <li class="-fz-mill">Atom     (0.75) </li>
+//   <li class="-fz-norm">Molecule (1.00) </li>
+//   <li class="-fz-kilo">Asteroid (1.25) </li>
+//   <li class="-fz-mega">Planet   (1.75) </li>
+//   <li class="-fz-giga">Star     (2.25) </li>
+//   <li class="-fz-tera">Galaxy   (3.00) </li>
+//   <li class="-fz-peta">Universe (4.00) </li>
+// </ul>
+//
+// Weight: 3
+//
+// Styleguide Atoms.font-size
+
+
+.-fz-micr { --font-scale: @g-font-size-micr;              font-size: (@g-font-size-micr * 1em); }
+.-fz-mill { --font-scale: @g-font-size-mill;              font-size: (@g-font-size-mill * 1em); }
+.-fz-norm { --font-scale: @g-font-size-norm;              font-size: (@g-font-size-norm * 1em); }
+.-fz-kilo { --font-scale: @g-font-size-kilo;              font-size: (@g-font-size-kilo * 1em); }
+.-fz-mega { --font-scale: @g-font-size-mega; --tracks: 2; font-size: (@g-font-size-mega * 1em); }
+.-fz-giga { --font-scale: @g-font-size-giga; --tracks: 2; font-size: (@g-font-size-giga * 1em); }
+.-fz-tera { --font-scale: @g-font-size-tera; --tracks: 2; font-size: (@g-font-size-tera * 1em); }
+.-fz-peta { --font-scale: @g-font-size-peta; --tracks: 3; font-size: (@g-font-size-peta * 1em); }

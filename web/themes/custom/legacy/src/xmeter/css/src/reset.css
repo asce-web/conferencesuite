@@ -1,0 +1,61 @@
+
+/*================================*\
+    reset.css
+\*================================*/
+
+
+body {
+  text-align: start; /* COMBAK{FALLBACK} */
+  text-align: initial; /* fix unsupported browsers initial value */
+  background: #fff;
+  color: #000;
+}
+
+sup, sub {
+  vertical-align: baseline; /* COMBAK{FALLBACK} */
+  vertical-align: initial;  /* COMBAK{FALLBACK} */
+  vertical-align: unset;
+}
+body,
+h1, h2, h3, h4, h5, h6,
+hr,
+p, figure, blockquote, pre,
+ol, ul, dl,
+dd,
+fieldset {
+  margin: 0;       /* COMBAK{FALLBACK} */
+  margin: initial; /* COMBAK{FALLBACK} */
+  margin: unset;
+}
+ol, ul, dl,
+th, td,
+legend {
+  padding: 0;       /* COMBAK{FALLBACK} */
+  padding: initial; /* COMBAK{FALLBACK} */
+  padding: unset;
+}
+h1, h2, h3, h4, h5, h6,
+address,
+pre,
+th,
+em, strong, i, small,
+dfn, b, var, cite, sup, sub,
+code, kbd, samp {
+  font: inherit;
+}
+caption,
+th {
+  text-align: inherit; /* COMBAK{FALLBACK} */
+  text-align: unset;
+}
+pre {
+  white-space: inherit; /* COMBAK{FALLBACK} */
+  white-space: unset;
+}
+a,
+u, s,
+ins, del {
+  text-decoration: none;    /* COMBAK{FALLBACK} */
+  text-decoration: initial; /* COMBAK{FALLBACK} */
+  text-decoration: unset;
+}

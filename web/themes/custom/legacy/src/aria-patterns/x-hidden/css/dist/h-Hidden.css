@@ -1,0 +1,2 @@
+.h-Hidden{left:-999999px}.h-Hidden:not(:focus){display:block;position:absolute}@supports (inset-inline-start:0){.h-Hidden{left:0;inset-inline-start:-999999px}}
+/*# sourceMappingURL=h-Hidden.css.map */
