@@ -65,10 +65,6 @@ typings/
 vendor
 
 
-# Generated build files
-css/dist
-js/dist
-
 # Generated documentation & style guides
 docs/styleguide
 docs/api

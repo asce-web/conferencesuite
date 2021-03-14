@@ -1,0 +1,2 @@
+.o-Tablist--footertabs{justify-content:flex-end}.o-Tablist--footertabs .o-Tablist__Tab{flex:none}@media (-ms-high-contrast:active),(-ms-high-contrast:none){.o-Tablist--footertabs .o-Tablist__Tab{padding-top:3rem;padding-top:calc(2 * var(--lh));padding-top:2lh;text-align:center;list-style-type:none;cursor:auto}@supports (padding-block-start:var(--v)){.o-Tablist--footertabs .o-Tablist__Tab{padding-top:unset;padding-block-start:calc(2 * var(--lh));padding-block-start:2lh}}}
+/*# sourceMappingURL=_o-Tablist--footertabs.css.map */

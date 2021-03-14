@@ -1,0 +1,121 @@
+
+/*################################*\
+    legacy  |  _c-NavBar.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('__settings.less');
+
+
+// The Navigation Bar
+//
+// Typographical styles for conference titles.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-07-24</time></dd>
+// </dl></header>
+//
+// Markup:
+// <div class="c-ConferenceTitles">
+// </div>
+//
+// .c-NavBar--main     - A main navigation component containing
+//                       the main directories: program, location, about, and contact.
+// .c-NavBar--register - A side navigation component containing call-to-actions:
+//                       why attend, registration, etc.
+// .c-NavBar--contrib  - The navigation component on the top of the page containing
+//                       information for people: for speakers, sponsors, exhibitors, etc.
+// .c-NavBar--sub      - Secondary-level navigation component containing subpages
+//                       of the main directories
+// .c-NavBar--mobile   - Mobile Menu
+//
+// Weight: 6
+//
+// Styleguide Components.NavBar
+/*ul*/.c-NavBar {
+  margin-bottom: 0; // override base ul
+  .font-size-mod(12/16);
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  @media screen and (min-width: 75em) {
+    .font-size-mod(1);
+  }
+  a { display:block;line-height:inherit; } // copied from .h-Block (TODO: update menu blocks to include this class)
+  & > * { // TODO use a class
+    transition: background-color 250ms;
+    &:hover,
+    &:focus {
+      background-color: rgba(255,255,255, 0.25);
+    }
+    & > a { // TODO use a class
+      padding: 0.75rem; // REVIEW:MAGICNUMBER
+      @media screen and (min-width: 75em) {
+        padding: 1rem; // REVIEW:MAGICNUMBER
+      }
+    }
+  }
+}
+
+.c-NavBar--main {
+  padding-left: 1rem;
+  justify-content: flex-start;
+  & > :hover,
+  & > :focus,
+  & > .active { // TODO use a class
+    background-color: var(--color-accent);
+  }
+  .glyphicons { height: 0; } // fix a Firefox alignment bug
+  .glyphicons-chevron-down { padding-left: 1ch; }
+}
+
+.c-NavBar--register {
+  justify-content: center;
+  background-color: @g-color-asce-blue;
+}
+
+.c-NavBar--contrib {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  justify-content: center; // undo .o-Flex
+  align-items: flex-start; // undo .o-Flex
+  text-shadow: 0 0 4px black;
+  @media not all and (min-width: 60em) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    // background-image: linear-gradient(to bottom, rgba(0,0,0, 0.5) 0%, transparent 100%);
+  }
+  & > :hover,
+  & > :focus { // TODO use a class
+    background-color: transparent; // unset `.c-Navbar > *:hover`
+  }
+}
+
+.c-NavBar--sub {
+  justify-content: flex-start;
+  font-weight: 600;
+  text-transform: none; // undo .c-NavBar
+}
+
+.c-NavBar--mobile {
+  font-weight: 600; // undo .c-NavBar
+  text-transform: none; // undo .c-NavBar
+  // NB:LINK ./o-Drawer.less#L30 // cannot use background and shadow on .c-NavBar--mobile due to fixed position
+  // background-color: var(--color-secondary);
+  // box-shadow: 0 0 1rem 0.5rem rgba(0,0,0,0.25);
+  & > * { // TODO use a class
+    padding: 0.75rem; // REVIEW:MAGICNUMBER
+    &:hover,
+    &:focus {
+      background-color: transparent; // unset `.c-Navbar > *:hover`
+    }
+    & > a { // TODO use a class
+      text-transform: uppercase;
+    }
+  }
+  ul { padding:0;list-style:none; } // copied from .o-List (TODO: update menu blocks to include this class)
+  a {
+    padding: 0.25em;
+  }
+}

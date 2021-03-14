@@ -1,0 +1,58 @@
+
+/*################################*\
+    legacy  |  _c-Chair.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__settings.less');
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../xmeter/css/src/_-mb.less');
+
+
+// The Conference Chair
+//
+// A conference chairperson promoted on the front page.
+// <header><dl>
+//   <dt>author</dt>  <dd>Chris Harvey</dd>
+//   <dt>updated</dt> <dd><time>2017-04-18</time></dd>
+// </dl></header>
+//
+// Markup:
+// <ul class="o-List">
+//   <li class="o-List__Item c-Chair">
+//     <p class="c-Chair__Name">Tennyson Muindi, P.E., M.ASCE</p>
+//     <p class="c-Chair__Affiliation">Lead Associate, McMillen Jacobs Associates</p>
+//   </li>
+//   <li class="o-List__Item c-Chair">
+//     <p class="c-Chair__Name">William Fernandes</p>
+//     <p class="c-Chair__Affiliation">Director, Toronto Water, Water Treatment &amp; Supply, City of Toronto</p>
+//   </li>
+// </ul>
+//
+// Weight: 15
+//
+// Styleguide Components.Chair
+.c-Chair {
+  .-mb-h;
+}
+
+.c-Chair__Name,
+.c-Chair__Affiliation {
+  .-mb-0; // unset base `<p>`
+}
+
+.c-Chair__Name {
+  .h-FontSize;
+  --font-scale: @g-font-size-kilo;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-kilo);
+  }
+}
+
+.c-Chair__Affiliation {
+  .h-FontSize;
+  --font-scale: @g-font-size-mill;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mill);
+  }
+  font-style: italic;
+}
