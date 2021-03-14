@@ -21,7 +21,7 @@ global-styling:
       src/xmeter/css/dist/h-Measure.css: { minified: true }
       src/xmeter/css/dist/h-Constrain.css: { minified: true }
       src/xmeter/css/dist/h-FontSize.css: { minified: true }
-      //cdn.asce.org/packages/aria-patterns/x-hidden/css/dist/h-Hidden.css: { type: external, minified: true }
+      src/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
       //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
       //cdn.asce.org/chewie/assets/futura.css: { type: external, minified: true }
@@ -95,7 +95,7 @@ footerpanels:
   version: VERSION
   css:
     layout:
-      //cdn.asce.org/packages/aria-patterns/x-tablist/css/dist/o-Tablist.css: { type: external, minified: true }
+      src/aria-patterns/x-tablist/css/dist/o-Tablist.css: { minified: true }
       src/css/_o-Tablist--footertabs.css: { minified: true }
       src/css/_o-FooterGrid.css: { minified: true }
     component:
@@ -107,7 +107,7 @@ footerpanels:
       src/css/_c-Sitemap.css: { minified: true }
       src/css/_c-SocialListFooter.css: { minified: true }
   js:
-    //cdn.asce.org/packages/aria-patterns/x-tablist/js/dist/o-Tablist.js: { type: external, minified: true }
+    src/aria-patterns/x-tablist/js/dist/o-Tablist.js: { minified: true }
 
 # copyright library
 copyright:
