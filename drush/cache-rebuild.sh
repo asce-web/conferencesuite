@@ -116,6 +116,7 @@ drush @confsuite.structures cr
 drush @confsuite.structures_19 cr
 drush @confsuite.structures_20 cr
 drush @confsuite.structures_21 cr
+drush @confsuite.structures_22 cr
 #https://www.surveyingconference.org
 drush @confsuite.surveying cr
 drush @confsuite.surveying_18 cr

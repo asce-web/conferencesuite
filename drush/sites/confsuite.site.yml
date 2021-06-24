@@ -529,6 +529,12 @@ structures_21:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.structurescongress.org
 
+structures_22:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2022.structurescongress.org
+
 surveying:
   host: 35.232.239.38
   user: asce-ssh
