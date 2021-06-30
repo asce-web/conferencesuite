@@ -110,7 +110,8 @@
                 "Authorization function declaration fixes": "https://www.drupal.org/files/issues/2021-02-04/ldap-authorization-3196664-2.patch"
             },
             "drupal/diff": {
-                "Customize labels": "patches/diff/customize.patch"
+                "Add table headers text": "patches/diff/diffTableHeaders.patch",
+                "Update Navigation text": "patches/diff/navigationText.patch"
             }
         }
     }

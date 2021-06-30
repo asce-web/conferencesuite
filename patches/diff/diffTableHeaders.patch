@@ -1,0 +1,15 @@
+diff --git a/diff/src/Form/RevisionOverviewForm.php b/diff/src/Form/RevisionOverviewForm.php
+index 45c2c66..932fae7 100755
+--- a/src/Form/RevisionOverviewForm.php
++++ b/src/Form/RevisionOverviewForm.php
+@@ -175,8 +175,8 @@ class RevisionOverviewForm extends FormBase {
+     // Allow comparisons only if there are 2 or more revisions.
+     if ($revision_count > 1) {
+       $table_header += array(
+-        'select_column_one' => '',
+-        'select_column_two' => '',
++        'select_column_one' => 'Compare A',
++        'select_column_two' => 'with B',
+       );
+     }
+     $table_header['operations'] = $this->t('Operations');

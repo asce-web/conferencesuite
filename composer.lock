@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "155eeff3c054ef1b5ccfb4487aee8510",
+    "content-hash": "3f9904f17e103bc4c3304120b2e92325",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3318,6 +3318,10 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Add table headers text": "patches/diff/diffTableHeaders.patch",
+                    "Update Navigation text": "patches/diff/navigationText.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
