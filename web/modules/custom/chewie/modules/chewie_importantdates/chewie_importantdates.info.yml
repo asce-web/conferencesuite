@@ -1,19 +1,19 @@
 name: 'Important Dates'
 description: 'Important Date content type and associated functionality and styles.'
 type: module
-core: 8.x
 package: Chewie
 version: 8.x-1.4.1
 dependencies:
-  - block
-  - chewie_content
-  - conditional_fields
-  - datetime
-  - field
-  - link
-  - menu_ui
-  - node
-  - pathauto
-  - text
-  - user
-  - views
+  - 'chewie_content:chewie_content'
+  - 'conditional_fields:conditional_fields'
+  - 'drupal:block'
+  - 'drupal:datetime'
+  - 'drupal:field'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'pathauto:pathauto'
+core_version_requirement: '^8.9 || ^9'

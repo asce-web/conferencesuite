@@ -1,23 +1,23 @@
 name: Venues
 description: 'Venue content type and associated functionality and styles.'
 type: module
-core: 8.x
 package: Chewie
 version: 8.x-1.5.1
 dependencies:
-  - block
-  - chewie_content
-  - entityqueue
-  - field
-  - file
-  - image
-  - link
-  - link_plain_text_formatter
-  - menu_ui
-  - node
-  - pathauto
-  - system
-  - telephone
-  - text
-  - user
-  - views
+  - 'chewie_content:chewie_content'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:system'
+  - 'drupal:telephone'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'entityqueue:entityqueue'
+  - 'link_plain_text_formatter:link_plain_text_formatter'
+  - 'pathauto:pathauto'
+core_version_requirement: '^8.9 || ^9'
