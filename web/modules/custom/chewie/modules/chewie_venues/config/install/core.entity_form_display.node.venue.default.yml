@@ -17,8 +17,8 @@ dependencies:
     - image.style.thumbnail
     - node.type.venue
   module:
-    - filefield_sources
     - image
+    - imce
     - link
     - telephone
     - text
@@ -74,21 +74,8 @@ content:
       preview_image_style: thumbnail
       progress_indicator: throbber
     third_party_settings:
-      filefield_sources:
-        filefield_sources:
-          sources:
-            upload: true
-            remote: true
-            reference: true
-            clipboard: false
-            attach: false
-          source_reference:
-            autocomplete: '1'
-            search_all_fields: '0'
-          source_attach:
-            path: file_attach
-            absolute: 0
-            attach_mode: move
+      imce:
+        enabled: true
     type: image_image
     region: content
   field_venue_label:

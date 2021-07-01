@@ -31,7 +31,6 @@ dependencies:
   - 'drupal:views'
   - 'editor_advanced_link:editor_advanced_link'
   - 'editor_file:editor_file'
-  - 'filefield_sources:filefield_sources'
   - 'google_tag:google_tag'
   - 'linkit:linkit'
   - 'pathauto:pathauto'
