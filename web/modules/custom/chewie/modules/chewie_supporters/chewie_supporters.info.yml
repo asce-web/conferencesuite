@@ -18,7 +18,7 @@ dependencies:
   - 'drupal:user'
   - 'drupal:views'
   - 'entityqueue:entityqueue'
-  - 'filefield_sources:filefield_sources'
+  - 'imce:imce'
   - 'pathauto:pathauto'
   - 'workbench_moderation:workbench_moderation'
 core_version_requirement: '^8.9 || ^9'
