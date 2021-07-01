@@ -10,9 +10,11 @@ dependencies:
     - image.style.thumbnail
     - node.type.supporter
   module:
+    - filefield_sources
     - image
     - link
     - text
+    - workbench_moderation
 id: node.supporter.default
 targetEntityType: node
 bundle: supporter
@@ -43,9 +45,24 @@ content:
   field_supporter_logo:
     weight: 2
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+      progress_indicator: throbber
+    third_party_settings:
+      filefield_sources:
+        filefield_sources:
+          sources:
+            upload: true
+            remote: true
+            reference: true
+            clipboard: false
+            attach: false
+          source_reference:
+            autocomplete: '1'
+            search_all_fields: '0'
+          source_attach:
+            path: file_attach
+            absolute: 0
+            attach_mode: move
     type: image_image
     region: content
   field_supporter_url:
@@ -55,6 +72,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  publish_on:
+    weight: 121
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
     region: content
   status:
     type: boolean_checkbox
@@ -70,6 +93,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  unpublish_on:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
     region: content
 hidden:
   created: true

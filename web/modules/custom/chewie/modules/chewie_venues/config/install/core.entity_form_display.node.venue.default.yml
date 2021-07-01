@@ -17,10 +17,12 @@ dependencies:
     - image.style.thumbnail
     - node.type.venue
   module:
+    - filefield_sources
     - image
     - link
     - telephone
     - text
+    - workbench_moderation
 id: node.venue.default
 targetEntityType: node
 bundle: venue
@@ -69,9 +71,24 @@ content:
   field_venue_image:
     weight: 2
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+      progress_indicator: throbber
+    third_party_settings:
+      filefield_sources:
+        filefield_sources:
+          sources:
+            upload: true
+            remote: true
+            reference: true
+            clipboard: false
+            attach: false
+          source_reference:
+            autocomplete: '1'
+            search_all_fields: '0'
+          source_attach:
+            path: file_attach
+            absolute: 0
+            attach_mode: move
     type: image_image
     region: content
   field_venue_label:
