@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies: {  }
+id: member
+label: 'Member profile'
+description: 'Configuration for site members'
+conf:
+  extensions: 'txt, rtf, doc, docx, ppt, pptx, xls, xlsx, pdf, odf, odg, odp, ods, odt, fodt, fods, fodp, fodg, key, numbers, pages, png, gif, jpg, jpeg, svg'
+  maxsize: !!float 16
+  quota: !!float 0
+  maxwidth: null
+  maxheight: null
+  replace: 1
+  thumbnail_style: thumbnail
+  thumbnail_grid_style: true
+  ignore_usage: false
+  folders:
+    -
+      path: .
+      permissions:
+        browse_files: true
+        browse_subfolders: true
+    -
+      path: 'users/user[user:uid]'
+      permissions:
+        browse_files: true
+        browse_subfolders: true
+        create_subfolders: true
+        upload_files: true
+        delete_files: true
+        delete_subfolders: true
