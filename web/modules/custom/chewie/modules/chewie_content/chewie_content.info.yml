@@ -32,6 +32,7 @@ dependencies:
   - 'editor_advanced_link:editor_advanced_link'
   - 'editor_file:editor_file'
   - 'google_tag:google_tag'
+  - 'imce:imce'
   - 'linkit:linkit'
   - 'pathauto:pathauto'
   - 'workbench_moderation:workbench_moderation'

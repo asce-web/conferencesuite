@@ -1,0 +1,9 @@
+abs_urls: false
+admin_theme: true
+roles_profiles:
+  role_editor:
+    public: member
+  role_manager:
+    public: admin
+  administrator:
+    public: admin
