@@ -45,8 +45,8 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
-            - DrupalFile
+            - ImceImage
+            - ImceLink
         -
           name: Tools
           items:
