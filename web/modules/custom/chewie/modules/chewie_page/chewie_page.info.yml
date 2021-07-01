@@ -14,6 +14,5 @@ dependencies:
   - 'drupal:text'
   - 'drupal:user'
   - 'pathauto:pathauto'
-  - 'scheduler:scheduler'
   - 'workbench_moderation:workbench_moderation'
 core_version_requirement: '^8.9 || ^9'
