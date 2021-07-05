@@ -12,9 +12,11 @@
 #}
 {{ attach_library('legacy/messages') }}
 <form{{ attributes }}>
-  <div role="alert" class="messages messages--warning">
-    <h2 class="visually-hidden">Warning message</h2>
-    <p class="-mb-0"><strong>Notice:</strong> You can now log in with your ASCE workstation credentials.</p>
-  </div>
+  {% if not logged_in %}
+    <div role="alert" class="messages messages--warning">
+      <h2 class="visually-hidden">Warning message</h2>
+      <p class="-mb-0"><strong>Notice:</strong> You can now log in with your ASCE workstation credentials.</p>
+    </div>
+  {% endif %}
   {{ children }}
 </form>
