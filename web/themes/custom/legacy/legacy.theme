@@ -451,3 +451,10 @@ function legacy_theme_suggestions_block_alter(array &$suggestions, array $variab
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
 }
+
+function legacy_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $formId = $variables['element']['#id'] ?? NULL;
+  if ($formId) {
+    $suggestions[] = 'form__' . str_replace('-', '_', $formId);
+  }
+}
