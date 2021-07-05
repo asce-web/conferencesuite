@@ -1,22 +1,24 @@
 name: Supporters
 description: 'Supporter & Supporter Level content types, entity queues, and associated functionality and styles.'
 type: module
-core: 8.x
 package: Chewie
 version: 8.x-2.2.2
 dependencies:
-  - block
-  - chewie_content
-  - entityqueue
-  - field
-  - file
-  - image
-  - link
-  - menu_ui
-  - node
-  - options
-  - pathauto
-  - system
-  - text
-  - user
-  - views
+  - 'chewie_content:chewie_content'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:options'
+  - 'drupal:system'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'entityqueue:entityqueue'
+  - 'imce:imce'
+  - 'pathauto:pathauto'
+  - 'workbench_moderation:workbench_moderation'
+core_version_requirement: '^8.9 || ^9'

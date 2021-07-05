@@ -18,9 +18,11 @@ dependencies:
     - node.type.venue
   module:
     - image
+    - imce
     - link
     - telephone
     - text
+    - workbench_moderation
 id: node.venue.default
 targetEntityType: node
 bundle: venue
@@ -69,9 +71,11 @@ content:
   field_venue_image:
     weight: 2
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
     type: image_image
     region: content
   field_venue_label:

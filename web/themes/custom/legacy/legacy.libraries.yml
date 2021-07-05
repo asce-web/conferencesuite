@@ -14,6 +14,7 @@ global-styling:
       src/css/_c-KeynoteSpeaker.css: { minified: true }
       src/css/_c-Chair.css: { minified: true }
       src/css/_c-Button.css: { minified: true }
+      src/css/_c-Form.css: { minified: true }
     state:
       src/xmeter/css/dist/h-Block.css: { minified: true }
       src/xmeter/css/dist/h-Inline.css: { minified: true }

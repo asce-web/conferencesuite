@@ -1,36 +1,39 @@
 name: Content
 description: 'Generic conference site and content manipulation. Includes content tools & actions, block types, data formats, and text formats.'
 type: module
-core: 8.x
 package: Chewie
 version: 8.x-2.1.0
 dependencies:
-  - block
-  - block_content
-  - chewie_base
-  - ckeditor
-  - contextual
-  - datetime
-  - diff
-  - editor
-  - editor_advanced_link
-  - editor_file
-  - field
-  - field_ui
-  - file
-  - filter
-  - google_tag
-  - image
-  - link
-  - linkit
-  - menu_link_content
-  - menu_ui
-  - node
-  - pathauto
-  - quickedit
-  - search
-  - system
-  - telephone
-  - text
-  - user
-  - views
+  - 'chewie_base:chewie_base'
+  - 'diff:diff'
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:ckeditor'
+  - 'drupal:contextual'
+  - 'drupal:datetime'
+  - 'drupal:editor'
+  - 'drupal:field'
+  - 'drupal:field_ui'
+  - 'drupal:file'
+  - 'drupal:filter'
+  - 'drupal:image'
+  - 'drupal:link'
+  - 'drupal:menu_link_content'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:quickedit'
+  - 'drupal:search'
+  - 'drupal:system'
+  - 'drupal:telephone'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'editor_advanced_link:editor_advanced_link'
+  - 'editor_file:editor_file'
+  - 'google_tag:google_tag'
+  - 'imce:imce'
+  - 'linkit:linkit'
+  - 'pathauto:pathauto'
+  - 'workbench_moderation:workbench_moderation'
+core_version_requirement: '^8.9 || ^9'
