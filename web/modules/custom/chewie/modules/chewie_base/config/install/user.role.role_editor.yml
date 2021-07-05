@@ -39,6 +39,8 @@ permissions:
   - 'use text format full_html'
   - 'use text format rich_text'
   - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view moderation states'
   - 'view own unpublished content'
   - 'view the administration theme'
