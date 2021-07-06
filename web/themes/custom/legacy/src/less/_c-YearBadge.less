@@ -45,7 +45,8 @@
   font-family: 'futura-pt','Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
   font-size: calc(0.25 * var(--year-badge-width));
   text-align: center;
-  background-color: @g-color-asce-blue;
+  //background-color: @g-color-asce-blue;
+  background-color: var(--color-accent);
   &::after {
     --year-badge-corner-height: calc(0.25 * var(--year-badge-width));
     content: '';
@@ -55,7 +56,8 @@
     width: 0;
     height: 0;
     border-width: var(--year-badge-corner-height) calc(0.5 * var(--year-badge-width)) 0;
-    border-color: @g-color-asce-blue transparent;
+    //border-color: @g-color-asce-blue transparent;
+    border-color: var(--color-accent) transparent;
   }
 }
   .c-YearBadge--tab {

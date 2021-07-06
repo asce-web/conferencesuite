@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+{% import _self as menus %}
+{% set item_count = 0 %}
+{% set item_count_half = 0 %}
+{% if items %}
+{% for item in items %}
+  {% set item_count = (item_count+1) %}
+  {% set item_count_half = (item_count/2)|round(0, 'ceil') %}
+{% endfor %}
+{% set item_count = 0 %}
+  {% if menu_level == 0 %}
+    <ul class="o-Flex__Item o-List c-Sitemap" role="list">
+  {% else %}
+    <ul class="o-List c-Sitemap__Sub">
+  {% endif %}
+      {% for item in items %}
+      {% set item_count = (item_count+1) %}
+          {% if menu_level == 0 %}
+            <li class="o-List__Item c-Sitemap__Item">
+              <a class="top-level" href="{{ item.url }}">{{ item.title }} </a>
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            </li>
+          {% else %}
+            {% set item_count = 0 %}
+            <li class="o-List__Item_child">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            </li>
+          {% endif %}
+        {% if item_count == item_count_half %}
+          </ul><ul class="o-Flex__Item o-List c-Sitemap" role="list">
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

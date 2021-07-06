@@ -2,6 +2,7 @@
 /*################################*\
     legacy  |  _themes.less
 \*################################*/
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
 
 
 // Theme styles go here. They override any base and component styles.
@@ -40,4 +41,232 @@
     text-decoration: initial; // COMBAK:FALLBACK
     text-decoration: unset;
   }
+}
+
+// superfish styling
+
+// adjust dropdown indicator icon sizing
+ul {
+  &.sf-menu {
+    .sf-sub-indicator {
+      width: 1em;
+      height: 1em;
+    }
+
+    span {
+      &.nolink {
+        padding-right: 3em;
+        line-height: inherit;
+      }
+    }
+  }
+}
+
+// style larger viewport
+#superfish-main {
+  li {
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    &.active-trail {
+      a.is-active {
+        &:before {
+          position: absolute;
+          top: 1em;
+          left: .75em;
+          text-align: center;
+          content: "\2022";
+        }
+      }
+    }
+
+    &.menuparent {
+      & > ul {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+}
+
+// style secondary menu
+#superfish-secondary {
+  padding-right: 1em;
+  padding-left: 1em;
+  @media screen and (max-width: 47.9375em) {
+    padding: .375em 1em;
+  }
+  @media screen and (max-width: 74.9375em) {
+    .c-Button-hollow {
+      .font-size-mod(17/20);
+    }
+  }
+  @media screen and (min-width: 75em) {
+    .c-Button-hollow {
+      .font-size-mod(1);
+    }
+  }
+}
+
+// adjusted sitemap styling for child lists and items
+.c-Sitemap {
+  //columns: auto 10em;
+
+  .c-Sitemap__Item {
+    padding-right: 1em;
+
+    .c-Sitemap__Sub {
+      font-size: 1em;
+
+      .o-List__Item_child {
+        .c-Sitemap__Sub {
+          padding-left: 1em;
+          font-size: calc(var(--font-scale, 1) * 1em);
+          line-height: calc(var(--line-height) / var(--font-scale, 1) * var(--tracks, 1));
+          --font-scale: 0.75;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // style menu icon
+  #superfish-main-toggle {
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+    padding-left: 1em;
+
+    &:before {
+      display: block;
+      position: relative;
+      width: 3em;
+      height: 3em;
+      margin-right: 1em;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M16,4A12,12,0,1,0,28,16,12.01312,12.01312,0,0,0,16,4Zm5,16.5a.5.5,0,0,1-.5.5h-9a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h9a.5.5,0,0,1,.5.5Zm0-4a.5.5,0,0,1-.5.5h-9a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h9a.5.5,0,0,1,.5.5Zm0-4a.5.5,0,0,1-.5.5h-9a.5.5,0,0,1-.5-.5v-1a.5.5,0,0,1,.5-.5h9a.5.5,0,0,1,.5.5Z'/%3E%3C/svg%3E");
+      content: "";
+    }
+
+    &.sf-expanded {
+      &:before {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M10,2a8,8,0,1,0,8,8A8,8,0,0,0,10,2Zm3.182,9.76782a.49993.49993,0,0,1,0,.707l-.70716.707a.49988.49988,0,0,1-.70709,0L10,11.41418l-1.76776,1.7677a.49988.49988,0,0,1-.70709,0l-.70716-.707a.49993.49993,0,0,1,0-.707L8.58575,10,6.818,8.23218a.49993.49993,0,0,1,0-.707L7.52515,6.818a.50011.50011,0,0,1,.70709,0L10,8.58569,11.76776,6.818a.50011.50011,0,0,1,.70709,0l.70716.70716a.49993.49993,0,0,1,0,.707L11.41425,10Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  // style accordion menu
+  #superfish-main-accordion {
+    li {
+      a {
+        &.is-active {
+          &:before {
+            position: absolute;
+            top: 1em;
+            left: .75em;
+            text-align: center;
+            content: "\2022";
+          }
+        }
+      }
+
+      &.menuparent {
+        &:not(.sf-no-children) {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+
+          a {
+            &.sf-accordion-button {
+              display: flex;
+              flex-direction: row-reverse;
+              width: auto;
+              margin-right: auto;
+              order: 2;
+
+              &:after {
+                margin-right: .5em;
+                margin-left: 0;
+              }
+            }
+
+            &.sf-with-ul {
+              min-width: 10em;
+              order: 1;
+            }
+
+            &.sf-depth-2 {
+              font-weight: normal;
+            }
+          }
+
+          ul {
+            padding-left: 1em;
+            order: 3;
+          }
+        }
+      }
+    }
+  }
+
+  // unset larger viewport hover style
+  .c-NavBar--main > :hover {
+    background-color: unset;
+  }
+
+  .sf-accordion .sf-accordion-button {
+    overflow: hidden;
+    text-indent: -99999px;
+    position: relative;
+  }
+
+  .sf-accordion .sf-accordion-button:after {
+    font-family: "FontAwesome";
+    content: "\f13a";
+    text-indent: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .sf-accordion li.sf-expanded > .sf-accordion-button:after {
+    content: "\f139"
+  }
+}
+
+.cta {
+  &:not(.c-Sitemap__Item) {
+    background-color: var(--color-accent);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.c-Cta__Hover {
+  background-color: var(--color-accent) !important;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+//Custom CTA Block
+.c-CustomCTA__Block, .cta-block {
+  padding: 0 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.25rem;
+}
+
+.w-100 {
+  width: 100%;
 }
