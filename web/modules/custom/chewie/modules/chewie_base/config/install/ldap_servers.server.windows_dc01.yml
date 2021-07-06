@@ -4,34 +4,36 @@ dependencies: {  }
 id: windows_dc01
 label: 'Windows DC01'
 type: ad
-account_name_attr: ''
 address: 'ldaps://208.184.140.26'
-basedn:
-  - 'OU=ASCE Users,DC=asce,DC=org'
+port: 636
+timeout: 10
+tls: false
+followrefs: null
+weight: null
 bind_method: service_account
 binddn: 'CN=LDAPADM,OU=Service Accounts,DC=asce,DC=org'
 bindpw: PASSWORD
-encryption: ssl
-grp_derive_from_dn_attr: cn
-grp_derive_from_dn: true
-grp_memb_attr_match_user_attr: ''
-grp_memb_attr: ''
-grp_nested: false
-grp_object_cat: ''
-grp_test_grp_dn_writeable: ''
-grp_test_grp_dn: ''
-grp_unused: false
-grp_user_memb_attr_exists: true
-grp_user_memb_attr: memberof
+basedn: 'OU=ASCE Users,DC=asce,DC=org'
+user_attr: samaccountname
+account_name_attr: ''
 mail_attr: mail
 mail_template: ''
 picture_attr: thumbnailphoto
-port: 636
-testing_drupal_user_dn: ''
-testing_drupal_username: ''
-timeout: 10
-unique_persistent_attr_binary: true
 unique_persistent_attr: objectguid
-user_attr: samaccountname
+unique_persistent_attr_binary: true
 user_dn_expression: ''
-weight: null
+testing_drupal_username: ''
+testing_drupal_user_dn: ''
+grp_unused: false
+grp_object_cat: ''
+grp_nested: false
+grp_user_memb_attr_exists: true
+grp_user_memb_attr: memberof
+grp_memb_attr: ''
+grp_memb_attr_match_user_attr: ''
+grp_derive_from_dn: '1'
+grp_derive_from_dn_attr: cn
+grp_test_grp_dn: ''
+grp_test_grp_dn_writeable: ''
+search_pagination: false
+search_page_size: null

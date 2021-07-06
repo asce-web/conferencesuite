@@ -7,12 +7,8 @@ libraries:
   - legacy/global-styling
 regions:
   header: Header
+  menu_main: Main Menu
   content: Content
   sidebar: Sidebar
   supporters: Supporters
   footer: Footer
-  menu_main: Main Menu
-  menu_sub: Sub Menu
-  menu_register: Registration Menu
-  menu_contrib: Contributors Menu
-  menu_mobile: Mobile Menu

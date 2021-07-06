@@ -1,19 +1,6 @@
 {{ attach_library('legacy/header') }}
 {{ attach_library('legacy/copyright') }}
 <header>
-  <nav class="o-Flex o-MobileBar o-Drawer c-Banner c-Banner--nav -d-n-sM">
-    <h1 class="h-Hidden">Mobile Menu</h1>
-    <a class="o-Flex__Item o-MobileBar__Item h-Block" href="/">
-      <i class="glyphicons glyphicons-home"><span class="h-Hidden">Home</span></i>
-    </a>
-    <button class="o-Flex__Item o-MobileBar__Item o-Drawer__Button" type="button" aria-controls="mobile-drawer" aria-expanded="false">
-      <i class="glyphicons glyphicons-menu-hamburger">
-        <span class="h-Hidden">toggle main menu</span>
-      </i>
-    </button>
-    <noscript><a href="#sitemap">Site Map</a></noscript>
-    <div id="mobile-drawer" class="o-Drawer__Bar" aria-hidden="true">{{ page.menu_mobile }}</div>
-  </nav>
   <div class="c-Banner c-Banner--head">
     <div class="o-Flex h-Constrain">
       <a class="o-Flex__Item o-MainCol h-Block" href="{{ path('<front>') }}">
@@ -24,20 +11,14 @@
           {{- (page_startdate|date('Y'))[:2] -}}
           <span class="c-YearBadge__Year">{{ (page_startdate|date('Y'))[2:] }}</span>
         </span>
-        {{ page.menu_contrib }}
       </div>
     </div>
   </div>
-  <nav class="c-Banner c-Banner--nav -d-n-nM">
+  <nav class="c-Banner c-Banner--nav">
     <h1 class="h-Hidden">Main Menu</h1>
     <div class="h-Constrain o-Flex">
-      <div class="o-Flex__Item o-MainCol">{{ page.menu_main }}</div>
-      <div class="o-Flex__Item o-SideCol o-SideCol__Header">{{ page.menu_register }}</div>
+      <div class="o-MainCol w-100">{{ page.menu_main }}</div>
     </div>
-  </nav>
-  <nav>
-    <h1 class="h-Hidden">Sub Menus</h1>
-      {{ page.menu_sub }}
   </nav>
 </header>
 <main class="h-Constrain" id="main" itemscope="" itemtype="http://schema.org/Event">
