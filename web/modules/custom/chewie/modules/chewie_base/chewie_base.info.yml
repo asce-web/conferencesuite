@@ -27,6 +27,7 @@ dependencies:
   - 'ldap:ldap_authorization'
   - 'ldap:ldap_servers'
   - 'ldap:ldap_user'
+  - 'menu_link_attributes:menu_link_attributes'
   - 'rebuild_cache_access:rebuild_cache_access'
   - 'superfish:superfish'
 core_version_requirement: '^8.9 || ^9'
