@@ -86,7 +86,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -151,7 +151,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -214,7 +214,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -277,7 +277,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -340,7 +340,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -405,7 +405,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -445,10 +445,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          text: view
+          output_url_as_text: true
           absolute: false
           entity_type: node
           plugin_id: entity_link
-          output_url_as_text: true
         field_session_url:
           id: field_session_url
           table: node__field_session_url
@@ -457,7 +458,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -516,55 +517,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<td class=\"c-TimeBlock__Times\">\n  <time datetime=\"{{ field_session_starttime|date('Y-m-d\\\\TH:i') }}\" itemprop=\"startDate\">{{ field_session_starttime|date('g:i a') }}</time>\n  &ndash;\n  <time datetime=\"{{ field_session_endtime|date('Y-m-d\\\\TH:i') }}\" itemprop=\"endDate\">{{ field_session_endtime|date('g:i a') }}</time>\n</td>\n<td class=\"c-TimeBlock__Desc\">\n  <a\n    {% if field_session_link == 'On' %} class=\"c-TimeBlock__Link\" href=\"{{ field_session_url ?: path }}\" itemprop=\"url\"{% endif %}\n    {% if field_session_link == 'Off' %} role=\"none presentation\"{% endif %}\n  >\n    <data value=\"{{ title }}\" itemprop=\"name\">\n      {{- field_session_displayname ?: title -}}\n    </data>\n  </a>\n</td>"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
         field_session_starttime_1:
           id: field_session_starttime_1
           table: node__field_session_starttime

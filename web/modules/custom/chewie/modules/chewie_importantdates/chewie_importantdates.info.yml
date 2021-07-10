@@ -2,7 +2,7 @@ name: 'Important Dates'
 description: 'Important Date content type and associated functionality and styles.'
 type: module
 package: Chewie
-version: 8.x-1.4.1
+version: 8.x-2.0.0
 dependencies:
   - 'chewie_content:chewie_content'
   - 'conditional_fields:conditional_fields'

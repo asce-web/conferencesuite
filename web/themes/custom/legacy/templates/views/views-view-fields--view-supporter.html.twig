@@ -29,18 +29,10 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<td class="c-TimeBlock__Times">
-  <time datetime="{{ fields.field_session_starttime.content|date('Y-m-d\\TH:i') }}" itemprop="startDate">{{ fields.field_session_starttime.content|date('g:i a') }}</time>
-  &ndash;
-  <time datetime="{{ fields.field_session_endtime.content|date('Y-m-d\\TH:i') }}" itemprop="endDate">{{ fields.field_session_endtime.content|date('g:i a') }}</time>
-</td>
-<td class="c-TimeBlock__Desc">
-  <a
-    {% if fields.field_session_link.content == 'On' %} class="c-TimeBlock__Link" href="{{ fields.field_session_url.content ?: fields.path.content }}" itemprop="url"{% endif %}
-    {% if fields.field_session_link.content == 'Off' %} role="none presentation"{% endif %}
-  >
-    <data value="{{ fields.title.content }}" itemprop="name">
-      {{- fields.field_session_displayname.content ?: fields.title.content -}}
-    </data>
-  </a>
-</td>
+<a rel="external nofollow noopener" href="{{ fields.field_supporter_url.content|striptags|trim }}" itemprop="url" target="_blank">
+	<data value="{{ fields.title.content|striptags|trim }}" itemprop="name">
+		<img class="c-SupporterBlock__Logo" src="{{ fields.field_supporter_logo.content|striptags|trim }}" alt="
+			{{- fields.field_supporter_displayname.content|striptags|trim ?: fields.title.content|striptags|trim -}}
+		" itemprop="logo"/>
+	</data>
+</a>

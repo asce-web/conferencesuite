@@ -2,7 +2,7 @@ name: Supporters
 description: 'Supporter & Supporter Level content types, entity queues, and associated functionality and styles.'
 type: module
 package: Chewie
-version: 8.x-2.2.2
+version: 8.x-3.0.0
 dependencies:
   - 'chewie_content:chewie_content'
   - 'drupal:block'
