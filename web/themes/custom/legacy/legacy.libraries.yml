@@ -41,7 +41,7 @@ global-styling:
       src/css/_hack.ie.css: { minified: true }
       src/css/_hack.shame.css: { minified: true }
   js:
-    {}
+    src/js/acknowledge.js: { minified: false }
   dependencies:
     - core/jquery
 
