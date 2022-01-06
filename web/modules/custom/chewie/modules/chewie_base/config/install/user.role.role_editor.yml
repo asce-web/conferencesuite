@@ -12,6 +12,7 @@ permissions:
   - 'access in-place editing'
   - 'access shortcuts'
   - 'access toolbar'
+  - 'bypass node access'
   - 'create importantdate content'
   - 'create session content'
   - 'create supporter content'
