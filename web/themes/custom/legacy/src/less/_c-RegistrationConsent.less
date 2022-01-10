@@ -1,0 +1,73 @@
+/*################################*\
+    legacy  |  _c-RegistrationConsent.less
+\*################################*/
+@import (reference) url('../xmeter/css/src/__settings.less');
+@import (reference) url('../xmeter/css/src/__tool.fontsize.less');
+@import (reference) url('../xmeter/css/src/_h-FontSize.less');
+@import (reference) url('../xmeter/css/src/_-mb.less');
+@import (reference) url('__settings.less');
+
+
+.mx-mh-1() {
+  margin-left: 1rem; // COMBAK:FALLBACK
+  margin-right: 1rem; // COMBAK:FALLBACK
+  @supports (margin-inline: 1rem) {
+    margin-left: unset;
+    margin-right: unset;
+    margin-inline: 1rem;
+  }
+}
+
+.c-RegistrationConsent__Block {
+}
+
+.c-RegistrationConsent__Hn {
+  --font-scale: @g-font-size-mega;
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .font-size-el(@g-font-size-mega);
+  }
+
+  // visualization line separator
+  @supports (flex-wrap: wrap) {
+    display: flex;
+    align-items: center;
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: (0.125 * 1.5rem); // COMBAK:FALLBACK
+      height: calc(0.125 * var(--lh)); // COMBAK:FALLBACK
+      height: 0.125 lh;
+      @supports (block-size: var(--v)) {
+        height: unset;
+        block-size: calc(0.125 * var(--lh));
+        block-size: 0.125 lh;
+      }
+      margin: 0 1rem;
+      background-image: linear-gradient(to right, transparent, @g-color-table-br, transparent); // COMBAK:FALLBACK for `linear-gradient(var(--v))`
+      background-image: linear-gradient(var(--direction), var(--color-primary), transparent);
+      opacity: 0.5;
+    }
+
+    &::before {
+      --direction: to left;
+      @supports (background-image: linear-gradient(to inline-start, transparent, black)) {
+        --direction: to inline-start;
+      }
+    }
+
+    &::after {
+      --direction: to right;
+      @supports (background-image: linear-gradient(to inline-end, transparent, black)) {
+        --direction: to inline-end;
+      }
+    }
+  }
+}
+
+.c-RegistrationConsent__Content {
+}
+
+.c-RegistrationConsent__Button {
+  text-decoration: none !important;
+}

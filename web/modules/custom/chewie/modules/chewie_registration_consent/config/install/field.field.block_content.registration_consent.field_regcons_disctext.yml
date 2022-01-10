@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.registration_consent
+    - field.storage.block_content.field_regcons_disctext
+  module:
+    - text
+id: block_content.registration_consent.field_regcons_disctext
+field_name: field_regcons_disctext
+entity_type: block_content
+bundle: registration_consent
+label: 'Disclaimer text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,16 @@
+name: 'Registration Consent'
+description: 'Registration consent block.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'chewie_base:chewie_base'
+  - 'chewie_registration_consent:chewie_registration_consent'
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:field'
+  - 'drupal:link'
+  - 'drupal:system'
+  - 'drupal:text'
+  - 'workbench_moderation:workbench_moderation'
+version: 8.x-1.0
+package: Chewie
