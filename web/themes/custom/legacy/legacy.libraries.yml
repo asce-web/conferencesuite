@@ -184,6 +184,13 @@ venue:
     component:
       src/css/_c-Venue.css: { minified: true }
 
+# Registration Consent Component
+registrationconsent:
+  version: VERSION
+  css:
+    component:
+      src/css/_c-RegistrationConsent.css: { minified: true }
+
 # extension of 'classy/messages'
 messages:
   version: VERSION
