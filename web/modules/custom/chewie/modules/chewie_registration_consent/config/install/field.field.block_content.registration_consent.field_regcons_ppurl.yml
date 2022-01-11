@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.registration_consent
+    - field.storage.block_content.field_regcons_ppurl
+  module:
+    - link
+id: block_content.registration_consent.field_regcons_ppurl
+field_name: field_regcons_ppurl
+entity_type: block_content
+bundle: registration_consent
+label: 'Policy page URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+field_type: link

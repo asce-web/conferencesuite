@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: registration_consent
+label: 'Registration Consent Block'
+revision: 1
+description: ''

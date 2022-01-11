@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.registration_consent
+    - field.field.block_content.registration_consent.field_regcons_disctext
+    - field.field.block_content.registration_consent.field_regcons_ppurl
+    - field.field.block_content.registration_consent.field_regcons_regbutton
+  module:
+    - link
+    - text
+    - workbench_moderation
+id: block_content.registration_consent.default
+targetEntityType: block_content
+bundle: registration_consent
+mode: default
+content:
+  field_regcons_disctext:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_regcons_ppurl:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_regcons_regbutton:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
