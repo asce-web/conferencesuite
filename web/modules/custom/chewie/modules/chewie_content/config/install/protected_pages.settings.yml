@@ -1,0 +1,14 @@
+email:
+  subject: 'Please visit this new page'
+  body: "Hello,\r\n\r\nASCE just created a new page on [site-name] and wanted to invite you to visit. The page is protected by password. Please find the details below:-\r\n\r\nPage Url = [protected-page-url]\r\n\r\nPage Password = password here\r\n\r\nThank you.\r\n[site-name]"
+password:
+  protected_pages_session_expire_time: '15'
+  per_page_or_global: per_page_or_global
+  protected_pages_global_password: $S$EJ8Ds/lz3PbChiIXC1gA5toDMtkhqYgDkXKWYEPrRzAKemJABwjl
+others:
+  protected_pages_title: 'Password Protected -- Enter password'
+  protected_pages_description: 'The page you are trying to view is password protected. Please enter the password provided to you below.'
+  protected_pages_password_label: Password
+  protected_pages_submit_button_text: Authenticate
+  protected_pages_incorrect_password_msg: 'Incorrect password. Please try again!'
+langcode: en
