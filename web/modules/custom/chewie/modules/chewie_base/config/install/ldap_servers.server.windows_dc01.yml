@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies: {  }
 id: windows_dc01
-label: 'Windows DC01'
+label: 'Azure LDAP'
 type: ad
 account_name_attr: ''
-address: 'ldaps://208.184.140.26'
+address: ldaps.asce.org
 basedn:
-  - 'OU=ASCE Users,DC=asce,DC=org'
+  - 'OU=AADDC Users, DC=asce, DC=org'
 bind_method: service_account
-binddn: 'CN=LDAPADM,OU=Service Accounts,DC=asce,DC=org'
+binddn: 'CN=LDAPADM,OU=AADDC Users, DC=asce, DC=org'
 bindpw: PASSWORD
 encryption: ssl
 grp_derive_from_dn_attr: cn
