@@ -109,6 +109,12 @@ asce_ictd_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.asce-ictd.org
 
+asce_ictd_21:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2021.asce-ictd.org
+
 asceconv:
   host: 35.232.239.38
   user: asce-ssh
@@ -156,6 +162,12 @@ ascestudentdays_20:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.ascestudentdays.org
+
+studentdays_22:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://studentdays22.asce.org
 
 asceweek:
   host: 35.232.239.38

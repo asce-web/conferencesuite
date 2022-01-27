@@ -22,6 +22,7 @@ drush @confsuite.asce_ictd cr
 drush @confsuite.asce_ictd_18 cr
 drush @confsuite.asce_ictd_19 cr
 drush @confsuite.asce_ictd_20 cr
+drush @confsuite.asce_ictd_21 cr
 #https://www.asceconvention.org
 drush @confsuite.asceconv cr
 drush @confsuite.asceconv_18 cr
@@ -32,6 +33,7 @@ drush @confsuite.ascestudentdays cr
 drush @confsuite.ascestudentdays_18 cr
 drush @confsuite.ascestudentdays_19 cr
 drush @confsuite.ascestudentdays_20 cr
+drush @confsuite.studentdays_22 cr
 #https://www.asceweek.org
 drush @confsuite.asceweek cr
 drush @confsuite.asceweek_18 cr

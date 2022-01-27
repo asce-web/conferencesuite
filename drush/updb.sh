@@ -32,6 +32,7 @@ drush @confsuite.ascestudentdays updb
 drush @confsuite.ascestudentdays_18 updb
 drush @confsuite.ascestudentdays_19 updb
 drush @confsuite.ascestudentdays_20 updb
+drush @confsuite.studentdays_22 updb
 #https://www.asceweek.org
 drush @confsuite.asceweek updb
 drush @confsuite.asceweek_18 updb
