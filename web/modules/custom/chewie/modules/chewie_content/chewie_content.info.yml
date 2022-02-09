@@ -35,5 +35,6 @@ dependencies:
   - 'imce:imce'
   - 'linkit:linkit'
   - 'pathauto:pathauto'
+  - 'protected_pages:protected_pages'
   - 'workbench_moderation:workbench_moderation'
 core_version_requirement: '^8.9 || ^9'

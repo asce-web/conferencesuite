@@ -7,8 +7,8 @@ ldapUserHelpLinkUrl: ''
 ldapUserHelpLinkText: ''
 emailOption: disable
 emailUpdate: update_notify
-emailTemplateHandling: none
-emailTemplate: '@username@example.com'
+emailTemplateHandling: if_empty
+emailTemplate: '@username@asce.org'
 emailTemplateUsageResolveConflict: false
 emailTemplateUsageNeverUpdate: false
 emailTemplateUsagePromptUser: false
@@ -19,4 +19,4 @@ allowOnlyIfTextInDn: {  }
 excludeIfTextInDn: {  }
 excludeIfNoAuthorizations: false
 langcode: en
-skipAdministrators: true
+skipAdministrators: false
