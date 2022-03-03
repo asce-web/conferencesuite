@@ -1,0 +1,78 @@
+.c-Speakers__List ol, .c-Speakers__List ul {
+  list-style: none;
+  padding: 0;
+}
+.c-Speakers__List ol li:not(:last-of-type), .c-Speakers__List ul li:not(:last-of-type) {
+  margin-bottom: 1.5em;
+}
+
+.c-Speaker {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+@media screen and (max-width: 29.9375em) {
+  .c-Speaker {
+    flex-direction: column;
+  }
+}
+.c-Speaker__Headshot {
+  width: 6em;
+  min-width: 6em;
+  max-height: 6em;
+  margin: 0 2em 1.5em 0;
+  overflow: hidden;
+}
+.c-Speaker__Headshot img {
+  width: 6em;
+  height: auto;
+  margin: auto;
+}
+.c-Speaker__Headshot.c-Speaker__Featured {
+  width: 12em;
+  min-width: 12em;
+  max-height: 12em;
+}
+.c-Speaker__Headshot.c-Speaker__Featured img {
+  width: 12em;
+}
+
+.c-Speaker__Data {
+  width: auto;
+  margin-bottom: 1.5em;
+}
+.c-Speaker__Data a {
+  font-size: 1.25em;
+}
+
+.c-Speaker__Title {
+  max-width: 30em;
+}
+
+.c-Speaker__Name {
+  max-width: 30em;
+  word-break: break-word;
+}
+
+.c-Speaker__Credentials {
+  max-width: 30em;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.c-Speaker__Organization {
+  max-width: 30em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.c-Speaker__Bio {
+  max-width: 45em;
+}
+
+.toolbar-tray a {
+  text-decoration: none;
+}

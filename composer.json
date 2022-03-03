@@ -35,11 +35,14 @@
         "drupal/entityqueue": "^1.0@alpha",
         "drupal/externalauth": "^1.1",
         "drupal/features": "^3.7",
+        "drupal/field_group": "^3.2",
+        "drupal/filefield_sources": "^1.0@alpha",
         "drupal/google_tag": "^1.0",
         "drupal/imce": "^2.4",
         "drupal/ldap": "^4.3",
         "drupal/link_plain_text_formatter": "^1.0",
         "drupal/linkit": "^5.0@beta",
+        "drupal/menu_link_attributes": "^1.2",
         "drupal/pathauto": "^1.2",
         "drupal/protected_pages": "^1.4",
         "drupal/rebuild_cache_access": "^1.4",
@@ -108,9 +111,6 @@
             ]
         },
         "patches": {
-            "drupal/ldap": {
-                "Authorization function declaration fixes": "https://www.drupal.org/files/issues/2021-02-04/ldap-authorization-3196664-2.patch"
-            },
             "drupal/diff": {
                 "Add table headers text": "patches/diff/diffTableHeaders.patch",
                 "Update Navigation text": "patches/diff/navigationText.patch"

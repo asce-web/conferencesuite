@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_speaker_generational
+field_name: field_speaker_generational
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Jr.
+      label: Jr.
+    -
+      value: Sr.
+      label: Sr.
+    -
+      value: I
+      label: I
+    -
+      value: II
+      label: II
+    -
+      value: III
+      label: III
+    -
+      value: IV
+      label: IV
+    -
+      value: V
+      label: V
+    -
+      value: VI
+      label: VI
+    -
+      value: VII
+      label: VII
+    -
+      value: VIII
+      label: VIII
+    -
+      value: IX
+      label: IX
+    -
+      value: X
+      label: X
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

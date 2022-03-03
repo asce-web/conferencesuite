@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.view_speakers
+  module:
+    - system
+    - views
+  theme:
+    - legacy
+id: views_block__view_speakers_block_not_featured_speakers
+theme: legacy
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:view_speakers-block_not_featured_speakers'
+settings:
+  id: 'views_block:view_speakers-block_not_featured_speakers'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /speakers
+    negate: false
+    context_mapping: {  }

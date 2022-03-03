@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: speaker
+label: Speaker
+type: 'canonical_entities:node'
+pattern: 'speaker/[node:title]'
+selection_criteria:
+  ea017c05-6b59-48ca-a391-892a733f9b82:
+    id: node_type
+    bundles:
+      speaker: speaker
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ea017c05-6b59-48ca-a391-892a733f9b82
+selection_logic: and
+weight: -5
+relationships: {  }
