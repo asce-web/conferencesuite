@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.speaker_session
+    - field.field.node.speaker.field_speaker_bio
+    - field.field.node.speaker.field_speaker_credentials
+    - field.field.node.speaker.field_speaker_featured
+    - field.field.node.speaker.field_speaker_fname
+    - field.field.node.speaker.field_speaker_generational
+    - field.field.node.speaker.field_speaker_headshot
+    - field.field.node.speaker.field_speaker_lname
+    - field.field.node.speaker.field_speaker_organization
+    - field.field.node.speaker.field_speaker_title
+    - node.type.speaker
+  module:
+    - image
+    - text
+    - user
+id: node.speaker.speaker_session
+targetEntityType: node
+bundle: speaker
+mode: speaker_session
+content:
+  field_speaker_bio:
+    type: text_summary_or_trimmed
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      trim_length: 280
+    third_party_settings: {  }
+  field_speaker_credentials:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_speaker_fname:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_speaker_headshot:
+    type: image_url
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+  field_speaker_lname:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_speaker_organization:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_speaker_title:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_speaker_featured: true
+  field_speaker_generational: true
+  links: true

@@ -1,0 +1,147 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.speaker.field_speaker_bio
+    - field.field.node.speaker.field_speaker_credentials
+    - field.field.node.speaker.field_speaker_featured
+    - field.field.node.speaker.field_speaker_fname
+    - field.field.node.speaker.field_speaker_generational
+    - field.field.node.speaker.field_speaker_headshot
+    - field.field.node.speaker.field_speaker_lname
+    - field.field.node.speaker.field_speaker_organization
+    - field.field.node.speaker.field_speaker_title
+    - image.style.thumbnail
+    - node.type.speaker
+  module:
+    - field_group
+    - filefield_sources
+    - image
+    - text
+third_party_settings:
+  field_group:
+    group_speaker_name:
+      children:
+        - field_speaker_title
+        - field_speaker_fname
+        - field_speaker_lname
+        - field_speaker_credentials
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      region: content
+      format_settings:
+        effect: bounceslide
+        id: ''
+        classes: g-Speaker__Name
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Speaker Name'
+id: node.speaker.default
+targetEntityType: node
+bundle: speaker
+mode: default
+content:
+  field_speaker_bio:
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_speaker_credentials:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_speaker_featured:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_speaker_fname:
+    weight: 29
+    settings:
+      size: 35
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_speaker_headshot:
+    weight: 5
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      filefield_sources:
+        filefield_sources:
+          sources:
+            upload: true
+            remote: true
+            reference: true
+            clipboard: false
+            attach: false
+          source_reference:
+            autocomplete: '1'
+            search_all_fields: '0'
+          source_attach:
+            path: file_attach
+            absolute: 0
+            attach_mode: move
+    type: image_image
+    region: content
+  field_speaker_lname:
+    weight: 30
+    settings:
+      size: 35
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_speaker_organization:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_speaker_title:
+    weight: 28
+    settings:
+      size: 15
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_speaker_generational: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

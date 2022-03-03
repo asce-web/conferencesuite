@@ -1,0 +1,28 @@
+name: Speakers
+description: 'Speaker content type and associated functionality and styles.'
+type: module
+package: Chewie
+core: 8.x
+core_version_requirement: '^8 || ^9'
+version: 8.x-2.0
+dependencies:
+  - block
+  - chewie_content
+  - chewie_sessions
+  - features
+  - field
+  - field_group
+  - file
+  - filefield_sources
+  - image
+  - link
+  - menu_link_attributes
+  - menu_ui
+  - node
+  - options
+  - pathauto
+  - system
+  - telephone
+  - text
+  - user
+  - views
