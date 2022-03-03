@@ -5,7 +5,7 @@ drupalAcctProvisionTriggers:
 ldapEntryProvisionTriggers: {  }
 userUpdateCronQuery: none
 userUpdateCronInterval: monthly
-orphanedDrupalAcctBehavior: user_cancel_block
+orphanedDrupalAcctBehavior: ldap_user_orphan_email
 orphanedCheckQty: 100
 orphanedAccountCheckInterval: weekly
 userConflictResolve: resolve
