@@ -56,6 +56,9 @@ drush @confsuite.emi_20 updb
 #https://www.etsconference.org
 drush @confsuite.ets updb
 drush @confsuite.ets_18 updb
+#https://ewrichannels.asce.org
+drush @confsuite.channels_20 updb
+drush @confsuite.channels updb
 #https://www.ewricongress.org
 drush @confsuite.ewri updb
 drush @confsuite.ewri_18 updb
@@ -73,6 +76,8 @@ drush @confsuite.geo-extreme_21 updb
 drush @confsuite.geo updb
 drush @confsuite.geo_19 updb
 drush @confsuite.geo_20 updb
+drush @confsuite.geo_22 updb
+drush @confsuite.geo_23 updb
 #https://www.geesdconference.org
 drush @confsuite.geesd updb
 drush @confsuite.geesd_18 updb
