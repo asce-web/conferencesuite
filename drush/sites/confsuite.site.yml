@@ -277,6 +277,12 @@ channels_20:
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://ewrichannels.asce.org
 
+channels:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://ewrichannels.asce.org
+
 ewri:
   host: 35.232.239.38
   user: asce-ssh
@@ -360,6 +366,12 @@ geo_22:
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2022.geocongress.org
+
+geo_23:
+  host: 35.232.239.38
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://2023.geocongress.org
 
 geesd:
   host: 35.232.239.38

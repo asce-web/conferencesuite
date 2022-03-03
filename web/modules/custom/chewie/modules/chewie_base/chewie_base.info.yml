@@ -3,11 +3,19 @@ description: 'Administrative operations required to run a basic site. Includes d
 type: module
 package: Chewie
 version: 8.x-1.6.0
+core_version_requirement: '^8.9 || ^9'
 dependencies:
   - 'admin_toolbar:admin_toolbar_tools'
   - 'authorization:authorization'
-  - 'authorization_drupal_roles:authorization_drupal_roles'
+  - 'authorization:authorization_drupal_roles'
   - 'chewie_content:chewie_content'
+  - 'chewie_importantdates:chewie_importantdates'
+  - 'chewie_page:chewie_page'
+  - 'chewie_registration_consent:chewie_registration_consent'
+  - 'chewie_sessions:chewie_sessions'
+  - 'chewie_speakers:chewie_speakers'
+  - 'chewie_supporters:chewie_supporters'
+  - 'chewie_venues:chewie_venues'
   - 'drupal:automated_cron'
   - 'drupal:block'
   - 'drupal:dblog'
@@ -27,5 +35,6 @@ dependencies:
   - 'ldap:ldap_authorization'
   - 'ldap:ldap_servers'
   - 'ldap:ldap_user'
+  - 'ldap:ldap_query'
+  - 'menu_link_attributes:menu_link_attributes'
   - 'rebuild_cache_access:rebuild_cache_access'
-core_version_requirement: '^8.9 || ^9'

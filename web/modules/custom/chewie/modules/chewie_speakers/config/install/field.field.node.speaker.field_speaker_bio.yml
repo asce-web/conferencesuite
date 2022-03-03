@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speaker_bio
+    - node.type.speaker
+  module:
+    - text
+id: node.speaker.field_speaker_bio
+field_name: field_speaker_bio
+entity_type: node
+bundle: speaker
+label: Bio
+description: 'Biography of the person. <!--Click <b>Edit Summary</b> to enter a short teaser of the bio (250 characters max).-->'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

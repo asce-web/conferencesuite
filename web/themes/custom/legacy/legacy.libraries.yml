@@ -24,12 +24,18 @@ global-styling:
       src/xmeter/css/dist/h-FontSize.css: { minified: true }
       src/aria-patterns/x-hidden/css/dist/h-Hidden.css: { minified: true }
     theme:
-      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700: { type: external, minified: false }
-      //cdn.asce.org/chewie/assets/futura.css: { type: external, minified: true }
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css: { type: external, minified: true }
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css: { type: external, minified: true }
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css: { type: external, minified: false }
-      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css: { type: external, minified: true }
+      //fonts.googleapis.com/css?family=Open+Sans:300,400italic,600italic,700italic,400,600,700:
+        { type: external, minified: false }
+      //cdn.asce.org/chewie/assets/futura.css:
+        { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons/web/html_css/css/glyphicons.css:
+        { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-filetypes/web/html_css/css/glyphicons-filetypes.css:
+        { type: external, minified: true }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-halflings/web/html_css/css/glyphicons-halflings.css:
+        { type: external, minified: false }
+      //cdn.asce.org/chewie/assets/glyphicons_pro_1_9_2/glyphicons-social/web/html_css/css/glyphicons-social.css:
+        { type: external, minified: true }
       src/xmeter/css/dist/-mb.css: { minified: true }
       src/xmeter/css/dist/-pt.css: { minified: true }
       src/xmeter/css/dist/-fz.css: { minified: true }
@@ -40,6 +46,7 @@ global-styling:
       src/css/_hack.drupal.css: { minified: true }
       src/css/_hack.ie.css: { minified: true }
       src/css/_hack.shame.css: { minified: true }
+      src/css/revision.css: { minified: true }
   js:
     src/js/acknowledge.js: { minified: false }
   dependencies:
@@ -47,30 +54,22 @@ global-styling:
 
 channel-prod:
   css:
-    base:
-      {}
-    layout:
-      {}
-    component:
-      {}
-    theme:
-      {}
+    base: {}
+    layout: {}
+    component: {}
+    theme: {}
 
 channel-stage:
   css:
-    theme:
-      {}
+    theme: {}
 
 channel-dev:
   css:
-    theme:
-      {}
+    theme: {}
 
 channel-canary:
   css:
-    theme:
-      {}
-
+    theme: {}
 
 # header library
 header:
@@ -87,7 +86,8 @@ header:
       src/css/_c-YearBadge.css: { minified: true }
       src/css/_c-NavBar.css: { minified: true }
   js:
-    //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js: { type: external, minified: true }
+    //cdn.asce.org/chewie/assets/jquery.hoverIntent.min.js:
+      { type: external, minified: true }
     src/js/menu.js: { minified: false }
     src/js/o-Drawer.js: { minified: false }
 
@@ -146,11 +146,14 @@ supporters:
     component:
       src/css/_c-SupporterBlock.css: { minified: true }
     theme:
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css: { type: external, minified: false }
-      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css: { type: external, minified: false }
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css:
+        { type: external, minified: false }
+      //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css:
+        { type: external, minified: false }
       src/css/_hack.slick.css: { minified: true }
   js:
-    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js: { type: external, minified: true }
+    //cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js:
+      { type: external, minified: true }
     src/js/slick-config.js: { minified: false }
 
 # DateBlock Component

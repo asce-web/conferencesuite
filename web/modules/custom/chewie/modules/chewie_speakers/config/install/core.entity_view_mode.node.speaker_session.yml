@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.speaker_session
+label: Session
+targetEntityType: node
+cache: true
