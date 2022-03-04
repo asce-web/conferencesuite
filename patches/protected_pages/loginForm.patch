@@ -1,0 +1,14 @@
+diff --git a/src/Form/ProtectedPagesLoginForm.php b/src/Form/ProtectedPagesLoginForm.php
+index 4cdc7df..3e85ca8 100644
+--- a/src/Form/ProtectedPagesLoginForm.php
++++ b/src/Form/ProtectedPagesLoginForm.php
+@@ -119,7 +119,8 @@ class ProtectedPagesLoginForm extends FormBase {
+     ];
+
+     $form['protected_page_enter_password']['protected_page_pid'] = [
+-      '#markup' => '<div class="protected_pages_description"><strong>' . $config->get('others.protected_pages_description') . '</strong></div>',
++      '#markup' => '<div class="c-Message"><div class="c-Message__image-wrapper"><img src="https://cdn.asce.org/membershipkit/assets/lock-icon.svg" alt="lock-icon"/></div>
++                <div class="protected_pages_description c-Message__content"><strong>' . $config->get('others.protected_pages_description') . '</strong></div></div>',
+     ];
+     $form['protected_page_enter_password']['password'] = [
+       '#type' => 'password',
