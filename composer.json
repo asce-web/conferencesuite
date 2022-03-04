@@ -114,6 +114,9 @@
             "drupal/diff": {
                 "Add table headers text": "patches/diff/diffTableHeaders.patch",
                 "Update Navigation text": "patches/diff/navigationText.patch"
+            },
+            "drupal/protected_pages": {
+                "Customized login form": "patches/protected_pages/loginForm.patch"
             }
         }
     }
