@@ -47,6 +47,7 @@ global-styling:
       src/css/_hack.ie.css: { minified: true }
       src/css/_hack.shame.css: { minified: true }
       src/css/revision.css: { minified: true }
+      src/css/forms.css: { minified: true }
   js:
     src/js/acknowledge.js: { minified: false }
   dependencies:

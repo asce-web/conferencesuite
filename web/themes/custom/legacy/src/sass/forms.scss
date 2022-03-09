@@ -1,0 +1,58 @@
+.c-Message {
+  display: inline-block;
+  padding: calc(0.5 * var(--line-height) * 1rem) 1rem;
+  margin-block-end: 1.5rem;
+
+  color: inherit;
+  background-color: #efefef;
+
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: .25rem;
+  text-align: center;
+
+  &__image-wrapper {
+    display: inline-block;
+    padding: calc(0.5 * var(--line-height) * 1rem) 1rem;
+
+    img, svg {
+      width: 3rem;
+      max-height: 3rem;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    max-width: 40em;
+    padding: calc(0.5 * var(--line-height) * 1rem) 1rem;
+  }
+}
+
+// forms
+.protected-pages-enter-password {
+  .fieldset-wrapper {
+    padding: calc(0.5 * var(--line-height) * 1rem - .0625rem) 1rem;
+  }
+  input[type=email],
+  input[type=password],
+  input[type=text] {
+    padding: calc(0.5 * var(--line-height) * 1rem - .0625rem) 1rem;
+    font-size: inherit !important;
+    line-height: var(--line-height);
+    color: inherit;
+    background-color: white;
+    border: .0625rem solid #767676;
+    border-radius: .25rem;
+  }
+
+  input[type=submit] {
+      margin-top: calc(var(--line-height) * 1rem);
+      padding: .75rem 1rem;
+      border: 0px solid white;
+      box-shadow: 0 0.125em 0 0 #cdcdcd;
+
+      &:focus, &:hover {
+        color: white;
+        background-color: #0e6cc0;
+      }
+  }
+}
