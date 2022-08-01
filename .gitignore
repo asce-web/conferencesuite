@@ -32,6 +32,9 @@
 # Ignore MAMP error logs
 MAMP_php_error_log_MAMP
 
+# Ignore Mac OS X’s .DS_Store file
+.DS_Store
+
 # Ignore .env files as they are personal
 /.env
 /.editorconfig
