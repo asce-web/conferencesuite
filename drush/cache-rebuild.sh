@@ -33,6 +33,7 @@ drush @confsuite.ascestudentdays cr
 drush @confsuite.ascestudentdays_18 cr
 drush @confsuite.ascestudentdays_19 cr
 drush @confsuite.ascestudentdays_20 cr
+drush @confsuite.studentdays cr
 drush @confsuite.studentdays_22 cr
 #https://www.asceweek.org
 drush @confsuite.asceweek cr

@@ -8,637 +8,643 @@
 #  uri: http://stage.example.com
 
 aeiconf:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.aei-conference.org
 
 aeiconf_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.aei-conference.org
 
 aeiconf_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.aei-conference.org
 
 aei_forum:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.aei-forum.org
 
 aei_forum_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.aei-forum.org
 
 aeippa:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.aeippa.org
 
 aeippa_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.aeippa.org
 
 aeisdc:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.aeisdc.org
 
 aeisdc_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.aeisdc.org
 
 aeisdc_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.aeisdc.org
 
 aeisdc_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.aeisdc.org
 
 apm:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.apmconference.org
 
 apm_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.apmconference.org
 
 asce_ictd:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.asce-ictd.org
 
 asce_ictd_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.asce-ictd.org
 
 asce_ictd_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.asce-ictd.org
 
 asce_ictd_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.asce-ictd.org
 
 asce_ictd_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.asce-ictd.org
 
 asceconv:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.asceconvention.org
 
 asceconv_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.asceconvention.org
 
 asceconv_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.asceconvention.org
 
 asceconv_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.asceconvention.org
 
 ascestudentdays:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.ascestudentdays.org
 
 ascestudentdays_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.ascestudentdays.org
 
 ascestudentdays_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.ascestudentdays.org
 
 ascestudentdays_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.ascestudentdays.org
 
+studentdays:
+  host: 13.82.132.219
+  user: asce-ssh
+  root: /var/www/vhosts/asce.org/conferencesuite.asce.org
+  uri: https://studentdays.asce.org
+
 studentdays_22:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://studentdays22.asce.org
 
 asceweek:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.asceweek.org
 
 asceweek_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.asceweek.org
 
 asceweekint:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.asceweekinternational.org
 
 asceweekint_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.asceweekinternational.org
 
 cisummit:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.cisummit.org
 
 cisummit_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.cisummit.org
 
 cisummit_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.cisummit.org
 
 cisummit_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.cisummit.org
 
 cisummit_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.cisummit.org
 
 cisummit-crc:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://cisummit-crc.asce.org
 
 esconf:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.earthspaceconference.org
 
 esconf_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.earthspaceconference.org
 
 emi:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.emi-conference.org
 
 emi_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.emi-conference.org
 
 ets:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.etsconference.org
 
 ets_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.etsconference.org
 
 ets_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.etsconference.org
 
 channels_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://ewrichannels.asce.org
 
 channels:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://ewrichannels.asce.org
 
 ewri:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.ewricongress.org
 
 ewri_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.ewricongress.org
 
 ewri_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.ewricongress.org
 
 ewri_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.ewricongress.org
 
 ewri_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.ewricongress.org
 
 forensic:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.forensiccongress.org
 
 forensic_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.forensiccongress.org
 
 forensic_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.forensiccongress.org
 
 geo-extreme:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.geo-extreme.org
 
 geo-extreme_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.geo-extreme.org
 
 geo:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.geocongress.org
 
 geo_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.geocongress.org
 
 geo_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.geocongress.org
 
 geo_22:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2022.geocongress.org
 
 geo_23:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2023.geocongress.org
 
 geesd:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.geesdconference.org
 
 geesd_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.geesdconference.org
 
 icce:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.icce2018.com
 
 icce_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.icce2018.com
 
 icse:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.2020icse.org
 
 icse_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.2020icse.org
 
 icsi:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.icsiconference.org
 
 icsi_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.icsiconference.org
 
 icsi_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.icsiconference.org
 
 isfog:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.isfog2020.org
 
 isfog_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.isfog2020.org
 
 lid:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.lidconference.org
 
 lid_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.lidconference.org
 
 lid_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.lidconference.org
 
 omsw:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.omswconference.org
 
 omsw_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.omswconference.org
 
 omsw_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.omswconference.org
 
 pavements:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.pavementsconference.org
 
 pavements_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.pavementsconference.org
 
 pipe:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.pipelinesconference.org
 
 pipe_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.pipelinesconference.org
 
 pipe_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.pipelinesconference.org
 
 pipe_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.pipelinesconference.org
 
 pipe_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.pipelinesconference.org
 
 ports:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.portsconference.org
 
 ports_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.portsconference.org
 
 structures:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.structurescongress.org
 
 structures_19:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2019.structurescongress.org
 
 structures_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.structurescongress.org
 
 structures_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.structurescongress.org
 
 structures_22:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2022.structurescongress.org
 
 surveying:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.surveyingconference.org
 
 surveying_18:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2018.surveyingconference.org
 
 surveying_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.surveyingconference.org
 
 tdi:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.tdileadership.org
 
 tdi_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.tdileadership.org
 
 udmconf:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.udmconference2021.org
 
 udmconf_21:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2021.udmconference2021.org
 
 watershed:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www.watershedmanagementconference.org
 
 watershed_20:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://2020.watershedmanagementconference.org
 
 training:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://training.conferencesuite.asce.org
 
 canary:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://canary.conferencesuite.asce.org
 
 dev:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://dev.conferencesuite.asce.org
 
 confsuite:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://conferencesuite.asce.org
 
 confsuite:
-  host: 35.232.239.38
+  host: 13.82.132.219
   user: asce-ssh
   root: /var/www/vhosts/asce.org/conferencesuite.asce.org
   uri: https://www./var/www/vhosts/asce.org/conferencesuite.asce.org/web/sites/default
